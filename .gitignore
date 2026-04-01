@@ -1,4 +1,0 @@
-node_modules/\ndocs/\n.quarto/\n.DS_Store\n*.log\n*.aux\n*.tex\n*.toc
-
-/.quarto/
-**/*.quarto_ipynb
