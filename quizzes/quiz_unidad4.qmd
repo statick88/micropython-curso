@@ -1,0 +1,47 @@
+# Validación de Ingeniería: Fase 4 {#quiz-unidad4}
+
+::: center
+![Certificación de Percepción](images/sensor-ultrasonico-cartoon.png){width="20%"}
+:::
+
+## Protocolo de Evaluación: Telemetría y Concurrencia
+
+Valida tu capacidad para diseñar sistemas reactivos y asíncronos.
+
+::: {.quizdown}
+
+### Programación No Bloqueante
+¿Qué método de Pybricks permite ejecutar múltiples tareas (como leer sensores y mover motores) en paralelo?
+
+- [ ] while True simple.
+- [x] Multitarea asíncrona con `run_task()` y `await`.
+- [ ] Interrupciones por hardware.
+- [ ] Conexión serie manual.
+
+> `asyncio` es el estándar para gestionar sistemas de tiempo real sin bloqueos de CPU.
+
+### Telemetría Sónica
+¿Qué unidad de medida entrega el sensor ultrasónico (`UltrasonicSensor`) por defecto en Pybricks?
+
+- [ ] Centímetros (cm).
+- [x] Milímetros (mm).
+- [ ] Pulgadas (in).
+- [ ] Porcentaje (%).
+
+> La precisión milimétrica es vital para algoritmos de evasión de obstáculos de alta fidelidad.
+
+### Entorno de Depuración
+¿Cuál es la herramienta principal para visualizar telemetría y mensajes de estado en la consola en tiempo real?
+
+- [ ] breakpoint()
+- [x] print()
+- [ ] debug()
+- [ ] log_telemetry()
+
+> El uso estratégico de `print()` es la base del diagnóstico de campo en sistemas embebidos.
+
+:::
+
+---
+
+*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*

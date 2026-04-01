@@ -1,0 +1,81 @@
+# Fase 4: Percepción y Telemetría {#unidad4-sensores}
+
+::: center
+![Sistemas de Percepción](images/sensor-ultrasonico-cartoon.png){width="30%"}
+:::
+
+## Protocolo de Ingeniería: Percepción en Tiempo Real
+
+En robótica avanzada, un sistema no puede permitirse ser "ciego" mientras ejecuta una acción. La percepción debe ser una tarea constante y paralela. En esta fase, transformamos la lectura pasiva de sensores en un sistema de **Telemetría Activa**.
+
+---
+
+## 1. Arquitectura de Sistemas Concurrentes (Asyncio)
+
+::: {.callout-important}
+## Estándar Statick: Programación No Bloqueante
+Históricamente, los programas esperaban (`wait`) a que un sensor terminara su lectura. **NOSOTROS UTILIZAMOS ASYNCIO** para gestionar la percepción y el movimiento de forma simultánea.
+:::
+
+```python
+from pybricks.pupdevices import Motor, UltrasonicSensor # Sensores y Actuadores
+from pybricks.parameters import Port, Direction # Mapeo de bus de datos
+from pybricks.robotics import DriveBase # Modelo cinemático
+from pybricks.tools import wait, run_task # <1>
+
+# Configuración de Subsistemas
+motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE) # <2>
+motor_der = Motor(Port.B)
+sensor_distancia = UltrasonicSensor(Port.D) # <3>
+robot = DriveBase(motor_izq, motor_der, 56, 112) # <4>
+
+async def monitorear_seguridad(): # <5>
+    """Hebra de supervisión constante de colisiones."""
+    while True:
+        distancia = sensor_distancia.distance() # Lectura en mm
+        if distancia < 150:
+            # Reportar riesgo al HUD del sistema
+            print(f"ALERTA: Colisión inminente a {distancia}mm") # <6>
+        await wait(50) # <7>
+
+async def mision_principal(): # <8>
+    """Lógica de navegación de alto nivel."""
+    print("INICIANDO DESPLIEGUE...")
+    await robot.straight(500) # <9>
+    await robot.turn(90) # Rotación no bloqueante
+    print("MISIÓN FINALIZADA.")
+
+if __name__ == "__main__":
+    # El orquestador lanza las corrutinas en paralelo
+    run_task(mision_principal(), monitorear_seguridad()) # <10>
+```
+
+1.  Importamos las herramientas de gestión de tareas concurrentes (Multitarea).
+2.  Motor izquierdo con dirección invertida para tracción síncrona.
+3.  Inicializamos el sensor ultrasónico para medir la distancia a obstáculos.
+4.  Configuramos el DriveBase con parámetros físicos del robot (ruedas 56mm, eixo 112mm).
+5.  Definimos una función asíncrona de monitoreo que se ejecutará en "segundo plano".
+6.  La telemetría se envía a la consola para diagnóstico remoto.
+7.  **Regla de Oro:** El `await wait` es obligatorio en bucles asíncronos para no bloquear la CPU.
+8.  Función principal de navegación asíncrona.
+9.  Movimiento recto de 500mm con await para permitir concurrencia.
+10. Giro de 90 grados no bloqueante.
+
+---
+
+## ASIGNACIÓN: El Robot de Rescate Autónomo
+
+<details>
+<summary><b>Ver Objetivo del Reto</b></summary>
+
+Diseña un sistema que combine la **Fase 3 (Giroscopio)** y la **Fase 4 (Sensores)** para crear un robot que explore un área de forma infinita, pero que si detecta un obstáculo a menos de 10cm, se detenga, emita un pitido de alerta y cambie de rumbo 180°.
+
+## Pruebas de Validación
+- [ ] ¿El robot mantiene el rumbo recto usando el giroscopio?
+- [ ] ¿La detección de obstáculos es inmediata (sin pausas)?
+- [ ] ¿El código utiliza `run_task` para orquestar la misión?
+</details>
+
+---
+
+*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*

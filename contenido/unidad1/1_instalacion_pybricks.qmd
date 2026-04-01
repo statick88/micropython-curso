@@ -1,0 +1,76 @@
+# Fase 1: Infraestructura y Entorno {#unidad1-instalacion}
+
+::: center
+![Pybricks Core](images/esp32-cartoon.png){width="30%"}
+:::
+
+## El Reactor de Desarrollo: Pybricks
+
+Para que nuestro **Arquitecto de Aprendizaje** pueda desplegar código eficiente, necesitamos un sistema operativo robusto. En este laboratorio, utilizamos **Pybricks**, una implementación optimizada de MicroPython para hardware LEGO.
+
+---
+
+## 1. Instalación del Firmware
+
+::: {.callout-tip}
+## Best Practice: Conexión Estable
+Asegúrate de utilizar el cable USB original de LEGO para evitar interrupciones en el bus de datos durante la actualización del firmware.
+:::
+
+1.  Accede al Centro de Comando: [code.pybricks.com](https://code.pybricks.com/)
+2.  Conecta tu Hub vía USB.
+3.  Selecciona **"Install Pybricks Firmware"**.
+4.  Sigue los protocolos en pantalla hasta que el reactor (Hub) emita una luz azul.
+
+---
+
+## 2. Tu Primer Despliegue: "Hello Stark"
+
+Este programa valida que la conexión entre el IDE y el hardware es estable y que el motor de ejecución está operativo.
+
+```python
+from pybricks.hubs import PrimeHub # Importar el núcleo del Hub <1>
+from pybricks.parameters import Color # Protocolo de colores <2>
+from pybricks.tools import wait # Herramienta de gestión de tiempo <3>
+
+# Inicialización del hardware principal
+hub = PrimeHub() # Instanciar el cerebro del robot <4>
+
+def main():
+    """Protocolo de validación de sistemas."""
+    hub.light.on(Color.GREEN) # Activar luz de estado verde <5>
+    hub.display.text("READY") # Desplegar telemetría en el HUD <6>
+    hub.speaker.beep() # Ejecutar validación acústica <7>
+    wait(2000) # Mantener el sistema activo 2 segundos <8>
+
+if __name__ == "__main__": # Entrada principal del script
+    main()
+```
+
+1.  Importamos la abstracción del hardware principal para controlar el Hub.
+2.  Cargamos el set de parámetros para la gestión de colores.
+3.  Utilidad para realizar pausas precisas en la ejecución.
+4.  Creamos el objeto `hub` que representa físicamente al dispositivo.
+5.  Cambiamos el color del LED central para indicar que el sistema está nominal.
+6.  Enviamos un string de texto a la matriz de 5x5.
+7.  El buzzer interno emite un tono de frecuencia estándar.
+8.  Pausa de seguridad antes de finalizar la ejecución del hilo principal.
+
+---
+
+## ASIGNACIÓN: Protocolo de Personalización
+
+<details>
+<summary><b>Ver Objetivo del Reto</b></summary>
+
+Tu misión es modificar el código anterior para que el Hub realice una secuencia de semáforo (Rojo, Amarillo, Verde) antes de mostrar el mensaje "GO".
+
+## Pruebas de Validación
+- [ ] ¿La luz cambia de color en el orden correcto?
+- [ ] ¿El mensaje aparece solo al final?
+- [ ] ¿El código sigue la estructura `if __name__ == "__main__":`?
+</details>
+
+---
+
+*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*

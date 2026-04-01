@@ -1,0 +1,47 @@
+# Validación de Ingeniería: Fase 3 {#quiz-unidad3}
+
+::: center
+![Certificación de Tracción](images/servo-motor-cartoon.png){width="20%"}
+:::
+
+## Protocolo de Evaluación: Sincronización de Tracción
+
+Valida tu dominio sobre la cinemática del robot y el control de precisión.
+
+::: {.quizdown}
+
+### Estabilización por Hardware
+¿Qué tecnología interna del Hub permite que el `DriveBase` corrija su trayectoria automáticamente?
+
+- [ ] Bluetooth Low Energy.
+- [x] Giroscopio (IMU) con `use_gyro(True)`.
+- [ ] Sensor de color en puerto C.
+- [ ] Sensor de contacto.
+
+> El giroscopio es esencial para compensar el deslizamiento mecánico de las ruedas.
+
+### Arquitectura Cinemática
+En la configuración de un `DriveBase`, ¿qué parámetro define la distancia entre los centros de las ruedas?
+
+- [ ] wheel_diameter
+- [x] axle_track
+- [ ] PID_gain
+- [ ] turn_rate
+
+> `axle_track` es el valor crítico para calcular la rotación exacta del chasis.
+
+### Entorno de Desarrollo
+¿Cuál es la URL oficial del Centro de Comando Pybricks Web para desplegar código?
+
+- [ ] pybricks.com
+- [x] code.pybricks.com
+- [ ] app.pybricks.com
+- [ ] lego.pybricks.com
+
+> `code.pybricks.com` es el IDE estándar de la industria para MicroPython en LEGO.
+
+:::
+
+---
+
+*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*

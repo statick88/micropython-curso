@@ -1,0 +1,152 @@
+# El Manifiesto del Arquitecto de Aprendizaje {#competencias-docente}
+
+## Protocolo de Ingeniería: Tu Mindset como Arquitecto Principal
+
+En nuestro laboratorio de MicroPython, no somos simples programadores; somos **Arquitectos de Experiencias**. Como docente líder, tu responsabilidad es diseñar sistemas de aprendizaje que no solo funcionen, sino que inspiren excelencia.
+
+### Las 5 Columnas de Nuestra Arquitectura
+
+Para liderar el aula con autoridad técnica, **DEBEMOS** dominar:
+
+1.  **Ingeniería de Python:** No solo sintaxis, sino lógica de diseño robusta.
+2.  **Sistemas Embebidos (Pybricks):** Dominar el hardware para empoderar el software.
+3.  **Análisis de Hardware:** Diagnóstico clínico de sensores y actuadores.
+4.  **Diseño Pedagógico Activo:** Crear misiones, no solo ejercicios.
+5.  **Resolución de Incidentes (Troubleshooting):** Convertir el error en una oportunidad de aprendizaje.
+
+---
+
+## MÓDULO 1: Los Planos del Sistema (Python Fundamentals)
+
+### 1.1 Variables: Telemetría de Datos
+
+Como arquitectos, tratamos los datos con precisión. No permitimos el código muerto o las variables sin propósito.
+
+```python
+# TIPOS DE DATOS: Los cimientos de nuestro sistema
+
+# Integers (Enteros): Control de iteraciones
+intentos = 5 # <1>
+
+# Floats (Decimales): Telemetría precisa
+reflexion_luz = 45.5 # <2>
+
+# Strings (Texto): Logs del sistema
+sistema_status = "OPERATIVO" # <3>
+
+# Booleans (Lógica): Estado binario
+motor_ready = True # <4>
+
+# OPERACIONES CRÍTICAS DE INGENIERÍA:
+eficiencia = 10 / 3 
+posicion_exacta = 10 // 3 # <5>
+iteracion_modulo = 10 % 3 # <6>
+```
+
+1.  Las variables enteras son fundamentales para bucles deterministas.
+2.  Los flotantes representan la realidad física de los sensores (voltaje, distancia).
+3.  Los strings permiten una comunicación clara a través del HUD de 5x5.
+4.  Los booleanos gestionan los estados de seguridad y bloqueos.
+5.  La división entera (`//`) es vital cuando trabajamos con coordenadas de píxeles.
+6.  El módulo (`%`) permite crear secuencias infinitas dentro de rangos finitos.
+
+### 1.2 Neural Links (Funciones y Modularización)
+
+Un arquitecto escribe código DRY (Don't Repeat Yourself). Modularizamos nuestra lógica para que sea escalable:
+
+```python
+# DEFINICIÓN DE UN PROTOCOLO DE MOVIMIENTO
+def ejecutar_despliegue(velocidad=500, distancia=200): # <1>
+    """
+    Protocolo estándar para movimiento lineal del robot.
+    """
+    robot.settings(straight_speed=velocidad) # <2>
+    robot.straight(distancia) # <3>
+
+# EJECUCIÓN DEL DISEÑO
+ejecutar_despliegue() # <4>
+ejecutar_despliegue(800, 500) # <5>
+```
+
+1.  Modularizamos la acción para reutilizar la lógica en diferentes misiones.
+2.  Ajustamos las constantes cinemáticas antes de cada movimiento.
+3.  La abstracción `straight` oculta la complejidad del control PID de los motores.
+4.  El uso de valores por defecto simplifica las misiones estándar.
+5.  La sobreescritura de argumentos permite adaptarnos a entornos críticos.
+
+### 1.3 Algoritmos de Decisión y Control
+
+```python
+# BUCLE DE CONTROL AUTÓNOMO
+while True: # <1>
+    distancia_obstaculo = sensor_distancia.distance() # <2>
+    
+    # Lógica de Evaluación de Riesgos
+    if distancia_obstaculo < 150: # <3>
+        print("ALERTA: Obstrucción detectada.") # <4>
+        robot.stop() # <5>
+        robot.turn(90)
+    else:
+        robot.drive(200, 0) # <6>
+    
+    wait(100) # <7>
+```
+
+1.  Los robots operan en ciclos infinitos de sensado-decisión-acción.
+2.  La lectura debe ser constante para reaccionar a cambios en el entorno.
+3.  Definimos la "distancia de seguridad" basada en la inercia del robot.
+4.  La telemetría por consola es nuestra "caja negra" para debugging.
+5.  `stop()` asegura que el robot no fuerce los motores contra un objeto físico.
+6.  `drive` permite movimiento fluido sin esperar a que termine la acción.
+7.  El `wait` evita la saturación del procesador y el sobrecalentamiento del bus.
+
+---
+
+## MÓDULO 2: Diagnóstico y Validación de Campo
+
+### 3.1 Debugging Nivel Statick
+
+En este curso, **NUNCA** adivinamos. **NOSOTROS VALIDAMOS**.
+
+```python
+# LOGS DE TELEMETRÍA EN TIEMPO REAL
+print(f"DIAG: Carga de Batería: {hub.battery.voltage()}mV") # <1>
+print(f"DIAG: Lectura Reflejada: {sensor_color.reflection()}%") # <2>
+
+# CAPTURA DE EXCEPCIONES DE HARDWARE (Resiliencia)
+try: # <3>
+    motor_a.run_target(500, 90)
+except OSError: # <4>
+    # Protocolo de recuperación ante desconexión
+    print("FALLO: Interrupción en el bus de datos del Puerto A.") # <5>
+```
+
+1.  El voltaje es la variable crítica para la consistencia de los motores.
+2.  Validamos el hardware antes de lanzar la misión principal.
+3.  Encapsulamos operaciones críticas que dependen de conexiones físicas.
+4.  Capturamos errores de hardware para evitar que el firmware colapse.
+5.  Un diagnóstico preciso ahorra minutos valiosos en el campo de batalla (aula).
+
+---
+
+## MÓDULO 3: El Método del Arquitecto (Pedagogía de Ingeniería)
+
+Nuestra metodología de aula sigue la **Secuencia de Despliegue Real**:
+
+1.  **Desafío de Impacto:** Muestra el robot resolviendo un problema complejo.
+2.  **Ingeniería Inversa:** Pregunta al grupo: "¿Cómo diseñarían la lógica para lograr esto?"
+3.  **Codificación Colaborativa:** Escribimos el core del sistema en la pizarra.
+4.  **Despliegue Experimental (Labs):** Los alumnos implementan y rompen el código.
+5.  **Optimización:** Refinamos el código para buscar la excelencia.
+
+---
+
+## CHECKPOINT: Tu Sello de Calidad
+
+Como Arquitecto Principal, tu meta no es que tus alumnos sepan Python. Tu meta es que sepan **pensar como ingenieros**. Si ellos pueden diagnosticar y arreglar su propio sistema, has diseñado un aprendizaje de éxito.
+
+**¿Estamos listos para iniciar el despliegue?**
+
+---
+
+*Desarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026*

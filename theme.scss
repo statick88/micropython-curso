@@ -1,0 +1,41 @@
+/*-- scss:defaults --*/
+$primary: #0066cc;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+
+/*-- scss:rules --*/
+.book .book-body .page-wrapper .page-inner {
+  max-width: 900px;
+}
+
+.callout {
+  border-radius: 8px;
+}
+
+pre.sourceCode {
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+thead {
+  background-color: #f5f5f5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

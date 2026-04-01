@@ -1,0 +1,67 @@
+# Fase 2: Interfaces y Control Visual {#unidad2-display}
+
+::: center
+![Interfaces de Luz](images/leds-cartoon.png){width="30%"}
+:::
+
+## El HUD del Arquitecto: Matriz 5x5
+
+En ingeniería de sistemas embebidos, el feedback visual es la primera línea de defensa para el diagnóstico. El Hub de SPIKE Prime nos proporciona una matriz de 5x5 píxeles para desplegar telemetría en tiempo real.
+
+---
+
+## 1. Protocolo de Visualización
+
+Aprenderemos a controlar cada píxel individualmente para crear iconos personalizados de estado.
+
+```python
+from pybricks.hubs import PrimeHub # Abstracción del hardware core
+from pybricks.parameters import Icon, Color # Parámetros visuales
+from pybricks.tools import wait # Control de flujo temporal
+
+# Inicialización del sistema
+hub = PrimeHub() # Crear instancia del núcleo
+
+def mostrar_animacion():
+    """Ejecuta una secuencia de feedback visual."""
+    hub.display.icon(Icon.HAPPY) # <1>
+    wait(1000) # Mantener 1 segundo
+    
+    # Definición manual de la arquitectura de píxeles (0-100 brillo)
+    matriz_check = [ # <2>
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 100], # Píxel activo al 100% de intensidad
+        [0, 0, 0, 100, 0],
+        [100, 0, 100, 0, 0],
+        [0, 100, 0, 0, 0],
+    ]
+    hub.display.icon(matriz_check) # <3>
+    hub.light.on(Color.BLUE) # <4>
+
+if __name__ == "__main__":
+    mostrar_animacion() # Iniciar protocolo visual
+```
+
+1.  Uso de la biblioteca interna de iconos para una comunicación rápida con el usuario.
+2.  Definición de una estructura de lista de listas que mapea físicamente a los 25 LEDs.
+3.  El método `icon` acepta tanto constantes como matrices de enteros definidas por el programador.
+4.  El indicador luminoso central (`light`) se usa para estados globales del sistema.
+
+---
+
+## ASIGNACIÓN: Sistema de Alerta Temprana
+
+<details>
+<summary><b>Ver Objetivo del Reto</b></summary>
+
+Crea un programa que simule un "Cargando..." en la pantalla (una línea que se mueve) y que termine con un icono de corazón cuando el sistema esté "Listo".
+
+## Pruebas de Validación
+- [ ] ¿La animación es fluida (usa `wait` adecuadamente)?
+- [ ] ¿El icono final es claro?
+- [ ] ¿El código está encapsulado en funciones?
+</details>
+
+---
+
+*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*

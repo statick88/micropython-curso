@@ -1,0 +1,52 @@
+/* MicroPython Docentes - Custom Styles */
+
+/* Course-specific styling */
+.book .book-body .page-wrapper .page-inner {
+  max-width: 900px;
+}
+
+/* Callout boxes enhancement */
+.callout {
+  border-radius: 8px;
+}
+
+/* Code blocks */
+pre.sourceCode {
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+thead {
+  background-color: #f5f5f5;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Sidebar */
+.sidebar-logo img {
+  max-height: 60px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .book .book-body .page-wrapper .page-inner {
+    padding: 1rem;
+  }
+}

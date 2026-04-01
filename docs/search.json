@@ -1,0 +1,890 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MicroPython: Ingeniería de Aprendizaje",
+    "section": "",
+    "text": "Maestría del Arquitecto de Aprendizaje",
+    "crumbs": [
+      "Maestría del Arquitecto de Aprendizaje"
+    ]
+  },
+  {
+    "objectID": "index.html#el-framework-de-ingeniería-educativa",
+    "href": "index.html#el-framework-de-ingeniería-educativa",
+    "title": "MicroPython: Ingeniería de Aprendizaje",
+    "section": "El Framework de Ingeniería Educativa",
+    "text": "El Framework de Ingeniería Educativa\n\n\n\n“No estamos aquí para enseñar sintaxis; estamos aquí para diseñar sistemas.”\nBienvenido a la ruta de excelencia en MicroPython. Este curso es un despliegue de ingeniería diseñado para convertirte en el Arquitecto Principal de tu aula.\n\n\n\n\n\n\nLa Estructura del Conocimiento",
+    "crumbs": [
+      "Maestría del Arquitecto de Aprendizaje"
+    ]
+  },
+  {
+    "objectID": "index.html#ecosistema-de-ingeniería",
+    "href": "index.html#ecosistema-de-ingeniería",
+    "title": "MicroPython: Ingeniería de Aprendizaje",
+    "section": "Ecosistema de Ingeniería",
+    "text": "Ecosistema de Ingeniería\n\n\n\n\n\n\nCore: ESP32 & SPIKE\n\n\n\n\n\n\n\nPercepción: Sensores\n\n\n\n\n\n\n\nActuación: Motores\n\n\n\n\n\n\n\n\n\n\n\n\nNoteDeclaración de Propósitos\n\n\n\nEste framework de aprendizaje ha sido diseñado para transformar la enseñanza de la tecnología desde un enfoque puramente descriptivo hacia una Ingeniería Pedagógica de alto rendimiento.\n\n\n\n\n\n\n\n\n\nTip¿Cómo abordamos este proyecto? (Filosofía Statick)\n\n\n\n\n\n\n\n\n\n\n\nAcción\nRol\nObjetivo\n\n\n\n\nDiseño\nTú\nPlanificar la arquitectura de la clase.\n\n\nImplementación\nNosotros\nDesplegar el código en hardware real.\n\n\nValidación\nAmbos\nAsegurar que el aprendizaje ha sido exitoso.",
+    "crumbs": [
+      "Maestría del Arquitecto de Aprendizaje"
+    ]
+  },
+  {
+    "objectID": "index.html#el-ecosistema-de-desarrollo",
+    "href": "index.html#el-ecosistema-de-desarrollo",
+    "title": "MicroPython: Ingeniería de Aprendizaje",
+    "section": "El Ecosistema de Desarrollo",
+    "text": "El Ecosistema de Desarrollo\n\n\n\nComponente\nEspecificación Técnica\n\n\n\n\nCore\nLEGO SPIKE Prime Hub\n\n\nPlataforma\nPybricks (MicroPython Optimizado)\n\n\nEntorno\nStark/Statick Console (code.pybricks.com)\n\n\nInterface\nProtocolo de conexión segura (USB/BT)",
+    "crumbs": [
+      "Maestría del Arquitecto de Aprendizaje"
+    ]
+  },
+  {
+    "objectID": "index.html#roadmap-del-arquitecto",
+    "href": "index.html#roadmap-del-arquitecto",
+    "title": "MicroPython: Ingeniería de Aprendizaje",
+    "section": "Roadmap del Arquitecto",
+    "text": "Roadmap del Arquitecto\n\n\n\n\n\n\n\n\nFase\nDespliegue de Sistemas\nMilestone\n\n\n\n\nFase 0\nEl Manifiesto y las Competencias\n📋 Certificación Base\n\n\nFase 1\nConfiguración de Infraestructura\n🔌 Conexión Estable\n\n\nFase 2\nControl Visual y HUD\n💡 Feedback Visual\n\n\nFase 3\nLógica de Tracción y Actuación\n⚙️ Movimiento Preciso\n\n\nFase 4\nTelemetría y Percepción de Datos\n📡 Telemetría Avanzada\n\n\nFase 5\nDespliegue de la IA JARVIS (Proyecto)\n🏆 Maestría Final\n\n\n\n\nDiseñado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026",
+    "crumbs": [
+      "Maestría del Arquitecto de Aprendizaje"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre el Proyecto",
+    "section": "",
+    "text": "Ingeniería del Aprendizaje: MicroPython\nEste framework ha sido diseñado para transformar la enseñanza de la tecnología desde un enfoque puramente descriptivo hacia una Ingeniería Pedagógica de alto rendimiento.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Sobre el Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "about.html#ingeniería-del-aprendizaje-micropython",
+    "href": "about.html#ingeniería-del-aprendizaje-micropython",
+    "title": "Sobre el Proyecto",
+    "section": "",
+    "text": "Ficha Técnica del Despliegue\n\n\n\nAtributo\nEspecificación\n\n\n\n\nFramework\nIngeniería de Aprendizaje con MicroPython\n\n\nArquitecto Jefe\nDiego Saavedra (Statick)\n\n\nInstitución\nAbacom Capacitación y Servicios\n\n\nEntorno Técnico\nLEGO SPIKE Prime + Pybricks OS\n\n\nAlcance\n31 Sesiones de Ingeniería de Aula",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Sobre el Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "about.html#el-perfil-del-arquitecto-público-objetivo",
+    "href": "about.html#el-perfil-del-arquitecto-público-objetivo",
+    "title": "Sobre el Proyecto",
+    "section": "El Perfil del Arquitecto (Público Objetivo)",
+    "text": "El Perfil del Arquitecto (Público Objetivo)\nEste proyecto está diseñado para líderes educativos que buscan la excelencia técnica:\n\nArquitectos de Aula: Docentes que diseñan experiencias de aprendizaje robustas.\nIngenieros STEM: Profesionales que buscan una base sólida en MicroPython y hardware real.\nLíderes de Laboratorio: Responsables de centros tecnológicos que demandan protocolos de enseñanza probados.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Sobre el Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "about.html#filosofía-statick-ingeniería-de-la-educación",
+    "href": "about.html#filosofía-statick-ingeniería-de-la-educación",
+    "title": "Sobre el Proyecto",
+    "section": "Filosofía Statick: Ingeniería de la Educación",
+    "text": "Filosofía Statick: Ingeniería de la Educación\n\nEl Enfoque en la Verdad Técnica\nEn este laboratorio, NOSOTROS VALIDAMOS, no suponemos. Nuestra filosofía se basa en tres pilares de hierro:\n\nHonestidad Tecnológica: Reconocemos las capacidades reales del hardware sin vender ilusiones.\nExcelencia de Código: El código de aula debe ser tan limpio y eficiente como el de producción.\nAutonomía del Aprendiz: Diseñamos sistemas para que el estudiante aprenda a diagnosticar y resolver, no solo a copiar.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Sobre el Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "about.html#ecosistema-de-herramientas",
+    "href": "about.html#ecosistema-de-herramientas",
+    "title": "Sobre el Proyecto",
+    "section": "Ecosistema de Herramientas",
+    "text": "Ecosistema de Herramientas\nPara garantizar que el aprendizaje sea escalable y accesible, el framework utiliza:\n\nPlano Visual (Turtle Graphics): Lógica algorítmica sin coste de hardware ($0).\nSimulación de Lógica (Pybricks Web): Prototipado rápido de Python en el navegador ($0).\nHardware Core (SPIKE Prime): Despliegue en hardware de grado educativo superior.\nExpansión Inmortal (ESP32): Integración con sistemas de bajo coste para escalabilidad masiva.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Sobre el Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "about.html#contacto-y-repositorio",
+    "href": "about.html#contacto-y-repositorio",
+    "title": "Sobre el Proyecto",
+    "section": "Contacto y Repositorio",
+    "text": "Contacto y Repositorio\n\n\n\nPlataforma\nDirección\n\n\n\n\nSource Control\ngithub.com/statick88\n\n\nMainframe\nAbacom Capacitación y Servicios\n\n\n\n\nDiseñado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Sobre el Proyecto</span>"
+    ]
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Licencia",
+    "section": "",
+    "text": "Derechos de Autor\nMicroPython para Docentes por Diego Saavedra\nEste trabajo tiene licencia bajo Creative Commons Atribucion-NoComercial-SinDerivadas 4.0 Internacional.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "license.html#derechos-de-autor",
+    "href": "license.html#derechos-de-autor",
+    "title": "Licencia",
+    "section": "",
+    "text": "CC BY-NC-ND 4.0\n\n\n\nUsted puede:\n\nCompartir — copiar y redistribuir el material en cualquier medio o formato\n\n\n\nCon las siguientes condiciones:\n\nAtribucion — Debe dar credito apropiado, proporcionar un enlace a la licencia e indicar si se hicieron cambios\nNoComercial — No puede usar el material con fines comerciales\nSinDerivadas — Si remezcla, transforma o crea a partir del material, no puede distribuir el material modificado\n\n\n\nNota sobre el codigo:\nEl codigo de ejemplo dentro de los laboratorios es de uso libre para fines educativos. Se puede copiar, modificar y distribuir para uso en el aula.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "license.html#reconocimientos",
+    "href": "license.html#reconocimientos",
+    "title": "Licencia",
+    "section": "Reconocimientos",
+    "text": "Reconocimientos\n\nComunidad Pybricks por su firmware open source\nComunidad MicroPython por su implementacion de Python para microcontroladores\nProyecto ESP-LEGO-SPIKE-Simulator por el simulador no oficial\nCarnegie Mellon CS2N por recursos educativos\nInvestigadores en educacion STEM citados en las referencias\n\n\nUltima actualizacion: Marzo 2026",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad0/competencias_docente.html",
+    "href": "contenido/unidad0/competencias_docente.html",
+    "title": "El Manifiesto del Arquitecto de Aprendizaje",
+    "section": "",
+    "text": "Protocolo de Ingeniería: Tu Mindset como Arquitecto Principal\nEn nuestro laboratorio de MicroPython, no somos simples programadores; somos Arquitectos de Experiencias. Como docente líder, tu responsabilidad es diseñar sistemas de aprendizaje que no solo funcionen, sino que inspiren excelencia.",
+    "crumbs": [
+      "EL MANIFIESTO DEL ARQUITECTO",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>El Manifiesto del Arquitecto de Aprendizaje</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad0/competencias_docente.html#protocolo-de-ingeniería-tu-mindset-como-arquitecto-principal",
+    "href": "contenido/unidad0/competencias_docente.html#protocolo-de-ingeniería-tu-mindset-como-arquitecto-principal",
+    "title": "El Manifiesto del Arquitecto de Aprendizaje",
+    "section": "",
+    "text": "Las 5 Columnas de Nuestra Arquitectura\nPara liderar el aula con autoridad técnica, DEBEMOS dominar:\n\nIngeniería de Python: No solo sintaxis, sino lógica de diseño robusta.\nSistemas Embebidos (Pybricks): Dominar el hardware para empoderar el software.\nAnálisis de Hardware: Diagnóstico clínico de sensores y actuadores.\nDiseño Pedagógico Activo: Crear misiones, no solo ejercicios.\nResolución de Incidentes (Troubleshooting): Convertir el error en una oportunidad de aprendizaje.",
+    "crumbs": [
+      "EL MANIFIESTO DEL ARQUITECTO",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>El Manifiesto del Arquitecto de Aprendizaje</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad0/competencias_docente.html#módulo-1-los-planos-del-sistema-python-fundamentals",
+    "href": "contenido/unidad0/competencias_docente.html#módulo-1-los-planos-del-sistema-python-fundamentals",
+    "title": "El Manifiesto del Arquitecto de Aprendizaje",
+    "section": "MÓDULO 1: Los Planos del Sistema (Python Fundamentals)",
+    "text": "MÓDULO 1: Los Planos del Sistema (Python Fundamentals)\n\n1.1 Variables: Telemetría de Datos\nComo arquitectos, tratamos los datos con precisión. No permitimos el código muerto o las variables sin propósito.\n# TIPOS DE DATOS: Los cimientos de nuestro sistema\n\n# Integers (Enteros): Control de iteraciones\n1intentos = 5\n\n# Floats (Decimales): Telemetría precisa\n2reflexion_luz = 45.5\n\n# Strings (Texto): Logs del sistema\n3sistema_status = \"OPERATIVO\"\n\n# Booleans (Lógica): Estado binario\n4motor_ready = True\n\n# OPERACIONES CRÍTICAS DE INGENIERÍA:\neficiencia = 10 / 3 \n5posicion_exacta = 10 // 3\n6iteracion_modulo = 10 % 3\n\n1\n\nLas variables enteras son fundamentales para bucles deterministas.\n\n2\n\nLos flotantes representan la realidad física de los sensores (voltaje, distancia).\n\n3\n\nLos strings permiten una comunicación clara a través del HUD de 5x5.\n\n4\n\nLos booleanos gestionan los estados de seguridad y bloqueos.\n\n5\n\nLa división entera (//) es vital cuando trabajamos con coordenadas de píxeles.\n\n6\n\nEl módulo (%) permite crear secuencias infinitas dentro de rangos finitos.\n\n\n\n\n1.2 Neural Links (Funciones y Modularización)\nUn arquitecto escribe código DRY (Don’t Repeat Yourself). Modularizamos nuestra lógica para que sea escalable:\n# DEFINICIÓN DE UN PROTOCOLO DE MOVIMIENTO\n1def ejecutar_despliegue(velocidad=500, distancia=200):\n    \"\"\"\n    Protocolo estándar para movimiento lineal del robot.\n    \"\"\"\n2    robot.settings(straight_speed=velocidad)\n3    robot.straight(distancia)\n\n# EJECUCIÓN DEL DISEÑO\n4ejecutar_despliegue()\n5ejecutar_despliegue(800, 500)\n\n1\n\nModularizamos la acción para reutilizar la lógica en diferentes misiones.\n\n2\n\nAjustamos las constantes cinemáticas antes de cada movimiento.\n\n3\n\nLa abstracción straight oculta la complejidad del control PID de los motores.\n\n4\n\nEl uso de valores por defecto simplifica las misiones estándar.\n\n5\n\nLa sobreescritura de argumentos permite adaptarnos a entornos críticos.\n\n\n\n\n1.3 Algoritmos de Decisión y Control\n# BUCLE DE CONTROL AUTÓNOMO\n1while True:\n2    distancia_obstaculo = sensor_distancia.distance()\n    \n    # Lógica de Evaluación de Riesgos\n3    if distancia_obstaculo &lt; 150:\n4        print(\"ALERTA: Obstrucción detectada.\")\n5        robot.stop()\n        robot.turn(90)\n    else:\n6        robot.drive(200, 0)\n    \n7    wait(100)\n\n1\n\nLos robots operan en ciclos infinitos de sensado-decisión-acción.\n\n2\n\nLa lectura debe ser constante para reaccionar a cambios en el entorno.\n\n3\n\nDefinimos la “distancia de seguridad” basada en la inercia del robot.\n\n4\n\nLa telemetría por consola es nuestra “caja negra” para debugging.\n\n5\n\nstop() asegura que el robot no fuerce los motores contra un objeto físico.\n\n6\n\ndrive permite movimiento fluido sin esperar a que termine la acción.\n\n7\n\nEl wait evita la saturación del procesador y el sobrecalentamiento del bus.",
+    "crumbs": [
+      "EL MANIFIESTO DEL ARQUITECTO",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>El Manifiesto del Arquitecto de Aprendizaje</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad0/competencias_docente.html#módulo-2-diagnóstico-y-validación-de-campo",
+    "href": "contenido/unidad0/competencias_docente.html#módulo-2-diagnóstico-y-validación-de-campo",
+    "title": "El Manifiesto del Arquitecto de Aprendizaje",
+    "section": "MÓDULO 2: Diagnóstico y Validación de Campo",
+    "text": "MÓDULO 2: Diagnóstico y Validación de Campo\n\n3.1 Debugging Nivel Statick\nEn este curso, NUNCA adivinamos. NOSOTROS VALIDAMOS.\n# LOGS DE TELEMETRÍA EN TIEMPO REAL\n1print(f\"DIAG: Carga de Batería: {hub.battery.voltage()}mV\")\n2print(f\"DIAG: Lectura Reflejada: {sensor_color.reflection()}%\")\n\n# CAPTURA DE EXCEPCIONES DE HARDWARE (Resiliencia)\n3try:\n    motor_a.run_target(500, 90)\n4except OSError:\n    # Protocolo de recuperación ante desconexión\n5    print(\"FALLO: Interrupción en el bus de datos del Puerto A.\")\n\n1\n\nEl voltaje es la variable crítica para la consistencia de los motores.\n\n2\n\nValidamos el hardware antes de lanzar la misión principal.\n\n3\n\nEncapsulamos operaciones críticas que dependen de conexiones físicas.\n\n4\n\nCapturamos errores de hardware para evitar que el firmware colapse.\n\n5\n\nUn diagnóstico preciso ahorra minutos valiosos en el campo de batalla (aula).",
+    "crumbs": [
+      "EL MANIFIESTO DEL ARQUITECTO",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>El Manifiesto del Arquitecto de Aprendizaje</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad0/competencias_docente.html#módulo-3-el-método-del-arquitecto-pedagogía-de-ingeniería",
+    "href": "contenido/unidad0/competencias_docente.html#módulo-3-el-método-del-arquitecto-pedagogía-de-ingeniería",
+    "title": "El Manifiesto del Arquitecto de Aprendizaje",
+    "section": "MÓDULO 3: El Método del Arquitecto (Pedagogía de Ingeniería)",
+    "text": "MÓDULO 3: El Método del Arquitecto (Pedagogía de Ingeniería)\nNuestra metodología de aula sigue la Secuencia de Despliegue Real:\n\nDesafío de Impacto: Muestra el robot resolviendo un problema complejo.\nIngeniería Inversa: Pregunta al grupo: “¿Cómo diseñarían la lógica para lograr esto?”\nCodificación Colaborativa: Escribimos el core del sistema en la pizarra.\nDespliegue Experimental (Labs): Los alumnos implementan y rompen el código.\nOptimización: Refinamos el código para buscar la excelencia.",
+    "crumbs": [
+      "EL MANIFIESTO DEL ARQUITECTO",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>El Manifiesto del Arquitecto de Aprendizaje</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad0/competencias_docente.html#checkpoint-tu-sello-de-calidad",
+    "href": "contenido/unidad0/competencias_docente.html#checkpoint-tu-sello-de-calidad",
+    "title": "El Manifiesto del Arquitecto de Aprendizaje",
+    "section": "CHECKPOINT: Tu Sello de Calidad",
+    "text": "CHECKPOINT: Tu Sello de Calidad\nComo Arquitecto Principal, tu meta no es que tus alumnos sepan Python. Tu meta es que sepan pensar como ingenieros. Si ellos pueden diagnosticar y arreglar su propio sistema, has diseñado un aprendizaje de éxito.\n¿Estamos listos para iniciar el despliegue?\n\nDesarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026",
+    "crumbs": [
+      "EL MANIFIESTO DEL ARQUITECTO",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>El Manifiesto del Arquitecto de Aprendizaje</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/1_instalacion_pybricks.html",
+    "href": "contenido/unidad1/1_instalacion_pybricks.html",
+    "title": "Fase 1: Infraestructura y Entorno",
+    "section": "",
+    "text": "El Reactor de Desarrollo: Pybricks\nPara que nuestro Arquitecto de Aprendizaje pueda desplegar código eficiente, necesitamos un sistema operativo robusto. En este laboratorio, utilizamos Pybricks, una implementación optimizada de MicroPython para hardware LEGO.",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fase 1: Infraestructura y Entorno</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/1_instalacion_pybricks.html#instalación-del-firmware",
+    "href": "contenido/unidad1/1_instalacion_pybricks.html#instalación-del-firmware",
+    "title": "Fase 1: Infraestructura y Entorno",
+    "section": "1. Instalación del Firmware",
+    "text": "1. Instalación del Firmware\n\n\n\n\n\n\nTipBest Practice: Conexión Estable\n\n\n\nAsegúrate de utilizar el cable USB original de LEGO para evitar interrupciones en el bus de datos durante la actualización del firmware.\n\n\n\nAccede al Centro de Comando: code.pybricks.com\nConecta tu Hub vía USB.\nSelecciona “Install Pybricks Firmware”.\nSigue los protocolos en pantalla hasta que el reactor (Hub) emita una luz azul.",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fase 1: Infraestructura y Entorno</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/1_instalacion_pybricks.html#tu-primer-despliegue-hello-stark",
+    "href": "contenido/unidad1/1_instalacion_pybricks.html#tu-primer-despliegue-hello-stark",
+    "title": "Fase 1: Infraestructura y Entorno",
+    "section": "2. Tu Primer Despliegue: “Hello Stark”",
+    "text": "2. Tu Primer Despliegue: “Hello Stark”\nEste programa valida que la conexión entre el IDE y el hardware es estable y que el motor de ejecución está operativo.\nfrom pybricks.hubs import PrimeHub # Importar el núcleo del Hub &lt;1&gt;\nfrom pybricks.parameters import Color # Protocolo de colores &lt;2&gt;\nfrom pybricks.tools import wait # Herramienta de gestión de tiempo &lt;3&gt;\n\n# Inicialización del hardware principal\nhub = PrimeHub() # Instanciar el cerebro del robot &lt;4&gt;\n\ndef main():\n    \"\"\"Protocolo de validación de sistemas.\"\"\"\n    hub.light.on(Color.GREEN) # Activar luz de estado verde &lt;5&gt;\n    hub.display.text(\"READY\") # Desplegar telemetría en el HUD &lt;6&gt;\n    hub.speaker.beep() # Ejecutar validación acústica &lt;7&gt;\n    wait(2000) # Mantener el sistema activo 2 segundos &lt;8&gt;\n\nif __name__ == \"__main__\": # Entrada principal del script\n    main()\n\nImportamos la abstracción del hardware principal para controlar el Hub.\nCargamos el set de parámetros para la gestión de colores.\nUtilidad para realizar pausas precisas en la ejecución.\nCreamos el objeto hub que representa físicamente al dispositivo.\nCambiamos el color del LED central para indicar que el sistema está nominal.\nEnviamos un string de texto a la matriz de 5x5.\nEl buzzer interno emite un tono de frecuencia estándar.\nPausa de seguridad antes de finalizar la ejecución del hilo principal.",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fase 1: Infraestructura y Entorno</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/1_instalacion_pybricks.html#asignación-protocolo-de-personalización",
+    "href": "contenido/unidad1/1_instalacion_pybricks.html#asignación-protocolo-de-personalización",
+    "title": "Fase 1: Infraestructura y Entorno",
+    "section": "ASIGNACIÓN: Protocolo de Personalización",
+    "text": "ASIGNACIÓN: Protocolo de Personalización\n\n\nVer Objetivo del Reto\n\nTu misión es modificar el código anterior para que el Hub realice una secuencia de semáforo (Rojo, Amarillo, Verde) antes de mostrar el mensaje “GO”.",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fase 1: Infraestructura y Entorno</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/1_instalacion_pybricks.html#pruebas-de-validación",
+    "href": "contenido/unidad1/1_instalacion_pybricks.html#pruebas-de-validación",
+    "title": "Fase 1: Infraestructura y Entorno",
+    "section": "Pruebas de Validación",
+    "text": "Pruebas de Validación\n\n¿La luz cambia de color en el orden correcto?\n¿El mensaje aparece solo al final?\n¿El código sigue la estructura if __name__ == \"__main__\":?\n\n\n\nDesarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fase 1: Infraestructura y Entorno</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/lab1_hola_mundo.html",
+    "href": "contenido/unidad1/lab1_hola_mundo.html",
+    "title": "Laboratorio 1.1: “Hola Mundo” en Pybricks",
+    "section": "",
+    "text": "Objetivo del Laboratorio\nValidar que el entorno de desarrollo está correctamente configurado y que podemos comunicar instrucciones al hardware físico del Hub LEGO SPIKE.",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Laboratorio 1.1: \"Hola Mundo\" en Pybricks</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/lab1_hola_mundo.html#materiales-requeridos",
+    "href": "contenido/unidad1/lab1_hola_mundo.html#materiales-requeridos",
+    "title": "Laboratorio 1.1: “Hola Mundo” en Pybricks",
+    "section": "Materiales Requeridos",
+    "text": "Materiales Requeridos\n\n\n\nComponente\nEspecificación\n\n\n\n\nHub\nLEGO SPIKE Prime o Essential\n\n\nCable\nUSB original LEGO (no genérico)\n\n\nPC/Laptop\nCon navegador Chrome/Edge\n\n\nConexión\nInternet para code.pybricks.com",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Laboratorio 1.1: \"Hola Mundo\" en Pybricks</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/lab1_hola_mundo.html#procedimiento-paso-a-paso",
+    "href": "contenido/unidad1/lab1_hola_mundo.html#procedimiento-paso-a-paso",
+    "title": "Laboratorio 1.1: “Hola Mundo” en Pybricks",
+    "section": "⚡ Procedimiento Paso a Paso",
+    "text": "⚡ Procedimiento Paso a Paso\n\nPaso 1: Conexión Física (5 minutos)\n# En tu terminal, verifica los dispositivos conectados\n\n# Linux (Ubuntu/Debian)\nls -la /dev/tty* | grep -E \"(USB|ACM)\"\n\n# macOS\nls -la /dev/tty.* | grep usb\n\n# Windows (PowerShell)\nGet-ChildItem -Path COM*\nOutput Esperado:\n# Linux\ncrw-rw---- 1 root root 188, 0 Jan 15 10:30 /dev/ttyUSB0\n\n# macOS\ncrw-rw---- 1 root root 21, 1 Jan 15 10:30 /dev/tty.usbserial-1420\n\n⚠️ Si no ves ningún dispositivo: El cable no es de datos. Usa el cable original LEGO.\n\n\n\n\nPaso 2: Acceso al IDE (2 minutos)\n\nAbre Chrome o Edge (NO Firefox ni Safari)\nNavega a: https://code.pybricks.com/\nConecta el Hub con el cable USB\nPresiona el botón de encendido del Hub (botón central)\n\nDeberías ver en el IDE:\n┌─────────────────────────────────────┐\n│  Pybricks IDE                       │\n│  ┌───────────────────────────────┐ │\n│  │ 🟢 Hub Connected (Prime)      │ │\n│  │ Firmware: 2.0.0               │ │\n│  └───────────────────────────────┘ │\n└─────────────────────────────────────┘\n\n\n\nPaso 3: Tu Primer Programa (10 minutos)\nCopia y pega este código en el editor:\n1from pybricks.hubs import PrimeHub\n2from pybricks.parameters import Color\n3from pybricks.tools import wait\n\n4hub = PrimeHub()\n\ndef hola_stark():\n    \"\"\"Protocolo de validación de sistemas.\"\"\"\n5    hub.light.on(Color.GREEN)\n6    hub.display.text(\"HOLA\")\n7    hub.speaker.beep()\n8    wait(2000)\n9    hub.light.off()\n\nif __name__ == \"__main__\":\n10    hola_stark()\n\n1\n\nImportamos el núcleo del Hub LEGO SPIKE.\n\n2\n\nCargamos el set de parámetros para gestión de colores.\n\n3\n\nHerramienta para pausas precisas en la ejecución.\n\n4\n\nInstanciamos el cerebro del robot.\n\n5\n\nActivamos el LED central en verde - indica sistema nominal.\n\n6\n\nEnviamos texto a la matriz de 5x5 píxeles.\n\n7\n\nEl buzzer emite un tono de confirmación.\n\n8\n\nPausa de seguridad antes de apagar.\n\n9\n\nApagamos el LED - operación completada.\n\n10\n\nPunto de entrada del script.\n\n\n\n\n\nPaso 4: Ejecución (3 minutos)\n\nPresiona el botón “Run” (▶️) en el IDE\nObserva el comportamiento del Hub\n\nOutput Esperado en Consola:\n&gt;&gt;&gt; Running script.py\n&gt;&gt;&gt; HOLA\n&gt;&gt;&gt; 🔊 Beep executed\n&gt;&gt;&gt; Script completed successfully\nComportamiento Físico: - 💡 LED central se ilumina en VERDE - 📺 Matriz muestra la palabra “HOLA” - 🔊 Sonido “beep” audible - ⏸️ 2 segundos después, LED se apaga\n\n\n\nPaso 5: Personalización (5 minutos)\nModifica el código para mostrar tu nombre:\n# Cambia esta línea:\nhub.display.text(\"HOLA\")\n\n# Por tu nombre (máximo 5 letras):\nhub.display.text(\"DIEGO\")  # Ejemplo\nDesafío Extra: Cambia el color a AZUL y el mensaje a “READY”",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Laboratorio 1.1: \"Hola Mundo\" en Pybricks</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/lab1_hola_mundo.html#centro-de-diagnóstico",
+    "href": "contenido/unidad1/lab1_hola_mundo.html#centro-de-diagnóstico",
+    "title": "Laboratorio 1.1: “Hola Mundo” en Pybricks",
+    "section": "🛠️ Centro de Diagnóstico",
+    "text": "🛠️ Centro de Diagnóstico\n\n\n\n\n\n\n\n\n\nError\nSíntoma\nCausa\nSolución\n\n\n\n\n“Hub not found”\nIDE no detecta Hub\nCable incorrecto\nUsar cable LEGO original\n\n\n“Firmware outdated”\nMensaje amarillo en IDE\nPybricks requiere update\nClick “Update Firmware”\n\n\n“Permission denied”\nError en terminal Linux\nSin acceso a tty\nsudo chmod 666 /dev/ttyUSB0\n\n\n“Script timeout”\nLED parpadea rojo\nCódigo en bucle infinito\nPresionar botón STOP en IDE",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Laboratorio 1.1: \"Hola Mundo\" en Pybricks</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/lab1_hola_mundo.html#validación-anti-ai-obligatoria",
+    "href": "contenido/unidad1/lab1_hola_mundo.html#validación-anti-ai-obligatoria",
+    "title": "Laboratorio 1.1: “Hola Mundo” en Pybricks",
+    "section": "🔐 Validación Anti-AI (OBLIGATORIA)",
+    "text": "🔐 Validación Anti-AI (OBLIGATORIA)\nPara aprobar este laboratorio, debes entregar:\n\n📋 Checklist de Entrega:\n\nFoto 1: Tu Hub conectado al PC mostrando el mensaje en la matriz\nFoto 2: Consola del IDE con el output “HOLA” visible\nCódigo modificado: Archivo .py con tu nombre en lugar de “HOLA”\nTimestamp: Foto del resultado tomada HOY (debes poder mostrar la fecha)\n\n\n\n📝 Formato de Envío:\nArchivo 1: lab1_hola_mundo_[TU_NOMBRE].py\nArchivo 2: evidencia_[TU_NOMBRE].zip (contiene fotos)\n\n⚠️ Sin evidencia visual NO se acepta el laboratorio. El código debe ejecutarse en hardware real, no en simulador.",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Laboratorio 1.1: \"Hola Mundo\" en Pybricks</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad1/lab1_hola_mundo.html#checklist-de-completado",
+    "href": "contenido/unidad1/lab1_hola_mundo.html#checklist-de-completado",
+    "title": "Laboratorio 1.1: “Hola Mundo” en Pybricks",
+    "section": "✅ Checklist de Completado",
+    "text": "✅ Checklist de Completado\nAntes de terminar, marca cada item:\n\nEl IDE conecta correctamente con el Hub\nEl mensaje aparece en la matriz 5x5\nEl LED cambia a color verde\nEl sonido “beep” se ejecuta\nPersonalicé el mensaje con mi nombre\nTengo las evidencias fotográficas requeridas\n\n\nDesarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Laboratorio 1.1: \"Hola Mundo\" en Pybricks</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad1.html",
+    "href": "quizzes/quiz_unidad1.html",
+    "title": "Validación de Ingeniería: Fase 1",
+    "section": "",
+    "text": "Protocolo de Evaluación: Infraestructura\nAsegura que tu entorno de desarrollo está correctamente configurado antes de proceder a la Fase 2.\nDesarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 1</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad1.html#protocolo-de-evaluación-infraestructura",
+    "href": "quizzes/quiz_unidad1.html#protocolo-de-evaluación-infraestructura",
+    "title": "Validación de Ingeniería: Fase 1",
+    "section": "",
+    "text": "Protocolo de Simulación\n¿Existe un simulador oficial que reemplace el Hub LEGO SPIKE en el taller?\n\nSí, es gratuito para todos los ingenieros.\nSí, pero requiere créditos Stark.\nNo, en este laboratorio trabajamos con hardware real.\nSolo si usas el mainframe de Windows.\n\n\nEl Hub es el núcleo físico insustituible de nuestro sistema de aprendizaje.\n\n\n\nEficiencia en el Aprendizaje\n¿Cuál es la ruta más eficiente para que un docente aprenda programación desde cero sin hardware?\n\nLEGO SPIKE ($300+)\nESP32 ($15)\nTurtle Graphics ($0 - Planos Algorítmicos)\nEsperar a que el sistema se programe solo.\n\n\nTurtle Graphics permite validar la lógica algorítmica pura sin coste de hardware.\n\n\n\nRequerimientos de Hardware\n¿Qué herramienta técnica NO requiere el Hub físico para sus pruebas iniciales?\n\nESP32 Core\nLEGO SPIKE Hub\nTurtle Graphics\nSG90 Servo Motor\n\n\nTurtle Graphics es nuestra herramienta de prototipado lógico universal.",
+    "crumbs": [
+      "FASE 1: INFRAESTRUCTURA Y ENTORNO",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 1</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/1_display_luces.html",
+    "href": "contenido/unidad2/1_display_luces.html",
+    "title": "Fase 2: Interfaces y Control Visual",
+    "section": "",
+    "text": "El HUD del Arquitecto: Matriz 5x5\nEn ingeniería de sistemas embebidos, el feedback visual es la primera línea de defensa para el diagnóstico. El Hub de SPIKE Prime nos proporciona una matriz de 5x5 píxeles para desplegar telemetría en tiempo real.",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Fase 2: Interfaces y Control Visual</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/1_display_luces.html#protocolo-de-visualización",
+    "href": "contenido/unidad2/1_display_luces.html#protocolo-de-visualización",
+    "title": "Fase 2: Interfaces y Control Visual",
+    "section": "1. Protocolo de Visualización",
+    "text": "1. Protocolo de Visualización\nAprenderemos a controlar cada píxel individualmente para crear iconos personalizados de estado.\nfrom pybricks.hubs import PrimeHub # Abstracción del hardware core\nfrom pybricks.parameters import Icon, Color # Parámetros visuales\nfrom pybricks.tools import wait # Control de flujo temporal\n\n# Inicialización del sistema\nhub = PrimeHub() # Crear instancia del núcleo\n\ndef mostrar_animacion():\n    \"\"\"Ejecuta una secuencia de feedback visual.\"\"\"\n1    hub.display.icon(Icon.HAPPY)\n    wait(1000) # Mantener 1 segundo\n    \n    # Definición manual de la arquitectura de píxeles (0-100 brillo)\n2    matriz_check = [\n        [0, 0, 0, 0, 0],\n        [0, 0, 0, 0, 100], # Píxel activo al 100% de intensidad\n        [0, 0, 0, 100, 0],\n        [100, 0, 100, 0, 0],\n        [0, 100, 0, 0, 0],\n    ]\n3    hub.display.icon(matriz_check)\n4    hub.light.on(Color.BLUE)\n\nif __name__ == \"__main__\":\n    mostrar_animacion() # Iniciar protocolo visual\n\n1\n\nUso de la biblioteca interna de iconos para una comunicación rápida con el usuario.\n\n2\n\nDefinición de una estructura de lista de listas que mapea físicamente a los 25 LEDs.\n\n3\n\nEl método icon acepta tanto constantes como matrices de enteros definidas por el programador.\n\n4\n\nEl indicador luminoso central (light) se usa para estados globales del sistema.",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Fase 2: Interfaces y Control Visual</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/1_display_luces.html#asignación-sistema-de-alerta-temprana",
+    "href": "contenido/unidad2/1_display_luces.html#asignación-sistema-de-alerta-temprana",
+    "title": "Fase 2: Interfaces y Control Visual",
+    "section": "ASIGNACIÓN: Sistema de Alerta Temprana",
+    "text": "ASIGNACIÓN: Sistema de Alerta Temprana\n\n\nVer Objetivo del Reto\n\nCrea un programa que simule un “Cargando…” en la pantalla (una línea que se mueve) y que termine con un icono de corazón cuando el sistema esté “Listo”.",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Fase 2: Interfaces y Control Visual</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/1_display_luces.html#pruebas-de-validación",
+    "href": "contenido/unidad2/1_display_luces.html#pruebas-de-validación",
+    "title": "Fase 2: Interfaces y Control Visual",
+    "section": "Pruebas de Validación",
+    "text": "Pruebas de Validación\n\n¿La animación es fluida (usa wait adecuadamente)?\n¿El icono final es claro?\n¿El código está encapsulado en funciones?\n\n\n\nDesarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Fase 2: Interfaces y Control Visual</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/lab2_animaciones.html",
+    "href": "contenido/unidad2/lab2_animaciones.html",
+    "title": "Laboratorio 2.1: Animaciones en Matriz 5x5",
+    "section": "",
+    "text": "Objetivo del Laboratorio\nDominar el control pixel a pixel de la matriz de 5x5 LED del Hub para crear animaciones personalizadas que comuniquen estados del sistema en tiempo real.",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 2.1: Animaciones en Matriz 5x5</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/lab2_animaciones.html#materiales-requeridos",
+    "href": "contenido/unidad2/lab2_animaciones.html#materiales-requeridos",
+    "title": "Laboratorio 2.1: Animaciones en Matriz 5x5",
+    "section": "Materiales Requeridos",
+    "text": "Materiales Requeridos\n\n\n\nComponente\nEspecificación\n\n\n\n\nHub\nLEGO SPIKE Prime\n\n\nCable\nUSB LEGO\n\n\nPC\nCon Pybricks IDE",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 2.1: Animaciones en Matriz 5x5</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/lab2_animaciones.html#procedimiento-paso-a-paso",
+    "href": "contenido/unidad2/lab2_animaciones.html#procedimiento-paso-a-paso",
+    "title": "Laboratorio 2.1: Animaciones en Matriz 5x5",
+    "section": "⚡ Procedimiento Paso a Paso",
+    "text": "⚡ Procedimiento Paso a Paso\n\nPaso 1: Entendiendo la Matriz (5 minutos)\nLa matriz 5x5 tiene 25 LEDs organizados en coordenadas (x, y):\nCoordenadas de la matriz 5x5:\n┌───┬───┬───┬───┬───┐\n│0,0│1,0│2,0│3,0│4,0│  ← Fila 0 (superior)\n├───┼───┼───┼───┼───┤\n│0,1│1,1│2,1│3,1│4,1│\n├───┼───┼───┼───┼───┤\n│0,2│1,2│2,2│3,2│4,2│  ← Centro (2,2)\n├───┼───┼───┼───┼───┤\n│0,3│1,3│2,3│3,3│4,3│\n├───┼───┼───┼───┼───┤\n│0,4│1,4│2,4│3,4│4,4│  ← Fila 4 (inferior)\n└───┴───┴───┴───┴───┘\nIntensidad: 0 (apagado) a 100 (brillo máximo)\n\n\n\nPaso 2: Tu Primera Animación (15 minutos)\nCopia y ejecuta este código:\n1from pybricks.hubs import PrimeHub\n2from pybricks.parameters import Icon, Color\n3from pybricks.tools import wait\n\n4hub = PrimeHub()\n\ndef animacion_cargando():\n    \"\"\"Secuencia de carga tipo barra de progreso.\"\"\"\n    \n5    frames = [\n6        [\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n            [100, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n        ],\n        [\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n            [100, 100, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n        ],\n        [\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n            [100, 100, 100, 0, 0],\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n        ],\n        [\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n            [100, 100, 100, 100, 0],\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n        ],\n        [\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n            [100, 100, 100, 100, 100],\n            [0, 0, 0, 0, 0],\n            [0, 0, 0, 0, 0],\n        ],\n    ]\n    \n7    for frame in frames:\n8        hub.display.icon(frame)\n9        wait(200)\n    \n10    hub.display.icon(Icon.TARGET)\n11    hub.light.on(Color.GREEN)\n12    wait(1000)\n\nif __name__ == \"__main__\":\n13    animacion_cargando()\n\n1\n\nImportamos el núcleo del Hub SPIKE.\n\n2\n\nCargamos iconos predefinidos y paleta de colores.\n\n3\n\nHerramienta para pausas controladas.\n\n4\n\nInstanciamos el objeto hub.\n\n5\n\nLista de frames - cada frame es una matriz 5x5.\n\n6\n\nCada sublista representa el brillo de cada LED (0-100).\n\n7\n\nIteramos sobre cada frame de la animación.\n\n8\n\nMostramos el frame en la matriz de LEDs.\n\n9\n\n200ms por cuadro = 5 fps (suficiente para el ojo humano).\n\n10\n\nIcono de check - indica éxito.\n\n11\n\nLED verde indica operación exitosa.\n\n12\n\nMantenemos el icono 1 segundo.\n\n13\n\nPunto de entrada del script.\n\n\n\n\n\nPaso 3: Iconos Predefinidos (10 minutos)\nPybricks incluye iconos listos para usar:\nfrom pybricks.parameters import Icon\n\n# Lista de iconos disponibles:\nIcon.HAPPY      # Carita feliz\nIcon.SAD       # Carita triste\nIcon.ARROW_UP  # Flecha arriba\nIcon.ARROW_DOWN # Flecha abajo\nIcon.TARGET    # Diana\nIcon.MIDDLE    # Centro\nIcon.UP        # Arriba\nIcon.DOWN      # Abajo\nEjercicio: Modifica el código anterior para usar Icon.ARROW_UP como icono final.\n\n\n\nPaso 4: Efecto “Latido” (5 minutos)\ndef latido_corazon():\n    \"\"\"Efecto de corazón latiendo.\"\"\"\n    \n    # Corazón completo (brillo 100)\n    corazon = [\n        [0, 100, 0, 100, 0],\n        [100, 100, 100, 100, 100],\n        [100, 100, 100, 100, 100],\n        [0, 100, 100, 100, 0],\n        [0, 0, 100, 0, 0],\n    ]\n    \n    # Corazón apagado (brillo 20)\n    corazon_fade = [\n        [0, 20, 0, 20, 0],\n        [20, 20, 20, 20, 20],\n        [20, 20, 20, 20, 20],\n        [0, 20, 20, 20, 0],\n        [0, 0, 20, 0, 0],\n    ]\n    \n    # Loop de latido\n    for _ in range(5):\n        hub.display.icon(corazon)\n        wait(150)\n        hub.display.icon(corazon_fade)\n        wait(150)\n\nif __name__ == \"__main__\":\n    latido_corazon()",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 2.1: Animaciones en Matriz 5x5</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/lab2_animaciones.html#centro-de-diagnóstico",
+    "href": "contenido/unidad2/lab2_animaciones.html#centro-de-diagnóstico",
+    "title": "Laboratorio 2.1: Animaciones en Matriz 5x5",
+    "section": "🛠️ Centro de Diagnóstico",
+    "text": "🛠️ Centro de Diagnóstico\n\n\n\n\n\n\n\n\n\nError\nSíntoma\nCausa\nSolución\n\n\n\n\n“IndexError”\nMatriz no muestra nada\nLista malformada\nCada fila debe tener 5 elementos\n\n\n“LED no enciende”\nPantalla vacía\nBrillo en 0\nVerificar valores &gt; 0\n\n\n“Animacion lenta”\nParpadeo\nwait muy alto\nReducir a 100-200ms\n\n\n“Memory error”\nIDE se cuelga\nFrames muy grandes\nMáximo 25 LEDs por frame",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 2.1: Animaciones en Matriz 5x5</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/lab2_animaciones.html#código-de-referencia-calculadora-de-frames",
+    "href": "contenido/unidad2/lab2_animaciones.html#código-de-referencia-calculadora-de-frames",
+    "title": "Laboratorio 2.1: Animaciones en Matriz 5x5",
+    "section": "📋 Código de Referencia: Calculadora de Frames",
+    "text": "📋 Código de Referencia: Calculadora de Frames\n# Función helper para crear matrices automáticamente\ndef crear_linea_horizontal(fila, brillo=100):\n    \"\"\"Crea una línea horizontal en la fila especificada.\"\"\"\n    matriz = [[0]*5 for _ in range(5)]\n    for x in range(5):\n        matriz[fila][x] = brillo\n    return matriz\n\ndef crear_linea_vertical(col, brillo=100):\n    \"\"\"Crea una línea vertical en la columna especificada.\"\"\"\n    matriz = [[0]*5 for _ in range(5)]\n    for y in range(5):\n        matriz[y][col] = brillo\n    return matriz\n\n# Uso:\nlinea_central = crear_linea_vertical(2)  # Columna del medio\nhub.display.icon(linea_central)",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 2.1: Animaciones en Matriz 5x5</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/lab2_animaciones.html#validación-anti-ai-obligatoria",
+    "href": "contenido/unidad2/lab2_animaciones.html#validación-anti-ai-obligatoria",
+    "title": "Laboratorio 2.1: Animaciones en Matriz 5x5",
+    "section": "🔐 Validación Anti-AI (OBLIGATORIA)",
+    "text": "🔐 Validación Anti-AI (OBLIGATORIA)\n\n📋 Checklist de Entrega:\n\nVideo: Grabación de 10 segundos mostrando la animación de carga\nFoto: Tu corazón latiendo en el Hub\nCódigo modificado: Archivo con TU animación personalizada\nExplicación oral (2 min): Graba un audio explicando:\n\n¿Cómo determinaste las coordenadas de tu diseño?\n¿Por qué elegiste ese intervalo de tiempo en el wait?\n\n\n\n\n🎤 Guía para Explicación Oral:\n\"Inicié diseñando mi animación pensando en una línea que creciera\nde izquierda a derecha. Usé coordenadas (x,y) donde x es la columna\ne y es la fila. El wait de 200ms me pareció adecuado porque...\"\n\n⚠️ Sin video + explicación oral, el laboratorio NO se acepta.",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 2.1: Animaciones en Matriz 5x5</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad2/lab2_animaciones.html#checklist-de-completado",
+    "href": "contenido/unidad2/lab2_animaciones.html#checklist-de-completado",
+    "title": "Laboratorio 2.1: Animaciones en Matriz 5x5",
+    "section": "✅ Checklist de Completado",
+    "text": "✅ Checklist de Completado\n\nAnimación de carga funciona correctamente\nIcono final aparece después de la animación\nCreé mi propia animación de corazón\nEntiendo cómo calcular coordenadas (x,y)\nTengo el video de evidencia\nGrabé la explicación oral\n\n\nDesarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 2.1: Animaciones en Matriz 5x5</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad2.html",
+    "href": "quizzes/quiz_unidad2.html",
+    "title": "Validación de Ingeniería: Fase 2",
+    "section": "",
+    "text": "Protocolo de Evaluación: Interfaces y HUD\nValida tu dominio sobre la matriz de LEDs y la lógica de programación visual.\nDesarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 2</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad2.html#protocolo-de-evaluación-interfaces-y-hud",
+    "href": "quizzes/quiz_unidad2.html#protocolo-de-evaluación-interfaces-y-hud",
+    "title": "Validación de Ingeniería: Fase 2",
+    "section": "",
+    "text": "Navegación en el Plano\n¿Qué comando envía a la tortuga directo hacia adelante en tus planos de diseño?\n\nrobot.right()\nrobot.forward()\nrobot.up()\nrobot.run()\n\n\nforward() es la instrucción core para el desplazamiento lineal en el plano.\n\n\n\nGeometría de Giro\n¿Cuántos grados hay en un círculo completo para un giro total del robot sobre su eje?\n\n90 (Ángulo recto)\n180 (Media vuelta)\n270 (Tres cuartos)\n360 (Giro completo)\n\n\nEl sistema de navegación utiliza coordenadas polares donde 360° representa una revolución completa.\n\n\n\nEstructuras de Control\n¿Qué comando de control permite repetir un conjunto de instrucciones de forma iterativa (por número de veces)?\n\nwhile\nfor\nif\ndef\n\n\nEl bucle for es ideal para patrones geométricos con un número definido de lados.",
+    "crumbs": [
+      "FASE 2: INTERFACES Y CONTROL VISUAL",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 2</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/1_motores.html",
+    "href": "contenido/unidad3/1_motores.html",
+    "title": "Fase 3: Sistemas de Tracción y Actuación",
+    "section": "",
+    "text": "Cinematica del Robot: El DriveBase\nComo Arquitectos, no solo movemos motores; gestionamos la cinemática de un chasis. El DriveBase es la abstracción que nos permite hablar en milímetros y grados, no en potencia bruta.",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Fase 3: Sistemas de Tracción y Actuación</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/1_motores.html#configuración-de-alta-precisión",
+    "href": "contenido/unidad3/1_motores.html#configuración-de-alta-precisión",
+    "title": "Fase 3: Sistemas de Tracción y Actuación",
+    "section": "1. Configuración de Alta Precisión",
+    "text": "1. Configuración de Alta Precisión\n\n\n\n\n\n\nTipIngeniería Statick: Control por Giroscopio\n\n\n\nPara trayectorias rectas perfectas, DEBEMOS activar el giroscopio interno. Esto compensa mecánicamente cualquier imperfección en el chasis.\n\n\nfrom pybricks.pupdevices import Motor # Control de actuadores\nfrom pybricks.parameters import Port, Direction # Configuración de puertos\n1from pybricks.robotics import DriveBase\nfrom pybricks.tools import wait # Gestión de pausas\n\n# Configuración del hardware de tracción\n# El motor izquierdo requiere rotación invertida para avance síncrono\nmotor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE) \nmotor_der = Motor(Port.B)\n\n# Instanciación del modelo físico del robot\n# wheel_diameter: 56mm, axle_track: 112mm\n2robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)\n\ndef ejecutar_mision():\n    \"\"\"Protocolo de navegación de precisión.\"\"\"\n3    robot.use_gyro(True)\n4    robot.settings(straight_speed=200)\n    \n5    robot.straight(500)\n6    robot.turn(90)\n    robot.stop() # Bloqueo de seguridad de los actuadores\n\nif __name__ == \"__main__\":\n    ejecutar_mision() # Lanzar secuencia de navegación\n\n1\n\nCargamos el motor de física y cinemática para robots diferenciales.\n\n2\n\nDefinimos las dimensiones reales para que el software calcule las rotaciones de motor necesarias.\n\n3\n\nEl sistema utiliza el sensor inercial para detectar desviaciones y corregirlas en milisegundos.\n\n4\n\nEstablecemos parámetros de seguridad para evitar derrapes o pérdida de tracción.\n\n5\n\nMovimiento en línea recta donde el error se minimiza mediante el feedback del giroscopio.\n\n6\n\nGiro exacto basado en la odometría y la telemetría angular del sensor interno.",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Fase 3: Sistemas de Tracción y Actuación</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/1_motores.html#asignación-el-cuadrado-de-ingeniería",
+    "href": "contenido/unidad3/1_motores.html#asignación-el-cuadrado-de-ingeniería",
+    "title": "Fase 3: Sistemas de Tracción y Actuación",
+    "section": "ASIGNACIÓN: El Cuadrado de Ingeniería",
+    "text": "ASIGNACIÓN: El Cuadrado de Ingeniería\n\n\nVer Objetivo del Reto\n\nDiseña un algoritmo iterativo (for) que haga que el robot recorra un cuadrado perfecto de 30cm por lado y regrese a su posición original con un error menor a 1cm.",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Fase 3: Sistemas de Tracción y Actuación</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/1_motores.html#pruebas-de-validación",
+    "href": "contenido/unidad3/1_motores.html#pruebas-de-validación",
+    "title": "Fase 3: Sistemas de Tracción y Actuación",
+    "section": "Pruebas de Validación",
+    "text": "Pruebas de Validación\n\n¿Utilizaste un bucle para evitar repetir código?\n¿Activaste use_gyro(True)?\n¿El robot se detiene completamente al final?\n\n\n\nDesarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Fase 3: Sistemas de Tracción y Actuación</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/lab3_navegacion.html",
+    "href": "contenido/unidad3/lab3_navegacion.html",
+    "title": "Laboratorio 3.1: Navegación con Giroscopio",
+    "section": "",
+    "text": "Objetivo del Laboratorio\nImplementar navegación de precisión utilizando el sensor giroscopio del Hub para lograr trayectorias rectas y giros exactos, indispensable para competencias de robot.",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 3.1: Navegación con Giroscopio</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/lab3_navegacion.html#fundamentos-de-ingeniería",
+    "href": "contenido/unidad3/lab3_navegacion.html#fundamentos-de-ingeniería",
+    "title": "Laboratorio 3.1: Navegación con Giroscopio",
+    "section": "Fundamentos de Ingeniería",
+    "text": "Fundamentos de Ingeniería\n\n¿Por qué necesitamos el giroscopio?\nLos motores LEGO, por sí solos, tienen juego mecánico (backlash). Esto significa que:\nSIN Giroscopio:                    CON Giroscopio:\n┌─────────────────────┐            ┌─────────────────────┐\n│  Motor Izq ████     │            │  Motor Izq ████    │\n│  Motor Der ████     │  ──────►   │  Motor Der ████    │\n│                     │   Error:   │  + Gyro Feedback   │\n│ Trayectoria:        │   15-20%   │  Trayectoria:      │\n│ ════════════►       │            │  ════════════►     │\n│                     │            │  Error: &lt; 2%      │\n└─────────────────────┘            └─────────────────────┘",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 3.1: Navegación con Giroscopio</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/lab3_navegacion.html#materiales-requeridos",
+    "href": "contenido/unidad3/lab3_navegacion.html#materiales-requeridos",
+    "title": "Laboratorio 3.1: Navegación con Giroscopio",
+    "section": "Materiales Requeridos",
+    "text": "Materiales Requeridos\n\n\n\nComponente\nEspecificación\n\n\n\n\nHub\nSPIKE Prime (con IMU integrado)\n\n\nMotores\n2x Motor grande en puertos A y B\n\n\nChasis\nConfiguración estándar de robot\n\n\nCable\nUSB LEGO",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 3.1: Navegación con Giroscopio</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/lab3_navegacion.html#procedimiento-paso-a-paso",
+    "href": "contenido/unidad3/lab3_navegacion.html#procedimiento-paso-a-paso",
+    "title": "Laboratorio 3.1: Navegación con Giroscopio",
+    "section": "⚡ Procedimiento Paso a Paso",
+    "text": "⚡ Procedimiento Paso a Paso\n\nPaso 1: Configuración del DriveBase (10 minutos)\n1from pybricks.pupdevices import Motor\n2from pybricks.parameters import Port, Direction\n3from pybricks.robotics import DriveBase\n4from pybricks.tools import wait\n\n5motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE)\n6motor_der = Motor(Port.B)\n\n7robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)\n\ndef configurar_sistema():\n    \"\"\"Inicialización con compensación giroscópica.\"\"\"\n    \n8    robot.use_gyro(True)\n    \n    robot.settings(\n9        straight_speed=200,\n10        straight_acceleration=300,\n11        turn_speed=180,\n12        turn_acceleration=450\n    )\n    \n    print(\"&gt;&gt;&gt; Sistema configurado con gyro: ON\")\n    print(f\"&gt;&gt;&gt; Speed: {robot.settings.straight_speed} mm/s\")\n\nif __name__ == \"__main__\":\n13    configurar_sistema()\n14    robot.straight(200)\n15    robot.stop()\n\n1\n\nImportamos el control de motores LEGO.\n\n2\n\nConfiguración de puertos y dirección de rotación.\n\n3\n\nCargamos el módulo de cinemática diferencial.\n\n4\n\nHerramienta para pausas controladas.\n\n5\n\nMotor en Puerto A - requiere inversión (ruedas derechas).\n\n6\n\nMotor en Puerto B - configuración estándar.\n\n7\n\nDriveBase: definimos dimensiones físicas del robot.\n\n8\n\nCRÍTICO: Activamos el giroscopio para trayectorias rectas.\n\n9\n\nVelocidad lineal en mm/segundo.\n\n10\n\nAceleración lineal en mm/segundo².\n\n11\n\nVelocidad angular en grados/segundo.\n\n12\n\nAceleración angular en grados/segundo².\n\n13\n\nInicializamos el sistema.\n\n14\n\nMovemos el robot 200mm (20cm).\n\n15\n\nFrenamos el robot - operación de seguridad.\n\n\n\n\n\nPaso 2: Navegación Cuadrada (15 minutos)\nfrom pybricks.pupdevices import Motor\nfrom pybricks.parameters import Port, Direction\nfrom pybricks.robotics import DriveBase\nfrom pybricks.tools import wait\n\nrobot = DriveBase(Motor(Port.A, Direction.COUNTERCLOCKWISE), \n                 Motor(Port.B), wheel_diameter=56, axle_track=112)\n\ndef cuadrado_perfecto(lado_mm=300, repeticiones=1):\n    \"\"\"\n    Navega un cuadrado perfecto usando control giroscópico.\n    \n    Args:\n        lado_mm: Longitud de cada lado en milímetros\n        repeticiones: Cuántas veces repetir el cuadrado\n    \"\"\"\n    robot.use_gyro(True)\n    robot.settings(straight_speed=200)\n    \n    for i in range(repeticiones):\n        print(f\"&gt;&gt;&gt; Iteración {i+1}/{repeticiones}\")\n        \n        # Avanzar lado 1\n        robot.straight(lado_mm)\n        wait(500)\n        \n        # Girar 90 grados\n        robot.turn(90)\n        wait(500)\n        \n        # Avanzar lado 2\n        robot.straight(lado_mm)\n        wait(500)\n        \n        # Girar 90 grados\n        robot.turn(90)\n        wait(500)\n        \n        # Avanzar lado 3\n        robot.straight(lado_mm)\n        wait(500)\n        \n        # Girar 90 grados\n        robot.turn(90)\n        wait(500)\n        \n        # Avanzar lado 4 (regreso a origen)\n        robot.straight(lado_mm)\n        \n        # Girar 90 grados para orientar como al inicio\n        robot.turn(90)\n        \n        # Stop final\n        robot.stop()\n        \n    print(\"&gt;&gt;&gt; Cuadrado completado\")\n\nif __name__ == \"__main__\":\n    cuadrado_perfecto(lado_mm=300, repeticiones=1)\n\n\n\nPaso 3: Optimización con Bucle For (10 minutos)\nEl código anterior tiene repetición innecesaria. Refactoriza:\ndef cuadrado_optimizado(lado_mm=300, repeticiones=1):\n    \"\"\"Versión optimizada con bucle.\"\"\"\n    \n    robot.use_gyro(True)\n    robot.settings(straight_speed=250)  # Más rápido\n    \n    for ciclo in range(repeticiones):\n        for lado in range(4):  # 4 lados = 1 cuadrado\n            robot.straight(lado_mm)\n            robot.turn(90)\n            wait(200)\n        \n        print(f\"&gt;&gt;&gt; Cuadrado {ciclo+1} completado\")\n    \n    robot.stop()\n\n# Ejercicio: modificar para hacer un OCTÁGONO (8 lados)\ndef octagono(lado_mm=150):\n    \"\"\"Navega un octágono regular.\"\"\"\n    robot.use_gyro(True)\n    \n    for lado in range(8):\n        robot.straight(lado_mm)\n        robot.turn(45)  # 360/8 = 45 grados\n    \n    robot.stop()\n\n\n\nPaso 4: Telemetry en Tiempo Real (10 minutos)\ndef navegacion_telemetria():\n    \"\"\"Navegación con diagnóstico en tiempo real.\"\"\"\n    \n    robot.use_gyro(True)\n    robot.settings(straight_speed=150)\n    \n    # ─────────────────────────────────────────────\n    # TELEMETRÍA: Monitoreo en tiempo real\n    # ─────────────────────────────────────────────\n    while True:\n        # Lectura de sensores\n        distancia = robot.distance()\n        angulo = robot.angle()\n        \n        # Mostrar en consola (tu HUD de diagnóstico)\n        print(f\"Dist: {distancia}mm | Ángulo: {angulo}°\")\n        \n        # Condición de parada\n        if distancia &gt;= 500:  # 50cm\n            robot.stop()\n            print(\"&gt;&gt;&gt; Destino alcanzado\")\n            break\n        \n        wait(50)  # Update cada 50ms\n\nif __name__ == \"__main__\":\n    navegacion_telemetria()\nOutput Esperado:\nDist: 0mm | Ángulo: 0°\nDist: 45mm | Ángulo: 0°\nDist: 92mm | Ángulo: 1°\nDist: 138mm | Ángulo: 0°\n...\nDist: 498mm | Ángulo: 1°\n&gt;&gt;&gt; Destino alcanzado",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 3.1: Navegación con Giroscopio</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/lab3_navegacion.html#centro-de-diagnóstico",
+    "href": "contenido/unidad3/lab3_navegacion.html#centro-de-diagnóstico",
+    "title": "Laboratorio 3.1: Navegación con Giroscopio",
+    "section": "🛠️ Centro de Diagnóstico",
+    "text": "🛠️ Centro de Diagnóstico\n\n\n\n\n\n\n\n\n\nError\nSíntoma\nCausa\nSolución\n\n\n\n\n“Drifts”\nRobot se sale de línea\nGiroscopio no inicializado\nVerificar use_gyro(True)\n\n\n“Giro incompleto”\nGira 85° en vez de 90°\nVelocidad muy alta\nReducir turn_speed\n\n\n“Motores no responden”\nRobot no se mueve\nPuertos incorrectos\nCambiar A↔︎B\n\n\n“Zigzag”\nMovimiento ondulante\nruedas desbalanceadas\nVerificar presión de neumáticos\n\n\n“overshoot”\nPasa de la línea\nFreno no configurado\nUsar robot.stop() inmediato",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 3.1: Navegación con Giroscopio</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/lab3_navegacion.html#configuraciones-de-velocidad-por-escenario",
+    "href": "contenido/unidad3/lab3_navegacion.html#configuraciones-de-velocidad-por-escenario",
+    "title": "Laboratorio 3.1: Navegación con Giroscopio",
+    "section": "📋 Configuraciones de Velocidad por Escenario",
+    "text": "📋 Configuraciones de Velocidad por Escenario\n\n\n\nEscenario\nstraight_speed\nturn_speed\nstraight_accel\n\n\n\n\nLaboratorio\n150 mm/s\n90 °/s\n200\n\n\nCompetición velocidad\n400 mm/s\n300 °/s\n600\n\n\nPrecisión\n100 mm/s\n60 °/s\n150\n\n\nSuperficie irregular\n150 mm/s\n90 °/s\n200",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 3.1: Navegación con Giroscopio</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/lab3_navegacion.html#validación-anti-ai-obligatoria",
+    "href": "contenido/unidad3/lab3_navegacion.html#validación-anti-ai-obligatoria",
+    "title": "Laboratorio 3.1: Navegación con Giroscopio",
+    "section": "🔐 Validación Anti-AI (OBLIGATORIA)",
+    "text": "🔐 Validación Anti-AI (OBLIGATORIA)\n\n📋 Checklist de Entrega:\n\nVideo: Robot haciendo un cuadrado de 30cm (4 lados)\nFoto: Consola mostrando telemetría de distancia/ángulo\nArchivo Python: Código con tu nombre en variable piloto\nMapa de recorrido: Dibujo a mano de la trayectoria real del robot\n\n\n\n🎤 Explicación Oral Requerida (3 minutos):\nGraba un video explicando:\n\n¿Por qué use_gyro(True) es obligatorio?\n¿Qué sucede si no usas robot.stop() al final?\n¿Cómo compensarías una superficie resbaladiza?\n\n\n⚠️ Sin video del robot físico + explicación oral, NO se acepta.",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 3.1: Navegación con Giroscopio</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad3/lab3_navegacion.html#checklist-de-completado",
+    "href": "contenido/unidad3/lab3_navegacion.html#checklist-de-completado",
+    "title": "Laboratorio 3.1: Navegación con Giroscopio",
+    "section": "✅ Checklist de Completado",
+    "text": "✅ Checklist de Completado\n\nDriveBase configurado con parámetros correctos\nRobot avanza en línea recta (error &lt; 2cm en 30cm)\nGiros de 90° son exactos\nCuadrado completo funciona\nTelemetría muestra distancia y ángulo\nTengo video físico del robot\nExpliqué los conceptos oralmente\n\n\nDesarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 3.1: Navegación con Giroscopio</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad3.html",
+    "href": "quizzes/quiz_unidad3.html",
+    "title": "Validación de Ingeniería: Fase 3",
+    "section": "",
+    "text": "Protocolo de Evaluación: Sincronización de Tracción\nValida tu dominio sobre la cinemática del robot y el control de precisión.\nDesarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 3</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad3.html#protocolo-de-evaluación-sincronización-de-tracción",
+    "href": "quizzes/quiz_unidad3.html#protocolo-de-evaluación-sincronización-de-tracción",
+    "title": "Validación de Ingeniería: Fase 3",
+    "section": "",
+    "text": "Estabilización por Hardware\n¿Qué tecnología interna del Hub permite que el DriveBase corrija su trayectoria automáticamente?\n\nBluetooth Low Energy.\nGiroscopio (IMU) con use_gyro(True).\nSensor de color en puerto C.\nSensor de contacto.\n\n\nEl giroscopio es esencial para compensar el deslizamiento mecánico de las ruedas.\n\n\n\nArquitectura Cinemática\nEn la configuración de un DriveBase, ¿qué parámetro define la distancia entre los centros de las ruedas?\n\nwheel_diameter\naxle_track\nPID_gain\nturn_rate\n\n\naxle_track es el valor crítico para calcular la rotación exacta del chasis.\n\n\n\nEntorno de Desarrollo\n¿Cuál es la URL oficial del Centro de Comando Pybricks Web para desplegar código?\n\npybricks.com\ncode.pybricks.com\napp.pybricks.com\nlego.pybricks.com\n\n\ncode.pybricks.com es el IDE estándar de la industria para MicroPython en LEGO.",
+    "crumbs": [
+      "FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 3</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/1_sensores.html",
+    "href": "contenido/unidad4/1_sensores.html",
+    "title": "Fase 4: Percepción y Telemetría",
+    "section": "",
+    "text": "Protocolo de Ingeniería: Percepción en Tiempo Real\nEn robótica avanzada, un sistema no puede permitirse ser “ciego” mientras ejecuta una acción. La percepción debe ser una tarea constante y paralela. En esta fase, transformamos la lectura pasiva de sensores en un sistema de Telemetría Activa.",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Fase 4: Percepción y Telemetría</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/1_sensores.html#arquitectura-de-sistemas-concurrentes-asyncio",
+    "href": "contenido/unidad4/1_sensores.html#arquitectura-de-sistemas-concurrentes-asyncio",
+    "title": "Fase 4: Percepción y Telemetría",
+    "section": "1. Arquitectura de Sistemas Concurrentes (Asyncio)",
+    "text": "1. Arquitectura de Sistemas Concurrentes (Asyncio)\n\n\n\n\n\n\nImportantEstándar Statick: Programación No Bloqueante\n\n\n\nHistóricamente, los programas esperaban (wait) a que un sensor terminara su lectura. NOSOTROS UTILIZAMOS ASYNCIO para gestionar la percepción y el movimiento de forma simultánea.\n\n\nfrom pybricks.pupdevices import Motor, UltrasonicSensor # Sensores y Actuadores\nfrom pybricks.parameters import Port, Direction # Mapeo de bus de datos\nfrom pybricks.robotics import DriveBase # Modelo cinemático\n1from pybricks.tools import wait, run_task\n\n# Configuración de Subsistemas\n2motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE)\nmotor_der = Motor(Port.B)\n3sensor_distancia = UltrasonicSensor(Port.D)\n4robot = DriveBase(motor_izq, motor_der, 56, 112)\n\n5async def monitorear_seguridad():\n    \"\"\"Hebra de supervisión constante de colisiones.\"\"\"\n    while True:\n        distancia = sensor_distancia.distance() # Lectura en mm\n        if distancia &lt; 150:\n            # Reportar riesgo al HUD del sistema\n6            print(f\"ALERTA: Colisión inminente a {distancia}mm\")\n7        await wait(50)\n\n8async def mision_principal():\n    \"\"\"Lógica de navegación de alto nivel.\"\"\"\n    print(\"INICIANDO DESPLIEGUE...\")\n9    await robot.straight(500)\n    await robot.turn(90) # Rotación no bloqueante\n    print(\"MISIÓN FINALIZADA.\")\n\nif __name__ == \"__main__\":\n    # El orquestador lanza las corrutinas en paralelo\n10    run_task(mision_principal(), monitorear_seguridad())\n\n1\n\nImportamos las herramientas de gestión de tareas concurrentes (Multitarea).\n\n2\n\nMotor izquierdo con dirección invertida para tracción síncrona.\n\n3\n\nInicializamos el sensor ultrasónico para medir la distancia a obstáculos.\n\n4\n\nConfiguramos el DriveBase con parámetros físicos del robot (ruedas 56mm, eixo 112mm).\n\n5\n\nDefinimos una función asíncrona de monitoreo que se ejecutará en “segundo plano”.\n\n6\n\nLa telemetría se envía a la consola para diagnóstico remoto.\n\n7\n\nRegla de Oro: El await wait es obligatorio en bucles asíncronos para no bloquear la CPU.\n\n8\n\nFunción principal de navegación asíncrona.\n\n9\n\nMovimiento recto de 500mm con await para permitir concurrencia.\n\n10\n\nGiro de 90 grados no bloqueante.",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Fase 4: Percepción y Telemetría</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/1_sensores.html#asignación-el-robot-de-rescate-autónomo",
+    "href": "contenido/unidad4/1_sensores.html#asignación-el-robot-de-rescate-autónomo",
+    "title": "Fase 4: Percepción y Telemetría",
+    "section": "ASIGNACIÓN: El Robot de Rescate Autónomo",
+    "text": "ASIGNACIÓN: El Robot de Rescate Autónomo\n\n\nVer Objetivo del Reto\n\nDiseña un sistema que combine la Fase 3 (Giroscopio) y la Fase 4 (Sensores) para crear un robot que explore un área de forma infinita, pero que si detecta un obstáculo a menos de 10cm, se detenga, emita un pitido de alerta y cambie de rumbo 180°.",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Fase 4: Percepción y Telemetría</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/1_sensores.html#pruebas-de-validación",
+    "href": "contenido/unidad4/1_sensores.html#pruebas-de-validación",
+    "title": "Fase 4: Percepción y Telemetría",
+    "section": "Pruebas de Validación",
+    "text": "Pruebas de Validación\n\n¿El robot mantiene el rumbo recto usando el giroscopio?\n¿La detección de obstáculos es inmediata (sin pausas)?\n¿El código utiliza run_task para orquestar la misión?\n\n\n\nDesarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Fase 4: Percepción y Telemetría</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/lab4_telemetria.html",
+    "href": "contenido/unidad4/lab4_telemetria.html",
+    "title": "Laboratorio 4.1: Telemetría Asíncrona con Sensores",
+    "section": "",
+    "text": "Objetivo del Laboratorio\nImplementar un sistema de percepción que funcione en paralelo con la navegación, utilizando programación asíncrona para detectar obstáculos en tiempo real sin detener el robot.",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Laboratorio 4.1: Telemetría Asíncrona con Sensores</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/lab4_telemetria.html#fundamentos-de-ingeniería",
+    "href": "contenido/unidad4/lab4_telemetria.html#fundamentos-de-ingeniería",
+    "title": "Laboratorio 4.1: Telemetría Asíncrona con Sensores",
+    "section": "Fundamentos de Ingeniería",
+    "text": "Fundamentos de Ingeniería\n\nEl Problema: Sistemas Secuenciales vs Concurrentes\nSECUENCIAL (MALO):                    CONCURRENTE (BUENO):\n┌─────────────────────────────────┐   ┌─────────────────────────────────┐\n│ while True:                      │   │ async def sensar():             │\n│     leer_sensor()  ──►  wait     │   │     while True:                 │\n│     mover_robot()  ──►  wait     │   │         leer_sensor()           │\n│     wait(100)                    │   │         await wait(50)         │\n│                                  │   │                                 │\n│ Resultado:                       │   │ async def mover():             │\n│ Robot CIEGO mientras se mueve   │   │     while True:                │\n│                                  │   │         mover_robot()         │\n│                                  │   │         await wait(50)         │\n│                                  │   │                                 │\n│                                  │   │ Resultado:                     │\n│                                  │   │ Sensado y movimiento en PARALELO│\n└─────────────────────────────────┘   └─────────────────────────────────┘",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Laboratorio 4.1: Telemetría Asíncrona con Sensores</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/lab4_telemetria.html#materiales-requeridos",
+    "href": "contenido/unidad4/lab4_telemetria.html#materiales-requeridos",
+    "title": "Laboratorio 4.1: Telemetría Asíncrona con Sensores",
+    "section": "Materiales Requeridos",
+    "text": "Materiales Requeridos\n\n\n\nComponente\nEspecificación\n\n\n\n\nHub\nSPIKE Prime\n\n\nSensores\nUltrasonicSensor en puerto C o D\n\n\nMotores\n2x Motor grande puertos A y B\n\n\nChasis\nRobot con sensor frontal",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Laboratorio 4.1: Telemetría Asíncrona con Sensores</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/lab4_telemetria.html#procedimiento-paso-a-paso",
+    "href": "contenido/unidad4/lab4_telemetria.html#procedimiento-paso-a-paso",
+    "title": "Laboratorio 4.1: Telemetría Asíncrona con Sensores",
+    "section": "⚡ Procedimiento Paso a Paso",
+    "text": "⚡ Procedimiento Paso a Paso\n\nPaso 1: Configuración del Sensor (10 minutos)\n1from pybricks.pupdevices import Motor, UltrasonicSensor\n2from pybricks.parameters import Port, Direction\n3from pybricks.robotics import DriveBase\n4from pybricks.tools import wait\n\n5motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE)\n6motor_der = Motor(Port.B)\n7sensor_dist = UltrasonicSensor(Port.D)\n\n8robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)\n\ndef prueba_sensor():\n    \"\"\"Validación básica del sensor.\"\"\"\n    \n    while True:\n9        distancia = sensor_dist.distance()\n        \n10        print(f\"Obstáculo a: {distancia}mm\")\n        \n11        if distancia &lt; 100:\n            print(\"⚠️ ¡OBSTÁCULO CERCANO!\")\n        \n12        wait(100)\n\n# if __name__ == \"__main__\":\n#     prueba_sensor()\n\n1\n\nImportamos motor y sensor ultrasónico.\n\n2\n\nConfiguración de puertos y direcciones.\n\n3\n\nMódulo de cinemática robótica.\n\n4\n\nHerramienta de pausas controladas.\n\n5\n\nMotor izquierdo (invertido para avance síncrono).\n\n6\n\nMotor derecho (configuración estándar).\n\n7\n\nSensor ultrasónico en Puerto D.\n\n8\n\nDriveBase con parámetros físicos estándar.\n\n9\n\nLectura de distancia en milímetros.\n\n10\n\nTelemetría en consola para diagnóstico.\n\n11\n\nUmbral de seguridad: 100mm.\n\n12\n\nActualización cada 100ms para no saturar CPU.\n\n\n\n\n\nPaso 2: Programación Asíncrona Básica (15 minutos)\n1from pybricks.pupdevices import Motor, UltrasonicSensor\n2from pybricks.parameters import Port, Direction\n3from pybricks.robotics import DriveBase\n4from pybricks.tools import wait, run_task\n\n5motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE)\n6motor_der = Motor(Port.B)\n7sensor_dist = UltrasonicSensor(Port.D)\n8robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)\n\n9async def monitoreo_seguridad():\n    \"\"\"\n    Task paralelo que vigila obstáculos constantemente.\n    Esta función se ejecuta EN SEGUNDO PLANO.\n    \"\"\"\n    while True:\n10        distancia = sensor_dist.distance()\n        \n11        if distancia &lt; 150:\n            print(f\"🚨 ALERTA: {distancia}mm\")\n12            hub.display.text(\"PARE\")\n        \n13        await wait(50)\n\n14async def navegacion_autonoma():\n    \"\"\"\n    Task principal de navegación.\n    Se ejecuta en PARALELO con monitoreo_seguridad.\n    \"\"\"\n15    robot.use_gyro(True)\n16    robot.settings(straight_speed=200)\n    \n    print(\"🚀 Iniciando navegación autónoma...\")\n    \n17    await robot.straight(1000)\n18    await robot.turn(180)\n19    await robot.straight(1000)\n    \n20    robot.stop()\n    print(\"✅ Misión completada\")\n\nif __name__ == \"__main__\":\n21    run_task(\n        navegacion_autonoma(),\n        monitoreo_seguridad()\n    )\n\n1\n\nImportamos motores y sensor ultrasónico.\n\n2\n\nConfiguración de puertos y direcciones.\n\n3\n\nMódulo de cinemática robótica.\n\n4\n\nHerramientas: pausas y scheduler de tareas.\n\n5\n\nMotor izquierdo con dirección invertida.\n\n6\n\nMotor derecho estándar.\n\n7\n\nSensor ultrasónico en Puerto D.\n\n8\n\nDriveBase con parámetros físicos estándar.\n\n9\n\nFunción async para tarea de monitoreo (se ejecuta en paralelo).\n\n10\n\nLectura de distancia en tiempo real.\n\n11\n\nUmbral de detección: 150mm.\n\n12\n\nMostrar “PARE” en matriz cuando hay obstáculo.\n\n13\n\nREGLA DE ORO: await wait evita bloquear la CPU.\n\n14\n\nFunción async para navegación principal.\n\n15\n\nActivar compensación giroscópica.\n\n16\n\nConfigurar velocidad de desplazamiento.\n\n17\n\nMover forward 1000mm (1 metro).\n\n18\n\nGirar 180 grados.\n\n19\n\nRegresar al punto de origen.\n\n20\n\nFrenar robot - operación de seguridad.\n\n21\n\nORQUESTADOR: Lanza ambas tareas en paralelo.\n\n\n\n\n\nPaso 3: Sistema de Evitación de Colisiones (15 minutos)\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.pupdevices import Motor, UltrasonicSensor\nfrom pybricks.parameters import Port, Direction, Color\nfrom pybricks.robotics import DriveBase\nfrom pybricks.tools import wait, run_task\n\nhub = PrimeHub()\nmotor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE)\nmotor_der = Motor(Port.B)\nsensor_dist = UltrasonicSensor(Port.D)\nrobot = DriveBase(motor_izq, motor_der, 56, 112)\n\n# Bandera global para comunicación entre tasks\nalerta_activa = False\n\nasync def vigilante_colisiones():\n    \"\"\"Detecta obstáculos y establece alerta.\"\"\"\n    global alerta_activa\n    \n    while True:\n        distancia = sensor_dist.distance()\n        \n        if distancia &lt; 150:\n            alerta_activa = True\n            # Feedback visual de emergencia\n            hub.light.on(Color.RED)\n            hub.display.text(\"PARE\")\n        else:\n            alerta_activa = False\n            hub.light.off()\n        \n        await wait(50)\n\nasync def explorer_autonomo():\n    \"\"\"Robot que explora hasta encontrar obstáculo.\"\"\"\n    global alerta_activa\n    \n    robot.use_gyro(True)\n    robot.settings(straight_speed=150)\n    \n    while True:\n        # Si hay alerta, detenerse y girar\n        if alerta_activa:\n            robot.stop()\n            \n            # Feedback de emergencia\n            hub.speaker.beep(frequency=880, duration=200)\n            \n            # Girar 90 grados y continuar\n            await robot.turn(90)\n            await wait(500)\n        else:\n            # Avanzar mientras no haya obstáculos\n            await robot.straight(100)\n        \n        await wait(50)\n\nif __name__ == \"__main__\":\n    run_task(\n        explorer_autonomo(),\n        vigilante_colisiones()\n    )\n\n\n\nPaso 4: Integración con Sensores de Color (10 minutos)\nfrom pybricks.pupdevices import Motor, UltrasonicSensor, ColorSensor\nfrom pybricks.parameters import Port, Direction\nfrom pybricks.robotics import DriveBase\nfrom pybricks.tools import wait, run_task\n\n# Agregar sensor de color\nsensor_color = ColorSensor(Port.C)  # Puerto C\n\nasync def navegacion_bidimensional():\n    \"\"\"\n    Navegación que responde a DOS sensores:\n    - Ultrasonido: evitar obstáculos\n    - Color: seguir líneas\n    \"\"\"\n    \n    # Sensores activos\n    dist = sensor_dist.distance()\n    color = sensor_color.color()\n    reflexion = sensor_color.reflection()\n    \n    # Lógica de decisión\n    if dist &lt; 150:\n        # Obstáculo: girar\n        await robot.turn(90)\n    elif reflexion &lt; 30:\n        # Línea negra detectada: seguirla\n        print(\"📍 Línea detectada\")\n    else:\n        # Espacio libre: avanzar\n        await robot.straight(50)\n    \n    await wait(50)",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Laboratorio 4.1: Telemetría Asíncrona con Sensores</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/lab4_telemetria.html#centro-de-diagnóstico",
+    "href": "contenido/unidad4/lab4_telemetria.html#centro-de-diagnóstico",
+    "title": "Laboratorio 4.1: Telemetría Asíncrona con Sensores",
+    "section": "🛠️ Centro de Diagnóstico",
+    "text": "🛠️ Centro de Diagnóstico\n\n\n\n\n\n\n\n\n\nError\nSíntoma\nCausa\nSolución\n\n\n\n\n“Task no corre”\nSolo ejecuta 1 función\nOlvidaste run_task()\nUsar run_task(a(), b())\n\n\n“Memory error”\nIDE se cuelga\nSin await wait() en loop\nAgregar await wait(50)\n\n\n“Sensor no responde”\nDistancia = 0 siempre\nCable mal conectado\nVerificar puerto\n\n\n“RuntimeError”\nError en async\nFunción no es async\nUsar async def\n\n\n” LED no cambia”\nSin respuesta\nawait wait() faltante\nVerificar loop async",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Laboratorio 4.1: Telemetría Asíncrona con Sensores</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/lab4_telemetria.html#patrón-asíncrono-estándar",
+    "href": "contenido/unidad4/lab4_telemetria.html#patrón-asíncrono-estándar",
+    "title": "Laboratorio 4.1: Telemetría Asíncrona con Sensores",
+    "section": "📋 Patrón Asíncrono Estándar",
+    "text": "📋 Patrón Asíncrono Estándar\n# PLANTILLA ESTÁNDAR PARA CUALQUIER TASK ASÍNCRONO\nasync def mi_task():\n    \"\"\"Descripción del task.\"\"\"\n    while True:\n        # Tu lógica aquí\n        \n        # ⭐ OBLIGATORIO: No bloquear la CPU\n        await wait(50)  # o cualquier valor &gt; 0",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Laboratorio 4.1: Telemetría Asíncrona con Sensores</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/lab4_telemetria.html#validación-anti-ai-obligatoria",
+    "href": "contenido/unidad4/lab4_telemetria.html#validación-anti-ai-obligatoria",
+    "title": "Laboratorio 4.1: Telemetría Asíncrona con Sensores",
+    "section": "🔐 Validación Anti-AI (OBLIGATORIA)",
+    "text": "🔐 Validación Anti-AI (OBLIGATORIA)\n\n📋 Checklist de Entrega:\n\nVideo: Robot evitando obstáculos en tiempo real (mínimo 15 segundos)\nFoto: Consola mostrando “ALERTA” intercalado con navegación\nCódigo: Archivo con función asíncrona personalizada\nDiagrama: Dibujo del flujo de ejecución paralelo\n\n\n\n🎤 Explicación Oral Requerida (3 minutos):\nGraba un video explicando:\n\n¿Por qué necesitamos await wait(50) en el loop asíncrono?\n¿Qué sucede si ejecutas solo la navegación SIN el vigilante?\n¿Cómo modificarías el código para que el robot haga sonar una alarma?\n\n\n⚠️ Sin video físico + explicación oral detallada, NO se acepta.",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Laboratorio 4.1: Telemetría Asíncrona con Sensores</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad4/lab4_telemetria.html#checklist-de-completado",
+    "href": "contenido/unidad4/lab4_telemetria.html#checklist-de-completado",
+    "title": "Laboratorio 4.1: Telemetría Asíncrona con Sensores",
+    "section": "✅ Checklist de Completado",
+    "text": "✅ Checklist de Completado\n\nSensor ultrasónico configurado y funcionando\nProgramación asíncrona con 2 tasks\nawait wait() presente en todos los loops\nSistema de evitación de colisiones funciona\nFeedback visual/sonido en detección de obstáculos\nVideo del robot físico evadiendo obstáculos\nPuedo explicar el concepto de async/await\n\n\nDesarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Laboratorio 4.1: Telemetría Asíncrona con Sensores</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad4.html",
+    "href": "quizzes/quiz_unidad4.html",
+    "title": "Validación de Ingeniería: Fase 4",
+    "section": "",
+    "text": "Protocolo de Evaluación: Telemetría y Concurrencia\nValida tu capacidad para diseñar sistemas reactivos y asíncronos.\nDesarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 4</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad4.html#protocolo-de-evaluación-telemetría-y-concurrencia",
+    "href": "quizzes/quiz_unidad4.html#protocolo-de-evaluación-telemetría-y-concurrencia",
+    "title": "Validación de Ingeniería: Fase 4",
+    "section": "",
+    "text": "Programación No Bloqueante\n¿Qué método de Pybricks permite ejecutar múltiples tareas (como leer sensores y mover motores) en paralelo?\n\nwhile True simple.\nMultitarea asíncrona con run_task() y await.\nInterrupciones por hardware.\nConexión serie manual.\n\n\nasyncio es el estándar para gestionar sistemas de tiempo real sin bloqueos de CPU.\n\n\n\nTelemetría Sónica\n¿Qué unidad de medida entrega el sensor ultrasónico (UltrasonicSensor) por defecto en Pybricks?\n\nCentímetros (cm).\nMilímetros (mm).\nPulgadas (in).\nPorcentaje (%).\n\n\nLa precisión milimétrica es vital para algoritmos de evasión de obstáculos de alta fidelidad.\n\n\n\nEntorno de Depuración\n¿Cuál es la herramienta principal para visualizar telemetría y mensajes de estado en la consola en tiempo real?\n\nbreakpoint()\nprint()\ndebug()\nlog_telemetry()\n\n\nEl uso estratégico de print() es la base del diagnóstico de campo en sistemas embebidos.",
+    "crumbs": [
+      "FASE 4: PERCEPCIÓN Y TELEMETRÍA",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 4</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad5/1_proyecto_final.html",
+    "href": "contenido/unidad5/1_proyecto_final.html",
+    "title": "Fase 5: Despliegue Final (Proyecto)",
+    "section": "",
+    "text": "El Protocolo Final: Arquitectura de Exploración\nHas llegado a la fase de Maestría. Como Arquitecto Principal, tu misión es diseñar un sistema robótico integrado que demuestre autonomía, precisión y telemetría avanzada. Ya no estamos escribiendo scripts; estamos desplegando un Firmware de Misión.",
+    "crumbs": [
+      "FASE 5: DESPLIEGUE FINAL (PROYECTO)",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Fase 5: Despliegue Final (Proyecto)</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad5/1_proyecto_final.html#el-desafío-protocolo-search-report",
+    "href": "contenido/unidad5/1_proyecto_final.html#el-desafío-protocolo-search-report",
+    "title": "Fase 5: Despliegue Final (Proyecto)",
+    "section": "1. El Desafío: Protocolo “Search & Report”",
+    "text": "1. El Desafío: Protocolo “Search & Report”\nEl robot debe ejecutar una patrulla autónoma en un área rectangular, detectando obstáculos y reportando el estado del entorno mediante el HUD y la telemetría sonora.\n\nRequisitos de Ingeniería\n\nCore de Navegación: Uso de DriveBase con use_gyro(True).\nConcurrencia: Una tarea de movimiento y una tarea de supervisión de sensores.\nModularidad: El código debe estar organizado en funciones claras.\nResiliencia: Manejo de errores para evitar bloqueos del sistema.",
+    "crumbs": [
+      "FASE 5: DESPLIEGUE FINAL (PROYECTO)",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Fase 5: Despliegue Final (Proyecto)</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad5/1_proyecto_final.html#plantilla-de-arquitectura-maestra",
+    "href": "contenido/unidad5/1_proyecto_final.html#plantilla-de-arquitectura-maestra",
+    "title": "Fase 5: Despliegue Final (Proyecto)",
+    "section": "2. Plantilla de Arquitectura Maestra",
+    "text": "2. Plantilla de Arquitectura Maestra\nUtiliza esta estructura como base para tu despliegue. Observa cómo integramos todo lo aprendido en las fases 1 a 4.\nfrom pybricks.hubs import PrimeHub # Cerebro del sistema\nfrom pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor # Actuadores y Sensores\nfrom pybricks.parameters import Port, Color, Icon, Direction # Configuración técnica\nfrom pybricks.robotics import DriveBase # Lógica cinemática\nfrom pybricks.tools import wait, run_task # Orquestador de tareas\n\n# --- CONFIGURACIÓN DE SUBSISTEMAS --- #\nhub = PrimeHub()\n# Inicializar base de tracción con dimensiones exactas\nrobot = DriveBase(Motor(Port.A, Direction.COUNTERCLOCKWISE), Motor(Port.B), 56, 112)\nsensor_dist = UltrasonicSensor(Port.D)\nsensor_col = ColorSensor(Port.C)\n\n1async def supervision_telemetria():\n    \"\"\"Monitoreo constante de variables críticas del entorno.\"\"\"\n    while True:\n        dist = sensor_dist.distance() # Medir proximidad en mm\n        if dist &lt; 100:\n            # Protocolo de emergencia ante obstáculo detectado\n2            hub.light.on(Color.RED)\n            hub.display.icon(Icon.STOP) # Alerta visual en el HUD\n        else:\n            hub.light.on(Color.GREEN) # Estado nominal\n        await wait(50) # Liberar CPU para otros procesos\n\n3async def protocolo_mision():\n    \"\"\"Orquestador del flujo principal de navegación autónoma.\"\"\"\n    robot.use_gyro(True) # Activar sensor inercial para rumbo fijo\n    print(\"LOG: Iniciando Patrulla de Ingeniería...\")\n    \n    # Ciclo de patrulla rectangular (4 lados)\n    for i in range(4):\n        hub.display.number(i + 1) # Reportar progreso en HUD\n4        await robot.straight(400)\n        await robot.turn(90) # Rotación asíncrona de 90 grados\n    \n    print(\"LOG: Misión Finalizada con Éxito.\")\n    hub.display.text(\"DONE\") # Feedback final\n\nif __name__ == \"__main__\":\n    try:\n        # Iniciar el ecosistema completo de procesos\n5        run_task(protocolo_mision(), supervision_telemetria())\n    except Exception as e:\n        # Captura de fallos para diagnóstico de campo\n6        print(f\"FALLO CRÍTICO EN EL SISTEMA: {e}\")\n\n1\n\nDefinición de la tarea de “Background” que garantiza la seguridad del hardware.\n\n2\n\nAcciones directas sobre los indicadores de estado ante eventos de telemetría.\n\n3\n\nFunción principal que dicta el comportamiento inteligente del robot.\n\n4\n\nUso de comandos asíncronos para permitir que la supervisión nunca se detenga.\n\n5\n\nEl núcleo de Pybricks gestiona el cambio de contexto entre tareas automáticamente.\n\n6\n\nCaptura robusta de excepciones para evitar el reinicio forzado del hardware.",
+    "crumbs": [
+      "FASE 5: DESPLIEGUE FINAL (PROYECTO)",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Fase 5: Despliegue Final (Proyecto)</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad5/1_proyecto_final.html#criterios-de-certificación-validación",
+    "href": "contenido/unidad5/1_proyecto_final.html#criterios-de-certificación-validación",
+    "title": "Fase 5: Despliegue Final (Proyecto)",
+    "section": "CRITERIOS DE CERTIFICACIÓN (Validación)",
+    "text": "CRITERIOS DE CERTIFICACIÓN (Validación)\nPara obtener la Maestría del Arquitecto, tu despliegue debe cumplir:\n\nPrecisión: El robot debe regresar a menos de 2cm de su punto de inicio.\nReactividad: La luz roja debe encenderse instantáneamente al detectar un obstáculo, sin detener el giro.\nLimpieza: El código no debe tener variables globales innecesarias y debe usar nombres descriptivos.\nDocumentación: Cada función debe tener un comentario (docstring) explicando su propósito técnico.",
+    "crumbs": [
+      "FASE 5: DESPLIEGUE FINAL (PROYECTO)",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Fase 5: Despliegue Final (Proyecto)</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad5/1_proyecto_final.html#validación-anti-ai-proyecto-final-obligatoria",
+    "href": "contenido/unidad5/1_proyecto_final.html#validación-anti-ai-proyecto-final-obligatoria",
+    "title": "Fase 5: Despliegue Final (Proyecto)",
+    "section": "🔐 Validación Anti-AI: Proyecto Final (OBLIGATORIA)",
+    "text": "🔐 Validación Anti-AI: Proyecto Final (OBLIGATORIA)\n\n📋 Requisitos de Entrega:\nPara aprobar el proyecto final, DEBES entregar:\n\nVideo de 2-3 minutos: Demostrando el robot ejecutando tu proyecto en un área rectangular\nCódigo fuente: Archivo .py con tu nombre en variable piloto\nDiagrama de arquitectura: Dibujo a mano de cómo funcionan los subsistemas juntos\nFoto de consola: Mostrando la telemetría de patrulla\n\n\n\n🎤 Explicación Oral Requerida (5 minutos):\nGraba un video explicando:\n\nIntegración de fases: ¿Cómo usaste las 4 fases del curso en tu proyecto?\nDesafíos técnicos: ¿Qué problemas encontraste y cómo los resolviste?\nDecisiones de diseño: ¿Por qué organizaste el código así?\nMejoras: ¿Qué harías diferente si lo reheyeras?\n\n\n\n📝 Guía de Presentación:\n\"Para mi proyecto integrador, diseñé un sistema que combina:\n1. Fase 1: Entorno Pybricks - inicialización del Hub\n2. Fase 2: Feedback visual - LEDs y matriz mostrando estado\n3. Fase 3: Navegación con use_gyro(True) para trayectorias precisas\n4. Fase 4: Telemetría asíncrona para detección de obstáculos\n\nEl mayor desafío fue lograr que el robot detectara obstáculos\nmientras se movía sin detenerse. La solución fue usar run_task()\npara ejecutar navegación y supervisión en paralelo.\n\nSi lo reheyra, optimizaría la velocidad de respuesta del sensor.\"\n\n⚠️ SIN video físico del robot + explicación oral detallada, el proyecto NO se acepta.\n\n\n\n\n\n\n\nWarningAdvertencia Anti-AI\n\n\n\nEste proyecto requiere evidencia física real. No se acepta: - Código sin ejecutar - Videos generados por IA - Código copiado de internet sin modificaciones - Entregas sin video de demostración\n\n\n\n\n\n\n\n\n\nNoteMensaje del Arquitecto Jefe\n\n\n\nFelicidades, Docente. Has completado el Framework de Ingeniería Educativa. Ahora tienes las herramientas para diseñar el futuro en tu aula. El reactor está en tus manos.\n\n\n\nDesarrollado bajo los estándares de Excelencia Statick - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 5: DESPLIEGUE FINAL (PROYECTO)",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Fase 5: Despliegue Final (Proyecto)</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad5.html",
+    "href": "quizzes/quiz_unidad5.html",
+    "title": "Validación de Ingeniería: Fase 5",
+    "section": "",
+    "text": "Protocolo de Evaluación: Proyecto Integrador\nDemuestra tu capacidad para integrar todos los conceptos aprendidos en un sistema robótico autónomo funcional.",
+    "crumbs": [
+      "FASE 5: DESPLIEGUE FINAL (PROYECTO)",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 5</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad5.html#protocolo-de-evaluación-proyecto-integrador",
+    "href": "quizzes/quiz_unidad5.html#protocolo-de-evaluación-proyecto-integrador",
+    "title": "Validación de Ingeniería: Fase 5",
+    "section": "",
+    "text": "Integración de Sistemas\n¿Qué componente es EL CENTRO DE CONTROL que orchestra todas las funciones del robot en Pybricks?\n\nMotor()\nPrimeHub()\nDriveBase()\nUltrasonicSensor()\n\n\nEl Hub es el cerebro central que gestiona LEDs, botones, speaker, IMU y comunicación.\n\n\n\nCinemática y Giroscopio\nPara lograr que un robot recorra una línea recta perfecta, ¿qué configuración es OBLIGATORIA?\n\nUsar dos motores idénticos.\nActivar use_gyro(True) en DriveBase.\nAumentar la velocidad al máximo.\nUsar sensores de color.\n\n\nSin el giroscopio, el robot drifteará 15-20% de error en trayectoria.\n\n\n\nProgramación Asíncrona\nEn un sistema de navegación autónoma con detección de obstáculos, ¿cuál es el propósito de await wait(50) dentro de un loop async?\n\nHacer el código más lento.\nEvitar bloquear la CPU permitiendo que otras tareas se ejecuten.\nDar tiempo al sensor para medir.\nCrear una pausa dramática.\n\n\nEl await wait() permite que el scheduler de tareas cambie a otras corrutinas.\n\n\n\nMatriz de LEDs\nSi deseas mostrar una animación personalizada en la matriz 5x5, ¿cómo se representa cada píxel?\n\nComo un color RGB.\nComo un valor de brillo (0-100) en una matriz 5x5.\nComo una coordenada (x,y) individual.\nComo un icono predefinido.\n\n\nCada LED se controla mediante una matriz de enteros de 0 (apagado) a 100 (máximo brillo).\n\n\n\nArquitectura de Código\nSegún el estándar Statick, ¿cuál es el enfoque correcto para escribir código en sistemas embebidos?\n\nEscribir todo en un solo archivo sin funciones.\nModularizar con funciones reutilizables (DRY: Don’t Repeat Yourself).\nCopiar y pegar código de internet.\nUsar solo variables globales.\n\n\nLas funciones bien definidas permiten diagnóstico, testing y reutilización.\n\n\n\nDiseño de Sistemas Embebidos\nAntes de escribir código para un robot, ¿cuál es el primer paso en la metodología Statick?\n\nEscribir código inmediatamente.\nDefinir la arquitectura del sistema y los requisitos.\nComprar el hardware más caro.\nCopiar código de ejemplo.\n\n\n“No estamos aquí para enseñar sintaxis; estamos aquí para diseñar sistemas.”\n\n\n\nResolución de Problemas\nTu robot no responde a los comandos. Según el troubleshooting, ¿cuál es el PRIMER paso para diagnosticar?\n\nCambiar el cable USB.\nVerificar conexión en IDE y voltaje de batería.\nReformatear el Hub.\nComprar otro robot.\n\n\nEl diagnóstico clínico siempre comienza por verificar las conexiones y energía.\n\n\n\nFeedback Visual\n¿Cuál es la mejor manera de comunicar el estado del sistema al usuario durante la ejecución?\n\nNo mostrar nada, el robot debe trabajar en silencio.\nUsar LEDs, matriz de display y speaker para feedback continuo.\nSolo usar la consola serial.\nEsperar a que termine para mostrar resultados.\n\n\nEn sistemas embebidos, el feedback visual/sonoro es la única interfaz con el usuario.",
+    "crumbs": [
+      "FASE 5: DESPLIEGUE FINAL (PROYECTO)",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 5</span>"
+    ]
+  },
+  {
+    "objectID": "quizzes/quiz_unidad5.html#validación-anti-ai-proyecto-final-obligatoria",
+    "href": "quizzes/quiz_unidad5.html#validación-anti-ai-proyecto-final-obligatoria",
+    "title": "Validación de Ingeniería: Fase 5",
+    "section": "🔐 Validación Anti-AI: Proyecto Final (OBLIGATORIA)",
+    "text": "🔐 Validación Anti-AI: Proyecto Final (OBLIGATORIA)\n\n📋 Requisitos de Entrega:\nPara aprobar el proyecto final, DEBES entregar:\n\nVideo de 2-3 minutos: Demostrando el robot ejecutando tu proyecto\nCódigo fuente: Archivo .py con tu nombre como variable piloto\nDiagrama de arquitectura: Dibujo a mano de cómo funcionan los subsistemas\nExplicación oral (5 minutos): Graba un video explicando:\n\n¿Cómo integraste las 4 fases del curso?\n¿Qué desafíos enfrentaste y cómo los resolviste?\n¿Qué harías diferente si lo reheyeras?\n\n\n\n\n🎤 Guía de Presentación Oral:\n\"Para mi proyecto integrador, diseñé un sistema que combina:\n1. Fase 1: Entorno Pybricks configurado\n2. Fase 2: Feedback visual con matriz 5x5\n3. Fase 3: Navegación con giroscopio para trayectorias precisas\n4. Fase 4: Telemetría asíncrona para detección de obstáculos\n\nEl mayor desafío fue lograr que el robot detectara obstáculos\nmientras se movía sin detenerse. La solución fue usar run_task()\npara ejecutar ambas tareas en paralelo...\"\n\n⚠️ SIN video físico + explicación oral, el proyecto NO se acepta.\n\n\nDesarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026",
+    "crumbs": [
+      "FASE 5: DESPLIEGUE FINAL (PROYECTO)",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Validación de Ingeniería: Fase 5</span>"
+    ]
+  }
+]
