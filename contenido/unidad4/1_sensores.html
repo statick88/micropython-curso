@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Despliegue de sistemas de aprendizaje con MicroPython y LEGO SPIKE Prime.">
+<meta name="description" content="Curso de MicroPython para docentes de Pedagogía en Informática.">
 
-<title>Fase 4: Percepción y Telemetría – MicroPython: Ingeniería de Aprendizaje</title>
+<title>Unidad 4: ¿Cómo sabe el robot que hay algo adelante? – MicroPython para el Aula</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../contenido/unidad4/lab4_telemetria.html" rel="next">
+<link href="../../contenido/unidad4/2_sensores_adicionales.html" rel="next">
 <link href="../../quizzes/quiz_unidad3.html" rel="prev">
 <link href="../../favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">FASE 4: PERCEPCIÓN Y TELEMETRÍA</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html"><span class="chapter-title">Fase 4: Percepción y Telemetría</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html"><span class="chapter-title">Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,19 +144,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <img src="../../images/robot-espi32-cartoon.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">MicroPython: Ingeniería de Aprendizaje</a> 
+      <a href="../../">MicroPython para el Aula</a> 
         <div class="sidebar-tools-main tools-wide">
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_ingenieria.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_aula.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_ingenieria.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_aula.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -198,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Maestría del Arquitecto de Aprendizaje</span></a>
+ <span class="menu-text">🚀 MicroPython para el Aula</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -211,10 +211,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../../license.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/sistema_logros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Logros 🏆</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">EL MANIFIESTO DEL ARQUITECTO</span></a>
+ <span class="menu-text">🌟 FUNDAMENTOS</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -222,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">El Manifiesto del Arquitecto de Aprendizaje</span></a>
+  <a href="../../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos: Antes de Comenzar</span></a>
   </div>
 </li>
       </ul>
@@ -230,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 1: INFRAESTRUCTURA Y ENTORNO</span></a>
+ <span class="menu-text">🔌 UNIDAD 1: CONECTAR Y PROGRAMAR</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -238,17 +243,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 1: Infraestructura y Entorno</span></a>
+  <a href="../../contenido/unidad1/guia_hub_desde_cero.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Guía Completa: El Hub LEGO — Desde Cero</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1.1: “Hola Mundo” en Pybricks</span></a>
+  <a href="../../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 1: Tu Primer Programa</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 1</span></a>
+  <a href="../../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad1/lab1b_ejercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1B: Ejercicios de Refuerzo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 1: Conectar y Programar</span></a>
   </div>
 </li>
       </ul>
@@ -256,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 2: INTERFACES Y CONTROL VISUAL</span></a>
+ <span class="menu-text">💡 UNIDAD 2: PANTALLA Y LUCES</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -264,17 +279,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad2/1_display_luces.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Interfaces y Control Visual</span></a>
+  <a href="../../contenido/unidad2/1_display_luces.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 2: ¿Qué puede mostrar el robot?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad2/lab2_animaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2.1: Animaciones en Matriz 5x5</span></a>
+  <a href="../../contenido/unidad2/lab2_animaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2: Haciendo que las imágenes se muevan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 2</span></a>
+  <a href="../../contenido/unidad2/lab2b_animaciones_avanzadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2B: Diseño de Animaciones Avanzadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 2: Pantalla y Luces</span></a>
   </div>
 </li>
       </ul>
@@ -282,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES</span></a>
+ <span class="menu-text">🤖 UNIDAD 3: MOVIMIENTO</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -290,17 +310,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad3/1_motores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 3: Sistemas de Tracción y Actuación</span></a>
+  <a href="../../contenido/unidad3/1_motores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 3: ¿Cómo hace el robot para moverse?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad3/lab3_navegacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3.1: Navegación con Giroscopio</span></a>
+  <a href="../../contenido/unidad3/2_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Control Avanzado de Motores: PID, Calibración y Más</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 3</span></a>
+  <a href="../../contenido/unidad3/lab3_navegacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3: El robot que dibuja un cuadrado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad3/lab3b_movimiento_avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3B: Ejercicios de Movimiento Avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 3: Movimiento</span></a>
   </div>
 </li>
       </ul>
@@ -308,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">FASE 4: PERCEPCIÓN Y TELEMETRÍA</span></a>
+ <span class="menu-text">📡 UNIDAD 4: SENSORES</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -316,17 +346,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/1_sensores.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Fase 4: Percepción y Telemetría</span></a>
+  <a href="../../contenido/unidad4/1_sensores.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/lab4_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4.1: Telemetría Asíncrona con Sensores</span></a>
+  <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 4</span></a>
+  <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad4/lab4_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4: Un robot que explora solo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 4: Sensores</span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 5: DESPLIEGUE FINAL (PROYECTO)</span></a>
+ <span class="menu-text">🏆 UNIDAD 5: PROYECTO FINAL</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -342,12 +382,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 5: Despliegue Final (Proyecto)</span></a>
+  <a href="../../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 5: Ahora vas a crear tu propio robot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 5</span></a>
+  <a href="../../quizzes/quiz_unidad5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 5: Proyecto Final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">📚 APÉNDICES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Alternativas y Recursos Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_thonny_debugger.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_simuladores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">🎯 EVALUACIONES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Motores Avanzados y PID</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Sensores Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Telemetría y Monitoreo de Batería</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">📐 DIAGRAMAS TÉCNICOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_hoja_ruta.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🗺️ Hoja de Ruta Visual del Curso</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Diagrama: LEGO Technic Large Hub (45601)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_porque_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🤖 ¿Por qué usar un Hub?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/auditoria_diagramas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">📋 Auditoría de Diagramas del Curso</span></a>
   </div>
 </li>
       </ul>
@@ -362,19 +485,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#protocolo-de-ingeniería-percepción-en-tiempo-real" id="toc-protocolo-de-ingeniería-percepción-en-tiempo-real" class="nav-link active" data-scroll-target="#protocolo-de-ingeniería-percepción-en-tiempo-real">Protocolo de Ingeniería: Percepción en Tiempo Real</a></li>
-  <li><a href="#arquitectura-de-sistemas-concurrentes-asyncio" id="toc-arquitectura-de-sistemas-concurrentes-asyncio" class="nav-link" data-scroll-target="#arquitectura-de-sistemas-concurrentes-asyncio">1. Arquitectura de Sistemas Concurrentes (Asyncio)</a></li>
-  <li><a href="#asignación-el-robot-de-rescate-autónomo" id="toc-asignación-el-robot-de-rescate-autónomo" class="nav-link" data-scroll-target="#asignación-el-robot-de-rescate-autónomo">ASIGNACIÓN: El Robot de Rescate Autónomo</a></li>
-  <li><a href="#pruebas-de-validación" id="toc-pruebas-de-validación" class="nav-link" data-scroll-target="#pruebas-de-validación">Pruebas de Validación</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link active" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#los-sensores-como-los-ojos-del-robot" id="toc-los-sensores-como-los-ojos-del-robot" class="nav-link" data-scroll-target="#los-sensores-como-los-ojos-del-robot">Los sensores: como los ojos del robot</a></li>
+  <li><a href="#el-sensor-que-mide-distancia" id="toc-el-sensor-que-mide-distancia" class="nav-link" data-scroll-target="#el-sensor-que-mide-distancia">El sensor que mide distancia</a></li>
+  <li><a href="#pero-cómo-hace-el-robot-dos-cosas-a-la-vez" id="toc-pero-cómo-hace-el-robot-dos-cosas-a-la-vez" class="nav-link" data-scroll-target="#pero-cómo-hace-el-robot-dos-cosas-a-la-vez">Pero… ¿cómo hace el robot dos cosas a la vez?</a></li>
+  <li><a href="#qué-pasa-cuando-detecta-algo" id="toc-qué-pasa-cuando-detecta-algo" class="nav-link" data-scroll-target="#qué-pasa-cuando-detecta-algo">Qué pasa cuando detecta algo</a></li>
+  <li><a href="#hacer-que-el-robot-explore-solo" id="toc-hacer-que-el-robot-explore-solo" class="nav-link" data-scroll-target="#hacer-que-el-robot-explore-solo">Hacer que el robot explore solo</a></li>
+  <li><a href="#lo-que-aprendiste" id="toc-lo-que-aprendiste" class="nav-link" data-scroll-target="#lo-que-aprendiste">📋 Lo que aprendiste</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">FASE 4: PERCEPCIÓN Y TELEMETRÍA</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html"><span class="chapter-title">Fase 4: Percepción y Telemetría</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html"><span class="chapter-title">Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="unidad4-sensores" class="quarto-section-identifier"><span class="chapter-title">Fase 4: Percepción y Telemetría</span></span></h1>
+<h1 class="title"><span id="unidad4-sensores" class="quarto-section-identifier"><span class="chapter-title">Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span></span></h1>
 </div>
 
 
@@ -394,123 +521,165 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/sensor-ultrasonico-cartoon.png" class="img-fluid figure-img" style="width:30.0%"></p>
-<figcaption>Sistemas de Percepción</figcaption>
+<p><img src="images/sensor-ojos.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<figcaption>Sensor ultrasónico</figcaption>
 </figure>
 </div>
+<p><strong>⏱️ Tiempo estimada:</strong> 50 minutos | <strong>📊 Nivel:</strong> Intermedio-Avanzado</p>
 </div>
-<section id="protocolo-de-ingeniería-percepción-en-tiempo-real" class="level2">
-<h2 class="anchored" data-anchor-id="protocolo-de-ingeniería-percepción-en-tiempo-real">Protocolo de Ingeniería: Percepción en Tiempo Real</h2>
-<p>En robótica avanzada, un sistema no puede permitirse ser “ciego” mientras ejecuta una acción. La percepción debe ser una tarea constante y paralela. En esta fase, transformamos la lectura pasiva de sensores en un sistema de <strong>Telemetría Activa</strong>.</p>
+<hr>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>¿Alguna vez has estado en un pasillo oscuro y vas caminando despacito con las manos adelante? Lo haces porque quieres saber si hay algo antes de chocar.</p>
+<p>Eso mismo necesita el robot—una forma de “sentir” si hay algo adelante. Y lo tiene: sensores que le permiten detectar objetos [1][2].</p>
 <hr>
 </section>
-<section id="arquitectura-de-sistemas-concurrentes-asyncio" class="level2">
-<h2 class="anchored" data-anchor-id="arquitectura-de-sistemas-concurrentes-asyncio">1. Arquitectura de Sistemas Concurrentes (Asyncio)</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Estándar Statick: Programación No Bloqueante
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Históricamente, los programas esperaban (<code>wait</code>) a que un sensor terminara su lectura. <strong>NOSOTROS UTILIZAMOS ASYNCIO</strong> para gestionar la percepción y el movimiento de forma simultánea.</p>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> Motor, UltrasonicSensor <span class="co"># Sensores y Actuadores</span></span>
-<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port, Direction <span class="co"># Mapeo de bus de datos</span></span>
-<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.robotics <span class="im">import</span> DriveBase <span class="co"># Modelo cinemático</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-4" class="code-annotation-target"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait, run_task</span>
-<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuración de Subsistemas</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-7" class="code-annotation-target"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a>motor_izq <span class="op">=</span> Motor(Port.A, Direction.COUNTERCLOCKWISE)</span>
-<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a>motor_der <span class="op">=</span> Motor(Port.B)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-9" class="code-annotation-target"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a>sensor_distancia <span class="op">=</span> UltrasonicSensor(Port.D)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> DriveBase(motor_izq, motor_der, <span class="dv">56</span>, <span class="dv">112</span>)</span>
-<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-12" class="code-annotation-target"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> monitorear_seguridad():</span>
-<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Hebra de supervisión constante de colisiones."""</span></span>
-<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a>        distancia <span class="op">=</span> sensor_distancia.distance() <span class="co"># Lectura en mm</span></span>
-<span id="annotated-cell-1-16"><a href="#annotated-cell-1-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">150</span>:</span>
-<span id="annotated-cell-1-17"><a href="#annotated-cell-1-17" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Reportar riesgo al HUD del sistema</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-18" class="code-annotation-target"><a href="#annotated-cell-1-18" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"ALERTA: Colisión inminente a </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss">mm"</span>)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-1-19" class="code-annotation-target"><a href="#annotated-cell-1-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">await</span> wait(<span class="dv">50</span>)</span>
-<span id="annotated-cell-1-20"><a href="#annotated-cell-1-20" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-1-21" class="code-annotation-target"><a href="#annotated-cell-1-21" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> mision_principal():</span>
-<span id="annotated-cell-1-22"><a href="#annotated-cell-1-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Lógica de navegación de alto nivel."""</span></span>
-<span id="annotated-cell-1-23"><a href="#annotated-cell-1-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"INICIANDO DESPLIEGUE..."</span>)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-1-24" class="code-annotation-target"><a href="#annotated-cell-1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> robot.straight(<span class="dv">500</span>)</span>
-<span id="annotated-cell-1-25"><a href="#annotated-cell-1-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">await</span> robot.turn(<span class="dv">90</span>) <span class="co"># Rotación no bloqueante</span></span>
-<span id="annotated-cell-1-26"><a href="#annotated-cell-1-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"MISIÓN FINALIZADA."</span>)</span>
-<span id="annotated-cell-1-27"><a href="#annotated-cell-1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-28"><a href="#annotated-cell-1-28" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="annotated-cell-1-29"><a href="#annotated-cell-1-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># El orquestador lanza las corrutinas en paralelo</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-1-30" class="code-annotation-target"><a href="#annotated-cell-1-30" aria-hidden="true" tabindex="-1"></a>    run_task(mision_principal(), monitorear_seguridad())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="4" data-code-annotation="1">Importamos las herramientas de gestión de tareas concurrentes (Multitarea).</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="2">Motor izquierdo con dirección invertida para tracción síncrona.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="9" data-code-annotation="3">Inicializamos el sensor ultrasónico para medir la distancia a obstáculos.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="4">Configuramos el DriveBase con parámetros físicos del robot (ruedas 56mm, eixo 112mm).</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="12" data-code-annotation="5">Definimos una función asíncrona de monitoreo que se ejecutará en “segundo plano”.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="18" data-code-annotation="6">La telemetría se envía a la consola para diagnóstico remoto.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="19" data-code-annotation="7"><strong>Regla de Oro:</strong> El <code>await wait</code> es obligatorio en bucles asíncronos para no bloquear la CPU.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="8">8</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="21" data-code-annotation="8">Función principal de navegación asíncrona.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="9">9</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="24" data-code-annotation="9">Movimiento recto de 500mm con await para permitir concurrencia.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="10">10</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="30" data-code-annotation="10">Giro de 90 grados no bloqueante.</span>
-</dd>
-</dl>
+<section id="los-sensores-como-los-ojos-del-robot" class="level2">
+<h2 class="anchored" data-anchor-id="los-sensores-como-los-ojos-del-robot">Los sensores: como los ojos del robot</h2>
+<p><strong>Situación:</strong> Estás manejando un carro. Mientras conduces, también estás observando—mirando los otros autos, las señales, los peatones. Si ves algo, reaccinas.</p>
+<p>El robot hace lo mismo. Tiene algo que le permite “ver” mientras se mueve. No son ojos exactamente, pero funcionan similar—le dicen qué hay alrededor [2].</p>
+<pre><code>┌─────────────────────────────────────┐
+│           ROBOT                      │
+│                                       │
+│    ○○○  ← Este es el "ojo"           │
+│                                       │
+│    Si hay algo cerca, el sensor      │
+│    le dice al robot: "¡Alto, hay     │
+│    algo!"                            │
+└─────────────────────────────────────┘</code></pre>
 <hr>
 </section>
-<section id="asignación-el-robot-de-rescate-autónomo" class="level2">
-<h2 class="anchored" data-anchor-id="asignación-el-robot-de-rescate-autónomo">ASIGNACIÓN: El Robot de Rescate Autónomo</h2>
-<details>
-<summary>
-<b>Ver Objetivo del Reto</b>
-</summary>
-<p>Diseña un sistema que combine la <strong>Fase 3 (Giroscopio)</strong> y la <strong>Fase 4 (Sensores)</strong> para crear un robot que explore un área de forma infinita, pero que si detecta un obstáculo a menos de 10cm, se detenga, emita un pitido de alerta y cambie de rumbo 180°.</p>
-</details></section>
-<section id="pruebas-de-validación" class="level2">
-<h2 class="anchored" data-anchor-id="pruebas-de-validación">Pruebas de Validación</h2>
+<section id="el-sensor-que-mide-distancia" class="level2">
+<h2 class="anchored" data-anchor-id="el-sensor-que-mide-distancia">El sensor que mide distancia</h2>
+<p><strong>Situación:</strong> ¿Alguna vez has gritado en un canyon o en un lugar vacío? Escuchas el eco. Si el eco vuelve rápido, hay algo cerca. Si tarda mucho, hay algo lejos.</p>
+<p>El robot tiene algo que funciona similar—envía un sonido (muy agudo, que no podemos escuchar) y espera el “eco”. Si vuelve rápido, hay algo cerca. Si vuelve lento, hay algo lejos [1][2].</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Primero, traer el sensor</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> UltrasonicSensor</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># El sensor se conecta al puerto D</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> UltrasonicSensor(Port.D)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora podemos preguntarle: ¿qué tan lejos está?</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>distancia <span class="op">=</span> sensor.distance()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Hay algo a </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss"> milímetros"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Practica esto en Thonny:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> UltrasonicSensor</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> UltrasonicSensor(Port.D)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Medir la distancia varias veces</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor.distance()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Medición </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss"> mm"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="pero-cómo-hace-el-robot-dos-cosas-a-la-vez" class="level2">
+<h2 class="anchored" data-anchor-id="pero-cómo-hace-el-robot-dos-cosas-a-la-vez">Pero… ¿cómo hace el robot dos cosas a la vez?</h2>
+<p><strong>Situación:</strong> Estás cocinando—mientras revuelves la olla, también estás viendo el reloj para no quemarte. Estás haciendo dos cosas al mismo tiempo.</p>
+<p>El robot también puede hacer esto: moverse Y observar al mismo tiempo. No es que sea mágico—simplemente alterna muy rápido entre una cosa y otra, tan rápido que parece que hace todo junto [3].</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En el robot, esto se escribe diferente</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># No te preocupes por los detalles ahora—solo observa el patrón</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Una "tarea" que hace algo</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> conducir():</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># El robot avanza</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        robot.drive(<span class="dv">100</span>, <span class="dv">0</span>)  <span class="co"># velocidad 100, sin girar</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">50</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Otra "tarea" que observa</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> observar():</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># El robot mide la distancia</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        distancia <span class="op">=</span> sensor.distance()</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">150</span>:  <span class="co"># Si hay algo a menos de 15cm</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"¡Hay algo cerca!"</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">50</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutar ambas al mismo tiempo</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>run_task(conducir(), observar())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Nota:</strong> No necesitas entender todo ahora. Solo recuerda que el robot puede hacer varias cosas “a la vez”—avanzar Y observar al mismo tiempo.</p>
+<hr>
+</section>
+<section id="qué-pasa-cuando-detecta-algo" class="level2">
+<h2 class="anchored" data-anchor-id="qué-pasa-cuando-detecta-algo">Qué pasa cuando detecta algo</h2>
+<p><strong>Situación:</strong> Estás caminando y de pronto ves un obstáculo—¿qué haces? Te detienes, Quizás haces otro camino.</p>
+<p>El robot puede hacer lo mismo [2]:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si hay algo a menos de 15 centímetros</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">150</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    robot.stop()          <span class="co"># Detenerse</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    hub.light.on(<span class="dv">0</span>)      <span class="co"># Luz roja = cuidado</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    robot.turn(<span class="dv">180</span>)      <span class="co"># Girar y buscar otro camino</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    hub.light.on(<span class="dv">5</span>)      <span class="co"># Luz verde = seguir</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Es como:</strong> 1. Ver el obstáculo → detectar con el sensor 2. “¡Alto!” → stop() 3. Encender luz de alerta → light.on(0) (rojo) 4. Buscar otro camino → turn(180) 5. Seguir adelante → volver a conducir</p>
+<hr>
+</section>
+<section id="hacer-que-el-robot-explore-solo" class="level2">
+<h2 class="anchored" data-anchor-id="hacer-que-el-robot-explore-solo">Hacer que el robot explore solo</h2>
+<p><strong>Situación:</strong> Has visto esos robots de limpieza que van por la casa solos. Van avanzandoy si chocan con algo, giran y siguen.</p>
+<p>Vamos a hacer algo similar [2]:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> Motor, UltrasonicSensor</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.robotics <span class="im">import</span> DriveBase</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait, run_task</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurar</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>motor_izq <span class="op">=</span> Motor(Port.A)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>motor_der <span class="op">=</span> Motor(Port.B)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> UltrasonicSensor(Port.D)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> DriveBase(motor_izq, motor_der, <span class="dv">56</span>, <span class="dv">112</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Tarea 1: seguir adelante siempre</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> conducir():</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        robot.drive(<span class="dv">100</span>, <span class="dv">0</span>)  <span class="co"># velocidad 100</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">50</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Tarea 2: observar y reaccionar</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> observar():</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        distancia <span class="op">=</span> sensor.distance()</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">150</span>:  <span class="co"># hay algo a menos de 15cm</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>            robot.stop()</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>            hub.light.on(<span class="dv">0</span>)    <span class="co"># rojo = cuidado</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>            wait(<span class="dv">200</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>            robot.turn(<span class="dv">180</span>)    <span class="co"># girar 180°</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>            hub.light.on(<span class="dv">5</span>)    <span class="co"># verde = seguir</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>            wait(<span class="dv">500</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">50</span>)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutar ambas</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>run_task(conducir(), observar())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Qué hace este código?</strong> - El robot avanza todo el tiempo - Mientras avanza, el sensor mide la distancia - Si detecta algo a menos de 15cm → se detiene, enciende luz roja, gira 180°, enciende luz verde, y sigue</p>
+<hr>
+</section>
+<section id="lo-que-aprendiste" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-aprendiste">📋 Lo que aprendiste</h2>
+<p>Antes de pasar al laboratorio, marca lo que entendiste:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">¿El robot mantiene el rumbo recto usando el giroscopio?</label></li>
-<li><label><input type="checkbox">¿La detección de obstáculos es inmediata (sin pausas)?</label></li>
-<li><label><input type="checkbox">¿El código utiliza <code>run_task</code> para orquestar la misión?</label></li>
+<li><label><input type="checkbox">El robot tiene sensores que detectan objetos</label></li>
+<li><label><input type="checkbox">El sensor ultrasónico usa “eco” para medir distancia</label></li>
+<li><label><input type="checkbox">El robot puede hacer dos cosas a la vez (moverse Y observar)</label></li>
+<li><label><input type="checkbox">Puedo programar reacciones cuando detecta algo</label></li>
 </ul>
-
 <hr>
-<p><em>Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026</em></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>[1] LEGO Education. (2023). <em>LEGO Education SPIKE Prime - Ultrasonic Sensor</em>. LEGO. Disponible: https://lego.com</p>
+<p>[2] Pybricks Team. (2023). <em>Pybricks Documentation - Sensors Module</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html</p>
+<p>[3] D. George. (2013). <em>MicroPython Documentation - asyncio</em>. MicroPython. Disponible: https://docs.micropython.org</p>
+<p>[4] Pybricks Team. (2023). <em>Pybricks Documentation - Robotics Module</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html</p>
+<p>[5] A. Annamaa. (2018). <em>Thonny: Python IDE for beginners</em>. GitHub. Disponible: https://github.com/thonny</p>
+<hr>
+<p><em>Ahora vas al laboratorio donde crearás un robot explorador.</em></p>
 
 
 </section>
@@ -918,13 +1087,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../quizzes/quiz_unidad3.html" class="pagination-link" aria-label="Validación de Ingeniería: Fase 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Validación de Ingeniería: Fase 3</span></span>
+      <a href="../../quizzes/quiz_unidad3.html" class="pagination-link" aria-label="🎮 Quiz Unidad 3: Movimiento">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">🎮 Quiz Unidad 3: Movimiento</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../contenido/unidad4/lab4_telemetria.html" class="pagination-link" aria-label="Laboratorio 4.1: Telemetría Asíncrona con Sensores">
-        <span class="nav-page-text"><span class="chapter-title">Laboratorio 4.1: Telemetría Asíncrona con Sensores</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="pagination-link" aria-label="Sensores Adicionales: Infrared, Color y Fuerza">
+        <span class="nav-page-text"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -935,7 +1104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>© Diego Saavedra</p>
 </div>   
     <div class="nav-footer-center">
-<p>Arquitectura del Conocimiento - Abacom</p>
+<p>Educación y Tecnología - Abacom</p>
 </div>
     <div class="nav-footer-right">
 <p>Built with <a href="https://quarto.org/">Quarto</a></p>

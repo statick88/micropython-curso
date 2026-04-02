@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Despliegue de sistemas de aprendizaje con MicroPython y LEGO SPIKE Prime.">
+<meta name="description" content="Curso de MicroPython para docentes de Pedagogía en Informática.">
 
-<title>Laboratorio 1.1: “Hola Mundo” en Pybricks – MicroPython: Ingeniería de Aprendizaje</title>
+<title>Laboratorio 1: ¡Hola, Robot! – MicroPython para el Aula</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../quizzes/quiz_unidad1.html" rel="next">
+<link href="../../contenido/unidad1/lab1b_ejercicios.html" rel="next">
 <link href="../../contenido/unidad1/1_instalacion_pybricks.html" rel="prev">
 <link href="../../favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad1/1_instalacion_pybricks.html">FASE 1: INFRAESTRUCTURA Y ENTORNO</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad1/lab1_hola_mundo.html"><span class="chapter-title">Laboratorio 1.1: “Hola Mundo” en Pybricks</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad1/guia_hub_desde_cero.html">🔌 UNIDAD 1: CONECTAR Y PROGRAMAR</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad1/lab1_hola_mundo.html"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,19 +144,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <img src="../../images/robot-espi32-cartoon.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">MicroPython: Ingeniería de Aprendizaje</a> 
+      <a href="../../">MicroPython para el Aula</a> 
         <div class="sidebar-tools-main tools-wide">
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_ingenieria.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_aula.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_ingenieria.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_aula.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -198,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Maestría del Arquitecto de Aprendizaje</span></a>
+ <span class="menu-text">🚀 MicroPython para el Aula</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -211,10 +211,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../../license.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/sistema_logros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Logros 🏆</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">EL MANIFIESTO DEL ARQUITECTO</span></a>
+ <span class="menu-text">🌟 FUNDAMENTOS</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -222,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">El Manifiesto del Arquitecto de Aprendizaje</span></a>
+  <a href="../../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos: Antes de Comenzar</span></a>
   </div>
 </li>
       </ul>
@@ -230,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">FASE 1: INFRAESTRUCTURA Y ENTORNO</span></a>
+ <span class="menu-text">🔌 UNIDAD 1: CONECTAR Y PROGRAMAR</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -238,17 +243,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 1: Infraestructura y Entorno</span></a>
+  <a href="../../contenido/unidad1/guia_hub_desde_cero.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Guía Completa: El Hub LEGO — Desde Cero</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Laboratorio 1.1: “Hola Mundo” en Pybricks</span></a>
+  <a href="../../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 1: Tu Primer Programa</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 1</span></a>
+  <a href="../../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad1/lab1b_ejercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1B: Ejercicios de Refuerzo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 1: Conectar y Programar</span></a>
   </div>
 </li>
       </ul>
@@ -256,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 2: INTERFACES Y CONTROL VISUAL</span></a>
+ <span class="menu-text">💡 UNIDAD 2: PANTALLA Y LUCES</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -264,17 +279,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad2/1_display_luces.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Interfaces y Control Visual</span></a>
+  <a href="../../contenido/unidad2/1_display_luces.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 2: ¿Qué puede mostrar el robot?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad2/lab2_animaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2.1: Animaciones en Matriz 5x5</span></a>
+  <a href="../../contenido/unidad2/lab2_animaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2: Haciendo que las imágenes se muevan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 2</span></a>
+  <a href="../../contenido/unidad2/lab2b_animaciones_avanzadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2B: Diseño de Animaciones Avanzadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 2: Pantalla y Luces</span></a>
   </div>
 </li>
       </ul>
@@ -282,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES</span></a>
+ <span class="menu-text">🤖 UNIDAD 3: MOVIMIENTO</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -290,17 +310,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad3/1_motores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 3: Sistemas de Tracción y Actuación</span></a>
+  <a href="../../contenido/unidad3/1_motores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 3: ¿Cómo hace el robot para moverse?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad3/lab3_navegacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3.1: Navegación con Giroscopio</span></a>
+  <a href="../../contenido/unidad3/2_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Control Avanzado de Motores: PID, Calibración y Más</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 3</span></a>
+  <a href="../../contenido/unidad3/lab3_navegacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3: El robot que dibuja un cuadrado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad3/lab3b_movimiento_avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3B: Ejercicios de Movimiento Avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 3: Movimiento</span></a>
   </div>
 </li>
       </ul>
@@ -308,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 4: PERCEPCIÓN Y TELEMETRÍA</span></a>
+ <span class="menu-text">📡 UNIDAD 4: SENSORES</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -316,17 +346,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/1_sensores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 4: Percepción y Telemetría</span></a>
+  <a href="../../contenido/unidad4/1_sensores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/lab4_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4.1: Telemetría Asíncrona con Sensores</span></a>
+  <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 4</span></a>
+  <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad4/lab4_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4: Un robot que explora solo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 4: Sensores</span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 5: DESPLIEGUE FINAL (PROYECTO)</span></a>
+ <span class="menu-text">🏆 UNIDAD 5: PROYECTO FINAL</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -342,12 +382,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 5: Despliegue Final (Proyecto)</span></a>
+  <a href="../../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 5: Ahora vas a crear tu propio robot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 5</span></a>
+  <a href="../../quizzes/quiz_unidad5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 5: Proyecto Final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">📚 APÉNDICES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Alternativas y Recursos Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_thonny_debugger.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_simuladores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">🎯 EVALUACIONES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Motores Avanzados y PID</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Sensores Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Telemetría y Monitoreo de Batería</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">📐 DIAGRAMAS TÉCNICOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_hoja_ruta.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🗺️ Hoja de Ruta Visual del Curso</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Diagrama: LEGO Technic Large Hub (45601)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_porque_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🤖 ¿Por qué usar un Hub?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/auditoria_diagramas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">📋 Auditoría de Diagramas del Curso</span></a>
   </div>
 </li>
       </ul>
@@ -362,32 +485,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#objetivo-del-laboratorio" id="toc-objetivo-del-laboratorio" class="nav-link active" data-scroll-target="#objetivo-del-laboratorio">Objetivo del Laboratorio</a></li>
-  <li><a href="#materiales-requeridos" id="toc-materiales-requeridos" class="nav-link" data-scroll-target="#materiales-requeridos">Materiales Requeridos</a></li>
-  <li><a href="#procedimiento-paso-a-paso" id="toc-procedimiento-paso-a-paso" class="nav-link" data-scroll-target="#procedimiento-paso-a-paso">⚡ Procedimiento Paso a Paso</a>
-  <ul class="collapse">
-  <li><a href="#paso-1-conexión-física-5-minutos" id="toc-paso-1-conexión-física-5-minutos" class="nav-link" data-scroll-target="#paso-1-conexión-física-5-minutos">Paso 1: Conexión Física (5 minutos)</a></li>
-  <li><a href="#paso-2-acceso-al-ide-2-minutos" id="toc-paso-2-acceso-al-ide-2-minutos" class="nav-link" data-scroll-target="#paso-2-acceso-al-ide-2-minutos">Paso 2: Acceso al IDE (2 minutos)</a></li>
-  <li><a href="#paso-3-tu-primer-programa-10-minutos" id="toc-paso-3-tu-primer-programa-10-minutos" class="nav-link" data-scroll-target="#paso-3-tu-primer-programa-10-minutos">Paso 3: Tu Primer Programa (10 minutos)</a></li>
-  <li><a href="#paso-4-ejecución-3-minutos" id="toc-paso-4-ejecución-3-minutos" class="nav-link" data-scroll-target="#paso-4-ejecución-3-minutos">Paso 4: Ejecución (3 minutos)</a></li>
-  <li><a href="#paso-5-personalización-5-minutos" id="toc-paso-5-personalización-5-minutos" class="nav-link" data-scroll-target="#paso-5-personalización-5-minutos">Paso 5: Personalización (5 minutos)</a></li>
-  </ul></li>
-  <li><a href="#centro-de-diagnóstico" id="toc-centro-de-diagnóstico" class="nav-link" data-scroll-target="#centro-de-diagnóstico">🛠️ Centro de Diagnóstico</a></li>
-  <li><a href="#validación-anti-ai-obligatoria" id="toc-validación-anti-ai-obligatoria" class="nav-link" data-scroll-target="#validación-anti-ai-obligatoria">🔐 Validación Anti-AI (OBLIGATORIA)</a>
-  <ul class="collapse">
-  <li><a href="#checklist-de-entrega" id="toc-checklist-de-entrega" class="nav-link" data-scroll-target="#checklist-de-entrega">📋 Checklist de Entrega:</a></li>
-  <li><a href="#formato-de-envío" id="toc-formato-de-envío" class="nav-link" data-scroll-target="#formato-de-envío">📝 Formato de Envío:</a></li>
-  </ul></li>
-  <li><a href="#checklist-de-completado" id="toc-checklist-de-completado" class="nav-link" data-scroll-target="#checklist-de-completado">✅ Checklist de Completado</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link active" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#materiales-que-necesitas" id="toc-materiales-que-necesitas" class="nav-link" data-scroll-target="#materiales-que-necesitas">Materiales que necesitas</a></li>
+  <li><a href="#paso-1-abrir-thonny" id="toc-paso-1-abrir-thonny" class="nav-link" data-scroll-target="#paso-1-abrir-thonny">Paso 1: Abrir Thonny</a></li>
+  <li><a href="#paso-2-escribir-tu-primer-mensaje" id="toc-paso-2-escribir-tu-primer-mensaje" class="nav-link" data-scroll-target="#paso-2-escribir-tu-primer-mensaje">Paso 2: Escribir tu primer mensaje</a></li>
+  <li><a href="#paso-3-probar-en-la-computadora-antes-de-enviar-al-robot" id="toc-paso-3-probar-en-la-computadora-antes-de-enviar-al-robot" class="nav-link" data-scroll-target="#paso-3-probar-en-la-computadora-antes-de-enviar-al-robot">Paso 3: Probar en la computadora (antes de enviar al robot)</a></li>
+  <li><a href="#paso-4-enviar-el-código-al-robot" id="toc-paso-4-enviar-el-código-al-robot" class="nav-link" data-scroll-target="#paso-4-enviar-el-código-al-robot">Paso 4: Enviar el código al robot</a></li>
+  <li><a href="#paso-5-ahora-prueba-con-tu-nombre" id="toc-paso-5-ahora-prueba-con-tu-nombre" class="nav-link" data-scroll-target="#paso-5-ahora-prueba-con-tu-nombre">Paso 5: Ahora prueba con tu nombre</a></li>
+  <li><a href="#si-algo-no-funciona" id="toc-si-algo-no-funciona" class="nav-link" data-scroll-target="#si-algo-no-funciona">🔧 Si algo no funciona</a></li>
+  <li><a href="#lo-que-lograste-hacer" id="toc-lo-que-lograste-hacer" class="nav-link" data-scroll-target="#lo-que-lograste-hacer">📋 Lo que lograste hacer</a></li>
+  <li><a href="#para-seguir-explorando" id="toc-para-seguir-explorando" class="nav-link" data-scroll-target="#para-seguir-explorando">💡 Para seguir explorando</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad1/1_instalacion_pybricks.html">FASE 1: INFRAESTRUCTURA Y ENTORNO</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad1/lab1_hola_mundo.html"><span class="chapter-title">Laboratorio 1.1: “Hola Mundo” en Pybricks</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad1/guia_hub_desde_cero.html">🔌 UNIDAD 1: CONECTAR Y PROGRAMAR</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad1/lab1_hola_mundo.html"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="lab1-hola-mundo" class="quarto-section-identifier"><span class="chapter-title">Laboratorio 1.1: “Hola Mundo” en Pybricks</span></span></h1>
+<h1 class="title"><span id="lab1-hola-mundo" class="quarto-section-identifier"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></span></h1>
 </div>
 
 
@@ -407,261 +524,231 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/esp32-cartoon.png" class="img-fluid figure-img" style="width:25.0%"></p>
-<figcaption>Lab 1.1</figcaption>
+<p><img src="images/robot-espi32-cartoon.png" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>Lab 1</figcaption>
 </figure>
 </div>
-<p><strong>⚡ Nivel:</strong> Principiante | <strong>⏱️ Tiempo:</strong> 25 minutos</p>
+<p><strong>⏱️ Tiempo estimado:</strong> 30 minutos | <strong>📊 Nivel:</strong> Principiante</p>
 </div>
 <hr>
-<section id="objetivo-del-laboratorio" class="level2">
-<h2 class="anchored" data-anchor-id="objetivo-del-laboratorio">Objetivo del Laboratorio</h2>
-<p>Validar que el entorno de desarrollo está correctamente configurado y que podemos comunicar instrucciones al hardware físico del Hub LEGO SPIKE.</p>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>Seguro has visto que cuando enciendes un máquina expendedora o una caja registradora, aparecen mensajes en su pantalla. ¿Te has preguntado cómo llegan ahí esos mensajes?</p>
+<p>Hoy vas a hacer algo similar: escribir un mensaje y enviarlo al robot para que lo muestre.</p>
 <hr>
 </section>
-<section id="materiales-requeridos" class="level2">
-<h2 class="anchored" data-anchor-id="materiales-requeridos">Materiales Requeridos</h2>
+<section id="materiales-que-necesitas" class="level2">
+<h2 class="anchored" data-anchor-id="materiales-que-necesitas">Materiales que necesitas</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Componente</th>
-<th>Especificación</th>
+<th>Material</th>
+<th>Para qué</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Hub</strong></td>
-<td>LEGO SPIKE Prime o Essential</td>
+<td><strong>Hub LEGO Technic</strong> (45601)</td>
+<td>El cerebro del robot</td>
 </tr>
 <tr class="even">
-<td><strong>Cable</strong></td>
-<td>USB original LEGO (no genérico)</td>
+<td><strong>Cable USB</strong></td>
+<td>Para conectar el Hub a la computadora</td>
 </tr>
 <tr class="odd">
-<td><strong>PC/Laptop</strong></td>
-<td>Con navegador Chrome/Edge</td>
+<td><strong>Computadora</strong></td>
+<td>Con Thonny instalado</td>
 </tr>
 <tr class="even">
-<td><strong>Conexión</strong></td>
-<td>Internet para code.pybricks.com</td>
+<td><strong>Thonny</strong></td>
+<td>El programa para escribir instrucciones [1]</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-<section id="procedimiento-paso-a-paso" class="level2">
-<h2 class="anchored" data-anchor-id="procedimiento-paso-a-paso">⚡ Procedimiento Paso a Paso</h2>
-<section id="paso-1-conexión-física-5-minutos" class="level3">
-<h3 class="anchored" data-anchor-id="paso-1-conexión-física-5-minutos">Paso 1: Conexión Física (5 minutos)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># En tu terminal, verifica los dispositivos conectados</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Linux (Ubuntu/Debian)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span> /dev/tty<span class="pp">*</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">"(USB|ACM)"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span> /dev/tty.<span class="pp">*</span> <span class="kw">|</span> <span class="fu">grep</span> usb</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows (PowerShell)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">Get-ChildItem</span> <span class="at">-Path</span> COM<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Output Esperado:</strong></p>
-<pre><code># Linux
-crw-rw---- 1 root root 188, 0 Jan 15 10:30 /dev/ttyUSB0
-
-# macOS
-crw-rw---- 1 root root 21, 1 Jan 15 10:30 /dev/tty.usbserial-1420</code></pre>
-<blockquote class="blockquote">
-<p>⚠️ <strong>Si no ves ningún dispositivo:</strong> El cable no es de datos. Usa el cable original LEGO.</p>
-</blockquote>
-<hr>
-</section>
-<section id="paso-2-acceso-al-ide-2-minutos" class="level3">
-<h3 class="anchored" data-anchor-id="paso-2-acceso-al-ide-2-minutos">Paso 2: Acceso al IDE (2 minutos)</h3>
+<section id="paso-1-abrir-thonny" class="level2">
+<h2 class="anchored" data-anchor-id="paso-1-abrir-thonny">Paso 1: Abrir Thonny</h2>
+<p><strong>Tiempo estimado: 2 minutos</strong></p>
+<p>Thonny es como un cuaderno donde le escribes al robot. Es gratuito y no necesitas instalar nada especial [1].</p>
 <ol type="1">
-<li>Abre <strong>Chrome</strong> o <strong>Edge</strong> (NO Firefox ni Safari)</li>
-<li>Navega a: <a href="https://code.pybricks.com/">https://code.pybricks.com/</a></li>
-<li>Conecta el Hub con el cable USB</li>
-<li>Presiona el botón de <strong>encendido</strong> del Hub (botón central)</li>
+<li>Busca “Thonny” en tu computadora y ábrelo</li>
+<li>Verás algo como esto:</li>
 </ol>
-<p><strong>Deberías ver en el IDE:</strong></p>
-<pre><code>┌─────────────────────────────────────┐
-│  Pybricks IDE                       │
-│  ┌───────────────────────────────┐ │
-│  │ 🟢 Hub Connected (Prime)      │ │
-│  │ Firmware: 2.0.0               │ │
-│  └───────────────────────────────┘ │
-└─────────────────────────────────────┘</code></pre>
+<pre><code>┌─────────────────────────────────────────────────┐
+│  Thonny                                          │
+│  ┌─────────────────────────────────────────┐   │
+│  │ # Aquí escribes las instrucciones        │   │
+│  │                                         │   │
+│  │                                         │   │
+│  │                                         │   │
+│  └─────────────────────────────────────────┘   │
+│                                                  │
+│  &gt;&gt;&gt;                                            │
+│  _                                              │
+└─────────────────────────────────────────────────┘</code></pre>
 <hr>
 </section>
-<section id="paso-3-tu-primer-programa-10-minutos" class="level3">
-<h3 class="anchored" data-anchor-id="paso-3-tu-primer-programa-10-minutos">Paso 3: Tu Primer Programa (10 minutos)</h3>
-<p>Copia y pega este código en el editor:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Color</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hola_stark():</span>
-<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Protocolo de validación de sistemas."""</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-9" class="code-annotation-target"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a>    hub.light.on(Color.GREEN)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-4-10" class="code-annotation-target"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a>    hub.display.text(<span class="st">"HOLA"</span>)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-4-11" class="code-annotation-target"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a>    hub.speaker.beep()</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-4-12" class="code-annotation-target"><a href="#annotated-cell-4-12" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">2000</span>)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-4-13" class="code-annotation-target"><a href="#annotated-cell-4-13" aria-hidden="true" tabindex="-1"></a>    hub.light.off()</span>
-<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-4-16" class="code-annotation-target"><a href="#annotated-cell-4-16" aria-hidden="true" tabindex="-1"></a>    hola_stark()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">Importamos el núcleo del Hub LEGO SPIKE.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="2">Cargamos el set de parámetros para gestión de colores.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="3">Herramienta para pausas precisas en la ejecución.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="4">Instanciamos el cerebro del robot.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="9" data-code-annotation="5">Activamos el LED central en verde - indica sistema nominal.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="6">6</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="10" data-code-annotation="6">Enviamos texto a la matriz de 5x5 píxeles.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="7">7</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="11" data-code-annotation="7">El buzzer emite un tono de confirmación.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="8">8</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="12" data-code-annotation="8">Pausa de seguridad antes de apagar.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="9">9</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="13" data-code-annotation="9">Apagamos el LED - operación completada.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="10">10</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="16" data-code-annotation="10">Punto de entrada del script.</span>
-</dd>
-</dl>
+<section id="paso-2-escribir-tu-primer-mensaje" class="level2">
+<h2 class="anchored" data-anchor-id="paso-2-escribir-tu-primer-mensaje">Paso 2: Escribir tu primer mensaje</h2>
+<p><strong>Tiempo estimado: 8 minutos</strong></p>
+<p>Imagina que tienes una caja etiquetada. Dentro guardas algo que puedes usar después. Así funcionan las cosas en programación: guardamos algo en un “espacio” y le damos un nombre para usarlo después.</p>
+<p>Escribe esto en Thonny (donde dice <code># Aquí escribes las instrucciones</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Decirle a la computadora cómo hablar con el robot</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una "caja" llamada hub que representa al robot</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Encender la luz del robot en color verde</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>hub.light.on(<span class="dv">5</span>)  <span class="co"># 5 = verde</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar un mensaje en la pantalla del robot</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>hub.display.text(<span class="st">"HOLA"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacer que el robot "hable" (suene)</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>hub.speaker.beep()</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Esperar un poco para que puedas ver el mensaje</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">2000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Qué ves en la pantalla de Thonny?</strong></p>
+<p>Verás que las palabras tienen colores diferentes. Eso es normal—Thonny usa colores para ayudarte a ver mejor el código, como cuando usas diferentes colores en un cuaderno [1].</p>
 <hr>
 </section>
-<section id="paso-4-ejecución-3-minutos" class="level3">
-<h3 class="anchored" data-anchor-id="paso-4-ejecución-3-minutos">Paso 4: Ejecución (3 minutos)</h3>
+<section id="paso-3-probar-en-la-computadora-antes-de-enviar-al-robot" class="level2">
+<h2 class="anchored" data-anchor-id="paso-3-probar-en-la-computadora-antes-de-enviar-al-robot">Paso 3: Probar en la computadora (antes de enviar al robot)</h2>
+<p><strong>Tiempo estimado: 5 minutos</strong></p>
+<p>Antes de enviar el código al robot, podemos ver si hay errores. Es como cuando relees una tarea antes de entregarla.</p>
 <ol type="1">
-<li>Presiona el botón <strong>“Run”</strong> (▶️) en el IDE</li>
-<li>Observa el comportamiento del Hub</li>
+<li>Mira si Thonny muestra algún mensaje rojo en la parte inferior</li>
+<li>Si hay errores,revisa que no falten letras o que los paréntesis estén completos</li>
 </ol>
-<p><strong>Output Esperado en Consola:</strong></p>
-<pre><code>&gt;&gt;&gt; Running script.py
-&gt;&gt;&gt; HOLA
-&gt;&gt;&gt; 🔊 Beep executed
-&gt;&gt;&gt; Script completed successfully</code></pre>
-<p><strong>Comportamiento Físico:</strong> - 💡 LED central se ilumina en <strong>VERDE</strong> - 📺 Matriz muestra la palabra “HOLA” - 🔊 Sonido “beep” audible - ⏸️ 2 segundos después, LED se apaga</p>
+<pre><code>┌─────────────────────────────────────────────────┐
+│  &gt;&gt;&gt; ================================            │
+│  &gt;&gt;&gt; # Decirle a la computadora...              │
+│  &gt;&gt;&gt; from pybricks.hubs import PrimeHub         │
+│  &gt;&gt;&gt; hub = PrimeHub()                           │
+│  &gt;&gt;&gt; hub.light.on(5)                            │
+│  &gt;&gt;&gt; hub.display.text("HOLA")                    │
+│  &gt;&gt;&gt; hub.speaker.beep()                         │
+│  &gt;&gt;&gt; wait(2000)                                 │
+│  &gt;&gt;&gt;                                            │
+│  MicroPython v1.20.0 on 2024-09-12              │
+│  LEGO Technic Large Hub firmware version 3.3.0  │
+│  &gt;&gt;&gt;                                            │
+└─────────────────────────────────────────────────┘</code></pre>
+<p><strong>Si ves “MicroPython” y “LEGO Technic Large Hub”</strong>, ¡significa que la computadora ya está hablando con tu robot! [2][3]</p>
 <hr>
 </section>
-<section id="paso-5-personalización-5-minutos" class="level3">
-<h3 class="anchored" data-anchor-id="paso-5-personalización-5-minutos">Paso 5: Personalización (5 minutos)</h3>
-<p>Modifica el código para mostrar <strong>tu nombre</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cambia esta línea:</span></span>
+<section id="paso-4-enviar-el-código-al-robot" class="level2">
+<h2 class="anchored" data-anchor-id="paso-4-enviar-el-código-al-robot">Paso 4: Enviar el código al robot</h2>
+<p><strong>Tiempo estimado: 5 minutos</strong></p>
+<p>Ahora viene lo interesante: enviar las instrucciones al robot para que las ejecute.</p>
+<ol type="1">
+<li>Presiona el botón <strong>“Run”</strong> (el botón verde de ▶️play en la barra de herramientas)</li>
+<li>Observa tu robot:</li>
+</ol>
+<pre><code>┌─────────────────────────┐
+│    [ROBOT LEGO]         │
+│    ┌───────────────┐    │
+│    │     HOLA      │    │ ← Este mensaje apareció
+│    └───────────────┘    │
+│    🟢 (luz encendida)   │ ← Luz verde
+│    🔊 (sonido)         │ ← Un "beep"
+└─────────────────────────┘</code></pre>
+<p><strong>¿Qué pasó?</strong></p>
+<ul>
+<li>💚 La luz se encendió en verde</li>
+<li>📺 El mensaje “HOLA” apareció en la pantalla del robot</li>
+<li>🔊 Se escuchó un pequeño sonido</li>
+</ul>
+<hr>
+</section>
+<section id="paso-5-ahora-prueba-con-tu-nombre" class="level2">
+<h2 class="anchored" data-anchor-id="paso-5-ahora-prueba-con-tu-nombre">Paso 5: Ahora prueba con tu nombre</h2>
+<p><strong>Tiempo estimado: 5 minutos</strong></p>
+<p>Ahora vas a cambiar el mensaje. Es como cuando escribes un nombre en un cuaderno: borras lo que había y escribes lo nuevo.</p>
+<p>En tu código, busca donde dice <code>"HOLA"</code> y cámbialo por tu nombre (máximo 5 letras):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Busca esta línea:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>hub.display.text(<span class="st">"HOLA"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Por tu nombre (máximo 5 letras):</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>hub.display.text(<span class="st">"DIEGO"</span>)  <span class="co"># Ejemplo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Desafío Extra:</strong> Cambia el color a <strong>AZUL</strong> y el mensaje a “READY”</p>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cámbiala por tu nombre:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>hub.display.text(<span class="st">"JUAN"</span>)  <span class="co"># Ejemplo: tu nombre</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Presiona <strong>Run</strong> de nuevo y observa el robot.</p>
+<p><strong>¿Qué diferencias notas cuando cambias el mensaje?</strong></p>
+<p>Eso es exactamente lo que pasa en una máquina expendedora: el programa muestra lo que tú le digas, cambiando las “instrucciones” que envías.</p>
 <hr>
 </section>
-</section>
-<section id="centro-de-diagnóstico" class="level2">
-<h2 class="anchored" data-anchor-id="centro-de-diagnóstico">🛠️ Centro de Diagnóstico</h2>
+<section id="si-algo-no-funciona" class="level2">
+<h2 class="anchored" data-anchor-id="si-algo-no-funciona">🔧 Si algo no funciona</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 21%">
 <col style="width: 27%">
-<col style="width: 21%">
+<col style="width: 41%">
 <col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Error</th>
-<th>Síntoma</th>
-<th>Causa</th>
-<th>Solución</th>
+<th>Problema</th>
+<th>Posible causa</th>
+<th>Qué hacer</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>“Hub not found”</strong></td>
-<td>IDE no detecta Hub</td>
-<td>Cable incorrecto</td>
-<td>Usar cable LEGO original</td>
+<td>Thonny dice “Unable to connect”</td>
+<td>El cable no está bien conectado</td>
+<td>Desconecta y vuelve a conectar el USB</td>
 </tr>
 <tr class="even">
-<td><strong>“Firmware outdated”</strong></td>
-<td>Mensaje amarillo en IDE</td>
-<td>Pybricks requiere update</td>
-<td>Click “Update Firmware”</td>
+<td>El robot no responde</td>
+<td>El Hub está apagado</td>
+<td>Presiona el botón central del Hub</td>
 </tr>
 <tr class="odd">
-<td><strong>“Permission denied”</strong></td>
-<td>Error en terminal Linux</td>
-<td>Sin acceso a tty</td>
-<td><code>sudo chmod 666 /dev/ttyUSB0</code></td>
+<td>Mensaje de error rojo</td>
+<td>Algún error en el código</td>
+<td>Revisa que no falte una coma o paréntesis</td>
 </tr>
 <tr class="even">
-<td><strong>“Script timeout”</strong></td>
-<td>LED parpadea rojo</td>
-<td>Código en bucle infinito</td>
-<td>Presionar botón STOP en IDE</td>
+<td>No se ve nada en la pantalla del robot</td>
+<td>El robot no entendió las instrucciones</td>
+<td>Verifica que el cable USB esté bien</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-<section id="validación-anti-ai-obligatoria" class="level2">
-<h2 class="anchored" data-anchor-id="validación-anti-ai-obligatoria">🔐 Validación Anti-AI (OBLIGATORIA)</h2>
-<p>Para aprobar este laboratorio, debes entregar:</p>
-<section id="checklist-de-entrega" class="level3">
-<h3 class="anchored" data-anchor-id="checklist-de-entrega">📋 Checklist de Entrega:</h3>
+<section id="lo-que-lograste-hacer" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-lograste-hacer">📋 Lo que lograste hacer</h2>
+<p>Antes de terminar, marca lo que conseguiste:</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Foto 1:</strong> Tu Hub conectado al PC mostrando el mensaje en la matriz</label></li>
-<li><label><input type="checkbox"><strong>Foto 2:</strong> Consola del IDE con el output “HOLA” visible</label></li>
-<li><label><input type="checkbox"><strong>Código modificado:</strong> Archivo <code>.py</code> con tu nombre en lugar de “HOLA”</label></li>
-<li><label><input type="checkbox"><strong>Timestamp:</strong> Foto del resultado tomada <strong>HOY</strong> (debes poder mostrar la fecha)</label></li>
-</ul>
-</section>
-<section id="formato-de-envío" class="level3">
-<h3 class="anchored" data-anchor-id="formato-de-envío">📝 Formato de Envío:</h3>
-<pre><code>Archivo 1: lab1_hola_mundo_[TU_NOMBRE].py
-Archivo 2: evidencia_[TU_NOMBRE].zip (contiene fotos)</code></pre>
-<blockquote class="blockquote">
-<p>⚠️ <strong>Sin evidencia visual NO se acepta el laboratorio.</strong> El código debe ejecutarse en hardware real, no en simulador.</p>
-</blockquote>
-<hr>
-</section>
-</section>
-<section id="checklist-de-completado" class="level2">
-<h2 class="anchored" data-anchor-id="checklist-de-completado">✅ Checklist de Completado</h2>
-<p>Antes de terminar, marca cada item:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">El IDE conecta correctamente con el Hub</label></li>
-<li><label><input type="checkbox">El mensaje aparece en la matriz 5x5</label></li>
-<li><label><input type="checkbox">El LED cambia a color verde</label></li>
-<li><label><input type="checkbox">El sonido “beep” se ejecuta</label></li>
-<li><label><input type="checkbox">Personalicé el mensaje con mi nombre</label></li>
-<li><label><input type="checkbox">Tengo las evidencias fotográficas requeridas</label></li>
+<li><label><input type="checkbox">Escribí un mensaje en Thonny</label></li>
+<li><label><input type="checkbox">El robot mostró el mensaje en su pantalla</label></li>
+<li><label><input type="checkbox">La luz del robot se encendió</label></li>
+<li><label><input type="checkbox">El robot hizo un sonido</label></li>
+<li><label><input type="checkbox">Cambié el mensaje por mi nombre</label></li>
 </ul>
 <hr>
-<p><em>Desarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026</em></p>
+</section>
+<section id="para-seguir-explorando" class="level2">
+<h2 class="anchored" data-anchor-id="para-seguir-explorando">💡 Para seguir explorando</h2>
+<p>¿Qué pasaría si cambiaras el número del color? Intenta:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hub.light.on(<span class="dv">0</span>)   <span class="co"># ¿Qué color es?</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>hub.light.on(<span class="dv">3</span>)   <span class="co"># ¿Y este?</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>hub.light.on(<span class="dv">9</span>)   <span class="co"># ¿Y este otro?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El número representa diferentes colores—justo como cuando cambias el color de un marcador.</p>
+<hr>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>[1] A. Annamaa. (2018). <em>Thonny: Python IDE for beginners</em>. GitHub. Disponible: https://github.com/thonny</p>
+<p>[2] Pybricks Team. (2023). <em>Pybricks Documentation</em>. Pybricks. Disponible: https://docs.pybricks.com</p>
+<p>[3] D. George. (2013). <em>MicroPython Documentation</em>. MicroPython. Disponible: https://docs.micropython.org</p>
+<p>[4] LEGO. (2023). <em>LEGO Education SPIKE Prime Hub</em>. LEGO. Disponible: https://lego.com</p>
+<hr>
+<p><em>Has completado tu primer laboratorio. Ahora sabes cómo escribir algo, probarlo en la computadora, y enviarlo al robot para que lo haga.</em></p>
 
 
 </section>
@@ -1069,13 +1156,13 @@ Archivo 2: evidencia_[TU_NOMBRE].zip (contiene fotos)</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../contenido/unidad1/1_instalacion_pybricks.html" class="pagination-link" aria-label="Fase 1: Infraestructura y Entorno">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Fase 1: Infraestructura y Entorno</span></span>
+      <a href="../../contenido/unidad1/1_instalacion_pybricks.html" class="pagination-link" aria-label="Unidad 1: Tu Primer Programa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Unidad 1: Tu Primer Programa</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../quizzes/quiz_unidad1.html" class="pagination-link" aria-label="Validación de Ingeniería: Fase 1">
-        <span class="nav-page-text"><span class="chapter-title">Validación de Ingeniería: Fase 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../contenido/unidad1/lab1b_ejercicios.html" class="pagination-link" aria-label="Laboratorio 1B: Ejercicios de Refuerzo">
+        <span class="nav-page-text"><span class="chapter-title">Laboratorio 1B: Ejercicios de Refuerzo</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1086,7 +1173,7 @@ Archivo 2: evidencia_[TU_NOMBRE].zip (contiene fotos)</code></pre>
 <p>© Diego Saavedra</p>
 </div>   
     <div class="nav-footer-center">
-<p>Arquitectura del Conocimiento - Abacom</p>
+<p>Educación y Tecnología - Abacom</p>
 </div>
     <div class="nav-footer-right">
 <p>Built with <a href="https://quarto.org/">Quarto</a></p>

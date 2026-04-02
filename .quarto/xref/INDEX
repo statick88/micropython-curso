@@ -1,0 +1,248 @@
+{
+  "index.qmd": {
+    "index.html": "abe5463b"
+  },
+  "about.qmd": {
+    "about.html": "81723c19"
+  },
+  "license.qmd": {
+    "license.html": "c5732562"
+  },
+  "contenido/unidad1/1_verdad_sin_excusas.qmd": {
+    "1_verdad_sin_excusas.html": "37665b9b"
+  },
+  "contenido/unidad1/2_alternativas_emulacion.qmd": {
+    "2_alternativas_emulacion.html": "0a45ca5b"
+  },
+  "contenido/unidad1/3_seleccion_herramientas.qmd": {
+    "3_seleccion_herramientas.html": "46c1cd06"
+  },
+  "contenido/unidad2/1_introduccion_turtle.qmd": {
+    "1_introduccion_turtle.html": "91992bc0"
+  },
+  "contenido/unidad2/2_movimiento_basico.qmd": {
+    "2_movimiento_basico.html": "9882e3e3"
+  },
+  "contenido/unidad2/3_figuras_geometricas.qmd": {
+    "3_figuras_geometricas.html": "92b84261"
+  },
+  "contenido/unidad2/4_patrones_arte.qmd": {
+    "4_patrones_arte.html": "e81fae51"
+  },
+  "contenido/unidad2/5_proyecto_creativo.qmd": {
+    "5_proyecto_creativo.html": "de6c1770"
+  },
+  "contenido/unidad3/1_introduccion_pybricks.qmd": {
+    "1_introduccion_pybricks.html": "40680bcb"
+  },
+  "contenido/unidad3/2_variables_tipos.qmd": {
+    "2_variables_tipos.html": "13aeaf1e"
+  },
+  "contenido/unidad3/3_funciones.qmd": {
+    "3_funciones.html": "5105fa14"
+  },
+  "contenido/unidad3/4_condicionales.qmd": {
+    "4_condicionales.html": "3d82becc"
+  },
+  "contenido/unidad3/5_proyecto_juego.qmd": {
+    "5_proyecto_juego.html": "92a927f8"
+  },
+  "contenido/unidad4/1_instalacion_esp32.qmd": {
+    "1_instalacion_esp32.html": "3cbd22ee"
+  },
+  "contenido/unidad4/2_gpio_basico.qmd": {
+    "2_gpio_basico.html": "1c9a53df"
+  },
+  "contenido/unidad4/3_sensores_digitales.qmd": {
+    "3_sensores_digitales.html": "888c3e4a"
+  },
+  "contenido/unidad4/4_sensores_analogicos.qmd": {
+    "4_sensores_analogicos.html": "1aae75fd"
+  },
+  "contenido/unidad4/5_motores_servos.qmd": {
+    "5_motores_servos.html": "22d60ff5"
+  },
+  "contenido/unidad4/6_proyecto_robot.qmd": {
+    "6_proyecto_robot.html": "cd5c66d1"
+  },
+  "contenido/unidad5/1_metodologia_5e.qmd": {
+    "1_metodologia_5e.html": "6a2781fa"
+  },
+  "contenido/unidad5/2_gamificacion.qmd": {
+    "2_gamificacion.html": "14a5a473"
+  },
+  "contenido/unidad5/3_evaluacion_formativa.qmd": {
+    "3_evaluacion_formativa.html": "2121d74c"
+  },
+  "contenido/unidad5/4_planificacion_curso.qmd": {
+    "4_planificacion_curso.html": "aa0ae714"
+  },
+  "labs/lab1_turtle_basico.md": {
+    "lab1_turtle_basico.html": "06b4aaa6"
+  },
+  "labs/lab2_figuras_avanzadas.md": {
+    "lab2_figuras_avanzadas.html": "b7d9aa04"
+  },
+  "labs/lab3_pybricks_repl.md": {
+    "lab3_pybricks_repl.html": "5e97185b"
+  },
+  "labs/lab4_esp32_led_boton.md": {
+    "lab4_esp32_led_boton.html": "1dd1badf"
+  },
+  "labs/lab5_esp32_sensores.md": {
+    "lab5_esp32_sensores.html": "5521311f"
+  },
+  "labs/lab6_esp32_servo.md": {
+    "lab6_esp32_servo.html": "eadd7cfe"
+  },
+  "labs/lab7_proyecto_final.md": {
+    "lab7_proyecto_final.html": "d42b26ee"
+  },
+  "quizzes/quiz_unidad1.qmd": {
+    "quiz_unidad1.html": "48e910a8"
+  },
+  "quizzes/quiz_unidad2.qmd": {
+    "quiz_unidad2.html": "ed2bf447"
+  },
+  "quizzes/quiz_unidad3.qmd": {
+    "quiz_unidad3.html": "ca26b6eb"
+  },
+  "quizzes/quiz_unidad4.qmd": {
+    "quiz_unidad4.html": "154ad626"
+  },
+  "contenido/unidad1/1_primer_esp32.qmd": {
+    "1_primer_esp32.html": "010a06aa"
+  },
+  "contenido/unidad1/2_configuracion_entorno.qmd": {
+    "2_configuracion_entorno.html": "a6c1ea73"
+  },
+  "contenido/unidad1/3_solucion_problemas.qmd": {
+    "3_solucion_problemas.html": "0b22b5bd"
+  },
+  "contenido/unidad2/1_control_leds.qmd": {
+    "1_control_leds.html": "14ecbaff"
+  },
+  "contenido/unidad2/2_control_botones.qmd": {
+    "2_control_botones.html": "9d702fa0"
+  },
+  "contenido/unidad2/3_patrones_leds.qmd": {
+    "3_patrones_leds.html": "ef263e1e"
+  },
+  "contenido/unidad3/1_sensor_luz.qmd": {
+    "1_sensor_luz.html": "bed35a36"
+  },
+  "contenido/unidad3/2_potenciometro.qmd": {
+    "2_potenciometro.html": "9f39ce45"
+  },
+  "contenido/unidad3/3_sensor_distancia.qmd": {
+    "3_sensor_distancia.html": "7c2fb7ba"
+  },
+  "contenido/unidad4/1_servomotor.qmd": {
+    "1_servomotor.html": "b371bd53"
+  },
+  "contenido/unidad4/2_dos_servos.qmd": {
+    "2_dos_servos.html": "192277ed"
+  },
+  "contenido/unidad5/1_proyecto_final.qmd": {
+    "1_proyecto_final.html": "dc93fd73"
+  },
+  "contenido/unidad1/1_instalacion_pybricks.qmd": {
+    "1_instalacion_pybricks.html": "79b9750a"
+  },
+  "contenido/unidad2/1_programacion_basica.qmd": {
+    "1_programacion_basica.html": "53d79858"
+  },
+  "contenido/unidad3/1_motores_basico.qmd": {
+    "1_motores_basico.html": "3d377a1a"
+  },
+  "contenido/unidad4/1_sensores.qmd": {
+    "1_sensores.html": "e509ccc2"
+  },
+  "contenido/unidad0/competencias_docente.qmd": {
+    "competencias_docente.html": "296ea4ba"
+  },
+  "contenido/unidad2/1_display_luces.qmd": {
+    "1_display_luces.html": "449c28b3"
+  },
+  "contenido/unidad3/1_motores.qmd": {
+    "1_motores.html": "08cc2c47"
+  },
+  "contenido/unidad1/lab1_hola_mundo.qmd": {
+    "lab1_hola_mundo.html": "21886850"
+  },
+  "contenido/unidad2/lab2_animaciones.qmd": {
+    "lab2_animaciones.html": "5b25e0c0"
+  },
+  "contenido/unidad3/lab3_navegacion.qmd": {
+    "lab3_navegacion.html": "fcb8d163"
+  },
+  "contenido/unidad4/lab4_telemetria.qmd": {
+    "lab4_telemetria.html": "823e2468"
+  },
+  "quizzes/quiz_unidad5.qmd": {
+    "quiz_unidad5.html": "0ebacea2"
+  },
+  "contenido/apendice_recursos.qmd": {
+    "apendice_recursos.html": "52b58bd6"
+  },
+  "contenido/unidad1/guia_hub_desde_cero.qmd": {
+    "guia_hub_desde_cero.html": "62ae58ab"
+  },
+  "contenido/unidad3/2_motores_avanzados.qmd": {
+    "2_motores_avanzados.html": "e51f0a00"
+  },
+  "contenido/unidad4/2_sensores_adicionales.qmd": {
+    "2_sensores_adicionales.html": "7ec6d1d9"
+  },
+  "contenido/unidad4/2_telemetria_bateria.qmd": {
+    "2_telemetria_bateria.html": "a23421e0"
+  },
+  "contenido/apendice_thonny_debugger.qmd": {
+    "apendice_thonny_debugger.html": "1d4eb921"
+  },
+  "contenido/unidad1/lab1b_ejercicios.qmd": {
+    "lab1b_ejercicios.html": "3c7578b7"
+  },
+  "contenido/unidad2/lab2b_animaciones_avanzadas.qmd": {
+    "lab2b_animaciones_avanzadas.html": "34a659f2"
+  },
+  "contenido/unidad3/lab3b_movimiento_avanzado.qmd": {
+    "lab3b_movimiento_avanzado.html": "c6ac5725"
+  },
+  "evaluaciones/eval_motores_avanzados.qmd": {
+    "eval_motores_avanzados.html": "1f4adc9f"
+  },
+  "evaluaciones/eval_sensores_adicionales.qmd": {
+    "eval_sensores_adicionales.html": "ac6c22d0"
+  },
+  "evaluaciones/eval_telemetria.qmd": {
+    "eval_telemetria.html": "12c1a1a1"
+  },
+  "contenido/sistema_logros.qmd": {
+    "sistema_logros.html": "6836642e"
+  },
+  "contenido/diagramas/diagrama_hoja_ruta.qmd": {
+    "diagrama_hoja_ruta.html": "afffe732"
+  },
+  "contenido/diagramas/diagrama_hub.qmd": {
+    "diagrama_hub.html": "56f8b95f"
+  },
+  "contenido/diagramas/diagrama_porque_hub.qmd": {
+    "diagrama_porque_hub.html": "dac3d1b6"
+  },
+  "contenido/diagramas/auditoria_diagramas.qmd": {
+    "auditoria_diagramas.html": "b243f250"
+  },
+  "contenido/apendice_simuladores.qmd": {
+    "apendice_simuladores.html": "c6d84c5c"
+  },
+  "contenido/unidad1/flujo_simulador.qmd": {
+    "flujo_simulador.html": "8771912a"
+  },
+  "contenido/diagramas/analisis_esp_simulator.qmd": {
+    "analisis_esp_simulator.html": "fad293a5"
+  },
+  "contenido/apendice_pybricks_compilacion.qmd": {
+    "apendice_pybricks_compilacion.html": "421a25c1"
+  }
+}

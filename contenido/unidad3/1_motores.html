@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Despliegue de sistemas de aprendizaje con MicroPython y LEGO SPIKE Prime.">
+<meta name="description" content="Curso de MicroPython para docentes de Pedagogía en Informática.">
 
-<title>Fase 3: Sistemas de Tracción y Actuación – MicroPython: Ingeniería de Aprendizaje</title>
+<title>Unidad 3: ¿Cómo hace el robot para moverse? – MicroPython para el Aula</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../contenido/unidad3/lab3_navegacion.html" rel="next">
+<link href="../../contenido/unidad3/2_motores_avanzados.html" rel="next">
 <link href="../../quizzes/quiz_unidad2.html" rel="prev">
 <link href="../../favicon.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad3/1_motores.html">FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad3/1_motores.html"><span class="chapter-title">Fase 3: Sistemas de Tracción y Actuación</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad3/1_motores.html">🤖 UNIDAD 3: MOVIMIENTO</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad3/1_motores.html"><span class="chapter-title">Unidad 3: ¿Cómo hace el robot para moverse?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,19 +144,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <img src="../../images/robot-espi32-cartoon.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">MicroPython: Ingeniería de Aprendizaje</a> 
+      <a href="../../">MicroPython para el Aula</a> 
         <div class="sidebar-tools-main tools-wide">
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_ingenieria.pdf">
+            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_aula.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_ingenieria.epub">
+            <a class="dropdown-item sidebar-tools-main-item" href="../../micropython_aula.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -198,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Maestría del Arquitecto de Aprendizaje</span></a>
+ <span class="menu-text">🚀 MicroPython para el Aula</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -211,10 +211,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="../../license.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/sistema_logros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Logros 🏆</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">EL MANIFIESTO DEL ARQUITECTO</span></a>
+ <span class="menu-text">🌟 FUNDAMENTOS</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -222,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">El Manifiesto del Arquitecto de Aprendizaje</span></a>
+  <a href="../../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos: Antes de Comenzar</span></a>
   </div>
 </li>
       </ul>
@@ -230,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 1: INFRAESTRUCTURA Y ENTORNO</span></a>
+ <span class="menu-text">🔌 UNIDAD 1: CONECTAR Y PROGRAMAR</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -238,17 +243,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 1: Infraestructura y Entorno</span></a>
+  <a href="../../contenido/unidad1/guia_hub_desde_cero.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Guía Completa: El Hub LEGO — Desde Cero</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1.1: “Hola Mundo” en Pybricks</span></a>
+  <a href="../../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 1: Tu Primer Programa</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 1</span></a>
+  <a href="../../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad1/lab1b_ejercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1B: Ejercicios de Refuerzo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 1: Conectar y Programar</span></a>
   </div>
 </li>
       </ul>
@@ -256,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 2: INTERFACES Y CONTROL VISUAL</span></a>
+ <span class="menu-text">💡 UNIDAD 2: PANTALLA Y LUCES</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -264,17 +279,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad2/1_display_luces.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 2: Interfaces y Control Visual</span></a>
+  <a href="../../contenido/unidad2/1_display_luces.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 2: ¿Qué puede mostrar el robot?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad2/lab2_animaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2.1: Animaciones en Matriz 5x5</span></a>
+  <a href="../../contenido/unidad2/lab2_animaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2: Haciendo que las imágenes se muevan</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 2</span></a>
+  <a href="../../contenido/unidad2/lab2b_animaciones_avanzadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2B: Diseño de Animaciones Avanzadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 2: Pantalla y Luces</span></a>
   </div>
 </li>
       </ul>
@@ -282,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES</span></a>
+ <span class="menu-text">🤖 UNIDAD 3: MOVIMIENTO</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -290,17 +310,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad3/1_motores.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Fase 3: Sistemas de Tracción y Actuación</span></a>
+  <a href="../../contenido/unidad3/1_motores.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Unidad 3: ¿Cómo hace el robot para moverse?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad3/lab3_navegacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3.1: Navegación con Giroscopio</span></a>
+  <a href="../../contenido/unidad3/2_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Control Avanzado de Motores: PID, Calibración y Más</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 3</span></a>
+  <a href="../../contenido/unidad3/lab3_navegacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3: El robot que dibuja un cuadrado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad3/lab3b_movimiento_avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3B: Ejercicios de Movimiento Avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 3: Movimiento</span></a>
   </div>
 </li>
       </ul>
@@ -308,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 4: PERCEPCIÓN Y TELEMETRÍA</span></a>
+ <span class="menu-text">📡 UNIDAD 4: SENSORES</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -316,17 +346,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/1_sensores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 4: Percepción y Telemetría</span></a>
+  <a href="../../contenido/unidad4/1_sensores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/lab4_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4.1: Telemetría Asíncrona con Sensores</span></a>
+  <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 4</span></a>
+  <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad4/lab4_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4: Un robot que explora solo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_unidad4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 4: Sensores</span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">FASE 5: DESPLIEGUE FINAL (PROYECTO)</span></a>
+ <span class="menu-text">🏆 UNIDAD 5: PROYECTO FINAL</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -342,12 +382,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fase 5: Despliegue Final (Proyecto)</span></a>
+  <a href="../../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 5: Ahora vas a crear tu propio robot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../quizzes/quiz_unidad5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Validación de Ingeniería: Fase 5</span></a>
+  <a href="../../quizzes/quiz_unidad5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 5: Proyecto Final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">📚 APÉNDICES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Alternativas y Recursos Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_thonny_debugger.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_simuladores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">🎯 EVALUACIONES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Motores Avanzados y PID</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Sensores Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../evaluaciones/eval_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Telemetría y Monitoreo de Batería</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">📐 DIAGRAMAS TÉCNICOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_hoja_ruta.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🗺️ Hoja de Ruta Visual del Curso</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Diagrama: LEGO Technic Large Hub (45601)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/diagrama_porque_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🤖 ¿Por qué usar un Hub?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/diagramas/auditoria_diagramas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">📋 Auditoría de Diagramas del Curso</span></a>
   </div>
 </li>
       </ul>
@@ -362,19 +485,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#cinematica-del-robot-el-drivebase" id="toc-cinematica-del-robot-el-drivebase" class="nav-link active" data-scroll-target="#cinematica-del-robot-el-drivebase">Cinematica del Robot: El DriveBase</a></li>
-  <li><a href="#configuración-de-alta-precisión" id="toc-configuración-de-alta-precisión" class="nav-link" data-scroll-target="#configuración-de-alta-precisión">1. Configuración de Alta Precisión</a></li>
-  <li><a href="#asignación-el-cuadrado-de-ingeniería" id="toc-asignación-el-cuadrado-de-ingeniería" class="nav-link" data-scroll-target="#asignación-el-cuadrado-de-ingeniería">ASIGNACIÓN: El Cuadrado de Ingeniería</a></li>
-  <li><a href="#pruebas-de-validación" id="toc-pruebas-de-validación" class="nav-link" data-scroll-target="#pruebas-de-validación">Pruebas de Validación</a></li>
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link active" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#las-dos-ruedas-del-robot" id="toc-las-dos-ruedas-del-robot" class="nav-link" data-scroll-target="#las-dos-ruedas-del-robot">Las dos ruedas del robot</a></li>
+  <li><a href="#antes-de-dar-órdenes-al-robot" id="toc-antes-de-dar-órdenes-al-robot" class="nav-link" data-scroll-target="#antes-de-dar-órdenes-al-robot">Antes de dar órdenes al robot</a></li>
+  <li><a href="#ahora-el-robot-se-mueve" id="toc-ahora-el-robot-se-mueve" class="nav-link" data-scroll-target="#ahora-el-robot-se-mueve">¡Ahora el robot se mueve!</a></li>
+  <li><a href="#el-equilibrio-del-robot-el-giroscopio" id="toc-el-equilibrio-del-robot-el-giroscopio" class="nav-link" data-scroll-target="#el-equilibrio-del-robot-el-giroscopio">El equilibrio del robot (el giroscopio)</a></li>
+  <li><a href="#hacer-que-el-robot-repita-algo" id="toc-hacer-que-el-robot-repita-algo" class="nav-link" data-scroll-target="#hacer-que-el-robot-repita-algo">Hacer que el robot repita algo</a></li>
+  <li><a href="#qué-pasa-si-quiero-algo-más-preciso" id="toc-qué-pasa-si-quiero-algo-más-preciso" class="nav-link" data-scroll-target="#qué-pasa-si-quiero-algo-más-preciso">¿Qué pasa si quiero algo más preciso?</a></li>
+  <li><a href="#lo-que-aprendiste" id="toc-lo-que-aprendiste" class="nav-link" data-scroll-target="#lo-que-aprendiste">📋 Lo que aprendiste</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad3/1_motores.html">FASE 3: SISTEMAS DE TRACCIÓN Y MOTORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad3/1_motores.html"><span class="chapter-title">Fase 3: Sistemas de Tracción y Actuación</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad3/1_motores.html">🤖 UNIDAD 3: MOVIMIENTO</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad3/1_motores.html"><span class="chapter-title">Unidad 3: ¿Cómo hace el robot para moverse?</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="unidad3-motores" class="quarto-section-identifier"><span class="chapter-title">Fase 3: Sistemas de Tracción y Actuación</span></span></h1>
+<h1 class="title"><span id="unidad3-motores" class="quarto-section-identifier"><span class="chapter-title">Unidad 3: ¿Cómo hace el robot para moverse?</span></span></h1>
 </div>
 
 
@@ -394,102 +522,155 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="center">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/servo-motor-cartoon.png" class="img-fluid figure-img" style="width:30.0%"></p>
-<figcaption>Sistemas de Propulsión</figcaption>
+<p><img src="images/robot-movimiento.png" class="img-fluid figure-img" style="width:35.0%"></p>
+<figcaption>Motores del Robot</figcaption>
 </figure>
 </div>
+<p><strong>⏱️ Tiempo estimado:</strong> 50 minutos | <strong>📊 Nivel:</strong> Intermedio</p>
 </div>
-<section id="cinematica-del-robot-el-drivebase" class="level2">
-<h2 class="anchored" data-anchor-id="cinematica-del-robot-el-drivebase">Cinematica del Robot: El DriveBase</h2>
-<p>Como Arquitectos, no solo movemos motores; gestionamos la cinemática de un chasis. El <code>DriveBase</code> es la abstracción que nos permite hablar en milímetros y grados, no en potencia bruta.</p>
+<hr>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<p>¿Alguna vez has observado cómo funciona un carro de juguete? Tienes dos ruedas, y cuando ambasavan, el carro avanza. Cuando una gira más que la otra, el carro gira.</p>
+<p>El robot LEGO funciona exactamente igual—tiene dos “rueditas” (motores) que puede controlar independientemente. Vamos a aprender cómo hacerlo [1][2].</p>
 <hr>
 </section>
-<section id="configuración-de-alta-precisión" class="level2">
-<h2 class="anchored" data-anchor-id="configuración-de-alta-precisión">1. Configuración de Alta Precisión</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Ingeniería Statick: Control por Giroscopio
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Para trayectorias rectas perfectas, <strong>DEBEMOS</strong> activar el giroscopio interno. Esto compensa mecánicamente cualquier imperfección en el chasis.</p>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode python code-annotation-code code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> Motor <span class="co"># Control de actuadores</span></span>
-<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port, Direction <span class="co"># Configuración de puertos</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.robotics <span class="im">import</span> DriveBase</span>
-<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait <span class="co"># Gestión de pausas</span></span>
-<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuración del hardware de tracción</span></span>
-<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># El motor izquierdo requiere rotación invertida para avance síncrono</span></span>
-<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a>motor_izq <span class="op">=</span> Motor(Port.A, Direction.COUNTERCLOCKWISE) </span>
-<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a>motor_der <span class="op">=</span> Motor(Port.B)</span>
-<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Instanciación del modelo físico del robot</span></span>
-<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># wheel_diameter: 56mm, axle_track: 112mm</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-13" class="code-annotation-target"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> DriveBase(motor_izq, motor_der, wheel_diameter<span class="op">=</span><span class="dv">56</span>, axle_track<span class="op">=</span><span class="dv">112</span>)</span>
-<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ejecutar_mision():</span>
-<span id="annotated-cell-1-16"><a href="#annotated-cell-1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Protocolo de navegación de precisión."""</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-17" class="code-annotation-target"><a href="#annotated-cell-1-17" aria-hidden="true" tabindex="-1"></a>    robot.use_gyro(<span class="va">True</span>)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-18" class="code-annotation-target"><a href="#annotated-cell-1-18" aria-hidden="true" tabindex="-1"></a>    robot.settings(straight_speed<span class="op">=</span><span class="dv">200</span>)</span>
-<span id="annotated-cell-1-19"><a href="#annotated-cell-1-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-20" class="code-annotation-target"><a href="#annotated-cell-1-20" aria-hidden="true" tabindex="-1"></a>    robot.straight(<span class="dv">500</span>)</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-21" class="code-annotation-target"><a href="#annotated-cell-1-21" aria-hidden="true" tabindex="-1"></a>    robot.turn(<span class="dv">90</span>)</span>
-<span id="annotated-cell-1-22"><a href="#annotated-cell-1-22" aria-hidden="true" tabindex="-1"></a>    robot.stop() <span class="co"># Bloqueo de seguridad de los actuadores</span></span>
-<span id="annotated-cell-1-23"><a href="#annotated-cell-1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-24"><a href="#annotated-cell-1-24" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="annotated-cell-1-25"><a href="#annotated-cell-1-25" aria-hidden="true" tabindex="-1"></a>    ejecutar_mision() <span class="co"># Lanzar secuencia de navegación</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="1">Cargamos el motor de física y cinemática para robots diferenciales.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="13" data-code-annotation="2">Definimos las dimensiones reales para que el software calcule las rotaciones de motor necesarias.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="17" data-code-annotation="3">El sistema utiliza el sensor inercial para detectar desviaciones y corregirlas en milisegundos.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="18" data-code-annotation="4">Establecemos parámetros de seguridad para evitar derrapes o pérdida de tracción.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="20" data-code-annotation="5">Movimiento en línea recta donde el error se minimiza mediante el feedback del giroscopio.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="21" data-code-annotation="6">Giro exacto basado en la odometría y la telemetría angular del sensor interno.</span>
-</dd>
-</dl>
+<section id="las-dos-ruedas-del-robot" class="level2">
+<h2 class="anchored" data-anchor-id="las-dos-ruedas-del-robot">Las dos ruedas del robot</h2>
+<p><strong>Situación:</strong> Estás en un supermercado con un carrito. Si empujas las dos ruedas igual, el carrito va recto. Si empujas más la rueda derecha, el carrito gira a la izquierda.</p>
+<p>El robot tiene algo parecido—dos motores que pueden ir a diferentes velocidades o en diferentes direcciones [2].</p>
+<pre><code>┌─────────────────────────────────────┐
+│           ROBOT (visto desde arriba)  │
+│                                       │
+│    ┌─────────┐        ┌─────────┐     │
+│    │  MOTOR  │ ←────→ │  MOTOR  │     │
+│    │   A     │        │   B     │     │
+│    └─────────┘        └─────────┘     │
+│         ↑                   ↑         │
+│    Rueda izq          Rueda der       │
+└─────────────────────────────────────┘</code></pre>
+<p><strong>¿Para qué sirve?</strong> - <strong>Ambas van igual</strong> → el robot va recto - <strong>Una va, la otra no</strong> → el robot gira - <strong>Una va hacia adelante, otra hacia atrás</strong> → el robot gira más rápido</p>
 <hr>
 </section>
-<section id="asignación-el-cuadrado-de-ingeniería" class="level2">
-<h2 class="anchored" data-anchor-id="asignación-el-cuadrado-de-ingeniería">ASIGNACIÓN: El Cuadrado de Ingeniería</h2>
-<details>
-<summary>
-<b>Ver Objetivo del Reto</b>
-</summary>
-<p>Diseña un algoritmo iterativo (<code>for</code>) que haga que el robot recorra un cuadrado perfecto de 30cm por lado y regrese a su posición original con un error menor a 1cm.</p>
-</details></section>
-<section id="pruebas-de-validación" class="level2">
-<h2 class="anchored" data-anchor-id="pruebas-de-validación">Pruebas de Validación</h2>
+<section id="antes-de-dar-órdenes-al-robot" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-dar-órdenes-al-robot">Antes de dar órdenes al robot</h2>
+<p><strong>Situación:</strong> Antes de manejar un carro nuevo, primero necesitas asegurarte de que todo está bien—tienes que calibrarlo, ajustar los espejos, etc.</p>
+<p>Antes de pedirle al robot que se mueva, necesitamos “presentarle” los motores [2]:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traer las herramientas necesarias</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> Motor</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.robotics <span class="im">import</span> DriveBase</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Cada motor se conecta a un "puerto" (como un enchufe)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Puerto A = motor izquierdo</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Puerto B = motor derecho</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>motor_izquierdo <span class="op">=</span> Motor(Port.A)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>motor_derecho <span class="op">=</span> Motor(Port.B)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora creamos algo que controle el movimiento</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Le decimo el tamaño de las ruedas (56mm) y qué tan separadas están (112mm)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> DriveBase(motor_izquierdo, motor_derecho, wheel_diameter<span class="op">=</span><span class="dv">56</span>, axle_track<span class="op">=</span><span class="dv">112</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Por qué necesitamos esas medidas?</strong> - Es como cuando en el auto le dices al GPS el tamaño de las llantas—así sabe cuántos metros ha avanzado - Sin esas medidas, el robot no sabría cuánto es “un metro”</p>
+<hr>
+</section>
+<section id="ahora-el-robot-se-mueve" class="level2">
+<h2 class="anchored" data-anchor-id="ahora-el-robot-se-mueve">¡Ahora el robot se mueve!</h2>
+<p>Una vez que está “presentado”, podemos darle órdenes [2]:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># "¡Robot, avanza 50 centímetros!" (500 milímetros)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>robot.straight(<span class="dv">500</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># "¡Gira 90 grados a la derecha!"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>robot.turn(<span class="dv">90</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># "¡Gira 90 grados a la izquierda!" (número negativo)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>robot.turn(<span class="op">-</span><span class="dv">90</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># "¡Detente!"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>robot.stop()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Practica esto en Thonny:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> Motor</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.robotics <span class="im">import</span> DriveBase</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurar (presentar) los motores</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>motor_izq <span class="op">=</span> Motor(Port.A)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>motor_der <span class="op">=</span> Motor(Port.B)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> DriveBase(motor_izq, motor_der, wheel_diameter<span class="op">=</span><span class="dv">56</span>, axle_track<span class="op">=</span><span class="dv">112</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ¡Probar el movimiento!</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>robot.straight(<span class="dv">200</span>)  <span class="co"># Avanzar 20 cm</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">500</span>)            <span class="co"># Pausa</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>robot.turn(<span class="dv">90</span>)       <span class="co"># Girar 90°</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">500</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>robot.straight(<span class="dv">200</span>)  <span class="co"># Avanzar otro poco</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">500</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>robot.stop()         <span class="co"># Detenerse</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="el-equilibrio-del-robot-el-giroscopio" class="level2">
+<h2 class="anchored" data-anchor-id="el-equilibrio-del-robot-el-giroscopio">El equilibrio del robot (el giroscopio)</h2>
+<p><strong>Situación:</strong> Cuando caminas con los ojos vendados, te desvías. Pero si miras un punto fijo, puedes caminar recto. El robot tiene algo similar—un “sentido del equilibrio” que lo ayuda a ir derecho.</p>
+<p>Ese “sentido” se llama <strong>giroscopio</strong>. Ayuda al robot a no desviarse cuando avanza mucho [2].</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Activar el "sentido del equilibrio"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>robot.use_gyro(<span class="va">True</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora el robot caminará recto incluso en distancias largas</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>robot.straight(<span class="dv">1000</span>)  <span class="co"># 1 metro recto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>¿Cuándo usarlo?</strong> - Cuando el robot necesita ir muy recto (como una línea) - Cuando necesita girar exacto (como 90°) - Cuando el piso no es parejo</p>
+<hr>
+</section>
+<section id="hacer-que-el-robot-repita-algo" class="level2">
+<h2 class="anchored" data-anchor-id="hacer-que-el-robot-repita-algo">Hacer que el robot repita algo</h2>
+<p><strong>Situación:</strong> ¿Y si quieres que el robot haga lo mismo 4 veces? ¿Escribes el código 4 veces?</p>
+<p>Hay una forma mejor. Es como cuando en el recreo haces “una fila de 4” y todos repiten lo mismo [3].</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># "Haz esto 4 veces"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    robot.straight(<span class="dv">200</span>)  <span class="co"># Avanzar</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    robot.turn(<span class="dv">90</span>)       <span class="co"># Girar</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># y vuelve al inicio del "for"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El robot entiende “for i in range(4)” como “haz lo que está dentro 4 veces”.</p>
+<p><strong>Ejemplo: Un cuadrado</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># El robot va a dibujar un cuadrado (4 lados iguales)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    robot.straight(<span class="dv">300</span>)  <span class="co"># Un lado de 30 cm</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    robot.turn(<span class="dv">90</span>)      <span class="co"># Girar 90°</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>robot.stop()  <span class="co"># ¡Terminó!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="qué-pasa-si-quiero-algo-más-preciso" class="level2">
+<h2 class="anchored" data-anchor-id="qué-pasa-si-quiero-algo-más-preciso">¿Qué pasa si quiero algo más preciso?</h2>
+<p>A veces el robot se desvía un poco—como cuando manejas en una calle dispareja. Pero podemos ajustar [2]:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar la velocidad máxima</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>robot.settings(straight_speed<span class="op">=</span><span class="dv">150</span>)  <span class="co"># Más lento = más preciso</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># O ajustar la fuerza de giro</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>robot.settings(turn_rate<span class="op">=</span><span class="dv">45</span>)  <span class="co"># Girar más despacio</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Es como manejar un carro—si vas más lento, es más fácil hacer curvas exactas.</p>
+<hr>
+</section>
+<section id="lo-que-aprendiste" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-aprendiste">📋 Lo que aprendiste</h2>
+<p>Antes de pasar al laboratorio, marca lo que entendiste:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">¿Utilizaste un bucle para evitar repetir código?</label></li>
-<li><label><input type="checkbox">¿Activaste <code>use_gyro(True)</code>?</label></li>
-<li><label><input type="checkbox">¿El robot se detiene completamente al final?</label></li>
+<li><label><input type="checkbox">El robot tiene dos motores (izquierdo y derecho)</label></li>
+<li><label><input type="checkbox">Si ambos van igual → avanza recto</label></li>
+<li><label><input type="checkbox">Si uno gira más → el robot gira</label></li>
+<li><label><input type="checkbox">Puedo hacer que repita algo varias veces</label></li>
+<li><label><input type="checkbox">El “giroscopio” ayuda a ir más recto</label></li>
 </ul>
-
 <hr>
-<p><em>Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026</em></p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<p>[1] LEGO Education. (2023). <em>LEGO Education SPIKE Prime - Technical Specifications</em>. LEGO. Disponible: https://lego.com</p>
+<p>[2] Pybricks Team. (2023). <em>Pybricks Documentation - Robotics Module</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html</p>
+<p>[3] D. George. (2013). <em>MicroPython Documentation - Control Structures</em>. MicroPython. Disponible: https://docs.micropython.org</p>
+<p>[4] Pybricks Team. (2023). <em>Pybricks Documentation - Motors Module</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html</p>
+<p>[5] A. Annamaa. (2018). <em>Thonny: Python IDE for beginners</em>. GitHub. Disponible: https://github.com/thonny</p>
+<hr>
+<p><em>Ahora vas al laboratorio donde harás que el robot dibuje un cuadrado.</em></p>
 
 
 </section>
@@ -897,13 +1078,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../quizzes/quiz_unidad2.html" class="pagination-link" aria-label="Validación de Ingeniería: Fase 2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Validación de Ingeniería: Fase 2</span></span>
+      <a href="../../quizzes/quiz_unidad2.html" class="pagination-link" aria-label="🎮 Quiz Unidad 2: Pantalla y Luces">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">🎮 Quiz Unidad 2: Pantalla y Luces</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../contenido/unidad3/lab3_navegacion.html" class="pagination-link" aria-label="Laboratorio 3.1: Navegación con Giroscopio">
-        <span class="nav-page-text"><span class="chapter-title">Laboratorio 3.1: Navegación con Giroscopio</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../contenido/unidad3/2_motores_avanzados.html" class="pagination-link" aria-label="Control Avanzado de Motores: PID, Calibración y Más">
+        <span class="nav-page-text"><span class="chapter-title">Control Avanzado de Motores: PID, Calibración y Más</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -914,7 +1095,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>© Diego Saavedra</p>
 </div>   
     <div class="nav-footer-center">
-<p>Arquitectura del Conocimiento - Abacom</p>
+<p>Educación y Tecnología - Abacom</p>
 </div>
     <div class="nav-footer-right">
 <p>Built with <a href="https://quarto.org/">Quarto</a></p>
