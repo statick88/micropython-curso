@@ -304,7 +304,7 @@
     "href": "contenido/sistema_logros.html#cálculo-de-nota-final",
     "title": "Sistema de Logros 🏆",
     "section": "📊 Cálculo de Nota Final",
-    "text": "📊 Cálculo de Nota Final\nLa gamificación complementa la calificación tradicional:\n\n\n\nComponente\nPeso\nGamificación\n\n\n\n\nQuizzes\n30%\n📝 Quiz Dominado × 5\n\n\nLabs\n30%\n🧪 Completar todos los labs\n\n\nProyecto Final\n30%\n🏆 Proyecto aprobado\n\n\nParticipación\n10%\n💬 Bonus por insignias\n\n\n\nFórmula:\nNota Final = (Quizzes × 0.3) + (Labs × 0.3) + (Proyecto × 0.3) + (Participación × 0.1)\n\n¡Recuerda: El objetivo es APRENDER, no solo acumular puntos! Los puntos son una herramienta, no el fin. 🎓",
+    "text": "📊 Cálculo de Nota Final\nLa gamificación complementa la calificación tradicional:\n\n\n\nComponente\nPeso\nGamificación\n\n\n\n\nQuizzes\n30%\n📝 Quiz Dominado × 5\n\n\nLabs\n30%\n🧪 Completar todos los labs\n\n\nProyecto Final\n30%\n🏆 Proyecto aprobado\n\n\nParticipación\n10%\n💬 Bonus por insignias\n\n\n\nFórmula:\nNota Final = (Quizzes × 0.3) + (Labs × 0.3) + (Proyecto × 0.3) + (Participación × 0.1)\n\n¡Recuerda: El objetivo es APRENDER, no solo acumular puntos! Los puntos son una herramienta, no el fin. 🎓\n\nSistema de Logros - MicroPython para el Aula - Diego Saavedra 2026 🎮",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sistema de Logros 🏆</span>"
     ]
@@ -314,7 +314,7 @@
     "href": "contenido/sistema_logros.html#referencias",
     "title": "Sistema de Logros 🏆",
     "section": "Referencias",
-    "text": "Referencias\n[1] Kapp, K. M. The Gamification of Learning and Instruction. Pfeiffer, 2012.\n[2] Deterding, S. et al. “From Game Design Elements to Gamefulness: Defining ‘Gamification’”. Proceedings of MindTrek 2011.\n\nSistema de Logros - MicroPython para el Aula - Diego Saavedra 2026 🎮",
+    "text": "Referencias\n[1] Kapp, K. M. The Gamification of Learning and Instruction. Pfeiffer, 2012.\n[2] Deterding, S. et al. “From Game Design Elements to Gamefulness: Defining ‘Gamification’”. Proceedings of MindTrek 2011.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Sistema de Logros 🏆</span>"
     ]
@@ -368,29 +368,7 @@
     "href": "contenido/unidad0/competencias_docente.html#diferentes-tipos-de-cajas",
     "title": "Fundamentos: Antes de Comenzar",
     "section": "Diferentes tipos de “cajas”",
-    "text": "Diferentes tipos de “cajas”\nEn el ejemplo anterior solo usamos números, pero a veces necesitamos guardar otras cosas [2]:\n\n\n\nQué quieres guardar\nEjemplo\n\n\n\n\nUn número que puede crecer\ncontador = 5\n\n\nUn número con decimales\ntemperatura = 22.5\n\n\nUn nombre o palabra\nnombre = \"Ana\"\n\n\nUna respuesta de sí/no\npresente = True",
-    "crumbs": [
-      "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fundamentos: Antes de Comenzar</span>"
-    ]
-  },
-  {
-    "objectID": "contenido/unidad0/competencias_docente.html#referencias",
-    "href": "contenido/unidad0/competencias_docente.html#referencias",
-    "title": "Fundamentos: Antes de Comenzar",
-    "section": "Referencias",
-    "text": "Referencias\n[1] Python Software Foundation. (2024). Tutorial de Python 3. Python Documentation. Available: https://docs.python.org/es/3/tutorial/\n[2] Python Software Foundation. (2024). Built-in Types. Python Library Reference. Available: https://docs.python.org/es/3/library/dtypes.html\n[3] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[4] MicroPython Team. (2024). MicroPython Documentation. Available: https://micropython.org/doc/\n[5] Pybricks Team. (2024). Pybricks Documentation. Available: https://docs.pybricks.com/en/latest/\n[6] Python Software Foundation. (2024). For Statements. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#for-statements\n[7] Python Software Foundation. (2024). While Statements. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#while-statements",
-    "crumbs": [
-      "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fundamentos: Antes de Comenzar</span>"
-    ]
-  },
-  {
-    "objectID": "contenido/unidad0/competencias_docente.html#otro-concepto-hacer-cosas-sin-repetir",
-    "href": "contenido/unidad0/competencias_docente.html#otro-concepto-hacer-cosas-sin-repetir",
-    "title": "Fundamentos: Antes de Comenzar",
-    "section": "Otro concepto: hacer cosas sin repetir",
-    "text": "Otro concepto: hacer cosas sin repetir\nAhora imagínate esto: Tienes que saludar a cada estudiante por su nombre cuando entran. Podrías escribir:\nprint(\"Hola Ana\")\nprint(\"Hola Carlos\")\nprint(\"Hola María\")\n# ...y así sucesivamente\nPero eso es muy largo. ¿No sería mejor tener una sola “instrucción” que podamos usar una y otra vez? [4]\nImagina tener una receta escrita:\nRECETA PARA SALUDAR:\n1. Decir \"Hola\"\n2. Decir el nombre que me den\nAhora solo escribimos:\nsaludar(\"Ana\")\nsaludar(\"Carlos\")\nsaludar(\"María\")\nMucho más fácil, ¿verdad?",
+    "text": "Diferentes tipos de “cajas”\nEn el ejemplo anterior solo usamos números, pero a veces necesitamos guardar otras cosas [2]:\n\n\n\nQué quieres guardar\nEjemplo\n\n\n\n\nUn número que puede crecer\ncontador = 5\n\n\nUn número con decimales\ntemperatura = 22.5\n\n\nUn nombre o palabra\nnombre = \"Ana\"\n\n\nUna respuesta de sí/no\npresente = True\n\n\n\n\nImagina tener una receta escrita:\nRECETA PARA SALUDAR:\n1. Decir \"Hola\"\n2. Decir el nombre que me den\nAhora solo escribimos:\nsaludar(\"Ana\")\nsaludar(\"Carlos\")\nsaludar(\"María\")\nMucho más fácil, ¿verdad?",
     "crumbs": [
       "🌟 FUNDAMENTOS",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fundamentos: Antes de Comenzar</span>"
@@ -485,6 +463,28 @@
     ]
   },
   {
+    "objectID": "contenido/unidad0/competencias_docente.html#otro-concepto-hacer-cosas-sin-repetir",
+    "href": "contenido/unidad0/competencias_docente.html#otro-concepto-hacer-cosas-sin-repetir",
+    "title": "Fundamentos: Antes de Comenzar",
+    "section": "Otro concepto: hacer cosas sin repetir",
+    "text": "Otro concepto: hacer cosas sin repetir\nAhora imagínate esto: Tienes que saludar a cada estudiante por su nombre cuando entran. Podrías escribir:\nprint(\"Hola Ana\")\nprint(\"Hola Carlos\")\nprint(\"Hola María\")\n# ...y así sucesivamente\nPero eso es muy largo. ¿No sería mejor tener una sola “instrucción” que podamos usar una y otra vez? [4]",
+    "crumbs": [
+      "🌟 FUNDAMENTOS",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fundamentos: Antes de Comenzar</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/unidad0/competencias_docente.html#referencias",
+    "href": "contenido/unidad0/competencias_docente.html#referencias",
+    "title": "Fundamentos: Antes de Comenzar",
+    "section": "Referencias",
+    "text": "Referencias\n[1] Python Software Foundation. (2024). Tutorial de Python 3. Python Documentation. Available: https://docs.python.org/es/3/tutorial/\n[2] Python Software Foundation. (2024). Built-in Types. Python Library Reference. Available: https://docs.python.org/es/3/library/dtypes.html\n[3] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[4] MicroPython Team. (2024). MicroPython Documentation. Available: https://micropython.org/doc/\n[5] Pybricks Team. (2024). Pybricks Documentation. Available: https://docs.pybricks.com/en/latest/\n[6] Python Software Foundation. (2024). For Statements. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#for-statements\n[7] Python Software Foundation. (2024). While Statements. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#while-statements",
+    "crumbs": [
+      "🌟 FUNDAMENTOS",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Fundamentos: Antes de Comenzar</span>"
+    ]
+  },
+  {
     "objectID": "contenido/unidad1/guia_hub_desde_cero.html",
     "href": "contenido/unidad1/guia_hub_desde_cero.html",
     "title": "Guía Completa: El Hub LEGO — Desde Cero",
@@ -533,7 +533,7 @@
     "href": "contenido/unidad1/guia_hub_desde_cero.html#resumen-conceptos-clave",
     "title": "Guía Completa: El Hub LEGO — Desde Cero",
     "section": "Resumen: Conceptos Clave",
-    "text": "Resumen: Conceptos Clave\n\n\n\nConcepto\nQué es\nPara qué\n\n\n\n\nHub\nEl cerebro del robot\nProcesar instrucciones\n\n\nPuerto A/B\nConexiones para motores\nMover el robot\n\n\nPuerto C/D\nConexiones para sensores\nDetectar el entorno\n\n\nPantalla\nMatriz 5x5 LEDs\nMostrar información\n\n\nLED de estado\nLuz de colores\nIndicar estado\n\n\nPybricks\nSoftware del Hub\nEntender Python\n\n\nThonny\nEditor de código\nEscribir programas\n\n\nSimulador\nVersión virtual\nPracticar sin robot",
+    "text": "Resumen: Conceptos Clave\n\n\n\nConcepto\nQué es\nPara qué\n\n\n\n\nHub\nEl cerebro del robot\nProcesar instrucciones\n\n\nPuerto A/B\nConexiones para motores\nMover el robot\n\n\nPuerto C/D\nConexiones para sensores\nDetectar el entorno\n\n\nPantalla\nMatriz 5x5 LEDs\nMostrar información\n\n\nLED de estado\nLuz de colores\nIndicar estado\n\n\nPybricks\nSoftware del Hub\nEntender Python\n\n\nThonny\nEditor de código\nEscribir programas\n\n\nSimulador\nVersión virtual\nPracticar sin robot\n\n\n\n\nPara docentes que quieren aprender más: - 📖 Python Tutorial (español) — Tutorial oficial de Python - 📖 Python para NO programadores — Introducción para principiantes\n\nEsta guía covering: qué es el Hub, cómo instalarlo, y alternativas de simulación. Licencia: CC BY 4.0 — Diego Saavedra 2026",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Guía Completa: El Hub LEGO — Desde Cero</span>"
@@ -544,7 +544,7 @@
     "href": "contenido/unidad1/guia_hub_desde_cero.html#referencias",
     "title": "Guía Completa: El Hub LEGO — Desde Cero",
     "section": "Referencias",
-    "text": "Referencias\n[1] LEGO Group. (2024). LEGO Technic Large Hub Product Information. Available: https://www.lego.com\n[2] Thonny Team. (2024). Thonny: Python IDE for Beginners. Available: https://thonny.org\n[3] Thonny Team. (2024). Thonny Source Code. GitHub Repository. Available: https://github.com/thonny/thonny\n[4] Pybricks Team. (2024). Pybricks Documentation. Available: https://docs.pybricks.com\n[5] Pybricks Team. (2024). Pybricks Official Website. Available: https://pybricks.com\n[6] Pybricks Team. (2024). Pybricks GitHub Repository. Available: https://github.com/pybricks\n[7] MicroPython Team. (2024). MicroPython Official Website. Available: https://micropython.org\n[8] MicroPython Team. (2024). MicroPython Documentation. Available: https://docs.micropython.org\n[9] OpenBot Foundation. (2024). OpenBot: Turning Smartphones into Robots. Available: https://openbot.org\n[10] Intel Labs. (2024). OpenBot GitHub Repository. Available: https://github.com/isl-org/OpenBot\n[11] Rundhall. (2024). ESP-LEGO-SPIKE-Simulator. GitHub Repository. Available: https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator\n[12] Python Software Foundation. (2024). Python Tutorial. Available: https://docs.python.org/es/3/tutorial/\nPara docentes que quieren aprender más: - 📖 Python Tutorial (español) — Tutorial oficial de Python - 📖 Python para NO programadores — Introducción para principiantes\n\nEsta guía covering: qué es el Hub, cómo instalarlo, y alternativas de simulación. Licencia: CC BY 4.0 — Diego Saavedra 2026",
+    "text": "Referencias\n[1] LEGO Group. (2024). LEGO Technic Large Hub Product Information. Available: https://www.lego.com\n[2] Thonny Team. (2024). Thonny: Python IDE for Beginners. Available: https://thonny.org\n[3] Thonny Team. (2024). Thonny Source Code. GitHub Repository. Available: https://github.com/thonny/thonny\n[4] Pybricks Team. (2024). Pybricks Documentation. Available: https://docs.pybricks.com\n[5] Pybricks Team. (2024). Pybricks Official Website. Available: https://pybricks.com\n[6] Pybricks Team. (2024). Pybricks GitHub Repository. Available: https://github.com/pybricks\n[7] MicroPython Team. (2024). MicroPython Official Website. Available: https://micropython.org\n[8] MicroPython Team. (2024). MicroPython Documentation. Available: https://docs.micropython.org\n[9] OpenBot Foundation. (2024). OpenBot: Turning Smartphones into Robots. Available: https://openbot.org\n[10] Intel Labs. (2024). OpenBot GitHub Repository. Available: https://github.com/isl-org/OpenBot\n[11] Rundhall. (2024). ESP-LEGO-SPIKE-Simulator. GitHub Repository. Available: https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator\n[12] Python Software Foundation. (2024). Python Tutorial. Available: https://docs.python.org/es/3/tutorial/",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Guía Completa: El Hub LEGO — Desde Cero</span>"
@@ -595,22 +595,22 @@
     ]
   },
   {
-    "objectID": "contenido/unidad1/1_instalacion_pybricks.html#referencias",
-    "href": "contenido/unidad1/1_instalacion_pybricks.html#referencias",
+    "objectID": "contenido/unidad1/1_instalacion_pybricks.html#misión-de-esta-unidad",
+    "href": "contenido/unidad1/1_instalacion_pybricks.html#misión-de-esta-unidad",
     "title": "Unidad 1: Tu Primer Programa",
-    "section": "Referencias",
-    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[3] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[4] LEGO. (2023). LEGO Education SPIKE Prime Hub. LEGO. Disponible: https://lego.com\n[5] Pybricks. (2023). Pybricks Official Website. Pybricks. Disponible: https://pybricks.com\n[6] MicroPython. (2023). MicroPython Official Website. MicroPython. Disponible: https://micropython.org",
+    "section": "Misión de esta unidad",
+    "text": "Misión de esta unidad\nAhora intenta esto:\n\nCambia el mensaje de “HOLA” a tu nombre (máximo 5 letras)\nCambia el color de la luz (prueba BLUE, RED, YELLOW)\nIntenta que el robot haga dos cosas seguidas\n\nCuando logres que el robot responda a tus instrucciones, habrás completado esta unidad.\n\nEn la siguiente unidad: cómo mostrar diferentes dibujos y mensajes en la pantalla del robot.",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Unidad 1: Tu Primer Programa</span>"
     ]
   },
   {
-    "objectID": "contenido/unidad1/1_instalacion_pybricks.html#misión-de-esta-unidad",
-    "href": "contenido/unidad1/1_instalacion_pybricks.html#misión-de-esta-unidad",
+    "objectID": "contenido/unidad1/1_instalacion_pybricks.html#referencias",
+    "href": "contenido/unidad1/1_instalacion_pybricks.html#referencias",
     "title": "Unidad 1: Tu Primer Programa",
-    "section": "Misión de esta unidad",
-    "text": "Misión de esta unidad\nAhora intenta esto:\n\nCambia el mensaje de “HOLA” a tu nombre (máximo 5 letras)\nCambia el color de la luz (prueba BLUE, RED, YELLOW)\nIntenta que el robot haga dos cosas seguidas\n\nCuando logres que el robot responda a tus instrucciones, habrás completado esta unidad.\n\nEn la siguiente unidad: cómo mostrar diferentes dibujos y mensajes en la pantalla del robot.",
+    "section": "Referencias",
+    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[3] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[4] LEGO. (2023). LEGO Education SPIKE Prime Hub. LEGO. Disponible: https://lego.com\n[5] Pybricks. (2023). Pybricks Official Website. Pybricks. Disponible: https://pybricks.com\n[6] MicroPython. (2023). MicroPython Official Website. MicroPython. Disponible: https://micropython.org",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Unidad 1: Tu Primer Programa</span>"
@@ -720,7 +720,7 @@
     "href": "contenido/unidad1/lab1_hola_mundo.html#para-seguir-explorando",
     "title": "Laboratorio 1: ¡Hola, Robot!",
     "section": "💡 Para seguir explorando",
-    "text": "💡 Para seguir explorando\n¿Qué pasaría si cambiaras el número del color? Intenta:\nhub.light.on(0)   # ¿Qué color es?\nhub.light.on(3)   # ¿Y este?\nhub.light.on(9)   # ¿Y este otro?\nEl número representa diferentes colores—justo como cuando cambias el color de un marcador.",
+    "text": "💡 Para seguir explorando\n¿Qué pasaría si cambiaras el número del color? Intenta:\nhub.light.on(0)   # ¿Qué color es?\nhub.light.on(3)   # ¿Y este?\nhub.light.on(9)   # ¿Y este otro?\nEl número representa diferentes colores—justo como cuando cambias el color de un marcador.\n\nHas completado tu primer laboratorio. Ahora sabes cómo escribir algo, probarlo en la computadora, y enviarlo al robot para que lo haga.",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Laboratorio 1: ¡Hola, Robot!</span>"
@@ -731,7 +731,7 @@
     "href": "contenido/unidad1/lab1_hola_mundo.html#referencias",
     "title": "Laboratorio 1: ¡Hola, Robot!",
     "section": "Referencias",
-    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[3] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[4] LEGO. (2023). LEGO Education SPIKE Prime Hub. LEGO. Disponible: https://lego.com\n\nHas completado tu primer laboratorio. Ahora sabes cómo escribir algo, probarlo en la computadora, y enviarlo al robot para que lo haga.",
+    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[3] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[4] LEGO. (2023). LEGO Education SPIKE Prime Hub. LEGO. Disponible: https://lego.com",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Laboratorio 1: ¡Hola, Robot!</span>"
@@ -830,7 +830,7 @@
     "href": "contenido/unidad1/lab1b_ejercicios.html#rúbrica-de-evaluación",
     "title": "Laboratorio 1B: Ejercicios de Refuerzo",
     "section": "📋 Rúbrica de Evaluación",
-    "text": "📋 Rúbrica de Evaluación\n\n\n\nCriterio\nPuntos\nDescripción\n\n\n\n\nEjercicio 1.1\n15\nSecuencia de LEDs funcional\n\n\nEjercicio 1.2\n15\nEfecto de respiración suave\n\n\nEjercicio 1.3\n15\nInteracción con botones\n\n\nEjercicio 1.4\n20\nContador binario correcto\n\n\nEjercicio 1.5\n15\nMelodía reproducida\n\n\nEjercicio 1.6\n20\nMenú interactivo completo\n\n\nTotal\n100",
+    "text": "📋 Rúbrica de Evaluación\n\n\n\nCriterio\nPuntos\nDescripción\n\n\n\n\nEjercicio 1.1\n15\nSecuencia de LEDs funcional\n\n\nEjercicio 1.2\n15\nEfecto de respiración suave\n\n\nEjercicio 1.3\n15\nInteracción con botones\n\n\nEjercicio 1.4\n20\nContador binario correcto\n\n\nEjercicio 1.5\n15\nMelodía reproducida\n\n\nEjercicio 1.6\n20\nMenú interactivo completo\n\n\nTotal\n100\n\n\n\n\n\nEjercicios de Refuerzo - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 1B: Ejercicios de Refuerzo</span>"
@@ -841,7 +841,7 @@
     "href": "contenido/unidad1/lab1b_ejercicios.html#referencias",
     "title": "Laboratorio 1B: Ejercicios de Refuerzo",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - PrimeHub. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#primehub\n[2] Python Software Foundation. Python Tutorial - Control Flow. 2026. Disponible en: https://docs.python.org/3/tutorial/controlflow.html\n\nEjercicios de Refuerzo - MicroPython para el Aula - Diego Saavedra 2026",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - PrimeHub. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#primehub\n[2] Python Software Foundation. Python Tutorial - Control Flow. 2026. Disponible en: https://docs.python.org/3/tutorial/controlflow.html",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Laboratorio 1B: Ejercicios de Refuerzo</span>"
@@ -896,7 +896,7 @@
     "href": "quizzes/quiz_unidad1.html#después-de-completar-este-quiz",
     "title": "🎮 Quiz Unidad 1: Conectar y Programar",
     "section": "📈 Después de Completar este Quiz",
-    "text": "📈 Después de Completar este Quiz\nSiguiente paso: 🐍 Lab 1A - Tu Primer Programa\n                └─&gt; 🔌 Lab 1B - Ejercicios de Refuerzo\n                    └─&gt; 📝 Quiz Unidad 2: Pantalla y Luces",
+    "text": "📈 Después de Completar este Quiz\nSiguiente paso: 🐍 Lab 1A - Tu Primer Programa\n                └─&gt; 🔌 Lab 1B - Ejercicios de Refuerzo\n                    └─&gt; 📝 Quiz Unidad 2: Pantalla y Luces\n\n🎮 Quiz Unidad 1 - MicroPython para el Aula - Diego Saavedra 2026 🏆",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>🎮 Quiz Unidad 1: Conectar y Programar</span>"
@@ -907,7 +907,7 @@
     "href": "quizzes/quiz_unidad1.html#referencias",
     "title": "🎮 Quiz Unidad 1: Conectar y Programar",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API Reference. 2026. Disponible en: https://docs.pybricks.com/en/latest/index.html\n[2] Python Software Foundation. Turtle Graphics — Python 3.13 Documentation. 2026. Disponible en: https://docs.python.org/3/library/turtle.html\n\n🎮 Quiz Unidad 1 - MicroPython para el Aula - Diego Saavedra 2026 🏆",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API Reference. 2026. Disponible en: https://docs.pybricks.com/en/latest/index.html\n[2] Python Software Foundation. Turtle Graphics — Python 3.13 Documentation. 2026. Disponible en: https://docs.python.org/3/library/turtle.html",
     "crumbs": [
       "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>🎮 Quiz Unidad 1: Conectar y Programar</span>"
@@ -984,7 +984,7 @@
     "href": "contenido/unidad2/1_display_luces.html#lo-que-aprendiste",
     "title": "Unidad 2: ¿Qué puede mostrar el robot?",
     "section": "📋 Lo que aprendiste",
-    "text": "📋 Lo que aprendiste\nAntes de pasar al laboratorio, marca lo que entendiste:\n\nLa pantalla tiene 25 puntitos (5x5)\nPuedo usar dibujos listos (como emoji)\nPuedo crear mis propios dibujos\nEl robot tiene una luz central que puede cambiar\nPuedo hacer animaciones mostrando imágenes una tras otra",
+    "text": "📋 Lo que aprendiste\nAntes de pasar al laboratorio, marca lo que entendiste:\n\nLa pantalla tiene 25 puntitos (5x5)\nPuedo usar dibujos listos (como emoji)\nPuedo crear mis propios dibujos\nEl robot tiene una luz central que puede cambiar\nPuedo hacer animaciones mostrando imágenes una tras otra\n\n\nAhora vas al laboratorio donde crearás tu propia animación.",
     "crumbs": [
       "💡 UNIDAD 2: PANTALLA Y LUCES",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Unidad 2: ¿Qué puede mostrar el robot?</span>"
@@ -995,7 +995,7 @@
     "href": "contenido/unidad2/1_display_luces.html#referencias",
     "title": "Unidad 2: ¿Qué puede mostrar el robot?",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation - Display Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html\n[2] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[3] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com\n[4] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n\nAhora vas al laboratorio donde crearás tu propia animación.",
+    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation - Display Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html\n[2] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[3] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com\n[4] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org",
     "crumbs": [
       "💡 UNIDAD 2: PANTALLA Y LUCES",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Unidad 2: ¿Qué puede mostrar el robot?</span>"
@@ -1094,7 +1094,7 @@
     "href": "contenido/unidad2/lab2_animaciones.html#para-seguir-explorando",
     "title": "Laboratorio 2: Haciendo que las imágenes se muevan",
     "section": "💡 Para seguir explorando",
-    "text": "💡 Para seguir explorando\n¿Qué más podrías animarse?\n\nUn enemigo de video juego que se mueve\nUna cara que pestañea\nUna escalera que “baja”\nNúmeros que cambian (como un contador)\n\nEl límite es tu imaginación—igual que dibujar en papel, pero ahora el robot lo muestra.",
+    "text": "💡 Para seguir explorando\n¿Qué más podrías animarse?\n\nUn enemigo de video juego que se mueve\nUna cara que pestañea\nUna escalera que “baja”\nNúmeros que cambian (como un contador)\n\nEl límite es tu imaginación—igual que dibujar en papel, pero ahora el robot lo muestra.\n\nHas completado el laboratorio de animaciones. Ahora puedes hacer que cualquier imagen cobre vida en la pantalla del robot.",
     "crumbs": [
       "💡 UNIDAD 2: PANTALLA Y LUCES",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 2: Haciendo que las imágenes se muevan</span>"
@@ -1105,7 +1105,7 @@
     "href": "contenido/unidad2/lab2_animaciones.html#referencias",
     "title": "Laboratorio 2: Haciendo que las imágenes se muevan",
     "section": "Referencias",
-    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation - Display Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html\n[3] D. George. (2013). MicroPython Documentation - Control Structures. MicroPython. Disponible: https://docs.micropython.org\n[4] D. George. (2013). MicroPython Documentation - Lists. MicroPython. Disponible: https://docs.micropython.org/en/latest/library/array.html\n[5] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com\n\nHas completado el laboratorio de animaciones. Ahora puedes hacer que cualquier imagen cobre vida en la pantalla del robot.",
+    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation - Display Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html\n[3] D. George. (2013). MicroPython Documentation - Control Structures. MicroPython. Disponible: https://docs.micropython.org\n[4] D. George. (2013). MicroPython Documentation - Lists. MicroPython. Disponible: https://docs.micropython.org/en/latest/library/array.html\n[5] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com",
     "crumbs": [
       "💡 UNIDAD 2: PANTALLA Y LUCES",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Laboratorio 2: Haciendo que las imágenes se muevan</span>"
@@ -1193,7 +1193,7 @@
     "href": "contenido/unidad2/lab2b_animaciones_avanzadas.html#rúbrica-de-evaluación",
     "title": "Laboratorio 2B: Diseño de Animaciones Avanzadas",
     "section": "📋 Rúbrica de Evaluación",
-    "text": "📋 Rúbrica de Evaluación\n\n\n\nCriterio\nPuntos\nDescripción\n\n\n\n\nEjercicio 2.1\n20\nCorazón palpitante fluido\n\n\nEjercicio 2.2\n15\nTexto scrolleando correctamente\n\n\nEjercicio 2.3\n20\nReloj funcional\n\n\nEjercicio 2.4\n15\nEfecto de onda suave\n\n\nEjercicio 2.5\n30\nJuego completo y funcional\n\n\nTotal\n100",
+    "text": "📋 Rúbrica de Evaluación\n\n\n\nCriterio\nPuntos\nDescripción\n\n\n\n\nEjercicio 2.1\n20\nCorazón palpitante fluido\n\n\nEjercicio 2.2\n15\nTexto scrolleando correctamente\n\n\nEjercicio 2.3\n20\nReloj funcional\n\n\nEjercicio 2.4\n15\nEfecto de onda suave\n\n\nEjercicio 2.5\n30\nJuego completo y funcional\n\n\nTotal\n100\n\n\n\n\n\nAnimaciones Avanzadas - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "💡 UNIDAD 2: PANTALLA Y LUCES",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Laboratorio 2B: Diseño de Animaciones Avanzadas</span>"
@@ -1204,7 +1204,7 @@
     "href": "contenido/unidad2/lab2b_animaciones_avanzadas.html#referencias",
     "title": "Laboratorio 2B: Diseño de Animaciones Avanzadas",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - LightMatrix. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#lightmatrix\n[2] Python Software Foundation. random — Generate pseudo-random numbers. 2026. Disponible en: https://docs.python.org/3/library/random.html\n\nAnimaciones Avanzadas - MicroPython para el Aula - Diego Saavedra 2026",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - LightMatrix. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#lightmatrix\n[2] Python Software Foundation. random — Generate pseudo-random numbers. 2026. Disponible en: https://docs.python.org/3/library/random.html",
     "crumbs": [
       "💡 UNIDAD 2: PANTALLA Y LUCES",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Laboratorio 2B: Diseño de Animaciones Avanzadas</span>"
@@ -1259,7 +1259,7 @@
     "href": "quizzes/quiz_unidad2.html#después-de-completar-este-quiz",
     "title": "🎮 Quiz Unidad 2: Pantalla y Luces",
     "section": "📈 Después de Completar este Quiz",
-    "text": "📈 Después de Completar este Quiz\nSiguiente paso: 🤖 Unidad 3: Movimiento\n                └─&gt; 🔄 Lab 3A - Navegación\n                    └─&gt; 🏎️ Lab 3B - Movimiento Avanzado\n                        └─&gt; 📝 Quiz Unidad 3",
+    "text": "📈 Después de Completar este Quiz\nSiguiente paso: 🤖 Unidad 3: Movimiento\n                └─&gt; 🔄 Lab 3A - Navegación\n                    └─&gt; 🏎️ Lab 3B - Movimiento Avanzado\n                        └─&gt; 📝 Quiz Unidad 3\n\n🎮 Quiz Unidad 2 - MicroPython para el Aula - Diego Saavedra 2026 🏆",
     "crumbs": [
       "💡 UNIDAD 2: PANTALLA Y LUCES",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>🎮 Quiz Unidad 2: Pantalla y Luces</span>"
@@ -1270,7 +1270,7 @@
     "href": "quizzes/quiz_unidad2.html#referencias",
     "title": "🎮 Quiz Unidad 2: Pantalla y Luces",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API Reference - DriveBase. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html\n[2] LEGO Education. SPIKE Prime - Hub Hardware Reference. 2026. Disponible en: https://education.lego.com/en-au/support/spike-prime/\n[3] Python Software Foundation. Compound Statements - for statement. 2026. Disponible en: https://docs.python.org/3/reference/compound_stmts.html#for\n\n🎮 Quiz Unidad 2 - MicroPython para el Aula - Diego Saavedra 2026 🏆",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API Reference - DriveBase. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html\n[2] LEGO Education. SPIKE Prime - Hub Hardware Reference. 2026. Disponible en: https://education.lego.com/en-au/support/spike-prime/\n[3] Python Software Foundation. Compound Statements - for statement. 2026. Disponible en: https://docs.python.org/3/reference/compound_stmts.html#for",
     "crumbs": [
       "💡 UNIDAD 2: PANTALLA Y LUCES",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>🎮 Quiz Unidad 2: Pantalla y Luces</span>"
@@ -1358,7 +1358,7 @@
     "href": "contenido/unidad3/1_motores.html#lo-que-aprendiste",
     "title": "Unidad 3: ¿Cómo hace el robot para moverse?",
     "section": "📋 Lo que aprendiste",
-    "text": "📋 Lo que aprendiste\nAntes de pasar al laboratorio, marca lo que entendiste:\n\nEl robot tiene dos motores (izquierdo y derecho)\nSi ambos van igual → avanza recto\nSi uno gira más → el robot gira\nPuedo hacer que repita algo varias veces\nEl “giroscopio” ayuda a ir más recto",
+    "text": "📋 Lo que aprendiste\nAntes de pasar al laboratorio, marca lo que entendiste:\n\nEl robot tiene dos motores (izquierdo y derecho)\nSi ambos van igual → avanza recto\nSi uno gira más → el robot gira\nPuedo hacer que repita algo varias veces\nEl “giroscopio” ayuda a ir más recto\n\n\nAhora vas al laboratorio donde harás que el robot dibuje un cuadrado.",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Unidad 3: ¿Cómo hace el robot para moverse?</span>"
@@ -1369,7 +1369,7 @@
     "href": "contenido/unidad3/1_motores.html#referencias",
     "title": "Unidad 3: ¿Cómo hace el robot para moverse?",
     "section": "Referencias",
-    "text": "Referencias\n[1] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com\n[2] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[3] D. George. (2013). MicroPython Documentation - Control Structures. MicroPython. Disponible: https://docs.micropython.org\n[4] Pybricks Team. (2023). Pybricks Documentation - Motors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html\n[5] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n\nAhora vas al laboratorio donde harás que el robot dibuje un cuadrado.",
+    "text": "Referencias\n[1] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com\n[2] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[3] D. George. (2013). MicroPython Documentation - Control Structures. MicroPython. Disponible: https://docs.micropython.org\n[4] Pybricks Team. (2023). Pybricks Documentation - Motors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html\n[5] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Unidad 3: ¿Cómo hace el robot para moverse?</span>"
@@ -1468,7 +1468,7 @@
     "href": "contenido/unidad3/2_motores_avanzados.html#lo-que-aprendiste",
     "title": "Control Avanzado de Motores: PID, Calibración y Más",
     "section": "📋 Lo que aprendiste",
-    "text": "📋 Lo que aprendiste\nAntes de terminar, marca lo que entendiste:\n\nLos tres modos de parada: COAST, BRAKE, HOLD\nLos distintos métodos de movimiento: run, run_time, run_angle, run_target, run_until_stalled\nCómo funciona el control PID y para qué sirve\nCómo leer el estado del motor (angle, speed)\nCómo usar DCMotor para control directo\nCómo calibrar el robot para mayor precisión",
+    "text": "📋 Lo que aprendiste\nAntes de terminar, marca lo que entendiste:\n\nLos tres modos de parada: COAST, BRAKE, HOLD\nLos distintos métodos de movimiento: run, run_time, run_angle, run_target, run_until_stalled\nCómo funciona el control PID y para qué sirve\nCómo leer el estado del motor (angle, speed)\nCómo usar DCMotor para control directo\nCómo calibrar el robot para mayor precisión\n\n\nEn la siguiente unidad: Telemetría y monitoreo de batería.",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Control Avanzado de Motores: PID, Calibración y Más</span>"
@@ -1479,7 +1479,7 @@
     "href": "contenido/unidad3/2_motores_avanzados.html#referencias",
     "title": "Control Avanzado de Motores: PID, Calibración y Más",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation - Motors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/motor.html\n[2] Pybricks Team. (2023). Pybricks Documentation - DC Motor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/dcmotor.html\n[3] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[4] LEGO Education. (2023). LEGO Education SPIKE Prime - Motor Specifications. LEGO. Disponible: https://lego.com\n[5] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[6] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n\nEn la siguiente unidad: Telemetría y monitoreo de batería.",
+    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation - Motors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/motor.html\n[2] Pybricks Team. (2023). Pybricks Documentation - DC Motor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/dcmotor.html\n[3] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[4] LEGO Education. (2023). LEGO Education SPIKE Prime - Motor Specifications. LEGO. Disponible: https://lego.com\n[5] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[6] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Control Avanzado de Motores: PID, Calibración y Más</span>"
@@ -1589,7 +1589,7 @@
     "href": "contenido/unidad3/lab3_navegacion.html#para-seguir-explorando",
     "title": "Laboratorio 3: El robot que dibuja un cuadrado",
     "section": "💡 Para seguir explorando",
-    "text": "💡 Para seguir explorando\n¿Qué otras formas podrías dibujar?\n\nTriángulo: 3 lados, girar 120° cada vez (360° / 3 = 120°)\nOctágono: 8 lados, girar 45° cada vez (360° / 8 = 45°)\nCírculo: muchos lados muy pequeños, o usar código diferente\n\nIntenta cambiar los números y observa qué pasa:\n# Un triángulo\nfor i in range(3):\n    robot.straight(200)\n    robot.turn(120)  # 360° ÷ 3 = 120°",
+    "text": "💡 Para seguir explorando\n¿Qué otras formas podrías dibujar?\n\nTriángulo: 3 lados, girar 120° cada vez (360° / 3 = 120°)\nOctágono: 8 lados, girar 45° cada vez (360° / 8 = 45°)\nCírculo: muchos lados muy pequeños, o usar código diferente\n\nIntenta cambiar los números y observa qué pasa:\n# Un triángulo\nfor i in range(3):\n    robot.straight(200)\n    robot.turn(120)  # 360° ÷ 3 = 120°\n\nHas completado el laboratorio de movimiento. Ahora tu robot puede dibujar formas moviéndose.",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Laboratorio 3: El robot que dibuja un cuadrado</span>"
@@ -1600,7 +1600,7 @@
     "href": "contenido/unidad3/lab3_navegacion.html#referencias",
     "title": "Laboratorio 3: El robot que dibuja un cuadrado",
     "section": "Referencias",
-    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[3] D. George. (2013). MicroPython Documentation - Control Structures. MicroPython. Disponible: https://docs.micropython.org\n[4] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com\n[5] Pybricks Team. (2023). Pybricks Documentation - Motors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html\n\nHas completado el laboratorio de movimiento. Ahora tu robot puede dibujar formas moviéndose.",
+    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[3] D. George. (2013). MicroPython Documentation - Control Structures. MicroPython. Disponible: https://docs.micropython.org\n[4] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com\n[5] Pybricks Team. (2023). Pybricks Documentation - Motors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>16</span>  <span class='chapter-title'>Laboratorio 3: El robot que dibuja un cuadrado</span>"
@@ -1688,7 +1688,7 @@
     "href": "contenido/unidad3/lab3b_movimiento_avanzado.html#rúbrica-de-evaluación",
     "title": "Laboratorio 3B: Ejercicios de Movimiento Avanzado",
     "section": "📋 Rúbrica de Evaluación",
-    "text": "📋 Rúbrica de Evaluación\n\n\n\nCriterio\nPuntos\nDescripción\n\n\n\n\nEjercicio 3.1\n15\nControl preciso individual\n\n\nEjercicio 3.2\n25\nCuadrado con ángulos correctos\n\n\nEjercicio 3.3\n20\nFigura en ocho suave\n\n\nEjercicio 3.4\n25\nAlgoritmo laberinto funcional\n\n\nEjercicio 3.5\n15\nPrecisión en carrera\n\n\nTotal\n100",
+    "text": "📋 Rúbrica de Evaluación\n\n\n\nCriterio\nPuntos\nDescripción\n\n\n\n\nEjercicio 3.1\n15\nControl preciso individual\n\n\nEjercicio 3.2\n25\nCuadrado con ángulos correctos\n\n\nEjercicio 3.3\n20\nFigura en ocho suave\n\n\nEjercicio 3.4\n25\nAlgoritmo laberinto funcional\n\n\nEjercicio 3.5\n15\nPrecisión en carrera\n\n\nTotal\n100\n\n\n\n\n\nMovimiento Avanzado - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Laboratorio 3B: Ejercicios de Movimiento Avanzado</span>"
@@ -1699,7 +1699,7 @@
     "href": "contenido/unidad3/lab3b_movimiento_avanzado.html#referencias",
     "title": "Laboratorio 3B: Ejercicios de Movimiento Avanzado",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - DriveBase. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase\n[2] Pybricks Team. Pybricks MicroPython API - Motor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor\n\nMovimiento Avanzado - MicroPython para el Aula - Diego Saavedra 2026",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - DriveBase. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase\n[2] Pybricks Team. Pybricks MicroPython API - Motor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Laboratorio 3B: Ejercicios de Movimiento Avanzado</span>"
@@ -1754,7 +1754,7 @@
     "href": "quizzes/quiz_unidad3.html#después-de-completar-este-quiz",
     "title": "🎮 Quiz Unidad 3: Movimiento",
     "section": "📈 Después de Completar este Quiz",
-    "text": "📈 Después de Completar este Quiz\nSiguiente paso: 📡 Unidad 4: Sensores\n                └─&gt; 👁️ Lab 4A - Telemetría\n                    └─&gt; 🔋 Lab 4B - Monitoreo Batería\n                        └─&gt; 📝 Quiz Unidad 4",
+    "text": "📈 Después de Completar este Quiz\nSiguiente paso: 📡 Unidad 4: Sensores\n                └─&gt; 👁️ Lab 4A - Telemetría\n                    └─&gt; 🔋 Lab 4B - Monitoreo Batería\n                        └─&gt; 📝 Quiz Unidad 4\n\n🎮 Quiz Unidad 3 - MicroPython para el Aula - Diego Saavedra 2026 🏆",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>🎮 Quiz Unidad 3: Movimiento</span>"
@@ -1765,7 +1765,7 @@
     "href": "quizzes/quiz_unidad3.html#referencias",
     "title": "🎮 Quiz Unidad 3: Movimiento",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API Reference - DriveBase and Motors. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase\n[2] Pybricks Team. Pybricks Code - Web-based Programming Environment. 2026. Disponible en: https://code.pybricks.com/\n\n🎮 Quiz Unidad 3 - MicroPython para el Aula - Diego Saavedra 2026 🏆",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API Reference - DriveBase and Motors. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase\n[2] Pybricks Team. Pybricks Code - Web-based Programming Environment. 2026. Disponible en: https://code.pybricks.com/",
     "crumbs": [
       "🤖 UNIDAD 3: MOVIMIENTO",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>🎮 Quiz Unidad 3: Movimiento</span>"
@@ -1842,7 +1842,7 @@
     "href": "contenido/unidad4/1_sensores.html#lo-que-aprendiste",
     "title": "Unidad 4: ¿Cómo sabe el robot que hay algo adelante?",
     "section": "📋 Lo que aprendiste",
-    "text": "📋 Lo que aprendiste\nAntes de pasar al laboratorio, marca lo que entendiste:\n\nEl robot tiene sensores que detectan objetos\nEl sensor ultrasónico usa “eco” para medir distancia\nEl robot puede hacer dos cosas a la vez (moverse Y observar)\nPuedo programar reacciones cuando detecta algo",
+    "text": "📋 Lo que aprendiste\nAntes de pasar al laboratorio, marca lo que entendiste:\n\nEl robot tiene sensores que detectan objetos\nEl sensor ultrasónico usa “eco” para medir distancia\nEl robot puede hacer dos cosas a la vez (moverse Y observar)\nPuedo programar reacciones cuando detecta algo\n\n\nAhora vas al laboratorio donde crearás un robot explorador.",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span>"
@@ -1853,7 +1853,7 @@
     "href": "contenido/unidad4/1_sensores.html#referencias",
     "title": "Unidad 4: ¿Cómo sabe el robot que hay algo adelante?",
     "section": "Referencias",
-    "text": "Referencias\n[1] LEGO Education. (2023). LEGO Education SPIKE Prime - Ultrasonic Sensor. LEGO. Disponible: https://lego.com\n[2] Pybricks Team. (2023). Pybricks Documentation - Sensors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html\n[3] D. George. (2013). MicroPython Documentation - asyncio. MicroPython. Disponible: https://docs.micropython.org\n[4] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[5] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n\nAhora vas al laboratorio donde crearás un robot explorador.",
+    "text": "Referencias\n[1] LEGO Education. (2023). LEGO Education SPIKE Prime - Ultrasonic Sensor. LEGO. Disponible: https://lego.com\n[2] Pybricks Team. (2023). Pybricks Documentation - Sensors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html\n[3] D. George. (2013). MicroPython Documentation - asyncio. MicroPython. Disponible: https://docs.micropython.org\n[4] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[5] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span>"
@@ -1930,7 +1930,7 @@
     "href": "contenido/unidad4/2_sensores_adicionales.html#lo-que-aprendiste",
     "title": "Sensores Adicionales: Infrared, Color y Fuerza",
     "section": "📋 Lo que aprendiste",
-    "text": "📋 Lo que aprendiste\nAntes de terminar, marca lo que entendiste:\n\nEl sensor infrarrojo mide distancia y reflexión\nEl sensor de color detecta colores y controla luces\nEl sensor de fuerza mide presión en Newtons\nEl sensor de inclinación detecta pitch y roll\nPuedo usar múltiples sensores juntos",
+    "text": "📋 Lo que aprendiste\nAntes de terminar, marca lo que entendiste:\n\nEl sensor infrarrojo mide distancia y reflexión\nEl sensor de color detecta colores y controla luces\nEl sensor de fuerza mide presión en Newtons\nEl sensor de inclinación detecta pitch y roll\nPuedo usar múltiples sensores juntos\n\n\nEn la siguiente unidad: Control avanzado de motores con PID y calibración.",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Sensores Adicionales: Infrared, Color y Fuerza</span>"
@@ -1941,7 +1941,7 @@
     "href": "contenido/unidad4/2_sensores_adicionales.html#referencias",
     "title": "Sensores Adicionales: Infrared, Color y Fuerza",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation - Sensors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html\n[2] LEGO Education. (2023). LEGO Education SPIKE Prime - Sensor Specifications. LEGO. Disponible: https://lego.com\n[3] Pybricks Team. (2023). Pybricks Documentation - Color Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/colorsensor.html\n[4] Pybricks Team. (2023). Pybricks Documentation - Infrared Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/infraredsensor.html\n[5] Pybricks Team. (2023). Pybricks Documentation - Force Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/forcesensor.html\n[6] Pybricks Team. (2023). Pybricks Documentation - Tilt Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html\n[7] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n\nEn la siguiente unidad: Control avanzado de motores con PID y calibración.",
+    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation - Sensors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html\n[2] LEGO Education. (2023). LEGO Education SPIKE Prime - Sensor Specifications. LEGO. Disponible: https://lego.com\n[3] Pybricks Team. (2023). Pybricks Documentation - Color Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/colorsensor.html\n[4] Pybricks Team. (2023). Pybricks Documentation - Infrared Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/infraredsensor.html\n[5] Pybricks Team. (2023). Pybricks Documentation - Force Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/forcesensor.html\n[6] Pybricks Team. (2023). Pybricks Documentation - Tilt Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html\n[7] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Sensores Adicionales: Infrared, Color y Fuerza</span>"
@@ -2029,7 +2029,7 @@
     "href": "contenido/unidad4/2_telemetria_bateria.html#lo-que-aprendiste",
     "title": "Telemetría: Monitoreo de Batería y Estado del Robot",
     "section": "📋 Lo que aprendiste",
-    "text": "📋 Lo que aprendiste\nAntes de terminar, marca lo que entendiste:\n\nMonitorear voltaje y corriente de batería\nDetectar cuándo la batería está baja\nLeer botones del Hub\nObtener estado del robot (distancia, ángulo, velocidad)\nResetear odometría\nHacer logging de datos",
+    "text": "📋 Lo que aprendiste\nAntes de terminar, marca lo que entendiste:\n\nMonitorear voltaje y corriente de batería\nDetectar cuándo la batería está baja\nLeer botones del Hub\nObtener estado del robot (distancia, ángulo, velocidad)\nResetear odometría\nHacer logging de datos\n\n\nEn la siguiente unidad: Usando Thonny como debugger profesional.",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Telemetría: Monitoreo de Batería y Estado del Robot</span>"
@@ -2040,7 +2040,7 @@
     "href": "contenido/unidad4/2_telemetria_bateria.html#referencias",
     "title": "Telemetría: Monitoreo de Batería y Estado del Robot",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation - PrimeHub. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html\n[2] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[3] LEGO Education. (2023). LEGO Education SPIKE Prime - Battery Specifications. LEGO. Disponible: https://lego.com\n[4] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[5] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n\nEn la siguiente unidad: Usando Thonny como debugger profesional.",
+    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation - PrimeHub. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html\n[2] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[3] LEGO Education. (2023). LEGO Education SPIKE Prime - Battery Specifications. LEGO. Disponible: https://lego.com\n[4] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[5] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Telemetría: Monitoreo de Batería y Estado del Robot</span>"
@@ -2139,7 +2139,7 @@
     "href": "contenido/unidad4/lab4_telemetria.html#para-seguir-explorando",
     "title": "Laboratorio 4: Un robot que explora solo",
     "section": "💡 Para seguir explorando",
-    "text": "💡 Para seguir explorando\n¿Qué más podría hacer el robot?\n\nRobot seguidor de pared: Si hay algo a la derecha, girar izquierda\nRobot que cuenta obstáculos: Mostrar en pantalla cuántos detectó\nRobot que hace sonido diferente según la distancia: beep corto si lejos, beep largo si cerca\n\n¡El límite es tu imaginación!",
+    "text": "💡 Para seguir explorando\n¿Qué más podría hacer el robot?\n\nRobot seguidor de pared: Si hay algo a la derecha, girar izquierda\nRobot que cuenta obstáculos: Mostrar en pantalla cuántos detectó\nRobot que hace sonido diferente según la distancia: beep corto si lejos, beep largo si cerca\n\n¡El límite es tu imaginación!\n\nHas completado el laboratorio de sensores. Ahora tu robot puede ver el mundo y reaccionar solo.",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 4: Un robot que explora solo</span>"
@@ -2150,7 +2150,7 @@
     "href": "contenido/unidad4/lab4_telemetria.html#referencias",
     "title": "Laboratorio 4: Un robot que explora solo",
     "section": "Referencias",
-    "text": "Referencias\n[1] LEGO Education. (2023). LEGO Education SPIKE Prime - Ultrasonic Sensor. LEGO. Disponible: https://lego.com\n[2] Pybricks Team. (2023). Pybricks Documentation - Sensors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html\n[3] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[4] D. George. (2013). MicroPython Documentation - asyncio. MicroPython. Disponible: https://docs.micropython.org\n[5] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n\nHas completado el laboratorio de sensores. Ahora tu robot puede ver el mundo y reaccionar solo.",
+    "text": "Referencias\n[1] LEGO Education. (2023). LEGO Education SPIKE Prime - Ultrasonic Sensor. LEGO. Disponible: https://lego.com\n[2] Pybricks Team. (2023). Pybricks Documentation - Sensors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html\n[3] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[4] D. George. (2013). MicroPython Documentation - asyncio. MicroPython. Disponible: https://docs.micropython.org\n[5] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Laboratorio 4: Un robot que explora solo</span>"
@@ -2205,7 +2205,7 @@
     "href": "quizzes/quiz_unidad4.html#después-de-completar-este-quiz",
     "title": "🎮 Quiz Unidad 4: Sensores",
     "section": "📈 Después de Completar este Quiz",
-    "text": "📈 Después de Completar este Quiz\n🏆 ¡ÚLTIMO PASO! Siguiente: Unidad 5: Proyecto Final\n                    └─&gt; 📋 Diagrama de Arquitectura\n                        └─&gt; 🔧 Programación del Robot\n                            └─&gt; 🎥 Video Demo\n                                └─&gt; 🎤 Presentación Oral\n                                    └─&gt; 🎓 ¡GRADUACIÓN!",
+    "text": "📈 Después de Completar este Quiz\n🏆 ¡ÚLTIMO PASO! Siguiente: Unidad 5: Proyecto Final\n                    └─&gt; 📋 Diagrama de Arquitectura\n                        └─&gt; 🔧 Programación del Robot\n                            └─&gt; 🎥 Video Demo\n                                └─&gt; 🎤 Presentación Oral\n                                    └─&gt; 🎓 ¡GRADUACIÓN!\n\n🎮 Quiz Unidad 4 - MicroPython para el Aula - Diego Saavedra 2026 🏆",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>🎮 Quiz Unidad 4: Sensores</span>"
@@ -2216,7 +2216,7 @@
     "href": "quizzes/quiz_unidad4.html#referencias",
     "title": "🎮 Quiz Unidad 4: Sensores",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython - Asynchronous Programming with run_task. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html#micropython-top-level-functions\n[2] Pybricks Team. Pybricks MicroPython API - UltrasonicSensor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#ultrasonicsensor\n[3] MicroPython Project. MicroPython Documentation - print function. 2026. Disponible en: https://docs.micropython.org/en/latest/library/builtins.html#print\n\n🎮 Quiz Unidad 4 - MicroPython para el Aula - Diego Saavedra 2026 🏆",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython - Asynchronous Programming with run_task. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html#micropython-top-level-functions\n[2] Pybricks Team. Pybricks MicroPython API - UltrasonicSensor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#ultrasonicsensor\n[3] MicroPython Project. MicroPython Documentation - print function. 2026. Disponible en: https://docs.micropython.org/en/latest/library/builtins.html#print",
     "crumbs": [
       "📡 UNIDAD 4: SENSORES",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>🎮 Quiz Unidad 4: Sensores</span>"
@@ -2333,22 +2333,22 @@
     ]
   },
   {
-    "objectID": "contenido/unidad5/1_proyecto_final.html#referencias",
-    "href": "contenido/unidad5/1_proyecto_final.html#referencias",
+    "objectID": "contenido/unidad5/1_proyecto_final.html#felicitaciones",
+    "href": "contenido/unidad5/1_proyecto_final.html#felicitaciones",
     "title": "Unidad 5: Ahora vas a crear tu propio robot",
-    "section": "Referencias",
-    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation - Display Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html\n[3] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[4] Pybricks Team. (2023). Pybricks Documentation - Sensors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html\n[5] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[6] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com",
+    "section": "¡Felicitaciones!",
+    "text": "¡Felicitaciones!\nHas completado el curso. Ahora sabes:\n\n✅ Escribir instrucciones para un robot\n✅ Mostrar mensajes y dibujos\n✅ Hacer que el robot se mueva\n✅ Hacer que el robot detecte su entorno\n✅ Crear un proyecto propio\n\nEl límite es tu imaginación. ¿Qué vas a crear?\n\nCurso completado — Diego Saavedra 2026",
     "crumbs": [
       "🏆 UNIDAD 5: PROYECTO FINAL",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Unidad 5: Ahora vas a crear tu propio robot</span>"
     ]
   },
   {
-    "objectID": "contenido/unidad5/1_proyecto_final.html#felicitaciones",
-    "href": "contenido/unidad5/1_proyecto_final.html#felicitaciones",
+    "objectID": "contenido/unidad5/1_proyecto_final.html#referencias",
+    "href": "contenido/unidad5/1_proyecto_final.html#referencias",
     "title": "Unidad 5: Ahora vas a crear tu propio robot",
-    "section": "¡Felicitaciones!",
-    "text": "¡Felicitaciones!\nHas completado el curso. Ahora sabes:\n\n✅ Escribir instrucciones para un robot\n✅ Mostrar mensajes y dibujos\n✅ Hacer que el robot se mueva\n✅ Hacer que el robot detecte su entorno\n✅ Crear un proyecto propio\n\nEl límite es tu imaginación. ¿Qué vas a crear?\n\nCurso completado — Diego Saavedra 2026",
+    "section": "Referencias",
+    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Pybricks Team. (2023). Pybricks Documentation - Display Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html\n[3] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[4] Pybricks Team. (2023). Pybricks Documentation - Sensors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html\n[5] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n[6] LEGO Education. (2023). LEGO Education SPIKE Prime - Technical Specifications. LEGO. Disponible: https://lego.com",
     "crumbs": [
       "🏆 UNIDAD 5: PROYECTO FINAL",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Unidad 5: Ahora vas a crear tu propio robot</span>"
@@ -2414,7 +2414,7 @@
     "href": "quizzes/quiz_unidad5.html#felicitaciones-graduado",
     "title": "🎮 Quiz Unidad 5: Proyecto Final",
     "section": "🎓 ¡FELICITACIONES GRADUADO!",
-    "text": "🎓 ¡FELICITACIONES GRADUADO!\n╔══════════════════════════════════════════════════════════╗\n║                                                          ║\n║         🎓 ¡FELICITACIONES GRADUADO! 🎓                 ║\n║                                                          ║\n║         Has completado el curso de MicroPython           ║\n║         para el Aula de Informática                      ║\n║                                                          ║\n║         Tu viaje: 🌱 → 🔍 → 💻 → ⚙️ → 🏗️ → 🎓 → 👑      ║\n║                                                          ║\n║         Recuerda: El aprendizaje no termina aquí.        ║\n║         ¡Sigue explorando, creando y enseñando!          ║\n║                                                          ║\n║         🤖 Diego Saavedra - Abacom 2026 🤖              ║\n║                                                          ║\n╚══════════════════════════════════════════════════════════╝",
+    "text": "🎓 ¡FELICITACIONES GRADUADO!\n╔══════════════════════════════════════════════════════════╗\n║                                                          ║\n║         🎓 ¡FELICITACIONES GRADUADO! 🎓                 ║\n║                                                          ║\n║         Has completado el curso de MicroPython           ║\n║         para el Aula de Informática                      ║\n║                                                          ║\n║         Tu viaje: 🌱 → 🔍 → 💻 → ⚙️ → 🏗️ → 🎓 → 👑      ║\n║                                                          ║\n║         Recuerda: El aprendizaje no termina aquí.        ║\n║         ¡Sigue explorando, creando y enseñando!          ║\n║                                                          ║\n║         🤖 Diego Saavedra - Abacom 2026 🤖              ║\n║                                                          ║\n╚══════════════════════════════════════════════════════════╝\n\n🎮 Quiz Unidad 5 - MicroPython para el Aula - Diego Saavedra 2026 🎓",
     "crumbs": [
       "🏆 UNIDAD 5: PROYECTO FINAL",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>🎮 Quiz Unidad 5: Proyecto Final</span>"
@@ -2425,7 +2425,7 @@
     "href": "quizzes/quiz_unidad5.html#referencias",
     "title": "🎮 Quiz Unidad 5: Proyecto Final",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API Reference - PrimeHub. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#primehub\n[2] Pybricks Team. Pybricks MicroPython - DriveBase with Gyro. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase\n[3] Python Software Foundation. asyncio — Asynchronous I/O. 2026. Disponible en: https://docs.python.org/3/library/asyncio.html\n[4] Pybricks Team. Pybricks MicroPython - LightMatrix. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#lightmatrix\n[5] Martin, R. C. Clean Code: A Handbook of Agile Software Craftsmanship. Prentice Hall, 2008.\n[6] Saavedra, D. Metodología Statick para Sistemas Embebidos. Abacom Capacitación, 2026.\n[7] Pybricks Team. Pybricks Troubleshooting Guide. 2026. Disponible en: https://docs.pybricks.com/en/latest/troubleshooting.html\n\n🎮 Quiz Unidad 5 - MicroPython para el Aula - Diego Saavedra 2026 🎓",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API Reference - PrimeHub. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#primehub\n[2] Pybricks Team. Pybricks MicroPython - DriveBase with Gyro. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase\n[3] Python Software Foundation. asyncio — Asynchronous I/O. 2026. Disponible en: https://docs.python.org/3/library/asyncio.html\n[4] Pybricks Team. Pybricks MicroPython - LightMatrix. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#lightmatrix\n[5] Martin, R. C. Clean Code: A Handbook of Agile Software Craftsmanship. Prentice Hall, 2008.\n[6] Saavedra, D. Metodología Statick para Sistemas Embebidos. Abacom Capacitación, 2026.\n[7] Pybricks Team. Pybricks Troubleshooting Guide. 2026. Disponible en: https://docs.pybricks.com/en/latest/troubleshooting.html",
     "crumbs": [
       "🏆 UNIDAD 5: PROYECTO FINAL",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>🎮 Quiz Unidad 5: Proyecto Final</span>"
@@ -2502,7 +2502,7 @@
     "href": "contenido/apendice_recursos.html#contenido-avanzado-del-curso",
     "title": "Apéndice: Alternativas y Recursos Adicionales",
     "section": "6. Contenido Avanzado del Curso",
-    "text": "6. Contenido Avanzado del Curso\nEl curso incluye módulos avanzados para profundizar tu aprendizaje:\n\n6.1 Sensores Adicionales\n\n\n\nSensor\nDescripción\nReferencia\n\n\n\n\nInfraredSensor\nDetecta objetos, mide reflexión de luz\n[11]\n\n\nColorSensor\nIdentifica colores, controla luces RGB\n[12]\n\n\nForceSensor\nMide fuerza en Newtons\n[13]\n\n\nTiltSensor\nDetecta inclinación (pitch/roll)\n[14]\n\n\n\n\n\n6.2 Control Avanzado de Motores\n\n\n\n\n\n\n\n\nFunción\nDescripción\nReferencia\n\n\n\n\nModos de parada\nCOAST, BRAKE, HOLD\n[15]\n\n\nControl PID\nAjustes para precisión\n[15]\n\n\nrun_time/run_angle/run_target\nDiferentes tipos de movimiento\n[15]\n\n\nrun_until_stalled\nCalibración automática\n[15]\n\n\nDCMotor\nControl directo de potencia\n[16]\n\n\n\n\n\n6.3 Telemetría y Monitoreo\n\n\n\n\n\n\n\n\nFunción\nDescripción\nReferencia\n\n\n\n\nbattery.voltage\nVoltaje de batería en mV\n[17]\n\n\nbattery.current\nCorriente de batería en mA\n[17]\n\n\nrobot.state()\nEstado completo (distancia, ángulo, velocidad)\n[18]\n\n\nrobot.reset()\nResetear odometría\n[18]\n\n\n\n\n\n6.4 Thonny Debugger\n\n\n\nFunción\nDescripción\nReferencia\n\n\n\n\nCtrl + F5\nModo debugger “nicer”\n[19]\n\n\nF6 Step Over\nSaltar función\n[19]\n\n\nF7 Step Into\nEntrar a función\n[19]\n\n\nBreakpoints\nParar en puntos específicos\n[19]\n\n\nInspector de Variables\nVer valores en tiempo real\n[19]",
+    "text": "6. Contenido Avanzado del Curso\nEl curso incluye módulos avanzados para profundizar tu aprendizaje:\n\n6.1 Sensores Adicionales\n\n\n\nSensor\nDescripción\nReferencia\n\n\n\n\nInfraredSensor\nDetecta objetos, mide reflexión de luz\n[11]\n\n\nColorSensor\nIdentifica colores, controla luces RGB\n[12]\n\n\nForceSensor\nMide fuerza en Newtons\n[13]\n\n\nTiltSensor\nDetecta inclinación (pitch/roll)\n[14]\n\n\n\n\n\n6.2 Control Avanzado de Motores\n\n\n\n\n\n\n\n\nFunción\nDescripción\nReferencia\n\n\n\n\nModos de parada\nCOAST, BRAKE, HOLD\n[15]\n\n\nControl PID\nAjustes para precisión\n[15]\n\n\nrun_time/run_angle/run_target\nDiferentes tipos de movimiento\n[15]\n\n\nrun_until_stalled\nCalibración automática\n[15]\n\n\nDCMotor\nControl directo de potencia\n[16]\n\n\n\n\n\n6.3 Telemetría y Monitoreo\n\n\n\n\n\n\n\n\nFunción\nDescripción\nReferencia\n\n\n\n\nbattery.voltage\nVoltaje de batería en mV\n[17]\n\n\nbattery.current\nCorriente de batería en mA\n[17]\n\n\nrobot.state()\nEstado completo (distancia, ángulo, velocidad)\n[18]\n\n\nrobot.reset()\nResetear odometría\n[18]\n\n\n\n\n\n6.4 Thonny Debugger\n\n\n\nFunción\nDescripción\nReferencia\n\n\n\n\nCtrl + F5\nModo debugger “nicer”\n[19]\n\n\nF6 Step Over\nSaltar función\n[19]\n\n\nF7 Step Into\nEntrar a función\n[19]\n\n\nBreakpoints\nParar en puntos específicos\n[19]\n\n\nInspector de Variables\nVer valores en tiempo real\n[19]\n\n\n\n\nMaterial adicional: Alternativas y recursos para Robótica Educativa con MicroPython Última actualización: Abril 2026 Licencia: CC BY 4.0",
     "crumbs": [
       "📚 APÉNDICES",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Apéndice: Alternativas y Recursos Adicionales</span>"
@@ -2513,7 +2513,7 @@
     "href": "contenido/apendice_recursos.html#referencias",
     "title": "Apéndice: Alternativas y Recursos Adicionales",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[2] BBC. (2020). micro:bit Documentation. micro:bit. Disponible: https://microbit.org\n[3] Raspberry Pi Foundation. (2021). Raspberry Pi Pico Documentation. Raspberry Pi. Disponible: https://raspberrypi.com/pico\n[4] Arduino. (2024). Arduino Alvik - Robotic Learning Platform. Arduino. Disponible: https://www.arduino.cc/alvik\n[5] ISL. (2020). OpenBot - Smartphone Robot. GitHub. Disponible: https://github.com/isl-org/OpenBot\n[6] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[7] Adafruit. (2023). CircuitPython Documentation. Adafruit. Disponible: https://circuitpython.org\n[8] Open Source Robotics Foundation. (2024). ROS2 Documentation. ROS. Disponible: https://docs.ros.org\n[9] Google. (2024). TensorFlow Lite for Microcontrollers. Google. Disponible: https://www.tensorflow.org/lite/microcontrollers\n[10] MicroPython. (2023). MicroPython - Python for Microcontrollers. MicroPython. Disponible: https://micropython.org\n[11] Pybricks Team. (2023). Pybricks Documentation - Infrared Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/infraredsensor.html\n[12] Pybricks Team. (2023). Pybricks Documentation - Color Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/colorsensor.html\n[13] Pybricks Team. (2023). Pybricks Documentation - Force Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/forcesensor.html\n[14] Pybricks Team. (2023). Pybricks Documentation - Tilt Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html\n[15] Pybricks Team. (2023). Pybricks Documentation - Motors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/motor.html\n[16] Pybricks Team. (2023). Pybricks Documentation - DC Motor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/dcmotor.html\n[17] Pybricks Team. (2023). Pybricks Documentation - PrimeHub. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html\n[18] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[19] A. Annamaa. (2018). Thonny Debugging Documentation. GitHub. Disponible: https://github.com/thonny\n\nMaterial adicional: Alternativas y recursos para Robótica Educativa con MicroPython Última actualización: Abril 2026 Licencia: CC BY 4.0",
+    "text": "Referencias\n[1] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[2] BBC. (2020). micro:bit Documentation. micro:bit. Disponible: https://microbit.org\n[3] Raspberry Pi Foundation. (2021). Raspberry Pi Pico Documentation. Raspberry Pi. Disponible: https://raspberrypi.com/pico\n[4] Arduino. (2024). Arduino Alvik - Robotic Learning Platform. Arduino. Disponible: https://www.arduino.cc/alvik\n[5] ISL. (2020). OpenBot - Smartphone Robot. GitHub. Disponible: https://github.com/isl-org/OpenBot\n[6] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[7] Adafruit. (2023). CircuitPython Documentation. Adafruit. Disponible: https://circuitpython.org\n[8] Open Source Robotics Foundation. (2024). ROS2 Documentation. ROS. Disponible: https://docs.ros.org\n[9] Google. (2024). TensorFlow Lite for Microcontrollers. Google. Disponible: https://www.tensorflow.org/lite/microcontrollers\n[10] MicroPython. (2023). MicroPython - Python for Microcontrollers. MicroPython. Disponible: https://micropython.org\n[11] Pybricks Team. (2023). Pybricks Documentation - Infrared Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/infraredsensor.html\n[12] Pybricks Team. (2023). Pybricks Documentation - Color Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/colorsensor.html\n[13] Pybricks Team. (2023). Pybricks Documentation - Force Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/forcesensor.html\n[14] Pybricks Team. (2023). Pybricks Documentation - Tilt Sensor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html\n[15] Pybricks Team. (2023). Pybricks Documentation - Motors Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/motor.html\n[16] Pybricks Team. (2023). Pybricks Documentation - DC Motor. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/dcmotor.html\n[17] Pybricks Team. (2023). Pybricks Documentation - PrimeHub. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html\n[18] Pybricks Team. (2023). Pybricks Documentation - Robotics Module. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html\n[19] A. Annamaa. (2018). Thonny Debugging Documentation. GitHub. Disponible: https://github.com/thonny",
     "crumbs": [
       "📚 APÉNDICES",
       "<span class='chapter-number'>26</span>  <span class='chapter-title'>Apéndice: Alternativas y Recursos Adicionales</span>"
@@ -2623,7 +2623,7 @@
     "href": "contenido/apendice_thonny_debugger.html#checklist-de-debugging",
     "title": "Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales",
     "section": "📋 Checklist de Debugging",
-    "text": "📋 Checklist de Debugging\nAntes de terminar, marca lo que puedes hacer:\n\nIniciar el debugger con Ctrl + F5\nUsar Step Over (F6) para avanzar rápido\nUsar Step Into (F7) para entrar a funciones\nPoner y quitar breakpoints\nLeer el Inspector de Variables\nEncontrar y corregir errores comunes",
+    "text": "📋 Checklist de Debugging\nAntes de terminar, marca lo que puedes hacer:\n\nIniciar el debugger con Ctrl + F5\nUsar Step Over (F6) para avanzar rápido\nUsar Step Into (F7) para entrar a funciones\nPoner y quitar breakpoints\nLeer el Inspector de Variables\nEncontrar y corregir errores comunes\n\n\nAhora tienes las herramientas profesionales para resolver cualquier bug como un experto.",
     "crumbs": [
       "📚 APÉNDICES",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales</span>"
@@ -2634,7 +2634,7 @@
     "href": "contenido/apendice_thonny_debugger.html#referencias",
     "title": "Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales",
     "section": "Referencias",
-    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Thonny Team. (2024). Thonny Debugging Documentation. Thonny. Disponible: https://thonny.org\n[3] Python Software Foundation. (2024). Python Tutorial - Debugging. Python. Disponible: https://docs.python.org/es/3/tutorial/debugging.html\n[4] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[5] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org\n\nAhora tienes las herramientas profesionales para resolver cualquier bug como un experto.",
+    "text": "Referencias\n[1] A. Annamaa. (2018). Thonny: Python IDE for beginners. GitHub. Disponible: https://github.com/thonny\n[2] Thonny Team. (2024). Thonny Debugging Documentation. Thonny. Disponible: https://thonny.org\n[3] Python Software Foundation. (2024). Python Tutorial - Debugging. Python. Disponible: https://docs.python.org/es/3/tutorial/debugging.html\n[4] Pybricks Team. (2023). Pybricks Documentation. Pybricks. Disponible: https://docs.pybricks.com\n[5] D. George. (2013). MicroPython Documentation. MicroPython. Disponible: https://docs.micropython.org",
     "crumbs": [
       "📚 APÉNDICES",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales</span>"
@@ -2975,7 +2975,7 @@
     "href": "evaluaciones/eval_motores_avanzados.html#rúbrica-de-calificación",
     "title": "Evaluación: Motores Avanzados y PID",
     "section": "📊 Rúbrica de Calificación",
-    "text": "📊 Rúbrica de Calificación\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nParte A: Teórico\n40\n\n\n\n- Pregunta 1\n10\nExplicación completa de PID\n\n\n- Pregunta 2\n10\nModos de parada correctos\n\n\n- Pregunta 3\n10\nDiferencia clara run_until_stalled\n\n\n- Pregunta 4\n10\nDuty Cycle vs Velocity\n\n\nParte B: Práctica\n40\n\n\n\n- Ejercicio 1\n20\nCódigo funcional de calibración\n\n\n- Ejercicio 2\n20\nImplementación PID correcta\n\n\nParte C: Análisis\n20\n\n\n\n- a)\n5\nIdentificación correcta\n\n\n- b)\n5\nSolución apropiada\n\n\n- c)\n5\nModo de parada correcto\n\n\n- d)\n5\nParámetros a verificar\n\n\nTotal\n100",
+    "text": "📊 Rúbrica de Calificación\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nParte A: Teórico\n40\n\n\n\n- Pregunta 1\n10\nExplicación completa de PID\n\n\n- Pregunta 2\n10\nModos de parada correctos\n\n\n- Pregunta 3\n10\nDiferencia clara run_until_stalled\n\n\n- Pregunta 4\n10\nDuty Cycle vs Velocity\n\n\nParte B: Práctica\n40\n\n\n\n- Ejercicio 1\n20\nCódigo funcional de calibración\n\n\n- Ejercicio 2\n20\nImplementación PID correcta\n\n\nParte C: Análisis\n20\n\n\n\n- a)\n5\nIdentificación correcta\n\n\n- b)\n5\nSolución apropiada\n\n\n- c)\n5\nModo de parada correcto\n\n\n- d)\n5\nParámetros a verificar\n\n\nTotal\n100\n\n\n\n\n\nEvaluación Motores Avanzados - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
@@ -2986,7 +2986,7 @@
     "href": "evaluaciones/eval_motores_avanzados.html#referencias",
     "title": "Evaluación: Motores Avanzados y PID",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - Motor Control. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor\n[2] Pybricks Team. Pybricks MicroPython - Calibration and Stall Detection. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html\n\nEvaluación Motores Avanzados - MicroPython para el Aula - Diego Saavedra 2026",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - Motor Control. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor\n[2] Pybricks Team. Pybricks MicroPython - Calibration and Stall Detection. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html",
     "crumbs": [
       "🎯 EVALUACIONES",
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
@@ -3052,7 +3052,7 @@
     "href": "evaluaciones/eval_sensores_adicionales.html#rúbrica-de-calificación",
     "title": "Evaluación: Sensores Adicionales",
     "section": "📊 Rúbrica de Calificación",
-    "text": "📊 Rúbrica de Calificación\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nParte A: Teórico\n30\n\n\n\n- Pregunta 1\n10\nSensores identificados correctamente\n\n\n- Pregunta 2\n10\nRango y precisión correctos\n\n\n- Pregunta 3\n10\nDiferencia color vs reflection\n\n\nParte B: Práctica\n50\n\n\n\n- Ejercicio 1\n25\nSeguimiento de línea funcional\n\n\n- Ejercicio 2\n25\nDetección de obstáculos con alerta\n\n\nParte C: Análisis\n20\n\n\n\n- a)\n5\nCálculo de tiempo correcto\n\n\n- b)\n5\nTipo de gráfico apropiado\n\n\n- c)\n5\nExportación CSV correcta\n\n\n- d)\n5\nMejoras relevantes\n\n\nTotal\n100",
+    "text": "📊 Rúbrica de Calificación\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nParte A: Teórico\n30\n\n\n\n- Pregunta 1\n10\nSensores identificados correctamente\n\n\n- Pregunta 2\n10\nRango y precisión correctos\n\n\n- Pregunta 3\n10\nDiferencia color vs reflection\n\n\nParte B: Práctica\n50\n\n\n\n- Ejercicio 1\n25\nSeguimiento de línea funcional\n\n\n- Ejercicio 2\n25\nDetección de obstáculos con alerta\n\n\nParte C: Análisis\n20\n\n\n\n- a)\n5\nCálculo de tiempo correcto\n\n\n- b)\n5\nTipo de gráfico apropiado\n\n\n- c)\n5\nExportación CSV correcta\n\n\n- d)\n5\nMejoras relevantes\n\n\nTotal\n100\n\n\n\n\n\nEvaluación Sensores Adicionales - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
       "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
@@ -3063,7 +3063,7 @@
     "href": "evaluaciones/eval_sensores_adicionales.html#referencias",
     "title": "Evaluación: Sensores Adicionales",
     "section": "Referencias",
-    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - InfraredSensor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#infraredsensor\n[2] Pybricks Team. Pybricks MicroPython API - ColorSensor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#colorsensor\n\nEvaluación Sensores Adicionales - MicroPython para el Aula - Diego Saavedra 2026",
+    "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - InfraredSensor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#infraredsensor\n[2] Pybricks Team. Pybricks MicroPython API - ColorSensor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#colorsensor",
     "crumbs": [
       "🎯 EVALUACIONES",
       "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
@@ -3129,7 +3129,7 @@
     "href": "evaluaciones/eval_telemetria.html#preguntas-de-seguimiento-opcional---10-puntos-extra",
     "title": "Evaluación: Telemetría y Monitoreo de Batería",
     "section": "Preguntas de Seguimiento (Opcional - 10 puntos extra)",
-    "text": "Preguntas de Seguimiento (Opcional - 10 puntos extra)\n\nP1: ¿Cómo agregarías un filtro de ruido a las mediciones?\n\nUsar un promedio móvil de las últimas N muestras para suavizar lecturas ruidosas.\n\n\n\nP2: ¿Qué mejoras harías para un sistema de telemetría en tiempo real?\n\n\nUsar asyncio para captura no bloqueante\nTransmitir datos por Bluetooth\nVisualizar en tiempo real con gráficos\nImplementar triggers para alertas automáticas",
+    "text": "Preguntas de Seguimiento (Opcional - 10 puntos extra)\n\nP1: ¿Cómo agregarías un filtro de ruido a las mediciones?\n\nUsar un promedio móvil de las últimas N muestras para suavizar lecturas ruidosas.\n\n\n\nP2: ¿Qué mejoras harías para un sistema de telemetría en tiempo real?\n\n\nUsar asyncio para captura no bloqueante\nTransmitir datos por Bluetooth\nVisualizar en tiempo real con gráficos\nImplementar triggers para alertas automáticas\n\n\n\nEvaluación Telemetría - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
       "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
@@ -3140,7 +3140,7 @@
     "href": "evaluaciones/eval_telemetria.html#referencias",
     "title": "Evaluación: Telemetría y Monitoreo de Batería",
     "section": "Referencias",
-    "text": "Referencias\n[1] MicroPython Project. MicroPython Documentation - Time and Timers. 2026. Disponible en: https://docs.micropython.org/en/latest/library/time.html\n[2] Pybricks Team. Pybricks MicroPython - Battery Monitoring. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html\n\nEvaluación Telemetría - MicroPython para el Aula - Diego Saavedra 2026",
+    "text": "Referencias\n[1] MicroPython Project. MicroPython Documentation - Time and Timers. 2026. Disponible en: https://docs.micropython.org/en/latest/library/time.html\n[2] Pybricks Team. Pybricks MicroPython - Battery Monitoring. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html",
     "crumbs": [
       "🎯 EVALUACIONES",
       "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
