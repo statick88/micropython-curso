@@ -84,6 +84,7 @@ book:
         - contenido/apendice_recursos.qmd
         - contenido/apendice_thonny_debugger.qmd
         - contenido/apendice_simuladores.qmd
+        - contenido/apendice_pybricks_compilacion.qmd
     - part: "🎯 EVALUACIONES"
       chapters:
         - evaluaciones/eval_motores_avanzados.qmd

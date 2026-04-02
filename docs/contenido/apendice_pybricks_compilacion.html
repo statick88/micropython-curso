@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Alternativas gratuitas para probar código sin hardware físico">
+<meta name="description" content="Guía completa para compilar Pybricks MicroPython en Windows, Linux y Mac">
 
-<title>🖥️ Simuladores de MicroPython – MicroPython para el Aula</title>
+<title>🔧 Pybricks: Compilación Manual y Sin Licencia – MicroPython para el Aula</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -69,8 +69,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../contenido/apendice_pybricks_compilacion.html" rel="next">
-<link href="../contenido/apendice_thonny_debugger.html" rel="prev">
+<link href="../evaluaciones/eval_motores_avanzados.html" rel="next">
+<link href="../contenido/apendice_simuladores.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/apendice_simuladores.html"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/apendice_pybricks_compilacion.html"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -413,12 +413,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/apendice_simuladores.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a>
+  <a href="../contenido/apendice_simuladores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/apendice_pybricks_compilacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a>
+  <a href="../contenido/apendice_pybricks_compilacion.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a>
   </div>
 </li>
       </ul>
@@ -490,39 +490,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#simuladores-de-micropython-para-el-aula" id="toc-simuladores-de-micropython-para-el-aula" class="nav-link active" data-scroll-target="#simuladores-de-micropython-para-el-aula">🖥️ Simuladores de MicroPython para el Aula</a>
+  <li><a href="#pybricks-micropython-compilación-manual" id="toc-pybricks-micropython-compilación-manual" class="nav-link active" data-scroll-target="#pybricks-micropython-compilación-manual">🔧 Pybricks MicroPython: Compilación Manual</a>
   <ul class="collapse">
-  <li><a href="#por-qué-usar-un-simulador" id="toc-por-qué-usar-un-simulador" class="nav-link" data-scroll-target="#por-qué-usar-un-simulador">🎯 ¿Por qué usar un simulador?</a></li>
-  <li><a href="#comparativa-de-simuladores" id="toc-comparativa-de-simuladores" class="nav-link" data-scroll-target="#comparativa-de-simuladores">📊 Comparativa de Simuladores</a></li>
-  <li><a href="#opción-1-pybricks-code-recomendado" id="toc-opción-1-pybricks-code-recomendado" class="nav-link" data-scroll-target="#opción-1-pybricks-code-recomendado">🥇 Opción 1: Pybricks Code (RECOMENDADO)</a>
+  <li><a href="#pybricks-es-gratis" id="toc-pybricks-es-gratis" class="nav-link" data-scroll-target="#pybricks-es-gratis">✅ ¿Pybricks es Gratis?</a>
   <ul class="collapse">
-  <li><a href="#características" id="toc-características" class="nav-link" data-scroll-target="#características">Características</a></li>
-  <li><a href="#cómo-usarlo" id="toc-cómo-usarlo" class="nav-link" data-scroll-target="#cómo-usarlo">Cómo usarlo</a></li>
+  <li><a href="#nota-sobre-licencias-de-componentes" id="toc-nota-sobre-licencias-de-componentes" class="nav-link" data-scroll-target="#nota-sobre-licencias-de-componentes">⚠️ Nota sobre Licencias de Componentes</a></li>
   </ul></li>
-  <li><a href="#opción-2-thonny-con-micropython" id="toc-opción-2-thonny-con-micropython" class="nav-link" data-scroll-target="#opción-2-thonny-con-micropython">🥈 Opción 2: Thonny con MicroPython</a>
+  <li><a href="#hubs-soportados" id="toc-hubs-soportados" class="nav-link" data-scroll-target="#hubs-soportados">📊 Hubs Soportados</a></li>
+  <li><a href="#requisitos-por-plataforma" id="toc-requisitos-por-plataforma" class="nav-link" data-scroll-target="#requisitos-por-plataforma">🖥️ Requisitos por Plataforma</a>
   <ul class="collapse">
-  <li><a href="#características-1" id="toc-características-1" class="nav-link" data-scroll-target="#características-1">Características</a></li>
-  <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación">Instalación</a></li>
+  <li><a href="#ubuntulinux-24.04-recomendado" id="toc-ubuntulinux-24.04-recomendado" class="nav-link" data-scroll-target="#ubuntulinux-24.04-recomendado">Ubuntu/Linux 24.04 (RECOMENDADO)</a></li>
+  <li><a href="#windows-vía-cygwin" id="toc-windows-vía-cygwin" class="nav-link" data-scroll-target="#windows-vía-cygwin">Windows (vía Cygwin)</a></li>
+  <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos">macOS</a></li>
   </ul></li>
-  <li><a href="#opción-3-esp-32-spike-simulator" id="toc-opción-3-esp-32-spike-simulator" class="nav-link" data-scroll-target="#opción-3-esp-32-spike-simulator">🥉 Opción 3: ESP-32 SPIKE Simulator</a>
+  <li><a href="#descargar-el-código-fuente" id="toc-descargar-el-código-fuente" class="nav-link" data-scroll-target="#descargar-el-código-fuente">📥 Descargar el Código Fuente</a>
   <ul class="collapse">
-  <li><a href="#características-2" id="toc-características-2" class="nav-link" data-scroll-target="#características-2">Características</a></li>
-  <li><a href="#componentes-necesarios" id="toc-componentes-necesarios" class="nav-link" data-scroll-target="#componentes-necesarios">Componentes necesarios</a></li>
+  <li><a href="#opción-1-línea-de-comandos-recomendada" id="toc-opción-1-línea-de-comandos-recomendada" class="nav-link" data-scroll-target="#opción-1-línea-de-comandos-recomendada">Opción 1: Línea de Comandos (RECOMENDADA)</a></li>
+  <li><a href="#opción-2-github-desktop" id="toc-opción-2-github-desktop" class="nav-link" data-scroll-target="#opción-2-github-desktop">Opción 2: GitHub Desktop</a></li>
+  <li><a href="#opción-3-vs-code" id="toc-opción-3-vs-code" class="nav-link" data-scroll-target="#opción-3-vs-code">Opción 3: VS Code</a></li>
   </ul></li>
-  <li><a href="#recomendación-por-escenario" id="toc-recomendación-por-escenario" class="nav-link" data-scroll-target="#recomendación-por-escenario">🏆 Recomendación por Escenario</a>
+  <li><a href="#configurar-entorno-python" id="toc-configurar-entorno-python" class="nav-link" data-scroll-target="#configurar-entorno-python">⚙️ Configurar Entorno Python</a></li>
+  <li><a href="#compilar-el-firmware" id="toc-compilar-el-firmware" class="nav-link" data-scroll-target="#compilar-el-firmware">🔨 Compilar el Firmware</a>
   <ul class="collapse">
-  <li><a href="#para-docentes-sin-presupuesto" id="toc-para-docentes-sin-presupuesto" class="nav-link" data-scroll-target="#para-docentes-sin-presupuesto">Para Docentes sin Presupuesto</a></li>
-  <li><a href="#para-docentes-con-presupuesto-limitado" id="toc-para-docentes-con-presupuesto-limitado" class="nav-link" data-scroll-target="#para-docentes-con-presupuesto-limitado">Para Docentes con Presupuesto Limitado</a></li>
-  <li><a href="#para-docentes-con-presupuesto-completo" id="toc-para-docentes-con-presupuesto-completo" class="nav-link" data-scroll-target="#para-docentes-con-presupuesto-completo">Para Docentes con Presupuesto Completo</a></li>
+  <li><a href="#paso-1-configurar-compilador-arm" id="toc-paso-1-configurar-compilador-arm" class="nav-link" data-scroll-target="#paso-1-configurar-compilador-arm">Paso 1: Configurar Compilador ARM</a></li>
+  <li><a href="#paso-2-compilar-para-tu-hub" id="toc-paso-2-compilar-para-tu-hub" class="nav-link" data-scroll-target="#paso-2-compilar-para-tu-hub">Paso 2: Compilar para tu Hub</a></li>
+  <li><a href="#paso-3-encontrar-el-firmware" id="toc-paso-3-encontrar-el-firmware" class="nav-link" data-scroll-target="#paso-3-encontrar-el-firmware">Paso 3: Encontrar el Firmware</a></li>
   </ul></li>
-  <li><a href="#código-compatible-con-simuladores" id="toc-código-compatible-con-simuladores" class="nav-link" data-scroll-target="#código-compatible-con-simuladores">📝 Código Compatible con Simuladores</a></li>
-  <li><a href="#ejercicio-probar-en-simulador" id="toc-ejercicio-probar-en-simulador" class="nav-link" data-scroll-target="#ejercicio-probar-en-simulador">🎓 Ejercicio: Probar en Simulador</a>
+  <li><a href="#flashear-el-firmware-al-hub" id="toc-flashear-el-firmware-al-hub" class="nav-link" data-scroll-target="#flashear-el-firmware-al-hub">📲 Flashear el Firmware al Hub</a>
+  <ul class="collapse">
+  <li><a href="#método-1-pybricks-code-fácil" id="toc-método-1-pybricks-code-fácil" class="nav-link" data-scroll-target="#método-1-pybricks-code-fácil">Método 1: Pybricks Code (FÁCIL)</a></li>
+  <li><a href="#método-2-dfu-mode-avanzado" id="toc-método-2-dfu-mode-avanzado" class="nav-link" data-scroll-target="#método-2-dfu-mode-avanzado">Método 2: DFU Mode (AVANZADO)</a></li>
+  </ul></li>
+  <li><a href="#probar-el-firmware-instalado" id="toc-probar-el-firmware-instalado" class="nav-link" data-scroll-target="#probar-el-firmware-instalado">🧪 Probar el Firmware Instalado</a>
+  <ul class="collapse">
+  <li><a href="#con-pybricks-code-online" id="toc-con-pybricks-code-online" class="nav-link" data-scroll-target="#con-pybricks-code-online">Con Pybricks Code (Online)</a></li>
+  </ul></li>
+  <li><a href="#resumen-opciones-de-uso" id="toc-resumen-opciones-de-uso" class="nav-link" data-scroll-target="#resumen-opciones-de-uso">📊 Resumen: Opciones de Uso</a></li>
+  <li><a href="#ejercicio-para-estudiantes" id="toc-ejercicio-para-estudiantes" class="nav-link" data-scroll-target="#ejercicio-para-estudiantes">🎓 Ejercicio para Estudiantes</a>
   <ul class="collapse">
   <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
-  <li><a href="#código-de-prueba" id="toc-código-de-prueba" class="nav-link" data-scroll-target="#código-de-prueba">Código de prueba</a></li>
   <li><a href="#pasos" id="toc-pasos" class="nav-link" data-scroll-target="#pasos">Pasos</a></li>
+  <li><a href="#entregables" id="toc-entregables" class="nav-link" data-scroll-target="#entregables">Entregables</a></li>
   </ul></li>
   <li><a href="#enlaces-útiles" id="toc-enlaces-útiles" class="nav-link" data-scroll-target="#enlaces-útiles">🔗 Enlaces Útiles</a></li>
+  <li><a href="#tips-de-compilación" id="toc-tips-de-compilación" class="nav-link" data-scroll-target="#tips-de-compilación">💡 Tips de Compilación</a></li>
+  <li><a href="#comparación-compilar-vs-usar-web" id="toc-comparación-compilar-vs-usar-web" class="nav-link" data-scroll-target="#comparación-compilar-vs-usar-web">🆚 Comparación: Compilar vs Usar Web</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">🏆 Conclusión</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -530,9 +543,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/apendice_simuladores.html"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/apendice_pybricks_compilacion.html"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></h1>
+<h1 class="title"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></h1>
 </div>
 
 
@@ -549,284 +562,445 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="simuladores-de-micropython-para-el-aula" class="level1">
-<h1>🖥️ Simuladores de MicroPython para el Aula</h1>
-<section id="por-qué-usar-un-simulador" class="level2">
-<h2 class="anchored" data-anchor-id="por-qué-usar-un-simulador">🎯 ¿Por qué usar un simulador?</h2>
+<section id="pybricks-micropython-compilación-manual" class="level1">
+<h1>🔧 Pybricks MicroPython: Compilación Manual</h1>
+<section id="pybricks-es-gratis" class="level2">
+<h2 class="anchored" data-anchor-id="pybricks-es-gratis">✅ ¿Pybricks es Gratis?</h2>
+<pre><code>╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║                    ✅ SÍ, PYBRICKS ES COMPLETAMENTE GRATIS                  ║
+║                                                                               ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                                                                               ║
+║   📜 Licencia: MIT License                                                    ║
+║   👨‍💻 Autores: The Pybricks Authors (2018-2026)                              ║
+║   📦 Código fuente: github.com/pybricks/pybricks-micropython                 ║
+║   🌟 Stars: 313                                                               ║
+║   📊 Commits: 6,721                                                           ║
+║                                                                               ║
+║   Puedes:                                                                     ║
+║   ✅ Usar libremente                                                         ║
+║   ✅ Modificar el código                                                     ║
+║   ✅ Distribuir                                                              ║
+║   ✅ Compilar y flashear tu propio firmware                                   ║
+║   ✅ Usar en educación sin costo                                             ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝</code></pre>
+<section id="nota-sobre-licencias-de-componentes" class="level3">
+<h3 class="anchored" data-anchor-id="nota-sobre-licencias-de-componentes">⚠️ Nota sobre Licencias de Componentes</h3>
+<p>El firmware Pybricks incluye bibliotecas de terceros. La mayoría son open source, pero <strong>BTstack</strong> tiene una licencia más restrictiva que <strong>prohibe cobrar por el firmware</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="hubs-soportados" class="level2">
+<h2 class="anchored" data-anchor-id="hubs-soportados">📊 Hubs Soportados</h2>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 54%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Beneficio</th>
+<th>Hub</th>
+<th>Modelo</th>
+<th style="text-align: center;">Soportado</th>
+<th style="text-align: center;">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LEGO Technic Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="even">
+<td>LEGO BOOST Move Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="odd">
+<td>LEGO City Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="even">
+<td>LEGO SPIKE Prime Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="odd">
+<td>LEGO SPIKE Essential Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="even">
+<td>LEGO MINDSTORMS Robot Inventor</td>
+<td>-</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="odd">
+<td>MINDSTORMS EV3</td>
+<td>-</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: center;">v2.x (comunidad)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="requisitos-por-plataforma" class="level2">
+<h2 class="anchored" data-anchor-id="requisitos-por-plataforma">🖥️ Requisitos por Plataforma</h2>
+<section id="ubuntulinux-24.04-recomendado" class="level3">
+<h3 class="anchored" data-anchor-id="ubuntulinux-24.04-recomendado">Ubuntu/Linux 24.04 (RECOMENDADO)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Versión</th>
+<th>Instalación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Git</td>
+<td>Cualquiera reciente</td>
+<td><code>sudo apt install git</code></td>
+</tr>
+<tr class="even">
+<td>Python</td>
+<td>3.12.x</td>
+<td><code>sudo apt install python3</code></td>
+</tr>
+<tr class="odd">
+<td>Poetry</td>
+<td>2.x</td>
+<td><code>pipx install poetry</code></td>
+</tr>
+<tr class="even">
+<td>ARM GCC Toolchain</td>
+<td>13.x</td>
+<td><code>sudo apt install gcc-arm-none-eabi</code></td>
+</tr>
+<tr class="odd">
+<td>GCC</td>
+<td>Sistema</td>
+<td><code>sudo apt install build-essential</code></td>
+</tr>
+<tr class="even">
+<td>Make</td>
+<td>Sistema</td>
+<td><code>sudo apt install make</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Instalación completa:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install git python3 build-essential gcc-arm-none-eabi</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pipx</span> install poetry</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="windows-vía-cygwin" class="level3">
+<h3 class="anchored" data-anchor-id="windows-vía-cygwin">Windows (vía Cygwin)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Herramienta</th>
 <th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>💰 <strong>Ahorro</strong></td>
-<td>Sin necesidad de comprar hardware para cada estudiante</td>
+<td><strong>Cygwin</strong></td>
+<td>Entorno Unix para Windows</td>
 </tr>
 <tr class="even">
-<td>🔧 <strong>Debug</strong></td>
-<td>Ejecutar código paso a paso, ver variables</td>
+<td><strong>ARM GCC Toolchain</strong></td>
+<td>Compilador cross-compilation</td>
 </tr>
 <tr class="odd">
-<td>👥 <strong>Accesibilidad</strong></td>
-<td>Todos pueden practicar desde su computadora</td>
-</tr>
-<tr class="even">
-<td>🛡️ <strong>Seguridad</strong></td>
-<td>No hay riesgo de dañar componentes físicos</td>
+<td><strong>Python</strong></td>
+<td>3.10+</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Instalación paso a paso:</strong></p>
+<ol type="1">
+<li><p><strong>Descargar e instalar Cygwin:</strong></p>
+<ul>
+<li>https://www.cygwin.com/setup-x86_64.exe</li>
+<li>Paquetes a seleccionar:
+<ul>
+<li><code>doxygen</code></li>
+<li><code>graphviz</code></li>
+<li><code>make</code></li>
+<li><code>mingw64-x86_64-gcc-core</code></li>
+<li><code>python3</code></li>
+<li><code>zip</code></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Instalar ARM GCC Toolchain:</strong></p>
+<ul>
+<li>https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads</li>
+<li>Descargar versión 13.x para Windows</li>
+</ul></li>
+<li><p><strong>Configurar PATH:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">PATH</span><span class="op">=</span><span class="st">"C:\cygwin64\bin;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;</span><span class="va">$env</span><span class="op">:</span><span class="va">PATH</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
 <hr>
 </section>
-<section id="comparativa-de-simuladores" class="level2">
-<h2 class="anchored" data-anchor-id="comparativa-de-simuladores">📊 Comparativa de Simuladores</h2>
+<section id="macos" class="level3">
+<h3 class="anchored" data-anchor-id="macos">macOS</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Simulador</th>
-<th>Tipo</th>
-<th style="text-align: center;">Costo</th>
-<th style="text-align: center;">Pybricks</th>
-<th>Ideal para</th>
+<th>Herramienta</th>
+<th>Instalación</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Pybricks Web</strong></td>
-<td>Online</td>
-<td style="text-align: center;">Gratis</td>
-<td style="text-align: center;">✅</td>
-<td>Principiantes</td>
+<td>Git</td>
+<td>Incluido o <code>brew install git</code></td>
 </tr>
 <tr class="even">
-<td><strong>Thonny + REPL</strong></td>
-<td>Local</td>
-<td style="text-align: center;">Gratis</td>
-<td style="text-align: center;">❌</td>
-<td>MicroPython puro</td>
+<td>Python</td>
+<td><code>brew install python</code></td>
 </tr>
 <tr class="odd">
-<td><strong>ESP-32 Simulator</strong></td>
-<td>Hardware</td>
-<td style="text-align: center;">~$15</td>
-<td style="text-align: center;">❌</td>
-<td>Prototipado real</td>
+<td>Poetry</td>
+<td><code>pipx install poetry</code></td>
 </tr>
 <tr class="even">
-<td><strong>ViperIDE</strong></td>
-<td>Online</td>
-<td style="text-align: center;">Gratis</td>
-<td style="text-align: center;">✅</td>
-<td>Clases remotas</td>
+<td>ARM GCC Toolchain</td>
+<td><code>brew install --cask gcc-arm-embedded</code></td>
+</tr>
+<tr class="odd">
+<td>libusb</td>
+<td><code>brew install libusb</code></td>
 </tr>
 </tbody>
 </table>
+<p><strong>Instalación completa:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install pipx</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pipx</span> install poetry</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install libusb</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> gcc-arm-embedded</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
-<section id="opción-1-pybricks-code-recomendado" class="level2">
-<h2 class="anchored" data-anchor-id="opción-1-pybricks-code-recomendado">🥇 Opción 1: Pybricks Code (RECOMENDADO)</h2>
-<p>El simulador oficial de Pybricks que funciona directamente en el navegador.</p>
-<section id="características" class="level3">
-<h3 class="anchored" data-anchor-id="características">Características</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────────┐
-│                    🌐 PYBRICKS CODE                            │
-│                    code.pybricks.com                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   ✅ Funciona en cualquier navegador                           │
-│   ✅ No requiere instalación                                   │
-│   ✅ Incluye simulador visual                                  │
-│   ✅ Código funciona igual que en el robot real                │
-│   ✅ Compatible con Chrome, Firefox, Edge                      │
-│                                                                 │
-│   ⚠️ Requiere conexión a internet                              │
-│   ⚠️ Simulación no es 100% idéntica al hardware               │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘</code></pre>
 </section>
-<section id="cómo-usarlo" class="level3">
-<h3 class="anchored" data-anchor-id="cómo-usarlo">Cómo usarlo</h3>
+<section id="descargar-el-código-fuente" class="level2">
+<h2 class="anchored" data-anchor-id="descargar-el-código-fuente">📥 Descargar el Código Fuente</h2>
+<section id="opción-1-línea-de-comandos-recomendada" class="level3">
+<h3 class="anchored" data-anchor-id="opción-1-línea-de-comandos-recomendada">Opción 1: Línea de Comandos (RECOMENDADA)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clonar el repositorio (NO usar --recursive, es muy lento)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/pybricks/pybricks-micropython</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> pybricks-micropython</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrir en VS Code (opcional)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="opción-2-github-desktop" class="level3">
+<h3 class="anchored" data-anchor-id="opción-2-github-desktop">Opción 2: GitHub Desktop</h3>
 <ol type="1">
-<li>Abrir: https://code.pybricks.com</li>
-<li>Conectar Hub (o usar modo simulación)</li>
-<li>Escribir código Python</li>
-<li>Click ▶️ para ejecutar</li>
-<li>Ver resultados en el simulador visual</li>
+<li>Descargar: https://desktop.github.com</li>
+<li>Clone → https://github.com/pybricks/pybricks-micropython</li>
+</ol>
+</section>
+<section id="opción-3-vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="opción-3-vs-code">Opción 3: VS Code</h3>
+<ol type="1">
+<li>Command Palette → <code>Git: Clone</code></li>
+<li>Pegar URL del repositorio</li>
 </ol>
 <hr>
 </section>
 </section>
-<section id="opción-2-thonny-con-micropython" class="level2">
-<h2 class="anchored" data-anchor-id="opción-2-thonny-con-micropython">🥈 Opción 2: Thonny con MicroPython</h2>
-<p>Editor de Python con soporte nativo para MicroPython.</p>
-<section id="características-1" class="level3">
-<h3 class="anchored" data-anchor-id="características-1">Características</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────────┐
-│                    🐍 THONNY IDE                               │
-│                    thonny.org                                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   ✅ Totalmente gratuito y open source                         │
-│   ✅ IDE amigable para principiantes                           │
-│   ✅ Debug paso a paso                                         │
-│   ✅ Inspector de variables                                    │
-│   ✅ Compatible con ESP-32, RP2040, y más                      │
-│                                                                 │
-│   ⚠️ Sin simulador visual de robots                            │
-│   ⚠️ Requiere conexión a hardware para probar                  │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘</code></pre>
+<section id="configurar-entorno-python" class="level2">
+<h2 class="anchored" data-anchor-id="configurar-entorno-python">⚙️ Configurar Entorno Python</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar versión de Python (necesita 3.10+)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">--version</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Si tienes múltiples versiones, configurar Poetry</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> env use python3</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar dependencias</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> install</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Activar entorno virtual</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="ex">poetry</span> env activate<span class="va">)</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar que está activado (debe mostrar (.venv) al inicio)</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># (.venv) $</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
 </section>
-<section id="instalación" class="level3">
-<h3 class="anchored" data-anchor-id="instalación">Instalación</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> thonny</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Descargar desde thonny.org</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Linux</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install thonny</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="compilar-el-firmware" class="level2">
+<h2 class="anchored" data-anchor-id="compilar-el-firmware">🔨 Compilar el Firmware</h2>
+<section id="paso-1-configurar-compilador-arm" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1-configurar-compilador-arm">Paso 1: Configurar Compilador ARM</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción A: Agregar al PATH</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">$PATH</span>:~/gcc-arm-none-eabi-<span class="pp">*</span>/bin</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción B: Usar variable CROSS_COMPILE</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">CROSS_COMPILE</span><span class="op">=</span>~/gcc-arm-none-eabi-<span class="pp">*</span>/bin/arm-none-eabi-</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="paso-2-compilar-para-tu-hub" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2-compilar-para-tu-hub">Paso 2: Compilar para tu Hub</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Activar entorno Poetry</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="ex">poetry</span> env activate<span class="va">)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compilar mpy-cross primero (necesario para el proceso)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> mpy-cross <span class="at">-j8</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Compilar firmware para SPIKE Prime Hub</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/primehub <span class="at">-j8</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Otras opciones de Hubs:</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/cityhub <span class="at">-j8</span>      <span class="co"># LEGO City Hub</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/technichub <span class="at">-j8</span>   <span class="co"># LEGO Technic Hub</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/boosthub <span class="at">-j8</span>     <span class="co"># LEGO BOOST Hub</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/inventorhub <span class="at">-j8</span>  <span class="co"># MINDSTORMS Inventor</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="paso-3-encontrar-el-firmware" class="level3">
+<h3 class="anchored" data-anchor-id="paso-3-encontrar-el-firmware">Paso 3: Encontrar el Firmware</h3>
+<p>Después de compilar, el firmware está en:</p>
+<pre><code>pybricks-micropython/
+└── bricks/
+    └── primehub/
+        └── build/
+            ├── firmware.bin      ← Firmware principal
+            └── firmware-zip.zip  ← Para instalar</code></pre>
 <hr>
 </section>
 </section>
-<section id="opción-3-esp-32-spike-simulator" class="level2">
-<h2 class="anchored" data-anchor-id="opción-3-esp-32-spike-simulator">🥉 Opción 3: ESP-32 SPIKE Simulator</h2>
-<p>Simulador de hardware real con ESP-32 (como el que clonamos).</p>
-<section id="características-2" class="level3">
-<h3 class="anchored" data-anchor-id="características-2">Características</h3>
-<pre><code>┌─────────────────────────────────────────────────────────────────┐
-│                    🔧 ESP-32 SIMULATOR                         │
-│                    github.com/rundhall/ESP-LEGO-SPIKE-Simulator │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   ✅ Código funciona en hardware real                          │
-│   ✅ Simula sensores, motores, LEDs                            │
-│   ✅ Debug por consola serial                                  │
-│   ✅ Costo bajo (~$15-20 en componentes)                       │
-│                                                                 │
-│   ⚠️ Requiere comprar ESP-32 y componentes                    │
-│   ⚠️ Configuración más compleja                               │
-│   ⚠️ No tiene GUI visual                                      │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘</code></pre>
+<section id="flashear-el-firmware-al-hub" class="level2">
+<h2 class="anchored" data-anchor-id="flashear-el-firmware-al-hub">📲 Flashear el Firmware al Hub</h2>
+<section id="método-1-pybricks-code-fácil" class="level3">
+<h3 class="anchored" data-anchor-id="método-1-pybricks-code-fácil">Método 1: Pybricks Code (FÁCIL)</h3>
+<ol type="1">
+<li>Ir a https://pybricks.com/install</li>
+<li>Conectar Hub por USB</li>
+<li>Seguir instrucciones en pantalla</li>
+<li>Seleccionar tu archivo <code>firmware.zip</code></li>
+<li>Click “Install”</li>
+</ol>
 </section>
-<section id="componentes-necesarios" class="level3">
-<h3 class="anchored" data-anchor-id="componentes-necesarios">Componentes necesarios</h3>
+<section id="método-2-dfu-mode-avanzado" class="level3">
+<h3 class="anchored" data-anchor-id="método-2-dfu-mode-avanzado">Método 2: DFU Mode (AVANZADO)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para SPIKE Prime / MINDSTORMS Inventor</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Poner Hub en modo DFU:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#    - Mantener CENTER + botón verde al encender</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Flashear con dfu-util</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">dfu-util</span> <span class="at">-a</span> 0 <span class="at">-D</span> firmware.bin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="probar-el-firmware-instalado" class="level2">
+<h2 class="anchored" data-anchor-id="probar-el-firmware-instalado">🧪 Probar el Firmware Instalado</h2>
+<section id="con-pybricks-code-online" class="level3">
+<h3 class="anchored" data-anchor-id="con-pybricks-code-online">Con Pybricks Code (Online)</h3>
+<ol type="1">
+<li>Abrir https://code.pybricks.com</li>
+<li>Conectar Hub por USB</li>
+<li>Click “Connect”</li>
+<li>Escribir código de prueba:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Icon</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>hub.display.show_icon(Icon.HEART)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>hub.display.show_icon(Icon.HAPPY)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>hub.speaker.beep(<span class="dv">440</span>, <span class="dv">200</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Pybricks funciona!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="5" type="1">
+<li>Click ▶️ Run</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="resumen-opciones-de-uso" class="level2">
+<h2 class="anchored" data-anchor-id="resumen-opciones-de-uso">📊 Resumen: Opciones de Uso</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Componente</th>
-<th style="text-align: center;">Precio aprox.</th>
-<th>Link</th>
+<th>Opción</th>
+<th style="text-align: center;">Costo</th>
+<th style="text-align: center;">Requiere Hardware</th>
+<th style="text-align: center;">Requiere Compilar</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ESP-32 WROOM</td>
-<td style="text-align: center;">$8-12</td>
-<td>AliExpress</td>
+<td><strong>Pybricks Code (Web)</strong></td>
+<td style="text-align: center;">Gratis</td>
+<td style="text-align: center;">Solo para probar</td>
+<td style="text-align: center;">❌ No</td>
 </tr>
 <tr class="even">
-<td>Cable USB</td>
-<td style="text-align: center;">$2</td>
-<td>Cualquier tienda</td>
+<td><strong>Compilar自己 (DIY)</strong></td>
+<td style="text-align: center;">Gratis</td>
+<td style="text-align: center;">ESP-32 o Hub LEGO</td>
+<td style="text-align: center;">✅ Sí</td>
 </tr>
 <tr class="odd">
-<td>Sensores (opcional)</td>
-<td style="text-align: center;">$5-20</td>
-<td>AliExpress</td>
+<td><strong>Firmware Oficial</strong></td>
+<td style="text-align: center;">Gratis</td>
+<td style="text-align: center;">Hub LEGO</td>
+<td style="text-align: center;">❌ No</td>
 </tr>
 <tr class="even">
-<td><strong>Total mínimo</strong></td>
-<td style="text-align: center;"><strong>~$10</strong></td>
-<td></td>
+<td><strong>ESP-32 Simulator</strong></td>
+<td style="text-align: center;">~$10</td>
+<td style="text-align: center;">ESP-32</td>
+<td style="text-align: center;">⚠️ Configuración</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-</section>
-<section id="recomendación-por-escenario" class="level2">
-<h2 class="anchored" data-anchor-id="recomendación-por-escenario">🏆 Recomendación por Escenario</h2>
-<section id="para-docentes-sin-presupuesto" class="level3">
-<h3 class="anchored" data-anchor-id="para-docentes-sin-presupuesto">Para Docentes sin Presupuesto</h3>
-<pre><code>🥇 Pybricks Code (code.pybricks.com)
-   └─▶ Todo online, sin instalación, simulador incluido</code></pre>
-</section>
-<section id="para-docentes-con-presupuesto-limitado" class="level3">
-<h3 class="anchored" data-anchor-id="para-docentes-con-presupuesto-limitado">Para Docentes con Presupuesto Limitado</h3>
-<pre><code>🥈 Thonny + 1-2 ESP-32 para demostraciones
-   └─▶ Los demás usan Pybricks Web, el docente muestra en hardware real</code></pre>
-</section>
-<section id="para-docentes-con-presupuesto-completo" class="level3">
-<h3 class="anchored" data-anchor-id="para-docentes-con-presupuesto-completo">Para Docentes con Presupuesto Completo</h3>
-<pre><code>🥉 Kit completo LEGO SPIKE Prime
-   └─▶ Experiencia 100% real, ideal para talleres presenciales</code></pre>
-<hr>
-</section>
-</section>
-<section id="código-compatible-con-simuladores" class="level2">
-<h2 class="anchored" data-anchor-id="código-compatible-con-simuladores">📝 Código Compatible con Simuladores</h2>
-<p>Este código funciona EN TODOS los simuladores y en hardware real:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Código universal - funciona en Pybricks Web, Thonny, y hardware real</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Icon</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicializar Hub</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar icono</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>hub.display.show_icon(Icon.HEART)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproducir sonido</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>hub.speaker.beep(frequency<span class="op">=</span><span class="dv">440</span>, duration<span class="op">=</span><span class="dv">500</span>)</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Apagar</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>hub.display.off()</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Código ejecutado exitosamente!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-<section id="ejercicio-probar-en-simulador" class="level2">
-<h2 class="anchored" data-anchor-id="ejercicio-probar-en-simulador">🎓 Ejercicio: Probar en Simulador</h2>
+<section id="ejercicio-para-estudiantes" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-estudiantes">🎓 Ejercicio para Estudiantes</h2>
 <section id="objetivo" class="level3">
 <h3 class="anchored" data-anchor-id="objetivo">Objetivo</h3>
-<p>Ejecutar este código en Pybricks Web y verificar que funciona.</p>
-</section>
-<section id="código-de-prueba" class="level3">
-<h3 class="anchored" data-anchor-id="código-de-prueba">Código de prueba</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Secuencia de LEDs</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    matriz <span class="op">=</span> [[<span class="dv">0</span> <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    matriz[i][i] <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Diagonal</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    hub.display.show(matriz)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">200</span>)</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>hub.display.scroll(<span class="st">"OK!"</span>, wait<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Compilar firmware Pybricks desde código fuente.</p>
 </section>
 <section id="pasos" class="level3">
 <h3 class="anchored" data-anchor-id="pasos">Pasos</h3>
-<ol type="1">
-<li>Abrir https://code.pybricks.com</li>
-<li>Copiar el código de arriba</li>
-<li>Click en ▶️ (Run)</li>
-<li>Verificar que los LEDs se encienden en diagonal</li>
-</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Clonar repositorio</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/pybricks/pybricks-micropython</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> pybricks-micropython</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Instalar Poetry (si no tienes)</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pipx</span> install poetry</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Configurar entorno</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> install</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="ex">poetry</span> env activate<span class="va">)</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Instalar ARM GCC (Ubuntu)</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gcc-arm-none-eabi</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Compilar</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> mpy-cross <span class="at">-j8</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/primehub <span class="at">-j8</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Verificar resultado</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span> bricks/primehub/build/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="entregables" class="level3">
+<h3 class="anchored" data-anchor-id="entregables">Entregables</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Captura de pantalla con firmware compilado</label></li>
+<li><label><input type="checkbox">Log de la terminal mostrando éxito</label></li>
+<li><label><input type="checkbox">Archivo firmware.bin generado</label></li>
+</ul>
 <hr>
 </section>
 </section>
@@ -845,25 +1019,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Pybricks Code</td>
+<td>Repositorio GitHub</td>
+<td>https://github.com/pybricks/pybricks-micropython</td>
+</tr>
+<tr class="even">
+<td>Pybricks Code (Web)</td>
 <td>https://code.pybricks.com</td>
 </tr>
+<tr class="odd">
+<td>Documentación</td>
+<td>https://docs.pybricks.com</td>
+</tr>
 <tr class="even">
-<td>Thonny IDE</td>
-<td>https://thonny.org</td>
+<td>Instalación Oficial</td>
+<td>https://pybricks.com/install</td>
 </tr>
 <tr class="odd">
-<td>MicroPython Docs</td>
-<td>https://docs.micropython.org</td>
+<td>DFU Web Tool</td>
+<td>https://dfu.pybricks.com</td>
 </tr>
 <tr class="even">
-<td>ESP-32 Simulator</td>
-<td>https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator</td>
+<td>Licencia MIT</td>
+<td>https://github.com/pybricks/pybricks-micropython/blob/master/LICENSE</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<p><em>Simuladores - MicroPython para el Aula - Diego Saavedra 2026</em> 🖥️</p>
+</section>
+<section id="tips-de-compilación" class="level2">
+<h2 class="anchored" data-anchor-id="tips-de-compilación">💡 Tips de Compilación</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                          💡 TIPS PROFESIONALES                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   1. 🐢 NO USES --recursive AL CLONAR                                      │
+│      └─▶ Los submodules se cargan on-demand, es más rápido                 │
+│                                                                             │
+│   2. 🔧 USA -j8 PARA PARALELIZAR                                           │
+│      └─▶ make -C bricks/primehub -j8 (usa 8 cores)                         │
+│                                                                             │
+│   3. 📦 PRIMERO COMPILA mpy-cross                                          │
+│      └─▶ make mpy-cross -j8 (necesario para el proceso)                    │
+│                                                                             │
+│   4. 🐛 SI HAY ERRORES, LIMPIA PRIMERO                                     │
+│      └─▶ make clean &amp;&amp; make -C bricks/primehub -j8                         │
+│                                                                             │
+│   5. 📊 VERIFICA EL TAMAÑO DEL FIRMWARE                                    │
+│      └─▶ ls -lh bricks/primehub/build/firmware.bin                         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr>
+</section>
+<section id="comparación-compilar-vs-usar-web" class="level2">
+<h2 class="anchored" data-anchor-id="comparación-compilar-vs-usar-web">🆚 Comparación: Compilar vs Usar Web</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Aspecto</th>
+<th style="text-align: center;">Compilar DIY</th>
+<th style="text-align: center;">Pybricks Code Web</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Costo</strong></td>
+<td style="text-align: center;">Gratis</td>
+<td style="text-align: center;">Gratis</td>
+</tr>
+<tr class="even">
+<td><strong>Setup</strong></td>
+<td style="text-align: center;">30-60 min</td>
+<td style="text-align: center;">2 min</td>
+</tr>
+<tr class="odd">
+<td><strong>Customización</strong></td>
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">Limitada</td>
+</tr>
+<tr class="even">
+<td><strong>Último features</strong></td>
+<td style="text-align: center;">Inmediato</td>
+<td style="text-align: center;">Esperar release</td>
+</tr>
+<tr class="odd">
+<td><strong>Ideal para</strong></td>
+<td style="text-align: center;">Desarrolladores</td>
+<td style="text-align: center;">Estudiantes</td>
+</tr>
+<tr class="even">
+<td><strong>Sin internet</strong></td>
+<td style="text-align: center;">✅ Sí</td>
+<td style="text-align: center;">❌ No</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="conclusión" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión">🏆 Conclusión</h2>
+<pre><code>╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║   📚 PARA EL CURSO RECOMENDAMOS:                                             ║
+║                                                                               ║
+║   🥇 Opción Principal: Pybricks Code Web (code.pybricks.com)                ║
+║      └─▶ Sin setup, funciona en cualquier navegador                         ║
+║                                                                               ║
+║   🥈 Opción Alternativa: Compilar desde fuente                               ║
+║      └─▶ Para estudiantes avanzados o personalización                       ║
+║                                                                               ║
+║   🥉 Opción DIY: ESP-32 + SPIKE Simulator                                   ║
+║      └─▶ Para testing sin hardware LEGO (workflow propuesto)                ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝</code></pre>
+<hr>
+<p><em>Compilación Pybricks - MicroPython para el Aula - Diego Saavedra 2026</em> 🔧</p>
 
 
 </section>
@@ -1272,13 +1541,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../contenido/apendice_thonny_debugger.html" class="pagination-link" aria-label="Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales</span></span>
+      <a href="../contenido/apendice_simuladores.html" class="pagination-link" aria-label="🖥️ Simuladores de MicroPython">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../contenido/apendice_pybricks_compilacion.html" class="pagination-link" aria-label="🔧 Pybricks: Compilación Manual y Sin Licencia">
-        <span class="nav-page-text"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../evaluaciones/eval_motores_avanzados.html" class="pagination-link" aria-label="Evaluación: Motores Avanzados y PID">
+        <span class="nav-page-text"><span class="chapter-title">Evaluación: Motores Avanzados y PID</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
