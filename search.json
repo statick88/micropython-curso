@@ -2751,6 +2751,171 @@
     ]
   },
   {
+    "objectID": "contenido/apendice_pybricks_compilacion.html",
+    "href": "contenido/apendice_pybricks_compilacion.html",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "",
+    "text": "🔧 Pybricks MicroPython: Compilación Manual",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#pybricks-es-gratis",
+    "href": "contenido/apendice_pybricks_compilacion.html#pybricks-es-gratis",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "✅ ¿Pybricks es Gratis?",
+    "text": "✅ ¿Pybricks es Gratis?\n╔═══════════════════════════════════════════════════════════════════════════════╗\n║                                                                               ║\n║                    ✅ SÍ, PYBRICKS ES COMPLETAMENTE GRATIS                  ║\n║                                                                               ║\n╠═══════════════════════════════════════════════════════════════════════════════╣\n║                                                                               ║\n║   📜 Licencia: MIT License                                                    ║\n║   👨‍💻 Autores: The Pybricks Authors (2018-2026)                              ║\n║   📦 Código fuente: github.com/pybricks/pybricks-micropython                 ║\n║   🌟 Stars: 313                                                               ║\n║   📊 Commits: 6,721                                                           ║\n║                                                                               ║\n║   Puedes:                                                                     ║\n║   ✅ Usar libremente                                                         ║\n║   ✅ Modificar el código                                                     ║\n║   ✅ Distribuir                                                              ║\n║   ✅ Compilar y flashear tu propio firmware                                   ║\n║   ✅ Usar en educación sin costo                                             ║\n║                                                                               ║\n╚═══════════════════════════════════════════════════════════════════════════════╝\n\n⚠️ Nota sobre Licencias de Componentes\nEl firmware Pybricks incluye bibliotecas de terceros. La mayoría son open source, pero BTstack tiene una licencia más restrictiva que prohibe cobrar por el firmware.",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#hubs-soportados",
+    "href": "contenido/apendice_pybricks_compilacion.html#hubs-soportados",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "📊 Hubs Soportados",
+    "text": "📊 Hubs Soportados\n\n\n\nHub\nModelo\nSoportado\nEstado\n\n\n\n\nLEGO Technic Hub\n45601\n✅\nEstable\n\n\nLEGO BOOST Move Hub\n45601\n✅\nEstable\n\n\nLEGO City Hub\n45601\n✅\nEstable\n\n\nLEGO SPIKE Prime Hub\n45601\n✅\nEstable\n\n\nLEGO SPIKE Essential Hub\n45601\n✅\nEstable\n\n\nLEGO MINDSTORMS Robot Inventor\n-\n✅\nEstable\n\n\nMINDSTORMS EV3\n-\n⚠️\nv2.x (comunidad)",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#requisitos-por-plataforma",
+    "href": "contenido/apendice_pybricks_compilacion.html#requisitos-por-plataforma",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "🖥️ Requisitos por Plataforma",
+    "text": "🖥️ Requisitos por Plataforma\n\nUbuntu/Linux 24.04 (RECOMENDADO)\n\n\n\nHerramienta\nVersión\nInstalación\n\n\n\n\nGit\nCualquiera reciente\nsudo apt install git\n\n\nPython\n3.12.x\nsudo apt install python3\n\n\nPoetry\n2.x\npipx install poetry\n\n\nARM GCC Toolchain\n13.x\nsudo apt install gcc-arm-none-eabi\n\n\nGCC\nSistema\nsudo apt install build-essential\n\n\nMake\nSistema\nsudo apt install make\n\n\n\nInstalación completa:\nsudo apt update\nsudo apt install git python3 build-essential gcc-arm-none-eabi\npipx install poetry\n\n\n\nWindows (vía Cygwin)\n\n\n\nHerramienta\nDescripción\n\n\n\n\nCygwin\nEntorno Unix para Windows\n\n\nARM GCC Toolchain\nCompilador cross-compilation\n\n\nPython\n3.10+\n\n\n\nInstalación paso a paso:\n\nDescargar e instalar Cygwin:\n\nhttps://www.cygwin.com/setup-x86_64.exe\nPaquetes a seleccionar:\n\ndoxygen\ngraphviz\nmake\nmingw64-x86_64-gcc-core\npython3\nzip\n\n\nInstalar ARM GCC Toolchain:\n\nhttps://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads\nDescargar versión 13.x para Windows\n\nConfigurar PATH:\n$env:PATH=\"C:\\cygwin64\\bin;C:\\Program Files (x86)\\GNU Arm Embedded Toolchain\\10 2020-q4-major\\bin;$env:PATH\"\n\n\n\n\nmacOS\n\n\n\nHerramienta\nInstalación\n\n\n\n\nGit\nIncluido o brew install git\n\n\nPython\nbrew install python\n\n\nPoetry\npipx install poetry\n\n\nARM GCC Toolchain\nbrew install --cask gcc-arm-embedded\n\n\nlibusb\nbrew install libusb\n\n\n\nInstalación completa:\nbrew install pipx\npipx install poetry\nbrew install libusb\nbrew install --cask gcc-arm-embedded",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#descargar-el-código-fuente",
+    "href": "contenido/apendice_pybricks_compilacion.html#descargar-el-código-fuente",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "📥 Descargar el Código Fuente",
+    "text": "📥 Descargar el Código Fuente\n\nOpción 1: Línea de Comandos (RECOMENDADA)\n# Clonar el repositorio (NO usar --recursive, es muy lento)\ngit clone https://github.com/pybricks/pybricks-micropython\ncd pybricks-micropython\n\n# Abrir en VS Code (opcional)\ncode .\n\n\nOpción 2: GitHub Desktop\n\nDescargar: https://desktop.github.com\nClone → https://github.com/pybricks/pybricks-micropython\n\n\n\nOpción 3: VS Code\n\nCommand Palette → Git: Clone\nPegar URL del repositorio",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#configurar-entorno-python",
+    "href": "contenido/apendice_pybricks_compilacion.html#configurar-entorno-python",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "⚙️ Configurar Entorno Python",
+    "text": "⚙️ Configurar Entorno Python\n# Verificar versión de Python (necesita 3.10+)\npython3 --version\n\n# Si tienes múltiples versiones, configurar Poetry\npoetry env use python3\n\n# Instalar dependencias\npoetry install\n\n# Activar entorno virtual\neval $(poetry env activate)\n\n# Verificar que está activado (debe mostrar (.venv) al inicio)\n# (.venv) $",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#compilar-el-firmware",
+    "href": "contenido/apendice_pybricks_compilacion.html#compilar-el-firmware",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "🔨 Compilar el Firmware",
+    "text": "🔨 Compilar el Firmware\n\nPaso 1: Configurar Compilador ARM\n# Opción A: Agregar al PATH\nexport PATH=$PATH:~/gcc-arm-none-eabi-*/bin\n\n# Opción B: Usar variable CROSS_COMPILE\nexport CROSS_COMPILE=~/gcc-arm-none-eabi-*/bin/arm-none-eabi-\n\n\nPaso 2: Compilar para tu Hub\n# Activar entorno Poetry\neval $(poetry env activate)\n\n# Compilar mpy-cross primero (necesario para el proceso)\nmake mpy-cross -j8\n\n# Compilar firmware para SPIKE Prime Hub\nmake -C bricks/primehub -j8\n\n# Otras opciones de Hubs:\nmake -C bricks/cityhub -j8      # LEGO City Hub\nmake -C bricks/technichub -j8   # LEGO Technic Hub\nmake -C bricks/boosthub -j8     # LEGO BOOST Hub\nmake -C bricks/inventorhub -j8  # MINDSTORMS Inventor\n\n\nPaso 3: Encontrar el Firmware\nDespués de compilar, el firmware está en:\npybricks-micropython/\n└── bricks/\n    └── primehub/\n        └── build/\n            ├── firmware.bin      ← Firmware principal\n            └── firmware-zip.zip  ← Para instalar",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#flashear-el-firmware-al-hub",
+    "href": "contenido/apendice_pybricks_compilacion.html#flashear-el-firmware-al-hub",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "📲 Flashear el Firmware al Hub",
+    "text": "📲 Flashear el Firmware al Hub\n\nMétodo 1: Pybricks Code (FÁCIL)\n\nIr a https://pybricks.com/install\nConectar Hub por USB\nSeguir instrucciones en pantalla\nSeleccionar tu archivo firmware.zip\nClick “Install”\n\n\n\nMétodo 2: DFU Mode (AVANZADO)\n# Para SPIKE Prime / MINDSTORMS Inventor\n# 1. Poner Hub en modo DFU:\n#    - Mantener CENTER + botón verde al encender\n\n# 2. Flashear con dfu-util\ndfu-util -a 0 -D firmware.bin",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#probar-el-firmware-instalado",
+    "href": "contenido/apendice_pybricks_compilacion.html#probar-el-firmware-instalado",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "🧪 Probar el Firmware Instalado",
+    "text": "🧪 Probar el Firmware Instalado\n\nCon Pybricks Code (Online)\n\nAbrir https://code.pybricks.com\nConectar Hub por USB\nClick “Connect”\nEscribir código de prueba:\n\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Icon\nfrom pybricks.tools import wait\n\nhub = PrimeHub()\n\nhub.display.show_icon(Icon.HEART)\nwait(1000)\nhub.display.show_icon(Icon.HAPPY)\nhub.speaker.beep(440, 200)\n\nprint(\"¡Pybricks funciona!\")\n\nClick ▶️ Run",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#resumen-opciones-de-uso",
+    "href": "contenido/apendice_pybricks_compilacion.html#resumen-opciones-de-uso",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "📊 Resumen: Opciones de Uso",
+    "text": "📊 Resumen: Opciones de Uso\n\n\n\nOpción\nCosto\nRequiere Hardware\nRequiere Compilar\n\n\n\n\nPybricks Code (Web)\nGratis\nSolo para probar\n❌ No\n\n\nCompilar自己 (DIY)\nGratis\nESP-32 o Hub LEGO\n✅ Sí\n\n\nFirmware Oficial\nGratis\nHub LEGO\n❌ No\n\n\nESP-32 Simulator\n~$10\nESP-32\n⚠️ Configuración",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#ejercicio-para-estudiantes",
+    "href": "contenido/apendice_pybricks_compilacion.html#ejercicio-para-estudiantes",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "🎓 Ejercicio para Estudiantes",
+    "text": "🎓 Ejercicio para Estudiantes\n\nObjetivo\nCompilar firmware Pybricks desde código fuente.\n\n\nPasos\n# 1. Clonar repositorio\ngit clone https://github.com/pybricks/pybricks-micropython\ncd pybricks-micropython\n\n# 2. Instalar Poetry (si no tienes)\npipx install poetry\n\n# 3. Configurar entorno\npoetry install\neval $(poetry env activate)\n\n# 4. Instalar ARM GCC (Ubuntu)\nsudo apt install gcc-arm-none-eabi\n\n# 5. Compilar\nmake mpy-cross -j8\nmake -C bricks/primehub -j8\n\n# 6. Verificar resultado\nls -la bricks/primehub/build/\n\n\nEntregables\n\nCaptura de pantalla con firmware compilado\nLog de la terminal mostrando éxito\nArchivo firmware.bin generado",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#enlaces-útiles",
+    "href": "contenido/apendice_pybricks_compilacion.html#enlaces-útiles",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "🔗 Enlaces Útiles",
+    "text": "🔗 Enlaces Útiles\n\n\n\n\n\n\n\nRecurso\nURL\n\n\n\n\nRepositorio GitHub\nhttps://github.com/pybricks/pybricks-micropython\n\n\nPybricks Code (Web)\nhttps://code.pybricks.com\n\n\nDocumentación\nhttps://docs.pybricks.com\n\n\nInstalación Oficial\nhttps://pybricks.com/install\n\n\nDFU Web Tool\nhttps://dfu.pybricks.com\n\n\nLicencia MIT\nhttps://github.com/pybricks/pybricks-micropython/blob/master/LICENSE",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#tips-de-compilación",
+    "href": "contenido/apendice_pybricks_compilacion.html#tips-de-compilación",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "💡 Tips de Compilación",
+    "text": "💡 Tips de Compilación\n┌─────────────────────────────────────────────────────────────────────────────┐\n│                          💡 TIPS PROFESIONALES                              │\n├─────────────────────────────────────────────────────────────────────────────┤\n│                                                                             │\n│   1. 🐢 NO USES --recursive AL CLONAR                                      │\n│      └─▶ Los submodules se cargan on-demand, es más rápido                 │\n│                                                                             │\n│   2. 🔧 USA -j8 PARA PARALELIZAR                                           │\n│      └─▶ make -C bricks/primehub -j8 (usa 8 cores)                         │\n│                                                                             │\n│   3. 📦 PRIMERO COMPILA mpy-cross                                          │\n│      └─▶ make mpy-cross -j8 (necesario para el proceso)                    │\n│                                                                             │\n│   4. 🐛 SI HAY ERRORES, LIMPIA PRIMERO                                     │\n│      └─▶ make clean && make -C bricks/primehub -j8                         │\n│                                                                             │\n│   5. 📊 VERIFICA EL TAMAÑO DEL FIRMWARE                                    │\n│      └─▶ ls -lh bricks/primehub/build/firmware.bin                         │\n│                                                                             │\n└─────────────────────────────────────────────────────────────────────────────┘",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#comparación-compilar-vs-usar-web",
+    "href": "contenido/apendice_pybricks_compilacion.html#comparación-compilar-vs-usar-web",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "🆚 Comparación: Compilar vs Usar Web",
+    "text": "🆚 Comparación: Compilar vs Usar Web\n\n\n\nAspecto\nCompilar DIY\nPybricks Code Web\n\n\n\n\nCosto\nGratis\nGratis\n\n\nSetup\n30-60 min\n2 min\n\n\nCustomización\nTotal\nLimitada\n\n\nÚltimo features\nInmediato\nEsperar release\n\n\nIdeal para\nDesarrolladores\nEstudiantes\n\n\nSin internet\n✅ Sí\n❌ No",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/apendice_pybricks_compilacion.html#conclusión",
+    "href": "contenido/apendice_pybricks_compilacion.html#conclusión",
+    "title": "🔧 Pybricks: Compilación Manual y Sin Licencia",
+    "section": "🏆 Conclusión",
+    "text": "🏆 Conclusión\n╔═══════════════════════════════════════════════════════════════════════════════╗\n║                                                                               ║\n║   📚 PARA EL CURSO RECOMENDAMOS:                                             ║\n║                                                                               ║\n║   🥇 Opción Principal: Pybricks Code Web (code.pybricks.com)                ║\n║      └─▶ Sin setup, funciona en cualquier navegador                         ║\n║                                                                               ║\n║   🥈 Opción Alternativa: Compilar desde fuente                               ║\n║      └─▶ Para estudiantes avanzados o personalización                       ║\n║                                                                               ║\n║   🥉 Opción DIY: ESP-32 + SPIKE Simulator                                   ║\n║      └─▶ Para testing sin hardware LEGO (workflow propuesto)                ║\n║                                                                               ║\n╚═══════════════════════════════════════════════════════════════════════════════╝\n\nCompilación Pybricks - MicroPython para el Aula - Diego Saavedra 2026 🔧",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>🔧 Pybricks: Compilación Manual y Sin Licencia</span>"
+    ]
+  },
+  {
     "objectID": "evaluaciones/eval_motores_avanzados.html",
     "href": "evaluaciones/eval_motores_avanzados.html",
     "title": "Evaluación: Motores Avanzados y PID",
@@ -2758,7 +2923,7 @@
     "text": "Evaluación: Motores Avanzados y PID",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -2769,7 +2934,7 @@
     "text": "📋 Información de la Evaluación\n\n\n\nAspecto\nDetalle\n\n\n\n\nUnidad\n3 - Movimiento (Contenido Avanzado)\n\n\nTipo\nTeórico-Práctica\n\n\nDuración\n45 minutos\n\n\nPuntaje\n100 puntos\n\n\nModalidad\nIndividual",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -2780,7 +2945,7 @@
     "text": "Parte A: Conceptos Teóricos (40 puntos)\n\nPregunta 1 (10 puntos)\nExplica qué es el control PID y sus tres componentes. ¿Por qué es importante en robótica?\n\n\n💡 Pista\n\nPID = Proporcional + Integral + Derivativo\n\nRespuesta esperada:\n\nEl control PID es un algoritmo de retroalimentación que ajusta la salida basándose en tres componentes:\n\nP (Proporcional): Corrección proporcional al error actual\nI (Integral): Corrección basada en el error acumulado\nD (Derivativo): Corrección basada en la tasa de cambio del error\n\nEs importante en robótica para lograr movimientos precisos y compensar factores como fricción, peso desbalanceado y deslizamiento de ruedas [1].\n\n\n\n\nPregunta 2 (10 puntos)\n¿Cuáles son los tres modos de parada disponibles en Pybricks y cuándo usar cada uno?\nRespuesta esperada:\n\n\n\nModo\nComportamiento\nUso\n\n\n\n\nStop.HOLD\nMantiene posición\nPosicionamiento preciso\n\n\nStop.COAST\nSe desliza hasta parar\nMovimientos suaves\n\n\nStop.BRAKE\nFrena activamente\nParada rápida\n\n\n\n\n\n\nPregunta 3 (10 puntos)\n¿Qué es run_until_stalled() y cómo se diferencia de run_angle()?\nRespuesta esperada:\n\n\nrun_angle(): Ejecuta un número específico de grados\nrun_until_stalled(): Ejecuta hasta que el motor se atasca o encuentra resistencia\n\nSe usa para calibración inicial de motores y detectar límites físicos [2].\n\n\n\n\nPregunta 4 (10 puntos)\nExplica la diferencia entre Duty Cycle y Velocity en el control de motores.\nRespuesta esperada:\n\n\nDuty Cycle: Porcentaje de potencia aplicada al motor (0-100%)\nVelocity: Velocidad angular en grados por segundo\n\nDuty cycle controla la fuerza, velocity controla la velocidad [1].",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -2791,7 +2956,7 @@
     "text": "Parte B: Práctica en Código (40 puntos)\n\nEjercicio 1: Calibración Automática (20 puntos)\nEscribe un programa que:\n\nUse run_until_stalled() para encontrar los límites de un motor\nCalcule el rango total de movimiento\nPosicione el motor en el centro exacto\n\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port, Stop\n\n# Tu código aquí\n# ...\nSolución esperada:\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port, Stop\nfrom pybricks.pupdevices import Motor\n\nhub = PrimeHub()\nmotor = Motor(Port.A)\n\n# Paso 1: Ir al límite izquierdo\nmotor.run_until_stalled(-200, then=Stop.COAST, duty_limit=50)\nposicion_min = motor.angle()\nhub.display.scroll(f\"MIN: {posicion_min}\")\n\n# Paso 2: Ir al límite derecho\nmotor.run_until_stalled(200, then=Stop.COAST, duty_limit=50)\nposicion_max = motor.angle()\nhub.display.scroll(f\"MAX: {posicion_max}\")\n\n# Paso 3: Calcular centro y posicionarse\nrango = posicion_max - posicion_min\ncentro = posicion_min + (rango / 2)\n\nmotor.run_target(100, centro)\nhub.display.scroll(f\"CENTRO: {centro}\")\n\n\n\nEjercicio 2: Control PID Simple (20 puntos)\nImplementa un controlador PID básico para mantener un ángulo objetivo:\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port\n\n# Constantes PID\nKP = 2.0  # Ajustar según experimentación\nKI = 0.1\nKD = 0.5\n\n# Tu código aquí\n# ...\nSolución esperada:\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port\nfrom pybricks.pupdevices import Motor\nfrom pybricks.tools import wait\n\nhub = PrimeHub()\nmotor = Motor(Port.A)\n\n# Constantes PID (ajustar experimentalmente)\nKP = 2.0\nKI = 0.1\nKD = 0.5\n\n# Variables PID\nerror_anterior = 0\nintegral = 0\nobjetivo = 90  # Ángulo objetivo en grados\n\n# Loop de control PID\nfor _ in range(100):\n    # Calcular error\n    error = objetivo - motor.angle()\n    \n    # Componente integral\n    integral += error\n    \n    # Componente derivativa\n    derivada = error - error_anterior\n    error_anterior = error\n    \n    # Calcular salida PID\n    salida = (KP * error) + (KI * integral) + (KD * derivada)\n    \n    # Aplicar al motor\n    motor.run(salida)\n    \n    wait(10)",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -2802,7 +2967,7 @@
     "text": "Parte C: Análisis de Situación (20 puntos)\n\nEscenario\nUn robot con DriveBase tiene los siguientes problemas: 1. Al avanzar en línea recta, se desvía hacia la izquierda 2. Los giros son inconsistentes (a veces 88°, a veces 92°) 3. Al intentar detenerse, se desliza más de lo esperado\n\n\nPreguntas\na) ¿Cuál es la causa más probable de la desviación? (5 puntos)\n\nFalta de activación del giroscopio o calibración incorrecta de axle_track.\n\nb) ¿Cómo solucionarías los giros inconsistentes? (5 puntos)\n\nActivar use_gyro(True) en el DriveBase para compensar el deslizamiento.\n\nc) ¿Qué modo de parada usarías para reducir el deslizamiento? (5 puntos)\n\nStop.BRAKE o Stop.HOLD en lugar de Stop.COAST.\n\nd) ¿Qué parámetro adicional deberías verificar? (5 puntos)\n\nLos valores de wheel_diameter y axle_track en la configuración del DriveBase.",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -2813,7 +2978,7 @@
     "text": "📊 Rúbrica de Calificación\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nParte A: Teórico\n40\n\n\n\n- Pregunta 1\n10\nExplicación completa de PID\n\n\n- Pregunta 2\n10\nModos de parada correctos\n\n\n- Pregunta 3\n10\nDiferencia clara run_until_stalled\n\n\n- Pregunta 4\n10\nDuty Cycle vs Velocity\n\n\nParte B: Práctica\n40\n\n\n\n- Ejercicio 1\n20\nCódigo funcional de calibración\n\n\n- Ejercicio 2\n20\nImplementación PID correcta\n\n\nParte C: Análisis\n20\n\n\n\n- a)\n5\nIdentificación correcta\n\n\n- b)\n5\nSolución apropiada\n\n\n- c)\n5\nModo de parada correcto\n\n\n- d)\n5\nParámetros a verificar\n\n\nTotal\n100",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -2824,7 +2989,7 @@
     "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - Motor Control. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor\n[2] Pybricks Team. Pybricks MicroPython - Calibration and Stall Detection. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html\n\nEvaluación Motores Avanzados - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -2835,7 +3000,7 @@
     "text": "Evaluación: Sensores Adicionales",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -2846,7 +3011,7 @@
     "text": "📋 Información de la Evaluación\n\n\n\nAspecto\nDetalle\n\n\n\n\nUnidad\n4 - Sensores (Contenido Avanzado)\n\n\nTipo\nTeórico-Práctica\n\n\nDuración\n30 minutos\n\n\nPuntaje\n100 puntos\n\n\nModalidad\nIndividual",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -2857,7 +3022,7 @@
     "text": "Parte A: Reconocimiento de Sensores (30 puntos)\n\nPregunta 1 (10 puntos)\nIdentifica el sensor adecuado para cada situación:\n\n\n\nSituación\nSensor\n\n\n\n\nDetectar proximidad de objetos a distancia\n\n\n\nLeer colores específicos en una línea\n\n\n\nDetectar presión mecánica\n\n\n\nMedir inclinación del robot\n\n\n\n\nRespuesta:\n\n\n\nSituación\nSensor\n\n\n\n\nDetectar proximidad de objetos a distancia\nInfraredSensor\n\n\nLeer colores específicos en una línea\nColorSensor\n\n\nDetectar presión mecánica\nForceSensor\n\n\nMedir inclinación del robot\nTiltSensor\n\n\n\n\n\n\nPregunta 2 (10 puntos)\n¿Cuál es el rango de operación del InfraredSensor y su precisión?\nRespuesta esperada:\n\n\nRango: 50mm a 2000mm (5cm a 200cm)\nPrecisión: ±10mm en近距离, disminuye con distancia\nModos: distance(), reflection(), buttons() [1]\n\n\n\n\n\nPregunta 3 (10 puntos)\nExplica la diferencia entre ColorSensor.color() y ColorSensor.reflection().\nRespuesta esperada:\n\n\ncolor(): Retorna el nombre del color detectado (Color.RED, Color.GREEN, etc.)\nreflection(): Retorna el porcentaje de reflectividad (0-100)\n\nEl modo reflection es más útil para seguimiento de líneas [2].",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -2868,7 +3033,7 @@
     "text": "Parte B: Práctica en Código (50 puntos)\n\nEjercicio 1: Seguimiento de Línea con Color (25 puntos)\nImplementa un programa que siga una línea negra usando ColorSensor:\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port\n\n# Tu código aquí\n# ...\nSolución esperada:\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port, Stop, Direction\nfrom pybricks.pupdevices import Motor, ColorSensor\nfrom pybricks.tools import wait\n\nhub = PrimeHub()\n\n# Inicializar dispositivos\nmotor_izq = Motor(Port.B, Direction.COUNTERCLOCKWISE)\nmotor_der = Motor(Port.A)\nsensor = ColorSensor(Port.C)\n\n# Constantes\nVELOCIDAD = 200\nGIRO = 50\nUMBLAL_LINEA = 30  # % reflectividad\n\n# Loop principal\nwhile True:\n    # Salir con botón\n    if hub.buttons.pressed():\n        break\n    \n    # Leer reflectividad\n    reflejo = sensor.reflection()\n    \n    if reflejo &lt; UMBLAL_LINEA:\n        # Línea negra detectada - girar izquierda\n        motor_izq.run(VELOCIDAD - GIRO)\n        motor_der.run(VELOCIDAD + GIRO)\n    else:\n        # Fondo claro - girar derecha\n        motor_izq.run(VELOCIDAD + GIRO)\n        motor_der.run(VELOCIDAD - GIRO)\n\nmotor_izq.stop()\nmotor_der.stop()\n\n\n\nEjercicio 2: Detección de Obstáculos con Infrared (25 puntos)\nCrea un sistema que alerte cuando un objeto esté a menos de 100mm:\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port, Color\n\n# Tu código aquí\n# ...\nSolución esperada:\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port, Color\nfrom pybricks.pupdevices import InfraredSensor\nfrom pybricks.tools import wait\n\nhub = PrimeHub()\nsensor = InfraredSensor(Port.C)\n\nUMBRAL_PROXIMIDAD = 100  # mm\n\nwhile True:\n    if hub.buttons.pressed():\n        break\n    \n    distancia = sensor.distance()\n    \n    if distancia &lt; UMBRAL_PROXIMIDAD:\n        # Alerta: objeto cercano\n        hub.light.on(Color.RED)\n        hub.display.show_icon(HubIcon.EXCLAMATION)\n        hub.speaker.beep(frequency=1000, duration=100)\n    else:\n        # Seguro\n        hub.light.on(Color.GREEN)\n        hub.display.off()\n    \n    wait(100)\n\nhub.light.off()",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -2879,7 +3044,7 @@
     "text": "Parte C: Análisis de Datos (20 puntos)\n\nEscenario\nDado el siguiente código de telemetría, analiza los resultados:\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.pupdevices import InfraredSensor, ColorSensor\nfrom pybricks.tools import wait\nimport json\n\nhub = PrimeHub()\nir = InfraredSensor(Port.C)\ncolor = ColorSensor(Port.D)\n\ndatos = []\n\nfor i in range(50):\n    muestra = {\n        \"distancia\": ir.distance(),\n        \"reflejo\": color.reflection(),\n        \"color\": str(color.color())\n    }\n    datos.append(muestra)\n    wait(100)\n\n# Guardar datos\nprint(json.dumps(datos))\n\n\nPreguntas\na) ¿Cuántos segundos dura la captura de datos? (5 puntos)\n\n50 muestras × 100ms = 5000ms = 5 segundos\n\nb) ¿Qué tipo de gráfico usarías para visualizar las distancias? (5 puntos)\n\nGráfico de línea (line chart) para mostrar tendencia temporal.\n\nc) ¿Cómo exportarías los datos a un archivo CSV en Thonny? (5 puntos)\n\nUsar with open('datos.csv', 'w') as f: y escribir líneas con f.write().\n\nd) ¿Qué mejorarías para una telemetría más precisa? (5 puntos)\n\n\nReducir el intervalo de muestreo\nUsar más sensores\nImplementar filtro de promedio móvil\nAgregar timestamps con tiempo real",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -2890,7 +3055,7 @@
     "text": "📊 Rúbrica de Calificación\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nParte A: Teórico\n30\n\n\n\n- Pregunta 1\n10\nSensores identificados correctamente\n\n\n- Pregunta 2\n10\nRango y precisión correctos\n\n\n- Pregunta 3\n10\nDiferencia color vs reflection\n\n\nParte B: Práctica\n50\n\n\n\n- Ejercicio 1\n25\nSeguimiento de línea funcional\n\n\n- Ejercicio 2\n25\nDetección de obstáculos con alerta\n\n\nParte C: Análisis\n20\n\n\n\n- a)\n5\nCálculo de tiempo correcto\n\n\n- b)\n5\nTipo de gráfico apropiado\n\n\n- c)\n5\nExportación CSV correcta\n\n\n- d)\n5\nMejoras relevantes\n\n\nTotal\n100",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -2901,7 +3066,7 @@
     "text": "Referencias\n[1] Pybricks Team. Pybricks MicroPython API - InfraredSensor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#infraredsensor\n[2] Pybricks Team. Pybricks MicroPython API - ColorSensor. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#colorsensor\n\nEvaluación Sensores Adicionales - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -2912,7 +3077,7 @@
     "text": "Evaluación: Telemetría y Monitoreo de Batería",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -2923,7 +3088,7 @@
     "text": "📋 Información de la Evaluación\n\n\n\nAspecto\nDetalle\n\n\n\n\nUnidad\n4 - Sensores (Módulo Avanzado)\n\n\nTipo\nPráctica\n\n\nDuración\n30 minutos\n\n\nPuntaje\n100 puntos\n\n\nModalidad\nIndividual",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -2934,7 +3099,7 @@
     "text": "Ejercicio Principal: Sistema de Telemetría Completo (100 puntos)\n\nObjetivo\nCrear un sistema completo de telemetría que monitoree:\n\nEstado de batería\nDistancia de sensores\nPosición de motores\nExportar datos a formato analizable\n\n\n\nRequisitos del Sistema\n┌─────────────────────────────────────────┐\n│         SISTEMA DE TELEMETRÍA          │\n├─────────────────────────────────────────┤\n│  [Batería]  →  Voltage, Corriente      │\n│  [Sensor IR] →  Distancia (mm)         │\n│  [Motores]  →  Posición (grados)       │\n│  [Display]  →  Estado actual           │\n│  [Export]   →  JSON/CSV                │\n└─────────────────────────────────────────┘\n\n\nCódigo Base\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port, Stop\nfrom pybricks.pupdevices import Motor, InfraredSensor\nfrom pybricks.tools import wait\nimport json\n\nhub = PrimeHub()\n\n# Inicializar dispositivos\nmotor = Motor(Port.A)\nsensor = InfraredSensor(Port.B)\n\n# Lista para almacenar datos\ntelemetria = []\n\n# Tu código aquí\n# ...",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -2945,7 +3110,7 @@
     "text": "Rúbrica de Evaluación\n\nRequisitos Funcionales (60 puntos)\n\n\n\nRequisito\nPuntos\nVerificado\n\n\n\n\nMide voltaje de batería\n15\n☐\n\n\nMide distancia del sensor\n15\n☐\n\n\nRegistra posición del motor\n15\n☐\n\n\nAlmacena datos en lista\n15\n☐\n\n\n\n\n\nCódigo y Calidad (20 puntos)\n\n\n\nAspecto\nPuntos\nVerificado\n\n\n\n\nCódigo funcional sin errores\n10\n☐\n\n\nUso correcto de librerías\n5\n☐\n\n\nComments/documentación\n5\n☐\n\n\n\n\n\nExportación y Análisis (20 puntos)\n\n\n\nAspecto\nPuntos\nVerificado\n\n\n\n\nExporta a JSON válido\n10\n☐\n\n\nDatos con timestamp\n5\n☐\n\n\nFormato listo para análisis\n5\n☐",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -2956,7 +3121,7 @@
     "text": "Solución Esperada\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port, Stop, Direction\nfrom pybricks.pupdevices import Motor, InfraredSensor\nfrom pybricks.tools import wait\nimport json\n\nhub = PrimeHub()\n\n# Inicializar dispositivos\nmotor = Motor(Port.A, Direction.COUNTERCLOCKWISE)\nsensor = InfraredSensor(Port.B)\n\n# Configuración de muestreo\nINTERVALO_MS = 200  # Muestrear cada 200ms\nDURACION_MS = 5000  # Durar 5 segundos\n\n# Lista para almacenar datos\ntelemetria = []\ntiempo_inicio = 0\n\nprint(\"=== INICIO TELEMETRÍA ===\")\n\n# Calibración inicial\nmotor.run_until_stalled(-50, then=Stop.COAST)\nmotor.reset_angle(0)\nhub.display.show_icon(HubIcon.TARGET)\n\n# Fase 1: Movimiento de prueba\nprint(\"Fase 1: Movimiento de calibración\")\nmotor.run_angle(100, 180)\n\n# Fase 2: Captura de datos\nprint(\"Fase 2: Captura activa\")\nhub.display.show_icon(HubIcon.UP)\n\nfor i in range(int(DURACION_MS / INTERVALO_MS)):\n    # Recopilar datos\n    muestra = {\n        \"timestamp\": i * INTERVALO_MS,\n        \"bateria\": {\n            \"voltaje\": hub.battery.voltage(),  # mV\n            \"corriente\": hub.battery.current()  # mA\n        },\n        \"sensor\": {\n            \"distancia_mm\": sensor.distance()\n        },\n        \"motor\": {\n            \"angulo\": motor.angle(),\n            \"velocidad\": motor.speed()\n        },\n        \"hub\": {\n            \"boton_left\": Button.LEFT in hub.buttons.pressed(),\n            \"boton_right\": Button.RIGHT in hub.buttons.pressed(),\n            \"boton_center\": Button.CENTER in hub.buttons.pressed()\n        }\n    }\n    \n    telemetria.append(muestra)\n    \n    # Mostrar progreso\n    progreso = int((i / (DURACION_MS / INTERVALO_MS)) * 100)\n    print(f\"Muestra {i+1}: {muestra}\")\n    \n    wait(INTERVALO_MS)\n\n# Fase 3: Análisis de datos\nprint(\"\\n=== ANÁLISIS DE DATOS ===\")\n\n# Calcular estadísticas\nvoltajes = [m[\"bateria\"][\"voltaje\"] for m in telemetria]\ndistancias = [m[\"sensor\"][\"distancia_mm\"] for m in telemetria]\n\nestadisticas = {\n    \"total_muestras\": len(telemetria),\n    \"duracion_ms\": DURACION_MS,\n    \"bateria\": {\n        \"voltaje_min\": min(voltajes),\n        \"voltaje_max\": max(voltajes),\n        \"voltaje_promedio\": sum(voltajes) / len(voltajes)\n    },\n    \"sensor\": {\n        \"distancia_min\": min(distancias),\n        \"distancia_max\": max(distancias),\n        \"distancia_promedio\": sum(distancias) / len(distancias)\n    }\n}\n\nprint(f\"Estadísticas: {json.dumps(estadisticas, indent=2)}\")\n\n# Exportar datos completos\noutput = {\n    \"metadata\": {\n        \"curso\": \"MicroPython para el Aula\",\n        \"autor\": \"Diego Saavedra\",\n        \"fecha\": \"2026\"\n    },\n    \"estadisticas\": estadisticas,\n    \"muestras\": telemetria\n}\n\nprint(\"\\n=== DATOS JSON ===\")\nprint(json.dumps(output, indent=2))\n\n# Guardar en archivo\nwith open(\"telemetria.json\", \"w\") as f:\n    json.dump(output, f, indent=2)\n\nprint(\"\\nDatos guardados en telemetria.json\")\n\n# Mostrar resultado\nhub.display.scroll(\"DATOS OK\", wait=True)\nhub.display.off()",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -2967,7 +3132,7 @@
     "text": "Preguntas de Seguimiento (Opcional - 10 puntos extra)\n\nP1: ¿Cómo agregarías un filtro de ruido a las mediciones?\n\nUsar un promedio móvil de las últimas N muestras para suavizar lecturas ruidosas.\n\n\n\nP2: ¿Qué mejoras harías para un sistema de telemetría en tiempo real?\n\n\nUsar asyncio para captura no bloqueante\nTransmitir datos por Bluetooth\nVisualizar en tiempo real con gráficos\nImplementar triggers para alertas automáticas",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -2978,7 +3143,7 @@
     "text": "Referencias\n[1] MicroPython Project. MicroPython Documentation - Time and Timers. 2026. Disponible en: https://docs.micropython.org/en/latest/library/time.html\n[2] Pybricks Team. Pybricks MicroPython - Battery Monitoring. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html\n\nEvaluación Telemetría - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -2989,7 +3154,7 @@
     "text": "📊 Tabla de Progresión",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
     ]
   },
   {
@@ -3000,7 +3165,7 @@
     "text": "Fase\nEmoción\nXP Acumulado\nHabilidad Dominada\n\n\n\n\n🔌\n¡Emoción!\n175\nConexión y primer código\n\n\n💡\n¡Creatividad!\n350\nDisplay y animaciones\n\n\n🤖\n¡Poder!\n550\nMotores y navegación\n\n\n📡\n¡Inteligencia!\n725\nSensores y telemetría\n\n\n🏆\n¡Maestría!\n1075\nProyecto completo",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
     ]
   },
   {
@@ -3011,7 +3176,7 @@
     "text": "🎮 Niveles de Experiencia\nXP         Nivel              Título              Icono\n─────────────────────────────────────────────────────────\n0          Nivel 1            Aprendiz            🌱\n100        Nivel 2            Explorador          🔍\n250        Nivel 3            Programador         💻\n500        Nivel 4            Ingeniero           ⚙️\n750        Nivel 5            Arquitecto          🏗️\n1000       Nivel 6            Maestro             🎓\n1500       Nivel 7            Leyenda             👑\n─────────────────────────────────────────────────────────",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>32</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
+      "<span class='chapter-number'>33</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
     ]
   },
   {
@@ -3022,7 +3187,7 @@
     "text": "📋 Especificaciones Técnicas",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
     ]
   },
   {
@@ -3033,7 +3198,7 @@
     "text": "Componente\nEspecificación\nDescripción\n\n\n\n\nCPU\nARM Cortex-M4\n180 MHz, 32-bit\n\n\nRAM\n640 KB\nMemoria de trabajo\n\n\nFlash\n2 MB\nAlmacenamiento de código\n\n\nLEDs\n5x5 = 25\nMatriz controlable\n\n\nPuertos\n4 (A, B, C, D)\nConexión smart\n\n\nBatería\nLi-Po 2200 mAh\nRecargable por USB\n\n\nBluetooth\nBLE 5.0\nConexión inalámbrica\n\n\nBotones\n5\nCentral + 4 direccionales",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
     ]
   },
   {
@@ -3044,7 +3209,7 @@
     "text": "🔌 Esquema de Conexiones\n                    ┌─────────────────────────────────┐\n                    │                                 │\n                    │      LEGO TECHNIC LARGE HUB     │\n                    │              🧠                 │\n                    │                                 │\n                    └─────────────────────────────────┘\n                                   │\n           ┌───────────────────────┼───────────────────────┐\n           │                       │                       │\n           ▼                       ▼                       ▼\n    ┌──────────────┐        ┌──────────────┐        ┌──────────────┐\n    │   PUERTO A   │        │   PUERTO B   │        │   PUERTOS    │\n    │              │        │              │        │   C + D      │\n    │  ⚙️ Motor    │        │  ⚙️ Motor    │        │              │\n    │   Izquierdo  │        │   Derecho    │        │  👁️ Sensores │\n    │              │        │              │        │              │\n    └──────────────┘        └──────────────┘        └──────────────┘\n           │                       │                       │\n           ▼                       ▼                       ▼\n    ┌──────────────┐        ┌──────────────┐        ┌──────────────┐\n    │  🔵🔵🔵🔵    │        │  🔵🔵🔵🔵    │        │  🟢🟢🟢🟢    │\n    │   Rueda      │        │   Rueda      │        │  Ultrasonico │\n    │   Izquierda  │        │   Derecha    │        │  Color, IR   │\n    └──────────────┘        └──────────────┘        └──────────────┘",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
     ]
   },
   {
@@ -3055,7 +3220,7 @@
     "text": "🎮 Controles del Hub\n\n\n\nBotón\nAcción\nLED Feedback\n\n\n\n\n◯ Central (1 seg)\nEncender\n🟢 Verde\n\n\n◯ Central (5 seg)\nApagar\n🔴 Rojo parpadeante\n\n\n◯ Central + LEFT\nModo bootloader\n🟡 Amarillo\n\n\n⬆️ ARRIBA\nAcción programa\nVariable\n\n\n⬇️ ABAJO\nAcción programa\nVariable\n\n\n⬅️ IZQUIERDA\nAcción programa\nVariable\n\n\n➡️ DERECHA\nAcción programa\nVariable",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>33</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
+      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
     ]
   },
   {
@@ -3066,7 +3231,7 @@
     "text": "🎯 Situación: Construir un Robot Recolector de Juguetes\nImagina que quieres que un robot recoja juguetes del piso. ¿Qué necesitas?",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -3077,7 +3242,7 @@
     "text": "🧩 Los 4 Componentes Esenciales\n╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗\n║                              🏗️ ARQUITECTURA DE UN ROBOT 🏗️                                            ║\n╠══════════════════════════════════════════════════════════════════════════════════════════════════════════╣\n║                                                                                                          ║\n║                                            ┌─────────────┐                                               ║\n║                                            │             │                                               ║\n║                                            │   🧠 HUB    │                                               ║\n║                                            │  (CEREBRO)  │                                               ║\n║                                            │             │                                               ║\n║                                            └──────┬──────┘                                               ║\n║                                                   │                                                      ║\n║                    ┌──────────────────────────────┼──────────────────────────────┐                       ║\n║                    │                              │                              │                       ║\n║                    ▼                              ▼                              ▼                       ║\n║             ┌─────────────┐                ┌─────────────┐                ┌─────────────┐                ║\n║             │             │                │             │                │             │                ║\n║             │  ⚙️ MÚSCULOS │                │  👁️ OJOS    │                │  💬 VOZ     │                ║\n║             │   Motores   │                │  Sensores   │                │  Speaker    │                ║\n║             │             │                │             │                │             │                ║\n║             └─────────────┘                └─────────────┘                └─────────────┘                ║\n║                    │                              │                              │                       ║\n║                    ▼                              ▼                              ▼                       ║\n║             ┌─────────────┐                ┌─────────────┐                ┌─────────────┐                ║\n║             │ • Moverse   │                │ • Ver       │                │ • Hablar    │                ║\n║             │ • Girar     │                │ • Medir     │                │ • Alertas   │                ║\n║             │ • Levantar  │                │ • Detectar  │                │ • Música    │                ║\n║             └─────────────┘                └─────────────┘                └─────────────┘                ║\n║                                                                                                          ║\n║                                    ┌─────────────────────────────┐                                      ║\n║                                    │                             │                                      ║\n║                                    │      🔋 ENERGÍA             │                                      ║\n║                                    │      Batería Li-Po          │                                      ║\n║                                    │      2200 mAh               │                                      ║\n║                                    │                             │                                      ║\n║                                    └─────────────────────────────┘                                      ║\n║                                                                                                          ║\n╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -3088,7 +3253,7 @@
     "text": "🔄 Analogía Humana\n╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗\n║                                    👤 ROBOT = HUMANO 🤖                                                 ║\n╠══════════════════════════════════════════════════════════════════════════════════════════════════════════╣\n║                                                                                                          ║\n║        HUMANO                              ROBOT                                                         ║\n║        ═══════                             ═════                                                         ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  🧠     │  Cerebro                │  🧠     │  Hub                                              ║\n║        │ CEREBRO │  ─────────────────────▶ │  HUB    │  Procesa instrucciones                            ║\n║        └─────────┘  Piensa y decide        └─────────┘                                                   ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  💪     │  Brazos/Piernas         │  ⚙️     │  Motores                                          ║\n║        │ MÚSCULOS│  ─────────────────────▶ │ MOTORES │  Mueven el robot                                  ║\n║        └─────────┘  Se mueven              └─────────┘                                                   ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  👀     │  Ojos, Oídos            │  👁️     │  Sensores                                         ║\n║        │ SENTIDOS│  ─────────────────────▶ │SENSORES │  Detectan el mundo                                ║\n║        └─────────┘  Perciben               └─────────┘                                                   ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  💬     │  Boca                   │  🔊     │  Speaker                                          ║\n║        │  VOZ    │  ─────────────────────▶ │SPEAKER  │  Comunica                                         ║\n║        └─────────┘  Habla                  └─────────┘                                                   ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  ❤️     │  Corazón                │  🔋     │  Batería                                          ║\n║        │CORAZÓN  │  ─────────────────────▶ │BATERÍA  │  Energía                                          ║\n║        └─────────┘  Da vida                └─────────┘                                                   ║\n║                                                                                                          ║\n╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -3099,7 +3264,7 @@
     "text": "📊 Comparación: ¿Por qué NO usar solo un Arduino?\n\n\n\nCaracterística\nArduino Uno\nLEGO Hub\nVentaja\n\n\n\n\nProgramación\nC++ complejo\nPython simple\n🏆 Hub\n\n\nConexiones\nCables sueltos\nClick-and-play\n🏆 Hub\n\n\nPantalla\nNo incluida\n5x5 LED incluida\n🏆 Hub\n\n\nBotones\nNo incluidos\n5 botones incluidos\n🏆 Hub\n\n\nBluetooth\nNo incluido\nBLE 5.0 incluido\n🏆 Hub\n\n\nEscalabilidad\nLimitada\nModulares\n🏆 Hub\n\n\nPrecio total\n~$20 + componentes\nTodo incluido\n🏆 Hub\n\n\nEducación\nAvanzado\nDiseñado para educación\n🏆 Hub",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -3110,7 +3275,7 @@
     "text": "🎓 ¿Por qué es ideal para EDUCACIÓN?\n┌─────────────────────────────────────────────────────────────────────────────────┐\n│                                                                                 │\n│  1️⃣  TODO EN UNO 🎁                                                             │\n│     └─▶ No necesitas cables, breadboards, ni soldadura                         │\n│                                                                                 │\n│  2️⃣  SEGURIDAD 🛡️                                                               │\n│     └─▶ No hay electricidad peligrosa, solo USB                                │\n│                                                                                 │\n│  3️⃣  DURABILIDAD 💪                                                             │\n│     └─▶ Plástico LEGO resiste caídas y golpes                                  │\n│                                                                                 │\n│  4️⃣  FAMILIARIDAD 🧱                                                            │\n│     └─▶ Los estudiantes ya conocen LEGO                                        │\n│                                                                                 │\n│  5️⃣  PYTHON REAL 🐍                                                             │\n│     └─▶ MicroPython = Python de verdad, transferible a otras plataformas       │\n│                                                                                 │\n│  6️⃣  SIN FRICCIONES ✨                                                          │\n│     └─▶ De \"no sé programar\" a \"¡mira, mi robot se mueve!\" en 5 minutos       │\n│                                                                                 │\n└─────────────────────────────────────────────────────────────────────────────────┘",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -3121,7 +3286,7 @@
     "text": "🚀 Flujo de Aprendizaje\n                    SIN HUB                          CON HUB\n                    \n    ┌────────────────────────────┐      ┌────────────────────────────┐\n    │  1. Comprar componentes    │      │  1. Sacar del kit          │\n    │  2. Soldar cables          │      │  2. Conectar motor         │\n    │  3. Configurar entorno     │      │  3. Escribir código        │\n    │  4. Debuggear hardware     │      │  4. ¡Funciona!             │\n    │  5. ...2 horas después...  │      │     (5 minutos)            │\n    │  6. \"¿Funciona?\"           │      │                            │\n    └────────────────────────────┘      └────────────────────────────┘\n    \n              ⏱️ Horas                        ⏱️ Minutos\n              😰 Frustración                  😊 Diversión\n              📉 Baja motivación              📈 Alta motivación",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -3132,7 +3297,7 @@
     "text": "💡 Conclusión\n\nEl Hub LEGO Technic Large Hub elimina las barreras técnicas para que los docentes y estudiantes se concentren en APRENDER PROGRAMACIÓN, no en ensamblar hardware.\nEs el puente perfecto entre “nunca programé” y “programo robots” 🌉",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -3143,7 +3308,7 @@
     "text": "Referencias\n[1] LEGO Education. SPIKE Prime - Product Overview. 2026. Disponible en: https://education.lego.com/\n[2] Pybricks Team. Getting Started with Pybricks. 2026. Disponible en: https://docs.pybricks.com/",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>34</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>35</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -3154,7 +3319,7 @@
     "text": "📊 Resumen Ejecutivo",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -3165,7 +3330,7 @@
     "text": "Métrica\nValor\n\n\n\n\nTotal de archivos .qmd\n34\n\n\nArchivos con diagramas\n14\n\n\nTotal de diagramas encontrados\n58\n\n\nDiagramas mejorados\n3\n\n\nDiagramas pendientes\n11",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -3176,7 +3341,7 @@
     "text": "🔍 Estado de Cada Diagrama\n\n✅ Diagramas Mejorados (NUEVO)\n\n\n\n\n\n\n\n\n\n\n#\nUbicación\nTipo\nEstado\nEmojis\n\n\n\n\n1\ndiagramas/diagrama_hoja_ruta.qmd\nHoja de ruta\n✅ Mejorado\n🎮✅\n\n\n2\ndiagramas/diagrama_hub.qmd\nEspecificaciones Hub\n✅ Mejorado\n🔧✅\n\n\n3\ndiagramas/diagrama_porque_hub.qmd\nAnalogías\n✅ Mejorado\n🤖✅\n\n\n\n\n\n⚠️ Diagramas Pendientes de Mejora\n\n\n\n\n\n\n\n\n\n#\nUbicación\nTipo\nMejoras Necesarias\n\n\n\n\n1\nunidad1/guia_hub_desde_cero.qmd:33\nVista del Hub\n+ Emojis, + colores\n\n\n2\nunidad1/guia_hub_desde_cero.qmd:159\nConexiones\n+ Diagrama de flujo\n\n\n3\nunidad1/guia_hub_desde_cero.qmd:250\nMatriz LED\n+ Ejemplos visuales\n\n\n4\nunidad1/lab1_hola_mundo.qmd:40\nEntorno Thonny\n+ Iconos\n\n\n5\nunidad1/lab1_hola_mundo.qmd:101\nFlujo trabajo\n+ Emojis\n\n\n6\nunidad2/1_display_luces.qmd\nMatriz LEDs\n+ Ejemplos\n\n\n7\nunidad3/1_motores.qmd:26\nConexión motores\n+ Esquema\n\n\n8\nunidad4/1_sensores.qmd:26\nSensores\n+ Tipos\n\n\n9\nunidad5/1_proyecto_final.qmd:44\nArquitectura\n+ Desglose\n\n\n10\napendice_recursos.qmd:22\nRecursos\n+ Visual\n\n\n11\napendice_thonny_debugger.qmd:39\nThonny UI\n+ Etiquetas",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -3187,7 +3352,7 @@
     "text": "📐 Estándares para Diagramas Mejorados\n\n✅ Buenas Prácticas Implementadas\n\n\n\nPráctica\nEjemplo\n\n\n\n\nEmojis descriptivos\n🧠 Cerebro, ⚙️ Motores, 👁️ Sensores\n\n\nBordes Unicode elegantes\n╔═══╗, ┌───┐, ║\n\n\nSecciones claras\nTítulos con emoji + texto\n\n\nAnalogías visuales\nComparación Humano ↔︎ Robot\n\n\nTablas de especificaciones\nFormato claro con datos\n\n\nFlujos de trabajo\n→ direcciones claras\n\n\nColores en texto\n🟢🟢🟢 indicadores\n\n\n\n\n\n❌ Problemas Detectados en Diagramas Originales\n\n\n\nProblema\nFrecuencia\nSolución\n\n\n\n\nSin emojis\n8\nAgregar emojis descriptivos\n\n\nBordes simples\n5\nUsar bordes Unicode dobles\n\n\nSin colores\n7\nAgregar indicadores de color\n\n\nFalta contexto\n6\nAgregar títulos explicativos\n\n\nTexto denso\n4\nUsar tablas en lugar de listas\n\n\nSin analogías\n9\nAgregar comparaciones",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -3198,7 +3363,7 @@
     "text": "🎨 Guía de Mejora Visual\n\nAntes ❌\n┌─────────────────┐\n│ LEGO HUB        │\n│                 │\n│ [LED] [BOTÓN]   │\n│                 │\n│ [A] [B] [C] [D]│\n└─────────────────┘\n\n\nDespués ✅\n╔═══════════════════════════════════════════════════════════════════════════════════╗\n║                              🧠 LEGO TECHNIC LARGE HUB (45601)                   ║\n║                                   \"El Cerebro de tu Robot\"                        ║\n╠═══════════════════════════════════════════════════════════════════════════════════╣\n║                                                                                   ║\n║    ┌─────────────────────────────────────────────────────────────────────────┐   ║\n║    │                            📺 PANTALLA LED 5x5                          │   ║\n║    │                                                                         │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜    25 LEDs controlables                   │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜    por código Python                      │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜                                           │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜    Rango: 0 (off) - 100 (max)             │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜                                           │   ║\n║    │                                                                         │   ║\n║    └─────────────────────────────────────────────────────────────────────────┘   ║\n║                                                                                   ║\n║    ┌─────────────────────────────────────────────────────────────────────────┐   ║\n║    │                       🔌 PUERTOS SMART CONNECT                          │   ║\n║    │                                                                         │   ║\n║    │    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐            │   ║\n║    │    │    A    │    │    B    │    │    C    │    │    D    │            │   ║\n║    │    │  ⚙️🔵   │    │  ⚙️🔵   │    │  🟢👁️   │    │  🟢👁️   │            │   ║\n║    │    │ MOTOR   │    │ MOTOR   │    │ SENSOR  │    │ SENSOR  │            │   ║\n║    │    └─────────┘    └─────────┘    └─────────┘    └─────────┘            │   ║\n║    │                                                                         │   ║\n║    │    📋 Los puertos detectan AUTOMÁTICAMENTE el dispositivo conectado    │   ║\n║    └─────────────────────────────────────────────────────────────────────────┘   ║\n║                                                                                   ║\n╚═══════════════════════════════════════════════════════════════════════════════════╝",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -3209,7 +3374,7 @@
     "text": "📝 Checklist de Mejora\nPara cada diagrama pendiente:\n\nAgregar título con emoji\nUsar bordes Unicode elegantes (╔═══╗)\nIncorporar emojis descriptivos\nAgregar colores indicadores (🟢🟡🔴)\nIncluir tabla de especificaciones si aplica\nAñadir analogía o comparación\nIncluir nota explicativa al pie",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -3220,7 +3385,7 @@
     "text": "🚀 Plan de Mejora\n\nFase 1: Críticos (Unidades principales)\n\nguia_hub_desde_cero.qmd - Diagrama principal del Hub\nlab1_hola_mundo.qmd - Flujo de trabajo\n1_motores.qmd - Conexión motores\n1_sensores.qmd - Tipos de sensores\n\n\n\nFase 2: Secundarios (Labs y apéndices)\n\n1_display_luces.qmd - Matriz LED\nlab2_animaciones.qmd - Animaciones\n1_proyecto_final.qmd - Arquitectura\napendice_thonny_debugger.qmd - Thonny\n\n\n\nFase 3: Extras\n\napendice_recursos.qmd - Recursos\nSistema de logros integrado",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -3231,7 +3396,7 @@
     "text": "📊 Métricas de Calidad\n\n\n\nMétrica\nAntes\nDespués\nMejora\n\n\n\n\nEmojis por diagrama\n0.5\n8\n+1500%\n\n\nBordes elegantes\n20%\n100%\n+400%\n\n\nEspecificaciones\n10%\n90%\n+800%\n\n\nAnalogías\n5%\n85%\n+1600%\n\n\nCalidad general\n3/10\n9/10\n+200%\n\n\n\n\nAuditoría realizada por Facilitador - Diego Saavedra 2026 🔍",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>35</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>36</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   }
 ]
