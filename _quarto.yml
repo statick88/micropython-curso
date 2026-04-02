@@ -17,20 +17,20 @@ book:
   favicon: favicon.ico
   description: "Curso de MicroPython para docentes de Pedagogía en Informática."
   keyword: "MicroPython, Robots, LEGO, SPIKE, Python, Educación, Docente"
-  
+   
   reader-mode: true
   search: true
-  
+   
   sidebar: 
     logo: images/robot-espi32-cartoon.png
     search: true
     collapse-level: 1
-  
+   
   sharing: [twitter, linkedin]
   downloads: [pdf, epub]
-  
+   
   cover-image: images/robot-espi32-cartoon.png
-  
+   
   page-footer:
     border: true
     left: |
@@ -39,7 +39,7 @@ book:
       Educación y Tecnología - Abacom
     right: |
       Built with [Quarto](https://quarto.org/)
-  
+   
   chapters:
     - index.qmd
     - about.qmd
@@ -106,6 +106,8 @@ format:
     bootstrap-version: 5
     toc: true
     number-sections: false
+    lang: es
+    dir: ltr
     include-in-header:
       text: |
         <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
