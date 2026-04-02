@@ -1,0 +1,301 @@
+---
+title: "Laboratorio 2B: Diseño de Animaciones Avanzadas"
+description: "Ejercicios prácticos para crear animaciones complejas en la matriz de LEDs"
+---
+
+# Laboratorio 2B: Diseño de Animaciones Avanzadas {#lab2b-animaciones}
+
+## 🎯 Objetivos
+
+Al completar estos ejercicios, serás capaz de:
+
+- Crear animaciones cuadro por cuadro
+- Implementar efectos de scroll de texto
+- Diseñar patrones dinámicos interactivos
+- Combinar LEDs con sonido para feedback multisensorial
+
+---
+
+## Ejercicio 2.1: Animación de Corazón Palpitante {#ejercicio-2-1}
+
+### Descripción
+
+Crea un corazón que "late" mostrando diferentes tamaños en secuencia.
+
+### Cuadros de la Animación
+
+```
+Cuadro 1 (Pequeño):    Cuadro 2 (Mediano):     Cuadro 3 (Grande):
+. . . . .              . . . . .                1 0 1 0 1
+. . . . .              1 0 1 0 1                1 1 1 1 1
+. . 1 0 .              1 1 1 1 1                1 1 1 1 1
+. . . . .              . 1 1 1 .                . 1 1 1 .
+. . . . .              . . 1 . .                . . 1 . .
+```
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+# Definir cuadros de la animación
+corazon_pequeno = [
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 100, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]
+]
+
+corazon_mediano = [
+    [0, 0, 0, 0, 0],
+    [100, 0, 100, 0, 100],
+    [100, 100, 100, 100, 100],
+    [0, 100, 100, 100, 0],
+    [0, 0, 100, 0, 0]
+]
+
+corazon_grande = [
+    [100, 0, 100, 0, 100],
+    [100, 100, 100, 100, 100],
+    [100, 100, 100, 100, 100],
+    [0, 100, 100, 100, 0],
+    [0, 0, 100, 0, 0]
+]
+
+cuadros = [corazon_pequeno, corazon_mediano, corazon_grande, corazon_mediano]
+
+# Repetir animación
+for ciclo in range(10):
+    for cuadro in cuadros:
+        hub.display.show(cuadro)
+        wait(200)
+
+hub.display.off()
+```
+
+---
+
+## Ejercicio 2.2: Texto Scrolleando {#ejercicio-2-2}
+
+### Descripción
+
+Implementa un texto que se desplaza de derecha a izquierda por la pantalla (efecto marquesina).
+
+### Pista
+
+Usa `hub.display.scroll()` que implementa automáticamente este efecto.
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Color
+
+hub = PrimeHub()
+
+# Método simple usando la función integrada
+hub.display.scroll("HOLA MUNDO", color=Color.RED, wait=True)
+
+# Método avanzado: scroll manual
+texto = " PYBRICKS "
+ancho_texto = len(texto) * 4  # Cada caracter ~4 píxeles de ancho
+
+hub.display.scroll(texto, color=Color.BLUE)
+```
+
+---
+
+## Ejercicio 2.3: Reloj Digital {#ejercicio-2-3}
+
+### Descripción
+
+Crea un reloj simple que muestre los minutos y segundos usando la matriz 5x5.
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+def numero_a_matriz(n):
+    """Convierte un número 0-99 a representación en matriz"""
+    matriz = [[0 for _ in range(5)] for _ in range(5)]
+    
+    decena = n // 10
+    unidad = n % 10
+    
+    # Representación simplificada de dígitos (1 columna por dígito)
+    digitos = {
+        0: [1,1,1,1,0],
+        1: [0,1,1,0,0],
+        2: [1,1,0,1,1],
+        3: [1,1,1,1,0],
+        4: [0,1,1,0,1],
+        5: [1,0,1,1,1],
+        6: [1,0,1,1,1],
+        7: [1,1,1,0,0],
+        8: [1,1,1,1,1],
+        9: [1,1,1,1,1]
+    }
+    
+    # Dígito de la decena (columnas 0-1)
+    col = 0
+    for i in digitos[decena]:
+        if col < 2:
+            matriz[1][col] = i * 100
+            col += 1
+    
+    # Separador (columna 2)
+    matriz[2][2] = 100
+    
+    # Dígito de la unidad (columnas 3-4)
+    col = 3
+    for i in digitos[unidad]:
+        if col < 5:
+            matriz[2][col] = i * 100
+            col += 1
+    
+    return matriz
+
+# Simular reloj por 60 segundos
+for segundo in range(60):
+    matriz = numero_a_matriz(segundo)
+    hub.display.show(matriz)
+    wait(1000)
+
+hub.display.off()
+```
+
+---
+
+## Ejercicio 2.4: Patrón de Onda {#ejercicio-2-4}
+
+### Descripción
+
+Crea un efecto de onda que se mueve horizontalmente a través de la matriz.
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+import math
+
+hub = PrimeHub()
+
+# Repetir la animación
+for ciclo in range(20):
+    matriz = [[0 for _ in range(5)] for _ in range(5)]
+    
+    # Calcular cada columna como parte de una onda sinusoidal
+    for col in range(5):
+        # Calcular altura de la onda en esta columna
+        altura = int(2.5 + 2 * math.sin(ciclo * 0.5 + col * 1.0))
+        
+        # Encender el LED en esa posición
+        if 0 <= altura < 5:
+            matriz[altura][col] = 100
+    
+    hub.display.show(matriz)
+    wait(150)
+
+hub.display.off()
+```
+
+---
+
+## Ejercicio 2.5: Juego de Adivinanza Visual {#ejercicio-2-5}
+
+### Descripción
+
+Crea un juego donde el usuario debe "atrapar" un punto que se mueve aleatoriamente.
+
+### Reglas
+
+1. Un punto parpadea en posición aleatoria
+2. El usuario debe presionar CENTER cuando el punto esté en el centro
+3. Gana puntos por aciertos
+4. Pierde puntos por fallos
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Button
+from pybricks.tools import wait
+import random
+
+hub = PrimeHub()
+
+puntos = 0
+posicion_x = 2
+posicion_y = 2
+
+hub.display.scroll("ATRAPA!", wait=True)
+
+for ronda in range(10):
+    # Posición aleatoria
+    posicion_x = random.randint(0, 4)
+    posicion_y = random.randint(0, 4)
+    
+    # Mostrar punto
+    matriz = [[0 for _ in range(5)] for _ in range(5)]
+    matriz[posicion_y][posicion_x] = 100
+    hub.display.show(matriz)
+    
+    # Esperar input del usuario
+    tiempo_espera = 0
+    acierto = False
+    
+    while tiempo_espera < 2000:
+        botones = hub.buttons.pressed()
+        
+        if Button.CENTER in botones:
+            # Verificar si está en el centro
+            if posicion_x == 2 and posicion_y == 2:
+                puntos += 10
+                acierto = True
+                hub.speaker.beep(frequency=880, duration=100)
+            else:
+                puntos -= 5
+                hub.speaker.beep(frequency=220, duration=100)
+            break
+        
+        wait(50)
+        tiempo_espera += 50
+
+# Mostrar resultado final
+hub.display.scroll(f"PTOS: {puntos}", wait=True)
+hub.display.off()
+```
+
+---
+
+## 📋 Rúbrica de Evaluación
+
+| Criterio | Puntos | Descripción |
+|----------|--------|-------------|
+| Ejercicio 2.1 | 20 | Corazón palpitante fluido |
+| Ejercicio 2.2 | 15 | Texto scrolleando correctamente |
+| Ejercicio 2.3 | 20 | Reloj funcional |
+| Ejercicio 2.4 | 15 | Efecto de onda suave |
+| Ejercicio 2.5 | 30 | Juego completo y funcional |
+| **Total** | **100** | |
+
+---
+
+## Referencias
+
+[1] Pybricks Team. *Pybricks MicroPython API - LightMatrix*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#lightmatrix
+
+[2] Python Software Foundation. *random — Generate pseudo-random numbers*. 2026. Disponible en: https://docs.python.org/3/library/random.html
+
+---
+
+*Animaciones Avanzadas - MicroPython para el Aula - Diego Saavedra 2026*

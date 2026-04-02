@@ -1,0 +1,269 @@
+# Sensores Adicionales: Infrared, Color y Fuerza {#sensores-avanzados}
+
+::: center
+![Sensores Avanzados](images/sensores-avanzados.png){width="35%"}
+
+**⏱️ Tiempo estimado:** 60 minutos | **📊 Nivel:** Avanzado
+:::
+
+---
+
+## Antes de empezar
+
+Ya conoces el sensor ultrasónico que mide distancia usando sonido. Pero hay muchos más sensores que puedes usar con tu robot LEGO [1][2].
+
+En esta unidad vas a aprender sobre tres sensores muy útiles:
+
+1. **Sensor Infrarrojo** — Detecta objetos y mide reflexión de luz
+2. **Sensor de Color** — Identifica colores y controla luces RGB
+3. **Sensor de Fuerza** — Mide presión aplicada en Newtons
+
+---
+
+## 1. Sensor Infrarrojo (InfraredSensor)
+
+**Situación:** Has visto esos sensores en autos nuevos que te avisan cuando hay otro auto cerca? El sensor infrarrojo hace algo similar—detecta objetos usando luz infrarroja (que no podemos ver) [1].
+
+### ¿Qué puede hacer?
+
+- Medir distancia a objetos (0-2000mm)
+- Medir reflexión de luz (0-100%)
+- Contar cuántos objetos detecta
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import InfraredSensor
+from pybricks.parameters import Port
+from pybricks.tools import wait
+
+# Conectar el sensor al puerto S1
+sensor_ir = InfraredSensor(Port.S1)
+
+while True:
+    # Distancia al objeto más cercano (en mm)
+    distancia = sensor_ir.distance()
+    
+    # Reflexión de luz (0-100%)
+    # Un valor alto significa superficie clara
+    # Un valor bajo significa superficie oscura
+    reflexion = sensor_ir.reflection()
+    
+    # Cuántos objetos detecta el sensor
+    conteo = sensor_ir.count()
+    
+    print(f"Distancia: {distancia}mm | Reflexión: {reflexion}% | Objetos: {conteo}")
+    wait(100)
+```
+
+### Usos prácticos:
+
+| Reflexión | Qué significa | Ejemplo de aplicación |
+|-----------|---------------|----------------------|
+| 0-20% | Superficie oscura | Línea negra en el piso |
+| 50-80% | Superficie clara | Línea blanca en el piso |
+| >90% | Ningún objeto |robot buscando camino |
+
+---
+
+## 2. Sensor de Color (ColorSensor)
+
+**Situación:** Cuando vas a un semáforo, sabes si es rojo, amarillo o verde por el color. El robot también puede aprender a identificar colores [1][2].
+
+### ¿Qué puede hacer?
+
+- Detectar colores (rojo, verde, azul, etc.)
+- Medir intensidad de luz ambiental
+- Controlar luces LED integradas
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import ColorSensor
+from pybricks.parameters import Port, Color
+from pybricks.tools import wait
+
+# Conectar el sensor de color al puerto S1
+sensor_color = ColorSensor(Port.S1)
+
+while True:
+    # Detectar qué color ve el sensor
+    # Devuelve uno de: Color.RED, Color.GREEN, Color.BLUE, 
+    # Color.YELLOW, Color.BLACK, Color.WHITE, Color.NONE
+    
+    color = sensor_color.color()
+    
+    # Obtener valores RGB (intensidad de cada color)
+    rgb = sensor_color.rgb()
+    
+    # Encender las luces del sensor
+    sensor_color.lights.on(Color.RED)  # Luz roja encendida
+    wait(500)
+    sensor_color.lights.off()
+    wait(500)
+    
+    print(f"Color detectado: {color} | RGB: {rgb}")
+    wait(100)
+```
+
+### Colores disponibles:
+
+```python
+# Colores que el sensor puede detectar
+Color.RED      # Rojo
+Color.GREEN    # Verde
+Color.BLUE     # Azul
+Color.YELLOW   # Amarillo
+Color.MAGENTA  # Magenta
+Color.CYAN     # Cian
+Color.BLACK    # Negro
+Color.WHITE    # Blanco
+Color.NONE     # Ninguno (sin color detectado)
+```
+
+### Proyecto: Seguidor de línea
+
+```python
+from pybricks.pupdevices import ColorSensor, Motor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait
+
+# Configuración
+sensor_linea = ColorSensor(Port.S1)
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+robot = DriveBase(motor_izq, motor_der, 56, 112)
+
+# El robot sigue una línea negra
+while True:
+    reflexion = sensor_linea.reflection()
+    
+    if reflexion < 30:  # Línea negra (oscuro)
+        # Girar a la izquierda
+        robot.drive(100, 30)
+    else:  # Piso blanco (claro)
+        # Girar a la derecha
+        robot.drive(100, -30)
+    
+    wait(10)
+```
+
+---
+
+## 3. Sensor de Fuerza (ForceSensor)
+
+**Situación:** Cuando aplicas presión en un botón de un cajero automático, sientes que "hace clic". El sensor de fuerza puede medir exactamente cuánta presión estás aplicando [1].
+
+### ¿Qué puede hacer?
+
+- Medir fuerza en Newtons (N)
+- Medir distancia de cuánto se ha presionado (mm)
+- Detectar cuando se presiona
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import ForceSensor
+from pybricks.parameters import Port
+from pybricks.tools import wait
+
+# Conectar el sensor de fuerza al puerto S1
+sensor_fuerza = ForceSensor(Port.S1)
+
+while True:
+    # Fuerza actual en Newtons
+    fuerza = sensor_fuerza.force()
+    
+    # Cuánto se ha presionado el sensor (en mm)
+    distancia = sensor_fuerza.distance()
+    
+    print(f"Fuerza: {fuerza:.1f} N | Presión: {distancia:.1f} mm")
+    
+    # Reaccionar cuando alguien presiona fuerte
+    if fuerza > 5:  # Más de 5 Newtons
+        print("¡Presión detectada!")
+    
+    wait(100)
+```
+
+### Usos prácticos:
+
+| Fuerza | Aplicación |
+|--------|------------|
+| 0-1 N | Sin presión (reposo) |
+| 1-3 N | Toque suave (botón) |
+| 3-10 N | Presión normal |
+| >10 N | Presión fuerte (alerta) |
+
+---
+
+## 4. Sensor de Inclinación (TiltSensor)
+
+**Situación:** Cuando inclinas tu teléfono, la pantalla cambia de horizontal a vertical. El sensor de inclinación hace algo similar—detecta cuando el robot se inclina [1].
+
+### ¿Qué puede hacer?
+
+- Medir inclinación en eje X (pitch)
+- Medir inclinación en eje Y (roll)
+- Detectar si el robot se cae
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import TiltSensor
+from pybricks.iodevices import SensorBase
+from pybricks.tools import wait
+
+# Conectar el sensor de inclinación
+sensor_inclinacion = TiltSensor(SensorBase.PORT_A)
+
+while True:
+    # Pitch (inclinación adelante/atrás)
+    pitch = sensor_inclinacion.tilt(sensor_inclinacion.AXIS_X)
+    
+    # Roll (inclinación izquierda/derecha)
+    roll = sensor_inclinacion.tilt(sensor_inclinacion.AXIS_Y)
+    
+    print(f"Pitch: {pitch}° | Roll: {roll}°")
+    
+    # Detectar si el robot se cayó
+    if abs(pitch) > 45 or abs(roll) > 45:
+        print("¡El robot se cayó!")
+    
+    wait(100)
+```
+
+---
+
+## 📋 Lo que aprendiste
+
+Antes de terminar, marca lo que entendiste:
+
+- [ ] El sensor infrarrojo mide distancia y reflexión
+- [ ] El sensor de color detecta colores y controla luces
+- [ ] El sensor de fuerza mide presión en Newtons
+- [ ] El sensor de inclinación detecta pitch y roll
+- [ ] Puedo usar múltiples sensores juntos
+
+---
+
+## Referencias
+
+[1] Pybricks Team. (2023). *Pybricks Documentation - Sensors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html
+
+[2] LEGO Education. (2023). *LEGO Education SPIKE Prime - Sensor Specifications*. LEGO. Disponible: https://lego.com
+
+[3] Pybricks Team. (2023). *Pybricks Documentation - Color Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/colorsensor.html
+
+[4] Pybricks Team. (2023). *Pybricks Documentation - Infrared Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/infraredsensor.html
+
+[5] Pybricks Team. (2023). *Pybricks Documentation - Force Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/forcesensor.html
+
+[6] Pybricks Team. (2023). *Pybricks Documentation - Tilt Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html
+
+[7] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+---
+
+*En la siguiente unidad: Control avanzado de motores con PID y calibración.*

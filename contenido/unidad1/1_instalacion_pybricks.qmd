@@ -1,76 +1,160 @@
-# Fase 1: Infraestructura y Entorno {#unidad1-instalacion}
+# Unidad 1: Tu Primer Programa {#unidad1-instalacion}
 
-::: center
-![Pybricks Core](images/esp32-cartoon.png){width="30%"}
-:::
+## Una situación del día a día
 
-## El Reactor de Desarrollo: Pybricks
+Imagina que tienes un robot en tu aula y quieres que cuando presiones un botón, el robot diga "¡Bienvenidos!".
 
-Para que nuestro **Arquitecto de Aprendizaje** pueda desplegar código eficiente, necesitamos un sistema operativo robusto. En este laboratorio, utilizamos **Pybricks**, una implementación optimizada de MicroPython para hardware LEGO.
+¿Cómo le explicarías al robot lo que tiene que hacer?
 
----
+**En tu mente** podrías pensar:
+1. "Cuando alguien presione el botón"
+2. "Que muestre el mensaje '¡Bienvenidos!'"
+3. "Que encienda una luz verde"
 
-## 1. Instalación del Firmware
-
-::: {.callout-tip}
-## Best Practice: Conexión Estable
-Asegúrate de utilizar el cable USB original de LEGO para evitar interrupciones en el bus de datos durante la actualización del firmware.
-:::
-
-1.  Accede al Centro de Comando: [code.pybricks.com](https://code.pybricks.com/)
-2.  Conecta tu Hub vía USB.
-3.  Selecciona **"Install Pybricks Firmware"**.
-4.  Sigue los protocolos en pantalla hasta que el reactor (Hub) emita una luz azul.
+Eso exactamente es lo que vamos a programar. Vamos paso a paso.
 
 ---
 
-## 2. Tu Primer Despliegue: "Hello Stark"
+## Primero: Instalar las herramientas
 
-Este programa valida que la conexión entre el IDE y el hardware es estable y que el motor de ejecución está operativo.
+Antes de dar instrucciones al robot, necesitamos las herramientas correctas. Usaremos solo software gratuito.
 
-```python
-from pybricks.hubs import PrimeHub # Importar el núcleo del Hub <1>
-from pybricks.parameters import Color # Protocolo de colores <2>
-from pybricks.tools import wait # Herramienta de gestión de tiempo <3>
+### Paso 1: Instalar Thonny
 
-# Inicialización del hardware principal
-hub = PrimeHub() # Instanciar el cerebro del robot <4>
+**Thonny** es un programa donde escribiremos las instrucciones para el robot. Es como un cuaderno de trabajo [1].
 
-def main():
-    """Protocolo de validación de sistemas."""
-    hub.light.on(Color.GREEN) # Activar luz de estado verde <5>
-    hub.display.text("READY") # Desplegar telemetría en el HUD <6>
-    hub.speaker.beep() # Ejecutar validación acústica <7>
-    wait(2000) # Mantener el sistema activo 2 segundos <8>
+**Si usas Windows:**
+1. Ve a https://thonny.org
+2. Descarga la versión para Windows
+3. Ejecuta el archivo y sigue las instrucciones (siguiente, siguiente, siguiente...)
 
-if __name__ == "__main__": # Entrada principal del script
-    main()
+**Si usas Mac:**
+1. Ve a https://thonny.org
+2. Descarga la versión para Mac
+3. Abre el archivo .dmg y arrastra Thonny a Aplicaciones
+
+**Si usas Linux:**
+Abre una terminal y escribe:
+```bash
+sudo apt install thonny
 ```
 
-1.  Importamos la abstracción del hardware principal para controlar el Hub.
-2.  Cargamos el set de parámetros para la gestión de colores.
-3.  Utilidad para realizar pausas precisas en la ejecución.
-4.  Creamos el objeto `hub` que representa físicamente al dispositivo.
-5.  Cambiamos el color del LED central para indicar que el sistema está nominal.
-6.  Enviamos un string de texto a la matriz de 5x5.
-7.  El buzzer interno emite un tono de frecuencia estándar.
-8.  Pausa de seguridad antes de finalizar la ejecución del hilo principal.
+::: {.callout-note}
+## ¿Por qué Thonny?
+
+Thonny fue creado específicamente para personas que están aprendiendo a programar. Tiene todo integrado: editor, forma de ejecutar código, y herramientas de depuración.
+
+Y es completamente gratis.
+:::
 
 ---
 
-## ASIGNACIÓN: Protocolo de Personalización
+### Paso 2: Instalar el software en el robot
 
-<details>
-<summary><b>Ver Objetivo del Reto</b></summary>
+El robot (LEGO Technic Large Hub) necesita un programa especial para entender Python. Se llama **Pybricks** [2].
 
-Tu misión es modificar el código anterior para que el Hub realice una secuencia de semáforo (Rojo, Amarillo, Verde) antes de mostrar el mensaje "GO".
+1. Conecta tu robot a la computadora usando el cable USB-C
+2. Presiona el botón de encendidodel robot (el botón central)
+3. En Thonny, ve a: **Tools → Options → Interpreter**
+4. Selecciona **"MicroPython (generic)"** y luego el puerto donde está conectado tu robot
 
-## Pruebas de Validación
-- [ ] ¿La luz cambia de color en el orden correcto?
-- [ ] ¿El mensaje aparece solo al final?
-- [ ] ¿El código sigue la estructura `if __name__ == "__main__":`?
-</details>
+Ahora, instala Pybricks en el robot. Abre una terminal en Thonny y escribe:
+
+```python
+from pybricks import version
+print(version)
+```
+
+Si responde con información, ¡ya está instalado!
+
+::: {.callout-tip}
+## 💡 Nota
+
+Si no tienes el firmware instalado, visita https://docs.pybricks.com para las instrucciones completas de instalación [2].
+:::
 
 ---
 
-*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*
+## Segundo: Escribir tu primer programa
+
+Ahora vamos a escribir las instrucciones. Primero lo probaremos en la computadora, luego lo enviaremos al robot.
+
+### Un ejemplo simple en tu computadora
+
+Abre Thonny y escribe esto:
+
+```python
+print("Hola, bienvenidos al curso!")
+```
+
+Presiona **F5** o el botón de Play. Verás el mensaje en la pantalla de abajo.
+
+¡Felicidades! Acabas de escribir tu primer programa en Python.
+
+---
+
+### Ahora, hacer lo mismo en el robot
+
+Pero queremos que el robot lo haga, no la computadora. El código es similar, pero usamos funciones especiales del robot [2].
+
+Copia esto en Thonny:
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Color
+from pybricks.tools import wait
+
+# Preparar el robot
+hub = PrimeHub()
+
+# Hacer que el robot diga "Hola"
+hub.display.text("HOLA")
+hub.light.on(Color.GREEN)
+hub.speaker.beep()
+wait(2000)
+```
+
+---
+
+## Tercero: Enviar el código al robot
+
+Para que el robot ejecute nuestro programa:
+
+1. Conecta el robot por USB
+2. En Thonny, ve a **Run → Select interpreter**
+3. Elige el puerto donde está tu robot (parecerá algo como "COM3" en Windows o "/dev/tty.usb" en Mac)
+4. Presiona el botón de Play
+
+¡El robot mostrará "HOLA", will encenderse la luz verde y hará un sonido!
+
+---
+
+## Referencias
+
+[1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[2] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
+
+[3] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+
+[4] LEGO. (2023). *LEGO Education SPIKE Prime Hub*. LEGO. Disponible: https://lego.com
+
+[5] Pybricks. (2023). *Pybricks Official Website*. Pybricks. Disponible: https://pybricks.com
+
+[6] MicroPython. (2023). *MicroPython Official Website*. MicroPython. Disponible: https://micropython.org
+
+---
+
+## Misión de esta unidad
+
+**Ahora intenta esto:**
+
+1. Cambia el mensaje de "HOLA" a tu nombre (máximo 5 letras)
+2. Cambia el color de la luz (prueba BLUE, RED, YELLOW)
+3. Intenta que el robot haga dos cosas seguidas
+
+**Cuando logres que el robot responda a tus instrucciones, habrás completado esta unidad.**
+
+---
+
+*En la siguiente unidad: cómo mostrar diferentes dibujos y mensajes en la pantalla del robot.*

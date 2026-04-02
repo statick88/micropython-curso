@@ -2,36 +2,48 @@
 
 ## Derechos de Autor
 
-**MicroPython para Docentes** por **Diego Saavedra**
+**MicroPython para el Aula de Informática** por **Diego Saavedra**
 
-Este trabajo tiene licencia bajo [Creative Commons Atribucion-NoComercial-SinDerivadas 4.0 Internacional](http://creativecommons.org/licenses/by-nc-nd/4.0/).
+Este trabajo tiene licencia bajo [Creative Commons Atribución 4.0 Internacional](http://creativecommons.org/licenses/by/4.0/).
 
-![CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)
+![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)
 
-### Usted puede:
+### Usted es libre de:
 
 - **Compartir** — copiar y redistribuir el material en cualquier medio o formato
+- **Adaptar** — remezclar, transformar y crear a partir del material
 
 ### Con las siguientes condiciones:
 
-- **Atribucion** — Debe dar credito apropiado, proporcionar un enlace a la licencia e indicar si se hicieron cambios
-- **NoComercial** — No puede usar el material con fines comerciales
-- **SinDerivadas** — Si remezcla, transforma o crea a partir del material, no puede distribuir el material modificado
+- **Atribución** — Debe dar crédito apropiado, proporcionar un enlace a la licencia e indicar si se hicieron cambios. Puede hacerlo de cualquier manera razonable, pero no de manera que sugiera que el licenciante lo respalda a usted o su uso.
 
-### Nota sobre el codigo:
+### Nota sobre el código:
 
-El codigo de ejemplo dentro de los laboratorios es de uso libre para fines educativos. Se puede copiar, modificar y distribuir para uso en el aula.
+El código de ejemplo dentro de los laboratorios es de uso libre para fines educativos. Se puede copiar, modificar y distribuir para uso en el aula bajo licencia MIT.
 
 ---
 
 ## Reconocimientos
 
 - Comunidad **Pybricks** por su firmware open source
-- Comunidad **MicroPython** por su implementacion de Python para microcontroladores
-- Proyecto **ESP-LEGO-SPIKE-Simulator** por el simulador no oficial
-- **Carnegie Mellon CS2N** por recursos educativos
-- Investigadores en educacion STEM citados en las referencias
+- Comunidad **MicroPython** por su implementación de Python para microcontroladores
+- Comunidad **Thonny** por el editor gratuito y open source
+- **Raspberry Pi Foundation** por micro:bit y recursos educativos
+- **Arduino** por Alvik y el ecosistema open source
+- Investigadores en educación STEM citados en las referencias
 
 ---
 
-*Ultima actualizacion: Marzo 2026*
+## Licencias de componentes utilizados
+
+| Componente | Licencia |
+|------------|----------|
+| **Thonny** | MIT License |
+| **MicroPython** | MIT License |
+| **Pybricks** | MIT License |
+| **Quarto** | GPL v3 |
+| **Este curso** | CC BY 4.0 |
+
+---
+
+*Última actualización: Abril 2026*

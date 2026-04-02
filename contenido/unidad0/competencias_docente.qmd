@@ -1,152 +1,247 @@
-# El Manifiesto del Arquitecto de Aprendizaje {#competencias-docente}
+# Fundamentos: Antes de Comenzar {#competencias-docente}
 
-## Protocolo de Ingeniería: Tu Mindset como Arquitecto Principal
+## Algo interesante antes de empezar
 
-En nuestro laboratorio de MicroPython, no somos simples programadores; somos **Arquitectos de Experiencias**. Como docente líder, tu responsabilidad es diseñar sistemas de aprendizaje que no solo funcionen, sino que inspiren excelencia.
+Antes de escribir nuestro primer programa, vamos a entender algo que usaremos siempre: cómo guardar información que puede cambiar.
 
-### Las 5 Columnas de Nuestra Arquitectura
+Imagina esto:Estás tomando asistencia en tu clase. Cada vez que entra un estudiante, cuentas "uno más". Ese número cambia todo el tiempo - empieza en 0, luego es 1, luego 2, y así sucesivamente.
 
-Para liderar el aula con autoridad técnica, **DEBEMOS** dominar:
+**¿Cómo harías esto en un programa?**
 
-1.  **Ingeniería de Python:** No solo sintaxis, sino lógica de diseño robusta.
-2.  **Sistemas Embebidos (Pybricks):** Dominar el hardware para empoderar el software.
-3.  **Análisis de Hardware:** Diagnóstico clínico de sensores y actuadores.
-4.  **Diseño Pedagógico Activo:** Crear misiones, no solo ejercicios.
-5.  **Resolución de Incidentes (Troubleshooting):** Convertir el error en una oportunidad de aprendizaje.
+Podrías pensar: "Necesito algo que guarde el número actual y que pueda cambiarlo cuando entre otro estudiante".
+
+Eso es exactamente lo que aprenderemos aquí [1][2].
 
 ---
 
-## MÓDULO 1: Los Planos del Sistema (Python Fundamentals)
+## Una situación del día a día
 
-### 1.1 Variables: Telemetría de Datos
+Imagina que tienes una **caja** donde pones el conteo de estudiantes. Cuando entra alguien,.abres la caja, miras el número que hay dentro, le sumas 1, y lo vuelves a meter.
 
-Como arquitectos, tratamos los datos con precisión. No permitimos el código muerto o las variables sin propósito.
-
-```python
-# TIPOS DE DATOS: Los cimientos de nuestro sistema
-
-# Integers (Enteros): Control de iteraciones
-intentos = 5 # <1>
-
-# Floats (Decimales): Telemetría precisa
-reflexion_luz = 45.5 # <2>
-
-# Strings (Texto): Logs del sistema
-sistema_status = "OPERATIVO" # <3>
-
-# Booleans (Lógica): Estado binario
-motor_ready = True # <4>
-
-# OPERACIONES CRÍTICAS DE INGENIERÍA:
-eficiencia = 10 / 3 
-posicion_exacta = 10 // 3 # <5>
-iteracion_modulo = 10 % 3 # <6>
+```
+Caja tiene: 0
+Entra un estudiante → Caja ahora tiene: 1
+Entra otro estudiante → Caja ahora tiene: 2
 ```
 
-1.  Las variables enteras son fundamentales para bucles deterministas.
-2.  Los flotantes representan la realidad física de los sensores (voltaje, distancia).
-3.  Los strings permiten una comunicación clara a través del HUD de 5x5.
-4.  Los booleanos gestionan los estados de seguridad y bloqueos.
-5.  La división entera (`//`) es vital cuando trabajamos con coordenadas de píxeles.
-6.  El módulo (`%`) permite crear secuencias infinitas dentro de rangos finitos.
+En programación, a esa "caja" le llamamos de otra manera, pero la idea es exactamente la misma [1].
 
-### 1.2 Neural Links (Funciones y Modularización)
+---
 
-Un arquitecto escribe código DRY (Don't Repeat Yourself). Modularizamos nuestra lógica para que sea escalable:
+## Primero, probemos en la computadora
+
+Abre Thonny en tu computadora y escribe esto [3]:
 
 ```python
-# DEFINICIÓN DE UN PROTOCOLO DE MOVIMIENTO
-def ejecutar_despliegue(velocidad=500, distancia=200): # <1>
-    """
-    Protocolo estándar para movimiento lineal del robot.
-    """
-    robot.settings(straight_speed=velocidad) # <2>
-    robot.straight(distancia) # <3>
+# Esta "caja" se llama conteo
+conteo = 0
 
-# EJECUCIÓN DEL DISEÑO
-ejecutar_despliegue() # <4>
-ejecutar_despliegue(800, 500) # <5>
+# Cuando entra un estudiante, hacemos esto:
+conteo = conteo + 1
+print(conteo)  # Mostrará: 1
+
+# Entra otro
+conteo = conteo + 1
+print(conteo)  # Mostrará: 2
 ```
 
-1.  Modularizamos la acción para reutilizar la lógica en diferentes misiones.
-2.  Ajustamos las constantes cinemáticas antes de cada movimiento.
-3.  La abstracción `straight` oculta la complejidad del control PID de los motores.
-4.  El uso de valores por defecto simplifica las misiones estándar.
-5.  La sobreescritura de argumentos permite adaptarnos a entornos críticos.
+Ejecuta el código (presiona F5 o el botón Play). Verás que el número cambia cada vez [3].
 
-### 1.3 Algoritmos de Decisión y Control
+**¿Qué está pasando?**
+- `conteo = 0` → Creamos la "caja" con valor inicial 0
+- `conteo = conteo + 1` → Sacamos el valor, le inmuevo1, lo volvemos a meter
+
+---
+
+## Ahora, en el robot
+
+Cuando programamos el LEGO Hub, la idea es igual, pero la syntax es un poco diferente [4][5]:
 
 ```python
-# BUCLE DE CONTROL AUTÓNOMO
-while True: # <1>
-    distancia_obstaculo = sensor_distancia.distance() # <2>
-    
-    # Lógica de Evaluación de Riesgos
-    if distancia_obstaculo < 150: # <3>
-        print("ALERTA: Obstrucción detectada.") # <4>
-        robot.stop() # <5>
-        robot.turn(90)
-    else:
-        robot.drive(200, 0) # <6>
-    
-    wait(100) # <7>
+# En el robot, usamos el mismo patrón
+conteo_estudiantes = 0
+
+# Simular que entra un estudiante
+conteo_estudiantes = conteo_estudiantes + 1
+
+# Mostrar en la pantalla del robot
+hub.display.number(conteo_estudiantes)
 ```
 
-1.  Los robots operan en ciclos infinitos de sensado-decisión-acción.
-2.  La lectura debe ser constante para reaccionar a cambios en el entorno.
-3.  Definimos la "distancia de seguridad" basada en la inercia del robot.
-4.  La telemetría por consola es nuestra "caja negra" para debugging.
-5.  `stop()` asegura que el robot no fuerce los motores contra un objeto físico.
-6.  `drive` permite movimiento fluido sin esperar a que termine la acción.
-7.  El `wait` evita la saturación del procesador y el sobrecalentamiento del bus.
+La diferencia es solo en cómo mostramos el resultado - en la pantalla del robot en lugar de la consola.
 
 ---
 
-## MÓDULO 2: Diagnóstico y Validación de Campo
+## Diferentes tipos de "cajas"
 
-### 3.1 Debugging Nivel Statick
+En el ejemplo anterior solo usamos números, pero a veces necesitamos guardar otras cosas [2]:
 
-En este curso, **NUNCA** adivinamos. **NOSOTROS VALIDAMOS**.
+| Qué quieres guardar | Ejemplo |
+|---------------------|---------|
+| Un número que puede crecer | `contador = 5` |
+| Un número con decimales | `temperatura = 22.5` |
+| Un nombre o palabra | `nombre = "Ana"` |
+| Una respuesta de sí/no | `presente = True` |
+
+---
+
+## Referencias
+
+[1] Python Software Foundation. (2024). *Tutorial de Python 3*. Python Documentation. Available: https://docs.python.org/es/3/tutorial/
+
+[2] Python Software Foundation. (2024). *Built-in Types*. Python Library Reference. Available: https://docs.python.org/es/3/library/dtypes.html
+
+[3] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[4] MicroPython Team. (2024). *MicroPython Documentation*. Available: https://micropython.org/doc/
+
+[5] Pybricks Team. (2024). *Pybricks Documentation*. Available: https://docs.pybricks.com/en/latest/
+
+[6] Python Software Foundation. (2024). *For Statements*. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#for-statements
+
+[7] Python Software Foundation. (2024). *While Statements*. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#while-statements
+
+---
+
+## Otro concepto: hacer cosas sin repetir
+
+Ahora imagínate esto: Tienes que saludar a cada estudiante por su nombre cuando entran. Podrías escribir:
 
 ```python
-# LOGS DE TELEMETRÍA EN TIEMPO REAL
-print(f"DIAG: Carga de Batería: {hub.battery.voltage()}mV") # <1>
-print(f"DIAG: Lectura Reflejada: {sensor_color.reflection()}%") # <2>
-
-# CAPTURA DE EXCEPCIONES DE HARDWARE (Resiliencia)
-try: # <3>
-    motor_a.run_target(500, 90)
-except OSError: # <4>
-    # Protocolo de recuperación ante desconexión
-    print("FALLO: Interrupción en el bus de datos del Puerto A.") # <5>
+print("Hola Ana")
+print("Hola Carlos")
+print("Hola María")
+# ...y así sucesivamente
 ```
 
-1.  El voltaje es la variable crítica para la consistencia de los motores.
-2.  Validamos el hardware antes de lanzar la misión principal.
-3.  Encapsulamos operaciones críticas que dependen de conexiones físicas.
-4.  Capturamos errores de hardware para evitar que el firmware colapse.
-5.  Un diagnóstico preciso ahorra minutos valiosos en el campo de batalla (aula).
+Pero eso es muy largo. ¿No sería mejor tener una sola "instrucción" que podamos usar una y otra vez? [4]
+
+Imagina tener una **receta** escrita:
+
+```
+RECETA PARA SALUDAR:
+1. Decir "Hola"
+2. Decir el nombre que me den
+```
+
+Ahora solo escribimos:
+
+```
+saludar("Ana")
+saludar("Carlos")
+saludar("María")
+```
+
+Mucho más fácil, ¿verdad?
 
 ---
 
-## MÓDULO 3: El Método del Arquitecto (Pedagogía de Ingeniería)
+## Probemos esta "receta" en la computadora
 
-Nuestra metodología de aula sigue la **Secuencia de Despliegue Real**:
+En Thonny, escribe [3]:
 
-1.  **Desafío de Impacto:** Muestra el robot resolviendo un problema complejo.
-2.  **Ingeniería Inversa:** Pregunta al grupo: "¿Cómo diseñarían la lógica para lograr esto?"
-3.  **Codificación Colaborativa:** Escribimos el core del sistema en la pizarra.
-4.  **Despliegue Experimental (Labs):** Los alumnos implementan y rompen el código.
-5.  **Optimización:** Refinamos el código para buscar la excelencia.
+```python
+def saludar(nombre):
+    print("Hola " + nombre)
 
----
+# Ahora podemos usar la receta muchas veces
+saludar("Ana")
+saludar("Carlos")
+saludar("María")
+```
 
-## CHECKPOINT: Tu Sello de Calidad
-
-Como Arquitecto Principal, tu meta no es que tus alumnos sepan Python. Tu meta es que sepan **pensar como ingenieros**. Si ellos pueden diagnosticar y arreglar su propio sistema, has diseñado un aprendizaje de éxito.
-
-**¿Estamos listos para iniciar el despliegue?**
+Ejecuta y verás cómo con una sola "receta" saludamos a todos.
 
 ---
 
-*Desarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026*
+## Y en el robot
+
+Con el LEGO Hub, podemos crear "recetas" igual [4][5]:
+
+```python
+def mostrar_mensaje(texto):
+    """Esta receta muestra un mensaje en la pantalla"""
+    hub.display.text(texto)
+
+# Usar la receta
+mostrar_mensaje("BIENVENIDOS")
+mostrar_mensaje("HOLA")
+```
+
+---
+
+## Referencias para profundizar
+
+**Sobre crear "recetas" (funciones en programación):** [4][6]
+
+- [Funciones en Python](https://docs.python.org/es/3/tutorial/controlflow.html#defining-functions) — Cómo definir funciones
+- [Documentación Pybricks](https://docs.pybricks.com/en/latest/) — Funciones disponibles
+
+---
+
+## Un último concepto: repetir sin escribir muchas veces
+
+Imagina que el director te pide: "Dile a todos los estudiantes que hay examen mañana".
+
+Podrías:
+- Llamar a cada estudiante individualmente (mucho trabajo)
+- Hacer un anuncio por megafonía (una sola vez, todos escuchan)
+
+En programación, cuando queremos que algo se haga varias veces, usamos algo llamado **bucle** [6][7].
+
+---
+
+## Un bucle en la computadora
+
+```python
+# Saludar a 5 estudiantes
+for i in range(5):
+    print("Hola estudiante #" + str(i + 1))
+```
+
+Esto mostrará:
+```
+Hola estudiante #1
+Hola estudiante #2
+Hola estudiante #3
+Hola estudiante #4
+Hola estudiante #5
+```
+
+Solo escribimos el código una vez, pero se ejecuta 5 veces [6].
+
+---
+
+## Y en el robot
+
+```python
+# El robot avanza 4 veces (como un cuadrado)
+for lado in range(4):
+    robot.straight(300)  # Avanzar
+    robot.turn(90)       # Girar
+```
+
+El robot will hacer: adelante → gira → adelante → gira → adelante → gira → adelante → gira
+
+---
+
+## Resumen de lo que vimos
+
+| Concepto | Analogía | Para qué sirve |
+|---------|----------|----------------|
+| "Caja" | Contenedor para guardar algo que cambia | Guardar valores que necesitamos recordar [1][2] |
+| "Receta" | Instrucciones que podemos reuse | No escribir lo mismo varias veces [4] |
+| "Bucle" | Hacer algo varias veces | Repetir acciones sin copiar y pegar [6][7] |
+
+Estos tres conceptos los usaremos constantemente en todo el curso. Ahora que los entiendes (a través de ejemplos de la vida real), podemos aplicarlos al robot.
+
+---
+
+## Siguiente paso
+
+En la siguiente unidad, vamos a:
+1. Instalar Thonny en tu computadora [3]
+2. Instalar el software en el robot [5]
+3. Escribir y ejecutar tu primer programa
+
+¡Nos vemos allí!

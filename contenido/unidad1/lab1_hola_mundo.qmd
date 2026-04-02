@@ -1,198 +1,222 @@
-# Laboratorio 1.1: "Hola Mundo" en Pybricks {#lab1-hola-mundo}
+# Laboratorio 1: ¡Hola, Robot! {#lab1-hola-mundo}
 
 ::: center
-![Lab 1.1](images/esp32-cartoon.png){width="25%"}
+![Lab 1](images/robot-espi32-cartoon.png){width="30%"}
 
-**⚡ Nivel:** Principiante | **⏱️ Tiempo:** 25 minutos
+**⏱️ Tiempo estimado:** 30 minutos | **📊 Nivel:** Principiante
 :::
 
 ---
 
-## Objetivo del Laboratorio
+## Antes de empezar
 
-Validar que el entorno de desarrollo está correctamente configurado y que podemos comunicar instrucciones al hardware físico del Hub LEGO SPIKE.
+Seguro has visto que cuando enciendes un máquina expendedora o una caja registradora, aparecen mensajes en su pantalla. ¿Te has preguntado cómo llegan ahí esos mensajes?
 
----
-
-## Materiales Requeridos
-
-| Componente | Especificación |
-|------------|-----------------|
-| **Hub** | LEGO SPIKE Prime o Essential |
-| **Cable** | USB original LEGO (no genérico) |
-| **PC/Laptop** | Con navegador Chrome/Edge |
-| **Conexión** | Internet para code.pybricks.com |
+Hoy vas a hacer algo similar: escribir un mensaje y enviarlo al robot para que lo muestre.
 
 ---
 
-## ⚡ Procedimiento Paso a Paso
+## Materiales que necesitas
 
-### Paso 1: Conexión Física (5 minutos)
-
-```bash
-# En tu terminal, verifica los dispositivos conectados
-
-# Linux (Ubuntu/Debian)
-ls -la /dev/tty* | grep -E "(USB|ACM)"
-
-# macOS
-ls -la /dev/tty.* | grep usb
-
-# Windows (PowerShell)
-Get-ChildItem -Path COM*
-```
-
-**Output Esperado:**
-
-```
-# Linux
-crw-rw---- 1 root root 188, 0 Jan 15 10:30 /dev/ttyUSB0
-
-# macOS
-crw-rw---- 1 root root 21, 1 Jan 15 10:30 /dev/tty.usbserial-1420
-```
-
-> ⚠️ **Si no ves ningún dispositivo:** El cable no es de datos. Usa el cable original LEGO.
+| Material | Para qué |
+|----------|----------|
+| **Hub LEGO Technic** (45601) | El cerebro del robot |
+| **Cable USB** | Para conectar el Hub a la computadora |
+| **Computadora** | Con Thonny instalado |
+| **Thonny** | El programa para escribir instrucciones [1] |
 
 ---
 
-### Paso 2: Acceso al IDE (2 minutos)
+## Paso 1: Abrir Thonny
 
-1. Abre **Chrome** o **Edge** (NO Firefox ni Safari)
-2. Navega a: [https://code.pybricks.com/](https://code.pybricks.com/)
-3. Conecta el Hub con el cable USB
-4. Presiona el botón de **encendido** del Hub (botón central)
+**Tiempo estimado: 2 minutos**
 
-**Deberías ver en el IDE:**
+Thonny es como un cuaderno donde le escribes al robot. Es gratuito y no necesitas instalar nada especial [1].
+
+1. Busca "Thonny" en tu computadora y ábrelo
+2. Verás algo como esto:
+
 ```
-┌─────────────────────────────────────┐
-│  Pybricks IDE                       │
-│  ┌───────────────────────────────┐ │
-│  │ 🟢 Hub Connected (Prime)      │ │
-│  │ Firmware: 2.0.0               │ │
-│  └───────────────────────────────┘ │
-└─────────────────────────────────────┘
+┌─────────────────────────────────────────────────┐
+│  Thonny                                          │
+│  ┌─────────────────────────────────────────┐   │
+│  │ # Aquí escribes las instrucciones        │   │
+│  │                                         │   │
+│  │                                         │   │
+│  │                                         │   │
+│  └─────────────────────────────────────────┘   │
+│                                                  │
+│  >>>                                            │
+│  _                                              │
+└─────────────────────────────────────────────────┘
 ```
 
 ---
 
-### Paso 3: Tu Primer Programa (10 minutos)
+## Paso 2: Escribir tu primer mensaje
 
-Copia y pega este código en el editor:
+**Tiempo estimado: 8 minutos**
+
+Imagina que tienes una caja etiquetada. Dentro guardas algo que puedes usar después. Así funcionan las cosas en programación: guardamos algo en un "espacio" y le damos un nombre para usarlo después.
+
+Escribe esto en Thonny (donde dice `# Aquí escribes las instrucciones`):
 
 ```python
-from pybricks.hubs import PrimeHub # <1>
-from pybricks.parameters import Color # <2>
-from pybricks.tools import wait # <3>
+# Decirle a la computadora cómo hablar con el robot
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
 
-hub = PrimeHub() # <4>
+# Crear una "caja" llamada hub que representa al robot
+hub = PrimeHub()
 
-def hola_stark():
-    """Protocolo de validación de sistemas."""
-    hub.light.on(Color.GREEN) # <5>
-    hub.display.text("HOLA") # <6>
-    hub.speaker.beep() # <7>
-    wait(2000) # <8>
-    hub.light.off() # <9>
+# Encender la luz del robot en color verde
+hub.light.on(5)  # 5 = verde
 
-if __name__ == "__main__":
-    hola_stark() # <10>
-```
-
-1.  Importamos el núcleo del Hub LEGO SPIKE.
-2.  Cargamos el set de parámetros para gestión de colores.
-3.  Herramienta para pausas precisas en la ejecución.
-4.  Instanciamos el cerebro del robot.
-5.  Activamos el LED central en verde - indica sistema nominal.
-6.  Enviamos texto a la matriz de 5x5 píxeles.
-7.  El buzzer emite un tono de confirmación.
-8.  Pausa de seguridad antes de apagar.
-9.  Apagamos el LED - operación completada.
-10. Punto de entrada del script.
-
----
-
-### Paso 4: Ejecución (3 minutos)
-
-1. Presiona el botón **"Run"** (▶️) en el IDE
-2. Observa el comportamiento del Hub
-
-**Output Esperado en Consola:**
-```
->>> Running script.py
->>> HOLA
->>> 🔊 Beep executed
->>> Script completed successfully
-```
-
-**Comportamiento Físico:**
-- 💡 LED central se ilumina en **VERDE**
-- 📺 Matriz muestra la palabra "HOLA"
-- 🔊 Sonido "beep" audible
-- ⏸️ 2 segundos después, LED se apaga
-
----
-
-### Paso 5: Personalización (5 minutos)
-
-Modifica el código para mostrar **tu nombre**:
-
-```python
-# Cambia esta línea:
+# Mostrar un mensaje en la pantalla del robot
 hub.display.text("HOLA")
 
-# Por tu nombre (máximo 5 letras):
-hub.display.text("DIEGO")  # Ejemplo
+# Hacer que el robot "hable" (suene)
+hub.speaker.beep()
+
+# Esperar un poco para que puedas ver el mensaje
+wait(2000)
 ```
 
-**Desafío Extra:** Cambia el color a **AZUL** y el mensaje a "READY"
+**¿Qué ves en la pantalla de Thonny?**
+
+Verás que las palabras tienen colores diferentes. Eso es normal—Thonny usa colores para ayudarte a ver mejor el código, como cuando usas diferentes colores en un cuaderno [1].
 
 ---
 
-## 🛠️ Centro de Diagnóstico
+## Paso 3: Probar en la computadora (antes de enviar al robot)
 
-| Error | Síntoma | Causa | Solución |
-|-------|---------|-------|----------|
-| **"Hub not found"** | IDE no detecta Hub | Cable incorrecto | Usar cable LEGO original |
-| **"Firmware outdated"** | Mensaje amarillo en IDE | Pybricks requiere update | Click "Update Firmware" |
-| **"Permission denied"** | Error en terminal Linux | Sin acceso a tty | `sudo chmod 666 /dev/ttyUSB0` |
-| **"Script timeout"** | LED parpadea rojo | Código en bucle infinito | Presionar botón STOP en IDE |
+**Tiempo estimado: 5 minutos**
 
----
+Antes de enviar el código al robot, podemos ver si hay errores. Es como cuando relees una tarea antes de entregarla.
 
-## 🔐 Validación Anti-AI (OBLIGATORIA)
-
-Para aprobar este laboratorio, debes entregar:
-
-### 📋 Checklist de Entrega:
-
-- [ ] **Foto 1:** Tu Hub conectado al PC mostrando el mensaje en la matriz
-- [ ] **Foto 2:** Consola del IDE con el output "HOLA" visible
-- [ ] **Código modificado:** Archivo `.py` con tu nombre en lugar de "HOLA"
-- [ ] **Timestamp:** Foto del resultado tomada **HOY** (debes poder mostrar la fecha)
-
-### 📝 Formato de Envío:
+1. Mira si Thonny muestra algún mensaje rojo en la parte inferior
+2. Si hay errores,revisa que no falten letras o que los paréntesis estén completos
 
 ```
-Archivo 1: lab1_hola_mundo_[TU_NOMBRE].py
-Archivo 2: evidencia_[TU_NOMBRE].zip (contiene fotos)
+┌─────────────────────────────────────────────────┐
+│  >>> ================================            │
+│  >>> # Decirle a la computadora...              │
+│  >>> from pybricks.hubs import PrimeHub         │
+│  >>> hub = PrimeHub()                           │
+│  >>> hub.light.on(5)                            │
+│  >>> hub.display.text("HOLA")                    │
+│  >>> hub.speaker.beep()                         │
+│  >>> wait(2000)                                 │
+│  >>>                                            │
+│  MicroPython v1.20.0 on 2024-09-12              │
+│  LEGO Technic Large Hub firmware version 3.3.0  │
+│  >>>                                            │
+└─────────────────────────────────────────────────┘
 ```
 
-> ⚠️ **Sin evidencia visual NO se acepta el laboratorio.** El código debe ejecutarse en hardware real, no en simulador.
+**Si ves "MicroPython" y "LEGO Technic Large Hub"**, ¡significa que la computadora ya está hablando con tu robot! [2][3]
 
 ---
 
-## ✅ Checklist de Completado
+## Paso 4: Enviar el código al robot
 
-Antes de terminar, marca cada item:
+**Tiempo estimado: 5 minutos**
 
-- [ ] El IDE conecta correctamente con el Hub
-- [ ] El mensaje aparece en la matriz 5x5
-- [ ] El LED cambia a color verde
-- [ ] El sonido "beep" se ejecuta
-- [ ] Personalicé el mensaje con mi nombre
-- [ ] Tengo las evidencias fotográficas requeridas
+Ahora viene lo interesante: enviar las instrucciones al robot para que las ejecute.
+
+1. Presiona el botón **"Run"** (el botón verde de ▶️play en la barra de herramientas)
+2. Observa tu robot:
+
+```
+┌─────────────────────────┐
+│    [ROBOT LEGO]         │
+│    ┌───────────────┐    │
+│    │     HOLA      │    │ ← Este mensaje apareció
+│    └───────────────┘    │
+│    🟢 (luz encendida)   │ ← Luz verde
+│    🔊 (sonido)         │ ← Un "beep"
+└─────────────────────────┘
+```
+
+**¿Qué pasó?**
+
+- 💚 La luz se encendió en verde
+- 📺 El mensaje "HOLA" apareció en la pantalla del robot
+- 🔊 Se escuchó un pequeño sonido
 
 ---
 
-*Desarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026*
+## Paso 5: Ahora prueba con tu nombre
+
+**Tiempo estimado: 5 minutos**
+
+Ahora vas a cambiar el mensaje. Es como cuando escribes un nombre en un cuaderno: borras lo que había y escribes lo nuevo.
+
+En tu código, busca donde dice `"HOLA"` y cámbialo por tu nombre (máximo 5 letras):
+
+```python
+# Busca esta línea:
+hub.display.text("HOLA")
+
+# Cámbiala por tu nombre:
+hub.display.text("JUAN")  # Ejemplo: tu nombre
+```
+
+Presiona **Run** de nuevo y observa el robot.
+
+**¿Qué diferencias notas cuando cambias el mensaje?**
+
+Eso es exactamente lo que pasa en una máquina expendedora: el programa muestra lo que tú le digas, cambiando las "instrucciones" que envías.
+
+---
+
+## 🔧 Si algo no funciona
+
+| Problema | Posible causa | Qué hacer |
+|----------|---------------|-----------|
+| Thonny dice "Unable to connect" | El cable no está bien conectado | Desconecta y vuelve a conectar el USB |
+| El robot no responde | El Hub está apagado | Presiona el botón central del Hub |
+| Mensaje de error rojo | Algún error en el código | Revisa que no falte una coma o paréntesis |
+| No se ve nada en la pantalla del robot | El robot no entendió las instrucciones | Verifica que el cable USB esté bien |
+
+---
+
+## 📋 Lo que lograste hacer
+
+Antes de terminar, marca lo que conseguiste:
+
+- [ ] Escribí un mensaje en Thonny
+- [ ] El robot mostró el mensaje en su pantalla
+- [ ] La luz del robot se encendió
+- [ ] El robot hizo un sonido
+- [ ] Cambié el mensaje por mi nombre
+
+---
+
+## 💡 Para seguir explorando
+
+¿Qué pasaría si cambiaras el número del color? Intenta:
+
+```python
+hub.light.on(0)   # ¿Qué color es?
+hub.light.on(3)   # ¿Y este?
+hub.light.on(9)   # ¿Y este otro?
+```
+
+El número representa diferentes colores—justo como cuando cambias el color de un marcador.
+
+---
+
+## Referencias
+
+[1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[2] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
+
+[3] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+
+[4] LEGO. (2023). *LEGO Education SPIKE Prime Hub*. LEGO. Disponible: https://lego.com
+
+---
+
+*Has completado tu primer laboratorio. Ahora sabes cómo escribir algo, probarlo en la computadora, y enviarlo al robot para que lo haga.*

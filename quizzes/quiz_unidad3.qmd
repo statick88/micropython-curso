@@ -1,47 +1,107 @@
-# Validación de Ingeniería: Fase 3 {#quiz-unidad3}
+---
+title: "🎮 Quiz Unidad 3: Movimiento"
+description: "¡Domina la cinemática del robot! 🤖"
+---
+
+# 🎮 Quiz Unidad 3: Movimiento {#quiz-unidad3}
 
 ::: center
 ![Certificación de Tracción](images/servo-motor-cartoon.png){width="20%"}
+
+### 🏅 Insignias en Juego
+| 🔄 Primer Giro | 📐 Geometra | 🧭 Navegante |
+|:---:|:---:|:---:|
+| +25 XP | +25 XP | +50 XP |
+
 :::
 
-## Protocolo de Evaluación: Sincronización de Tracción
+## 📊 Tu Progreso
 
-Valida tu dominio sobre la cinemática del robot y el control de precisión.
+```
+[███████████████████░] 95% - Nivel 2 🔍 → Nivel 3 💻
+XP necesario: 250 | XP ganado: 225
+```
+
+---
+
+## 📝 Preguntas
 
 ::: {.quizdown}
 
-### Estabilización por Hardware
+### 🔄 Pregunta 1: Estabilización por Hardware (25 XP)
+
 ¿Qué tecnología interna del Hub permite que el `DriveBase` corrija su trayectoria automáticamente?
 
-- [ ] Bluetooth Low Energy.
-- [x] Giroscopio (IMU) con `use_gyro(True)`.
-- [ ] Sensor de color en puerto C.
-- [ ] Sensor de contacto.
+- [ ] Bluetooth Low Energy 📡
+- [x] 🎯 Giroscopio (IMU) con `use_gyro(True)`
+- [ ] Sensor de color en puerto C 🌈
+- [ ] Sensor de contacto 👆
 
-> El giroscopio es esencial para compensar el deslizamiento mecánico de las ruedas.
+> 💡 **Pista:** El giroscopio es esencial para compensar el deslizamiento mecánico de las ruedas [1]. ¡Sin él, tu robot será un borracho! 🍺
 
-### Arquitectura Cinemática
+---
+
+### 📐 Pregunta 2: Arquitectura Cinemática (25 XP)
+
 En la configuración de un `DriveBase`, ¿qué parámetro define la distancia entre los centros de las ruedas?
 
-- [ ] wheel_diameter
-- [x] axle_track
-- [ ] PID_gain
-- [ ] turn_rate
+- [ ] wheel_diameter ⭕
+- [x] 📏 axle_track (distancia entre ejes)
+- [ ] PID_gain 📊
+- [ ] turn_rate 🔄
 
-> `axle_track` es el valor crítico para calcular la rotación exacta del chasis.
+> 💡 **Pista:** `axle_track` es el valor crítico para calcular la rotación exacta del chasis [1]. ¡Es la base de tu robot! 🏗️
 
-### Entorno de Desarrollo
+---
+
+### 🌐 Pregunta 3: Entorno de Desarrollo (25 XP)
+
 ¿Cuál es la URL oficial del Centro de Comando Pybricks Web para desplegar código?
 
-- [ ] pybricks.com
-- [x] code.pybricks.com
-- [ ] app.pybricks.com
-- [ ] lego.pybricks.com
+- [ ] pybricks.com 🏠
+- [x] 💻 code.pybricks.com (IDE Web)
+- [ ] app.pybricks.com 📱
+- [ ] lego.pybricks.com 🧱
 
-> `code.pybricks.com` es el IDE estándar de la industria para MicroPython en LEGO.
+> 💡 **Pista:** `code.pybricks.com` es el IDE estándar de la industria para MicroPython en LEGO [2]. ¡Tu cockpit de programación! 🚀
 
 :::
 
 ---
 
-*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*
+## 🏆 Resumen de Recompensas
+
+| Respuesta | XP Ganada | Insignia |
+|-----------|-----------|----------|
+| Pregunta 1 ✅ | +25 | |
+| Pregunta 2 ✅ | +25 | |
+| Pregunta 3 ✅ | +25 | |
+| **Total** | **+75** | 🔄 Primer Giro |
+
+### 🎯 ¡Objetivos Desbloqueados!
+
+- [x] Completar todas las preguntas (+25 bonus si 100%)
+- [ ] Tiempo récord: < 2 minutos (+10 bonus)
+
+---
+
+## 📈 Después de Completar este Quiz
+
+```
+Siguiente paso: 📡 Unidad 4: Sensores
+                └─> 👁️ Lab 4A - Telemetría
+                    └─> 🔋 Lab 4B - Monitoreo Batería
+                        └─> 📝 Quiz Unidad 4
+```
+
+---
+
+## Referencias
+
+[1] Pybricks Team. *Pybricks MicroPython API Reference - DriveBase and Motors*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase
+
+[2] Pybricks Team. *Pybricks Code - Web-based Programming Environment*. 2026. Disponible en: https://code.pybricks.com/
+
+---
+
+*🎮 Quiz Unidad 3 - MicroPython para el Aula - Diego Saavedra 2026* 🏆

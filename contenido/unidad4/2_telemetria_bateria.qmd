@@ -1,0 +1,349 @@
+# Telemetría: Monitoreo de Batería y Estado del Robot {#telemetria-bateria}
+
+::: center
+![Telemetría](images/telemetria.png){width="35%"}
+
+**⏱️ Tiempo estimado:** 45 minutos | **📊 Nivel:** Intermedio-Avanzado
+:::
+
+---
+
+## Antes de empezar
+
+Los robots no pueden hablar, pero pueden decirte mucho si sabes escuchar. En esta unidad vas a aprender cómo obtener información del robot en tiempo real [1][2].
+
+Vas a aprender:
+
+1. **Monitoreo de batería** — Cuánto le queda, cuándo cargar
+2. **Lectura de botones** — Detectar múltiples botones
+3. **Estado del robot** — Posición, velocidad, orientación
+4. **Logging de datos** — Guardar información para analizar
+
+---
+
+## 1. Monitoreo de Batería
+
+**Situación:** Cuando la batería de tu teléfono está baja, ves una alerta. El robot también puede decirte cuándo la batería está baja [1].
+
+### Código ejemplo:
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+while True:
+    # Obtener voltaje de batería (en milivoltios)
+    voltaje = hub.battery.voltage()
+    
+    # Obtener corriente de batería (en miliamperios)
+    corriente = hub.battery.current()
+    
+    # Mostrar en consola
+    print(f"Batería: {voltaje}mV | Corriente: {corriente}mA")
+    
+    # Alerta si voltaje bajo
+    if voltaje < 6000:  # Menos de 6V
+        print("⚠️ Batería baja - cargar pronto!")
+    
+    wait(1000)
+```
+
+### Valores de referencia:
+
+| Voltaje | Estado | Acción |
+|---------|--------|--------|
+| >7500 mV | Batería llena | Todo bien |
+| 6500-7500 mV | Batería media | Funciona normal |
+| 6000-6500 mV | Batería baja | Considerar cargar |
+| <6000 mV | Batería muy baja | Cargar inmediatamente |
+
+---
+
+## 2. Detección de Botones
+
+**Situación:** El Hub tiene un botón central. Puedes detectarlo para que el usuario interactúe con el robot [1].
+
+### Código ejemplo:
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Button
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+print("Presiona el botón central...")
+
+# Método 1: Verificar una vez
+if hub.buttons.pressed():
+    print("¡Botón presionado!")
+
+# Método 2: Loop continuo
+while True:
+    botones = hub.buttons.pressed()
+    
+    if Button.CENTER in botones:
+        print("¡Botón central presionado!")
+        break
+    
+    wait(100)
+
+print("Programa terminado")
+```
+
+### Botones disponibles en PrimeHub:
+
+```python
+Button.CENTER    # Botón principal del Hub
+```
+
+---
+
+## 3. Estado del Robot (Odometría)
+
+**Situación:** Un taxi tiene un taxímetro que cuenta los kilómetros recorriddos. El robot puede hacer algo similar—saber cuántos milímetros ha avanzado y hacia dónde está orientado [2].
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait
+
+# Configurar robot
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)
+
+# Activar girómetro para mejor precisión
+robot.use_gyro(True)
+
+# Hacer algunos movimientos
+robot.straight(200)
+robot.turn(90)
+robot.straight(200)
+
+# Obtener estado actual del robot
+# (distancia_recorrida, velocidad, angulo, velocidad_giro)
+estado = robot.state()
+
+distancia = estado[0]  # mm recorridos
+velocidad = estado[1]  # mm/s
+angulo = estado[2]  # grados de orientación
+turn_rate = estado[3]  # deg/s
+
+print(f"Distancia: {distancia}mm")
+print(f"Velocidad: {velocidad}mm/s")
+print(f"Ángulo: {angulo}°")
+print(f"Turn rate: {turn_rate}°/s")
+```
+
+### Estado completo del robot:
+
+```python
+# robot.state() retorna:
+# [distancia_mm, velocidad_mm/s, angulo_grados, turn_rate_grados/s]
+
+estado = robot.state()
+distancia_recorrida = estado[0]  # Cuánto ha avanzado total
+velocidad_actual = estado[1]    # Velocidad instantán
+angulo_actual = estado[2]        # Orientación actual del robot
+velocidad_giro = estado[3]      # Qué tan rápido está girando
+```
+
+### Resetear odometría:
+
+```python
+# Resetear todo el contador de posición
+robot.reset()
+
+# También puedes resetear solo el ángulo
+# ( pero manteniendo la posición )
+robot.reset(angle=True)
+```
+
+---
+
+## 4. Logging de Datos
+
+**Situación:** En una carrera, los competidores tienen "cajas negras" que graban todo. Puedes hacer lo mismo con el robot—guardar datos para analizarlos después [1].
+
+### Código ejemplo simple:
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import UltrasonicSensor
+from pybricks.parameters import Port
+from pybricks.tools import wait
+import ure  # módulo de MicroPython para expresiones regulares
+
+hub = PrimeHub()
+sensor = UltrasonicSensor(Port.D)
+
+# Lista para almacenar datos
+datos = []
+
+# Recolectar datos durante 30 segundos
+tiempo_inicio = 0  # Placeholder, se会用time.ticks_ms()
+
+for i in range(100):  # 100 muestras
+    distancia = sensor.distance()
+    voltaje = hub.battery.voltage()
+    
+    # Guardar como texto (para ver después)
+    dato = f"{i},{distancia},{voltaje}"
+    datos.append(dato)
+    
+    print(f"Muestra {i}: dist={distancia}mm, bat={voltaje}mV")
+    wait(500)
+
+# Al final, mostrar todos los datos
+print("\n=== DATOS RECOLECTADOS ===")
+for d in datos:
+    print(d)
+```
+
+### Proyecto: Monitor de Temperatura (si hay sensor)
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+print("Iniciando monitor de sistema...")
+
+while True:
+    # Monitorear múltiples parámetros
+    voltaje = hub.battery.voltage()
+    botones = hub.buttons.pressed()
+    
+    # Verificar estado general
+    if voltaje < 6000:
+        print("⚠️ BATERÍA BAJA")
+        hub.light.on(0)  # Luz roja
+    else:
+        hub.light.on(5)  # Luz verde
+    
+    # Si hay botones presionados, mostrar
+    if botones:
+        print(f"Botones: {botones}")
+    
+    wait(1000)
+```
+
+---
+
+## 5. Proyecto: Robot con Telemetry Integrada
+
+**Situación:** Vamos a combine todo lo que aprendido—un robot que se mueve, monitorea su batería, y muestra su estado en pantalla.
+
+```python
+"""
+ROBOT TELEMETRÍA
+El robot se mueve y muestra información en tiempo real
+"""
+
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, UltrasonicSensor
+from pybricks.parameters import Port, Button
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, run_task
+
+hub = PrimeHub()
+
+# Configurar componentes
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+sensor = UltrasonicSensor(Port.D)
+robot = DriveBase(motor_izq, motor_der, 56, 112)
+
+robot.use_gyro(True)
+
+# Variable para comunicar entre tareas
+hay_obstaculo = False
+
+# Tarea 1: Monitorear sistema
+async def monitor():
+    global hay_obstaculo
+    
+    while True:
+        # Leer batería
+        voltaje = hub.battery.voltage()
+        
+        # Leer sensor de distancia
+        distancia = sensor.distance()
+        
+        # Actualizar variable compartida
+        if distancia < 150:
+            hay_obstaculo = True
+        else:
+            hay_obstaculo = False
+        
+        # Mostrar en consola
+        print(f"Bat:{voltaje}mV Dist:{distancia}mm Obst:{hay_obstaculo}")
+        
+        await wait(200)
+
+# Tarea 2: Movimiento del robot
+async def movimiento():
+    global hay_obstaculo
+    
+    robot.use_gyro(True)
+    
+    for i in range(4):  # 4 lados de un cuadrado
+        # Avanzar
+        if hay_obstaculo:
+            robot.stop()
+            hub.speaker.beep()
+            await robot.turn(90)
+        else:
+            await robot.straight(200)
+        
+        # Girar
+        await robot.turn(90)
+        
+        # Obtener estado
+        estado = robot.state()
+        print(f"Lado {i+1}: {estado[0]}mm, {estado[2]}°")
+    
+    robot.stop()
+    print("¡Movimiento completado!")
+
+# Ejecutar ambas tareas
+run_task(monitor(), movimiento())
+```
+
+---
+
+## 📋 Lo que aprendiste
+
+Antes de terminar, marca lo que entendiste:
+
+- [ ] Monitorear voltaje y corriente de batería
+- [ ] Detectar cuándo la batería está baja
+- [ ] Leer botones del Hub
+- [ ] Obtener estado del robot (distancia, ángulo, velocidad)
+- [ ] Resetear odometría
+- [ ] Hacer logging de datos
+
+---
+
+## Referencias
+
+[1] Pybricks Team. (2023). *Pybricks Documentation - PrimeHub*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html
+
+[2] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+
+[3] LEGO Education. (2023). *LEGO Education SPIKE Prime - Battery Specifications*. LEGO. Disponible: https://lego.com
+
+[4] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+
+[5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+---
+
+*En la siguiente unidad: Usando Thonny como debugger profesional.*

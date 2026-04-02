@@ -1,130 +1,247 @@
-# Validación de Ingeniería: Fase 5 {#quiz-unidad5}
+---
+title: "🎮 Quiz Unidad 5: Proyecto Final"
+description: "🏆 ¡La Evaluación Final del Arquitecto!"
+---
+
+# 🎮 Quiz Unidad 5: Proyecto Final {#quiz-unidad5}
 
 ::: center
 ![Certificación Final](images/robot-espi32-cartoon.png){width="20%"}
 
-**🏆 Evaluación Final: Maestría del Arquitecto**
+### 🏆 EVALUACIÓN FINAL: MAESTRÍA DEL ARQUITECTO 🏆
+
 :::
 
-## Protocolo de Evaluación: Proyecto Integrador
+## 📊 Tu Progreso - ¡ÚLTIMA FASE!
 
-Demuestra tu capacidad para integrar todos los conceptos aprendidos en un sistema robótico autónomo funcional.
+```
+[████████████████████] 100% - ¡DESAFÍO FINAL!
+XP ganado: 525 | XP para MAESTRO: 475 más
+```
+
+### 🏅 Insignias en Juego (¡VALOR TRIPLE!)
+
+| 📋 Planificador | 🔧 Constructor | 🎥 Presentador | 🎤 Comunicador | 🏆 Graduado |
+|:---:|:---:|:---:|:---:|:---:|
+| +50 XP | +100 XP | +50 XP | +50 XP | +100 XP |
+
+---
+
+## 📝 Preguntas Teóricas
 
 ::: {.quizdown}
 
-### Integración de Sistemas
+### 🧠 Pregunta 1: Integración de Sistemas (25 XP)
+
 ¿Qué componente es EL CENTRO DE CONTROL que orchestra todas las funciones del robot en Pybricks?
 
-- [ ] Motor()
-- [x] PrimeHub()
-- [ ] DriveBase()
-- [ ] UltrasonicSensor()
+- [ ] Motor() ⚙️
+- [x] 🧠 PrimeHub() (El Cerebro)
+- [ ] DriveBase() 🚗
+- [ ] UltrasonicSensor() 👁️
 
-> El Hub es el cerebro central que gestiona LEDs, botones, speaker, IMU y comunicación.
+> 💡 **Pista:** El Hub es el cerebro central que gestiona LEDs, botones, speaker, IMU y comunicación [1]. ¡Sin cerebro no hay robot! 🧠
 
-### Cinemática y Giroscopio
-Para lograr que un robot recorra una línea recta perfecta, ¿qué configuración es OBLIGATORIA?
-
-- [ ] Usar dos motores idénticos.
-- [x] Activar `use_gyro(True)` en DriveBase.
-- [ ] Aumentar la velocidad al máximo.
-- [ ] Usar sensores de color.
-
-> Sin el giroscopio, el robot drifteará 15-20% de error en trayectoria.
-
-### Programación Asíncrona
-En un sistema de navegación autónoma con detección de obstáculos, ¿cuál es el propósito de `await wait(50)` dentro de un loop async?
-
-- [ ] Hacer el código más lento.
-- [x] Evitar bloquear la CPU permitiendo que otras tareas se ejecuten.
-- [ ] Dar tiempo al sensor para medir.
-- [ ] Crear una pausa dramática.
-
-> El await wait() permite que el scheduler de tareas cambie a otras corrutinas.
-
-### Matriz de LEDs
-Si deseas mostrar una animación personalizada en la matriz 5x5, ¿cómo se representa cada píxel?
-
-- [ ] Como un color RGB.
-- [x] Como un valor de brillo (0-100) en una matriz 5x5.
-- [ ] Como una coordenada (x,y) individual.
-- [ ] Como un icono predefinido.
-
-> Cada LED se controla mediante una matriz de enteros de 0 (apagado) a 100 (máximo brillo).
-
-### Arquitectura de Código
-Según el estándar Statick, ¿cuál es el enfoque correcto para escribir código en sistemas embebidos?
-
-- [ ] Escribir todo en un solo archivo sin funciones.
-- [x] Modularizar con funciones reutilizables (DRY: Don't Repeat Yourself).
-- [ ] Copiar y pegar código de internet.
-- [ ] Usar solo variables globales.
-
-> Las funciones bien definidas permiten diagnóstico, testing y reutilización.
-
-### Diseño de Sistemas Embebidos
-Antes de escribir código para un robot, ¿cuál es el primer paso en la metodología Statick?
-
-- [ ] Escribir código inmediatamente.
-- [x] Definir la arquitectura del sistema y los requisitos.
-- [ ] Comprar el hardware más caro.
-- [ ] Copiar código de ejemplo.
-
-> "No estamos aquí para enseñar sintaxis; estamos aquí para diseñar sistemas."
-
-### Resolución de Problemas
-Tu robot no responde a los comandos. Según el troubleshooting, ¿cuál es el PRIMER paso para diagnosticar?
-
-- [ ] Cambiar el cable USB.
-- [x] Verificar conexión en IDE y voltaje de batería.
-- [ ] Reformatear el Hub.
-- [ ] Comprar otro robot.
-
-> El diagnóstico clínico siempre comienza por verificar las conexiones y energía.
-
-### Feedback Visual
-¿Cuál es la mejor manera de comunicar el estado del sistema al usuario durante la ejecución?
-
-- [ ] No mostrar nada, el robot debe trabajar en silencio.
-- [x] Usar LEDs, matriz de display y speaker para feedback continuo.
-- [ ] Solo usar la consola serial.
-- [ ] Esperar a que termine para mostrar resultados.
-
-> En sistemas embebidos, el feedback visual/sonoro es la única interfaz con el usuario.
-
-:::
 ---
 
-## 🔐 Validación Anti-AI: Proyecto Final (OBLIGATORIA)
+### 📐 Pregunta 2: Cinemática y Giroscopio (25 XP)
 
-### 📋 Requisitos de Entrega:
+Para lograr que un robot recorra una línea recta perfecta, ¿qué configuración es OBLIGATORIA?
+
+- [ ] Usar dos motores idénticos ⚙️⚙️
+- [x] 🎯 Activar `use_gyro(True)` en DriveBase
+- [ ] Aumentar la velocidad al máximo 🚀
+- [ ] Usar sensores de color 🌈
+
+> 💡 **Pista:** Sin el giroscopio, el robot drifteará 15-20% de error en trayectoria [2]. ¡Sin giro = borracho robot! 🍺
+
+---
+
+### ⚡ Pregunta 3: Programación Asíncrona (25 XP)
+
+En un sistema de navegación autónoma, ¿cuál es el propósito de `await wait(50)` dentro de un loop async?
+
+- [ ] Hacer el código más lento 🐢
+- [x] ⚡ Evitar bloquear la CPU
+- [ ] Dar tiempo al sensor para medir 👁️
+- [ ] Crear una pausa dramática 🎭
+
+> 💡 **Pista:** El `await wait()` permite que el scheduler de tareas cambie a otras corrutinas [3]. ¡Multitasking real! 🤹
+
+---
+
+### 💡 Pregunta 4: Matriz de LEDs (25 XP)
+
+Si deseas mostrar una animación en la matriz 5x5, ¿cómo se representa cada píxel?
+
+- [ ] Como un color RGB 🎨
+- [x] 💡 Como un valor de brillo (0-100)
+- [ ] Como una coordenada (x,y) 📍
+- [ ] Como un icono predefinido 🖼️
+
+> 💡 **Pista:** Cada LED se controla mediante una matriz de enteros de 0 (apagado) a 100 (máximo brillo) [4]. ¡Tu canvas digital! 🎨
+
+---
+
+### 🏗️ Pregunta 5: Arquitectura de Código (25 XP)
+
+¿Cuál es el enfoque correcto para escribir código en sistemas embebidos?
+
+- [ ] Todo en un solo archivo 📄
+- [x] 🧩 Modularizar con funciones (DRY)
+- [ ] Copiar y pegar de internet 📋
+- [ ] Solo variables globales 🌍
+
+> 💡 **Pista:** Las funciones bien definidas permiten diagnóstico, testing y reutilización [5]. ¡Clean Code es Cool Code! 😎
+
+---
+
+### 🎯 Pregunta 6: Diseño de Sistemas (25 XP)
+
+¿Cuál es el PRIMER paso en la metodología Statick antes de escribir código?
+
+- [ ] Escribir código inmediatamente ⌨️
+- [x] 📋 Definir arquitectura y requisitos
+- [ ] Comprar el hardware más caro 💰
+- [ ] Copiar código de ejemplo 📑
+
+> 💡 **Pista:** "No estamos aquí para enseñar sintaxis; estamos aquí para diseñar sistemas" [6]. ¡Planificar es Vencer! 🏆
+
+---
+
+### 🔧 Pregunta 7: Resolución de Problemas (25 XP)
+
+Tu robot no responde. ¿Cuál es el PRIMER paso para diagnosticar?
+
+- [ ] Cambiar el cable USB 🔌
+- [x] 🔋 Verificar conexión en IDE y voltaje de batería
+- [ ] Reformatear el Hub 💿
+- [ ] Comprar otro robot 🛒
+
+> 💡 **Pista:** El diagnóstico clínico siempre comienza por verificar las conexiones y energía [7]. ¡KISS: Keep It Simple, Stupid! 🤓
+
+---
+
+### 💬 Pregunta 8: Feedback Visual (25 XP)
+
+¿Cuál es la mejor manera de comunicar el estado del sistema al usuario?
+
+- [ ] No mostrar nada 🤫
+- [x] 🎨 Usar LEDs, display y speaker
+- [ ] Solo consola serial 📺
+- [ ] Esperar a que termine ⏳
+
+> 💡 **Pista:** En sistemas embebidos, el feedback visual/sonoro es la única interfaz con el usuario [1]. ¡Tu robot debe hablar! 🗣️
+
+:::
+
+---
+
+## 🔐 Validación Anti-AI: Proyecto Final (OBLIGATORIA) 🛡️
+
+### 📋 Requisitos de Entrega
 
 Para aprobar el proyecto final, DEBES entregar:
 
-- [ ] **Video de 2-3 minutos:** Demostrando el robot ejecutando tu proyecto
-- [ ] **Código fuente:** Archivo `.py` con tu nombre como variable `piloto`
-- [ ] **Diagrama de arquitectura:** Dibujo a mano de cómo funcionan los subsistemas
-- [ ] **Explicación oral (5 minutos):** Graba un video explicando:
-  - ¿Cómo integraste las 4 fases del curso?
-  - ¿Qué desafíos enfrentaste y cómo los resolviste?
-  - ¿Qué harías diferente si lo reheyeras?
+| # | Requisito | Formato | Puntos |
+|---|-----------|---------|--------|
+| 1 | 🎥 Video demo | 2-3 minutos | 25 |
+| 2 | 💻 Código fuente | .py con variable `piloto` | 25 |
+| 3 | 📐 Diagrama arquitectura | Dibujo a mano | 25 |
+| 4 | 🎤 Explicación oral | Video 5 minutos | 25 |
 
-### 🎤 Guía de Presentación Oral:
+### 🎤 Guía de Presentación Oral
 
 ```
-"Para mi proyecto integrador, diseñé un sistema que combina:
-1. Fase 1: Entorno Pybricks configurado
-2. Fase 2: Feedback visual con matriz 5x5
-3. Fase 3: Navegación con giroscopio para trayectorias precisas
-4. Fase 4: Telemetría asíncrona para detección de obstáculos
-
-El mayor desafío fue lograr que el robot detectara obstáculos
-mientras se movía sin detenerse. La solución fue usar run_task()
-para ejecutar ambas tareas en paralelo..."
+╔══════════════════════════════════════════════════════╗
+║        🎤 GUIA DE PRESENTACIÓN ORAL 🎤              ║
+╠══════════════════════════════════════════════════════╣
+║                                                      ║
+║  "Para mi proyecto integrador, diseñé un sistema    ║
+║  que combina:                                        ║
+║                                                      ║
+║  1. 🔌 Fase 1: Entorno Pybricks configurado         ║
+║  2. 💡 Fase 2: Feedback visual con matriz 5x5       ║
+║  3. 🤖 Fase 3: Navegación con giroscopio            ║
+║  4. 📡 Fase 4: Telemetría asíncrona                 ║
+║                                                      ║
+║  El mayor desafío fue... [tu experiencia]            ║
+║  La solución fue... [tu aprendizaje]                 ║
+║  Si lo rehiciese... [reflexión]                      ║
+║                                                      ║
+╚══════════════════════════════════════════════════════╝
 ```
 
 > ⚠️ **SIN video físico + explicación oral, el proyecto NO se acepta.**
 
 ---
 
-*Desarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026*
+## 🏆 Resumen de Recompensas
+
+| Pregunta | XP Ganada |
+|----------|-----------|
+| Pregunta 1 ✅ | +25 |
+| Pregunta 2 ✅ | +25 |
+| Pregunta 3 ✅ | +25 |
+| Pregunta 4 ✅ | +25 |
+| Pregunta 5 ✅ | +25 |
+| Pregunta 6 ✅ | +25 |
+| Pregunta 7 ✅ | +25 |
+| Pregunta 8 ✅ | +25 |
+| **Total Quiz** | **+200** |
+
+### 🎯 ¡Objetivos del Proyecto!
+
+| Objetivo | Recompensa |
+|----------|------------|
+| ✅ Completar Quiz (100%) | +200 XP |
+| ⬜ Entregar Video | +50 XP 🎥 |
+| ⬜ Entregar Código | +100 XP 💻 |
+| ⬜ Entregar Diagrama | +50 XP 📐 |
+| ⬜ Presentación Oral | +50 XP 🎤 |
+| ⬜ Proyecto Aprobado | +100 XP 🏆 |
+| **TOTAL PROYECTO** | **+550 XP** |
+
+---
+
+## 🎓 ¡FELICITACIONES GRADUADO!
+
+```
+╔══════════════════════════════════════════════════════════╗
+║                                                          ║
+║         🎓 ¡FELICITACIONES GRADUADO! 🎓                 ║
+║                                                          ║
+║         Has completado el curso de MicroPython           ║
+║         para el Aula de Informática                      ║
+║                                                          ║
+║         Tu viaje: 🌱 → 🔍 → 💻 → ⚙️ → 🏗️ → 🎓 → 👑      ║
+║                                                          ║
+║         Recuerda: El aprendizaje no termina aquí.        ║
+║         ¡Sigue explorando, creando y enseñando!          ║
+║                                                          ║
+║         🤖 Diego Saavedra - Abacom 2026 🤖              ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+```
+
+---
+
+## Referencias
+
+[1] Pybricks Team. *Pybricks MicroPython API Reference - PrimeHub*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#primehub
+
+[2] Pybricks Team. *Pybricks MicroPython - DriveBase with Gyro*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase
+
+[3] Python Software Foundation. *asyncio — Asynchronous I/O*. 2026. Disponible en: https://docs.python.org/3/library/asyncio.html
+
+[4] Pybricks Team. *Pybricks MicroPython - LightMatrix*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#lightmatrix
+
+[5] Martin, R. C. *Clean Code: A Handbook of Agile Software Craftsmanship*. Prentice Hall, 2008.
+
+[6] Saavedra, D. *Metodología Statick para Sistemas Embebidos*. Abacom Capacitación, 2026.
+
+[7] Pybricks Team. *Pybricks Troubleshooting Guide*. 2026. Disponible en: https://docs.pybricks.com/en/latest/troubleshooting.html
+
+---
+
+*🎮 Quiz Unidad 5 - MicroPython para el Aula - Diego Saavedra 2026* 🎓

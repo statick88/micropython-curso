@@ -1,304 +1,229 @@
-# Laboratorio 3.1: Navegación con Giroscopio {#lab3-navegacion}
+# Laboratorio 3: El robot que dibuja un cuadrado {#lab3-navegacion}
 
 ::: center
-![Lab 3.1](images/servo-motor-cartoon.png){width="25%"}
+![Lab 3](images/robot-cuadrado.png){width="30%"}
 
-**⚡ Nivel:** Intermedio-Avanzado | **⏱️ Tiempo:** 45 minutos
+**⏱️ Tiempo estimado:** 45 minutos | **📊 Nivel:** Intermedio
 :::
 
 ---
 
-## Objetivo del Laboratorio
+## Antes de empezar
 
-Implementar navegación de precisión utilizando el sensor giroscopio del Hub para lograr trayectorias rectas y giros exactos, indispensable para competencias de robot.
+¿Alguna vez has visto cómo funciona un robot barredor? Va advancing, gira, avanza de nuevo, gira... parece que sabe hacer un cuadrado.
 
----
-
-## Fundamentos de Ingeniería
-
-### ¿Por qué necesitamos el giroscopio?
-
-Los motores LEGO, por sí solos, tienen **juego mecánico** (backlash). Esto significa que:
-
-```
-SIN Giroscopio:                    CON Giroscopio:
-┌─────────────────────┐            ┌─────────────────────┐
-│  Motor Izq ████     │            │  Motor Izq ████    │
-│  Motor Der ████     │  ──────►   │  Motor Der ████    │
-│                     │   Error:   │  + Gyro Feedback   │
-│ Trayectoria:        │   15-20%   │  Trayectoria:      │
-│ ════════════►       │            │  ════════════►     │
-│                     │            │  Error: < 2%      │
-└─────────────────────┘            └─────────────────────┘
-```
+Hoy vas a hacer que tu robot haga exactamente eso: dibujar un cuadrado [1][2].
 
 ---
 
-## Materiales Requeridos
+## Materiales
 
-| Componente | Especificación |
-|------------|-----------------|
-| **Hub** | SPIKE Prime (con IMU integrado) |
-| **Motores** | 2x Motor grande en puertos A y B |
-| **Chasis** | Configuración estándar de robot |
-| **Cable** | USB LEGO |
+| Material | Para qué |
+|----------|----------|
+| **Hub LEGO Technic** | El cerebro del robot |
+| **2 Motores grandes** | Las "ruedas" del robot |
+| **Chasis armado** | La estructura del robot |
+| **Cable USB** | Conexión a Thonny [1] |
 
 ---
 
-## ⚡ Procedimiento Paso a Paso
+## Paso 1: Presentar los motores al robot
 
-### Paso 1: Configuración del DriveBase (10 minutos)
+**Tiempo estimado: 10 minutos**
+
+Antes de pedirle al robot que se mueva, necesita saber qué motores tiene y cómo están conectados [2].
+
+Abre Thonny y escribe:
 
 ```python
-from pybricks.pupdevices import Motor # <1>
-from pybricks.parameters import Port, Direction # <2>
-from pybricks.robotics import DriveBase # <3>
-from pybricks.tools import wait # <4>
-
-motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE) # <5>
-motor_der = Motor(Port.B) # <6>
-
-robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112) # <7>
-
-def configurar_sistema():
-    """Inicialización con compensación giroscópica."""
-    
-    robot.use_gyro(True) # <8>
-    
-    robot.settings(
-        straight_speed=200, # <9>
-        straight_acceleration=300, # <10>
-        turn_speed=180, # <11>
-        turn_acceleration=450 # <12>
-    )
-    
-    print(">>> Sistema configurado con gyro: ON")
-    print(f">>> Speed: {robot.settings.straight_speed} mm/s")
-
-if __name__ == "__main__":
-    configurar_sistema() # <13>
-    robot.straight(200) # <14>
-    robot.stop() # <15>
-```
-
-1.  Importamos el control de motores LEGO.
-2.  Configuración de puertos y dirección de rotación.
-3.  Cargamos el módulo de cinemática diferencial.
-4.  Herramienta para pausas controladas.
-5.  Motor en Puerto A - requiere inversión (ruedas derechas).
-6.  Motor en Puerto B - configuración estándar.
-7.  DriveBase: definimos dimensiones físicas del robot.
-8.  **CRÍTICO:** Activamos el giroscopio para trayectorias rectas.
-9.  Velocidad lineal en mm/segundo.
-10. Aceleración lineal en mm/segundo².
-11. Velocidad angular en grados/segundo.
-12. Aceleración angular en grados/segundo².
-13. Inicializamos el sistema.
-14. Movemos el robot 200mm (20cm).
-15. Frenamos el robot - operación de seguridad.
-
----
-
-### Paso 2: Navegación Cuadrada (15 minutos)
-
-```python
+# Traer las herramientas
 from pybricks.pupdevices import Motor
-from pybricks.parameters import Port, Direction
+from pybricks.parameters import Port
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 
-robot = DriveBase(Motor(Port.A, Direction.COUNTERCLOCKWISE), 
-                 Motor(Port.B), wheel_diameter=56, axle_track=112)
+# Cada motor está conectado a un "puerto" (A o B)
+motor_izquierdo = Motor(Port.A)
+motor_derecho = Motor(Port.B)
 
-def cuadrado_perfecto(lado_mm=300, repeticiones=1):
-    """
-    Navega un cuadrado perfecto usando control giroscópico.
-    
-    Args:
-        lado_mm: Longitud de cada lado en milímetros
-        repeticiones: Cuántas veces repetir el cuadrado
-    """
-    robot.use_gyro(True)
-    robot.settings(straight_speed=200)
-    
-    for i in range(repeticiones):
-        print(f">>> Iteración {i+1}/{repeticiones}")
-        
-        # Avanzar lado 1
-        robot.straight(lado_mm)
-        wait(500)
-        
-        # Girar 90 grados
-        robot.turn(90)
-        wait(500)
-        
-        # Avanzar lado 2
-        robot.straight(lado_mm)
-        wait(500)
-        
-        # Girar 90 grados
-        robot.turn(90)
-        wait(500)
-        
-        # Avanzar lado 3
-        robot.straight(lado_mm)
-        wait(500)
-        
-        # Girar 90 grados
-        robot.turn(90)
-        wait(500)
-        
-        # Avanzar lado 4 (regreso a origen)
-        robot.straight(lado_mm)
-        
-        # Girar 90 grados para orientar como al inicio
-        robot.turn(90)
-        
-        # Stop final
-        robot.stop()
-        
-    print(">>> Cuadrado completado")
+# Ahora creamos algo que controle el movimiento del robot
+# Las ruedas miden 56mm y están separadas 112mm
+robot = DriveBase(motor_izquierdo, motor_derecho, 
+                  wheel_diameter=56, axle_track=112)
 
-if __name__ == "__main__":
-    cuadrado_perfecto(lado_mm=300, repeticiones=1)
+# Mensaje para saber que todo está bien
+print("¡Robot listo!")
 ```
+
+**Presiona Run.** Si todo está bien, verás "¡Robot listo!" en la parte inferior.
 
 ---
 
-### Paso 3: Optimización con Bucle For (10 minutos)
+## Paso 2: Activar el "sentido del equilibrio"
 
-El código anterior tiene repetición innecesaria. Refactoriza:
+**Tiempo estimado: 5 minutos**
+
+¿Recuerdas cuando caminabas en línea recta con los ojos cerrados? Te desviabas, ¿verdad?
+
+El robot tiene algo que le ayuda a no desviarse—como un sentido del equilibrio. Se llama **giroscopio** [2].
 
 ```python
-def cuadrado_optimizado(lado_mm=300, repeticiones=1):
-    """Versión optimizada con bucle."""
-    
-    robot.use_gyro(True)
-    robot.settings(straight_speed=250)  # Más rápido
-    
-    for ciclo in range(repeticiones):
-        for lado in range(4):  # 4 lados = 1 cuadrado
-            robot.straight(lado_mm)
-            robot.turn(90)
-            wait(200)
-        
-        print(f">>> Cuadrado {ciclo+1} completado")
-    
-    robot.stop()
+# Activar el equilibrio del robot
+robot.use_gyro(True)
 
-# Ejercicio: modificar para hacer un OCTÁGONO (8 lados)
-def octagono(lado_mm=150):
-    """Navega un octágono regular."""
-    robot.use_gyro(True)
-    
-    for lado in range(8):
-        robot.straight(lado_mm)
-        robot.turn(45)  # 360/8 = 45 grados
-    
-    robot.stop()
+print("Equilibrio activado")
 ```
+
+Ahora el robot intentará ir lo más recto posible.
 
 ---
 
-### Paso 4: Telemetry en Tiempo Real (10 minutos)
+## Paso 3: Hacer que el robot avance y gire
+
+**Tiempo estimado: 10 minutos**
+
+Ahora vamos a probar los movimientos básicos [2]:
 
 ```python
-def navegacion_telemetria():
-    """Navegación con diagnóstico en tiempo real."""
-    
-    robot.use_gyro(True)
-    robot.settings(straight_speed=150)
-    
-    # ─────────────────────────────────────────────
-    # TELEMETRÍA: Monitoreo en tiempo real
-    # ─────────────────────────────────────────────
-    while True:
-        # Lectura de sensores
-        distancia = robot.distance()
-        angulo = robot.angle()
-        
-        # Mostrar en consola (tu HUD de diagnóstico)
-        print(f"Dist: {distancia}mm | Ángulo: {angulo}°")
-        
-        # Condición de parada
-        if distancia >= 500:  # 50cm
-            robot.stop()
-            print(">>> Destino alcanzado")
-            break
-        
-        wait(50)  # Update cada 50ms
+# Orden 1: "¡Avanza 20 centímetros!" (200 milímetros)
+robot.straight(200)
+wait(500)  # Esperar un poco
 
-if __name__ == "__main__":
-    navegacion_telemetria()
+# Orden 2: "¡Gira 90 grados a la derecha!"
+robot.turn(90)
+wait(500)
+
+# Orden 3: "¡Detente!"
+robot.stop()
 ```
 
-**Output Esperado:**
+**Observa al robot:**
+- ¿Avanzó aproximadamente 20 cm?
+- ¿Giró casi 90 grados?
+- ¿Se detuvo?
+
+---
+
+## Paso 4: Hacer algo varias veces (sin escribirlo 4 veces)
+
+**Situación:** ¿Y si quieres que el robot haga 4 veces lo mismo? ¿Escribes el código 4 veces?
+
+Hay una forma mejor. Es como cuando dices "repite esto 4 veces" [3].
+
+```python
+# Decir "haz esto 4 veces"
+for i in range(4):
+    robot.straight(200)  # Un lado del cuadrado
+    robot.turn(90)       # Girar en la esquina
+    # El robot vuelve al inicio del "for" automáticamente
+
+robot.stop()  # Detenerse al final
 ```
-Dist: 0mm | Ángulo: 0°
-Dist: 45mm | Ángulo: 0°
-Dist: 92mm | Ángulo: 1°
-Dist: 138mm | Ángulo: 0°
-...
-Dist: 498mm | Ángulo: 1°
->>> Destino alcanzado
+
+**¿Qué hace el robot?**
+
+```
+Repetición 1: Avanzar 20cm → Girar 90° (lado 1)
+Repetición 2: Avanzar 20cm → Girar 90° (lado 2)
+Repetición 3: Avanzar 20cm → Girar 90° (lado 3)
+Repetición 4: Avanzar 20cm → Girar 90° (lado 4)
+               ↑                ↑
+            inicio            final
+            del                del
+            cuadrado          cuadrado
+```
+
+**Si todo funciona bien, el robot habrá dibujado un cuadrado.**
+
+---
+
+## Código completo
+
+Aquí está todo junto:
+
+```python
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait
+
+# 1. Presentar los motores
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)
+
+# 2. Activar el equilibrio (giroscopio)
+robot.use_gyro(True)
+
+# 3. Dibujar un cuadrado (4 lados)
+for i in range(4):
+    robot.straight(200)  # Un lado de 20 cm
+    robot.turn(90)       # Girar 90°
+    wait(200)
+
+# 4. Detenerse
+robot.stop()
+print("¡Cuadrado completado!")
+```
+
+Copia esto en Thonny y presiona **Run**.
+
+---
+
+## 🔧 Si algo no funciona
+
+| Problema | Posible causa | Qué hacer |
+|----------|---------------|-----------|
+| El robot no avanza | Los motores no están en los puertos correctos | Verifica que el motor izq esté en Puerto A y el der en Puerto B |
+| El robot gira más de lo que debería | El giro está muy alto | Intenta con turn(85) en lugar de 90 |
+| El robot se desvía | No activaste el giroscopio | Asegúrate de usar robot.use_gyro(True) |
+| El robot hace un rectángulo | Los lados no son iguales | Verifica que straight(200) sea igual en todos los lados |
+
+---
+
+## 📋 Checklist de lo que lograste
+
+Marca lo que conseguiste:
+
+- [ ] El robot avanza en línea recta
+- [ ] El robot gira la cantidad correcta
+- [ ] El robot hace 4 veces lo mismo (sin escribirlo 4 veces)
+- [ ] El robot dibujó un cuadrado y regresó al inicio
+- [ ] El robot se detuvo al final
+
+---
+
+## 💡 Para seguir explorando
+
+**¿Qué otras formas podrías dibujar?**
+
+- **Triángulo:** 3 lados, girar 120° cada vez (360° / 3 = 120°)
+- **Octágono:** 8 lados, girar 45° cada vez (360° / 8 = 45°)
+- **Círculo:** muchos lados muy pequeños, o usar código diferente
+
+Intenta cambiar los números y observa qué pasa:
+
+```python
+# Un triángulo
+for i in range(3):
+    robot.straight(200)
+    robot.turn(120)  # 360° ÷ 3 = 120°
 ```
 
 ---
 
-## 🛠️ Centro de Diagnóstico
+## Referencias
 
-| Error | Síntoma | Causa | Solución |
-|-------|---------|-------|----------|
-| **"Drifts"** | Robot se sale de línea | Giroscopio no inicializado | Verificar `use_gyro(True)` |
-| **"Giro incompleto"** | Gira 85° en vez de 90° | Velocidad muy alta | Reducir `turn_speed` |
-| **"Motores no responden"** | Robot no se mueve | Puertos incorrectos | Cambiar A↔B |
-| **"Zigzag"** | Movimiento ondulante |ruedas desbalanceadas | Verificar presión de neumáticos |
-| **"overshoot"** | Pasa de la línea | Freno no configurado | Usar `robot.stop()` inmediato |
+[1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
 
----
+[2] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
 
-## 📋 Configuraciones de Velocidad por Escenario
+[3] D. George. (2013). *MicroPython Documentation - Control Structures*. MicroPython. Disponible: https://docs.micropython.org
 
-| Escenario | straight_speed | turn_speed | straight_accel |
-|-----------|----------------|------------|----------------|
-| **Laboratorio** | 150 mm/s | 90 °/s | 200 |
-| **Competición velocidad** | 400 mm/s | 300 °/s | 600 |
-| **Precisión** | 100 mm/s | 60 °/s | 150 |
-| **Superficie irregular** | 150 mm/s | 90 °/s | 200 |
+[4] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
+
+[5] Pybricks Team. (2023). *Pybricks Documentation - Motors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html
 
 ---
 
-## 🔐 Validación Anti-AI (OBLIGATORIA)
-
-### 📋 Checklist de Entrega:
-
-- [ ] **Video:** Robot haciendo un cuadrado de 30cm (4 lados)
-- [ ] **Foto:** Consola mostrando telemetría de distancia/ángulo
-- [ ] **Archivo Python:** Código con tu nombre en variable `piloto`
-- [ ] **Mapa de recorrido:** Dibujo a mano de la trayectoria real del robot
-
-### 🎤 Explicación Oral Requerida (3 minutos):
-
-Graba un video explicando:
-
-1. **¿Por qué `use_gyro(True)` es obligatorio?**
-2. **¿Qué sucede si no usas `robot.stop()` al final?**
-3. **¿Cómo compensarías una superficie resbaladiza?**
-
-> ⚠️ Sin video del robot físico + explicación oral, **NO se acepta**.
-
----
-
-## ✅ Checklist de Completado
-
-- [ ] DriveBase configurado con parámetros correctos
-- [ ] Robot avanza en línea recta (error < 2cm en 30cm)
-- [ ] Giros de 90° son exactos
-- [ ] Cuadrado completo funciona
-- [ ] Telemetría muestra distancia y ángulo
-- [ ] Tengo video físico del robot
-- [ ] Expliqué los conceptos oralmente
-
----
-
-*Desarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026*
+*Has completado el laboratorio de movimiento. Ahora tu robot puede dibujar formas moviéndose.*

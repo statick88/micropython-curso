@@ -1,0 +1,327 @@
+# Control Avanzado de Motores: PID, Calibración y Más {#motores-avanzados}
+
+::: center
+![Motores Avanzados](images/motores-avanzados.png){width="35%"}
+
+**⏱️ Tiempo estimado:** 60 minutos | **📊 Nivel:** Avanzado
+:::
+
+---
+
+## Antes de empezar
+
+Ya sabes cómo hacer que el robot avance y gire. Pero los motores tienen muchas más capacidades que quizás no conoces [1][2].
+
+En esta unidad vas a aprender:
+
+1. **Distintos modos de parada** — COAST, BRAKE, HOLD
+2. **Control PID** — Para movimientos más precisos
+3. **Calibración** — Medir y ajustar el robot
+4. **Distintos tipos de movimiento** — Por tiempo, ángulo, objetivo
+5. **DC Motors** — Control directo de potencia
+
+---
+
+## 1. Modos de Parada
+
+**Situación:** Cuando conduces un carro y sueltas el acelerador, el carro sigue moviéndose un poco antes de parar. Pero si frenas, se detiene inmediatamente. Lo mismo pasa con los motores [1].
+
+### Los tres modos:
+
+| Modo | Qué hace | Ejemplo de uso |
+|------|----------|----------------|
+| **COAST** | El motor se desliza freely | Robot que se mueve smoothly |
+| **BRAKE** | El motor frena activamente | Robot que necesita parar exacto |
+| **HOLD** | El motor mantiene su posición | Brazo robótico que sostiene algo |
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port, Stop
+from pybricks.tools import wait
+
+motor = Motor(Port.A)
+
+# Modo COAST (se desliza)
+motor.run(500)
+wait(1000)
+motor.stop(Stop.COAST)  # Se desliza antes de parar
+
+wait(1000)
+
+# Modo BRAKE (frena inmediatamente)
+motor.run(500)
+wait(1000)
+motor.stop(Stop.BRAKE)  # Se detiene inmediatamente
+
+wait(1000)
+
+# Modo HOLD (mantiene posición)
+motor.run_angle(500, 360, then=Stop.HOLD)  # Mantiene posición después de girar
+```
+
+### Cuándo usar cada uno:
+
+- **COAST**: Cuando quieres movimientos suaves, como un carro en una cuesta
+- **BRAKE**: Cuando necesitas parar rápido, como en una emergencia
+- **HOLD**: Cuando necesitas que el motor no se mueva, como sosteniendo un objeto
+
+---
+
+## 2. Distintos Tipos de Movimiento
+
+**Situación:** A veces quieres que el robot se mueva por X segundos, otras veces por X grados, y otras hasta que llegue a una posición específica. Cada método sirve para algo diferente [1].
+
+### Los métodos disponibles:
+
+| Método | Qué hace | Ejemplo |
+|--------|----------|---------|
+| `run(speed)` | Move forever at speed constant | Robot conduce infinitamente |
+| `run_time(speed, time_ms)` | Move for X milliseconds | Robot avanza por 3 segundos |
+| `run_angle(speed, angle)` | Move X degrees | Robot gira 90 grados |
+| `run_target(speed, target_angle)` | Move to specific angle | Robot va a posición 360° |
+| `run_until_stalled(speed)` | Move until it can't more | Robot busca límite físico |
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port, Stop
+from pybricks.tools import wait
+
+motor = Motor(Port.A)
+
+# run_time: ejecutar por tiempo específico
+# (velocidad en deg/s, tiempo en milisegundos)
+motor.run_time(300, 2000)  # 2 segundos a 300°/s
+wait(1000)
+
+# run_angle: ejecutar un ángulo específico
+# (velocidad, ángulo de rotación)
+motor.run_angle(300, 180, then=Stop.BRAKE)  # media vuelta
+wait(1000)
+
+# run_target: ejecutar hasta ángulo objetivo
+motor.run_target(300, 720, then=Stop.HOLD)  # dos vueltas completas
+wait(1000)
+
+# run_until_stalled: hasta que no pueda más
+# Útil para calibración o encontrar límite físico
+motor.run_until_stalled(100, then=Stop.HOLD)
+print(f"Giró hasta: {motor.angle()}°")
+```
+
+---
+
+## 3. Control PID - La magia detrás del movimiento preciso
+
+**Situación:** Cuando vas en bicicleta, usas el equilibrio para ajustar tu dirección constantemente. Los motores usan algo similar llamado PID — un algoritmo que ajusta la potencia para mantener la velocidad o posición deseada [1].
+
+### Qué es PID:
+
+- **P** (Proportional) — Ajusta según qué tan lejos estás del objetivo
+- **I** (Integral) — Ajusta según errores acumulados
+- **D** (Derivative) — Ajusta según qué tan rápido cambia el error
+
+### Por qué importa:
+
+Sin PID: El robot acelera/decelera bruscamente, se pasa del objetivo
+Con PID: El robot smooth accelerate/decelera, llega exacto al objetivo
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port
+from pybricks.tools import wait
+
+motor = Motor(Port.A)
+
+# Configurar parámetros PID
+# kp=proporcional, ki=integral, kd=derivativo
+motor.control.pid(
+    kp=1200,        # Ganancia proporcional
+    ki=0,           # Ganancia integral (0 = no usar)
+    kd=10,          # Ganancia derivativa
+    integral_range=45,    # Rango donde aplica integral
+    integral_rate=100      # Velocidad de acumulación integral
+)
+
+# También puedes configurar límites
+motor.control.limits(
+    speed=1000,          # Velocidad máxima (deg/s)
+    acceleration=2000,   # Aceleración máxima (deg/s²)
+    torque=75            # Torque máximo (%)
+)
+
+# Obtener configuración actual
+limites = motor.control.limits()
+print(f"Vel máx: {limites[0]}, Acel máx: {limites[1]}, Torque máx: {limites[2]}")
+```
+
+### Guía de ajustes PID:
+
+| Problema | Ajuste |
+|---------|--------|
+| El robot oscila mucho | Aumentar `kd` |
+| El robot llega lento al objetivo | Aumentar `kp` |
+| El robot nunca llega exacto | Aumentar `ki` |
+| El robot se pasa del objetivo | Reducir `kp` |
+
+---
+
+## 4. Estado del Motor en Tiempo Real
+
+**Situación:** Necesitas saber a qué velocidad va el motor, en qué ángulo está, y si está en movimiento. El motor siempre sabe su estado [1].
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port
+from pybricks.tools import wait
+
+motor = Motor(Port.A)
+
+# Mover el motor
+motor.run(500)
+wait(1000)
+
+# Leer estado actual
+angle = motor.angle()      # Ángulo actual (degrees)
+speed = motor.speed()      # Velocidad actual (deg/s)
+
+print(f"Ángulo: {angle}° | Velocidad: {speed}°/s")
+
+# Resetear el ángulo a 0
+motor.reset_angle(0)
+print(f"Después del reset: {motor.angle()}°")
+```
+
+### Funciones de estado:
+
+```python
+motor.angle()      # Get current angle in degrees
+motor.speed()     # Get current speed in deg/s
+motor.reset_angle(0)  # Reset angle counter to 0
+```
+
+---
+
+## 5. DC Motors - Control Directo
+
+**Situación:** A veces no necesitas precisión—solo quieres que el motor girar a cierta potencia, como un ventilador. Los DCMotors dan control directo de potencia [1].
+
+### Diferencia Motor vs DCMotor:
+
+| Característica | Motor (estándar) | DCMotor |
+|----------------|-------------------|---------|
+| Control | Velocidad y posición | Solo potencia (DC) |
+| Uso | Movimientos precisos | Ventiladores, bandas |
+| Retroalimentación | Con sensores | Sin sensores |
+
+### Código ejemplo:
+
+```python
+from pybricks.pupdevices import DCMotor
+from pybricks.tools import wait
+
+# Inicializar motor DC
+motor_dc = DCMotor(port="A")
+
+# Control de potencia (-100 a 100)
+# Positivo = una dirección
+# Negativo = dirección opuesta
+# Cero = parado
+
+while True:
+    # Velocidad media hacia adelante
+    motor_dc.dc(50)
+    wait(2000)
+    
+    # Parar (coast)
+    motor_dc.stop()
+    wait(1000)
+    
+    # Velocidad media hacia atrás
+    motor_dc.dc(-50)
+    wait(2000)
+    
+    # Parar (brake)
+    motor_dc.brake()
+    wait(1000)
+```
+
+---
+
+## 6. Calibración del Robot
+
+**Situación:** Cuando compras ruedas nuevas, su tamaño puede variar un poco. Necesitas calibrar el robot para que los movimientos sean exactos [1].
+
+### Cómo calibrar:
+
+```python
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+
+# Medir las ruedas y distancia entre ejes
+# wheel_diameter = 56mm (típico para LEGO)
+# axle_track = 112mm (distancia entre ruedas)
+
+# Crear drive base
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)
+
+# TEST: Hacer que el robot avance 1000mm
+robot.straight(1000)
+
+# MEDIR: Ver cuánto avanzó realmente
+# Ajustar según sea necesario:
+# - Si avanzó MENOS de 1000mm → aumentar wheel_diameter
+# - Si avanzó MÁS de 1000mm → reducir wheel_diameter
+```
+
+### Tabla de ajustes:
+
+| Problema | Ajuste |
+|---------|--------|
+| El robot avanza menos de lo esperado | Reducir `wheel_diameter` |
+| El robot avanza más de lo esperado | Aumentar `wheel_diameter` |
+| El robot gira menos de lo esperado | Aumentar `axle_track` |
+| El robot gira más de lo esperado | Reducir `axle_track` |
+
+---
+
+## 📋 Lo que aprendiste
+
+Antes de terminar, marca lo que entendiste:
+
+- [ ] Los tres modos de parada: COAST, BRAKE, HOLD
+- [ ] Los distintos métodos de movimiento: run, run_time, run_angle, run_target, run_until_stalled
+- [ ] Cómo funciona el control PID y para qué sirve
+- [ ] Cómo leer el estado del motor (angle, speed)
+- [ ] Cómo usar DCMotor para control directo
+- [ ] Cómo calibrar el robot para mayor precisión
+
+---
+
+## Referencias
+
+[1] Pybricks Team. (2023). *Pybricks Documentation - Motors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/motor.html
+
+[2] Pybricks Team. (2023). *Pybricks Documentation - DC Motor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/dcmotor.html
+
+[3] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+
+[4] LEGO Education. (2023). *LEGO Education SPIKE Prime - Motor Specifications*. LEGO. Disponible: https://lego.com
+
+[5] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+
+[6] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+---
+
+*En la siguiente unidad: Telemetría y monitoreo de batería.*

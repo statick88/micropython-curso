@@ -1,0 +1,348 @@
+# Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales {#thonny-debugger}
+
+::: center
+![Thonny Debugger](images/thonny-debugger.png){width="35%"}
+
+**📚 Herramientas de Desarrollo Profesional**
+:::
+
+---
+
+## Antes de empezar
+
+Hasta ahora has ejecutado código y visto los resultados. Pero cuando las cosas no funcionan, ¿cómo averiguas qué está mal? [1][2]
+
+Los profesionales usan **debuggers** — herramientas que te permiten:
+- Ejecutar código paso a paso
+- Ver el valor de variables en tiempo real
+- Detener el código en puntos específicos
+- Entender exactamente qué está pasando
+
+Thonny tiene un debugger incorporado diseñado específicamente para principiantes [1].
+
+---
+
+## 1. El Modo "Nicer" de Thonny
+
+**Situación:** Imagina que estás aprendiendo a conducir. Un instructor te dice: "Voy a explicarte cada movimiento antes de que lo hagas". El modo "Nicer" de Thonny hace lo mismo con tu código [1].
+
+### Cómo activarlo:
+
+1. Abre tu programa en Thonny
+2. Ve al menú **Run**
+3. Selecciona **"Debug current script (nicer)"**
+4. O simplemente presiona **Ctrl + F5**
+
+### Qué verás:
+
+```
+┌─────────────────────────────────────────────┐
+│  Thonny - Debug Mode                        │
+│  ┌─────────────────────────────────────┐  │
+│  │ # Tu código se resaltará línea por   │  │
+│  │ # línea mientras se ejecuta          │  │
+│  │                                     │  │
+│  │ ▶ 1: conteo = 0                     │  ← Ejecutando
+│  │   2: for i in range(5):             │  │
+│  │   3:     print(i)                   │  │
+│  └─────────────────────────────────────┘  │
+│                                             │
+│  ┌─────────────────────────────────────┐  │
+│  │ Variables:                          │  │
+│  │   conteo = 0                        │  │
+│  └─────────────────────────────────────┘  │
+└─────────────────────────────────────────────┘
+```
+
+---
+
+## 2. Step Over vs Step Into
+
+Cuando estás en modo debug, tienes dos formas de avanzar [1]:
+
+### Step Over (F6) — "Saltar"
+Ejecuta la línea actual y pasa a la siguiente **sin entrar** dentro de las funciones.
+
+```python
+def saludar(nombre):
+    return "Hola " + nombre
+
+# Step Over aquí:
+resultado = saludar("Ana")  # Se ejecuta completa, no entramos
+print(resultado)
+```
+
+### Step Into (F7) — "Entrar"
+Ejecuta la línea actual Y **entra** dentro de las funciones para ver qué pasa internamente.
+
+```python
+def saludar(nombre):
+    return "Hola " + nombre
+
+# Step Into aquí:
+resultado = saludar("Ana")  # Entramos a la función
+# Ahora vemos: return "Hola " + "Ana"
+```
+
+### Cuándo usar cada uno:
+
+| Método | Cuándo usar |
+|--------|-------------|
+| **Step Over** | Cuando confías que la función funciona y quieres ir rápido |
+| **Step Into** | Cuando quieres entender exactamente qué hace una función |
+
+---
+
+## 3. El Inspector de Variables
+
+**Situación:** Cuando一辆 car tiene problemas, el mecánico revisa el tablero. El Inspector de Variables de Thonny es como ese tablero—te muestra todo lo que está pasando [1].
+
+### Cómo abrirlo:
+
+1. Inicia el debugger (Ctrl + F5)
+2. Mira el panel de la derecha o abajo
+
+### Qué verás:
+
+```
+┌──────────────────────────────────────┐
+│ Variables                           │
+├──────────────────────────────────────┤
+│ ▶ Global variables                  │
+│    nombre = "Ana"                  │
+│    edad = 15                        │
+│    notas = [7, 8, 9]               │
+│ ▶ Local (saludar)                  │
+│    nombre = "Carlos"               │
+└──────────────────────────────────────┘
+```
+
+### Cosas importantes:
+
+- **Globals** = Variables definidas fuera de funciones
+- **Local** = Variables dentro de la función actual
+- Los valores se actualizan automáticamente mientras ejecutas
+
+---
+
+## 4. Breakpoints — Parar en el lugar correcto
+
+**Situación:** En una película, puedes saltar a una escena específica. Los breakpoints te permiten saltar a un punto específico de tu código [1].
+
+### Cómo poner un breakpoint:
+
+1. Haz clic en el margen izquierdo de la línea
+2. Verás un punto rojo 🔴
+
+```
+1: conteo = 0          ← Breakpoint aquí
+2: for i in range(5):
+3:     print(i)
+4:     conteo += 1
+5: print(conteo)
+```
+
+### Cuando ejecutas el código:
+
+- El código corre normal hasta llegar al breakpoint
+- Se detiene ahí y puedes:
+  - Ver variables
+  - Hacer Step Over/Into
+  - Continuar hasta el siguiente breakpoint
+
+### Usos prácticos:
+
+- Detener el código justo antes de un error
+- Ver el valor de una变量 en un momento específico
+- Ejecutar el código hasta un punto y luego continuar normalmente
+
+---
+
+## 5. Ejemplo Práctico: Debugging de un Error
+
+**Situación:** Tienes este código que no funciona:
+
+```python
+# Programa con error
+def calcular_promedio(notas):
+    total = 0
+    for nota in notas:
+        total = total + nota
+    promedio = total / len(notas)
+    return promedio
+
+resultado = calcular_promedio([7, 8, 9])
+print(f"El promedio es: {resultado}")
+```
+
+### Cómo usar el debugger para encontrar el error:
+
+**Paso 1:** Pon un breakpoint en la primera línea de la función
+
+**Paso 2:** Inicia el debugger (Ctrl + F5)
+
+**Paso 3:** Usa Step Into (F7) para avanzar línea por línea
+
+**Paso 4:** Observa las variables en cada paso:
+
+```
+→ [1] def calcular_promedio(notas):
+→ [2]     total = 0
+         total = 0
+    
+→ [3]     for nota in notas:
+→ [4]         total = total + nota
+         total = 7   ← Primera iteración
+         
+→ [4]         total = total + nota
+         total = 15  ← Segunda iteración
+         
+→ [4]         total = total + nota
+         total = 24  ← Tercera iteración
+```
+
+**Paso 5:** Cuando llegues al resultado, verifica que sea correcto
+
+---
+
+## 6. Errores Comunes y Cómo Usar el Debugger
+
+### Error 1: "NameError: name 'x' is not defined"
+
+**Síntoma:** El código dice que una variable no existe
+
+**Cómo debuggear:**
+1. Busca la línea del error
+2. Verifica que la variable esté definida ANTES de usarla
+3. ¿Tal vez olvidaste inicializarla?
+
+```python
+# Error:
+print(nombre)  # nombre no existe
+
+# Corrección:
+nombre = "Ana"
+print(nombre)  # Ahora sí existe
+```
+
+### Error 2: "IndexError: list index out of range"
+
+**Síntoma:** Estás intentando acceder a una posición que no existe
+
+**Cómo debuggear:**
+1. Pon un breakpoint antes del error
+2. Mira la lista: ¿cuántos elementos tiene?
+3. ¿Estás pidiendo un índice mayor al tamaño?
+
+```python
+notas = [7, 8, 9]  # 3 elementos (índices 0, 1, 2)
+
+print(notas[5])  # Error! Solo hay índices 0-2
+```
+
+### Error 3: "TypeError: unsupported operand type"
+
+**Síntoma:** Estás sumando cosas que no se pueden sumar
+
+**Cómo debuggear:**
+1. Mira los tipos de las variables
+2. ¿Estás sumando un texto + número?
+
+```python
+edad = 15
+mensaje = "Tengo " + edad + " años"  # Error!
+# No puedes concatenar str + int
+
+# Corrección:
+mensaje = "Tengo " + str(edad) + " años"
+```
+
+---
+
+## 7. Tips y Trucos de Thonny
+
+### Atajos de teclado esenciales:
+
+| Atajo | Acción |
+|-------|--------|
+| Ctrl + F5 | Iniciar debugger (modo nicer) |
+| F6 | Step Over (saltar función) |
+| F7 | Step Into (entrar a función) |
+| F8 | Continue (ejecutar hasta siguiente breakpoint) |
+| Ctrl + F2 | Detener debugger |
+
+### Panel de llamada (Call Stack):
+
+Cuando el código entra en muchas funciones, el "Call Stack" te muestra el camino:
+
+```
+Call Stack:
+  → main() [línea 10]
+    → calcular_promedio() [línea 3]
+      → imprimir_resultado() [línea 7]
+```
+
+### El terminal de Thonny:
+
+A veces el debugger no es suficiente — puedes usar print statements estratégicamente:
+
+```python
+def mi_funcion(dato):
+    print(f"DEBUG: dato = {dato}")  # Ver valor
+    print(f"DEBUG: tipo = {type(dato)}")  # Ver tipo
+    # ... resto del código
+```
+
+---
+
+## 8. Ejercicio: Encuéntrale el Error
+
+**Situación:** Este código debería mostrar los números del 1 al 5, pero no funciona:
+
+```python
+def contar_hasta(cuantos):
+    numeros = []
+    for i in range(cuantos):
+        numeros.append(i)
+    return numeros
+
+resultado = contar_hasta(5)
+print(resultado)
+```
+
+### Preguntas para responder con el debugger:
+
+1. ¿Qué valor tiene `i` en cada iteración?
+2. ¿Qué tiene la lista `numeros` al final?
+3. ¿Por qué el resultado muestra `[0, 1, 2, 3, 4]` en lugar de `[1, 2, 3, 4, 5]`?
+
+---
+
+## 📋 Checklist de Debugging
+
+Antes de terminar, marca lo que puedes hacer:
+
+- [ ] Iniciar el debugger con Ctrl + F5
+- [ ] Usar Step Over (F6) para avanzar rápido
+- [ ] Usar Step Into (F7) para entrar a funciones
+- [ ] Poner y quitar breakpoints
+- [ ] Leer el Inspector de Variables
+- [ ] Encontrar y corregir errores comunes
+
+---
+
+## Referencias
+
+[1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[2] Thonny Team. (2024). *Thonny Debugging Documentation*. Thonny. Disponible: https://thonny.org
+
+[3] Python Software Foundation. (2024). *Python Tutorial - Debugging*. Python. Disponible: https://docs.python.org/es/3/tutorial/debugging.html
+
+[4] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
+
+[5] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+
+---
+
+*Ahora tienes las herramientas profesionales para resolver cualquier bug como un experto.*

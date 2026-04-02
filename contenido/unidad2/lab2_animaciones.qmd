@@ -1,261 +1,287 @@
-# Laboratorio 2.1: Animaciones en Matriz 5x5 {#lab2-animaciones}
+# Laboratorio 2: Haciendo que las imágenes se muevan {#lab2-animaciones}
 
 ::: center
-![Lab 2.1](images/leds-cartoon.png){width="25%"}
+![Lab 2](images/animacion-robot.png){width="30%"}
 
-**⚡ Nivel:** Intermedio | **⏱️ Tiempo:** 35 minutos
+**⏱️ Tiempo estimado:** 40 minutos | **📊 Nivel:** Intermedio
 :::
 
 ---
 
-## Objetivo del Laboratorio
+## Antes de empezar
 
-Dominar el control pixel a pixel de la matriz de 5x5 LED del Hub para crear animaciones personalizadas que comuniquen estados del sistema en tiempo real.
+¿Alguna vez has visto esas máquinas de arcade donde los dibujitos se mueven? O cuando ves un video en tu teléfono, en realidad son muchas fotos una tras otra.
 
----
+Eso es una **animación**: mostrar varias imágenes seguidas muy rápido, tan rápido que parece que se mueve.
 
-## Materiales Requeridos
-
-| Componente | Especificación |
-|------------|-----------------|
-| **Hub** | LEGO SPIKE Prime |
-| **Cable** | USB LEGO |
-| **PC** | Con Pybricks IDE |
+Hoy vas a hacer lo mismo con el robot—crear una animación en su pequeña pantalla [1][2].
 
 ---
 
-## ⚡ Procedimiento Paso a Paso
+## Materiales
 
-### Paso 1: Entendiendo la Matriz (5 minutos)
-
-La matriz 5x5 tiene **25 LEDs** organizados en coordenadas (x, y):
-
-```
-Coordenadas de la matriz 5x5:
-┌───┬───┬───┬───┬───┐
-│0,0│1,0│2,0│3,0│4,0│  ← Fila 0 (superior)
-├───┼───┼───┼───┼───┤
-│0,1│1,1│2,1│3,1│4,1│
-├───┼───┼───┼───┼───┤
-│0,2│1,2│2,2│3,2│4,2│  ← Centro (2,2)
-├───┼───┼───┼───┼───┤
-│0,3│1,3│2,3│3,3│4,3│
-├───┼───┼───┼───┼───┤
-│0,4│1,4│2,4│3,4│4,4│  ← Fila 4 (inferior)
-└───┴───┴───┴───┴───┘
-```
-
-**Intensidad:** 0 (apagado) a 100 (brillo máximo)
+| Material | Para qué |
+|----------|----------|
+| **Hub LEGO Technic** | La pantalla donde mostraremos |
+| **Cable USB** | Conexión a la computadora |
+| **Thonny** | Para escribir el código [1] |
 
 ---
 
-### Paso 2: Tu Primera Animación (15 minutos)
+## Paso 1: Una barra que crece
 
-Copia y ejecuta este código:
+**Situación:** Estás esperando que cargue un video y ves una barrita que poco a poco se hace más grande. Vamos a hacer eso mismo.
+
+**Tiempo estimado: 15 minutos**
+
+Abre Thonny y escribe:
 
 ```python
-from pybricks.hubs import PrimeHub # <1>
-from pybricks.parameters import Icon, Color # <2>
-from pybricks.tools import wait # <3>
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
 
-hub = PrimeHub() # <4>
+hub = PrimeHub()
 
-def animacion_cargando():
-    """Secuencia de carga tipo barra de progreso."""
-    
-    frames = [ # <5>
-        [ # <6>
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-            [100, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-        ],
-        [
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-            [100, 100, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-        ],
-        [
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-            [100, 100, 100, 0, 0],
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-        ],
-        [
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-            [100, 100, 100, 100, 0],
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-        ],
-        [
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-            [100, 100, 100, 100, 100],
-            [0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0],
-        ],
-    ]
-    
-    for frame in frames: # <7>
-        hub.display.icon(frame) # <8>
-        wait(200) # <9>
-    
-    hub.display.icon(Icon.TARGET) # <10>
-    hub.light.on(Color.GREEN) # <11>
-    wait(1000) # <12>
+# Cada "cuadro" es una imagen de la animación
+# Un cuadro = una posición de la barra
 
-if __name__ == "__main__":
-    animacion_cargando() # <13>
+cuadro1 = [
+    [100, 0, 0, 0, 0],  # solo el primer puntito
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+]
+
+cuadro2 = [
+    [100, 100, 0, 0, 0],  # dos puntitos
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+]
+
+cuadro3 = [
+    [100, 100, 100, 0, 0],  # tres puntitos
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+]
+
+cuadro4 = [
+    [100, 100, 100, 100, 0],  # cuatro puntitos
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+]
+
+cuadro5 = [
+    [100, 100, 100, 100, 100],  # ¡barra completa!
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+]
+
+# Ahora mostrar uno tras otro (la animación)
+hub.display.icon(cuadro1)
+wait(200)  # esperar 0.2 segundos
+
+hub.display.icon(cuadro2)
+wait(200)
+
+hub.display.icon(cuadro3)
+wait(200)
+
+hub.display.icon(cuadro4)
+wait(200)
+
+hub.display.icon(cuadro5)
+wait(200)
+
+# ¡Listo! La animación terminó
+hub.light.on(5)  # luz verde = todo bien
 ```
 
-1.  Importamos el núcleo del Hub SPIKE.
-2.  Cargamos iconos predefinidos y paleta de colores.
-3.  Herramienta para pausas controladas.
-4.  Instanciamos el objeto hub.
-5.  Lista de frames - cada frame es una matriz 5x5.
-6.  Cada sublista representa el brillo de cada LED (0-100).
-7.  Iteramos sobre cada frame de la animación.
-8.  Mostramos el frame en la matriz de LEDs.
-9.  200ms por cuadro = 5 fps (suficiente para el ojo humano).
-10. Icono de check - indica éxito.
-11. LED verde indica operación exitosa.
-12. Mantenemos el icono 1 segundo.
-13. Punto de entrada del script.
+**Presiona Run y observa:**
+
+- ¿Ves cómo la barra va creciendo?
+- Parece que se mueve, ¿verdad?
+- Eso es una animación—imágenes una tras otra
 
 ---
 
-### Paso 3: Iconos Predefinidos (10 minutos)
+## Paso 2: Hacer lo mismo varias veces (sin escribirlo todo)
 
-Pybricks incluye iconos listos para usar:
+**Situación:** ¿Y si quieres repetir algo 5 veces? ¿Escribes lo mismo 5 veces?
+
+Sí se puede hacer mejor. Cuando quieres hacer algo varias veces, hay una forma de no escribirlo todo [3].
+
+Imagina que tienes que escribir "hola" 5 veces. Podrías escribirlo 5 veces, o podrías usar algo que dice "haz esto 5 veces".
 
 ```python
-from pybricks.parameters import Icon
-
-# Lista de iconos disponibles:
-Icon.HAPPY      # Carita feliz
-Icon.SAD       # Carita triste
-Icon.ARROW_UP  # Flecha arriba
-Icon.ARROW_DOWN # Flecha abajo
-Icon.TARGET    # Diana
-Icon.MIDDLE    # Centro
-Icon.UP        # Arriba
-Icon.DOWN      # Abajo
+# Esto dice "haz lo que está aquí dentro 3 veces"
+for i in range(3):
+    hub.display.icon(cuadro1)
+    hub.display.icon(cuadro5)
+    wait(200)
 ```
 
-**Ejercicio:** Modifica el código anterior para usar `Icon.ARROW_UP` como icono final.
+No te preocupas por el nombre "for"—por ahora solo recuerda: si pones algo dentro y lo repites, el robot lo hace varias veces.
 
----
-
-### Paso 4: Efecto "Latido" (5 minutos)
+**Intenta esto:**
 
 ```python
-def latido_corazon():
-    """Efecto de corazón latiendo."""
-    
-    # Corazón completo (brillo 100)
-    corazon = [
-        [0, 100, 0, 100, 0],
-        [100, 100, 100, 100, 100],
-        [100, 100, 100, 100, 100],
-        [0, 100, 100, 100, 0],
-        [0, 0, 100, 0, 0],
-    ]
-    
-    # Corazón apagado (brillo 20)
-    corazon_fade = [
-        [0, 20, 0, 20, 0],
-        [20, 20, 20, 20, 20],
-        [20, 20, 20, 20, 20],
-        [0, 20, 20, 20, 0],
-        [0, 0, 20, 0, 0],
-    ]
-    
-    # Loop de latido
-    for _ in range(5):
-        hub.display.icon(corazon)
-        wait(150)
-        hub.display.icon(corazon_fade)
-        wait(150)
-
-if __name__ == "__main__":
-    latido_corazon()
+# Hacer parpadear la luz 5 veces
+for i in range(5):
+    hub.light.on(0)  # rojo
+    wait(300)
+    hub.light.off()  # apagado
+    wait(300)
 ```
 
 ---
 
-## 🛠️ Centro de Diagnóstico
+## Paso 3: Un corazón que late
 
-| Error | Síntoma | Causa | Solución |
-|-------|---------|-------|----------|
-| **"IndexError"** | Matriz no muestra nada | Lista malformada | Cada fila debe tener 5 elementos |
-| **"LED no enciende"** | Pantalla vacía | Brillo en 0 | Verificar valores > 0 |
-| **"Animacion lenta"** | Parpadeo | `wait` muy alto | Reducir a 100-200ms |
-| **"Memory error"** | IDE se cuelga | Frames muy grandes | Máximo 25 LEDs por frame |
-
----
-
-## 📋 Código de Referencia: Calculadora de Frames
+**Situación:** Has visto esos corazones en los relojes que parecen latir. Vamos a hacer eso [2].
 
 ```python
-# Función helper para crear matrices automáticamente
-def crear_linea_horizontal(fila, brillo=100):
-    """Crea una línea horizontal en la fila especificada."""
-    matriz = [[0]*5 for _ in range(5)]
-    for x in range(5):
-        matriz[fila][x] = brillo
-    return matriz
+# Corazón "grande" (brillo máximo)
+corazon_grande = [
+    [0, 100, 0, 100, 0],
+    [100, 100, 100, 100, 100],
+    [100, 100, 100, 100, 100],
+    [0, 100, 100, 100, 0],
+    [0, 0, 100, 0, 0],
+]
 
-def crear_linea_vertical(col, brillo=100):
-    """Crea una línea vertical en la columna especificada."""
-    matriz = [[0]*5 for _ in range(5)]
-    for y in range(5):
-        matriz[y][col] = brillo
-    return matriz
+# Corazón "pequeño" (brillo suave)
+corazon_peque = [
+    [0, 30, 0, 30, 0],
+    [30, 30, 30, 30, 30],
+    [30, 30, 30, 30, 30],
+    [0, 30, 30, 30, 0],
+    [0, 0, 30, 0, 0],
+]
 
-# Uso:
-linea_central = crear_linea_vertical(2)  # Columna del medio
-hub.display.icon(linea_central)
+# Hacer que lata 5 veces
+for i in range(5):
+    hub.display.icon(corazon_grande)  # corazón grande
+    wait(150)
+    hub.display.icon(corazon_peque)   # corazón pequeño
+    wait(150)
 ```
+
+**¿Qué ves?** Parece que el corazón late, ¿verdad?
 
 ---
 
-## 🔐 Validación Anti-AI (OBLIGATORIA)
+## Paso 4: Crea tu propia animación
 
-### 📋 Checklist de Entrega:
+Ahora vas a hacer algo diferente. Piensa en algo que pueda "animarse":
 
-- [ ] **Video:** Grabación de 10 segundos mostrando la animación de carga
-- [ ] **Foto:** Tu corazón latiendo en el Hub
-- [ ] **Código modificado:** Archivo con TU animación personalizada
-- [ ] **Explicación oral (2 min):** Graba un audio explicando:
-  - ¿Cómo determinaste las coordenadas de tu diseño?
-  - ¿Por qué elegiste ese intervalo de tiempo en el `wait`?
+- Una cara que cambia de triste a feliz
+- Una pelota que rebota
+- Una flecha que apunta a diferentes lados
+- Un sol que sale y se mete
 
-### 🎤 Guía para Explicación Oral:
+**Usa este código como base:**
 
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+# Define tus cuadros aquí
+# Cada cuadro es una lista de 5 listas (5x5)
+# 100 = brillando, 0 = apagado, 30 = semi-apagado
+
+# Ejemplo: cara feliz -> cara triste
+cara_feliz = [
+    [100, 0, 100, 0, 100],
+    [100, 0, 100, 0, 100],
+    [0, 0, 100, 0, 0],
+    [0, 100, 0, 100, 0],
+    [0, 100, 100, 100, 0],
+]
+
+cara_triste = [
+    [100, 0, 100, 0, 100],
+    [100, 0, 100, 0, 100],
+    [0, 0, 100, 0, 0],
+    [0, 100, 0, 100, 0],
+    [100, 0, 0, 0, 100],
+]
+
+# Animación: repetir la secuencia 3 veces
+for i in range(3):
+    hub.display.icon(cara_feliz)
+    wait(500)
+    hub.display.icon(cara_triste)
+    wait(500)
 ```
-"Inicié diseñando mi animación pensando en una línea que creciera
-de izquierda a derecha. Usé coordenadas (x,y) donde x es la columna
-e y es la fila. El wait de 200ms me pareció adecuado porque..."
-```
 
-> ⚠️ Sin video + explicación oral, el laboratorio **NO se acepta**.
+**Diseña tu propia animación:**
+
+1. Dibuja en papel cómo quieres que se vea cada "momento"
+2. Cuenta los puntitos de cada fila
+3. Tradúcelo a números (0 o 100, o los que quieras)
+4. Escríbelos en Thonny
+5. Muestra uno tras otro
 
 ---
 
-## ✅ Checklist de Completado
+## 🔧 Si algo no funciona
 
-- [ ] Animación de carga funciona correctamente
-- [ ] Icono final aparece después de la animación
-- [ ] Creé mi propia animación de corazón
-- [ ] Entiendo cómo calcular coordenadas (x,y)
-- [ ] Tengo el video de evidencia
-- [ ] Grabé la explicación oral
+| Problema | Posible causa | Qué hacer |
+|----------|---------------|-----------|
+| La animación se ve muy lenta | El wait() es muy grande | Intenta wait(100) |
+| La animación parpadea mucho | El wait() es muy pequeño | Intenta wait(300) |
+| No sale la imagen correcta | Las filas no tienen 5 números | Cuenta: cada fila debe tener 5 números |
+| El robot no responde | El cable se movió | Verifica la conexión USB |
 
 ---
 
-*Desarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026*
+## 📋 Checklist de lo que lograste
+
+Marca lo que conseguiste:
+
+- [ ] Hice una barra que crece (animación de carga)
+- [ ] Repetí algo varias veces con "for"
+- [ ] Hice un corazón que late
+- [ ] Creé mi propia animación
+
+---
+
+## 💡 Para seguir explorando
+
+¿Qué más podrías animarse?
+
+- Un enemigo de video juego que se mueve
+- Una cara que pestañea
+- Una escalera que "baja"
+- Números que cambian (como un contador)
+
+El límite es tu imaginación—igual que dibujar en papel, pero ahora el robot lo muestra.
+
+---
+
+## Referencias
+
+[1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[2] Pybricks Team. (2023). *Pybricks Documentation - Display Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html
+
+[3] D. George. (2013). *MicroPython Documentation - Control Structures*. MicroPython. Disponible: https://docs.micropython.org
+
+[4] D. George. (2013). *MicroPython Documentation - Lists*. MicroPython. Disponible: https://docs.micropython.org/en/latest/library/array.html
+
+[5] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
+
+---
+
+*Has completado el laboratorio de animaciones. Ahora puedes hacer que cualquier imagen cobre vida en la pantalla del robot.*

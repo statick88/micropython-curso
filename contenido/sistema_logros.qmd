@@ -1,0 +1,235 @@
+---
+title: "Sistema de Logros 🏆"
+description: "Desbloquea insignias y sube de nivel mientras aprendes MicroPython"
+---
+
+# 🎮 Sistema de Logros y Badges {#sistema-logros}
+
+## 🎯 ¿Cómo Funciona la Gamificación?
+
+Cada unidad completada te da **XP (Puntos de Experiencia)**. Al acumular suficientes XP, **subes de nivel** y desbloqueas **insignias especiales**.
+
+---
+
+## 📊 Tabla de Niveles
+
+| Nivel | XP Requerido | Título | Emoji |
+|-------|--------------|--------|-------|
+| 1 | 0 | Aprendiz | 🌱 |
+| 2 | 100 | Explorador | 🔍 |
+| 3 | 250 | Programador | 💻 |
+| 4 | 500 | Ingeniero | ⚙️ |
+| 5 | 750 | Arquitecto | 🏗️ |
+| 6 | 1000 | Maestro | 🎓 |
+| 7 | 1500 | Leyenda | 👑 |
+
+---
+
+## 🏅 Insignias Disponibles
+
+### Unidad 1: Conectar y Programar
+
+| Insignia | Descripción | XP |
+|----------|-------------|-----|
+| 🔌 **Conectado** | Configurar entorno Pybricks | +25 |
+| 🐍 **Primer Código** | Ejecutar "Hola Mundo" | +25 |
+| 🎨 **LED Maestro** | Completar Lab 1A | +25 |
+| 🧩 **Ejercicios** | Completar todos los ejercicios Lab 1B | +50 |
+| 📝 **Quiz Dominado** | Score 100% en Quiz Unidad 1 | +25 |
+
+**Bonus Unidad 1:** 🌟 **Hacker Ético** - Completar todo = +50 XP extra
+
+### Unidad 2: Pantalla y Luces
+
+| Insignia | Descripción | XP |
+|----------|-------------|-----|
+| 💡 **LED On** | Controlar primer LED | +25 |
+| 🎬 **Animador** | Crear primera animación | +25 |
+| 🖼️ **Pixel Art** | Diseñar patrón personalizado | +25 |
+| 🌊 **Animación fluida** | Completar Lab 2B | +50 |
+| 📝 **Quiz Dominado** | Score 100% en Quiz Unidad 2 | +25 |
+
+**Bonus Unidad 2:** 🌟 **Showman** - Completar todo = +50 XP extra
+
+### Unidad 3: Movimiento
+
+| Insignia | Descripción | XP |
+|----------|-------------|-----|
+| 🔄 **Primer Giro** | Mover motor por primera vez | +25 |
+| 📐 **Geometra** | Trazar cuadrado perfecto | +25 |
+| 🧭 **Navegante** | Completar Lab 3A | +50 |
+| 🏎️ **PID Master** | Implementar control PID | +50 |
+| 📝 **Quiz Dominado** | Score 100% en Quiz Unidad 3 | +25 |
+
+**Bonus Unidad 3:** 🌟 **Robot Runner** - Completar todo = +50 XP extra
+
+### Unidad 4: Sensores
+
+| Insignia | Descripción | XP |
+|----------|-------------|-----|
+| 👁️ **Ojo Robótico** | Leer primer sensor | +25 |
+| 🔦 **Detector** | Detectar objeto cercano | +25 |
+| 📊 **Telemetría** | Registrar datos de sensores | +50 |
+| 🔋 **Power Manager** | Monitorear batería | +25 |
+| 📝 **Quiz Dominado** | Score 100% en Quiz Unidad 4 | +25 |
+
+**Bonus Unidad 4:** 🌟 **Data Master** - Completar todo = +50 XP extra
+
+### Unidad 5: Proyecto Final
+
+| Insignia | Descripción | XP |
+|----------|-------------|-----|
+| 📋 **Planificador** | Crear diagrama de arquitectura | +50 |
+| 🔧 **Constructor** | Programar robot funcional | +100 |
+| 🎥 **Presentador** | Grabar video demo | +50 |
+| 🎤 **Comunicador** | Explicación oral completada | +50 |
+| 🏆 **Graduado** | Proyecto final aprobado | +100 |
+
+**Bonus Unidad 5:** 🌟 **ROBOT MASTER** - Completar todo = +100 XP extra
+
+---
+
+## 🎖️ Insignias Especiales
+
+### Logros Extraordinarios
+
+| Insignia | Criterio | XP |
+|----------|----------|-----|
+| 🚀 **Velocista** | Completar unidad en menos de 1 semana | +75 |
+| 💪 **Perseverante** | Completar ejercicio después de 3 intentos | +25 |
+| 👥 **Mentor** | Ayudar a un compañero | +50 |
+| 🐛 **Bug Hunter** | Encontrar error en documentación | +100 |
+| 🎨 **Creativo** | Diseñar animación original no vista en clase | +50 |
+| 📚 **Bibliotecario** | Citar correctamente 10 fuentes IEEE | +25 |
+| 🔐 **Seguridad** | Completar validación anti-AI correctamente | +50 |
+
+### Logros Comunidad
+
+| Insignia | Criterio | XP |
+|----------|----------|-----|
+| 💬 **Colaborador** | Participar en 5 discusiones | +50 |
+| 🌟 **Estrella** | Recibir 3 votos positivos | +75 |
+| 📢 **Embajador** | Compartir proyecto en redes sociales | +100 |
+
+---
+
+## 📈 Hoja de Ruta Visual
+
+```
+NIVEL 1 🌱                    NIVEL 7 👑
+    │                              │
+    ▼                              ▼
+┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
+│ 🔌      │→ │ 💡      │→ │ 🤖      │→ │ 📡      │→ 🏆
+│ Unidad 1│  │ Unidad 2│  │ Unidad 3│  │ Unidad 4│  │ Final
+│ 175 XP  │  │ 175 XP  │  │ 200 XP  │  │ 175 XP  │  │ 350 XP
+└─────────┘  └─────────┘  └─────────┘  └─────────┘  └───────┘
+```
+
+---
+
+## 🎯 Cómo Registrar tu Progreso
+
+### Método 1: Hoja de Cálculo
+
+Crea una hoja de cálculo con:
+
+| Fecha | Actividad | XP | Insignia | Nivel |
+|-------|-----------|-----|----------|-------|
+| 01/04 | Primer Código | 25 | 🐍 | 1 |
+| 01/04 | LED Maestro | 25 | 🎨 | 1 |
+| ... | ... | ... | ... | ... |
+
+### Método 2: En el Código
+
+```python
+# Sistema simple de tracking en MicroPython
+from pybricks.hubs import PrimeHub
+
+hub = PrimeHub()
+
+# Tu progreso actual
+XP_ACTUAL = 0
+NIVEL = 1
+INSIGNIAS = []
+
+def ganar_xp(puntos, insignia):
+    global XP_ACTUAL, NIVEL
+    XP_ACTUAL += puntos
+    INSIGNIAS.append(insignia)
+    
+    # Verificar si sube de nivel
+    niveles = [0, 100, 250, 500, 750, 1000, 1500]
+    for i, xp_nivel in enumerate(niveles):
+        if XP_ACTUAL >= xp_nivel:
+            NIVEL = i + 1
+    
+    # Mostrar progreso
+    print(f"¡{insignia} +{puntos} XP!")
+    print(f"Nivel {NIVEL} - {XP_ACTUAL} XP total")
+
+# Ejemplo de uso
+ganar_xp(25, "🐍 Primer Código")
+```
+
+---
+
+## 🏆 Leaderboard Sugerido
+
+Para aula, puedes crear un leaderboard visible:
+
+```
+╔══════════════════════════════════════════╗
+║     🏆 LEADERBOARD MICROPYTHON 🏆       ║
+╠══════════════════════════════════════════╣
+║ 1. 👑 María G.    - 1250 XP (Nvl 7)   ║
+║ 2. 🎓 Carlos R.   - 1100 XP (Nvl 6)   ║
+║ 3. 🏗️ Ana P.      -  950 XP (Nvl 5)   ║
+║ 4. ⚙️ Luis M.     -  800 XP (Nvl 5)   ║
+║ 5. 💻 Pedro S.    -  650 XP (Nvl 4)   ║
+╚══════════════════════════════════════════╝
+```
+
+---
+
+## 🎮 Reglas del Juego
+
+1. **XP es acumulativo** - No se pierde al fallar un quiz
+2. **Reintentos permitidos** - Puedes volver a intentar quizzes
+3. **Bonus por excelencia** - Score 100% da insignia extra
+4. **Creatividad premiada** - Proyectos originales ganan XP bonus
+5. **Colaboración valiosa** - Ayudar a otros suma puntos
+
+---
+
+## 📊 Cálculo de Nota Final
+
+La gamificación complementa la calificación tradicional:
+
+| Componente | Peso | Gamificación |
+|------------|------|--------------|
+| Quizzes | 30% | 📝 Quiz Dominado × 5 |
+| Labs | 30% | 🧪 Completar todos los labs |
+| Proyecto Final | 30% | 🏆 Proyecto aprobado |
+| Participación | 10% | 💬 Bonus por insignias |
+
+**Fórmula:**
+```
+Nota Final = (Quizzes × 0.3) + (Labs × 0.3) + (Proyecto × 0.3) + (Participación × 0.1)
+```
+
+---
+
+*¡Recuerda: El objetivo es APRENDER, no solo acumular puntos! Los puntos son una herramienta, no el fin.* 🎓
+
+---
+
+## Referencias
+
+[1] Kapp, K. M. *The Gamification of Learning and Instruction*. Pfeiffer, 2012.
+
+[2] Deterding, S. et al. "From Game Design Elements to Gamefulness: Defining 'Gamification'". *Proceedings of MindTrek 2011*.
+
+---
+
+*Sistema de Logros - MicroPython para el Aula - Diego Saavedra 2026* 🎮

@@ -1,0 +1,298 @@
+---
+title: "Laboratorio 3B: Ejercicios de Movimiento Avanzado"
+description: "Ejercicios prácticos para dominar el control preciso de motores y navegación"
+---
+
+# Laboratorio 3B: Ejercicios de Movimiento Avanzado {#lab3b-movimiento}
+
+## 🎯 Objetivos
+
+Al completar estos ejercicios, serás capaz de:
+
+- Controlar motores individuales con precisión
+- Implementar patrones de navegación complejos
+- Ajustar parámetros PID para movimiento suave
+- Crear secuencias de movimiento automatizadas
+
+---
+
+## Ejercicio 3.1: Control Preciso de Un Motor {#ejercicio-3-1}
+
+### Descripción
+
+Controla un motor individual con diferentes velocidades y ángulos.
+
+### Instrucciones
+
+1. Gira el motor 90° a velocidad baja
+2. Gira el motor 180° a velocidad media
+3. Gira el motor 360° a velocidad alta
+4. Regresa a la posición inicial
+
+### Código Base
+
+```python
+from pybricks.parameters import Port, Stop
+from pybricks.tools import wait
+
+# Inicializar motor en puerto A
+# Pista: usa Motor(Port.A)
+```
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Port, Stop, Direction
+from pybricks.tools import wait
+
+hub = PrimeHub()
+from pybricks.ev3devices import Motor
+
+motor = Motor(Port.A)
+
+# Giro de 90° a velocidad baja (50°/s)
+motor.run_angle(50, 90, then=Stop.HOLD, wait=True)
+wait(500)
+
+# Giro de 180° a velocidad media (150°/s)
+motor.run_angle(150, 180, then=Stop.HOLD, wait=True)
+wait(500)
+
+# Giro de 360° a velocidad alta (300°/s)
+motor.run_angle(300, 360, then=Stop.HOLD, wait=True)
+wait(500)
+
+# Regresar a posición inicial
+motor.run_angle(150, -630, then=Stop.HOLD, wait=True)
+wait(500)
+
+motor.stop()
+```
+
+---
+
+## Ejercicio 3.2: Patrón de Cuadrado {#ejercicio-3-2}
+
+### Descripción
+
+Navega el robot trazando un cuadrado perfecto de 20cm de lado.
+
+### Instrucciones
+
+1. Avanza 20cm
+2. Gira 90° a la derecha
+3. Repite 4 veces
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Port, Stop, Direction
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+# Configurar DriveBase
+# Ajusta estos valores según tu robot
+DIENTES_RUEDA = 44
+DIAMETRO_RUEDA = 56  # mm
+ANCHO_EJE = 104  # mm
+
+from pybricks.hubs import PrimeHub
+hub = PrimeHub()
+
+# Para SPIKE Prime
+motor_izq = Motor(Port.B, Direction.COUNTERCLOCKWISE)
+motor_der = Motor(Port.A)
+
+drivebase = DriveBase(motor_izq, motor_der, DIAMETRO_RUEDA, ANCHO_EJE)
+
+# Configuración del giroscopio
+drivebase.use_gyro(True)
+
+# Trazar cuadrado
+for lado in range(4):
+    # Avanzar 20cm (200mm)
+    drivebase.straight(200)
+    wait(200)
+    
+    # Girar 90°
+    drivebase.turn(90)
+    wait(200)
+
+hub.display.scroll("CUADRO OK", wait=True)
+```
+
+---
+
+## Ejercicio 3.3: Figura en Ocho {#ejercicio-3-3}
+
+### Descripción
+
+Navega el robot trazando una figura en ocho (infinito).
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Port, Direction
+
+hub = PrimeHub()
+
+# Inicializar motores
+motor_izq = Motor(Port.B, Direction.COUNTERCLOCKWISE)
+motor_der = Motor(Port.A)
+
+# Configurar DriveBase
+drivebase = DriveBase(motor_izq, motor_der, 56, 104)
+drivebase.use_gyro(True)
+
+# Trazar figura en ocho
+for repeticion in range(3):
+    # Primera curva (izquierda)
+    drivebase.curve(radius=200, angle=360)
+    
+    # Segunda curva (derecha)
+    drivebase.curve(radius=-200, angle=360)
+
+hub.display.scroll("OCHO OK", wait=True)
+```
+
+---
+
+## Ejercicio 3.4: Laberinto Básico {#ejercicio-3-4}
+
+### Descripción
+
+Implementa un algoritmo simple de seguimiento de pared para un laberinto básico.
+
+### Algoritmo: Sigue-pared derecha
+
+1. Si hay espacio a la derecha → girar derecha y avanzar
+2. Si no hay espacio a la derecha pero sí adelante → avanzar
+3. Si no hay espacio a la derecha ni adelante → girar izquierda
+4. Si está bloqueado en 3 lados → girar 180°
+
+### Solución
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Port, Direction, Button
+from pybricks.tools import wait
+from pybricks.pupdevices import Motor, UltrasonicSensor
+
+hub = PrimeHub()
+
+# Inicializar dispositivos
+motor_izq = Motor(Port.B)
+motor_der = Motor(Port.A)
+sensor = UltrasonicSensor(Port.C)
+
+# Configurar DriveBase
+drivebase = DriveBase(motor_izq, motor_der, 56, 104)
+
+DISTANCIA_PARED = 200  # mm
+DISTANCIA_COLISION = 100  # mm
+
+def hay_pared_derecha():
+    """Verificar si hay pared a la derecha"""
+    # Girar sensor o usar sensor dedicado
+    return sensor.distance() < DISTANCIA_PARED
+
+def hay_pared_adelante():
+    """Verificar si hay pared adelante"""
+    return sensor.distance() < DISTANCIA_COLISION
+
+# Programa principal
+while True:
+    # Salir con botón CENTER
+    if Button.CENTER in hub.buttons.pressed():
+        break
+    
+    if not hay_pared_derecha():
+        # Giro a la derecha
+        drivebase.turn(90)
+        drivebase.straight(100)
+    elif not hay_pared_adelante():
+        # Avanzar
+        drivebase.straight(100)
+    else:
+        # Giro a la izquierda
+        drivebase.turn(-90)
+
+drivebase.stop()
+hub.display.scroll("FIN", wait=True)
+```
+
+---
+
+## Ejercicio 3.5: Carrera de Precisión {#ejercicio-3-5}
+
+### Descripción
+
+Competencia: el robot debe recorrer exactamente 1 metro y detenerse lo más cerca posible.
+
+### Métricas de Evaluación
+
+| Precisión | Puntos |
+|-----------|--------|
+| ±1 cm | 100 |
+| ±5 cm | 80 |
+| ±10 cm | 60 |
+| ±20 cm | 40 |
+| >20 cm | 20 |
+
+### Solución Óptima
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Port, Direction
+
+hub = PrimeHub()
+
+# Inicializar
+motor_izq = Motor(Port.B, Direction.COUNTERCLOCKWISE)
+motor_der = Motor(Port.A)
+drivebase = DriveBase(motor_izq, motor_der, 56, 104)
+
+# Calibración: usa giroscopio para precisión
+drivebase.use_gyro(True)
+
+# Ajustar según calibración previa
+# Pista: cada robot es diferente, calibra con pruebas
+
+DISTANCIA_OBJETIVO = 1000  # 1 metro = 1000mm
+
+# Ejecutar
+hub.display.show_icon(HubIcon.TARGET)
+drivebase.straight(DISTANCIA_OBJETIVO)
+
+# Mostrar distancia real (necesitarías encoder para medir)
+hub.display.scroll("PARADA", wait=True)
+```
+
+---
+
+## 📋 Rúbrica de Evaluación
+
+| Criterio | Puntos | Descripción |
+|----------|--------|-------------|
+| Ejercicio 3.1 | 15 | Control preciso individual |
+| Ejercicio 3.2 | 25 | Cuadrado con ángulos correctos |
+| Ejercicio 3.3 | 20 | Figura en ocho suave |
+| Ejercicio 3.4 | 25 | Algoritmo laberinto funcional |
+| Ejercicio 3.5 | 15 | Precisión en carrera |
+| **Total** | **100** | |
+
+---
+
+## Referencias
+
+[1] Pybricks Team. *Pybricks MicroPython API - DriveBase*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase
+
+[2] Pybricks Team. *Pybricks MicroPython API - Motor*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor
+
+---
+
+*Movimiento Avanzado - MicroPython para el Aula - Diego Saavedra 2026*

@@ -1,67 +1,196 @@
-# Fase 2: Interfaces y Control Visual {#unidad2-display}
+# Unidad 2: ¿Qué puede mostrar el robot? {#unidad2-display}
 
 ::: center
-![Interfaces de Luz](images/leds-cartoon.png){width="30%"}
+![Pantalla LED](images/pantalla-robot.png){width="35%"}
+
+**⏱️ Tiempo estimado:** 45 minutos | **📊 Nivel:** Principiante
 :::
 
-## El HUD del Arquitecto: Matriz 5x5
+---
 
-En ingeniería de sistemas embebidos, el feedback visual es la primera línea de defensa para el diagnóstico. El Hub de SPIKE Prime nos proporciona una matriz de 5x5 píxeles para desplegar telemetría en tiempo real.
+## Antes de empezar
+
+¿Has visto esos letreros de texto que cambian en las tiendas? O las pantallas de los semáforos que muestran diferentes símbolos. Bueno, el robot LEGO tiene algo parecido: una pequeña pantalla donde puede mostrar **dibujos**, **letras**, y **números**.
+
+Imagina que tienes un cuaderno de puntitos (como el de matemática). Si coloreas algunos puntitos, puedes formar figuras. La pantalla del robot funciona igual: tiene 25 "puntitos" que puedes prender o apagar [1][2].
 
 ---
 
-## 1. Protocolo de Visualización
+## La pantalla del robot: un cuaderno de 5x5
 
-Aprenderemos a controlar cada píxel individualmente para crear iconos personalizados de estado.
+**Situación:** Estás en un cine y tienes asignado el asiento F-3. Fila F, butaca 3. El robot tiene algo similar: "asientos" organizados en 5 filas y 5 columnas.
 
-```python
-from pybricks.hubs import PrimeHub # Abstracción del hardware core
-from pybricks.parameters import Icon, Color # Parámetros visuales
-from pybricks.tools import wait # Control de flujo temporal
+```
+La pantalla tiene 25 "asientos" (puntitos LEDs):
 
-# Inicialización del sistema
-hub = PrimeHub() # Crear instancia del núcleo
-
-def mostrar_animacion():
-    """Ejecuta una secuencia de feedback visual."""
-    hub.display.icon(Icon.HAPPY) # <1>
-    wait(1000) # Mantener 1 segundo
-    
-    # Definición manual de la arquitectura de píxeles (0-100 brillo)
-    matriz_check = [ # <2>
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 100], # Píxel activo al 100% de intensidad
-        [0, 0, 0, 100, 0],
-        [100, 0, 100, 0, 0],
-        [0, 100, 0, 0, 0],
-    ]
-    hub.display.icon(matriz_check) # <3>
-    hub.light.on(Color.BLUE) # <4>
-
-if __name__ == "__main__":
-    mostrar_animacion() # Iniciar protocolo visual
+    0   1   2   3   4  ← son las columnas
+  ┌───┬───┬───┬───┐
+0 │ • │ • │ • │ • │ • │ ← primera fila (arriba)
+  ├───┼───┼───┼───┤
+1 │ • │ • │ • │ • │ • │
+  ├───┼───┼───┼───┤
+2 │ • │ • │ • │ • │ • │ ← fila del medio
+  ├───┼───┼───┼───┤
+3 │ • │ • │ • │ • │ • │
+  ├───┼───┼───┼───┤
+4 │ • │ • │ • │ • │ • │ ← última fila (abajo)
+  └───┴───┴───┴───┘
 ```
 
-1.  Uso de la biblioteca interna de iconos para una comunicación rápida con el usuario.
-2.  Definición de una estructura de lista de listas que mapea físicamente a los 25 LEDs.
-3.  El método `icon` acepta tanto constantes como matrices de enteros definidas por el programador.
-4.  El indicador luminoso central (`light`) se usa para estados globales del sistema.
+Cada "puntito" (LED) puede estar:
+- **Apagado** (0 = nada de luz)
+- **Encendido** (100 = brillo máximo)
 
 ---
 
-## ASIGNACIÓN: Sistema de Alerta Temprana
+## Dibujos ya listos para usar
 
-<details>
-<summary><b>Ver Objetivo del Reto</b></summary>
+¿Recuerdas cuando en el celular tenías los emojis listos para usar? No tenías que dibujarlos, solo elegías el que querías.
 
-Crea un programa que simule un "Cargando..." en la pantalla (una línea que se mueve) y que termine con un icono de corazón cuando el sistema esté "Listo".
+El robot tiene algo similar—**dibujos listos** que puedes usar [2]:
 
-## Pruebas de Validación
-- [ ] ¿La animación es fluida (usa `wait` adecuadamente)?
-- [ ] ¿El icono final es claro?
-- [ ] ¿El código está encapsulado en funciones?
-</details>
+```python
+# Primero, traer las herramientas
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+# Ahora puedes mostrar dibujos:
+hub.display.icon("HAPPY")    # Carita feliz
+hub.display.icon("SAD")      # Carita triste  
+hub.display.icon("ARROW_UP")   # Flecha arriba
+hub.display.icon("ARROW_DOWN") # Flecha abajo
+hub.display.icon("HEART")    # Corazón
+```
+
+**Prueba esto en Thonny:**
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+# Mostrar carita feliz por 2 segundos
+hub.display.icon("HAPPY")
+wait(2000)
+
+# Ahora mostrar un corazón
+hub.display.icon("HEART")
+wait(2000)
+```
 
 ---
 
-*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*
+## Crear tus propios dibujos
+
+**Situación:** Ahora quieres dibujar algo que NO está en los dibujos listos. Por ejemplo, tu inicial.
+
+Esto es como cuando dibujas en papel quadriculado: decides qué cuadros pintar y cuáles dejar en blanco.
+
+**Ejemplo: Hacer una cara sonriente**
+
+```python
+# Cada número es el brillo de un LED (0=apagado, 100=max)
+
+# Así se ve una carita:
+# ■ □ ■ □ ■  ← primera fila
+# ■ □ ■ □ ■  ← segunda fila  
+# □ □ ■ □ □  ← tercera fila (nariz)
+# ■ □ □ □ ■  ← cuarta fila (boca)
+# □ ■ ■ ■ □  ← quinta fila
+
+# En código, se escribe así:
+mi_dibujo = [
+    [100, 0, 100, 0, 100],
+    [100, 0, 100, 0, 100],
+    [0, 0, 100, 0, 0],
+    [100, 0, 0, 0, 100],
+    [0, 100, 100, 100, 0],
+]
+
+# Enviar el dibujo al robot
+hub.display.icon(mi_dibujo)
+wait(2000)
+```
+
+**¿Puedes dibujar tu inicial?**
+
+Intenta hacer una "A" o tu letra favorita. Solo necesitas decidir qué puntitos se prenden y cuáles se apaganal.
+
+---
+
+## La luz del centro
+
+Además de la pantalla, el robot tiene una luz en el centro—como un pequeño reflector [2].
+
+```python
+# Encender la luz en diferentes colores
+hub.light.on(5)   # Verde
+hub.light.on(10)  # Naranja/amarillo
+hub.light.on(0)   # Rojo
+
+# O apagar la luz
+hub.light.off()
+```
+
+**¿Para qué sirve?** Puedes usar la luz para indicar estados:
+- Verde = "todo bien"
+- Rojo = "algo mal"
+- Naranja = "espera"
+
+Es como las luces de un semáforo o las luces de alerta de un auto.
+
+---
+
+## Pero... ¿qué pasa si quiero mostrar algo, luego otra cosa, y otra más?
+
+**Situación:** Estás viendo una animación en tu celular. Las imágenes van cambiando rápido, tan rápido que parece que se mueve.
+
+¡El robot también puede hacer eso! [2]
+
+```python
+# Primer dibujo
+dibujo1 = [0, 0, 0, 0, 0]
+dibujo2 = [100, 0, 0, 0, 0]
+dibujo3 = [100, 100, 0, 0, 0]
+
+# Mostrar uno tras otro (como una animación)
+hub.display.icon(dibujo1)
+wait(200)
+hub.display.icon(dibujo2)
+wait(200)
+hub.display.icon(dibujo3)
+wait(200)
+```
+
+Eso es una **animación**—mostrar varios dibujos seguidos muy rápido. Como las caricaturas que ves en televisión.
+
+---
+
+## 📋 Lo que aprendiste
+
+Antes de pasar al laboratorio, marca lo que entendiste:
+
+- [ ] La pantalla tiene 25 puntitos (5x5)
+- [ ] Puedo usar dibujos listos (como emoji)
+- [ ] Puedo crear mis propios dibujos
+- [ ] El robot tiene una luz central que puede cambiar
+- [ ] Puedo hacer animaciones mostrando imágenes una tras otra
+
+---
+
+## Referencias
+
+[1] Pybricks Team. (2023). *Pybricks Documentation - Display Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html
+
+[2] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
+
+[3] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
+
+[4] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+
+---
+
+*Ahora vas al laboratorio donde crearás tu propia animación.*

@@ -1,47 +1,111 @@
-# Validación de Ingeniería: Fase 4 {#quiz-unidad4}
+---
+title: "🎮 Quiz Unidad 4: Sensores"
+description: "¡Domina la percepción robótica! 📡"
+---
+
+# 🎮 Quiz Unidad 4: Sensores {#quiz-unidad4}
 
 ::: center
 ![Certificación de Percepción](images/sensor-ultrasonico-cartoon.png){width="20%"}
+
+### 🏅 Insignias en Juego
+| 👁️ Ojo Robótico | 🔦 Detector | 📊 Telemetría |
+|:---:|:---:|:---:|
+| +25 XP | +25 XP | +50 XP |
+
 :::
 
-## Protocolo de Evaluación: Telemetría y Concurrencia
+## 📊 Tu Progreso
 
-Valida tu capacidad para diseñar sistemas reactivos y asíncronos.
+```
+[████████████████████] 100% - Nivel 3 💻 → Nivel 4 ⚙️
+XP necesario: 500 | XP ganado: 375
+```
+
+---
+
+## 📝 Preguntas
 
 ::: {.quizdown}
 
-### Programación No Bloqueante
+### 👁️ Pregunta 1: Programación No Bloqueante (25 XP)
+
 ¿Qué método de Pybricks permite ejecutar múltiples tareas (como leer sensores y mover motores) en paralelo?
 
-- [ ] while True simple.
-- [x] Multitarea asíncrona con `run_task()` y `await`.
-- [ ] Interrupciones por hardware.
-- [ ] Conexión serie manual.
+- [ ] while True simple ♾️
+- [x] 🔄 Multitarea asíncrona con `run_task()` y `await`
+- [ ] Interrupciones por hardware ⚡
+- [ ] Conexión serie manual 🔌
 
-> `asyncio` es el estándar para gestionar sistemas de tiempo real sin bloqueos de CPU.
+> 💡 **Pista:** `asyncio` es el estándar para gestionar sistemas de tiempo real sin bloqueos de CPU [1]. ¡Tu robot puede hacer todo a la vez! 🤹
 
-### Telemetría Sónica
+---
+
+### 📡 Pregunta 2: Telemetría Sónica (25 XP)
+
 ¿Qué unidad de medida entrega el sensor ultrasónico (`UltrasonicSensor`) por defecto en Pybricks?
 
-- [ ] Centímetros (cm).
-- [x] Milímetros (mm).
-- [ ] Pulgadas (in).
-- [ ] Porcentaje (%).
+- [ ] Centímetros (cm) 📏
+- [x] 🎯 Milímetros (mm)
+- [ ] Pulgadas (in) 🇺🇸
+- [ ] Porcentaje (%) 📊
 
-> La precisión milimétrica es vital para algoritmos de evasión de obstáculos de alta fidelidad.
+> 💡 **Pista:** La precisión milimétrica es vital para algoritmos de evasión de obstáculos de alta fidelidad [2]. ¡Precisión quirúrgica! 🔬
 
-### Entorno de Depuración
+---
+
+### 🔍 Pregunta 3: Entorno de Depuración (25 XP)
+
 ¿Cuál es la herramienta principal para visualizar telemetría y mensajes de estado en la consola en tiempo real?
 
-- [ ] breakpoint()
-- [x] print()
-- [ ] debug()
-- [ ] log_telemetry()
+- [ ] breakpoint() 🔴
+- [x] 📺 print() (Tu mejor amigo)
+- [ ] debug() 🐛
+- [ ] log_telemetry() 📝
 
-> El uso estratégico de `print()` es la base del diagnóstico de campo en sistemas embebidos.
+> 💡 **Pista:** El uso estratégico de `print()` es la base del diagnóstico de campo en sistemas embebidos [3]. ¡Simple pero poderoso! 💪
 
 :::
 
 ---
 
-*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*
+## 🏆 Resumen de Recompensas
+
+| Respuesta | XP Ganada | Insignia |
+|-----------|-----------|----------|
+| Pregunta 1 ✅ | +25 | |
+| Pregunta 2 ✅ | +25 | |
+| Pregunta 3 ✅ | +25 | |
+| **Total** | **+75** | 👁️ Ojo Robótico |
+
+### 🎯 ¡Objetivos Desbloqueados!
+
+- [x] Completar todas las preguntas (+25 bonus si 100%)
+- [ ] Tiempo récord: < 2 minutos (+10 bonus)
+
+---
+
+## 📈 Después de Completar este Quiz
+
+```
+🏆 ¡ÚLTIMO PASO! Siguiente: Unidad 5: Proyecto Final
+                    └─> 📋 Diagrama de Arquitectura
+                        └─> 🔧 Programación del Robot
+                            └─> 🎥 Video Demo
+                                └─> 🎤 Presentación Oral
+                                    └─> 🎓 ¡GRADUACIÓN!
+```
+
+---
+
+## Referencias
+
+[1] Pybricks Team. *Pybricks MicroPython - Asynchronous Programming with run_task*. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html#micropython-top-level-functions
+
+[2] Pybricks Team. *Pybricks MicroPython API - UltrasonicSensor*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#ultrasonicsensor
+
+[3] MicroPython Project. *MicroPython Documentation - print function*. 2026. Disponible en: https://docs.micropython.org/en/latest/library/builtins.html#print
+
+---
+
+*🎮 Quiz Unidad 4 - MicroPython para el Aula - Diego Saavedra 2026* 🏆

@@ -1,0 +1,243 @@
+---
+title: "Evaluación: Telemetría y Monitoreo de Batería"
+description: "Evaluación sobre sistemas de telemetría y monitoreo de recursos"
+format:
+  html:
+    toc: true
+---
+
+# Evaluación: Telemetría y Monitoreo de Batería {#eval-telemetria}
+
+## 📋 Información de la Evaluación
+
+| Aspecto | Detalle |
+|---------|---------|
+| **Unidad** | 4 - Sensores (Módulo Avanzado) |
+| **Tipo** | Práctica |
+| **Duración** | 30 minutos |
+| **Puntaje** | 100 puntos |
+| **Modalidad** | Individual |
+
+---
+
+## Ejercicio Principal: Sistema de Telemetría Completo (100 puntos)
+
+### Objetivo
+
+Crear un sistema completo de telemetría que monitoree:
+
+1. Estado de batería
+2. Distancia de sensores
+3. Posición de motores
+4. Exportar datos a formato analizable
+
+### Requisitos del Sistema
+
+```
+┌─────────────────────────────────────────┐
+│         SISTEMA DE TELEMETRÍA          │
+├─────────────────────────────────────────┤
+│  [Batería]  →  Voltage, Corriente      │
+│  [Sensor IR] →  Distancia (mm)         │
+│  [Motores]  →  Posición (grados)       │
+│  [Display]  →  Estado actual           │
+│  [Export]   →  JSON/CSV                │
+└─────────────────────────────────────────┘
+```
+
+### Código Base
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Port, Stop
+from pybricks.pupdevices import Motor, InfraredSensor
+from pybricks.tools import wait
+import json
+
+hub = PrimeHub()
+
+# Inicializar dispositivos
+motor = Motor(Port.A)
+sensor = InfraredSensor(Port.B)
+
+# Lista para almacenar datos
+telemetria = []
+
+# Tu código aquí
+# ...
+```
+
+---
+
+## Rúbrica de Evaluación
+
+### Requisitos Funcionales (60 puntos)
+
+| Requisito | Puntos | Verificado |
+|-----------|--------|------------|
+| Mide voltaje de batería | 15 | ☐ |
+| Mide distancia del sensor | 15 | ☐ |
+| Registra posición del motor | 15 | ☐ |
+| Almacena datos en lista | 15 | ☐ |
+
+### Código y Calidad (20 puntos)
+
+| Aspecto | Puntos | Verificado |
+|---------|--------|------------|
+| Código funcional sin errores | 10 | ☐ |
+| Uso correcto de librerías | 5 | ☐ |
+| Comments/documentación | 5 | ☐ |
+
+### Exportación y Análisis (20 puntos)
+
+| Aspecto | Puntos | Verificado |
+|---------|--------|------------|
+| Exporta a JSON válido | 10 | ☐ |
+| Datos con timestamp | 5 | ☐ |
+| Formato listo para análisis | 5 | ☐ |
+
+---
+
+## Solución Esperada
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Port, Stop, Direction
+from pybricks.pupdevices import Motor, InfraredSensor
+from pybricks.tools import wait
+import json
+
+hub = PrimeHub()
+
+# Inicializar dispositivos
+motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+sensor = InfraredSensor(Port.B)
+
+# Configuración de muestreo
+INTERVALO_MS = 200  # Muestrear cada 200ms
+DURACION_MS = 5000  # Durar 5 segundos
+
+# Lista para almacenar datos
+telemetria = []
+tiempo_inicio = 0
+
+print("=== INICIO TELEMETRÍA ===")
+
+# Calibración inicial
+motor.run_until_stalled(-50, then=Stop.COAST)
+motor.reset_angle(0)
+hub.display.show_icon(HubIcon.TARGET)
+
+# Fase 1: Movimiento de prueba
+print("Fase 1: Movimiento de calibración")
+motor.run_angle(100, 180)
+
+# Fase 2: Captura de datos
+print("Fase 2: Captura activa")
+hub.display.show_icon(HubIcon.UP)
+
+for i in range(int(DURACION_MS / INTERVALO_MS)):
+    # Recopilar datos
+    muestra = {
+        "timestamp": i * INTERVALO_MS,
+        "bateria": {
+            "voltaje": hub.battery.voltage(),  # mV
+            "corriente": hub.battery.current()  # mA
+        },
+        "sensor": {
+            "distancia_mm": sensor.distance()
+        },
+        "motor": {
+            "angulo": motor.angle(),
+            "velocidad": motor.speed()
+        },
+        "hub": {
+            "boton_left": Button.LEFT in hub.buttons.pressed(),
+            "boton_right": Button.RIGHT in hub.buttons.pressed(),
+            "boton_center": Button.CENTER in hub.buttons.pressed()
+        }
+    }
+    
+    telemetria.append(muestra)
+    
+    # Mostrar progreso
+    progreso = int((i / (DURACION_MS / INTERVALO_MS)) * 100)
+    print(f"Muestra {i+1}: {muestra}")
+    
+    wait(INTERVALO_MS)
+
+# Fase 3: Análisis de datos
+print("\n=== ANÁLISIS DE DATOS ===")
+
+# Calcular estadísticas
+voltajes = [m["bateria"]["voltaje"] for m in telemetria]
+distancias = [m["sensor"]["distancia_mm"] for m in telemetria]
+
+estadisticas = {
+    "total_muestras": len(telemetria),
+    "duracion_ms": DURACION_MS,
+    "bateria": {
+        "voltaje_min": min(voltajes),
+        "voltaje_max": max(voltajes),
+        "voltaje_promedio": sum(voltajes) / len(voltajes)
+    },
+    "sensor": {
+        "distancia_min": min(distancias),
+        "distancia_max": max(distancias),
+        "distancia_promedio": sum(distancias) / len(distancias)
+    }
+}
+
+print(f"Estadísticas: {json.dumps(estadisticas, indent=2)}")
+
+# Exportar datos completos
+output = {
+    "metadata": {
+        "curso": "MicroPython para el Aula",
+        "autor": "Diego Saavedra",
+        "fecha": "2026"
+    },
+    "estadisticas": estadisticas,
+    "muestras": telemetria
+}
+
+print("\n=== DATOS JSON ===")
+print(json.dumps(output, indent=2))
+
+# Guardar en archivo
+with open("telemetria.json", "w") as f:
+    json.dump(output, f, indent=2)
+
+print("\nDatos guardados en telemetria.json")
+
+# Mostrar resultado
+hub.display.scroll("DATOS OK", wait=True)
+hub.display.off()
+```
+
+---
+
+## Preguntas de Seguimiento (Opcional - 10 puntos extra)
+
+### P1: ¿Cómo agregarías un filtro de ruido a las mediciones?
+
+> Usar un promedio móvil de las últimas N muestras para suavizar lecturas ruidosas.
+
+### P2: ¿Qué mejoras harías para un sistema de telemetría en tiempo real?
+
+> - Usar asyncio para captura no bloqueante
+> - Transmitir datos por Bluetooth
+> - Visualizar en tiempo real con gráficos
+> - Implementar triggers para alertas automáticas
+
+---
+
+## Referencias
+
+[1] MicroPython Project. *MicroPython Documentation - Time and Timers*. 2026. Disponible en: https://docs.micropython.org/en/latest/library/time.html
+
+[2] Pybricks Team. *Pybricks MicroPython - Battery Monitoring*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html
+
+---
+
+*Evaluación Telemetría - MicroPython para el Aula - Diego Saavedra 2026*

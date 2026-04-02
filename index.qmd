@@ -1,78 +1,244 @@
-# Maestría del Arquitecto de Aprendizaje {.unnumbered}
+# 🚀 MicroPython para el Aula {.unnumbered}
 
-## El Framework de Ingeniería Educativa {.unnumbered}
+## 🎮 Un Curso Gamificado para Docentes {.unnumbered}
 
-:::: {.columns}
+::::: {.columns}
 
 ::: {.column width="60%"}
-### "No estamos aquí para enseñar sintaxis; estamos aquí para diseñar sistemas." {.unnumbered}
 
-Bienvenido a la ruta de excelencia en MicroPython. Este curso es un despliegue de ingeniería diseñado para convertirte en el **Arquitecto Principal** de tu aula.
+### "¿Cómo enseño tecnología en mi aula sin ser experto?" 🤔
+
+Este curso responde esa pregunta. Aquí aprenderás a programar robots educativos de forma práctica, sin complejos tecnicismos. Usarás herramientas gratuitas y **aprenderás haciendo**.
+
 :::
 
 ::: {.column width="40%"}
 ::: center
-![La Estructura del Conocimiento](images/robot-espi32-cartoon.png){width="100%"}
+![Robot educativo](images/robot-espi32-cartoon.png){width="100%"}
 :::
-:::
-
 ::::
 
----
-
-## Ecosistema de Ingeniería
-
-::: {layout-ncol=3}
-![**Core**: ESP32 & SPIKE](images/esp32-cartoon.png)
-
-![**Percepción**: Sensores](images/sensor-ultrasonico-cartoon.png)
-
-![**Actuación**: Motores](images/servo-motor-cartoon.png)
-:::
+:::::
 
 ---
+
+## 🎯 Tu Misión en Este Curso
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                    🎮 SISTEMA DE NIVELES 🎮                   ║
+╠═══════════════════════════════════════════════════════════════╣
+║                                                               ║
+║   🌱 Nivel 1: Aprendiz        → Conectar tu primer robot     ║
+║   🔍 Nivel 2: Explorador      → Controlar LEDs y pantalla    ║
+║   💻 Nivel 3: Programador     → Dominar motores              ║
+║   ⚙️ Nivel 4: Ingeniero       → Integrar sensores            ║
+║   🏗️ Nivel 5: Arquitecto      → Diseñar tu proyecto          ║
+║   🎓 Nivel 6: Maestro         → ¡GRADUACIÓN!                 ║
+║   👑 Nivel 7: Leyenda         → ¡Maestría completada!        ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+### 🏅 ¿Qué Insignias Puedes Desbloquear?
+
+| Unidad | Insignias Disponibles |
+|--------|----------------------|
+| 🔌 Unidad 1 | `🔌 Conectado` `🐍 Primer Código` `🎨 LED Maestro` |
+| 💡 Unidad 2 | `💡 LED On` `🎬 Animador` `🖼️ Pixel Art` |
+| 🤖 Unidad 3 | `🔄 Primer Giro` `📐 Geometra` `🧭 Navegante` |
+| 📡 Unidad 4 | `👁️ Ojo Robótico` `🔦 Detector` `📊 Telemetría` |
+| 🏆 Unidad 5 | `📋 Planificador` `🔧 Constructor` `🎓 Graduado` |
+
+---
+
+## 🗺️ Tu Hoja de Ruta
+
+```
+         🌱 INICIO
+            │
+            ▼
+    ┌───────────────┐
+    │ 🔌 UNIDAD 1   │ ← Conectar y Programar (175 XP)
+    │   175 XP      │
+    └───────┬───────┘
+            │
+            ▼
+    ┌───────────────┐
+    │ 💡 UNIDAD 2   │ ← Pantalla y Luces (175 XP)
+    │   175 XP      │
+    └───────┬───────┘
+            │
+            ▼
+    ┌───────────────┐
+    │ 🤖 UNIDAD 3   │ ← Movimiento (200 XP)
+    │   200 XP      │
+    └───────┬───────┘
+            │
+            ▼
+    ┌───────────────┐
+    │ 📡 UNIDAD 4   │ ← Sensores (175 XP)
+    │   175 XP      │
+    └───────┬───────┘
+            │
+            ▼
+    ┌───────────────┐
+    │ 🏆 PROYECTO   │ ← Integración Final (350 XP)
+    │   350 XP      │
+    └───────┬───────┘
+            │
+            ▼
+         🎓 GRADUADO
+```
+
+---
+
+## 😮 Pero primero... ¿por qué robots?
+
+Imagina que tus estudiantes pueden ver cómo sus instrucciones cobran vida:
+
+| Emoji | Acción | Lo que aprenden |
+|:-----:|--------|-----------------|
+| 🤖 | El robot avanza | Secuencias y comandos |
+| 💡 | La pantalla muestra dibujos | Matrices y loops |
+| 👁️ | Detecta obstáculos | Sensores y condicionales |
+| 🎵 | El robot hace sonidos | Eventos y feedback |
+
+**Eso es exactamente lo que lograremos en este curso.**
+
+---
+
+## 🛠️ ¿Qué necesitaremos?
+
+| Herramienta | Para qué | Costo |
+|-------------|----------|:-----:|
+| **Thonny** 🐍 | Escribir y probar código | **Gratis** |
+| **LEGO Technic Large Hub** 🧱 | El cerebro del robot | (del kit) |
+| **Pybricks** 🤖 | El software del robot | **Gratis** |
+| **Un cable USB-C** 🔌 | Conectar todo | (del kit) |
 
 ::: {.callout-note}
-## Declaración de Propósitos
-Este framework de aprendizaje ha sido diseñado para transformar la enseñanza de la tecnología desde un enfoque puramente descriptivo hacia una **Ingeniería Pedagógica** de alto rendimiento.
+## 💡 ¿Qué es Thonny?
+
+Thonny es un editor de Python gratuito diseñado para quienes están aprendiendo a programar. Fue creado en Estonia y es software libre.
+
+**Descarga aquí**: https://thonny.org
+
 :::
 
 ---
+
+## 📚 ¿Qué aprenderemos?
+
+A lo largo de este curso, completarás **5 misiones**:
+
+```
+╔══════════════════════════════════════════════════════════╗
+║                   📋 MISIÓN 1: CONEXIÓN 📋               ║
+║                                                          ║
+║   Objetivo: Hacer que el robot responda                  ║
+║   Habilidad: Configurar entorno Pybricks                 ║
+║   Recompensa: 🔌 + 🐍 + 🎨 (75 XP)                      ║
+╠══════════════════════════════════════════════════════════╣
+║                   💡 MISIÓN 2: VISUAL 💡                 ║
+║                                                          ║
+║   Objetivo: Mostrar mensajes y dibujos                   ║
+║   Habilidad: Controlar matriz LED 5x5                    ║
+║   Recompensa: 💡 + 🎬 + 🖼️ (75 XP)                      ║
+╠══════════════════════════════════════════════════════════╣
+║                   🤖 MISIÓN 3: MOVIMIENTO 🤖             ║
+║                                                          ║
+║   Objetivo: Hacer que se mueva                           ║
+║   Habilidad: Controlar motores con precisión             ║
+║   Recompensa: 🔄 + 📐 + 🧭 (100 XP)                     ║
+╠══════════════════════════════════════════════════════════╣
+║                   📡 MISIÓN 4: PERCEPCIÓN 📡             ║
+║                                                          ║
+║   Objetivo: Que detecte el mundo                         ║
+║   Habilidad: Usar sensores y telemetría                  ║
+║   Recompensa: 👁️ + 🔦 + 📊 (100 XP)                    ║
+╠══════════════════════════════════════════════════════════╣
+║                   🏆 MISIÓN 5: INTEGRACIÓN 🏆            ║
+║                                                          ║
+║   Objetivo: Crear tu propio proyecto                     ║
+║   Habilidad: Diseñar sistema completo                    ║
+║   Recompensa: 📋 + 🔧 + 🎓 + 🏆 (350 XP)               ║
+╚══════════════════════════════════════════════════════════╝
+```
+
+---
+
+## ⚙️ El Flujo de Trabajo
+
+Para que tu robot haga lo que tú quieres, seguirás estos pasos:
+
+```
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│ ✏️ 1.ESCRIBIR│ →  │ 🧪 2.PROBAR │ →  │ 📤 3.CARGAR │ →  │ 🎬 4.EJECUTAR│
+│   Código en  │    │  En Thonny  │    │  Al robot   │    │   El robot   │
+│   Thonny     │    │  (debug) 🐛│    │  por USB 🔌 │    │   actúa 🤖   │
+└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+       │                  │                  │                  │
+       ▼                  ▼                  ▼                  ▼
+    [25 XP]           [25 XP]           [25 XP]           [50 XP]
+```
+
+**No te preocupes** 😌 - En la primera unidad explicaremos cada paso con detalle.
+
+---
+
+## 🤖 ¿Qué robot usaremos?
+
+Usaremos el **LEGO Technic Large Hub** (el cerebro del robot):
+
+| Componente | Descripción | Emojis |
+|------------|-------------|:------:|
+| **Procesador** | Como el cerebro del robot, controla todo | 🧠 |
+| **4 puertos** | Para conectar motores y sensores (A, B, C, D) | 🔌 |
+| **Pantalla LED** | 5x5 puntitos que puedes controlar | 💡 |
+| **Batería** | Se carga por USB | 🔋 |
+| **Bluetooth** | También puede funcionar sin cables | 📡 |
 
 ::: {.callout-tip}
-## ¿Cómo abordamos este proyecto? (Filosofía Statick)
+## 💡 Dato interessante
 
-| Acción | Rol | Objetivo |
-|-----------|-------|--------|
-| **Diseño** | Tú | Planificar la arquitectura de la clase. |
-| **Implementación** | Nosotros | Desplegar el código en hardware real. |
-| **Validación** | Ambos | Asegurar que el aprendizaje ha sido exitoso. |
+El LEGO Technic Large Hub usa el mismo lenguaje que Python, pero una versión especial llamada **MicroPython**. Es como si Python pudiera correr dentro de un robot. 🐍🤖
+
+¡Es **20x más pequeño** que Python regular pero hace **lo mismo**! 
 :::
 
 ---
 
-## El Ecosistema de Desarrollo
+## 📖 Referencias para conocer más
 
-| Componente | Especificación Técnica |
-|------------|---------|
-| **Core** | LEGO SPIKE Prime Hub |
-| **Plataforma** | Pybricks (MicroPython Optimizado) |
-| **Entorno** | Stark/Statick Console (code.pybricks.com) |
-| **Interface** | Protocolo de conexión segura (USB/BT) |
-
----
-
-## Roadmap del Arquitecto
-
-| Fase | Despliegue de Sistemas | Milestone |
-|--------|------|---------|
-| **Fase 0** | El Manifiesto y las Competencias | 📋 Certificación Base |
-| **Fase 1** | Configuración de Infraestructura | 🔌 Conexión Estable |
-| **Fase 2** | Control Visual y HUD | 💡 Feedback Visual |
-| **Fase 3** | Lógica de Tracción y Actuación | ⚙️ Movimiento Preciso |
-| **Fase 4** | Telemetría y Percepción de Datos | 📡 Telemetría Avanzada |
-| **Fase 5** | Despliegue de la IA JARVIS (Proyecto) | 🏆 Maestría Final |
+| Tema | Enlace | Emoji |
+|------|--------|:-----:|
+| **Thonny** | https://thonny.org | 🐍 |
+| **Pybricks** | https://docs.pybricks.com | 🤖 |
+| **MicroPython** | https://micropython.org | 📱 |
+| **Python oficial** | https://docs.python.org/es/3/ | 📘 |
 
 ---
 
-*Diseñado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026*
+## 🎮 ¡COMIENZA TU AVENTURA!
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║   ¿Listo para convertirte en un ROBOTICISTA EDUCADOR? 🤖    ║
+║                                                              ║
+║   👉 Siguiente paso: 📖 Ir a Unidad 1: Conectar y Programar ║
+║                                                              ║
+║   🎯 Objetivo: Desbloquear tu primera insignia 🔌           ║
+║                                                              ║
+║   ⏱️ Tiempo estimado: 2 horas                                ║
+║   📊 Dificultad: Principiante 🌱                             ║
+║                                                              ║
+║   ¡BUENA SUERTE, DOCENTE! 🍀                                ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+---
+
+*🤖 Un curso gamificado para docentes - Diego Saavedra 2026* 🎓

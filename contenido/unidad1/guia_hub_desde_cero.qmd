@@ -1,0 +1,500 @@
+# Guía Completa: El Hub LEGO — Desde Cero {#guia-hub}
+
+::: center
+![Hub LEGO](images/hub-completo.png){width="50%"}
+
+**📖 Manual para Docentes: Todo lo que necesitas saber**
+:::
+
+---
+
+## Parte 1: ¿Qué es un Hub? Explicación para Principiantes
+
+### 1.1 ¿Qué significa "Hub"?
+
+La palabra **Hub** significa "centro" o "concentrador". En el contexto de robótica educativa, el Hub es el **cerebro** del robot—el lugar donde se procesan todas las instrucciones.
+
+**Analogía con objetos cotidianos:**
+
+| Objeto |Qué hace | Equivalente en el robot |
+|--------|---------|----------------------|
+| **Cerebro humano** | Piensa, recuerda, controla el cuerpo | **Hub** |
+| **Corazón** | Mantiene vivo el cuerpo | Batería integrada |
+| **Ojos** | Ve el mundo | Sensores |
+| **Brazos/Piernas** | Moverse | Motores |
+
+---
+
+### 1.2 El Hub LEGO Technic Large Hub (45601)
+
+El Hub que usaremos en este curso es el **LEGO Technic Large Hub**, modelo 45601. Es el "cerebro" oficial de LEGO para proyectos de Robótica.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    LEGO TECHNIC LARGE HUB (45601)              │
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────┐    │
+│  │                                                         │    │
+│  │              ○ LED DE ESTADO (COLOR)                   │    │
+│  │                    (se ilumina)                          │    │
+│  │                                                         │    │
+│  │  ┌─────────────────────────────────────────────────┐    │    │
+│  │  │              PANTALLA (5x5 LEDs)               │    │    │
+│  │  │         Muestra letras, números, iconos         │    │    │
+│  │  └─────────────────────────────────────────────────┘    │    │
+│  │                                                         │    │
+│  │              ◯ BOTÓN CENTRAL                            │    │
+│  │         (ENCIENDE/APAGA EL HUB)                         │    │
+│  │                                                         │    │
+│  └─────────────────────────────────────────────────────────┘    │
+│                                                                  │
+│  PUERTOS (donde conectas motores y sensores):                  │
+│                                                                  │
+│   ┌───┐   ┌───┐   ┌───┐   ┌───┐                              │
+│   │ A │   │ B │   │ C │   │ D │                              │
+│   │ ○ │   │ ○ │   │ ○ │   │ ○ │                              │
+│   │MOT│   │MOT│   │SEN│   │SEN│                              │
+│   └───┘   └───┘   └───┘   └───┘                              │
+│                                                                  │
+│  CONEXIÓN: USB-C (para cargar código y energía)              │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 1.3 Cada Parte del Hub Explicada
+
+#### 🔵 El LED de Estado (Luz de color)
+
+**Qué es:** Un pequeño foco LED en el centro de la cara del Hub.
+
+**Para qué sirve:** Indica el estado del robot:
+- **Verde** = Todo bien, el robot está funcionando
+- **Rojo** = Error o problema
+- **Naranja** = Cargando o procesando
+- **Azul** = Conectado por Bluetooth
+
+**Cómo se usa en código:**
+```python
+hub.light.on(5)  # Encender luz verde (5 = verde)
+hub.light.off()  # Apagar luz
+```
+
+---
+
+#### 📺 La Pantalla (Matrix 5x5 LEDs)
+
+**Qué es:** Una pequeña pantalla de 5x5 LEDs (25 puntitos luminosos).
+
+**Para qué sirve:** Mostrar:
+- Texto (letras y números)
+- Iconos (caritas, flechas)
+- Dibujo personalizado
+
+**Cómo se usa en código:**
+```python
+hub.display.text("HOLA")  # Mostrar texto
+hub.display.icon("HAPPY")  # Mostrar icono
+```
+
+---
+
+#### ⭕ El Botón Central
+
+**Qué es:** El único botón físico del Hub.
+
+**Para qué sirve:**
+- Encender el Hub (presionar 1 vez)
+- Apagar el Hub (mantener presionado 3 segundos)
+- Reiniciar (mantener presionado 10 segundos)
+
+**Cómo se usa en código:**
+```python
+hub.button.pressed()  # ¿El botón está presionado?
+```
+
+---
+
+#### 🔌 Los Puertos (A, B, C, D)
+
+**Qué son:** 4 conexiones donde se enchufan motores y sensores.
+
+**Para qué sirve cada uno:**
+
+| Puerto | típicamente se conecta | Ejemplo |
+|--------|----------------------|---------|
+| **A** | Motor izquierdo | Rueda izq |
+| **B** | Motor derecho | Rueda der |
+| **C** | Motor adicional | Brazo, pinza |
+| **D** | Sensor | Ultrasónico, color |
+
+**Cómo se usa en código:**
+```python
+from pybricks.parameters import Port
+motor = Motor(Port.A)  # Motor en puerto A
+sensor = UltrasonicSensor(Port.D)  # Sensor en puerto D
+```
+
+---
+
+#### 🔋 Batería Integrada
+
+**Qué es:** El Hub tiene una batería de iones de litio integrada (no necesitas pilas AA).
+
+**Para qué sirve:** Alimentar el Hub y todos los componentes conectados.
+
+**Cuánto dura:**
+-正常使用: 4-6 horas
+- En espera: varios días
+- Se carga por USB-C
+
+---
+
+### 1.4 ¿Por qué usar un Hub?
+
+**Situación:** Imagina que quieres que un robot recoja juguetes. ¿Qué necesitas?
+
+```
+┌─────────────────────────────────────────────┐
+│           PARA HACER UN ROBOT NECESITAS:   │
+├─────────────────────────────────────────────┤
+│  1. CEREBRO (procesar instrucciones)  → Hub │
+│  2. MÚSCULOS (moverse)                 → Motores │
+│  3. OJOS (ver el mundo)                → Sensores │
+│  4. ENERGÍA                             → Batería │
+└─────────────────────────────────────────────┘
+```
+
+El Hub hace toda la coordinación—le dice a los motores cuándo moverse, lee los sensores, muestra mensajes en la pantalla. Sin él, tendrías un amasijo de piezas sin función.
+
+---
+
+## Parte 2: Instalación — Paso a Paso
+
+### 2.1 ¿Qué necesitas tener antes de empezar?
+
+| Requerimiento | Detalle |
+|---------------|---------|
+| **Computadora** | Windows, Mac o Linux |
+| **Cable USB** | USB-C (el que viene con el Hub) |
+| **Acceso a internet** | Para descargar programas |
+| **El Hub LEGO** | El robot completo |
+
+### 2.2 Paso 1: Instalar Thonny
+
+**¿Qué es Thonny?** Es el programa donde vas a escribir las instrucciones. Es como un cuaderno digital.
+
+**Descargar e instalar:**
+
+**Windows:**
+1. Abre tu navegador y ve a https://thonny.org
+2. Haz clic en el botón de descarga para Windows
+3. Ejecuta el archivo `.exe` descargado
+4. Presiona "Siguiente" varias veces hasta terminar
+
+**Mac:**
+1. Ve a https://thonny.org
+2. Descarga la versión para Mac
+3. Abre el archivo `.dmg`
+4. Arrastra Thonny a tu carpeta de Aplicaciones
+
+**Linux (Ubuntu/Debian):**
+Abre la terminal y escribe:
+```bash
+sudo apt update
+sudo apt install thonny
+```
+
+**Verificar que funciona:**
+- Busca "Thonny" en tu computadora
+- Haz clic para abrirlo
+- Debería verse una ventana con un editor de texto
+
+---
+
+### 2.3 Paso 2: Conectar el Hub por primera vez
+
+**Conexión física:**
+
+```
+COMPUTADORA                              HUB LEGO
+    USB-C  ───────────────────────────── USB-C
+    ┌───┐                                ┌───┐
+    │ ● │ ────────────────────────────── │ ● │
+    └───┘                                └───┘
+```
+
+**Pasos:**
+1. Conecta un extremo del cable USB a tu computadora
+2. Conecta el otro extremo al Hub LEGO
+3. **Presiona el botón central del Hub** (una vez, no lo mantengas)
+
+**¿Cómo saber que está conectado?**
+- El LED del Hub se enciende (verde o azul)
+- En la pantalla del Hub aparece un icono de conexión
+
+---
+
+### 2.4 Paso 3: Configurar Thonny para el Hub
+
+**En Thonny, configurar la conexión:**
+
+1. Abre Thonny (ya lo instalaste en el paso anterior)
+2. Ve al menú **Tools** (Herramientas)
+3. Selecciona **Options** (Opciones)
+4. Haz clic en la pestaña **Interpreter** (Intérprete)
+5. Verás algo como esto:
+
+```
+┌─────────────────────────────────────────┐
+│ Interpreter                             │
+│ ┌─────────────────────────────────────┐ │
+│ │ Select interpreter:                  │ │
+│ │ [MicroPython (generic) ▼]           │ │
+│ │  ○ Pybricks (LEGO Technic Large Hub)│ │
+│ │  ● MicroPython (generic)            │ │
+│ │  ○ Standard Python (local)          │ │
+│ └─────────────────────────────────────┘ │
+│                                          │
+│ Port:                                    │
+│ ┌─────────────────────────────────────┐ │
+│ │ [auto-detect ▼]                     │ │
+│ │  ○ COM3 (USB Serial)                 │ │
+│ │  ○ /dev/tty.usbserial-XXX           │ │
+│ │  ● (auto-detect)                    │ │
+│ └─────────────────────────────────────┘ │
+│                                          │
+│           [OK]                          │
+└─────────────────────────────────────────┘
+```
+
+6. Selecciona: **"Pybricks (LEGO Technic Large Hub)"**
+7. Deja el puerto en **"auto-detect"**
+8. Presiona **OK**
+
+---
+
+### 2.5 Paso 4: Instalar Pybricks (el cerebro del robot)
+
+**¿Qué es Pybricks?** Es el software que vive dentro del Hub y permite que entienda Python.
+
+**Si ya está instalado:**
+En la parte inferior de Thonny verás algo como:
+```
+>>> MicroPython v1.20.0 on 2024-09-12
+>>> LEGO Technic Large Hub firmware version 3.3.0
+```
+
+**Si NO está instalado:**
+1. En Thonny, ve a **Tools** → **Manage packages**
+2. Busca "pybricks"
+3. Haz clic en install
+
+O en la terminal de Thonny, escribe:
+```python
+import pybricks
+print(pybricks.__version__)
+```
+
+---
+
+### 2.6 Paso 5: Tu primer código en el robot
+
+**Ahora Vamos a probar que todo funcione:**
+
+1. En Thonny, escribe este código:
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+# "Presentarle" el robot al programa
+hub = PrimeHub()
+
+# Pedirle al robot que haga algo
+hub.display.text("HOLA")
+wait(2000)
+hub.light.on(5)  # Luz verde
+```
+
+2. Presiona el botón **Run** (el triángulo verde de ▶️)
+3. Observa el Hub:
+   - ¿Apareció "HOLA" en la pantalla?
+   - ¿Se encendió la luz verde?
+
+**¡Felicitaciones! Tu robot está funcionando!**
+
+---
+
+### 2.7 ¿Qué hacer si no funciona?
+
+| Problema | Causa probable | Solución |
+|----------|---------------|----------|
+| Thonny no encuentra el Hub | Cable no conectado o no es de datos | Usa el cable original LEGO |
+| El Hub no enciende | Batería descargada | Conecta por USB y presiona el botón |
+| Error de "Port not found" | Puerto no seleccionado | Vuelve a Tools → Options → Interpreter |
+| "Firmware outdated" | Pybricks desactualizado | Ve a https://pybricks.com para actualizar |
+
+---
+
+## Parte 3: Simuladores — Si no tienes el Hub físico
+
+### 3.1 ¿Qué es un simulador?
+
+Un **simulador** es un programa que actúa como si fuera el robot real. Puedes escribir código y ver qué pasaría, sin necesidad del hardware físico.
+
+**¿Para qué sirve?**
+- Practicar cuando no tienes el robot
+- Probar ideas antes de probarlas en el robot real
+- Aprender sin costo adicional
+
+---
+
+### 3.2 Opción 1: Simulador Básico (Gratuito)
+
+Puedes hacer un "simulador" básico en Thonny mismo, sin hardware:
+
+```python
+# Simulación del Hub en tu computadora
+# (No controla un robot real, pero puedes practicar la lógica)
+
+class FakeHub:
+    """Simula las funciones del Hub LEGO"""
+    
+    def __init__(self):
+        self.pantalla = ""
+        self.luz = "apagada"
+    
+    def display_text(self, mensaje):
+        print(f"📺 PANTALLA: {mensaje}")
+        self.pantalla = mensaje
+    
+    def light_on(self, color):
+        colores = {0: "rojo", 5: "verde", 10: "amarillo", 3: "azul"}
+        print(f"🔵 LED: Color {colores.get(color, 'desconocido')}")
+        self.luz = "encendida"
+    
+    def light_off(self):
+        print("🔴 LED: Apagado")
+        self.luz = "apagada"
+    
+    def speaker_beep(self):
+        print("🔊 BEEP!")
+    
+    @property
+    def button(self):
+        return FakeButton()
+
+class FakeButton:
+    def pressed(self):
+        return False
+
+# USAR COMO SI FUERA EL HUB REAL
+hub = FakeHub()
+hub.display_text("PRACTICA")
+hub.light_on(5)
+hub.speaker_beep()
+```
+
+**Cómo probarlo:**
+1. Copia el código en Thonny
+2. Ejecuta (presiona Run)
+3. Verás la "salida simulada" en la consola
+
+---
+
+### 3.3 Opción 2: OpenBot — Robot con tu Smartphone (~$50)
+
+**¿Qué es OpenBot?** Es un proyecto open source que usa tu teléfono Android como el "cerebro" del robot. Es mucho más económico que LEGO.
+
+**Precio:** ~$50 en materiales (ya tienes el smartphone)
+
+**Cómo funciona:**
+1. Imprimes o construyes el cuerpo del robot (3D o cardboard)
+2. Instalas la app de OpenBot en tu Android
+3. El teléfono se convierte en el cerebro
+
+**Licencia:** MIT (completamente open source)
+
+**Enlaces:**
+- 📖 [github.com/isl-org/OpenBot](https://github.com/isl-org/OpenBot)
+- 📖 [openbot.org](https://openbot.org)
+
+---
+
+### 3.4 Opción 3: ESP-LEGO-SPIKE-Simulator
+
+**¿Qué es?** Un simulador no oficial de LEGO SPIKE que corre en Python.
+
+**Licencia:** Open source
+
+**Características:**
+- Simula el comportamiento del Hub
+- Compatible con código Pybricks
+- Puede correr en PC o en ESP32
+
+**Enlaces:**
+- 📖 [github.com/rundhall/ESP-LEGO-SPIKE-Simulator](https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator)
+
+---
+
+### 3.5 Comparativa de Simuladores
+
+| Opción | Costo | Hardware necesario | Facilidad |
+|--------|-------|-------------------|-----------|
+| **Simulación básica** | $0 | Solo PC | ★★★★★ |
+| **OpenBot** | ~$50 | Smartphone Android + materiales | ★★★☆☆ |
+| **ESP-LEGO-Simulator** | $10-20 | ESP32 (opcional) | ★★☆☆☆ |
+
+---
+
+## Resumen: Conceptos Clave
+
+| Concepto | Qué es | Para qué |
+|----------|--------|----------|
+| **Hub** | El cerebro del robot | Procesar instrucciones |
+| **Puerto A/B** | Conexiones para motores | Mover el robot |
+| **Puerto C/D** | Conexiones para sensores | Detectar el entorno |
+| **Pantalla** | Matriz 5x5 LEDs | Mostrar información |
+| **LED de estado** | Luz de colores | Indicar estado |
+| **Pybricks** | Software del Hub | Entender Python |
+| **Thonny** | Editor de código | Escribir programas |
+| **Simulador** | Versión virtual | Practicar sin robot |
+
+---
+
+## Referencias
+
+[1] LEGO Group. (2024). *LEGO Technic Large Hub Product Information*. Available: https://www.lego.com
+
+[2] Thonny Team. (2024). *Thonny: Python IDE for Beginners*. Available: https://thonny.org
+
+[3] Thonny Team. (2024). *Thonny Source Code*. GitHub Repository. Available: https://github.com/thonny/thonny
+
+[4] Pybricks Team. (2024). *Pybricks Documentation*. Available: https://docs.pybricks.com
+
+[5] Pybricks Team. (2024). *Pybricks Official Website*. Available: https://pybricks.com
+
+[6] Pybricks Team. (2024). *Pybricks GitHub Repository*. Available: https://github.com/pybricks
+
+[7] MicroPython Team. (2024). *MicroPython Official Website*. Available: https://micropython.org
+
+[8] MicroPython Team. (2024). *MicroPython Documentation*. Available: https://docs.micropython.org
+
+[9] OpenBot Foundation. (2024). *OpenBot: Turning Smartphones into Robots*. Available: https://openbot.org
+
+[10] Intel Labs. (2024). *OpenBot GitHub Repository*. Available: https://github.com/isl-org/OpenBot
+
+[11] Rundhall. (2024). *ESP-LEGO-SPIKE-Simulator*. GitHub Repository. Available: https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator
+
+[12] Python Software Foundation. (2024). *Python Tutorial*. Available: https://docs.python.org/es/3/tutorial/
+
+**Para docentes que quieren aprender más:**
+- 📖 [Python Tutorial (español)](https://docs.python.org/es/3/tutorial/) — Tutorial oficial de Python
+- 📖 [Python para NO programadores](https://www.python.org/about/gettingstarted/) — Introducción para principiantes
+
+---
+
+*Esta guía covering: qué es el Hub, cómo instalarlo, y alternativas de simulación.*
+*Licencia: CC BY 4.0 — Diego Saavedra 2026*

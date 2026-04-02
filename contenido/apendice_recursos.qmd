@@ -1,0 +1,333 @@
+# Apéndice: Alternativas y Recursos Adicionales {#apendice-recursos}
+
+::: center
+![Recursos](images/robot-espi32-cartoon.png){width="35%"}
+
+**📚 Información Complementaria**
+:::
+
+---
+
+## 1. ¿No tienes acceso a LEGO? Aquí hay alternativas
+
+Entendemos que el hardware de LEGO puede ser costoso. Existen alternativas más económicas que funcionan con MicroPython [1]:
+
+### 1.1 micro:bit V2 — La opción más económica
+
+**Precio:** $20-25 USD | **Python:** MicroPython nativo
+
+El BBC micro:bit es una微型computadora diseñada específicamente para educación. Tiene sensores integrados, LEDs y botones [2].
+
+```
+┌─────────────────────────────────────────┐
+│           micro:bit V2                  │
+│  ┌─────────────────────────────────┐    │
+│  │ ● ● ● ● ●  (matriz 5x5 LEDs)   │    │
+│  └─────────────────────────────────┘    │
+│  [A]              [B]                   │
+│  ┌─────────────────────────────────┐    │
+│  │ 🎤 💧 🌡️ 📡 🔌 (sensores)       │    │
+│  └─────────────────────────────────┘    │
+└─────────────────────────────────────────┘
+```
+
+**Características:**
+- Micrófono integrado
+- Speaker integrado
+- Acelerómetro
+- Magnetómetro
+- Bluetooth
+- Radio
+
+**Código ejemplo:**
+
+```python
+from microbit import *
+
+# Mostrar un corazón
+display.show(Image.HEART)
+
+# Botones
+while True:
+    if button_a.is_pressed():
+        display.show("A")
+    elif button_b.is_pressed():
+        display.show("B")
+```
+
+**Enlaces:**
+- 📖 [microbit.org](https://microbit.org) — Sitio oficial [2]
+- 📖 [microbit.org/python](https://microbit.org/python) — Documentación Python [2]
+
+---
+
+### 1.2 Raspberry Pi Pico — Potencia a bajo costo
+
+**Precio:** $4-10 USD | **Python:** MicroPython nativo
+
+El Raspberry Pi Pico es un microcontrolador muy potente diseñado por Raspberry Pi Foundation [3].
+
+```
+┌─────────────────────────────────────────┐
+│        Raspberry Pi Pico                │
+│                                         │
+│  ○ ○ ○ ○  ───  USB                     │
+│  GND VBUS VSYS   (pins)                │
+│  GP0  GP1  ...                         │
+│                                         │
+│  ────────────  Botón                  │
+└─────────────────────────────────────────┘
+```
+
+**Características:**
+- Dual-core ARM Cortex-M0+
+- 264 KB RAM
+- 2 MB Flash
+- 40 pines GPIO
+- ADC, PWM, SPI, I2C
+
+**Código ejemplo:**
+
+```python
+from machine import Pin, PWM
+from time import sleep
+
+# LED incorporado
+led = Pin(25, Pin.OUT)
+
+# Parpadear
+while True:
+    led.toggle()
+    sleep(1)
+
+# LED externo en PWM
+led_externo = PWM(Pin(15))
+led_externo.freq(1000)
+
+for duty in range(0, 65536, 1000):
+    led_externo.duty_u16(duty)
+    sleep(0.1)
+```
+
+**Enlaces:**
+- 📖 [raspberrypi.com/pico](https://raspberrypi.com/pico) — Comprar [3]
+- 📖 [raspberrypi.com/documentation/pico-sdk](https://raspberrypi.com/documentation/pico-sdk) — Documentación [3]
+
+---
+
+### 1.3 Arduino Alvik — La alternativa moderna
+
+**Precio:** $99 USD | **Python:** MicroPython nativo
+
+El Arduino Alvik es un robot educativo lanzado en 2024, diseñado específicamente para aprender MicroPython y robótica [4].
+
+```
+┌─────────────────────────────────────────┐
+│           Arduino Alvik                │
+│      ┌────────────────────┐             │
+│     ╱  ● ○ ●  (sensores)  ╲            │
+│    ╱   ┌──┐   ┌──┐   ┌──┐    ╲          │
+│   │    │▓▓│   │▓▓│   │▓▓│     │         │
+│   │    └──┘   └──┘   └──┘     │         │
+│   │     RUEDAS           │         │
+│   │                      │         │
+│   └──────────────────────┘         │
+└─────────────────────────────────────────┘
+```
+
+**Características:**
+- Sensores de línea integrados
+- Sensor de distancia ToF
+- Acelerómetro
+- LED RGB
+- Batería integrada
+- Wheels incluidos
+
+**Código ejemplo:**
+
+```python
+from arduino import robot
+
+# Mover el robot
+robot.forward(10)  # 10 cm
+robot.turn(90)     # 90 grados
+
+# Sensores
+distancia = robot.distance()
+linea = robot.line_sensor()
+
+# Mostrar en pantalla
+robot.display.show("HOLA")
+```
+
+**Enlaces:**
+- 📖 [arduino.cc/alvik](https://www.arduino.cc/alvik) — Sitio oficial [4]
+
+---
+
+## 2. Simuladores: Practicar sin hardware
+
+Si no tienes el robot físico, puedes practicar con simuladores [1]:
+
+### 2.1 Thonny + Python en PC (sin robot)
+
+Puedes ejecutar código Python en tu computadora sin el robot:
+
+```python
+# Este código funciona en la computadora
+# (aunque no controlará un robot físico)
+
+# Simular el robot
+class SimulatedHub:
+    def __init__(self):
+        self.luz_estado = False
+        self.texto = ""
+    
+    def light_on(self, color):
+        print(f"🔵 LEDendido (color {color})")
+        self.luz_estado = True
+    
+    def display_text(self, texto):
+        print(f"📺 Pantalla: {texto}")
+        self.texto = texto
+
+# Usar como si fuera el robot real
+hub = SimulatedHub()
+hub.light_on(5)
+hub.display_text("PRACTICA")
+```
+
+### 2.2 OpenBot (Smartphone + DIY)
+
+OpenBot usa un teléfono Android como cerebro del robot—mucho más económico [5].
+
+**Precio:** ~$50 (materiales) + smartphone (ya tienes)
+
+**Enlaces:**
+- 📖 [github.com/isl-org/OpenBot](https://github.com/isl-org/OpenBot) — Repositorio oficial [5]
+
+---
+
+## 3. Comparativa de costos
+
+| Opción | Hardware | Costo Total | Nivel |
+|--------|----------|-------------|-------|
+| **LEGO Technic + Pybricks** | Hub + motores + sensores | $250-300 | ★★★★★ |
+| **Arduino Alvik** | Robot completo | $99 | ★★★★ |
+| **micro:bit** | Solo board | $25 | ★★★ |
+| **Raspberry Pi Pico** | + componentes | $15-20 | ★★★ |
+| **Simulador + PC** | Solo PC | $0 | ★★ |
+
+---
+
+## 4. Recomendación según presupuesto
+
+| Presupuesto | Recomendación |
+|-------------|---------------|
+| **Alto ($250+)** | LEGO Technic Large Hub + Pybricks [1] |
+| **Medio ($100)** | Arduino Alvik [4] |
+| **Bajo ($25)** | micro:bit V2 [2] |
+| **Muy bajo ($0)** | Simulador en PC + Thonny [6] |
+
+---
+
+## 5. Siguientes pasos en el mundo MicroPython
+
+Una vez que domines este curso, puedes explorar [1]:
+
+- **CircuitPython**: Versión de Python de Adafruit, muy popular en hardware [7]
+- **ROS2**: Sistema operativo para robots más avanzado [8]
+- **TinyML**: Machine Learning en microcontroladores [9]
+- **IoT con MicroPython**: Conectar dispositivos a internet [10]
+
+---
+
+## 6. Contenido Avanzado del Curso
+
+El curso incluye módulos avanzados para profundizar tu aprendizaje:
+
+### 6.1 Sensores Adicionales {#sensores-avanzados}
+
+| Sensor | Descripción | Referencia |
+|--------|-------------|------------|
+| InfraredSensor | Detecta objetos, mide reflexión de luz | [11] |
+| ColorSensor | Identifica colores, controla luces RGB | [12] |
+| ForceSensor | Mide fuerza en Newtons | [13] |
+| TiltSensor | Detecta inclinación (pitch/roll) | [14] |
+
+### 6.2 Control Avanzado de Motores {#motores-avanzados}
+
+| Función | Descripción | Referencia |
+|--------|-------------|------------|
+| Modos de parada | COAST, BRAKE, HOLD | [15] |
+| Control PID | Ajustes para precisión | [15] |
+| run_time/run_angle/run_target | Diferentes tipos de movimiento | [15] |
+| run_until_stalled | Calibración automática | [15] |
+| DCMotor | Control directo de potencia | [16] |
+
+### 6.3 Telemetría y Monitoreo {#telemetria-bateria}
+
+| Función | Descripción | Referencia |
+|--------|-------------|------------|
+| battery.voltage | Voltaje de batería en mV | [17] |
+| battery.current | Corriente de batería en mA | [17] |
+| robot.state() | Estado completo (distancia, ángulo, velocidad) | [18] |
+| robot.reset() | Resetear odometría | [18] |
+
+### 6.4 Thonny Debugger {#thonny-debugger}
+
+| Función | Descripción | Referencia |
+|--------|-------------|------------|
+| Ctrl + F5 | Modo debugger "nicer" | [19] |
+| F6 Step Over | Saltar función | [19] |
+| F7 Step Into | Entrar a función | [19] |
+| Breakpoints | Parar en puntos específicos | [19] |
+| Inspector de Variables | Ver valores en tiempo real | [19] |
+
+---
+
+## Referencias
+
+[1] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
+
+[2] BBC. (2020). *micro:bit Documentation*. micro:bit. Disponible: https://microbit.org
+
+[3] Raspberry Pi Foundation. (2021). *Raspberry Pi Pico Documentation*. Raspberry Pi. Disponible: https://raspberrypi.com/pico
+
+[4] Arduino. (2024). *Arduino Alvik - Robotic Learning Platform*. Arduino. Disponible: https://www.arduino.cc/alvik
+
+[5] ISL. (2020). *OpenBot - Smartphone Robot*. GitHub. Disponible: https://github.com/isl-org/OpenBot
+
+[6] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[7] Adafruit. (2023). *CircuitPython Documentation*. Adafruit. Disponible: https://circuitpython.org
+
+[8] Open Source Robotics Foundation. (2024). *ROS2 Documentation*. ROS. Disponible: https://docs.ros.org
+
+[9] Google. (2024). *TensorFlow Lite for Microcontrollers*. Google. Disponible: https://www.tensorflow.org/lite/microcontrollers
+
+[10] MicroPython. (2023). *MicroPython - Python for Microcontrollers*. MicroPython. Disponible: https://micropython.org
+
+[11] Pybricks Team. (2023). *Pybricks Documentation - Infrared Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/infraredsensor.html
+
+[12] Pybricks Team. (2023). *Pybricks Documentation - Color Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/colorsensor.html
+
+[13] Pybricks Team. (2023). *Pybricks Documentation - Force Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/forcesensor.html
+
+[14] Pybricks Team. (2023). *Pybricks Documentation - Tilt Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html
+
+[15] Pybricks Team. (2023). *Pybricks Documentation - Motors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/motor.html
+
+[16] Pybricks Team. (2023). *Pybricks Documentation - DC Motor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/dcmotor.html
+
+[17] Pybricks Team. (2023). *Pybricks Documentation - PrimeHub*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html
+
+[18] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+
+[19] A. Annamaa. (2018). *Thonny Debugging Documentation*. GitHub. Disponible: https://github.com/thonny
+
+---
+
+*Material adicional: Alternativas y recursos para Robótica Educativa con MicroPython*
+*Última actualización: Abril 2026*
+*Licencia: CC BY 4.0*

@@ -1,72 +1,209 @@
-# Fase 3: Sistemas de Tracción y Actuación {#unidad3-motores}
+# Unidad 3: ¿Cómo hace el robot para moverse? {#unidad3-motores}
 
 ::: center
-![Sistemas de Propulsión](images/servo-motor-cartoon.png){width="30%"}
+![Motores del Robot](images/robot-movimiento.png){width="35%"}
+
+**⏱️ Tiempo estimado:** 50 minutos | **📊 Nivel:** Intermedio
 :::
-
-## Cinematica del Robot: El DriveBase
-
-Como Arquitectos, no solo movemos motores; gestionamos la cinemática de un chasis. El `DriveBase` es la abstracción que nos permite hablar en milímetros y grados, no en potencia bruta.
 
 ---
 
-## 1. Configuración de Alta Precisión
+## Antes de empezar
 
-::: {.callout-tip}
-## Ingeniería Statick: Control por Giroscopio
-Para trayectorias rectas perfectas, **DEBEMOS** activar el giroscopio interno. Esto compensa mecánicamente cualquier imperfección en el chasis.
-:::
+¿Alguna vez has observado cómo funciona un carro de juguete? Tienes dos ruedas, y cuando ambasavan, el carro avanza. Cuando una gira más que la otra, el carro gira.
 
-```python
-from pybricks.pupdevices import Motor # Control de actuadores
-from pybricks.parameters import Port, Direction # Configuración de puertos
-from pybricks.robotics import DriveBase # <1>
-from pybricks.tools import wait # Gestión de pausas
+El robot LEGO funciona exactamente igual—tiene dos "rueditas" (motores) que puede controlar independientemente. Vamos a aprender cómo hacerlo [1][2].
 
-# Configuración del hardware de tracción
-# El motor izquierdo requiere rotación invertida para avance síncrono
-motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE) 
-motor_der = Motor(Port.B)
+---
 
-# Instanciación del modelo físico del robot
-# wheel_diameter: 56mm, axle_track: 112mm
-robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112) # <2>
+## Las dos ruedas del robot
 
-def ejecutar_mision():
-    """Protocolo de navegación de precisión."""
-    robot.use_gyro(True) # <3>
-    robot.settings(straight_speed=200) # <4>
-    
-    robot.straight(500) # <5>
-    robot.turn(90) # <6>
-    robot.stop() # Bloqueo de seguridad de los actuadores
+**Situación:** Estás en un supermercado con un carrito. Si empujas las dos ruedas igual, el carrito va recto. Si empujas más la rueda derecha, el carrito gira a la izquierda.
 
-if __name__ == "__main__":
-    ejecutar_mision() # Lanzar secuencia de navegación
+El robot tiene algo parecido—dos motores que pueden ir a diferentes velocidades o en diferentes direcciones [2].
+
+```
+┌─────────────────────────────────────┐
+│           ROBOT (visto desde arriba)  │
+│                                       │
+│    ┌─────────┐        ┌─────────┐     │
+│    │  MOTOR  │ ←────→ │  MOTOR  │     │
+│    │   A     │        │   B     │     │
+│    └─────────┘        └─────────┘     │
+│         ↑                   ↑         │
+│    Rueda izq          Rueda der       │
+└─────────────────────────────────────┘
 ```
 
-1.  Cargamos el motor de física y cinemática para robots diferenciales.
-2.  Definimos las dimensiones reales para que el software calcule las rotaciones de motor necesarias.
-3.  El sistema utiliza el sensor inercial para detectar desviaciones y corregirlas en milisegundos.
-4.  Establecemos parámetros de seguridad para evitar derrapes o pérdida de tracción.
-5.  Movimiento en línea recta donde el error se minimiza mediante el feedback del giroscopio.
-6.  Giro exacto basado en la odometría y la telemetría angular del sensor interno.
+**¿Para qué sirve?**
+- **Ambas van igual** → el robot va recto
+- **Una va, la otra no** → el robot gira
+- **Una va hacia adelante, otra hacia atrás** → el robot gira más rápido
 
 ---
 
-## ASIGNACIÓN: El Cuadrado de Ingeniería
+## Antes de dar órdenes al robot
 
-<details>
-<summary><b>Ver Objetivo del Reto</b></summary>
+**Situación:** Antes de manejar un carro nuevo, primero necesitas asegurarte de que todo está bien—tienes que calibrarlo, ajustar los espejos, etc.
 
-Diseña un algoritmo iterativo (`for`) que haga que el robot recorra un cuadrado perfecto de 30cm por lado y regrese a su posición original con un error menor a 1cm.
+Antes de pedirle al robot que se mueva, necesitamos "presentarle" los motores [2]:
 
-## Pruebas de Validación
-- [ ] ¿Utilizaste un bucle para evitar repetir código?
-- [ ] ¿Activaste `use_gyro(True)`?
-- [ ] ¿El robot se detiene completamente al final?
-</details>
+```python
+# Traer las herramientas necesarias
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+
+# Cada motor se conecta a un "puerto" (como un enchufe)
+# Puerto A = motor izquierdo
+# Puerto B = motor derecho
+motor_izquierdo = Motor(Port.A)
+motor_derecho = Motor(Port.B)
+
+# Ahora creamos algo que controle el movimiento
+# Le decimo el tamaño de las ruedas (56mm) y qué tan separadas están (112mm)
+robot = DriveBase(motor_izquierdo, motor_derecho, wheel_diameter=56, axle_track=112)
+```
+
+**¿Por qué necesitamos esas medidas?**
+- Es como cuando en el auto le dices al GPS el tamaño de las llantas—así sabe cuántos metros ha avanzado
+- Sin esas medidas, el robot no sabría cuánto es "un metro"
 
 ---
 
-*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*
+## ¡Ahora el robot se mueve!
+
+Una vez que está "presentado", podemos darle órdenes [2]:
+
+```python
+# "¡Robot, avanza 50 centímetros!" (500 milímetros)
+robot.straight(500)
+
+# "¡Gira 90 grados a la derecha!"
+robot.turn(90)
+
+# "¡Gira 90 grados a la izquierda!" (número negativo)
+robot.turn(-90)
+
+# "¡Detente!"
+robot.stop()
+```
+
+**Practica esto en Thonny:**
+
+```python
+from pybricks.pupdevices import Motor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait
+
+# Configurar (presentar) los motores
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)
+
+# ¡Probar el movimiento!
+robot.straight(200)  # Avanzar 20 cm
+wait(500)            # Pausa
+robot.turn(90)       # Girar 90°
+wait(500)
+robot.straight(200)  # Avanzar otro poco
+wait(500)
+robot.stop()         # Detenerse
+```
+
+---
+
+## El equilibrio del robot (el giroscopio)
+
+**Situación:** Cuando caminas con los ojos vendados, te desvías. Pero si miras un punto fijo, puedes caminar recto. El robot tiene algo similar—un "sentido del equilibrio" que lo ayuda a ir derecho.
+
+Ese "sentido" se llama **giroscopio**. Ayuda al robot a no desviarse cuando avanza mucho [2].
+
+```python
+# Activar el "sentido del equilibrio"
+robot.use_gyro(True)
+
+# Ahora el robot caminará recto incluso en distancias largas
+robot.straight(1000)  # 1 metro recto
+```
+
+**¿Cuándo usarlo?**
+- Cuando el robot necesita ir muy recto (como una línea)
+- Cuando necesita girar exacto (como 90°)
+- Cuando el piso no es parejo
+
+---
+
+## Hacer que el robot repita algo
+
+**Situación:** ¿Y si quieres que el robot haga lo mismo 4 veces? ¿Escribes el código 4 veces?
+
+Hay una forma mejor. Es como cuando en el recreo haces "una fila de 4" y todos repiten lo mismo [3].
+
+```python
+# "Haz esto 4 veces"
+for i in range(4):
+    robot.straight(200)  # Avanzar
+    robot.turn(90)       # Girar
+    # y vuelve al inicio del "for"
+```
+
+El robot entiende "for i in range(4)" como "haz lo que está dentro 4 veces".
+
+**Ejemplo: Un cuadrado**
+
+```python
+# El robot va a dibujar un cuadrado (4 lados iguales)
+for i in range(4):
+    robot.straight(300)  # Un lado de 30 cm
+    robot.turn(90)      # Girar 90°
+    
+robot.stop()  # ¡Terminó!
+```
+
+---
+
+## ¿Qué pasa si quiero algo más preciso?
+
+A veces el robot se desvía un poco—como cuando manejas en una calle dispareja. Pero podemos ajustar [2]:
+
+```python
+# Ajustar la velocidad máxima
+robot.settings(straight_speed=150)  # Más lento = más preciso
+
+# O ajustar la fuerza de giro
+robot.settings(turn_rate=45)  # Girar más despacio
+```
+
+Es como manejar un carro—si vas más lento, es más fácil hacer curvas exactas.
+
+---
+
+## 📋 Lo que aprendiste
+
+Antes de pasar al laboratorio, marca lo que entendiste:
+
+- [ ] El robot tiene dos motores (izquierdo y derecho)
+- [ ] Si ambos van igual → avanza recto
+- [ ] Si uno gira más → el robot gira
+- [ ] Puedo hacer que repita algo varias veces
+- [ ] El "giroscopio" ayuda a ir más recto
+
+---
+
+## Referencias
+
+[1] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
+
+[2] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+
+[3] D. George. (2013). *MicroPython Documentation - Control Structures*. MicroPython. Disponible: https://docs.micropython.org
+
+[4] Pybricks Team. (2023). *Pybricks Documentation - Motors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html
+
+[5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+---
+
+*Ahora vas al laboratorio donde harás que el robot dibuje un cuadrado.*

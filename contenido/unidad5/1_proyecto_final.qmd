@@ -1,154 +1,266 @@
-# Fase 5: Despliegue Final (Proyecto) {#unidad5-proyecto}
+# Unidad 5: Ahora vas a crear tu propio robot {#unidad5-proyecto}
 
 ::: center
-![Misión Final](images/robot-espi32-cartoon.png){width="40%"}
+![Proyecto Final](images/robot-propio.png){width="40%"}
+
+**⏱️ Tiempo estimado:** Variable | **📊 Nivel:** Integrador
 :::
 
-## El Protocolo Final: Arquitectura de Exploración
+---
 
-Has llegado a la fase de **Maestría**. Como Arquitecto Principal, tu misión es diseñar un sistema robótico integrado que demuestre autonomía, precisión y telemetría avanzada. Ya no estamos escribiendo scripts; estamos desplegando un **Firmware de Misión**.
+## Antes de empezar
+
+Has llegado al final del curso. Hasta ahora has aprendido muchas cosas:
+
+- **Unidad 1:** Cómo escribir instrucciones y enviarlas al robot [1]
+- **Unidad 2:** Cómo mostrar dibujos y hacer animaciones [2]
+- **Unidad 3:** Cómo hacer que el robot se mueva [3]
+- **Unidad 4:** Cómo el robot puede "ver" y reaccionar [4]
+
+Hoy vas a usar TODO eso juntos en un proyecto que TÚ diseñes.
 
 ---
 
-## 1. El Desafío: Protocolo "Search & Report"
+## ¿Qué podrías crear?
 
-El robot debe ejecutar una patrulla autónoma en un área rectangular, detectando obstáculos y reportando el estado del entorno mediante el HUD y la telemetría sonora.
+**Situación:** Piensa en algo que un robot podría hacer. No tiene que ser complicado—puede ser algo simple.
 
-### Requisitos de Ingeniería
-1.  **Core de Navegación:** Uso de `DriveBase` con `use_gyro(True)`.
-2.  **Concurrencia:** Una tarea de movimiento y una tarea de supervisión de sensores.
-3.  **Modularidad:** El código debe estar organizado en funciones claras.
-4.  **Resiliencia:** Manejo de errores para evitar bloqueos del sistema.
+Aquí hay algunas ideas:
+
+| Proyecto | Qué hace | Para qué sirve |
+|----------|----------|----------------|
+| **Explorador** | El robot camina y evita chocar | Como un robot de limpieza |
+| **Vigilante** | El robot hace un camino y observa | Como un guardia que ronda |
+| **Contador** | El robot avanza y cuenta pasos | Para medir distancias |
+| **Respondedor** | El robot hace algo diferente según lo que detecte | Como un juego |
 
 ---
 
-## 2. Plantilla de Arquitectura Maestra
+## Piezas que tienes disponibles
 
-Utiliza esta estructura como base para tu despliegue. Observa cómo integramos todo lo aprendido en las fases 1 a 4.
+Ahora imagina que estás construyendo algo con bloques—tienes estas piezas:
+
+```
+┌─────────────────────────────────────────┐
+│         PIEZAS QUE YA SABES USAR        │
+├─────────────────────────────────────────┤
+│ 🖥️  Escribir código    → Thonny         │
+│ 📺  Mostrar en pantalla → display        │
+│ 🚗  Moverse              → straight/turn │
+│ 👀  Detectar objetos     → sensor        │
+│ 🔄  Repetir algo         → for/while     │
+│ ⚡  Hacer dos cosas      → run_task       │
+└─────────────────────────────────────────┘
+```
+
+El proyecto puede usar algunas de estas o todas—tú decides.
+
+---
+
+## Cómo organizar tu proyecto
+
+**Situación:** Antes de empezar a construir algo, haces un plan. ¿Qué necesitas? ¿Por dónde empezar?
+
+Igual con un proyecto de robot [3][4]:
 
 ```python
-from pybricks.hubs import PrimeHub # Cerebro del sistema
-from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor # Actuadores y Sensores
-from pybricks.parameters import Port, Color, Icon, Direction # Configuración técnica
-from pybricks.robotics import DriveBase # Lógica cinemática
-from pybricks.tools import wait, run_task # Orquestador de tareas
+# 1. TRAER HERRAMIENTAS
+# (como cuando traes tus útiles a clase)
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, UltrasonicSensor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, run_task
 
-# --- CONFIGURACIÓN DE SUBSISTEMAS --- #
+# 2. PREPARAR EL ROBOT
+# (como cuando preparas tu espacio de trabajo)
 hub = PrimeHub()
-# Inicializar base de tracción con dimensiones exactas
-robot = DriveBase(Motor(Port.A, Direction.COUNTERCLOCKWISE), Motor(Port.B), 56, 112)
-sensor_dist = UltrasonicSensor(Port.D)
-sensor_col = ColorSensor(Port.C)
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+sensor = UltrasonicSensor(Port.D)
+robot = DriveBase(motor_izq, motor_der, 56, 112)
 
-async def supervision_telemetria(): # <1>
-    """Monitoreo constante de variables críticas del entorno."""
+# 3. DEFINIR QUÉ HACE CADA PARTE
+# (como cuando divides una tarea en pasos)
+
+# Una parte: cómo se mueve
+async def mover():
+    # tu código aquí
+
+# Otra parte: cómo observa
+async def observar():
+    # tu código aquí
+
+# 4. EJECUTAR TODO JUNTOS
+run_task(mover(), observar())
+```
+
+---
+
+## Ejemplo: Robot Explorador Completo
+
+Aquí hay un ejemplo de algo que podrías hacer—un robot que explora un área y evita chocar [2][3][4]:
+
+```python
+"""
+PROYECTO: Robot Explorador
+El robot camina en un rectángulo, detectando obstáculos.
+"""
+
+# 1. Herramientas
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, UltrasonicSensor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, run_task
+
+# 2. Preparar el robot
+hub = PrimeHub()
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+sensor = UltrasonicSensor(Port.D)
+robot = DriveBase(motor_izq, motor_der, 56, 112)
+
+# Variable para comunicar entre partes
+hay_obstaculo = False
+
+# 3. Parte 1: Vigilar (como estar atento en clase)
+async def vigilante():
+    global hay_obstaculo
+    
     while True:
-        dist = sensor_dist.distance() # Medir proximidad en mm
-        if dist < 100:
-            # Protocolo de emergencia ante obstáculo detectado
-            hub.light.on(Color.RED) # <2>
-            hub.display.icon(Icon.STOP) # Alerta visual en el HUD
+        distancia = sensor.distance()
+        
+        if distancia < 150:  # menos de 15cm
+            hay_obstaculo = True
+            hub.light.on(0)  # luz roja = cuidado
         else:
-            hub.light.on(Color.GREEN) # Estado nominal
-        await wait(50) # Liberar CPU para otros procesos
+            hay_obstaculo = False
+            hub.light.off()
+        
+        wait(50)
 
-async def protocolo_mision(): # <3>
-    """Orquestador del flujo principal de navegación autónoma."""
-    robot.use_gyro(True) # Activar sensor inercial para rumbo fijo
-    print("LOG: Iniciando Patrulla de Ingeniería...")
+# 4. Parte 2: Moverse (como caminar por el pasillo)
+async def explorador():
+    global hay_obstaculo
     
-    # Ciclo de patrulla rectangular (4 lados)
-    for i in range(4):
-        hub.display.number(i + 1) # Reportar progreso en HUD
-        await robot.straight(400) # <4>
-        await robot.turn(90) # Rotación asíncrona de 90 grados
+    robot.use_gyro(True)
     
-    print("LOG: Misión Finalizada con Éxito.")
-    hub.display.text("DONE") # Feedback final
+    print("¡Explorador iniciando!")
+    
+    # Hacer 4 lados (como un rectángulo)
+    for lado in range(4):
+        print(f"Lado {lado + 1}")
+        
+        # Avanzar un poco varias veces
+        for paso in range(4):
+            if hay_obstaculo:
+                robot.stop()
+                await robot.turn(90)  # girar y buscar otro camino
+                await wait(200)
+            else:
+                await robot.straight(100)  # avanzar 10cm
+        
+        # Girar en la esquina
+        await robot.turn(90)
+    
+    robot.stop()
+    print("¡Exploración terminada!")
 
-if __name__ == "__main__":
-    try:
-        # Iniciar el ecosistema completo de procesos
-        run_task(protocolo_mision(), supervision_telemetria()) # <5>
-    except Exception as e:
-        # Captura de fallos para diagnóstico de campo
-        print(f"FALLO CRÍTICO EN EL SISTEMA: {e}") # <6>
+# 5. Ejecutar ambas partes
+run_task(explorador(), vigilante())
 ```
 
-1.  Definición de la tarea de "Background" que garantiza la seguridad del hardware.
-2.  Acciones directas sobre los indicadores de estado ante eventos de telemetría.
-3.  Función principal que dicta el comportamiento inteligente del robot.
-4.  Uso de comandos asíncronos para permitir que la supervisión nunca se detenga.
-5.  El núcleo de Pybricks gestiona el cambio de contexto entre tareas automáticamente.
-6.  Captura robusta de excepciones para evitar el reinicio forzado del hardware.
+**¿Qué hace este robot?**
+1. Camina en un rectángulo (4 lados)
+2. Mientras camina, observa si hay algo adelante [4]
+3. Si detecta algo, se detiene, gira, y sigue por otro lado
 
 ---
 
-## CRITERIOS DE CERTIFICACIÓN (Validación)
+## ¿Qué debe tener tu proyecto?
 
-Para obtener la **Maestría del Arquitecto**, tu despliegue debe cumplir:
+Tu proyecto debe incluir:
 
-- [ ] **Precisión:** El robot debe regresar a menos de 2cm de su punto de inicio.
-- [ ] **Reactividad:** La luz roja debe encenderse instantáneamente al detectar un obstáculo, sin detener el giro.
-- [ ] **Limpieza:** El código no debe tener variables globales innecesarias y debe usar nombres descriptivos.
-- [ ] **Documentación:** Cada función debe tener un comentario (`docstring`) explicando su propósito técnico.
-
----
-
-## 🔐 Validación Anti-AI: Proyecto Final (OBLIGATORIA)
-
-### 📋 Requisitos de Entrega:
-
-Para aprobar el proyecto final, DEBES entregar:
-
-- [ ] **Video de 2-3 minutos:** Demostrando el robot ejecutando tu proyecto en un área rectangular
-- [ ] **Código fuente:** Archivo `.py` con tu nombre en variable `piloto`
-- [ ] **Diagrama de arquitectura:** Dibujo a mano de cómo funcionan los subsistemas juntos
-- [ ] **Foto de consola:** Mostrando la telemetría de patrulla
-
-### 🎤 Explicación Oral Requerida (5 minutos):
-
-Graba un video explicando:
-
-1. **Integración de fases:** ¿Cómo usaste las 4 fases del curso en tu proyecto?
-2. **Desafíos técnicos:** ¿Qué problemas encontraste y cómo los resolviste?
-3. **Decisiones de diseño:** ¿Por qué organizaste el código así?
-4. **Mejoras:** ¿Qué harías diferente si lo reheyeras?
-
-### 📝 Guía de Presentación:
-
-```
-"Para mi proyecto integrador, diseñé un sistema que combina:
-1. Fase 1: Entorno Pybricks - inicialización del Hub
-2. Fase 2: Feedback visual - LEDs y matriz mostrando estado
-3. Fase 3: Navegación con use_gyro(True) para trayectorias precisas
-4. Fase 4: Telemetría asíncrona para detección de obstáculos
-
-El mayor desafío fue lograr que el robot detectara obstáculos
-mientras se movía sin detenerse. La solución fue usar run_task()
-para ejecutar navegación y supervisión en paralelo.
-
-Si lo reheyra, optimizaría la velocidad de respuesta del sensor."
-```
-
-> ⚠️ **SIN video físico del robot + explicación oral detallada, el proyecto NO se acepta.**
-
-::: {.callout-warning}
-## Advertencia Anti-AI
-Este proyecto requiere evidencia física real. No se acepta:
-- Código sin ejecutar
-- Videos generados por IA
-- Código copiado de internet sin modificaciones
-- Entregas sin video de demostración
-:::
+| Qué debe tener | Para qué |
+|----------------|----------|
+| **Que se mueva** | El robot va de un lugar a otro [3] |
+| **Que detecte algo** | El robot usa sus "ojos" (sensor) [4] |
+| **Que tome decisiones** | Si detecta algo, hace algo diferente |
+| **Que esté organizado** | El código tiene partes claras |
+| **Que se entienda** | Explicas qué hace tu programa |
 
 ---
 
-::: {.callout-note}
-## Mensaje del Arquitecto Jefe
-Felicidades, Docente. Has completado el Framework de Ingeniería Educativa. Ahora tienes las herramientas para diseñar el futuro en tu aula. El reactor está en tus manos.
-:::
+## Pasos para hacer tu proyecto
+
+**Paso 1: Decide qué quieres hacer**
+- Piensa en un problema que el robot pueda resolver
+- No tiene que ser complicado—empieza simple
+
+**Paso 2: Escribe el código**
+- Usa las herramientas que ya conoces [1][2]
+- Prueba por partes si es necesario
+
+**Paso 3: Prueba y ajusta**
+- ¿Funciona como esperabas?
+- ¿Qué puedes mejorar?
+
+**Paso 4: Presenta tu proyecto**
+- Explica qué hace tu robot
+- Muestra cómo funciona
 
 ---
 
-*Desarrollado bajo los estándares de Excelencia Statick - Diego Saavedra 2026*
+## 💡 Consejos
+
+- **Empieza simple:** Primero haz que funcione algo básico, luego agrega más cosas
+- **Prueba por partes:** Si algo no funciona, revisa una parte a la vez
+- **Los errores son parte de aprender:** Si algo no funciona, está bien—así se aprende
+- **Usa lo que ya sabes:** No hay nada nuevo que necesitas—todo ya lo aprendiste
+
+---
+
+## 📋 Checklist de tu proyecto
+
+Antes de entregar, verifica:
+
+- [ ] Mi robot hace algo útil
+- [ ] Usa sensores (detecta algo del entorno) [4]
+- [ ] Toma decisiones (hace algo diferente según lo que detecte)
+- [ ] El código tiene comentarios que lo explica
+- [ ] He probado que funciona
+
+---
+
+## Referencias
+
+[1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[2] Pybricks Team. (2023). *Pybricks Documentation - Display Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html
+
+[3] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+
+[4] Pybricks Team. (2023). *Pybricks Documentation - Sensors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html
+
+[5] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+
+[6] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
+
+---
+
+## ¡Felicitaciones!
+
+Has completado el curso. Ahora sabes:
+
+- ✅ Escribir instrucciones para un robot
+- ✅ Mostrar mensajes y dibujos
+- ✅ Hacer que el robot se mueva
+- ✅ Hacer que el robot detecte su entorno
+- ✅ Crear un proyecto propio
+
+**El límite es tu imaginación. ¿Qué vas a crear?**
+
+---
+
+*Curso completado — Diego Saavedra 2026*

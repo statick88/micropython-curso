@@ -1,47 +1,106 @@
-# Validación de Ingeniería: Fase 1 {#quiz-unidad1}
+---
+title: "🎮 Quiz Unidad 1: Conectar y Programar"
+description: "¡Desbloquea tu primera insignia! 🔌"
+---
+
+# 🎮 Quiz Unidad 1: Conectar y Programar {#quiz-unidad1}
 
 ::: center
 ![Certificación de Entorno](images/esp32-cartoon.png){width="20%"}
+
+### 🏅 Insignias en Juego
+| 🔌 Conectado | 🐍 Primer Código | 🎨 LED Maestro |
+|:---:|:---:|:---:|
+| +25 XP | +25 XP | +25 XP |
+
 :::
 
-## Protocolo de Evaluación: Infraestructura
+## 📊 Tu Progreso
 
-Asegura que tu entorno de desarrollo está correctamente configurado antes de proceder a la Fase 2.
+```
+[████████████░░░░░░░░] 40% - Nivel 1 🌱
+XP necesario: 175 | XP actual: 70
+```
+
+---
+
+## 📝 Preguntas
 
 ::: {.quizdown}
 
-### Protocolo de Simulación
+### 🔌 Pregunta 1: Protocolo de Simulación (25 XP)
+
 ¿Existe un simulador oficial que reemplace el Hub LEGO SPIKE en el taller?
 
-- [ ] Sí, es gratuito para todos los ingenieros.
-- [ ] Sí, pero requiere créditos Stark.
-- [x] No, en este laboratorio trabajamos con hardware real.
-- [ ] Solo si usas el mainframe de Windows.
+- [ ] Sí, es gratuito para todos los ingenieros 💸
+- [ ] Sí, pero requiere créditos Stark 🦸
+- [x] ❌ No, en este laboratorio trabajamos con hardware real 🔧
+- [ ] Solo si usas el mainframe de Windows 💾
 
-> El Hub es el núcleo físico insustituible de nuestro sistema de aprendizaje.
+> 💡 **Pista:** El Hub es el núcleo físico insustituible de nuestro sistema de aprendizaje [1]. ¡Sin hardware no hay robot! 🤖
 
-### Eficiencia en el Aprendizaje
+---
+
+### 🐍 Pregunta 2: Eficiencia en el Aprendizaje (25 XP)
+
 ¿Cuál es la ruta más eficiente para que un docente aprenda programación desde cero sin hardware?
 
-- [ ] LEGO SPIKE ($300+)
-- [ ] ESP32 ($15)
-- [x] Turtle Graphics ($0 - Planos Algorítmicos)
-- [ ] Esperar a que el sistema se programe solo.
+- [ ] LEGO SPIKE ($300+) 💰
+- [ ] ESP32 ($15) 💵
+- [x] 🌟 Turtle Graphics ($0 - Planos Algorítmicos) 🐢
+- [ ] Esperar a que el sistema se programe solo ⏳
 
-> Turtle Graphics permite validar la lógica algorítmica pura sin coste de hardware.
+> 💡 **Pista:** Turtle Graphics permite validar la lógica algorítmica pura sin coste de hardware [2]. ¡Programación GRATIS! 🆓
 
-### Requerimientos de Hardware
+---
+
+### 🎨 Pregunta 3: Requerimientos de Hardware (25 XP)
+
 ¿Qué herramienta técnica NO requiere el Hub físico para sus pruebas iniciales?
 
-- [ ] ESP32 Core
-- [ ] LEGO SPIKE Hub
-- [x] Turtle Graphics
-- [ ] SG90 Servo Motor
+- [ ] ESP32 Core ⚡
+- [ ] LEGO SPIKE Hub 🧱
+- [x] 🐢 Turtle Graphics
+- [ ] SG90 Servo Motor 🔩
 
-> Turtle Graphics es nuestra herramienta de prototipado lógico universal.
+> 💡 **Pista:** Turtle Graphics es nuestra herramienta de prototipado lógico universal [2]. ¡Cero hardware, cero excusas! 💪
 
 :::
 
 ---
 
-*Desarrollado bajo los estándares de Ingeniería Statick - Diego Saavedra 2026*
+## 🏆 Resumen de Recompensas
+
+| Respuesta | XP Ganada | Insignia |
+|-----------|-----------|----------|
+| Pregunta 1 ✅ | +25 | |
+| Pregunta 2 ✅ | +25 | |
+| Pregunta 3 ✅ | +25 | |
+| **Total** | **+75** | 🔌 Conectado |
+
+### 🎯 ¡Objetivos Desbloqueados!
+
+- [x] Completar todas las preguntas (+25 bonus si 100%)
+- [ ] Tiempo récord: < 2 minutos (+10 bonus)
+
+---
+
+## 📈 Después de Completar este Quiz
+
+```
+Siguiente paso: 🐍 Lab 1A - Tu Primer Programa
+                └─> 🔌 Lab 1B - Ejercicios de Refuerzo
+                    └─> 📝 Quiz Unidad 2: Pantalla y Luces
+```
+
+---
+
+## Referencias
+
+[1] Pybricks Team. *Pybricks MicroPython API Reference*. 2026. Disponible en: https://docs.pybricks.com/en/latest/index.html
+
+[2] Python Software Foundation. *Turtle Graphics — Python 3.13 Documentation*. 2026. Disponible en: https://docs.python.org/3/library/turtle.html
+
+---
+
+*🎮 Quiz Unidad 1 - MicroPython para el Aula - Diego Saavedra 2026* 🏆

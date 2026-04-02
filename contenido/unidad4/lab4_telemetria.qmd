@@ -1,343 +1,252 @@
-# Laboratorio 4.1: Telemetría Asíncrona con Sensores {#lab4-telemetria}
+# Laboratorio 4: Un robot que explora solo {#lab4-telemetria}
 
 ::: center
-![Lab 4.1](images/sensor-ultrasonico-cartoon.png){width="25%"}
+![Lab 4](images/robot-explorador.png){width="30%"}
 
-**⚡ Nivel:** Avanzado | **⏱️ Tiempo:** 50 minutos
+**⏱️ Tiempo estimado:** 50 minutos | **📊 Nivel:** Avanzado
 :::
 
 ---
 
-## Objetivo del Laboratorio
+## Antes de empezar
 
-Implementar un sistema de percepción que funcione en **paralelo** con la navegación, utilizando programación asíncrona para detectar obstáculos en tiempo real sin detener el robot.
+¿Has visto esos robots de limpieza que van por la casa solos? van avançandoy si chocan con algo, cambian de dirección y siguen.
 
----
-
-## Fundamentos de Ingeniería
-
-### El Problema: Sistemas Secuenciales vs Concurrentes
-
-```
-SECUENCIAL (MALO):                    CONCURRENTE (BUENO):
-┌─────────────────────────────────┐   ┌─────────────────────────────────┐
-│ while True:                      │   │ async def sensar():             │
-│     leer_sensor()  ──►  wait     │   │     while True:                 │
-│     mover_robot()  ──►  wait     │   │         leer_sensor()           │
-│     wait(100)                    │   │         await wait(50)         │
-│                                  │   │                                 │
-│ Resultado:                       │   │ async def mover():             │
-│ Robot CIEGO mientras se mueve   │   │     while True:                │
-│                                  │   │         mover_robot()         │
-│                                  │   │         await wait(50)         │
-│                                  │   │                                 │
-│                                  │   │ Resultado:                     │
-│                                  │   │ Sensado y movimiento en PARALELO│
-└─────────────────────────────────┘   └─────────────────────────────────┘
-```
+Hoy vas a crear algo similar: un robot que se mueve solo Y detecta si hay algo adelante—todo al mismo tiempo [1][2].
 
 ---
 
-## Materiales Requeridos
+## Materiales
 
-| Componente | Especificación |
-|------------|-----------------|
-| **Hub** | SPIKE Prime |
-| **Sensores** | UltrasonicSensor en puerto C o D |
-| **Motores** | 2x Motor grande puertos A y B |
-| **Chasis** | Robot con sensor frontal |
+| Material | Para qué |
+|----------|----------|
+| **Hub LEGO Technic** | El cerebro |
+| **Sensor ultrasónico** | Los "ojos" del robot [1] |
+| **2 Motores grandes** | Las ruedas |
+| **Cable USB** | Conexión a Thonny [3] |
 
 ---
 
-## ⚡ Procedimiento Paso a Paso
+## Paso 1: Conectar los "ojos" del robot
 
-### Paso 1: Configuración del Sensor (10 minutos)
+**Tiempo estimado: 10 minutos**
+
+El sensor ultrasónico se conecta al robot para que pueda "ver" qué hay adelante [2].
+
+Abre Thonny y escribe:
 
 ```python
-from pybricks.pupdevices import Motor, UltrasonicSensor # <1>
-from pybricks.parameters import Port, Direction # <2>
-from pybricks.robotics import DriveBase # <3>
-from pybricks.tools import wait # <4>
+# Traer las herramientas
+from pybricks.pupdevices import Motor, UltrasonicSensor
+from pybricks.parameters import Port
+from pybricks.robotics import DriveBase
 
-motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE) # <5>
-motor_der = Motor(Port.B) # <6>
-sensor_dist = UltrasonicSensor(Port.D) # <7>
+# Los motores igual que antes
+motor_izq = Motor(Port.A)
+motor_der = Motor(Port.B)
+robot = DriveBase(motor_izq, motor_der, 56, 112)
 
-robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112) # <8>
+# El sensor de distancia se conecta al puerto D
+sensor = UltrasonicSensor(Port.D)
 
-def prueba_sensor():
-    """Validación básica del sensor."""
-    
-    while True:
-        distancia = sensor_dist.distance() # <9>
-        
-        print(f"Obstáculo a: {distancia}mm") # <10>
-        
-        if distancia < 100: # <11>
-            print("⚠️ ¡OBSTÁCULO CERCANO!")
-        
-        wait(100) # <12>
-
-# if __name__ == "__main__":
-#     prueba_sensor()
+# Ahora podemos preguntarle: ¿qué tan lejos está?
+print("Sensor conectado")
 ```
 
-1.  Importamos motor y sensor ultrasónico.
-2.  Configuración de puertos y direcciones.
-3.  Módulo de cinemática robótica.
-4.  Herramienta de pausas controladas.
-5.  Motor izquierdo (invertido para avance síncrono).
-6.  Motor derecho (configuración estándar).
-7.  Sensor ultrasónico en Puerto D.
-8.  DriveBase con parámetros físicos estándar.
-9.  Lectura de distancia en milímetros.
-10. Telemetría en consola para diagnóstico.
-11. Umbral de seguridad: 100mm.
-12. Actualización cada 100ms para no saturar CPU.
+**Presiona Run.** Si dice "Sensor conectado", todo está bien.
 
 ---
 
-### Paso 2: Programación Asíncrona Básica (15 minutos)
+## Paso 2: ¿Qué tan lejos está?
+
+**Tiempo estimado: 10 minutos**
+
+Ahora vamos a preguntarle al sensor qué tan lejos está algo [2]:
 
 ```python
-from pybricks.pupdevices import Motor, UltrasonicSensor # <1>
-from pybricks.parameters import Port, Direction # <2>
-from pybricks.robotics import DriveBase # <3>
-from pybricks.tools import wait, run_task # <4>
+# Medir la distancia
+distancia = sensor.distance()
 
-motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE) # <5>
-motor_der = Motor(Port.B) # <6>
-sensor_dist = UltrasonicSensor(Port.D) # <7>
-robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112) # <8>
-
-async def monitoreo_seguridad(): # <9>
-    """
-    Task paralelo que vigila obstáculos constantemente.
-    Esta función se ejecuta EN SEGUNDO PLANO.
-    """
-    while True:
-        distancia = sensor_dist.distance() # <10>
-        
-        if distancia < 150: # <11>
-            print(f"🚨 ALERTA: {distancia}mm")
-            hub.display.text("PARE") # <12>
-        
-        await wait(50) # <13>
-
-async def navegacion_autonoma(): # <14>
-    """
-    Task principal de navegación.
-    Se ejecuta en PARALELO con monitoreo_seguridad.
-    """
-    robot.use_gyro(True) # <15>
-    robot.settings(straight_speed=200) # <16>
-    
-    print("🚀 Iniciando navegación autónoma...")
-    
-    await robot.straight(1000) # <17>
-    await robot.turn(180) # <18>
-    await robot.straight(1000) # <19>
-    
-    robot.stop() # <20>
-    print("✅ Misión completada")
-
-if __name__ == "__main__":
-    run_task( # <21>
-        navegacion_autonoma(),
-        monitoreo_seguridad()
-    )
+print(f"Hay algo a {distancia} mm")
 ```
 
-1.  Importamos motores y sensor ultrasónico.
-2.  Configuración de puertos y direcciones.
-3.  Módulo de cinemática robótica.
-4.  Herramientas: pausas y scheduler de tareas.
-5.  Motor izquierdo con dirección invertida.
-6.  Motor derecho estándar.
-7.  Sensor ultrasónico en Puerto D.
-8.  DriveBase con parámetros físicos estándar.
-9.  Función async para tarea de monitoreo (se ejecuta en paralelo).
-10. Lectura de distancia en tiempo real.
-11. Umbral de detección: 150mm.
-12. Mostrar "PARE" en matriz cuando hay obstáculo.
-13. **REGLA DE ORO:** await wait evita bloquear la CPU.
-14. Función async para navegación principal.
-15. Activar compensación giroscópica.
-16. Configurar velocidad de desplazamiento.
-17. Mover forward 1000mm (1 metro).
-18. Girar 180 grados.
-19. Regresar al punto de origen.
-20. Frenar robot - operación de seguridad.
-21. **ORQUESTADOR:** Lanza ambas tareas en paralelo.
+**Prueba esto:**
+
+```python
+# Medir la distancia 5 veces
+from pybricks.tools import wait
+
+for i in range(5):
+    distancia = sensor.distance()
+    print(f"Medición {i+1}: {distancia} mm")
+    wait(500)
+```
+
+**¿Qué ves?**
+- Si pones tu mano frente al sensor, el número baja
+- Si alejas la mano, el número sube
+- Si no hay nada cerca, puede mostrar un número muy alto
 
 ---
 
-### Paso 3: Sistema de Evitación de Colisiones (15 minutos)
+## Paso 3: El robot hace dos cosas a la vez
+
+**Situación:** Estás viendo un video en tu teléfono mientras descargas algo. Ambas cosas pasan al mismo tiempo—una no espera a que termine la otra.
+
+El robot puede hacer lo mismo: moverse Y observar al mismo tiempo [4].
+
+```python
+# Vamos a escribir dos "tareas" que funcionan juntas
+# Una tarea = algo que el robot hace
+
+from pybricks.tools import wait, run_task
+
+# Tarea 1: El robot avanza
+async def avanza():
+    for i in range(10):  # avanza 10 veces
+        await robot.straight(100)  # 10 cm cada vez
+        await wait(100)
+    print("Terminé de avanzar")
+
+# Tarea 2: El robot observa
+async def observa():
+    while True:  # nunca se detiene
+        distancia = sensor.distance()
+        if distancia < 150:
+            print(f"¡Algo a solo {distancia}mm!")
+        await wait(50)
+
+# Ejecutar ambas tareas JUNTAS
+run_task(avanza(), observa())
+```
+
+**¿Qué hace el robot?**
+- Avanza 10 pasos de 10 cm
+- Al mismo tiempo, observa si hay algo a menos de 15 cm
+- Si detecta algo, te avisa
+
+---
+
+## Paso 4: Robot que evita obstáculos
+
+**Situación:** Ahora vamos a hacer que el robot haga algo más inteligente: si detecta algo, que gire y busque otro camino [2].
 
 ```python
 from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, UltrasonicSensor
-from pybricks.parameters import Port, Direction, Color
+from pybricks.parameters import Port
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait, run_task
 
 hub = PrimeHub()
-motor_izq = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+
+# Configuración
+motor_izq = Motor(Port.A)
 motor_der = Motor(Port.B)
-sensor_dist = UltrasonicSensor(Port.D)
+sensor = UltrasonicSensor(Port.D)
 robot = DriveBase(motor_izq, motor_der, 56, 112)
 
-# Bandera global para comunicación entre tasks
-alerta_activa = False
+# Una variable para recordar si hay peligro o no
+hay_peligro = False
 
-async def vigilante_colisiones():
-    """Detecta obstáculos y establece alerta."""
-    global alerta_activa
+# Tarea 1: Vigilar si hay obstáculos
+async def vigilante():
+    global hay_peligro
     
     while True:
-        distancia = sensor_dist.distance()
+        distancia = sensor.distance()
         
-        if distancia < 150:
-            alerta_activa = True
-            # Feedback visual de emergencia
-            hub.light.on(Color.RED)
-            hub.display.text("PARE")
+        if distancia < 150:  # menos de 15cm
+            hay_peligro = True
+            hub.light.on(0)  # luz roja
         else:
-            alerta_activa = False
+            hay_peligro = False
             hub.light.off()
         
         await wait(50)
 
-async def explorer_autonomo():
-    """Robot que explora hasta encontrar obstáculo."""
-    global alerta_activa
+# Tarea 2: Moverse y reaccionar
+async def explorador():
+    global hay_peligro
     
     robot.use_gyro(True)
-    robot.settings(straight_speed=150)
     
     while True:
-        # Si hay alerta, detenerse y girar
-        if alerta_activa:
+        if hay_peligro:
+            # Hay algo cerca: detenerse y girar
             robot.stop()
-            
-            # Feedback de emergencia
-            hub.speaker.beep(frequency=880, duration=200)
-            
-            # Girar 90 grados y continuar
-            await robot.turn(90)
-            await wait(500)
+            hub.speaker.beep()  # sonido de alerta
+            await robot.turn(90)  # girar 90°
+            wait(200)
         else:
-            # Avanzar mientras no haya obstáculos
-            await robot.straight(100)
+            # No hay nada: avanzar un poquito
+            await robot.straight(50)
         
         await wait(50)
 
-if __name__ == "__main__":
-    run_task(
-        explorer_autonomo(),
-        vigilante_colisiones()
-    )
+# Ejecutar ambas tareas
+run_task(explorador(), vigilante())
 ```
 
----
+**¿Qué hace este robot?**
+1. Se mueve hacia adelante
+2. Mientras se mueve, observa si hay algo cerca
+3. Si detecta algo a menos de 15cm:
+   - Se detiene
+   - Hace un sonido
+   - Gira 90°
+   - Sigue por otro lado
 
-### Paso 4: Integración con Sensores de Color (10 minutos)
-
-```python
-from pybricks.pupdevices import Motor, UltrasonicSensor, ColorSensor
-from pybricks.parameters import Port, Direction
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait, run_task
-
-# Agregar sensor de color
-sensor_color = ColorSensor(Port.C)  # Puerto C
-
-async def navegacion_bidimensional():
-    """
-    Navegación que responde a DOS sensores:
-    - Ultrasonido: evitar obstáculos
-    - Color: seguir líneas
-    """
-    
-    # Sensores activos
-    dist = sensor_dist.distance()
-    color = sensor_color.color()
-    reflexion = sensor_color.reflection()
-    
-    # Lógica de decisión
-    if dist < 150:
-        # Obstáculo: girar
-        await robot.turn(90)
-    elif reflexion < 30:
-        # Línea negra detectada: seguirla
-        print("📍 Línea detectada")
-    else:
-        # Espacio libre: avanzar
-        await robot.straight(50)
-    
-    await wait(50)
-```
+Es como un robot de limpieza—evita los obstáculos solo.
 
 ---
 
-## 🛠️ Centro de Diagnóstico
+## 🔧 Si algo no funciona
 
-| Error | Síntoma | Causa | Solución |
-|-------|---------|-------|----------|
-| **"Task no corre"** | Solo ejecuta 1 función | Olvidaste `run_task()` | Usar `run_task(a(), b())` |
-| **"Memory error"** | IDE se cuelga | Sin `await wait()` en loop | Agregar `await wait(50)` |
-| **"Sensor no responde"** | Distancia = 0 siempre | Cable mal conectado | Verificar puerto |
-| **"RuntimeError"** | Error en async | Función no es async | Usar `async def` |
-| **" LED no cambia"** | Sin respuesta | `await wait()` faltante | Verificar loop async |
-
----
-
-## 📋 Patrón Asíncrono Estándar
-
-```python
-# PLANTILLA ESTÁNDAR PARA CUALQUIER TASK ASÍNCRONO
-async def mi_task():
-    """Descripción del task."""
-    while True:
-        # Tu lógica aquí
-        
-        # ⭐ OBLIGATORIO: No bloquear la CPU
-        await wait(50)  # o cualquier valor > 0
-```
+| Problema | Posible causa | Qué hacer |
+|----------|---------------|-----------|
+| El sensor siempre dice 0 | No está bien conectado | Verifica que el cable esté en el puerto D |
+| El robot no responde | Las tareas no están juntas | Usa run_task(tarea1(), tarea2()) |
+| El robot se mueve raro | Falta el wait dentro del loop | Asegúrate de tener await wait(50) |
+| Todo junto | Las tareas se bloquean | Cada loop debe tener su wait |
 
 ---
 
-## 🔐 Validación Anti-AI (OBLIGATORIA)
+## 📋 Checklist de lo que lograste
 
-### 📋 Checklist de Entrega:
+Marca lo que conseguiste:
 
-- [ ] **Video:** Robot evitando obstáculos en tiempo real (mínimo 15 segundos)
-- [ ] **Foto:** Consola mostrando "ALERTA" intercalado con navegación
-- [ ] **Código:** Archivo con función asíncrona personalizada
-- [ ] **Diagrama:** Dibujo del flujo de ejecución paralelo
-
-### 🎤 Explicación Oral Requerida (3 minutos):
-
-Graba un video explicando:
-
-1. **¿Por qué necesitamos `await wait(50)` en el loop asíncrono?**
-2. **¿Qué sucede si ejecutas solo la navegación SIN el vigilante?**
-3. **¿Cómo modificarías el código para que el robot haga sonar una alarma?**
-
-> ⚠️ Sin video físico + explicación oral detallada, **NO se acepta**.
+- [ ] El sensor mide la distancia correctamente
+- [ ] El robot hace dos cosas a la vez (avanzar Y observar)
+- [ ] El robot detecta obstáculos mientras se mueve
+- [ ] El robot gira cuando detecta algo y sigue explorando
 
 ---
 
-## ✅ Checklist de Completado
+## 💡 Para seguir explorando
 
-- [ ] Sensor ultrasónico configurado y funcionando
-- [ ] Programación asíncrona con 2 tasks
-- [ ] `await wait()` presente en todos los loops
-- [ ] Sistema de evitación de colisiones funciona
-- [ ] Feedback visual/sonido en detección de obstáculos
-- [ ] Video del robot físico evadiendo obstáculos
-- [ ] Puedo explicar el concepto de async/await
+**¿Qué más podría hacer el robot?**
+
+- **Robot seguidor de pared:** Si hay algo a la derecha, girar izquierda
+- **Robot que cuenta obstáculos:** Mostrar en pantalla cuántos detectó
+- **Robot que hace sonido diferente según la distancia:** beep corto si lejos, beep largo si cerca
+
+¡El límite es tu imaginación!
 
 ---
 
-*Desarrollado bajo los estándares de Arquitectura del Aprendizaje - Diego Saavedra 2026*
+## Referencias
+
+[1] LEGO Education. (2023). *LEGO Education SPIKE Prime - Ultrasonic Sensor*. LEGO. Disponible: https://lego.com
+
+[2] Pybricks Team. (2023). *Pybricks Documentation - Sensors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html
+
+[3] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[4] D. George. (2013). *MicroPython Documentation - asyncio*. MicroPython. Disponible: https://docs.micropython.org
+
+[5] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+
+---
+
+*Has completado el laboratorio de sensores. Ahora tu robot puede ver el mundo y reaccionar solo.*
