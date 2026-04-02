@@ -244,12 +244,11 @@ Un robot con DriveBase tiene los siguientes problemas:
 
 ---
 
+*Evaluación Motores Avanzados - MicroPython para el Aula - Diego Saavedra 2026*
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython API - Motor Control*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor
 
 [2] Pybricks Team. *Pybricks MicroPython - Calibration and Stall Detection*. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html
-
----
-
-*Evaluación Motores Avanzados - MicroPython para el Aula - Diego Saavedra 2026*

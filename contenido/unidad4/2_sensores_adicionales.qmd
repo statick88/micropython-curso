@@ -248,6 +248,8 @@ Antes de terminar, marca lo que entendiste:
 
 ---
 
+*En la siguiente unidad: Control avanzado de motores con PID y calibración.*
+
 ## Referencias
 
 [1] Pybricks Team. (2023). *Pybricks Documentation - Sensors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html
@@ -263,7 +265,3 @@ Antes de terminar, marca lo que entendiste:
 [6] Pybricks Team. (2023). *Pybricks Documentation - Tilt Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html
 
 [7] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
-
----
-
-*En la siguiente unidad: Control avanzado de motores con PID y calibración.*

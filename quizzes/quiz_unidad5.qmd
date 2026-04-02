@@ -226,6 +226,9 @@ Para aprobar el proyecto final, DEBES entregar:
 
 ---
 
+*🎮 Quiz Unidad 5 - MicroPython para el Aula - Diego Saavedra 2026* 🎓
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython API Reference - PrimeHub*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#primehub
@@ -241,7 +244,3 @@ Para aprobar el proyecto final, DEBES entregar:
 [6] Saavedra, D. *Metodología Statick para Sistemas Embebidos*. Abacom Capacitación, 2026.
 
 [7] Pybricks Team. *Pybricks Troubleshooting Guide*. 2026. Disponible en: https://docs.pybricks.com/en/latest/troubleshooting.html
-
----
-
-*🎮 Quiz Unidad 5 - MicroPython para el Aula - Diego Saavedra 2026* 🎓

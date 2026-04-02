@@ -212,6 +212,8 @@ for i in range(3):
 
 ---
 
+*Has completado el laboratorio de movimiento. Ahora tu robot puede dibujar formas moviéndose.*
+
 ## Referencias
 
 [1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
@@ -223,7 +225,3 @@ for i in range(3):
 [4] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
 
 [5] Pybricks Team. (2023). *Pybricks Documentation - Motors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html
-
----
-
-*Has completado el laboratorio de movimiento. Ahora tu robot puede dibujar formas moviéndose.*

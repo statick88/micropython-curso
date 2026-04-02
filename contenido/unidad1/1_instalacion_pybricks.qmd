@@ -129,22 +129,6 @@ Para que el robot ejecute nuestro programa:
 
 ---
 
-## Referencias
-
-[1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
-
-[2] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
-
-[3] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
-
-[4] LEGO. (2023). *LEGO Education SPIKE Prime Hub*. LEGO. Disponible: https://lego.com
-
-[5] Pybricks. (2023). *Pybricks Official Website*. Pybricks. Disponible: https://pybricks.com
-
-[6] MicroPython. (2023). *MicroPython Official Website*. MicroPython. Disponible: https://micropython.org
-
----
-
 ## Misión de esta unidad
 
 **Ahora intenta esto:**
@@ -158,3 +142,17 @@ Para que el robot ejecute nuestro programa:
 ---
 
 *En la siguiente unidad: cómo mostrar diferentes dibujos y mensajes en la pantalla del robot.*
+
+## Referencias
+
+[1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[2] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
+
+[3] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+
+[4] LEGO. (2023). *LEGO Education SPIKE Prime Hub*. LEGO. Disponible: https://lego.com
+
+[5] Pybricks. (2023). *Pybricks Official Website*. Pybricks. Disponible: https://pybricks.com
+
+[6] MicroPython. (2023). *MicroPython Official Website*. MicroPython. Disponible: https://micropython.org

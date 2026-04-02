@@ -207,6 +207,8 @@ El número representa diferentes colores—justo como cuando cambias el color de
 
 ---
 
+*Has completado tu primer laboratorio. Ahora sabes cómo escribir algo, probarlo en la computadora, y enviarlo al robot para que lo haga.*
+
 ## Referencias
 
 [1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
@@ -216,7 +218,3 @@ El número representa diferentes colores—justo como cuando cambias el color de
 [3] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
 
 [4] LEGO. (2023). *LEGO Education SPIKE Prime Hub*. LEGO. Disponible: https://lego.com
-
----
-
-*Has completado tu primer laboratorio. Ahora sabes cómo escribir algo, probarlo en la computadora, y enviarlo al robot para que lo haga.*

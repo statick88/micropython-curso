@@ -95,12 +95,11 @@ Siguiente paso: 🐍 Lab 1A - Tu Primer Programa
 
 ---
 
+*🎮 Quiz Unidad 1 - MicroPython para el Aula - Diego Saavedra 2026* 🏆
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython API Reference*. 2026. Disponible en: https://docs.pybricks.com/en/latest/index.html
 
 [2] Python Software Foundation. *Turtle Graphics — Python 3.13 Documentation*. 2026. Disponible en: https://docs.python.org/3/library/turtle.html
-
----
-
-*🎮 Quiz Unidad 1 - MicroPython para el Aula - Diego Saavedra 2026* 🏆

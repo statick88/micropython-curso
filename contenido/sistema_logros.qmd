@@ -224,12 +224,11 @@ Nota Final = (Quizzes × 0.3) + (Labs × 0.3) + (Proyecto × 0.3) + (Participaci
 
 ---
 
+*Sistema de Logros - MicroPython para el Aula - Diego Saavedra 2026* 🎮
+
+
 ## Referencias
 
 [1] Kapp, K. M. *The Gamification of Learning and Instruction*. Pfeiffer, 2012.
 
 [2] Deterding, S. et al. "From Game Design Elements to Gamefulness: Defining 'Gamification'". *Proceedings of MindTrek 2011*.
-
----
-
-*Sistema de Logros - MicroPython para el Aula - Diego Saavedra 2026* 🎮

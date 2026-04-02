@@ -331,6 +331,8 @@ Antes de terminar, marca lo que puedes hacer:
 
 ---
 
+*Ahora tienes las herramientas profesionales para resolver cualquier bug como un experto.*
+
 ## Referencias
 
 [1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
@@ -342,7 +344,3 @@ Antes de terminar, marca lo que puedes hacer:
 [4] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
 
 [5] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
-
----
-
-*Ahora tienes las herramientas profesionales para resolver cualquier bug como un experto.*

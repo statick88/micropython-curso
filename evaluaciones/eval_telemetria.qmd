@@ -232,12 +232,11 @@ hub.display.off()
 
 ---
 
+*Evaluación Telemetría - MicroPython para el Aula - Diego Saavedra 2026*
+
+
 ## Referencias
 
 [1] MicroPython Project. *MicroPython Documentation - Time and Timers*. 2026. Disponible en: https://docs.micropython.org/en/latest/library/time.html
 
 [2] Pybricks Team. *Pybricks MicroPython - Battery Monitoring*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html
-
----
-
-*Evaluación Telemetría - MicroPython para el Aula - Diego Saavedra 2026*

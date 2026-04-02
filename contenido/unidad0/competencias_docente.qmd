@@ -85,37 +85,6 @@ En el ejemplo anterior solo usamos números, pero a veces necesitamos guardar ot
 
 ---
 
-## Referencias
-
-[1] Python Software Foundation. (2024). *Tutorial de Python 3*. Python Documentation. Available: https://docs.python.org/es/3/tutorial/
-
-[2] Python Software Foundation. (2024). *Built-in Types*. Python Library Reference. Available: https://docs.python.org/es/3/library/dtypes.html
-
-[3] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
-
-[4] MicroPython Team. (2024). *MicroPython Documentation*. Available: https://micropython.org/doc/
-
-[5] Pybricks Team. (2024). *Pybricks Documentation*. Available: https://docs.pybricks.com/en/latest/
-
-[6] Python Software Foundation. (2024). *For Statements*. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#for-statements
-
-[7] Python Software Foundation. (2024). *While Statements*. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#while-statements
-
----
-
-## Otro concepto: hacer cosas sin repetir
-
-Ahora imagínate esto: Tienes que saludar a cada estudiante por su nombre cuando entran. Podrías escribir:
-
-```python
-print("Hola Ana")
-print("Hola Carlos")
-print("Hola María")
-# ...y así sucesivamente
-```
-
-Pero eso es muy largo. ¿No sería mejor tener una sola "instrucción" que podamos usar una y otra vez? [4]
-
 Imagina tener una **receta** escrita:
 
 ```
@@ -245,3 +214,33 @@ En la siguiente unidad, vamos a:
 3. Escribir y ejecutar tu primer programa
 
 ¡Nos vemos allí!
+
+## Otro concepto: hacer cosas sin repetir
+
+Ahora imagínate esto: Tienes que saludar a cada estudiante por su nombre cuando entran. Podrías escribir:
+
+```python
+print("Hola Ana")
+print("Hola Carlos")
+print("Hola María")
+# ...y así sucesivamente
+```
+
+Pero eso es muy largo. ¿No sería mejor tener una sola "instrucción" que podamos usar una y otra vez? [4]
+
+
+## Referencias
+
+[1] Python Software Foundation. (2024). *Tutorial de Python 3*. Python Documentation. Available: https://docs.python.org/es/3/tutorial/
+
+[2] Python Software Foundation. (2024). *Built-in Types*. Python Library Reference. Available: https://docs.python.org/es/3/library/dtypes.html
+
+[3] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+
+[4] MicroPython Team. (2024). *MicroPython Documentation*. Available: https://micropython.org/doc/
+
+[5] Pybricks Team. (2024). *Pybricks Documentation*. Available: https://docs.pybricks.com/en/latest/
+
+[6] Python Software Foundation. (2024). *For Statements*. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#for-statements
+
+[7] Python Software Foundation. (2024). *While Statements*. Python Tutorial. Available: https://docs.python.org/es/3/tutorial/controlflow.html#while-statements

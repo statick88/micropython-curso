@@ -235,6 +235,8 @@ Marca lo que conseguiste:
 
 ---
 
+*Has completado el laboratorio de sensores. Ahora tu robot puede ver el mundo y reaccionar solo.*
+
 ## Referencias
 
 [1] LEGO Education. (2023). *LEGO Education SPIKE Prime - Ultrasonic Sensor*. LEGO. Disponible: https://lego.com
@@ -246,7 +248,3 @@ Marca lo que conseguiste:
 [4] D. George. (2013). *MicroPython Documentation - asyncio*. MicroPython. Disponible: https://docs.micropython.org
 
 [5] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
-
----
-
-*Has completado el laboratorio de sensores. Ahora tu robot puede ver el mundo y reaccionar solo.*

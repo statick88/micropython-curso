@@ -381,12 +381,11 @@ while True:
 
 ---
 
+*Ejercicios de Refuerzo - MicroPython para el Aula - Diego Saavedra 2026*
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython API - PrimeHub*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#primehub
 
 [2] Python Software Foundation. *Python Tutorial - Control Flow*. 2026. Disponible en: https://docs.python.org/3/tutorial/controlflow.html
-
----
-
-*Ejercicios de Refuerzo - MicroPython para el Aula - Diego Saavedra 2026*

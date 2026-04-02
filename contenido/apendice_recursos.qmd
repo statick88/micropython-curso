@@ -286,6 +286,10 @@ El curso incluye módulos avanzados para profundizar tu aprendizaje:
 
 ---
 
+*Material adicional: Alternativas y recursos para Robótica Educativa con MicroPython*
+*Última actualización: Abril 2026*
+*Licencia: CC BY 4.0*
+
 ## Referencias
 
 [1] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
@@ -325,9 +329,3 @@ El curso incluye módulos avanzados para profundizar tu aprendizaje:
 [18] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
 
 [19] A. Annamaa. (2018). *Thonny Debugging Documentation*. GitHub. Disponible: https://github.com/thonny
-
----
-
-*Material adicional: Alternativas y recursos para Robótica Educativa con MicroPython*
-*Última actualización: Abril 2026*
-*Licencia: CC BY 4.0*

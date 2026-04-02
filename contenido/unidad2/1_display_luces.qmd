@@ -181,6 +181,8 @@ Antes de pasar al laboratorio, marca lo que entendiste:
 
 ---
 
+*Ahora vas al laboratorio donde crearás tu propia animación.*
+
 ## Referencias
 
 [1] Pybricks Team. (2023). *Pybricks Documentation - Display Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html
@@ -190,7 +192,3 @@ Antes de pasar al laboratorio, marca lo que entendiste:
 [3] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
 
 [4] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
-
----
-
-*Ahora vas al laboratorio donde crearás tu propia animación.*

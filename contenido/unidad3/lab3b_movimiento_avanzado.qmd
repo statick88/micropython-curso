@@ -287,12 +287,11 @@ hub.display.scroll("PARADA", wait=True)
 
 ---
 
+*Movimiento Avanzado - MicroPython para el Aula - Diego Saavedra 2026*
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython API - DriveBase*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase
 
 [2] Pybricks Team. *Pybricks MicroPython API - Motor*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor
-
----
-
-*Movimiento Avanzado - MicroPython para el Aula - Diego Saavedra 2026*

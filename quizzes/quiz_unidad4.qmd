@@ -98,6 +98,9 @@ XP necesario: 500 | XP ganado: 375
 
 ---
 
+*🎮 Quiz Unidad 4 - MicroPython para el Aula - Diego Saavedra 2026* 🏆
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython - Asynchronous Programming with run_task*. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html#micropython-top-level-functions
@@ -105,7 +108,3 @@ XP necesario: 500 | XP ganado: 375
 [2] Pybricks Team. *Pybricks MicroPython API - UltrasonicSensor*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#ultrasonicsensor
 
 [3] MicroPython Project. *MicroPython Documentation - print function*. 2026. Disponible en: https://docs.micropython.org/en/latest/library/builtins.html#print
-
----
-
-*🎮 Quiz Unidad 4 - MicroPython para el Aula - Diego Saavedra 2026* 🏆

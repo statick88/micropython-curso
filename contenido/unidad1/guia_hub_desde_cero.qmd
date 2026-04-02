@@ -464,6 +464,15 @@ hub.speaker_beep()
 
 ---
 
+**Para docentes que quieren aprender más:**
+- 📖 [Python Tutorial (español)](https://docs.python.org/es/3/tutorial/) — Tutorial oficial de Python
+- 📖 [Python para NO programadores](https://www.python.org/about/gettingstarted/) — Introducción para principiantes
+
+---
+
+*Esta guía covering: qué es el Hub, cómo instalarlo, y alternativas de simulación.*
+*Licencia: CC BY 4.0 — Diego Saavedra 2026*
+
 ## Referencias
 
 [1] LEGO Group. (2024). *LEGO Technic Large Hub Product Information*. Available: https://www.lego.com
@@ -489,12 +498,3 @@ hub.speaker_beep()
 [11] Rundhall. (2024). *ESP-LEGO-SPIKE-Simulator*. GitHub Repository. Available: https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator
 
 [12] Python Software Foundation. (2024). *Python Tutorial*. Available: https://docs.python.org/es/3/tutorial/
-
-**Para docentes que quieren aprender más:**
-- 📖 [Python Tutorial (español)](https://docs.python.org/es/3/tutorial/) — Tutorial oficial de Python
-- 📖 [Python para NO programadores](https://www.python.org/about/gettingstarted/) — Introducción para principiantes
-
----
-
-*Esta guía covering: qué es el Hub, cómo instalarlo, y alternativas de simulación.*
-*Licencia: CC BY 4.0 — Diego Saavedra 2026*

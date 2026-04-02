@@ -96,12 +96,11 @@ Siguiente paso: 📡 Unidad 4: Sensores
 
 ---
 
+*🎮 Quiz Unidad 3 - MicroPython para el Aula - Diego Saavedra 2026* 🏆
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython API Reference - DriveBase and Motors*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase
 
 [2] Pybricks Team. *Pybricks Code - Web-based Programming Environment*. 2026. Disponible en: https://code.pybricks.com/
-
----
-
-*🎮 Quiz Unidad 3 - MicroPython para el Aula - Diego Saavedra 2026* 🏆

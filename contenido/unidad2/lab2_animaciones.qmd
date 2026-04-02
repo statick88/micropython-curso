@@ -270,6 +270,8 @@ El límite es tu imaginación—igual que dibujar en papel, pero ahora el robot 
 
 ---
 
+*Has completado el laboratorio de animaciones. Ahora puedes hacer que cualquier imagen cobre vida en la pantalla del robot.*
+
 ## Referencias
 
 [1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
@@ -281,7 +283,3 @@ El límite es tu imaginación—igual que dibujar en papel, pero ahora el robot 
 [4] D. George. (2013). *MicroPython Documentation - Lists*. MicroPython. Disponible: https://docs.micropython.org/en/latest/library/array.html
 
 [5] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
-
----
-
-*Has completado el laboratorio de animaciones. Ahora puedes hacer que cualquier imagen cobre vida en la pantalla del robot.*

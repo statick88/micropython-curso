@@ -96,6 +96,9 @@ Siguiente paso: 🤖 Unidad 3: Movimiento
 
 ---
 
+*🎮 Quiz Unidad 2 - MicroPython para el Aula - Diego Saavedra 2026* 🏆
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython API Reference - DriveBase*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html
@@ -103,7 +106,3 @@ Siguiente paso: 🤖 Unidad 3: Movimiento
 [2] LEGO Education. *SPIKE Prime - Hub Hardware Reference*. 2026. Disponible en: https://education.lego.com/en-au/support/spike-prime/
 
 [3] Python Software Foundation. *Compound Statements - for statement*. 2026. Disponible en: https://docs.python.org/3/reference/compound_stmts.html#for
-
----
-
-*🎮 Quiz Unidad 2 - MicroPython para el Aula - Diego Saavedra 2026* 🏆

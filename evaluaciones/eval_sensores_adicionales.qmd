@@ -249,12 +249,11 @@ print(json.dumps(datos))
 
 ---
 
+*Evaluación Sensores Adicionales - MicroPython para el Aula - Diego Saavedra 2026*
+
+
 ## Referencias
 
 [1] Pybricks Team. *Pybricks MicroPython API - InfraredSensor*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#infraredsensor
 
 [2] Pybricks Team. *Pybricks MicroPython API - ColorSensor*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#colorsensor
-
----
-
-*Evaluación Sensores Adicionales - MicroPython para el Aula - Diego Saavedra 2026*

@@ -193,6 +193,8 @@ Antes de pasar al laboratorio, marca lo que entendiste:
 
 ---
 
+*Ahora vas al laboratorio donde crearás un robot explorador.*
+
 ## Referencias
 
 [1] LEGO Education. (2023). *LEGO Education SPIKE Prime - Ultrasonic Sensor*. LEGO. Disponible: https://lego.com
@@ -204,7 +206,3 @@ Antes de pasar al laboratorio, marca lo que entendiste:
 [4] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
 
 [5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
-
----
-
-*Ahora vas al laboratorio donde crearás un robot explorador.*

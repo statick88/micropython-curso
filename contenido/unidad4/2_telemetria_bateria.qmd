@@ -332,6 +332,8 @@ Antes de terminar, marca lo que entendiste:
 
 ---
 
+*En la siguiente unidad: Usando Thonny como debugger profesional.*
+
 ## Referencias
 
 [1] Pybricks Team. (2023). *Pybricks Documentation - PrimeHub*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html
@@ -343,7 +345,3 @@ Antes de terminar, marca lo que entendiste:
 [4] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
 
 [5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
-
----
-
-*En la siguiente unidad: Usando Thonny como debugger profesional.*
