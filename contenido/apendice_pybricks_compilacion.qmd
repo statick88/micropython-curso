@@ -1,0 +1,391 @@
+---
+title: "🔧 Pybricks: Compilación Manual y Sin Licencia"
+description: "Guía completa para compilar Pybricks MicroPython en Windows, Linux y Mac"
+---
+
+# 🔧 Pybricks MicroPython: Compilación Manual
+
+## ✅ ¿Pybricks es Gratis?
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║                    ✅ SÍ, PYBRICKS ES COMPLETAMENTE GRATIS                  ║
+║                                                                               ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                                                                               ║
+║   📜 Licencia: MIT License                                                    ║
+║   👨‍💻 Autores: The Pybricks Authors (2018-2026)                              ║
+║   📦 Código fuente: github.com/pybricks/pybricks-micropython                 ║
+║   🌟 Stars: 313                                                               ║
+║   📊 Commits: 6,721                                                           ║
+║                                                                               ║
+║   Puedes:                                                                     ║
+║   ✅ Usar libremente                                                         ║
+║   ✅ Modificar el código                                                     ║
+║   ✅ Distribuir                                                              ║
+║   ✅ Compilar y flashear tu propio firmware                                   ║
+║   ✅ Usar en educación sin costo                                             ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
+
+### ⚠️ Nota sobre Licencias de Componentes
+
+El firmware Pybricks incluye bibliotecas de terceros. La mayoría son open source, pero **BTstack** tiene una licencia más restrictiva que **prohibe cobrar por el firmware**.
+
+---
+
+## 📊 Hubs Soportados
+
+| Hub | Modelo | Soportado | Estado |
+|-----|--------|:---------:|:------:|
+| LEGO Technic Hub | 45601 | ✅ | Estable |
+| LEGO BOOST Move Hub | 45601 | ✅ | Estable |
+| LEGO City Hub | 45601 | ✅ | Estable |
+| LEGO SPIKE Prime Hub | 45601 | ✅ | Estable |
+| LEGO SPIKE Essential Hub | 45601 | ✅ | Estable |
+| LEGO MINDSTORMS Robot Inventor | - | ✅ | Estable |
+| MINDSTORMS EV3 | - | ⚠️ | v2.x (comunidad) |
+
+---
+
+## 🖥️ Requisitos por Plataforma
+
+### Ubuntu/Linux 24.04 (RECOMENDADO)
+
+| Herramienta | Versión | Instalación |
+|-------------|---------|-------------|
+| Git | Cualquiera reciente | `sudo apt install git` |
+| Python | 3.12.x | `sudo apt install python3` |
+| Poetry | 2.x | `pipx install poetry` |
+| ARM GCC Toolchain | 13.x | `sudo apt install gcc-arm-none-eabi` |
+| GCC | Sistema | `sudo apt install build-essential` |
+| Make | Sistema | `sudo apt install make` |
+
+**Instalación completa:**
+```bash
+sudo apt update
+sudo apt install git python3 build-essential gcc-arm-none-eabi
+pipx install poetry
+```
+
+---
+
+### Windows (vía Cygwin)
+
+| Herramienta | Descripción |
+|-------------|-------------|
+| **Cygwin** | Entorno Unix para Windows |
+| **ARM GCC Toolchain** | Compilador cross-compilation |
+| **Python** | 3.10+ |
+
+**Instalación paso a paso:**
+
+1. **Descargar e instalar Cygwin:**
+   - https://www.cygwin.com/setup-x86_64.exe
+   - Paquetes a seleccionar:
+     - `doxygen`
+     - `graphviz`
+     - `make`
+     - `mingw64-x86_64-gcc-core`
+     - `python3`
+     - `zip`
+
+2. **Instalar ARM GCC Toolchain:**
+   - https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
+   - Descargar versión 13.x para Windows
+
+3. **Configurar PATH:**
+   ```powershell
+   $env:PATH="C:\cygwin64\bin;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;$env:PATH"
+   ```
+
+---
+
+### macOS
+
+| Herramienta | Instalación |
+|-------------|-------------|
+| Git | Incluido o `brew install git` |
+| Python | `brew install python` |
+| Poetry | `pipx install poetry` |
+| ARM GCC Toolchain | `brew install --cask gcc-arm-embedded` |
+| libusb | `brew install libusb` |
+
+**Instalación completa:**
+```bash
+brew install pipx
+pipx install poetry
+brew install libusb
+brew install --cask gcc-arm-embedded
+```
+
+---
+
+## 📥 Descargar el Código Fuente
+
+### Opción 1: Línea de Comandos (RECOMENDADA)
+
+```bash
+# Clonar el repositorio (NO usar --recursive, es muy lento)
+git clone https://github.com/pybricks/pybricks-micropython
+cd pybricks-micropython
+
+# Abrir en VS Code (opcional)
+code .
+```
+
+### Opción 2: GitHub Desktop
+
+1. Descargar: https://desktop.github.com
+2. Clone → https://github.com/pybricks/pybricks-micropython
+
+### Opción 3: VS Code
+
+1. Command Palette → `Git: Clone`
+2. Pegar URL del repositorio
+
+---
+
+## ⚙️ Configurar Entorno Python
+
+```bash
+# Verificar versión de Python (necesita 3.10+)
+python3 --version
+
+# Si tienes múltiples versiones, configurar Poetry
+poetry env use python3
+
+# Instalar dependencias
+poetry install
+
+# Activar entorno virtual
+eval $(poetry env activate)
+
+# Verificar que está activado (debe mostrar (.venv) al inicio)
+# (.venv) $
+```
+
+---
+
+## 🔨 Compilar el Firmware
+
+### Paso 1: Configurar Compilador ARM
+
+```bash
+# Opción A: Agregar al PATH
+export PATH=$PATH:~/gcc-arm-none-eabi-*/bin
+
+# Opción B: Usar variable CROSS_COMPILE
+export CROSS_COMPILE=~/gcc-arm-none-eabi-*/bin/arm-none-eabi-
+```
+
+### Paso 2: Compilar para tu Hub
+
+```bash
+# Activar entorno Poetry
+eval $(poetry env activate)
+
+# Compilar mpy-cross primero (necesario para el proceso)
+make mpy-cross -j8
+
+# Compilar firmware para SPIKE Prime Hub
+make -C bricks/primehub -j8
+
+# Otras opciones de Hubs:
+make -C bricks/cityhub -j8      # LEGO City Hub
+make -C bricks/technichub -j8   # LEGO Technic Hub
+make -C bricks/boosthub -j8     # LEGO BOOST Hub
+make -C bricks/inventorhub -j8  # MINDSTORMS Inventor
+```
+
+### Paso 3: Encontrar el Firmware
+
+Después de compilar, el firmware está en:
+
+```
+pybricks-micropython/
+└── bricks/
+    └── primehub/
+        └── build/
+            ├── firmware.bin      ← Firmware principal
+            └── firmware-zip.zip  ← Para instalar
+```
+
+---
+
+## 📲 Flashear el Firmware al Hub
+
+### Método 1: Pybricks Code (FÁCIL)
+
+1. Ir a https://pybricks.com/install
+2. Conectar Hub por USB
+3. Seguir instrucciones en pantalla
+4. Seleccionar tu archivo `firmware.zip`
+5. Click "Install"
+
+### Método 2: DFU Mode (AVANZADO)
+
+```bash
+# Para SPIKE Prime / MINDSTORMS Inventor
+# 1. Poner Hub en modo DFU:
+#    - Mantener CENTER + botón verde al encender
+
+# 2. Flashear con dfu-util
+dfu-util -a 0 -D firmware.bin
+```
+
+---
+
+## 🧪 Probar el Firmware Instalado
+
+### Con Pybricks Code (Online)
+
+1. Abrir https://code.pybricks.com
+2. Conectar Hub por USB
+3. Click "Connect"
+4. Escribir código de prueba:
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Icon
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+hub.display.show_icon(Icon.HEART)
+wait(1000)
+hub.display.show_icon(Icon.HAPPY)
+hub.speaker.beep(440, 200)
+
+print("¡Pybricks funciona!")
+```
+
+5. Click ▶️ Run
+
+---
+
+## 📊 Resumen: Opciones de Uso
+
+| Opción | Costo | Requiere Hardware | Requiere Compilar |
+|--------|:-----:|:-----------------:|:-----------------:|
+| **Pybricks Code (Web)** | Gratis | Solo para probar | ❌ No |
+| **Compilar自己 (DIY)** | Gratis | ESP-32 o Hub LEGO | ✅ Sí |
+| **Firmware Oficial** | Gratis | Hub LEGO | ❌ No |
+| **ESP-32 Simulator** | ~$10 | ESP-32 | ⚠️ Configuración |
+
+---
+
+## 🎓 Ejercicio para Estudiantes
+
+### Objetivo
+Compilar firmware Pybricks desde código fuente.
+
+### Pasos
+
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/pybricks/pybricks-micropython
+cd pybricks-micropython
+
+# 2. Instalar Poetry (si no tienes)
+pipx install poetry
+
+# 3. Configurar entorno
+poetry install
+eval $(poetry env activate)
+
+# 4. Instalar ARM GCC (Ubuntu)
+sudo apt install gcc-arm-none-eabi
+
+# 5. Compilar
+make mpy-cross -j8
+make -C bricks/primehub -j8
+
+# 6. Verificar resultado
+ls -la bricks/primehub/build/
+```
+
+### Entregables
+- [ ] Captura de pantalla con firmware compilado
+- [ ] Log de la terminal mostrando éxito
+- [ ] Archivo firmware.bin generado
+
+---
+
+## 🔗 Enlaces Útiles
+
+| Recurso | URL |
+|---------|-----|
+| Repositorio GitHub | https://github.com/pybricks/pybricks-micropython |
+| Pybricks Code (Web) | https://code.pybricks.com |
+| Documentación | https://docs.pybricks.com |
+| Instalación Oficial | https://pybricks.com/install |
+| DFU Web Tool | https://dfu.pybricks.com |
+| Licencia MIT | https://github.com/pybricks/pybricks-micropython/blob/master/LICENSE |
+
+---
+
+## 💡 Tips de Compilación
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          💡 TIPS PROFESIONALES                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   1. 🐢 NO USES --recursive AL CLONAR                                      │
+│      └─▶ Los submodules se cargan on-demand, es más rápido                 │
+│                                                                             │
+│   2. 🔧 USA -j8 PARA PARALELIZAR                                           │
+│      └─▶ make -C bricks/primehub -j8 (usa 8 cores)                         │
+│                                                                             │
+│   3. 📦 PRIMERO COMPILA mpy-cross                                          │
+│      └─▶ make mpy-cross -j8 (necesario para el proceso)                    │
+│                                                                             │
+│   4. 🐛 SI HAY ERRORES, LIMPIA PRIMERO                                     │
+│      └─▶ make clean && make -C bricks/primehub -j8                         │
+│                                                                             │
+│   5. 📊 VERIFICA EL TAMAÑO DEL FIRMWARE                                    │
+│      └─▶ ls -lh bricks/primehub/build/firmware.bin                         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🆚 Comparación: Compilar vs Usar Web
+
+| Aspecto | Compilar DIY | Pybricks Code Web |
+|---------|:------------:|:-----------------:|
+| **Costo** | Gratis | Gratis |
+| **Setup** | 30-60 min | 2 min |
+| **Customización** | Total | Limitada |
+| **Último features** | Inmediato | Esperar release |
+| **Ideal para** | Desarrolladores | Estudiantes |
+| **Sin internet** | ✅ Sí | ❌ No |
+
+---
+
+## 🏆 Conclusión
+
+```
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║   📚 PARA EL CURSO RECOMENDAMOS:                                             ║
+║                                                                               ║
+║   🥇 Opción Principal: Pybricks Code Web (code.pybricks.com)                ║
+║      └─▶ Sin setup, funciona en cualquier navegador                         ║
+║                                                                               ║
+║   🥈 Opción Alternativa: Compilar desde fuente                               ║
+║      └─▶ Para estudiantes avanzados o personalización                       ║
+║                                                                               ║
+║   🥉 Opción DIY: ESP-32 + SPIKE Simulator                                   ║
+║      └─▶ Para testing sin hardware LEGO (workflow propuesto)                ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+*Compilación Pybricks - MicroPython para el Aula - Diego Saavedra 2026* 🔧

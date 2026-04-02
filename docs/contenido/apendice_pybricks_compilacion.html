@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Guía completa para compilar Pybricks MicroPython en Windows, Linux y Mac">
+
+<title>🔧 Pybricks: Compilación Manual y Sin Licencia – MicroPython para el Aula</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../evaluaciones/eval_motores_avanzados.html" rel="next">
+<link href="../contenido/apendice_simuladores.html" rel="prev">
+<link href="../favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-68056a18e515a5789c5e26a7aeb7ac61.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-82009d67b0d13024d67fdd645cb619bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
+<script>quizdown.init();</script>
+
+
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/apendice_pybricks_compilacion.html"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/robot-espi32-cartoon.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/robot-espi32-cartoon.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">MicroPython para el Aula</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../micropython_aula.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../micropython_aula.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 MicroPython para el Aula</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sobre el Proyecto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../license.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/sistema_logros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Logros 🏆</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">🌟 FUNDAMENTOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos: Antes de Comenzar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">🔌 UNIDAD 1: CONECTAR Y PROGRAMAR</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad1/guia_hub_desde_cero.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Guía Completa: El Hub LEGO — Desde Cero</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 1: Tu Primer Programa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad1/lab1b_ejercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1B: Ejercicios de Refuerzo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 1: Conectar y Programar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">💡 UNIDAD 2: PANTALLA Y LUCES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad2/1_display_luces.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 2: ¿Qué puede mostrar el robot?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad2/lab2_animaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2: Haciendo que las imágenes se muevan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad2/lab2b_animaciones_avanzadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2B: Diseño de Animaciones Avanzadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 2: Pantalla y Luces</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">🤖 UNIDAD 3: MOVIMIENTO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad3/1_motores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 3: ¿Cómo hace el robot para moverse?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad3/2_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Control Avanzado de Motores: PID, Calibración y Más</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad3/lab3_navegacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3: El robot que dibuja un cuadrado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad3/lab3b_movimiento_avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3B: Ejercicios de Movimiento Avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 3: Movimiento</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">📡 UNIDAD 4: SENSORES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad4/1_sensores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad4/lab4_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4: Un robot que explora solo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 4: Sensores</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">🏆 UNIDAD 5: PROYECTO FINAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 5: Ahora vas a crear tu propio robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 5: Proyecto Final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">📚 APÉNDICES</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Alternativas y Recursos Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_thonny_debugger.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_simuladores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_pybricks_compilacion.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">🎯 EVALUACIONES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../evaluaciones/eval_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Motores Avanzados y PID</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../evaluaciones/eval_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Sensores Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../evaluaciones/eval_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Telemetría y Monitoreo de Batería</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">📐 DIAGRAMAS TÉCNICOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/diagramas/diagrama_hoja_ruta.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🗺️ Hoja de Ruta Visual del Curso</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/diagramas/diagrama_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Diagrama: LEGO Technic Large Hub (45601)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/diagramas/diagrama_porque_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🤖 ¿Por qué usar un Hub?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/diagramas/auditoria_diagramas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">📋 Auditoría de Diagramas del Curso</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#pybricks-micropython-compilación-manual" id="toc-pybricks-micropython-compilación-manual" class="nav-link active" data-scroll-target="#pybricks-micropython-compilación-manual">🔧 Pybricks MicroPython: Compilación Manual</a>
+  <ul class="collapse">
+  <li><a href="#pybricks-es-gratis" id="toc-pybricks-es-gratis" class="nav-link" data-scroll-target="#pybricks-es-gratis">✅ ¿Pybricks es Gratis?</a>
+  <ul class="collapse">
+  <li><a href="#nota-sobre-licencias-de-componentes" id="toc-nota-sobre-licencias-de-componentes" class="nav-link" data-scroll-target="#nota-sobre-licencias-de-componentes">⚠️ Nota sobre Licencias de Componentes</a></li>
+  </ul></li>
+  <li><a href="#hubs-soportados" id="toc-hubs-soportados" class="nav-link" data-scroll-target="#hubs-soportados">📊 Hubs Soportados</a></li>
+  <li><a href="#requisitos-por-plataforma" id="toc-requisitos-por-plataforma" class="nav-link" data-scroll-target="#requisitos-por-plataforma">🖥️ Requisitos por Plataforma</a>
+  <ul class="collapse">
+  <li><a href="#ubuntulinux-24.04-recomendado" id="toc-ubuntulinux-24.04-recomendado" class="nav-link" data-scroll-target="#ubuntulinux-24.04-recomendado">Ubuntu/Linux 24.04 (RECOMENDADO)</a></li>
+  <li><a href="#windows-vía-cygwin" id="toc-windows-vía-cygwin" class="nav-link" data-scroll-target="#windows-vía-cygwin">Windows (vía Cygwin)</a></li>
+  <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos">macOS</a></li>
+  </ul></li>
+  <li><a href="#descargar-el-código-fuente" id="toc-descargar-el-código-fuente" class="nav-link" data-scroll-target="#descargar-el-código-fuente">📥 Descargar el Código Fuente</a>
+  <ul class="collapse">
+  <li><a href="#opción-1-línea-de-comandos-recomendada" id="toc-opción-1-línea-de-comandos-recomendada" class="nav-link" data-scroll-target="#opción-1-línea-de-comandos-recomendada">Opción 1: Línea de Comandos (RECOMENDADA)</a></li>
+  <li><a href="#opción-2-github-desktop" id="toc-opción-2-github-desktop" class="nav-link" data-scroll-target="#opción-2-github-desktop">Opción 2: GitHub Desktop</a></li>
+  <li><a href="#opción-3-vs-code" id="toc-opción-3-vs-code" class="nav-link" data-scroll-target="#opción-3-vs-code">Opción 3: VS Code</a></li>
+  </ul></li>
+  <li><a href="#configurar-entorno-python" id="toc-configurar-entorno-python" class="nav-link" data-scroll-target="#configurar-entorno-python">⚙️ Configurar Entorno Python</a></li>
+  <li><a href="#compilar-el-firmware" id="toc-compilar-el-firmware" class="nav-link" data-scroll-target="#compilar-el-firmware">🔨 Compilar el Firmware</a>
+  <ul class="collapse">
+  <li><a href="#paso-1-configurar-compilador-arm" id="toc-paso-1-configurar-compilador-arm" class="nav-link" data-scroll-target="#paso-1-configurar-compilador-arm">Paso 1: Configurar Compilador ARM</a></li>
+  <li><a href="#paso-2-compilar-para-tu-hub" id="toc-paso-2-compilar-para-tu-hub" class="nav-link" data-scroll-target="#paso-2-compilar-para-tu-hub">Paso 2: Compilar para tu Hub</a></li>
+  <li><a href="#paso-3-encontrar-el-firmware" id="toc-paso-3-encontrar-el-firmware" class="nav-link" data-scroll-target="#paso-3-encontrar-el-firmware">Paso 3: Encontrar el Firmware</a></li>
+  </ul></li>
+  <li><a href="#flashear-el-firmware-al-hub" id="toc-flashear-el-firmware-al-hub" class="nav-link" data-scroll-target="#flashear-el-firmware-al-hub">📲 Flashear el Firmware al Hub</a>
+  <ul class="collapse">
+  <li><a href="#método-1-pybricks-code-fácil" id="toc-método-1-pybricks-code-fácil" class="nav-link" data-scroll-target="#método-1-pybricks-code-fácil">Método 1: Pybricks Code (FÁCIL)</a></li>
+  <li><a href="#método-2-dfu-mode-avanzado" id="toc-método-2-dfu-mode-avanzado" class="nav-link" data-scroll-target="#método-2-dfu-mode-avanzado">Método 2: DFU Mode (AVANZADO)</a></li>
+  </ul></li>
+  <li><a href="#probar-el-firmware-instalado" id="toc-probar-el-firmware-instalado" class="nav-link" data-scroll-target="#probar-el-firmware-instalado">🧪 Probar el Firmware Instalado</a>
+  <ul class="collapse">
+  <li><a href="#con-pybricks-code-online" id="toc-con-pybricks-code-online" class="nav-link" data-scroll-target="#con-pybricks-code-online">Con Pybricks Code (Online)</a></li>
+  </ul></li>
+  <li><a href="#resumen-opciones-de-uso" id="toc-resumen-opciones-de-uso" class="nav-link" data-scroll-target="#resumen-opciones-de-uso">📊 Resumen: Opciones de Uso</a></li>
+  <li><a href="#ejercicio-para-estudiantes" id="toc-ejercicio-para-estudiantes" class="nav-link" data-scroll-target="#ejercicio-para-estudiantes">🎓 Ejercicio para Estudiantes</a>
+  <ul class="collapse">
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
+  <li><a href="#pasos" id="toc-pasos" class="nav-link" data-scroll-target="#pasos">Pasos</a></li>
+  <li><a href="#entregables" id="toc-entregables" class="nav-link" data-scroll-target="#entregables">Entregables</a></li>
+  </ul></li>
+  <li><a href="#enlaces-útiles" id="toc-enlaces-útiles" class="nav-link" data-scroll-target="#enlaces-útiles">🔗 Enlaces Útiles</a></li>
+  <li><a href="#tips-de-compilación" id="toc-tips-de-compilación" class="nav-link" data-scroll-target="#tips-de-compilación">💡 Tips de Compilación</a></li>
+  <li><a href="#comparación-compilar-vs-usar-web" id="toc-comparación-compilar-vs-usar-web" class="nav-link" data-scroll-target="#comparación-compilar-vs-usar-web">🆚 Comparación: Compilar vs Usar Web</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">🏆 Conclusión</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/apendice_pybricks_compilacion.html"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="pybricks-micropython-compilación-manual" class="level1">
+<h1>🔧 Pybricks MicroPython: Compilación Manual</h1>
+<section id="pybricks-es-gratis" class="level2">
+<h2 class="anchored" data-anchor-id="pybricks-es-gratis">✅ ¿Pybricks es Gratis?</h2>
+<pre><code>╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║                    ✅ SÍ, PYBRICKS ES COMPLETAMENTE GRATIS                  ║
+║                                                                               ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                                                                               ║
+║   📜 Licencia: MIT License                                                    ║
+║   👨‍💻 Autores: The Pybricks Authors (2018-2026)                              ║
+║   📦 Código fuente: github.com/pybricks/pybricks-micropython                 ║
+║   🌟 Stars: 313                                                               ║
+║   📊 Commits: 6,721                                                           ║
+║                                                                               ║
+║   Puedes:                                                                     ║
+║   ✅ Usar libremente                                                         ║
+║   ✅ Modificar el código                                                     ║
+║   ✅ Distribuir                                                              ║
+║   ✅ Compilar y flashear tu propio firmware                                   ║
+║   ✅ Usar en educación sin costo                                             ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝</code></pre>
+<section id="nota-sobre-licencias-de-componentes" class="level3">
+<h3 class="anchored" data-anchor-id="nota-sobre-licencias-de-componentes">⚠️ Nota sobre Licencias de Componentes</h3>
+<p>El firmware Pybricks incluye bibliotecas de terceros. La mayoría son open source, pero <strong>BTstack</strong> tiene una licencia más restrictiva que <strong>prohibe cobrar por el firmware</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="hubs-soportados" class="level2">
+<h2 class="anchored" data-anchor-id="hubs-soportados">📊 Hubs Soportados</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Hub</th>
+<th>Modelo</th>
+<th style="text-align: center;">Soportado</th>
+<th style="text-align: center;">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LEGO Technic Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="even">
+<td>LEGO BOOST Move Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="odd">
+<td>LEGO City Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="even">
+<td>LEGO SPIKE Prime Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="odd">
+<td>LEGO SPIKE Essential Hub</td>
+<td>45601</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="even">
+<td>LEGO MINDSTORMS Robot Inventor</td>
+<td>-</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: center;">Estable</td>
+</tr>
+<tr class="odd">
+<td>MINDSTORMS EV3</td>
+<td>-</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: center;">v2.x (comunidad)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="requisitos-por-plataforma" class="level2">
+<h2 class="anchored" data-anchor-id="requisitos-por-plataforma">🖥️ Requisitos por Plataforma</h2>
+<section id="ubuntulinux-24.04-recomendado" class="level3">
+<h3 class="anchored" data-anchor-id="ubuntulinux-24.04-recomendado">Ubuntu/Linux 24.04 (RECOMENDADO)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Versión</th>
+<th>Instalación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Git</td>
+<td>Cualquiera reciente</td>
+<td><code>sudo apt install git</code></td>
+</tr>
+<tr class="even">
+<td>Python</td>
+<td>3.12.x</td>
+<td><code>sudo apt install python3</code></td>
+</tr>
+<tr class="odd">
+<td>Poetry</td>
+<td>2.x</td>
+<td><code>pipx install poetry</code></td>
+</tr>
+<tr class="even">
+<td>ARM GCC Toolchain</td>
+<td>13.x</td>
+<td><code>sudo apt install gcc-arm-none-eabi</code></td>
+</tr>
+<tr class="odd">
+<td>GCC</td>
+<td>Sistema</td>
+<td><code>sudo apt install build-essential</code></td>
+</tr>
+<tr class="even">
+<td>Make</td>
+<td>Sistema</td>
+<td><code>sudo apt install make</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Instalación completa:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install git python3 build-essential gcc-arm-none-eabi</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pipx</span> install poetry</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="windows-vía-cygwin" class="level3">
+<h3 class="anchored" data-anchor-id="windows-vía-cygwin">Windows (vía Cygwin)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cygwin</strong></td>
+<td>Entorno Unix para Windows</td>
+</tr>
+<tr class="even">
+<td><strong>ARM GCC Toolchain</strong></td>
+<td>Compilador cross-compilation</td>
+</tr>
+<tr class="odd">
+<td><strong>Python</strong></td>
+<td>3.10+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Instalación paso a paso:</strong></p>
+<ol type="1">
+<li><p><strong>Descargar e instalar Cygwin:</strong></p>
+<ul>
+<li>https://www.cygwin.com/setup-x86_64.exe</li>
+<li>Paquetes a seleccionar:
+<ul>
+<li><code>doxygen</code></li>
+<li><code>graphviz</code></li>
+<li><code>make</code></li>
+<li><code>mingw64-x86_64-gcc-core</code></li>
+<li><code>python3</code></li>
+<li><code>zip</code></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Instalar ARM GCC Toolchain:</strong></p>
+<ul>
+<li>https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads</li>
+<li>Descargar versión 13.x para Windows</li>
+</ul></li>
+<li><p><strong>Configurar PATH:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span><span class="va">PATH</span><span class="op">=</span><span class="st">"C:\cygwin64\bin;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;</span><span class="va">$env</span><span class="op">:</span><span class="va">PATH</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<hr>
+</section>
+<section id="macos" class="level3">
+<h3 class="anchored" data-anchor-id="macos">macOS</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Instalación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Git</td>
+<td>Incluido o <code>brew install git</code></td>
+</tr>
+<tr class="even">
+<td>Python</td>
+<td><code>brew install python</code></td>
+</tr>
+<tr class="odd">
+<td>Poetry</td>
+<td><code>pipx install poetry</code></td>
+</tr>
+<tr class="even">
+<td>ARM GCC Toolchain</td>
+<td><code>brew install --cask gcc-arm-embedded</code></td>
+</tr>
+<tr class="odd">
+<td>libusb</td>
+<td><code>brew install libusb</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Instalación completa:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install pipx</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pipx</span> install poetry</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install libusb</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> gcc-arm-embedded</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="descargar-el-código-fuente" class="level2">
+<h2 class="anchored" data-anchor-id="descargar-el-código-fuente">📥 Descargar el Código Fuente</h2>
+<section id="opción-1-línea-de-comandos-recomendada" class="level3">
+<h3 class="anchored" data-anchor-id="opción-1-línea-de-comandos-recomendada">Opción 1: Línea de Comandos (RECOMENDADA)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clonar el repositorio (NO usar --recursive, es muy lento)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/pybricks/pybricks-micropython</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> pybricks-micropython</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrir en VS Code (opcional)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="opción-2-github-desktop" class="level3">
+<h3 class="anchored" data-anchor-id="opción-2-github-desktop">Opción 2: GitHub Desktop</h3>
+<ol type="1">
+<li>Descargar: https://desktop.github.com</li>
+<li>Clone → https://github.com/pybricks/pybricks-micropython</li>
+</ol>
+</section>
+<section id="opción-3-vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="opción-3-vs-code">Opción 3: VS Code</h3>
+<ol type="1">
+<li>Command Palette → <code>Git: Clone</code></li>
+<li>Pegar URL del repositorio</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="configurar-entorno-python" class="level2">
+<h2 class="anchored" data-anchor-id="configurar-entorno-python">⚙️ Configurar Entorno Python</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar versión de Python (necesita 3.10+)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">--version</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Si tienes múltiples versiones, configurar Poetry</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> env use python3</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar dependencias</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> install</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Activar entorno virtual</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="ex">poetry</span> env activate<span class="va">)</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar que está activado (debe mostrar (.venv) al inicio)</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># (.venv) $</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="compilar-el-firmware" class="level2">
+<h2 class="anchored" data-anchor-id="compilar-el-firmware">🔨 Compilar el Firmware</h2>
+<section id="paso-1-configurar-compilador-arm" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1-configurar-compilador-arm">Paso 1: Configurar Compilador ARM</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción A: Agregar al PATH</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">$PATH</span>:~/gcc-arm-none-eabi-<span class="pp">*</span>/bin</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Opción B: Usar variable CROSS_COMPILE</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">CROSS_COMPILE</span><span class="op">=</span>~/gcc-arm-none-eabi-<span class="pp">*</span>/bin/arm-none-eabi-</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="paso-2-compilar-para-tu-hub" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2-compilar-para-tu-hub">Paso 2: Compilar para tu Hub</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Activar entorno Poetry</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="ex">poetry</span> env activate<span class="va">)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compilar mpy-cross primero (necesario para el proceso)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> mpy-cross <span class="at">-j8</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Compilar firmware para SPIKE Prime Hub</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/primehub <span class="at">-j8</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Otras opciones de Hubs:</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/cityhub <span class="at">-j8</span>      <span class="co"># LEGO City Hub</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/technichub <span class="at">-j8</span>   <span class="co"># LEGO Technic Hub</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/boosthub <span class="at">-j8</span>     <span class="co"># LEGO BOOST Hub</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/inventorhub <span class="at">-j8</span>  <span class="co"># MINDSTORMS Inventor</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="paso-3-encontrar-el-firmware" class="level3">
+<h3 class="anchored" data-anchor-id="paso-3-encontrar-el-firmware">Paso 3: Encontrar el Firmware</h3>
+<p>Después de compilar, el firmware está en:</p>
+<pre><code>pybricks-micropython/
+└── bricks/
+    └── primehub/
+        └── build/
+            ├── firmware.bin      ← Firmware principal
+            └── firmware-zip.zip  ← Para instalar</code></pre>
+<hr>
+</section>
+</section>
+<section id="flashear-el-firmware-al-hub" class="level2">
+<h2 class="anchored" data-anchor-id="flashear-el-firmware-al-hub">📲 Flashear el Firmware al Hub</h2>
+<section id="método-1-pybricks-code-fácil" class="level3">
+<h3 class="anchored" data-anchor-id="método-1-pybricks-code-fácil">Método 1: Pybricks Code (FÁCIL)</h3>
+<ol type="1">
+<li>Ir a https://pybricks.com/install</li>
+<li>Conectar Hub por USB</li>
+<li>Seguir instrucciones en pantalla</li>
+<li>Seleccionar tu archivo <code>firmware.zip</code></li>
+<li>Click “Install”</li>
+</ol>
+</section>
+<section id="método-2-dfu-mode-avanzado" class="level3">
+<h3 class="anchored" data-anchor-id="método-2-dfu-mode-avanzado">Método 2: DFU Mode (AVANZADO)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para SPIKE Prime / MINDSTORMS Inventor</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Poner Hub en modo DFU:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#    - Mantener CENTER + botón verde al encender</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Flashear con dfu-util</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">dfu-util</span> <span class="at">-a</span> 0 <span class="at">-D</span> firmware.bin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="probar-el-firmware-instalado" class="level2">
+<h2 class="anchored" data-anchor-id="probar-el-firmware-instalado">🧪 Probar el Firmware Instalado</h2>
+<section id="con-pybricks-code-online" class="level3">
+<h3 class="anchored" data-anchor-id="con-pybricks-code-online">Con Pybricks Code (Online)</h3>
+<ol type="1">
+<li>Abrir https://code.pybricks.com</li>
+<li>Conectar Hub por USB</li>
+<li>Click “Connect”</li>
+<li>Escribir código de prueba:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Icon</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>hub.display.show_icon(Icon.HEART)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>hub.display.show_icon(Icon.HAPPY)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>hub.speaker.beep(<span class="dv">440</span>, <span class="dv">200</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Pybricks funciona!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="5" type="1">
+<li>Click ▶️ Run</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="resumen-opciones-de-uso" class="level2">
+<h2 class="anchored" data-anchor-id="resumen-opciones-de-uso">📊 Resumen: Opciones de Uso</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Opción</th>
+<th style="text-align: center;">Costo</th>
+<th style="text-align: center;">Requiere Hardware</th>
+<th style="text-align: center;">Requiere Compilar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pybricks Code (Web)</strong></td>
+<td style="text-align: center;">Gratis</td>
+<td style="text-align: center;">Solo para probar</td>
+<td style="text-align: center;">❌ No</td>
+</tr>
+<tr class="even">
+<td><strong>Compilar自己 (DIY)</strong></td>
+<td style="text-align: center;">Gratis</td>
+<td style="text-align: center;">ESP-32 o Hub LEGO</td>
+<td style="text-align: center;">✅ Sí</td>
+</tr>
+<tr class="odd">
+<td><strong>Firmware Oficial</strong></td>
+<td style="text-align: center;">Gratis</td>
+<td style="text-align: center;">Hub LEGO</td>
+<td style="text-align: center;">❌ No</td>
+</tr>
+<tr class="even">
+<td><strong>ESP-32 Simulator</strong></td>
+<td style="text-align: center;">~$10</td>
+<td style="text-align: center;">ESP-32</td>
+<td style="text-align: center;">⚠️ Configuración</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ejercicio-para-estudiantes" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-estudiantes">🎓 Ejercicio para Estudiantes</h2>
+<section id="objetivo" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo">Objetivo</h3>
+<p>Compilar firmware Pybricks desde código fuente.</p>
+</section>
+<section id="pasos" class="level3">
+<h3 class="anchored" data-anchor-id="pasos">Pasos</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Clonar repositorio</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/pybricks/pybricks-micropython</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> pybricks-micropython</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Instalar Poetry (si no tienes)</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pipx</span> install poetry</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Configurar entorno</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> install</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="va">$(</span><span class="ex">poetry</span> env activate<span class="va">)</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Instalar ARM GCC (Ubuntu)</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gcc-arm-none-eabi</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Compilar</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> mpy-cross <span class="at">-j8</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-C</span> bricks/primehub <span class="at">-j8</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Verificar resultado</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-la</span> bricks/primehub/build/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="entregables" class="level3">
+<h3 class="anchored" data-anchor-id="entregables">Entregables</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Captura de pantalla con firmware compilado</label></li>
+<li><label><input type="checkbox">Log de la terminal mostrando éxito</label></li>
+<li><label><input type="checkbox">Archivo firmware.bin generado</label></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="enlaces-útiles" class="level2">
+<h2 class="anchored" data-anchor-id="enlaces-útiles">🔗 Enlaces Útiles</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 64%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repositorio GitHub</td>
+<td>https://github.com/pybricks/pybricks-micropython</td>
+</tr>
+<tr class="even">
+<td>Pybricks Code (Web)</td>
+<td>https://code.pybricks.com</td>
+</tr>
+<tr class="odd">
+<td>Documentación</td>
+<td>https://docs.pybricks.com</td>
+</tr>
+<tr class="even">
+<td>Instalación Oficial</td>
+<td>https://pybricks.com/install</td>
+</tr>
+<tr class="odd">
+<td>DFU Web Tool</td>
+<td>https://dfu.pybricks.com</td>
+</tr>
+<tr class="even">
+<td>Licencia MIT</td>
+<td>https://github.com/pybricks/pybricks-micropython/blob/master/LICENSE</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="tips-de-compilación" class="level2">
+<h2 class="anchored" data-anchor-id="tips-de-compilación">💡 Tips de Compilación</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                          💡 TIPS PROFESIONALES                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   1. 🐢 NO USES --recursive AL CLONAR                                      │
+│      └─▶ Los submodules se cargan on-demand, es más rápido                 │
+│                                                                             │
+│   2. 🔧 USA -j8 PARA PARALELIZAR                                           │
+│      └─▶ make -C bricks/primehub -j8 (usa 8 cores)                         │
+│                                                                             │
+│   3. 📦 PRIMERO COMPILA mpy-cross                                          │
+│      └─▶ make mpy-cross -j8 (necesario para el proceso)                    │
+│                                                                             │
+│   4. 🐛 SI HAY ERRORES, LIMPIA PRIMERO                                     │
+│      └─▶ make clean &amp;&amp; make -C bricks/primehub -j8                         │
+│                                                                             │
+│   5. 📊 VERIFICA EL TAMAÑO DEL FIRMWARE                                    │
+│      └─▶ ls -lh bricks/primehub/build/firmware.bin                         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr>
+</section>
+<section id="comparación-compilar-vs-usar-web" class="level2">
+<h2 class="anchored" data-anchor-id="comparación-compilar-vs-usar-web">🆚 Comparación: Compilar vs Usar Web</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Aspecto</th>
+<th style="text-align: center;">Compilar DIY</th>
+<th style="text-align: center;">Pybricks Code Web</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Costo</strong></td>
+<td style="text-align: center;">Gratis</td>
+<td style="text-align: center;">Gratis</td>
+</tr>
+<tr class="even">
+<td><strong>Setup</strong></td>
+<td style="text-align: center;">30-60 min</td>
+<td style="text-align: center;">2 min</td>
+</tr>
+<tr class="odd">
+<td><strong>Customización</strong></td>
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;">Limitada</td>
+</tr>
+<tr class="even">
+<td><strong>Último features</strong></td>
+<td style="text-align: center;">Inmediato</td>
+<td style="text-align: center;">Esperar release</td>
+</tr>
+<tr class="odd">
+<td><strong>Ideal para</strong></td>
+<td style="text-align: center;">Desarrolladores</td>
+<td style="text-align: center;">Estudiantes</td>
+</tr>
+<tr class="even">
+<td><strong>Sin internet</strong></td>
+<td style="text-align: center;">✅ Sí</td>
+<td style="text-align: center;">❌ No</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="conclusión" class="level2">
+<h2 class="anchored" data-anchor-id="conclusión">🏆 Conclusión</h2>
+<pre><code>╔═══════════════════════════════════════════════════════════════════════════════╗
+║                                                                               ║
+║   📚 PARA EL CURSO RECOMENDAMOS:                                             ║
+║                                                                               ║
+║   🥇 Opción Principal: Pybricks Code Web (code.pybricks.com)                ║
+║      └─▶ Sin setup, funciona en cualquier navegador                         ║
+║                                                                               ║
+║   🥈 Opción Alternativa: Compilar desde fuente                               ║
+║      └─▶ Para estudiantes avanzados o personalización                       ║
+║                                                                               ║
+║   🥉 Opción DIY: ESP-32 + SPIKE Simulator                                   ║
+║      └─▶ Para testing sin hardware LEGO (workflow propuesto)                ║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝</code></pre>
+<hr>
+<p><em>Compilación Pybricks - MicroPython para el Aula - Diego Saavedra 2026</em> 🔧</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../contenido/apendice_simuladores.html" class="pagination-link" aria-label="🖥️ Simuladores de MicroPython">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../evaluaciones/eval_motores_avanzados.html" class="pagination-link" aria-label="Evaluación: Motores Avanzados y PID">
+        <span class="nav-page-text"><span class="chapter-title">Evaluación: Motores Avanzados y PID</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Diego Saavedra</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Educación y Tecnología - Abacom</p>
+</div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
