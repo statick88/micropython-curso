@@ -1,0 +1,353 @@
+---
+title: "🧪 Práctica: Testing del Simulador ESP-LEGO-SPIKE"
+description: "Verificar código de robótica con el framework de pruebas del simulador"
+---
+
+# 🧪 Práctica: Testing del Simulador ESP-LEGO-SPIKE
+
+## 🎯 Objetivo
+
+Aprender a usar el **framework de pruebas automatizado** del ESP-LEGO-SPIKE-Simulator para verificar que el código de robótica funciona correctamente **sin necesidad de hardware físico**.
+
+Al finalizar esta práctica, el docente podrá:
+
+- ✅ Ejecutar tests automatizados del simulador
+- ✅ Verificar código de estudiantes automáticamente
+- ✅ Crear tests personalizados para cada tarea
+- ✅ Evaluar tareas de robótica de forma objetiva
+
+---
+
+## 📋 Requisitos
+
+| Requisito | Detalle |
+|-----------|---------|
+| Python | 3.10 o superior |
+| pytest | Instalado vía pip |
+| Simulador | ESP-LEGO-SPIKE-Simulator clonado |
+| Hardware | **NO se requiere** |
+
+### Instalación
+
+```bash
+# Clonar el simulador
+git clone https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator.git
+cd ESP-LEGO-SPIKE-Simulator
+
+# Crear entorno virtual
+python3 -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+
+# Instalar pytest
+pip install pytest
+```
+
+---
+
+## 📊 ¿Qué incluye el Framework de Pruebas?
+
+El framework contiene **467 tests** que cubren todos los módulos del simulador:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                 📊 COBERTURA DE TESTS (467 total)               │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  🟦 Motor Individual ............ 70 tests                     │
+│  🟦 Par de Motores .............. 27 tests                     │
+│  🟩 Sensor de Distancia ......... 25 tests                     │
+│  🟩 Sensor de Color ............. 29 tests                     │
+│  🟩 Sensor de Fuerza ............ 21 tests                     │
+│  🟨 Matriz de Luces ............. 71 tests                     │
+│  🟨 Botones ..................... 22 tests                     │
+│  🟨 Speaker ..................... 34 tests                     │
+│  🟧 Integración ................. 38 tests                     │
+│  🟪 Ejemplos del Curso .......... 117 tests                    │
+│  ⬜ Infraestructura ............. 7 tests                       │
+│                                                                 │
+│  ✅ TODOS PASANDO: 467/467                                    │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🚀 Ejercicio 1: Ejecutar Todos los Tests
+
+### Paso 1: Verificar la instalación
+
+```bash
+cd ESP-LEGO-SPIKE-Simulator
+python3 -m pytest tests/ --collect-only
+```
+
+Debería mostrar **467 tests** disponibles.
+
+### Paso 2: Ejecutar los tests
+
+```bash
+python3 -m pytest tests/ -v
+```
+
+### Resultado esperado
+
+```
+============================= 467 passed in 0.31s ==============================
+```
+
+Si todos pasan, el simulador está funcionando correctamente.
+
+---
+
+## 🚀 Ejercicio 2: Ejecutar Tests por Módulo
+
+### Probar solo los motores
+
+```bash
+python3 -m pytest tests/test_motor.py -v
+```
+
+### Probar solo sensores
+
+```bash
+python3 -m pytest tests/test_distance_sensor.py -v
+python3 -m pytest tests/test_color_sensor.py -v
+python3 -m pytest tests/test_force_sensor.py -v
+```
+
+### Probar integración
+
+```bash
+python3 -m pytest tests/test_integration.py -v
+```
+
+---
+
+## 🚀 Ejercicio 3: Verificar Código de un Estudiante
+
+### Método 1: Crear tests para una tarea específica
+
+El docente crea un archivo de test que verifica la tarea del estudiante.
+
+**Ejemplo de tarea**: "Crear un robot que avance hasta detectar un obstáculo a menos de 15cm, luego gire 90° y continúe."
+
+```python
+# tests/student/test_tarea_estudiante.py
+from spike import Motor, DistanceSensor
+
+class TestTareaEvitarObstaculos:
+    
+    def test_motor_se_inicializa(self):
+        motor = Motor("A")
+        assert motor is not None
+    
+    def test_sensor_funciona(self):
+        sensor = DistanceSensor("E")
+        distancia = sensor.get_distance_cm()
+        assert isinstance(distancia, (int, float))
+        assert distancia >= 0
+    
+    def test_logica_completa(self):
+        motor = Motor("A")
+        sensor = DistanceSensor("E")
+        
+        motor.set_default_speed(50)
+        motor.start()
+        
+        distancia = sensor.get_distance_cm()
+        if distancia < 15:
+            motor.stop()
+            motor.run_for_degrees(90, speed=30)
+            motor.start()
+```
+
+Ejecutar:
+
+```bash
+python3 -m pytest tests/student/test_tarea_estudiante.py -v
+```
+
+### Método 2: Ejecutar el archivo .py del estudiante
+
+Copiar el archivo del estudiante en `tests/student/`:
+
+```bash
+cp /ruta/tarea_juan.py tests/student/
+```
+
+Verificar sintaxis y ejecución:
+
+```bash
+python3 -m pytest tests/student/test_ejecutar_codigo_estudiante.py -v
+```
+
+### Método 3: Verificar contra ejemplos del curso
+
+```bash
+python3 -m pytest tests/student/test_verificar_ejemplos_curso.py -v
+```
+
+Esto ejecuta **50 tests** que verifican todos los ejemplos oficiales del curso.
+
+---
+
+## 📐 Criterios de Evaluación Sugeridos
+
+Use esta tabla para calificar tareas de robótica:
+
+| Criterio | Cómo Verificar | Peso |
+|----------|---------------|------|
+| **Código compila sin errores** | `pytest tests/student/ -v` | 20% |
+| **Motores funcionan** | `pytest tests/test_motor.py -v` | 20% |
+| **Sensores leen correctamente** | `pytest tests/test_distance_sensor.py -v` | 20% |
+| **Lógica de integración** | `pytest tests/test_integration.py -v` | 25% |
+| **Manejo de edge cases** | Tests personalizados | 15% |
+
+---
+
+## 🐛 Bugs Conocidos del Simulador
+
+Estos bugs están en el código original del simulador. Los tests están adaptados para manejarlos:
+
+| Bug | Descripción | Workaround |
+|-----|-------------|------------|
+| `is_pressed()` retorna `None` | Bug en ForceSensor con ISDEBUG=True | Aceptar `None` como válido |
+| `start_beep()` sin parámetros | No acepta frecuencia | Llamar sin argumentos |
+| `light_up()` sin `brightness` | Acepta 3 args posicionales | Usar `light_up(100, 100, 100)` |
+| `get_new_value()` sin clamp | Valores pueden exceder rango | Verificar solo `>= 0` |
+
+---
+
+## 📁 Estructura del Framework
+
+```
+ESP-LEGO-SPIKE-Simulator/
+├── pytest.ini                          # Configuración
+├── tests/
+│   ├── conftest.py                     # Fixtures y mocks globales
+│   ├── test_motor.py                   # 70 tests de motor
+│   ├── test_motor_pair.py              # 27 tests de par de motores
+│   ├── test_distance_sensor.py         # 25 tests de distancia
+│   ├── test_color_sensor.py            # 29 tests de color
+│   ├── test_force_sensor.py            # 21 tests de fuerza
+│   ├── test_light_matrix.py            # 71 tests de display
+│   ├── test_buttons.py                 # 22 tests de botones
+│   ├── test_speaker.py                 # 34 tests de speaker
+│   ├── test_integration.py             # 38 tests de integración
+│   └── student/                        # Tests de estudiantes
+│       ├── test_tareas_estudiantes.py  # Método 1: Tests por tarea
+│       ├── test_ejecutar_codigo_estudiante.py  # Método 2: Código directo
+│       └── test_verificar_ejemplos_curso.py   # Método 3: Ejemplos del curso
+└── src/spike/                          # Código del simulador
+```
+
+---
+
+## 🎓 Ejercicio Final: Crear tu Propia Evaluación
+
+### Escenario
+
+Usted asignó esta tarea a sus estudiantes:
+
+> **Tarea**: "Programar un robot que siga una línea negra usando el sensor de color. Si detecta un obstáculo a menos de 10cm, debe detenerse y emitir un sonido."
+
+### Solución del docente
+
+Cree el archivo `tests/student/test_evaluacion_final.py`:
+
+```python
+from spike import MotorPair, ColorSensor, DistanceSensor, PrimeHub
+
+class TestEvaluacionFinal:
+    """Evaluación: Seguidor de línea con detección de obstáculos."""
+    
+    def test_sensor_color_funciona(self):
+        """El sensor de color debe leer correctamente."""
+        sensor = ColorSensor("E")
+        color = sensor.get_color()
+        assert color is None or isinstance(color, str)
+    
+    def test_sensor_distancia_funciona(self):
+        """El sensor de distancia debe leer correctamente."""
+        sensor = DistanceSensor("D")
+        distancia = sensor.get_distance_cm()
+        assert isinstance(distancia, (int, float))
+        assert distancia >= 0
+    
+    def test_motores_funcionan(self):
+        """El par de motores debe moverse."""
+        motor_pair = MotorPair("B", "A")
+        motor_pair.set_default_speed(50)
+        motor_pair.move(1, "cm", steering=0, speed=50)
+    
+    def test_speaker_funciona(self):
+        """El speaker debe emitir sonido."""
+        hub = PrimeHub()
+        hub.speaker.set_volume(50)
+        hub.speaker.beep()
+    
+    def test_logica_seguidor_con_obstaculo(self):
+        """Verificar la lógica completa del robot."""
+        motor_pair = MotorPair("B", "A")
+        color_sensor = ColorSensor("E")
+        distance_sensor = DistanceSensor("D")
+        hub = PrimeHub()
+        
+        # Configurar
+        motor_pair.set_default_speed(50)
+        
+        # Leer sensores
+        color = color_sensor.get_color()
+        distancia = distance_sensor.get_distance_cm()
+        
+        # Lógica de seguimiento
+        if color == "black":
+            motor_pair.move(1, "cm", steering=0, speed=50)
+        else:
+            motor_pair.move(1, "cm", steering=50, speed=30)
+        
+        # Lógica de obstáculo
+        if distancia < 10:
+            motor_pair.stop()
+            hub.speaker.beep()
+```
+
+### Ejecutar la evaluación
+
+```bash
+python3 -m pytest tests/student/test_evaluacion_final.py -v
+```
+
+### Resultado esperado
+
+```
+============================== 5 passed in 0.02s ==============================
+```
+
+---
+
+## 🔗 Enlaces Útiles
+
+| Recurso | URL |
+|---------|-----|
+| Repositorio del Simulador | https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator |
+| Guía Completa de Testing | TESTING_GUIDE.md en el repositorio |
+| Pybricks Code | https://code.pybricks.com |
+| Thonny IDE | https://thonny.org |
+
+---
+
+## 📝 Resumen
+
+| Comando | Descripción |
+|---------|-------------|
+| `pytest tests/ -v` | Ejecutar todos los tests |
+| `pytest tests/test_motor.py -v` | Solo tests de motor |
+| `pytest tests/test_integration.py -v` | Tests de integración |
+| `pytest tests/student/ -v` | Tests de estudiantes |
+| `pytest tests/ -k "distancia"` | Tests que contienen "distancia" |
+| `pytest tests/ --tb=short` | Output compacto de errores |
+
+---
+
+*Práctica de Testing - MicroPython para el Aula - Diego Saavedra 2026* 🧪

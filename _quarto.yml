@@ -78,6 +78,7 @@ book:
     - part: "🏆 UNIDAD 5: PROYECTO FINAL"
       chapters:
         - contenido/unidad5/1_proyecto_final.qmd
+        - contenido/unidad5/2_practica_testing_simulador.qmd
         - quizzes/quiz_unidad5.qmd
     - part: "📚 APÉNDICES"
       chapters:
