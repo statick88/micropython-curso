@@ -144,7 +144,7 @@ Crea una hoja de cálculo con:
 
 ```python
 # Sistema simple de tracking en MicroPython
-from pybricks.hubs import PrimeHub
+from spike import PrimeHub
 
 hub = PrimeHub()
 

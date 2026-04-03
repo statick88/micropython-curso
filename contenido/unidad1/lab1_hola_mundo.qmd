@@ -63,8 +63,8 @@ Escribe esto en Thonny (donde dice `# Aquí escribes las instrucciones`):
 
 ```python
 # Decirle a la computadora cómo hablar con el robot
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait_for_seconds
 
 # Crear una "caja" llamada hub que representa al robot
 hub = PrimeHub()
@@ -73,13 +73,13 @@ hub = PrimeHub()
 hub.light.on(5)  # 5 = verde
 
 # Mostrar un mensaje en la pantalla del robot
-hub.display.text("HOLA")
+hub.light_matrix.write("HOLA")
 
 # Hacer que el robot "hable" (suene)
 hub.speaker.beep()
 
 # Esperar un poco para que puedas ver el mensaje
-wait(2000)
+wait_for_seconds(2)
 ```
 
 **¿Qué ves en la pantalla de Thonny?**
@@ -95,18 +95,18 @@ Verás que las palabras tienen colores diferentes. Eso es normal—Thonny usa co
 Antes de enviar el código al robot, podemos ver si hay errores. Es como cuando relees una tarea antes de entregarla.
 
 1. Mira si Thonny muestra algún mensaje rojo en la parte inferior
-2. Si hay errores,revisa que no falten letras o que los paréntesis estén completos
+2. Si hay errores, revisa que no falten letras o que los paréntesis estén completos
 
 ```
 ┌─────────────────────────────────────────────────┐
 │  >>> ================================            │
 │  >>> # Decirle a la computadora...              │
-│  >>> from pybricks.hubs import PrimeHub         │
+│  >>> from spike import PrimeHub                 │
 │  >>> hub = PrimeHub()                           │
 │  >>> hub.light.on(5)                            │
-│  >>> hub.display.text("HOLA")                    │
+│  >>> hub.light_matrix.write("HOLA")             │
 │  >>> hub.speaker.beep()                         │
-│  >>> wait(2000)                                 │
+│  >>> wait_for_seconds(2)                        │
 │  >>>                                            │
 │  MicroPython v1.20.0 on 2024-09-12              │
 │  LEGO Technic Large Hub firmware version 3.3.0  │
@@ -153,13 +153,13 @@ Ahora viene lo interesante: enviar las instrucciones al robot para que las ejecu
 Ahora vas a cambiar el mensaje. Es como cuando escribes un nombre en un cuaderno: borras lo que había y escribes lo nuevo.
 
 En tu código, busca donde dice `"HOLA"` y cámbialo por tu nombre (máximo 5 letras):
-
+ 
 ```python
 # Busca esta línea:
-hub.display.text("HOLA")
-
+hub.light_matrix.write("HOLA")
+ 
 # Cámbiala por tu nombre:
-hub.display.text("JUAN")  # Ejemplo: tu nombre
+hub.light_matrix.write("JUAN")  # Ejemplo: tu nombre
 ```
 
 Presiona **Run** de nuevo y observa el robot.

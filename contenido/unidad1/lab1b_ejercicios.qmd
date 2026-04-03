@@ -1,6 +1,6 @@
 ---
 title: "Laboratorio 1B: Ejercicios de Refuerzo"
-description: "Ejercicios prácticos adicionales para consolidar los fundamentos de Pybricks"
+description: "Ejercicios prácticos adicionales para consolidar los fundamentos de SPIKE Essential Python"
 ---
 
 # Laboratorio 1B: Ejercicios de Refuerzo {#lab1b-ejercicios}
@@ -31,9 +31,8 @@ Crea una secuencia de LEDs que simule un "carrusel de luces" recorriendo la matr
 ### Código Base
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button, Color, Direction, Port, Stop
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -44,9 +43,8 @@ hub = PrimeHub()
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button, Color, Direction, Port, Stop
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -57,11 +55,11 @@ for repeticion in range(3):
             # Crear matriz con un solo LED encendido
             matriz = [[0, 0, 0, 0, 0] for _ in range(5)]
             matriz[fila][columna] = 100
-            hub.display.show(matriz)
+            hub.light_matrix.show(matriz)
             wait(100)
     
     # Pausa entre repeticiones
-    hub.display.off()
+    hub.light_matrix.off()
     wait(500)
 ```
 
@@ -91,8 +89,8 @@ Implementa un efecto de "respiración" donde la matriz completa aumenta y dismin
 ### Código Base
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -103,8 +101,8 @@ hub = PrimeHub()
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -112,16 +110,16 @@ for ciclo in range(5):
     # Fase de inhalación: aumentar brillo
     for brillo in range(10, 101, 5):
         matriz = [[brillo for _ in range(5)] for _ in range(5)]
-        hub.display.show(matriz)
+        hub.light_matrix.show(matriz)
         wait(30)
     
     # Fase de exhalación: disminuir brillo
     for brillo in range(100, 9, -5):
         matriz = [[brillo for _ in range(5)] for _ in range(5)]
-        hub.display.show(matriz)
+        hub.light_matrix.show(matriz)
         wait(30)
 
-hub.display.off()
+hub.light_matrix.off()
 ```
 
 ---
@@ -142,26 +140,22 @@ Crea un programa interactivo donde los botones del Hub controlan diferentes comp
 ### Código Base
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button
-from pybricks.tools import wait
+from spike import PrimeHub
 
 hub = PrimeHub()
 
 # Define los iconos como matrices
-# Pista: investiga hub.display.icon() o usa matrices 5x5
+# Pista: usa hub.light_matrix.show() con matrices 5x5
 ```
 
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button
-from pybricks.tools import wait
+from spike import PrimeHub
 
 hub = PrimeHub()
 
-# Iconos predefinidos de Pybricks
+# Iconos personalizados (matrices 5x5)
 FLECHA_IZQ = [
     [0, 0, 100, 0, 0],
     [0, 100, 100, 0, 0],
@@ -187,20 +181,18 @@ CORAZON = [
 ]
 
 while True:
-    botones = hub.buttons.pressed()
-    
     # Salir con LEFT + RIGHT
-    if Button.LEFT in botones and Button.RIGHT in botones:
-        hub.display.off()
+    if hub.left_button.is_pressed() and hub.right_button.is_pressed():
+        hub.light_matrix.off()
         break
     
     # Mostrar iconos según botón
-    if Button.LEFT in botones:
-        hub.display.show(FLECHA_IZQ)
-    elif Button.RIGHT in botones:
-        hub.display.show(FLECHA_DER)
-    elif Button.CENTER in botones:
-        hub.display.show(CORAZON)
+    if hub.left_button.is_pressed():
+        hub.light_matrix.show(FLECHA_IZQ)
+    elif hub.right_button.is_pressed():
+        hub.light_matrix.show(FLECHA_DER)
+    elif hub.center_button.is_pressed():
+        hub.light_matrix.show(CORAZON)
     
     wait(50)
 ```
@@ -217,7 +209,7 @@ Muestra un contador binario del 0 al 31 usando los primeros 5 LEDs de la primera
 
 1. Cuenta del 0 al 31
 2. Representa cada número en binario usando la primera fila
-3. Cada LED representa un bit (apagado=0, encendido=100)
+3. Cada LED representa un bit (apagado=0,endido=100)
 4. Retraso de 500ms entre cada número
 
 ### Pista
@@ -227,8 +219,8 @@ El número 5 en binario es `00101`. Los bits van de derecha a izquierda.
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -241,10 +233,10 @@ for numero in range(32):
         if numero & (1 << bit):  # Operación AND bitwise
             matriz[0][bit] = 100
     
-    hub.display.show(matriz)
+    hub.light_matrix.show(matriz)
     wait(500)
 
-hub.display.off()
+hub.light_matrix.off()
 ```
 
 ---
@@ -259,36 +251,49 @@ Programa una melodía simple usando el speaker del Hub.
 
 1. Toca 4 notas ascendentes (DO, RE, MI, FA)
 2. Toca 4 notas descendentes (FA, MI, RE, DO)
-3. Toca un acorde final
+3. Toca un beep final
 
 ### Código Base
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Icon
+from spike import PrimeHub
 
 hub = PrimeHub()
 
-# Usa hub.speaker.play_notes()
-# Pista: investiga la lista de notas disponibles
+# Usa hub.speaker.start_beep()
+# Pista: frecuencia 262 = DO4, 294 = RE4, 330 = MI4, 349 = FA4
 ```
 
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Icon
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
 # Escala ascendente
-hub.speaker.play_notes(['C4', 'D4', 'E4', 'F4'], tempo=120)
+hub.speaker.start_beep(262)  # DO4
+wait(250)
+hub.speaker.start_beep(294)  # RE4
+wait(250)
+hub.speaker.start_beep(330)  # MI4
+wait(250)
+hub.speaker.start_beep(349)  # FA4
+wait(500)
 
 # Escala descendente
-hub.speaker.play_notes(['F4', 'E4', 'D4', 'C4'], tempo=120)
+hub.speaker.start_beep(349)  # FA4
+wait(250)
+hub.speaker.start_beep(330)  # MI4
+wait(250)
+hub.speaker.start_beep(294)  # RE4
+wait(250)
+hub.speaker.start_beep(262)  # DO4
+wait(500)
 
-# Acorde final (tocar notas simultáneas no es posible, pero podemos hacerlos rápido)
-hub.speaker.beep(frequency=262, duration=1000)  # DO
+# Beep final
+hub.speaker.beep()
 ```
 
 ---
@@ -301,7 +306,7 @@ Combina todo lo aprendido para crear un menú interactivo con el Hub.
 
 ### Requisitos
 
-1. Pantalla inicial con icono de "menú" (tres líneas)
+1. Pantalla inicial con icono de "menú"
 2. CENTER selecciona opción
 3. LEFT/RIGHT navega entre opciones
 4. Opciones:
@@ -312,31 +317,29 @@ Combina todo lo aprendido para crear un menú interactivo con el Hub.
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button, Icon
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
-MENU_ICONS = [Icon.HOUSE, Icon.HEART, Icon.MUSIC]
-MENU_NAMES = ["LEDs", "Respiración", "Melodía"]
+# Imágenes predefinidas de SPIKE Essential
+IMAGENES = ['ARROW_LEFT', 'ARROW_RIGHT', 'YES']
+NOMBRES = ["LEDs", "Respiración", "Melodía"]
 
 opcion_actual = 0
 
 while True:
     # Mostrar opción actual
-    hub.display.show(MENU_ICONS[opcion_actual])
-    
-    botones = hub.buttons.pressed()
+    hub.light_matrix.show_image(IMAGENES[opcion_actual])
     
     # Navegación
-    if Button.LEFT in botones:
+    if hub.left_button.is_pressed():
         opcion_actual = (opcion_actual - 1) % 3
         wait(200)
-    elif Button.RIGHT in botones:
+    elif hub.right_button.is_pressed():
         opcion_actual = (opcion_actual + 1) % 3
         wait(200)
-    elif Button.CENTER in botones:
+    elif hub.center_button.is_pressed():
         # Ejecutar opción
         if opcion_actual == 0:
             # Secuencia LEDs
@@ -345,22 +348,28 @@ while True:
                     for c in range(5):
                         m = [[0]*5 for _ in range(5)]
                         m[f][c] = 100
-                        hub.display.show(m)
+                        hub.light_matrix.show(m)
                         wait(100)
         elif opcion_actual == 1:
             # Respiración
             for _ in range(3):
                 for b in range(10, 101, 5):
                     m = [[b]*5 for _ in range(5)]
-                    hub.display.show(m)
+                    hub.light_matrix.show(m)
                     wait(20)
                 for b in range(100, 9, -5):
                     m = [[b]*5 for _ in range(5)]
-                    hub.display.show(m)
+                    hub.light_matrix.show(m)
                     wait(20)
         elif opcion_actual == 2:
             # Melodía
-            hub.speaker.play_notes(['C4', 'D4', 'E4', 'F4'], tempo=120)
+            hub.speaker.start_beep(262)
+            wait(250)
+            hub.speaker.start_beep(294)
+            wait(250)
+            hub.speaker.start_beep(330)
+            wait(250)
+            hub.speaker.start_beep(349)
     
     wait(50)
 ```
@@ -386,6 +395,6 @@ while True:
 
 ## Referencias
 
-[1] Pybricks Team. *Pybricks MicroPython API - PrimeHub*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#primehub
+[1] LEGO Education. *SPIKE Essential Python Programming Guide*. 2026. Disponible en: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [2] Python Software Foundation. *Python Tutorial - Control Flow*. 2026. Disponible en: https://docs.python.org/3/tutorial/controlflow.html

@@ -10,15 +10,15 @@
 
 ## Antes de empezar
 
-Ya sabes cómo hacer que el robot avance y gire. Pero los motores tienen muchas más capacidades que quizás no conoces [1][2].
+Ya sabes cómo hacer que el robot avance y gire. Pero los motores tienen muchas más capacidades que quizás no conoces.
 
 En esta unidad vas a aprender:
 
-1. **Distintos modos de parada** — COAST, BRAKE, HOLD
-2. **Control PID** — Para movimientos más precisos
+1. **Distintos modos de parada** — brake() y stop()
+2. **Distintos tipos de movimiento** — Por tiempo, ángulo, rotación
 3. **Calibración** — Medir y ajustar el robot
-4. **Distintos tipos de movimiento** — Por tiempo, ángulo, objetivo
-5. **DC Motors** — Control directo de potencia
+4. **Estado del motor** — Leer posición y velocidad
+5. **Control directo de velocidad** — start() para potencia continua
 
 ---
 
@@ -30,35 +30,34 @@ En esta unidad vas a aprender:
 
 | Modo | Qué hace | Ejemplo de uso |
 |------|----------|----------------|
-| **COAST** | El motor se desliza freely | Robot que se mueve smoothly |
-| **BRAKE** | El motor frena activamente | Robot que necesita parar exacto |
-| **HOLD** | El motor mantiene su posición | Brazo robótico que sostiene algo |
+| **stop()** | El motor se desliza un poco (coast) | Robot que se mueve suavemente |
+| **brake()** | El motor frena activamente | Robot que necesita parar exacto |
+| **hold** | El motor mantiene su posición | Brazo robótico que sostiene algo |
 
 ### Código ejemplo:
 
 ```python
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port, Stop
-from pybricks.tools import wait
+from spike import Motor
+from spike.control import wait
 
-motor = Motor(Port.A)
+motor = Motor('A')
 
 # Modo COAST (se desliza)
-motor.run(500)
+motor.start(50)  # 50% de velocidad
 wait(1000)
-motor.stop(Stop.COAST)  # Se desliza antes de parar
+motor.brake()  # Se desliza antes de parar
 
 wait(1000)
 
 # Modo BRAKE (frena inmediatamente)
-motor.run(500)
+motor.start(50)
 wait(1000)
-motor.stop(Stop.BRAKE)  # Se detiene inmediatamente
+motor.stop()  # Se detiene inmediatamente
 
 wait(1000)
 
 # Modo HOLD (mantiene posición)
-motor.run_angle(500, 360, then=Stop.HOLD)  # Mantiene posición después de girar
+motor.run_for_degrees(300, 360)  # Mantiene posición después de girar
 ```
 
 ### Cuándo usar cada uno:
@@ -86,30 +85,29 @@ motor.run_angle(500, 360, then=Stop.HOLD)  # Mantiene posición después de gira
 ### Código ejemplo:
 
 ```python
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port, Stop
-from pybricks.tools import wait
+from spike import Motor
+from spike.control import wait
 
-motor = Motor(Port.A)
+motor = Motor('A')
 
-# run_time: ejecutar por tiempo específico
-# (velocidad en deg/s, tiempo en milisegundos)
-motor.run_time(300, 2000)  # 2 segundos a 300°/s
+# run_for_seconds: ejecutar por tiempo específico
+# (velocidad en %, tiempo en segundos)
+motor.run_for_seconds(30, 2)  # 2 segundos a 30%
 wait(1000)
 
-# run_angle: ejecutar un ángulo específico
+# run_for_degrees: ejecutar un ángulo específico
 # (velocidad, ángulo de rotación)
-motor.run_angle(300, 180, then=Stop.BRAKE)  # media vuelta
+motor.run_for_degrees(30, 180)  # media vuelta
 wait(1000)
 
-# run_target: ejecutar hasta ángulo objetivo
-motor.run_target(300, 720, then=Stop.HOLD)  # dos vueltas completas
+# run_for_rotations: ejecutar varias rotaciones
+motor.run_for_rotations(30, 2)  # dos vueltas completas
 wait(1000)
 
 # run_until_stalled: hasta que no pueda más
 # Útil para calibración o encontrar límite físico
-motor.run_until_stalled(100, then=Stop.HOLD)
-print(f"Giró hasta: {motor.angle()}°")
+motor.run_until_stalled(10)
+print(f"Giró hasta: {motor.get_position_degrees()}°")
 ```
 
 ---
@@ -129,45 +127,38 @@ print(f"Giró hasta: {motor.angle()}°")
 Sin PID: El robot acelera/decelera bruscamente, se pasa del objetivo
 Con PID: El robot smooth accelerate/decelera, llega exacto al objetivo
 
-### Código ejemplo:
+### Control de Motor en SPIKE Essential
+
+SPIKE Essential tiene un control de motor más simple que Pybricks. Los parámetros de velocidad y posición están integrados en los métodos de movimiento:
 
 ```python
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-from pybricks.tools import wait
+from spike import Motor
 
-motor = Motor(Port.A)
+motor = Motor('A')
 
-# Configurar parámetros PID
-# kp=proporcional, ki=integral, kd=derivativo
-motor.control.pid(
-    kp=1200,        # Ganancia proporcional
-    ki=0,           # Ganancia integral (0 = no usar)
-    kd=10,          # Ganancia derivativa
-    integral_range=45,    # Rango donde aplica integral
-    integral_rate=100      # Velocidad de acumulación integral
-)
+# Ejecutar a velocidad constante (por tiempo)
+motor.run_for_seconds(30, 3)  # 30% de velocidad por 3 segundos
 
-# También puedes configurar límites
-motor.control.limits(
-    speed=1000,          # Velocidad máxima (deg/s)
-    acceleration=2000,   # Aceleración máxima (deg/s²)
-    torque=75            # Torque máximo (%)
-)
+# Ejecutar hasta ángulo específico
+motor.run_for_degrees(30, 720)  # 30% de velocidad, 720 grados (2 vueltas)
 
-# Obtener configuración actual
-limites = motor.control.limits()
-print(f"Vel máx: {limites[0]}, Acel máx: {limites[1]}, Torque máx: {limites[2]}")
+# Obtener posición actual
+posicion = motor.get_position_degrees()
+print(f"Posición: {posicion}°")
+
+# Resetear posición
+motor.reset_angle(0)
 ```
 
-### Guía de ajustes PID:
+### Parámetros de control:
 
-| Problema | Ajuste |
-|---------|--------|
-| El robot oscila mucho | Aumentar `kd` |
-| El robot llega lento al objetivo | Aumentar `kp` |
-| El robot nunca llega exacto | Aumentar `ki` |
-| El robot se pasa del objetivo | Reducir `kp` |
+SPIKE Essential no permite ajuste directo de parámetros PID como Pybricks. Sin embargo, la velocidad se puede ajustar en porcentaje (0-100%):
+
+| Velocidad | Comportamiento |
+|-----------|----------------|
+| 10-30% | Movimientos precisos y lentos |
+| 50-70% | Velocidad media, buena respuesta |
+| 80-100% | Velocidad alta, menos preciso |
 
 ---
 
@@ -178,78 +169,72 @@ print(f"Vel máx: {limites[0]}, Acel máx: {limites[1]}, Torque máx: {limites[2
 ### Código ejemplo:
 
 ```python
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-from pybricks.tools import wait
+from spike import Motor
+from spike.control import wait
 
-motor = Motor(Port.A)
+motor = Motor('A')
 
 # Mover el motor
-motor.run(500)
+motor.start(50)
 wait(1000)
 
 # Leer estado actual
-angle = motor.angle()      # Ángulo actual (degrees)
-speed = motor.speed()      # Velocidad actual (deg/s)
+angle = motor.get_position_degrees()  # Ángulo actual (degrees)
+speed = motor.get_speed()              # Velocidad actual (%)
 
-print(f"Ángulo: {angle}° | Velocidad: {speed}°/s")
+print(f"Ángulo: {angle}° | Velocidad: {speed}%")
 
 # Resetear el ángulo a 0
 motor.reset_angle(0)
-print(f"Después del reset: {motor.angle()}°")
+print(f"Después del reset: {motor.get_position_degrees()}°")
 ```
 
 ### Funciones de estado:
 
 ```python
-motor.angle()      # Get current angle in degrees
-motor.speed()     # Get current speed in deg/s
-motor.reset_angle(0)  # Reset angle counter to 0
+motor.get_position_degrees()  # Get current angle in degrees
+motor.get_speed()             # Get current speed in %
+motor.reset_angle(0)          # Reset angle counter to 0
 ```
 
 ---
 
-## 5. DC Motors - Control Directo
+## 5. Control de Velocidad Directo
 
-**Situación:** A veces no necesitas precisión—solo quieres que el motor girar a cierta potencia, como un ventilador. Los DCMotors dan control directo de potencia [1].
+**Situación:** A veces no necesitas precisión—solo quieres que el motor girar a cierta potencia, como un ventilador. En SPIKE Essential, puedes usar `start()` para control directo de potencia.
 
-### Diferencia Motor vs DCMotor:
+### Diferencia entre métodos:
 
-| Característica | Motor (estándar) | DCMotor |
-|----------------|-------------------|---------|
+| Característica | run_for_degrees | start() |
+|----------------|-----------------|---------|
 | Control | Velocidad y posición | Solo potencia (DC) |
 | Uso | Movimientos precisos | Ventiladores, bandas |
-| Retroalimentación | Con sensores | Sin sensores |
+| Duración | Hasta completar ángulo | Indefinido |
 
 ### Código ejemplo:
 
 ```python
-from pybricks.pupdevices import DCMotor
-from pybricks.tools import wait
+from spike import Motor
+from spike.control import wait
 
-# Inicializar motor DC
-motor_dc = DCMotor(port="A")
-
-# Control de potencia (-100 a 100)
-# Positivo = una dirección
-# Negativo = dirección opuesta
-# Cero = parado
+# Inicializar motor
+motor = Motor('A')
 
 while True:
-    # Velocidad media hacia adelante
-    motor_dc.dc(50)
+    # Velocidad media hacia adelante (50%)
+    motor.start(50)
     wait(2000)
     
-    # Parar (coast)
-    motor_dc.stop()
+    # Parar
+    motor.stop()
     wait(1000)
     
-    # Velocidad media hacia atrás
-    motor_dc.dc(-50)
+    # Velocidad media hacia atrás (-50%)
+    motor.start(-50)
     wait(2000)
     
     # Parar (brake)
-    motor_dc.brake()
+    motor.brake()
     wait(1000)
 ```
 
@@ -257,31 +242,30 @@ while True:
 
 ## 6. Calibración del Robot
 
-**Situación:** Cuando compras ruedas nuevas, su tamaño puede variar un poco. Necesitas calibrar el robot para que los movimientos sean exactos [1].
+**Situación:** Cuando compras ruedas nuevas, su tamaño puede variar un poco. Necesitas calibrar el robot para que los movimientos sean exactos.
 
 ### Cómo calibrar:
 
 ```python
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
+from spike import Motor
+from spike.control import DriveBase
 
 # Medir las ruedas y distancia entre ejes
 # wheel_diameter = 56mm (típico para LEGO)
 # axle_track = 112mm (distancia entre ruedas)
 
 # Crear drive base
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
+motor_izq = Motor('A')
+motor_der = Motor('B')
 robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)
 
-# TEST: Hacer que el robot avance 1000mm
-robot.straight(1000)
+# TEST: Hacer que el robot avance 50 cm
+robot.move(50, 'cm')
 
 # MEDIR: Ver cuánto avanzó realmente
 # Ajustar según sea necesario:
-# - Si avanzó MENOS de 1000mm → aumentar wheel_diameter
-# - Si avanzó MÁS de 1000mm → reducir wheel_diameter
+# - Si avanzó MENOS de 50cm → aumentar wheel_diameter
+# - Si avançar MÁS de 50cm → reducir wheel_diameter
 ```
 
 ### Tabla de ajustes:
@@ -299,12 +283,12 @@ robot.straight(1000)
 
 Antes de terminar, marca lo que entendiste:
 
-- [ ] Los tres modos de parada: COAST, BRAKE, HOLD
-- [ ] Los distintos métodos de movimiento: run, run_time, run_angle, run_target, run_until_stalled
-- [ ] Cómo funciona el control PID y para qué sirve
-- [ ] Cómo leer el estado del motor (angle, speed)
-- [ ] Cómo usar DCMotor para control directo
+- [ ] Los distintos métodos de movimiento: run_for_seconds, run_for_degrees, run_for_rotations, run_until_stalled
+- [ ] Cómo leer el estado del motor (get_position_degrees, get_speed)
+- [ ] Cómo usar start() para control directo de velocidad
 - [ ] Cómo calibrar el robot para mayor precisión
+- [ ] La diferencia entre brake() y stop() (COAST vs BRAKE)
+- [ ] La diferencia entre brake() y stop() (COAST vs BRAKE)
 
 ---
 
@@ -312,14 +296,12 @@ Antes de terminar, marca lo que entendiste:
 
 ## Referencias
 
-[1] Pybricks Team. (2023). *Pybricks Documentation - Motors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/motor.html
+[1] LEGO Education. (2023). *LEGO Education SPIKE Essential - Motor Module*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[2] Pybricks Team. (2023). *Pybricks Documentation - DC Motor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/dcmotor.html
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - DriveBase*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[3] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+[3] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
 
-[4] LEGO Education. (2023). *LEGO Education SPIKE Prime - Motor Specifications*. LEGO. Disponible: https://lego.com
+[4] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
 
-[5] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
-
-[6] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+[5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny

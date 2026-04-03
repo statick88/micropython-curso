@@ -16,7 +16,7 @@ Entendemos que el hardware de LEGO puede ser costoso. Existen alternativas más 
 
 **Precio:** $20-25 USD | **Python:** MicroPython nativo
 
-El BBC micro:bit es una微型computadora diseñada específicamente para educación. Tiene sensores integrados, LEDs y botones [2].
+El BBC micro:bit es una microcomputadora diseñada específicamente para educación. Tiene sensores integrados, LEDs y botones [2].
 
 ```
 ┌─────────────────────────────────────────┐

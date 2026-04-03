@@ -1,0 +1,174 @@
+---
+title: "Apéndice: Referencia de Pybricks (Opcional)"
+description: "Equivalencias entre Pybricks y SPIKE Essential para estudiantes avanzados"
+format:
+  html:
+    toc: true
+---
+
+# Apéndice: Referencia de Pybricks (Opcional) {#apendice-pybricks-referencia}
+
+> **⚠️ NOTA IMPORTANTE**: Este apéndice es **exclusivamente de referencia** para estudiantes que ya tienen experiencia previa con Pybricks. **No es parte obligatoria del curso** y no debe usarse como sustituto de aprender la API oficial de SPIKE Essential Python.
+
+Si estás comenzando con LEGO Education SPIKE Essential, **ignora este apéndice** y enfócate exclusivamente en la documentación oficial de SPIKE Essential.
+
+---
+
+## ¿Por qué existe este apéndice?
+
+Algunos estudiantes pueden haber trabajado previamente con Pybricks (usado en LEGO MINDSTORMS EV3 y Robot Inventor) y encontrar útil tener una referencia rápida de equivalencias. Este apéndice les ayuda a:
+
+1. Traducir conocimientos previos a la nueva plataforma
+2. Entender por qué ciertos cambios fueron hechos en el curso
+3. Tener un recurso para comparación académica
+
+**Pero recuerde**: En las evaluaciones y proyectos del curso, **se espera el uso exclusivo de la API oficial de SPIKE Essential**.
+
+---
+
+## Tabla de Equivalencias: Importaciones
+
+| Pybricks | SPIKE Essential | Comentario |
+|----------|----------------|------------|
+| `from pybricks.hubs import PrimeHub` | `from spike import PrimeHub` | Igual nombre, diferente módulo |
+| `from pybricks.pupdevices import Motor, ColorSensor, DistanceSensor, ForceSensor` | `from spike import Motor, ColorSensor, DistanceSensor, ForceSensor` | Igual nombre, diferente módulo |
+| `from pybricks.parameters import Port, Direction, Stop, Color` | `from spike import *` (puertos como strings) | SPIKE maneja puertos como strings ('A', 'B') |
+| `from pybricks.robotics import DriveBase` | `from spike import MotorPair` | DriveBase → MotorPair |
+| `from pybricks.tools import wait` | `from spike.control import wait_for_seconds, wait_until` | Funciones más específicas |
+
+---
+
+## Tabla de Equivalencias: Puertos
+
+| Pybricks | SPIKE Essential | Comentario |
+|----------|----------------|------------|
+| `Port.A` | `'A'` | String en lugar de enum |
+| `Port.B` | `'B'` |  |
+| `Port.C` | `'C'` |  |
+| `Port.D` | `'D'` |  |
+| `Port.S1` | `'A'` | Mapeo S1→A, S2→B, S3→C, S4→D |
+| `Port.S2` | `'B'` |  |
+| `Port.S3` | `'C'` |  |
+| `Port.S4` | `'D'` |  |
+
+---
+
+## Tabla de Equivalencias: Motores
+
+| Pybricks | SPIKE Essential | Comentario |
+|----------|----------------|------------|
+| `Motor(Port.A)` | `Motor('A')` | Puerto como string |
+| `Motor(Port.B, Direction.COUNTERCLOCKWISE)` | `Motor('B')` + lógica en código | Dirección manejada por signo de velocidad |
+| `DriveBase(left_motor, right_motor, wheel_diameter, axle_track)` | `MotorPair('A', 'B')` + `wheel_diameter` y `axle_track` en métodos | Parámetros pasados a métodos de movimiento |
+| `drive_base.settings(straight_speed, straight_acceleration, turn_rate, turn_acceleration)` | Ajustar potencia y tiempo en métodos | Control más directo en SPIKE |
+| `drive_base.straight(distance)` | `motor_pair.move_trotations(rotations, 0, speed)` | Conversión necesaria |
+| `drive_base.turn(angle)` | `motor_pair.move_trotations(rotations, 100, speed)` | Giro = 100% de curva |
+| `drive_base.curve(radius, angle)` | `motor_pair.move_trotations(rotations, curvature, speed)` | Curvatura: -100 a 100 |
+| `drive_base.stop()` | `motor_pair.stop()` | Igual nombre |
+| `drive_base.brake()` | `motor_pair.brake()` | Igual nombre |
+
+---
+
+## Tabla de Equivalencias: Sensores
+
+| Pybricks | SPIKE Essential | Comentario |
+|----------|----------------|------------|
+| `ColorSensor(Port.S3)` | `ColorSensor('C')` | Puerto como string |
+| `color.color()` | `color_sensor.get_color()` | Nombre descriptivo |
+| `color.reflection()` | `color_sensor.get_reflected_light()` | 0-100% reflejada |
+| `color.ambient()` | `color_sensor.get_ambient_light()` | 0-100% ambiental |
+| `color.rgb()` | `color_sensor.get_red()`, `get_green()`, `get_blue()` | Valores separados |
+| `DistanceSensor(Port.S4)` | `DistanceSensor('D')` | Puerto como string |
+| `distance.distance()` | `distance_sensor.get_distance_cm()` | Centímetros |
+| `distance.distance(inches=True)` | `distance_sensor.get_distance_inches()` | Pulgadas |
+| `distance.distance(procent=True)` | `distance_sensor.get_distance_percentage()` | 0-100% |
+| `ForceSensor(Port.S1)` | `ForceSensor('A')` | Puerto como string |
+| `force.force()` | `force_sensor.get_force()` | Fuerza en Newtons aproximados |
+| `force.pressed()` | `force_sensor.is_pressed()` | Booleano |
+| `UltrasonicSensor(Port.S4)` | *No disponible en SPIKE Essential Set* | Usar DistanceSensor en su lugar |
+
+---
+
+## Tabla de Equivalencias: PrimeHub
+
+| Pybricks | SPIKE Essential | Comentario |
+|----------|----------------|------------|
+| `hub = PrimeHub()` | `hub = PrimeHub()` | Igual |
+| `hub.battery.voltage()` | `hub.voltage()` | Milivoltios (mV) |
+| `hub.battery.current()` | `hub.current()` | Miliamperios (mA) |
+| `hub.buttons.pressed()` | Verificar botones individuales | `hub.left_button.is_pressed()`, etc. |
+| `hub.imu` | `hub.motion_sensor` (acceso indirecto) | Acceso através de métodos de movimiento |
+| `hub.display` | `hub.light_matrix` | Matriz 5x5 en lugar de pantalla de texto |
+| `display.pixel(x, y, color)` | `light_matrix.set_pixel(x, y, brightness)` | Brillo 0-100 |
+| `display.off()` | `light_matrix.off()` | Apagar matriz |
+| `display.image(ImageFile)` | `light_matrix.show_image("nombre")` | Imágenes predefinidas |
+| `speaker.beep(frequency, duration)` | `speaker.beep(frequency, duration)` | Igual (frecuencia en Hz, duración en ms) |
+| `speaker.play_notes()` | *No disponible* | Usar `beep()` para tonos simples |
+
+---
+
+## Tabla de Equivalencias: Control de Tiempo
+
+| Pybricks | SPIKE Essential | Comentario |
+|----------|----------------|------------|
+| `wait(ms)` | `wait_for_seconds(segundos)` o `wait(ms)` | Especificar unidades claramente |
+| `wait_ms(ms)` | `wait_for_seconds(ms/1000)` | Conversión necesaria |
+| `wait_us(us)` | *No disponible directamente* | Usar `wait_for_seconds()` con valores pequeños |
+| `Stop.HOLD`, `Stop.COAST`, `Stop.BRAKE` | `motor.brake()`, `motor.coast()`, `motor.stop()` | Mapeo diferente (ver nota abajo) |
+
+> **Nota importante sobre modos de parada**: El mapeo entre Pybricks y SPIKE Essential no es directo:
+> - `Stop.HOLD` (mantiene posición) ≈ `motor.brake()` en SPIKE
+> - `Stop.COAST` (desliza hasta parar) ≈ `motor.coast()` en SPIKE  
+> - `Stop.BRAKE` (frena activa) ≈ `motor.stop()` en SPIKE
+
+---
+
+## Diferencias Conceptuales Importantes
+
+### 1. Enfoque de Control
+- **Pybricks**: Control más cercano al hardware, acceso directo a registros y timing preciso
+- **SPIKE Essential**: Abstracción más alta, enfoque en facilidad de uso y educación
+
+### 2. Precisión vs Facilidad
+- **Pybricks**: Permite control PID fino, mediciones precisas de tiempo
+- **SPIKE Essential**: Prioriza la accesibilidad, algunos controles avanzados están simplificados
+
+### 3. Manejo de Errores
+- **Pybricks**: Lanzará excepciones explícitas por errores de hardware
+- **SPIKE Essential**: Tiende a fallar silenciosamente o retornar valores por defecto
+
+### 4. Disponibilidad de Funciones
+Algunas funciones avanzadas de Pybricks simplemente no existen en SPIKE Essential porque el hardware y el firmware están diseñados para ser más accesibles a principiantes.
+
+---
+
+## Cuándo Consultar Este Apéndice
+
+Este apéndice es útil cuando:
+
+1. Ya tienes experiencia con Pybricks y necesitas traducir un concepto conocido
+2. Estás investigando por qué cierto comportamiento es diferente entre plataformas
+3. Quieres entender las limitaciones de SPIKE Essential en comparación con sistemas más avanzados
+4. Estás ayudando a otro estudiante que viene de Pybricks
+
+### Cuándo NO Consultar Este Apéndice
+
+**No consultes este apéndice cuando:**
+
+1. Estás aprendiendo por primera vez LEGO Education SPIKE Essential
+2. Estás completando ejercicios o evaluaciones del curso
+3. Intentas resolver un problema y piensas "en Pybricks lo haría así"
+4. Estás escribiendo código que será evaluado en este curso
+
+En esos casos, **consulta exclusivamente la documentación oficial de SPIKE Essential**:
+https://spike.legoeducation.com/essential/help/lls-help-python
+
+---
+
+## Referencias
+
+[1] LEGO Education. (2023). *LEGO Education SPIKE Essential - Python Documentation*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
+
+[2] Pybricks Team. (2026). *Pybricks MicroPython API Reference*. Disponible en: https://docs.pybricks.com/en/latest/index.html
+
+*Apéndice: Referencia de Pybricks (Opcional) - MicroPython para el Aula - Diego Saavedra 2026*

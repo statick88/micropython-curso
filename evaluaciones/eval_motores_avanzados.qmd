@@ -47,25 +47,30 @@ PID = Proporcional + Integral + Derivativo
 
 ### Pregunta 2 (10 puntos)
 
-¿Cuáles son los tres modos de parada disponibles en Pybricks y cuándo usar cada uno?
+¿Cuáles son los tres modos de parada disponibles en SPIKE Essential y cuándo usar cada uno?
 
 **Respuesta esperada:**
 
 | Modo | Comportamiento | Uso |
 |------|---------------|-----|
-| `Stop.HOLD` | Mantiene posición | Posicionamiento preciso |
-| `Stop.COAST` | Se desliza hasta parar | Movimientos suaves |
-| `Stop.BRAKE` | Frena activamente | Parada rápida |
+| `brake()` (equivalente a Hold) | Mantiene posición activa | Posicionamiento preciso |
+| `coast()` (equivalente a Coast) | Se desliza hasta parar | Movimientos suaves |
+| `stop()` (equivalente a Brake) | Frena activamente | Parada rápida |
+
+> **Nota**: En SPIKE Essential, los modos de parada se implementan como:
+> - `motor.brake()` → mantiene posición (Hold)
+> - `motor.coast()` → permite deslizamiento (Coast)  
+> - `motor.stop()` → frena activaente (Brake)
 
 ---
 
 ### Pregunta 3 (10 puntos)
 
-¿Qué es `run_until_stalled()` y cómo se diferencia de `run_angle()`?
+¿Qué es `run_until_stalled()` y cómo se diferencia de `run_for_degrees()`?
 
 **Respuesta esperada:**
 
-> - `run_angle()`: Ejecuta un número específico de grados
+> - `run_for_degrees()`: Ejecuta un número específico de grados
 > - `run_until_stalled()`: Ejecuta hasta que el motor se atasca o encuentra resistencia
 > 
 > Se usa para calibración inicial de motores y detectar límites físicos [2].
@@ -74,14 +79,14 @@ PID = Proporcional + Integral + Derivativo
 
 ### Pregunta 4 (10 puntos)
 
-Explica la diferencia entre `Duty Cycle` y `Velocity` en el control de motores.
+Explica la diferencia entre potencia (% potencia) y velocidad en grados por segundo en el control de motores.
 
 **Respuesta esperada:**
 
-> - **Duty Cycle**: Porcentaje de potencia aplicada al motor (0-100%)
-> - **Velocity**: Velocidad angular en grados por segundo
+> - **Potencia (% potencia)**: Porcentaje de potencia aplicada al motor (0-100%, negativo para reversa)
+> - **Velocidad en grados/seg**: Velocidad angular en grados por segundo (solo disponible en algunos métodos avanzados)
 > 
-> Duty cycle controla la fuerza, velocity controla la velocidad [1].
+> En SPIKE Essential, principalmente controlamos potencia (%) y el tiempo/ángulo determina la velocidad efectiva [1].
 
 ---
 
@@ -96,8 +101,9 @@ Escribe un programa que:
 3. Posicione el motor en el centro exacto
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port, Stop
+from spike import PrimeHub
+from spike import Motor
+from spike.control import wait_for_seconds, wait_until
 
 # Tu código aquí
 # ...
@@ -106,90 +112,32 @@ from pybricks.parameters import Port, Stop
 **Solución esperada:**
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port, Stop
-from pybricks.pupdevices import Motor
+from spike import PrimeHub
+from spike import Motor
+from spike.control import wait_for_seconds, wait_until
 
 hub = PrimeHub()
-motor = Motor(Port.A)
+motor = Motor('A')
 
-# Paso 1: Ir al límite izquierdo
-motor.run_until_stalled(-200, then=Stop.COAST, duty_limit=50)
-posicion_min = motor.angle()
-hub.display.scroll(f"MIN: {posicion_min}")
+# Encontrar límite en una dirección
+motor.start(-30)  # 30% potencia hacia atrás
+wait_until(lambda: motor.get_speed() == 0)  # Hasta que se estanque
+limite_atras = motor.get_position_degrees()
 
-# Paso 2: Ir al límite derecho
-motor.run_until_stalled(200, then=Stop.COAST, duty_limit=50)
-posicion_max = motor.angle()
-hub.display.scroll(f"MAX: {posicion_max}")
+# Encontrar límite en la otra dirección  
+motor.start(30)   # 30% potencia hacia adelante
+wait_until(lambda: motor.get_speed() == 0)  # Hasta que se estanque
+limite_adelante = motor.get_position_degrees()
 
-# Paso 3: Calcular centro y posicionarse
-rango = posicion_max - posicion_min
-centro = posicion_min + (rango / 2)
+# Calcular centro
+rango_total = limite_adelante - limite_atras
+posicion_centro = limite_atras + (rango_total / 2)
 
-motor.run_target(100, centro)
-hub.display.scroll(f"CENTRO: {centro}")
-```
+# Mover al centro
+motor.run_to_position(posicion_centro)
 
----
-
-### Ejercicio 2: Control PID Simple (20 puntos)
-
-Implementa un controlador PID básico para mantener un ángulo objetivo:
-
-```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port
-
-# Constantes PID
-KP = 2.0  # Ajustar según experimentación
-KI = 0.1
-KD = 0.5
-
-# Tu código aquí
-# ...
-```
-
-**Solución esperada:**
-
-```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port
-from pybricks.pupdevices import Motor
-from pybricks.tools import wait
-
-hub = PrimeHub()
-motor = Motor(Port.A)
-
-# Constantes PID (ajustar experimentalmente)
-KP = 2.0
-KI = 0.1
-KD = 0.5
-
-# Variables PID
-error_anterior = 0
-integral = 0
-objetivo = 90  # Ángulo objetivo en grados
-
-# Loop de control PID
-for _ in range(100):
-    # Calcular error
-    error = objetivo - motor.angle()
-    
-    # Componente integral
-    integral += error
-    
-    # Componente derivativa
-    derivada = error - error_anterior
-    error_anterior = error
-    
-    # Calcular salida PID
-    salida = (KP * error) + (KI * integral) + (KD * derivada)
-    
-    # Aplicar al motor
-    motor.run(salida)
-    
-    wait(10)
+hub.light_matrix.show_image("HAPPY")
+wait_for_seconds(2)
 ```
 
 ---
@@ -198,7 +146,7 @@ for _ in range(100):
 
 ### Escenario
 
-Un robot con DriveBase tiene los siguientes problemas:
+Un robot con MotorPair tiene los siguientes problemas:
 1. Al avanzar en línea recta, se desvía hacia la izquierda
 2. Los giros son inconsistentes (a veces 88°, a veces 92°)
 3. Al intentar detenerse, se desliza más de lo esperado
@@ -207,19 +155,19 @@ Un robot con DriveBase tiene los siguientes problemas:
 
 **a) ¿Cuál es la causa más probable de la desviación? (5 puntos)**
 
-> Falta de activación del giroscopio o calibración incorrecta de `axle_track`.
+> Diferencia en potencia entre motores izquierdo y derecho, o calibración incorrecta del distancia entre ejes (axe_track) en MotorPair.
 
 **b) ¿Cómo solucionarías los giros inconsistentes? (5 puntos)**
 
-> Activar `use_gyro(True)` en el DriveBase para compensar el deslizamiento.
+> Verificar que ambas ruedas tengan el mismo diámetro y que el MotorPair esté configurado con el axe_track correcto. También comprobar que no haya deslizamiento de ruedas.
 
 **c) ¿Qué modo de parada usarías para reducir el deslizamiento? (5 puntos)**
 
-> `Stop.BRAKE` o `Stop.HOLD` en lugar de `Stop.COAST`.
+> `motor_brake()` para ambos motores (equivalente a Hold en Pybricks) o `motor_stop()` para freno activo (equivalente a Brake).
 
 **d) ¿Qué parámetro adicional deberías verificar? (5 puntos)**
 
-> Los valores de `wheel_diameter` y `axle_track` en la configuración del DriveBase.
+> El diámetro de las ruedas (wheel_diameter) y distancia entre ejes (axe_track) en la configuración del MotorPair.
 
 ---
 
@@ -229,26 +177,25 @@ Un robot con DriveBase tiene los siguientes problemas:
 |---------|--------|----------|
 | **Parte A: Teórico** | 40 | |
 | - Pregunta 1 | 10 | Explicación completa de PID |
-| - Pregunta 2 | 10 | Modos de parada correctos |
-| - Pregunta 3 | 10 | Diferencia clara run_until_stalled |
-| - Pregunta 4 | 10 | Duty Cycle vs Velocity |
+| - Pregunta 2 | 10 | Modos de parada correctos (adaptado a SPIKE) |
+| - Pregunta 3 | 10 | Diferencia clara run_until_stalled vs run_for_degrees |
+| - Pregunta 4 | 10 | Potencia vs Velocidad explicada correctamente |
 | **Parte B: Práctica** | 40 | |
-| - Ejercicio 1 | 20 | Código funcional de calibración |
-| - Ejercicio 2 | 20 | Implementación PID correcta |
+| - Ejercicio 1 | 20 | Código funcional de calibración usando SPIKE API |
+| - Ejercicio 2 | 20 | Implementación PID correcta (conceptual) |
 | **Parte C: Análisis** | 20 | |
-| - a) | 5 | Identificación correcta |
-| - b) | 5 | Solución apropiada |
-| - c) | 5 | Modo de parada correcto |
-| - d) | 5 | Parámetros a verificar |
+| - a) | 5 | Identificación correcta de causa de desviación |
+| - b) | 5 | Solución apropiada para giros inconsistentes |
+| - c) | 5 | Modo de parada correcto para reducir deslizamiento |
+| - d) | 5 | Parámetros de calibración a verificar |
 | **Total** | **100** | |
 
 ---
 
+## 📚 Referencias Actualizadas
+
+[1] LEGO Education. (2023). *LEGO Education SPIKE Essential - Motor Module*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
+
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - Motor Control Techniques*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
+
 *Evaluación Motores Avanzados - MicroPython para el Aula - Diego Saavedra 2026*
-
-
-## Referencias
-
-[1] Pybricks Team. *Pybricks MicroPython API - Motor Control*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor
-
-[2] Pybricks Team. *Pybricks MicroPython - Calibration and Stall Detection*. 2026. Disponible en: https://docs.pybricks.com/en/latest/micropython.html

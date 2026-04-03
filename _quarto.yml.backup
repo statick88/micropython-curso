@@ -1,0 +1,131 @@
+# MicroPython para el Aula de Informática 🤖
+# Un Curso para Docentes que Enseñan Tecnología 👨‍🏫
+# Licensed under CC BY 4.0 - Diego Saavedra 2026 🎓
+project:
+  type: book
+  output-dir: docs
+  resources: 
+    - "images/*.png"
+
+book:
+  title: "MicroPython para el Aula"
+  subtitle: "Programación de Robots Educativos"
+  author: "Diego Saavedra"
+  output-file: "micropython_aula"
+  date: today
+  date-format: medium
+  favicon: favicon.ico
+  description: "Curso de MicroPython para docentes de Pedagogía en Informática."
+  keyword: "MicroPython, Robots, LEGO, SPIKE, Python, Educación, Docente"
+  
+  reader-mode: true
+  search: true
+  
+  sidebar: 
+    logo: images/robot-espi32-cartoon.png
+    search: true
+    collapse-level: 1
+  
+  sharing: [twitter, linkedin]
+  downloads: [pdf, epub]
+  
+  cover-image: images/robot-espi32-cartoon.png
+  
+  page-footer:
+    border: true
+    left: |
+      © Diego Saavedra
+    center: |
+      Educación y Tecnología - Abacom
+    right: |
+      Built with [Quarto](https://quarto.org/)
+  
+  chapters:
+    - index.qmd
+    - about.qmd
+    - license.qmd
+    - contenido/sistema_logros.qmd
+    - part: "🌟 FUNDAMENTOS"
+      chapters:
+        - contenido/unidad0/competencias_docente.qmd
+    - part: "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR"
+      chapters:
+        - contenido/unidad1/guia_hub_desde_cero.qmd
+        - contenido/unidad1/1_instalacion_pybricks.qmd
+        - contenido/unidad1/lab1_hola_mundo.qmd
+        - contenido/unidad1/lab1b_ejercicios.qmd
+        - quizzes/quiz_unidad1.qmd
+    - part: "💡 UNIDAD 2: PANTALLA Y LUCES"
+      chapters:
+        - contenido/unidad2/1_display_luces.qmd
+        - contenido/unidad2/lab2_animaciones.qmd
+        - contenido/unidad2/lab2b_animaciones_avanzadas.qmd
+        - quizzes/quiz_unidad2.qmd
+    - part: "🤖 UNIDAD 3: MOVIMIENTO"
+      chapters:
+        - contenido/unidad3/1_motores.qmd
+        - contenido/unidad3/2_motores_avanzados.qmd
+        - contenido/unidad3/lab3_navegacion.qmd
+        - contenido/unidad3/lab3b_movimiento_avanzado.qmd
+        - quizzes/quiz_unidad3.qmd
+    - part: "📡 UNIDAD 4: SENSORES"
+      chapters:
+        - contenido/unidad4/1_sensores.qmd
+        - contenido/unidad4/2_sensores_adicionales.qmd
+        - contenido/unidad4/2_telemetria_bateria.qmd
+        - contenido/unidad4/lab4_telemetria.qmd
+        - quizzes/quiz_unidad4.qmd
+    - part: "🏆 UNIDAD 5: PROYECTO FINAL"
+      chapters:
+        - contenido/unidad5/1_proyecto_final.qmd
+        - quizzes/quiz_unidad5.qmd
+    - part: "📚 APÉNDICES"
+      chapters:
+        - contenido/apendice_recursos.qmd
+        - contenido/apendice_thonny_debugger.qmd
+        - contenido/apendice_simuladores.qmd
+        - contenido/apendice_pybricks_compilacion.qmd
+    - part: "🎯 EVALUACIONES"
+      chapters:
+        - evaluaciones/eval_motores_avanzados.qmd
+        - evaluaciones/eval_sensores_adicionales.qmd
+        - evaluaciones/eval_telemetria.qmd
+    - part: "📐 DIAGRAMAS TÉCNICOS"
+      chapters:
+        - contenido/diagramas/diagrama_hoja_ruta.qmd
+        - contenido/diagramas/diagrama_hub.qmd
+        - contenido/diagramas/diagrama_porque_hub.qmd
+        - contenido/diagramas/auditoria_diagramas.qmd
+
+format:
+  html:
+    theme: 
+      - solar
+      - theme.scss
+    css: css/styles.css
+    bootstrap-version: 5
+    toc: true
+    number-sections: false
+    include-in-header:
+      text: |
+        <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
+        <script>quizdown.init();</script>
+
+execute:
+  echo: true
+  enabled: false
+format:
+  html:
+    theme: 
+      - solar
+      - theme.scss
+    css: css/styles.css
+    bootstrap-version: 5
+    toc: true
+    number-sections: false
+    lang: es
+    dir: ltr
+    include-in-header:
+      text: |
+        <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
+        <script>quizdown.init();</script>

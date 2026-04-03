@@ -51,34 +51,34 @@ El robot tiene algo similar—**dibujos listos** que puedes usar [2]:
 
 ```python
 # Primero, traer las herramientas
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait_for_seconds
 
 hub = PrimeHub()
 
 # Ahora puedes mostrar dibujos:
-hub.display.icon("HAPPY")    # Carita feliz
-hub.display.icon("SAD")      # Carita triste  
-hub.display.icon("ARROW_UP")   # Flecha arriba
-hub.display.icon("ARROW_DOWN") # Flecha abajo
-hub.display.icon("HEART")    # Corazón
+hub.light_matrix.show_image("HAPPY")    # Carita feliz
+hub.light_matrix.show_image("SAD")      # Carita triste  
+hub.light_matrix.show_image("ARROW_UP")   # Flecha arriba
+hub.light_matrix.show_image("ARROW_DOWN") # Flecha abajo
+hub.light_matrix.show_image("HEART")    # Corazón
 ```
 
 **Prueba esto en Thonny:**
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait_for_seconds
 
 hub = PrimeHub()
 
 # Mostrar carita feliz por 2 segundos
-hub.display.icon("HAPPY")
-wait(2000)
+hub.light_matrix.show_image("HAPPY")
+wait_for_seconds(2)
 
 # Ahora mostrar un corazón
-hub.display.icon("HEART")
-wait(2000)
+hub.light_matrix.show_image("HEART")
+wait_for_seconds(2)
 ```
 
 ---
@@ -111,13 +111,13 @@ mi_dibujo = [
 ]
 
 # Enviar el dibujo al robot
-hub.display.icon(mi_dibujo)
-wait(2000)
+hub.light_matrix.show(mi_dibujo)
+wait_for_seconds(2)
 ```
 
 **¿Puedes dibujar tu inicial?**
 
-Intenta hacer una "A" o tu letra favorita. Solo necesitas decidir qué puntitos se prenden y cuáles se apaganal.
+Intenta hacer una "A" o tu letra favorita. Solo necesitas decidir qué puntitos se prenden y cuáles se apagan.
 
 ---
 
@@ -128,7 +128,7 @@ Además de la pantalla, el robot tiene una luz en el centro—como un pequeño r
 ```python
 # Encender la luz en diferentes colores
 hub.light.on(5)   # Verde
-hub.light.on(10)  # Naranja/amarillo
+hub.light.on(9)  # Naranja/amarillo
 hub.light.on(0)   # Rojo
 
 # O apagar la luz
@@ -151,18 +151,18 @@ Es como las luces de un semáforo o las luces de alerta de un auto.
 ¡El robot también puede hacer eso! [2]
 
 ```python
-# Primer dibujo
-dibujo1 = [0, 0, 0, 0, 0]
-dibujo2 = [100, 0, 0, 0, 0]
-dibujo3 = [100, 100, 0, 0, 0]
+# Primer dibujo (matriz 5x5)
+dibujo1 = [[0, 0, 0, 0, 0] for _ in range(5)]
+dibujo2 = [[100 if c < 1 else 0 for c in range(5)] for _ in range(5)]
+dibujo3 = [[100 if c < 2 else 0 for c in range(5)] for _ in range(5)]
 
 # Mostrar uno tras otro (como una animación)
-hub.display.icon(dibujo1)
-wait(200)
-hub.display.icon(dibujo2)
-wait(200)
-hub.display.icon(dibujo3)
-wait(200)
+hub.light_matrix.show(dibujo1)
+wait_for_seconds(0.2)
+hub.light_matrix.show(dibujo2)
+wait_for_seconds(0.2)
+hub.light_matrix.show(dibujo3)
+wait_for_seconds(0.2)
 ```
 
 Eso es una **animación**—mostrar varios dibujos seguidos muy rápido. Como las caricaturas que ves en televisión.
@@ -185,10 +185,6 @@ Antes de pasar al laboratorio, marca lo que entendiste:
 
 ## Referencias
 
-[1] Pybricks Team. (2023). *Pybricks Documentation - Display Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html
+[1] LEGO Education. (2026). *SPIKE Essential Python Programming Guide*. LEGO Education. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[2] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
-
-[3] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
-
-[4] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+[2] LEGO Education. (2026). *LEGO Education SPIKE Essential - Technical Specifications*. LEGO. Disponible: https://lego.com

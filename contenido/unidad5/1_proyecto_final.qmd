@@ -61,45 +61,47 @@ El proyecto puede usar algunas de estas o todas—tú decides.
 
 **Situación:** Antes de empezar a construir algo, haces un plan. ¿Qué necesitas? ¿Por dónde empezar?
 
-Igual con un proyecto de robot [3][4]:
+Igual con un proyecto de robot:
 
 ```python
 # 1. TRAER HERRAMIENTAS
 # (como cuando traes tus útiles a clase)
-from pybricks.hubs import PrimeHub
-from pybricks.pupdevices import Motor, UltrasonicSensor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait, run_task
+from spike import PrimeHub, Motor, DistanceSensor
+from spike.control import DriveBase, wait
 
 # 2. PREPARAR EL ROBOT
 # (como cuando preparas tu espacio de trabajo)
 hub = PrimeHub()
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
-sensor = UltrasonicSensor(Port.D)
+motor_izq = Motor('A')
+motor_der = Motor('B')
+sensor = DistanceSensor('D')
 robot = DriveBase(motor_izq, motor_der, 56, 112)
 
 # 3. DEFINIR QUÉ HACE CADA PARTE
 # (como cuando divides una tarea en pasos)
 
 # Una parte: cómo se mueve
-async def mover():
+def mover():
     # tu código aquí
+    pass
 
 # Otra parte: cómo observa
-async def observar():
+def observar():
     # tu código aquí
+    pass
 
 # 4. EJECUTAR TODO JUNTOS
-run_task(mover(), observar())
+# (puedes usar threads si necesitas)
+import thread
+thread.start_new_thread(observar, ())
+mover()
 ```
 
 ---
 
 ## Ejemplo: Robot Explorador Completo
 
-Aquí hay un ejemplo de algo que podrías hacer—un robot que explora un área y evita chocar [2][3][4]:
+Aquí hay un ejemplo de algo que podrías hacer—un robot que explora un área y evita chocar:
 
 ```python
 """
@@ -108,43 +110,37 @@ El robot camina en un rectángulo, detectando obstáculos.
 """
 
 # 1. Herramientas
-from pybricks.hubs import PrimeHub
-from pybricks.pupdevices import Motor, UltrasonicSensor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait, run_task
+import thread
+from spike import PrimeHub, Motor, DistanceSensor
+from spike.control import DriveBase, wait
 
 # 2. Preparar el robot
 hub = PrimeHub()
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
-sensor = UltrasonicSensor(Port.D)
+motor_izq = Motor('A')
+motor_der = Motor('B')
+sensor = DistanceSensor('D')
 robot = DriveBase(motor_izq, motor_der, 56, 112)
 
 # Variable para comunicar entre partes
-hay_obstaculo = False
+hay_obstaculo = [False]
 
 # 3. Parte 1: Vigilar (como estar atento en clase)
-async def vigilante():
-    global hay_obstaculo
-    
+def vigilante():
     while True:
-        distancia = sensor.distance()
+        distancia = sensor.get_distance_cm()
         
-        if distancia < 150:  # menos de 15cm
-            hay_obstaculo = True
-            hub.light.on(0)  # luz roja = cuidado
+        if distancia < 15:  # menos de 15cm
+            hay_obstaculo[0] = True
+            hub.light_matrix.show_image(Image.SAD)
         else:
-            hay_obstaculo = False
-            hub.light.off()
+            hay_obstaculo[0] = False
+            hub.light_matrix.show_image(Image.HAPPY)
         
         wait(50)
 
 # 4. Parte 2: Moverse (como caminar por el pasillo)
-async def explorador():
-    global hay_obstaculo
-    
-    robot.use_gyro(True)
+def explorador():
+    robot.odometry_settings(reset_at_init=True)
     
     print("¡Explorador iniciando!")
     
@@ -154,27 +150,30 @@ async def explorador():
         
         # Avanzar un poco varias veces
         for paso in range(4):
-            if hay_obstaculo:
+            if hay_obstaculo[0]:
                 robot.stop()
-                await robot.turn(90)  # girar y buscar otro camino
-                await wait(200)
+                hub.speaker.beep(440, 200)
+                robot.rotate(90)  # girar y buscar otro camino
+                wait(200)
             else:
-                await robot.straight(100)  # avanzar 10cm
+                robot.move(10, 'cm')  # avanzar 10cm
         
         # Girar en la esquina
-        await robot.turn(90)
+        robot.rotate(90)
     
     robot.stop()
     print("¡Exploración terminada!")
+    hub.light_matrix.write("FIN")
 
 # 5. Ejecutar ambas partes
-run_task(explorador(), vigilante())
+thread.start_new_thread(vigilante, ())
+explorador()
 ```
 
 **¿Qué hace este robot?**
 1. Camina en un rectángulo (4 lados)
-2. Mientras camina, observa si hay algo adelante [4]
-3. Si detecta algo, se detiene, gira, y sigue por otro lado
+2. Mientras camina, observa si hay algo adelante
+3. Si detecta algo, se detiene, hace beep, gira, y sigue por otro lado
 
 ---
 
@@ -253,11 +252,11 @@ Has completado el curso. Ahora sabes:
 
 [1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
 
-[2] Pybricks Team. (2023). *Pybricks Documentation - Display Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - Python API*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[3] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+[3] LEGO Education. (2023). *LEGO Education SPIKE Essential - Motor and DriveBase*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[4] Pybricks Team. (2023). *Pybricks Documentation - Sensors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html
+[4] LEGO Education. (2023). *LEGO Education SPIKE Essential - Sensors*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [5] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
 

@@ -1,4 +1,4 @@
-# Sensores Adicionales: Infrared, Color y Fuerza {#sensores-avanzados}
+# Sensores Adicionales: Color, Fuerza y Distancia {#sensores-avanzados}
 
 ::: center
 ![Sensores Avanzados](images/sensores-avanzados.png){width="35%"}
@@ -10,229 +10,614 @@
 
 ## Antes de empezar
 
-Ya conoces el sensor ultrasónico que mide distancia usando sonido. Pero hay muchos más sensores que puedes usar con tu robot LEGO [1][2].
+Ya conoces el sensor ultrasónico que mide distancia usando sonido. Pero hay muchos más sensores que puedes usar con tu robot LEGO.
 
-En esta unidad vas a aprender sobre tres sensores muy útiles:
+En esta unidad vas a aprender sobre sensores muy útiles disponibles en SPIKE Essential:
 
-1. **Sensor Infrarrojo** — Detecta objetos y mide reflexión de luz
-2. **Sensor de Color** — Identifica colores y controla luces RGB
-3. **Sensor de Fuerza** — Mide presión aplicada en Newtons
-
----
-
-## 1. Sensor Infrarrojo (InfraredSensor)
-
-**Situación:** Has visto esos sensores en autos nuevos que te avisan cuando hay otro auto cerca? El sensor infrarrojo hace algo similar—detecta objetos usando luz infrarroja (que no podemos ver) [1].
-
-### ¿Qué puede hacer?
-
-- Medir distancia a objetos (0-2000mm)
-- Medir reflexión de luz (0-100%)
-- Contar cuántos objetos detecta
-
-### Código ejemplo:
-
-```python
-from pybricks.pupdevices import InfraredSensor
-from pybricks.parameters import Port
-from pybricks.tools import wait
-
-# Conectar el sensor al puerto S1
-sensor_ir = InfraredSensor(Port.S1)
-
-while True:
-    # Distancia al objeto más cercano (en mm)
-    distancia = sensor_ir.distance()
-    
-    # Reflexión de luz (0-100%)
-    # Un valor alto significa superficie clara
-    # Un valor bajo significa superficie oscura
-    reflexion = sensor_ir.reflection()
-    
-    # Cuántos objetos detecta el sensor
-    conteo = sensor_ir.count()
-    
-    print(f"Distancia: {distancia}mm | Reflexión: {reflexion}% | Objetos: {conteo}")
-    wait(100)
-```
-
-### Usos prácticos:
-
-| Reflexión | Qué significa | Ejemplo de aplicación |
-|-----------|---------------|----------------------|
-| 0-20% | Superficie oscura | Línea negra en el piso |
-| 50-80% | Superficie clara | Línea blanca en el piso |
-| >90% | Ningún objeto |robot buscando camino |
+1. **Sensor de Color** — Detecta colores y mide reflexión de luz
+2. **Sensor de Fuerza** — Mide presión aplicada
+3. **Sensor de Distancia** — Medición precisa en cm/pulgadas
 
 ---
 
-## 2. Sensor de Color (ColorSensor)
+## 1. Sensor de Color (ColorSensor)
 
-**Situación:** Cuando vas a un semáforo, sabes si es rojo, amarillo o verde por el color. El robot también puede aprender a identificar colores [1][2].
+**Situación:** Cuando vas a un semáforo, sabes si es rojo, amarillo o verde por el color. El robot también puede aprender a identificar colores.
 
-### ¿Qué puede hacer?
+### Métodos disponibles
 
-- Detectar colores (rojo, verde, azul, etc.)
-- Medir intensidad de luz ambiental
-- Controlar luces LED integradas
+El ColorSensor tiene varios métodos para obtener diferentes tipos de información:
 
-### Código ejemplo:
+| Método | Retorna | Descripción |
+|--------|---------|-------------|
+| `get_color()` | `str` o `None` | Color detectado |
+| `get_reflected_light()` | `int` (0-100) | Porcentaje de luz reflejada |
+| `get_ambient_light()` | `int` (0-100) | Intensidad de luz ambiental |
+| `get_red()` | `int` (0-1024) | Intensidad del color rojo |
+| `get_green()` | `int` (0-1024) | Intensidad del color verde |
+| `get_blue()` | `int` (0-1024) | Intensidad del color azul |
+| `get_rgb_intensity()` | `int` (0-1024) | Intensidad RGB combinada |
+
+### Colores que puede detectar
+
+El método `get_color()` retorna estos valores:
+
+| Valor Retornado | Color | Ejemplo de uso |
+|-----------------|-------|----------------|
+| `'black'` | Negro | Línea negra en el piso |
+| `'white'` | Blanco | Línea blanca, piso claro |
+| `'red'` | Rojo | Color primario |
+| `'green'` | Verde | Color primario |
+| `'blue'` | Azul | Color primario |
+| `'yellow'` | Amarillo | Color primario |
+| `'cyan'` | Cian | Color secundario |
+| `'violet'` | Violeta | Color secundario |
+| `None` | Ninguno | Sin color detectado |
+
+### Código ejemplo básico
 
 ```python
-from pybricks.pupdevices import ColorSensor
-from pybricks.parameters import Port, Color
-from pybricks.tools import wait
+from spike import ColorSensor
+from spike.control import wait
 
-# Conectar el sensor de color al puerto S1
-sensor_color = ColorSensor(Port.S1)
+# Conectar el sensor de color al puerto C
+sensor_color = ColorSensor('C')
 
 while True:
-    # Detectar qué color ve el sensor
-    # Devuelve uno de: Color.RED, Color.GREEN, Color.BLUE, 
-    # Color.YELLOW, Color.BLACK, Color.WHITE, Color.NONE
+    # Obtener el color detectado
+    color = sensor_color.get_color()
     
-    color = sensor_color.color()
+    # Obtener reflexión de luz (0-100%)
+    reflexion = sensor_color.get_reflected_light()
     
-    # Obtener valores RGB (intensidad de cada color)
-    rgb = sensor_color.rgb()
-    
-    # Encender las luces del sensor
-    sensor_color.lights.on(Color.RED)  # Luz roja encendida
-    wait(500)
-    sensor_color.lights.off()
-    wait(500)
-    
-    print(f"Color detectado: {color} | RGB: {rgb}")
+    print(f"Color: {color} | Reflexión: {reflexion}%")
     wait(100)
 ```
 
-### Colores disponibles:
+### Tabla de reflexión de luz
+
+La reflexión de luz es muy útil para seguir líneas o clasificar superficies:
+
+| Reflexión (%) | Tipo de superficie | Aplicación práctica |
+|---------------|-------------------|---------------------|
+| 0-10 | Muy oscuro | Línea negra gruesa |
+| 10-20 | Oscuro | Línea negra delgada |
+| 20-35 | Medio-oscuro | Color azul/verde oscuro |
+| 35-50 | Medio | Colores intermedios |
+| 50-70 | Claro | Colores claros (amarillo, rojo claro) |
+| 70-85 | Muy claro | Blanco, piso claro |
+| 85-100 | Máximo | Espejo o superficie reflectiva |
+
+### Ejemplo: Obtener valores RGB
 
 ```python
-# Colores que el sensor puede detectar
-Color.RED      # Rojo
-Color.GREEN    # Verde
-Color.BLUE     # Azul
-Color.YELLOW   # Amarillo
-Color.MAGENTA  # Magenta
-Color.CYAN     # Cian
-Color.BLACK    # Negro
-Color.WHITE    # Blanco
-Color.NONE     # Ninguno (sin color detectado)
+from spike import ColorSensor
+from spike.control import wait
+
+sensor = ColorSensor('C')
+
+while True:
+    # Obtener componentes RGB individuales
+    rojo = sensor.get_red()
+    verde = sensor.get_green()
+    azul = sensor.get_blue()
+    intensidad = sensor.get_rgb_intensity()
+    
+    print(f"R: {rojo} | G: {verde} | B: {azul} | Total: {intensidad}")
+    wait(200)
+```
+
+### Control de luces LED del sensor
+
+El sensor de color tiene LEDs integrados que puedes controlar:
+
+```python
+from spike import ColorSensor
+from spike.control import wait
+
+sensor = ColorSensor('C')
+
+# Encender los 3 LEDs individuales (0-100)
+sensor.light_up(100, 0, 100)  # Rojo y azul (morado)
+wait(1000)
+
+# Encender todos los LEDs al mismo brillo
+sensor.light_up_all(50)  # Brillo 50%
+wait(1000)
+
+# Apagar LEDs
+sensor.light_up(0, 0, 0)
 ```
 
 ### Proyecto: Seguidor de línea
 
 ```python
-from pybricks.pupdevices import ColorSensor, Motor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait
+from spike import ColorSensor
+from spike import MotorPair
+from spike.control import wait
 
 # Configuración
-sensor_linea = ColorSensor(Port.S1)
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
-robot = DriveBase(motor_izq, motor_der, 56, 112)
+sensor_linea = ColorSensor('C')
+robot = MotorPair('A', 'B')
+
+print("Iniciando seguidor de línea...")
 
 # El robot sigue una línea negra
 while True:
-    reflexion = sensor_linea.reflection()
+    reflexion = sensor_linea.get_reflected_light()
     
-    if reflexion < 30:  # Línea negra (oscuro)
-        # Girar a la izquierda
-        robot.drive(100, 30)
-    else:  # Piso blanco (claro)
-        # Girar a la derecha
-        robot.drive(100, -30)
+    if reflexion < 30:
+        # Línea negra (oscuro) - girar izquierda
+        robot.start_tank(30, 50)  # izquierdo más lento
+    else:
+        # Piso blanco (claro) - girar derecha
+        robot.start_tank(50, 30)  # derecho más lento
     
     wait(10)
 ```
 
 ---
 
-## 3. Sensor de Fuerza (ForceSensor)
+## 📝 Ejercicio para el Aula: Clasificador de Colores
 
-**Situación:** Cuando aplicas presión en un botón de un cajero automático, sientes que "hace clic". El sensor de fuerza puede medir exactamente cuánta presión estás aplicando [1].
+**Nivel:** Básico | **Tiempo:** 15 minutos
 
-### ¿Qué puede hacer?
+### Objetivo
 
-- Medir fuerza en Newtons (N)
-- Medir distancia de cuánto se ha presionado (mm)
-- Detectar cuando se presiona
+El robot detecta diferentes colores y muestra un icono diferente en la pantalla LED para cada uno.
 
-### Código ejemplo:
+### Solución
 
 ```python
-from pybricks.pupdevices import ForceSensor
-from pybricks.parameters import Port
-from pybricks.tools import wait
+from spike import ColorSensor, PrimeHub
+from spike.control import wait
 
-# Conectar el sensor de fuerza al puerto S1
-sensor_fuerza = ForceSensor(Port.S1)
+hub = PrimeHub()
+sensor = ColorSensor('C')
+
+# Mapa de colores a iconos
+iconos = {
+    'red': 'HEART',
+    'green': 'YES',
+    'blue': 'NOTE',
+    'yellow': 'DIAMOND',
+    'black': 'SAD',
+    'white': 'HAPPY'
+}
 
 while True:
-    # Fuerza actual en Newtons
-    fuerza = sensor_fuerza.force()
+    color = sensor.get_color()
     
-    # Cuánto se ha presionado el sensor (en mm)
-    distancia = sensor_fuerza.distance()
+    if color in iconos:
+        hub.light_matrix.show_image(iconos[color])
+        print(f"Detectado: {color}")
+    else:
+        hub.light_matrix.show_image('CONFUSED')
+        print("Color no reconocido")
     
-    print(f"Fuerza: {fuerza:.1f} N | Presión: {distancia:.1f} mm")
-    
-    # Reaccionar cuando alguien presiona fuerte
-    if fuerza > 5:  # Más de 5 Newtons
-        print("¡Presión detectada!")
-    
-    wait(100)
+    wait(500)
 ```
 
-### Usos prácticos:
+### Evaluación
 
-| Fuerza | Aplicación |
-|--------|------------|
-| 0-1 N | Sin presión (reposo) |
-| 1-3 N | Toque suave (botón) |
-| 3-10 N | Presión normal |
-| >10 N | Presión fuerte (alerta) |
+| Criterio | Puntos | Descripción |
+|----------|--------|-------------|
+| Detecta al menos 4 colores | 25 | Funciona con rojo, verde, azul, amarillo |
+| Muestra icono correcto | 25 | Cada color tiene su icono |
+| Código organizado | 25 | Usa diccionario para mapear |
+| Funciona sin errores | 25 | Sinbugs en ejecución |
 
 ---
 
-## 4. Sensor de Inclinación (TiltSensor)
+## 2. Sensor de Distancia (DistanceSensor)
 
-**Situación:** Cuando inclinas tu teléfono, la pantalla cambia de horizontal a vertical. El sensor de inclinación hace algo similar—detecta cuando el robot se inclina [1].
+**Situación:** El sensor ultrasónico usa ondas de sonido para medir la distancia a objetos. Es como los murciélagos que usan el sonido para "ver" en la oscuridad.
 
-### ¿Qué puede hacer?
+### Métodos disponibles
 
-- Medir inclinación en eje X (pitch)
-- Medir inclinación en eje Y (roll)
-- Detectar si el robot se cae
+| Método | Parámetros | Retorna | Descripción |
+|--------|------------|---------|-------------|
+| `get_distance_cm(short_range)` | `short_range` (bool, opcional) | `int` (0-200) | Distancia en centímetros |
+| `get_distance_inches(short_range)` | `short_range` (bool, opcional) | `int` (0-79) | Distancia en pulgadas |
+| `get_distance_percentage(short_range)` | `short_range` (bool, opcional) | `int` (0-100) | Distancia como porcentaje |
 
-### Código ejemplo:
+### Parámetro `short_range`
+
+| Modo | Rango | Uso recomendado |
+|------|-------|-----------------|
+| `False` (default) | 0-200 cm | Mediciones normales |
+| `True` | 0-20 cm | Objetos muy cercanos |
+
+### Tabla de distancias
+
+| Distancia (cm) | Descripción | Acción del robot |
+|---------------|-------------|------------------|
+| 0-5 | Muy cerca | Detenerse inmediatamente |
+| 5-15 | Cerca | Reducir velocidad |
+| 15-50 | Medio | Moverse con cuidado |
+| 50-100 | Lejos | Velocidad normal |
+| 100-200 | Muy lejos | Velocidad máxima |
+
+### Código ejemplo
 
 ```python
-from pybricks.pupdevices import TiltSensor
-from pybricks.iodevices import SensorBase
-from pybricks.tools import wait
+from spike import DistanceSensor
+from spike.control import wait
 
-# Conectar el sensor de inclinación
-sensor_inclinacion = TiltSensor(SensorBase.PORT_A)
+# Inicializar el sensor de distancia en puerto B
+sensor = DistanceSensor('B')
 
 while True:
-    # Pitch (inclinación adelante/atrás)
-    pitch = sensor_inclinacion.tilt(sensor_inclinacion.AXIS_X)
+    # Obtener distancia en centímetros
+    distancia = sensor.get_distance_cm()
     
-    # Roll (inclinación izquierda/derecha)
-    roll = sensor_inclinacion.tilt(sensor_inclinacion.AXIS_Y)
+    # Obtener como porcentaje (100% = muy lejos)
+    porcentaje = sensor.get_distance_percentage()
     
-    print(f"Pitch: {pitch}° | Roll: {roll}°")
+    # Obtener en pulgadas
+    pulgadas = sensor.get_distance_inches()
     
-    # Detectar si el robot se cayó
-    if abs(pitch) > 45 or abs(roll) > 45:
-        print("¡El robot se cayó!")
+    print(f"Distancia: {distancia} cm ({pulgadas} in) - {porcentaje}%")
+    wait(500)
+```
+
+### Usar short_range (medición cercana)
+
+```python
+from spike import DistanceSensor
+from spike.control import wait
+
+sensor = DistanceSensor('B')
+
+while True:
+    # Modo rango corto (0-20 cm)
+    distancia_corta = sensor.get_distance_cm(short_range=True)
+    
+    if distancia_corta < 5:
+        print("¡MUY CERCA!")
+    else:
+        print(f"Distancia: {distancia_corta} cm")
+    
+    wait(200)
+```
+
+### Control de LEDs del sensor
+
+```python
+from spike import DistanceSensor
+from spike.control import wait
+
+sensor = DistanceSensor('B')
+
+# Encender los 4 LEDs individuales
+# (right_top, left_top, right_bottom, left_bottom)
+sensor.light_up(100, 0, 100, 0)  # Patrón alternativo
+wait(1000)
+
+# Encender todos
+sensor.light_up_all(100)
+wait(1000)
+
+# Apagar
+sensor.light_up_all(0)
+```
+
+### Proyecto: Robot evita obstáculos
+
+```python
+from spike import DistanceSensor, PrimeHub
+from spike import MotorPair
+from spike.control import wait
+
+hub = PrimeHub()
+sensor = DistanceSensor('B')
+robot = MotorPair('A', 'B')
+
+print("Robot evitando obstáculos...")
+
+while True:
+    distancia = sensor.get_distance_cm()
+    
+    if distancia < 15:
+        # Obstáculo detectado - girar
+        robot.stop()
+        hub.light_matrix.show_image('SAD')
+        hub.speaker.beep(60, 0.2)  # Beep de alerta
+        
+        # Girar a la derecha
+        robot.move_tank(90, 'degrees', left_speed=50, right_speed=-50)
+        wait(500)
+    else:
+        # No hay obstáculo - avanzar
+        hub.light_matrix.show_image('HAPPY')
+        robot.start(30)
     
     wait(100)
 ```
+
+---
+
+## 📝 Ejercicio para el Aula: Medidor de Distancia
+
+**Nivel:** Intermedio | **Tiempo:** 20 minutos
+
+### Objetivo
+
+El robot funciona como un medidor de distancia. Muestra diferentes iconos según qué tan lejos está el objeto.
+
+### Tabla de referencia
+
+| Distancia | Icono | Color LED |
+|-----------|-------|-----------|
+| < 10 cm | ANGRY | Rojo |
+| 10-30 cm | SAD | Naranja |
+| 30-60 cm | CONFUSED | Amarillo |
+| 60-100 cm | HAPPY | Verde |
+| > 100 cm | YES | Azul |
+
+### Solución
+
+```python
+from spike import DistanceSensor, PrimeHub
+from spike import MotorPair
+from spike.control import wait
+
+hub = PrimeHub()
+sensor = DistanceSensor('B')
+robot = MotorPair('A', 'B')
+
+def mostrar_distancia(distancia):
+    """Muestra icono según la distancia"""
+    if distancia < 10:
+        hub.light_matrix.show_image('ANGRY')
+    elif distancia < 30:
+        hub.light_matrix.show_image('SAD')
+    elif distancia < 60:
+        hub.light_matrix.show_image('CONFUSED')
+    elif distancia < 100:
+        hub.light_matrix.show_image('HAPPY')
+    else:
+        hub.light_matrix.show_image('YES')
+    
+    print(f"Distancia: {distancia} cm")
+
+# Loop principal
+while True:
+    distancia = sensor.get_distance_cm()
+    mostrar_distancia(distancia)
+    wait(300)
+```
+
+---
+
+## 3. Sensor de Fuerza (ForceSensor)
+
+**Situación:** Cuando aplicas presión en un botón de un cajero automático, sientes que "hace clic". El sensor de fuerza puede medir exactamente cuánta presión estás aplicando.
+
+**Nota:** El sensor de fuerza de SPIKE Essential puede no estar disponible en todos los kits. Verifica tu kit antes de usar.
+
+### Métodos disponibles
+
+| Método | Retorna | Descripción |
+|--------|---------|-------------|
+| `is_pressed()` | `bool` | True si hay presión aplicada |
+| `get_force()` | `int` | Fuerza en Newton's (aproximado) |
+| `wait_until_pressed()` | `None` | Espera hasta que se presione |
+| `wait_until_released()` | `None` | Espera hasta que se suelte |
+
+### Tabla de fuerza
+
+| Estado | Valor | Aplicación |
+|--------|-------|------------|
+| Sin presión | 0 | Robot en espera |
+| Toque ligero | 1-3 N | Botón suave |
+| Presión normal | 3-7 N | Presión típica |
+| Presión fuerte | 7-10 N | Botón de emergencia |
+| Presión máxima | >10 N | Máximo soportado |
+
+### Código ejemplo
+
+```python
+from spike import ForceSensor
+from spike.control import wait
+
+# Conectar el sensor de fuerza al puerto C
+sensor_fuerza = ForceSensor('C')
+
+while True:
+    # Verificar si está presionado
+    if sensor_fuerza.is_pressed():
+        print("¡Presión detectada!")
+    else:
+        print("Sin presión")
+    
+    # Obtener valor de fuerza (si disponible)
+    try:
+        fuerza = sensor_fuerza.get_force()
+        print(f"Fuerza: {fuerza}")
+    except:
+        pass  # Algunos modelos no soportan get_force()
+    
+    wait(100)
+```
+
+### Ejemplo: Esperar hasta presionar
+
+```python
+from spike import ForceSensor, PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+sensor = ForceSensor('C')
+
+print("Presiona el sensor de fuerza...")
+
+# Esperar hasta que se presione
+sensor.wait_until_pressed()
+
+# Cuando llegue aquí, ya se presionó
+hub.light_matrix.show_image('HEART')
+hub.speaker.beep(60, 0.5)
+print("¡Detectado!")
+```
+
+---
+
+## 📝 Ejercicio para el Aula: Contador de Presiones
+
+**Nivel:** Básico | **Tiempo:** 15 minutos
+
+### Objetivo
+
+El robot cuenta cuántas veces se presiona el sensor de fuerza y muestra el contador en la pantalla LED.
+
+### Solución
+
+```python
+from spike import ForceSensor, PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+sensor = ForceSensor('C')
+
+contador = 0
+presionado_antes = False
+
+print("Iniciando contador de presiones...")
+
+while True:
+    # Verificar estado actual
+    esta_presionado = sensor.is_pressed()
+    
+    # Detectar flanco (cuando pasa de no presionado a presionado)
+    if esta_presionado and not presionado_antes:
+        contador += 1
+        hub.light_matrix.show_image('HEART')
+        print(f"Presión #{contador}")
+        wait(200)  # Evitar doble conteo
+    elif not esta_presionado:
+        hub.light_matrix.show_image('SQUARE')
+    
+    presionado_antes = esta_presionado
+    
+    # Mostrar número (si es pequeño)
+    if contador < 10:
+        hub.light_matrix.write(str(contador))
+    
+    wait(50)
+
+# Nota: Este código puede variar según la versión de SPIKE
+```
+
+---
+
+## 4. Ejercicios de Práctica Integrados
+
+### Ejercicio 1: Robot que evita colores
+
+**Objetivo:** El robot avanza pero se detiene cuando detecta color rojo.
+
+```python
+from spike import ColorSensor
+from spike import MotorPair
+from spike.control import wait
+
+sensor = ColorSensor('C')
+robot = MotorPair('A', 'B')
+
+while True:
+    color = sensor.get_color()
+    
+    if color == 'red':
+        # ¡Color rojo! Detenerse
+        robot.stop()
+        print("¡PELIGRO!")
+        wait(1000)
+    else:
+        # Seguir adelante
+        robot.start(30)
+    
+    wait(100)
+```
+
+### Ejercicio 2: Contador de colores
+
+**Objetivo:** El robot cuenta cuántos objetos de cada color detecta.
+
+```python
+from spike import ColorSensor
+from spike.control import wait
+
+sensor = ColorSensor('C')
+
+# Contadores para cada color
+contadores = {
+    'red': 0,
+    'green': 0,
+    'blue': 0,
+    'yellow': 0,
+    'other': 0
+}
+
+color_anterior = 'none'
+
+while True:
+    color = sensor.get_color()
+    
+    # Solo contar cuando cambia de color
+    if color != color_anterior and color is not None:
+        if color in contadores:
+            contadores[color] += 1
+        else:
+            contadores['other'] += 1
+        
+        print(f"¡Nuevo {color}! Total: {contadores}")
+        color_anterior = color
+    
+    wait(200)
+```
+
+### Ejercicio 3: Robot detector de superficies
+
+**Objetivo:** El robot identifica diferentes superficies según su reflexión.
+
+```python
+from spike import ColorSensor
+from spike.control import wait
+
+sensor = ColorSensor('C')
+
+def clasificar_superficie(reflexion):
+    """Clasifica la superficie según el valor de reflexión"""
+    if reflexion < 20:
+        return "OSCURO (negro/piso oscuro)"
+    elif reflexion < 45:
+        return "MEDIO (azul/verde)"
+    elif reflexion < 70:
+        return "CLARO (amarillo/rojo claro)"
+    else:
+        return "MUY CLARO (blanco/piso claro)"
+
+print("Detectando superficies...")
+
+while True:
+    reflexion = sensor.get_reflected_light()
+    tipo = clasificar_superficie(reflexion)
+    
+    print(f"Reflexión: {reflexion}% -> {tipo}")
+    wait(1000)
+```
+
+---
+
+## 📋 Rúbrica de Evaluación para Ejercicios
+
+| Criterio |Excelente (100%) | Bueno (75%) | Regular (50%) | Necesita Mejorar (25%) |
+|----------|-----------------|-------------|---------------|----------------------|
+| **Funcionamiento** | Código ejecuta sin errores | Funciona con errores menores | Funciona parcialmente | No funciona |
+| **Comprensión de métodos** | Usa correctamente todos los métodos | Usa métodos principales | Usa métodos básicos | Usa métodos incorrectos |
+| **Organización del código** | Código limpio y documentado | Código organizado | Código funcional | Código desorganizado |
+| **Creatividad** | Agrega funcionalidades extra | Mejora el ejemplo base | Sigue el ejemplo | Copia exactamente |
 
 ---
 
@@ -240,28 +625,25 @@ while True:
 
 Antes de terminar, marca lo que entendiste:
 
-- [ ] El sensor infrarrojo mide distancia y reflexión
-- [ ] El sensor de color detecta colores y controla luces
-- [ ] El sensor de fuerza mide presión en Newtons
-- [ ] El sensor de inclinación detecta pitch y roll
+- [ ] El sensor de color detecta colores y reflexión de luz
+- [ ] Puedo usar el sensor de reflexión para seguir líneas
+- [ ] El sensor de distancia mide en cm/pulgadas
+- [ ] El sensor de fuerza detecta presión (si está disponible en tu kit)
 - [ ] Puedo usar múltiples sensores juntos
+- [ ] Puedo clasificar superficies según su reflexión
 
 ---
 
-*En la siguiente unidad: Control avanzado de motores con PID y calibración.*
+*En la siguiente unidad: Control avanzado de sensores y proyectos integradores.*
 
 ## Referencias
 
-[1] Pybricks Team. (2023). *Pybricks Documentation - Sensors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html
+[1] LEGO Education. (2023). *LEGO Education SPIKE Essential - Color Sensor*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[2] LEGO Education. (2023). *LEGO Education SPIKE Prime - Sensor Specifications*. LEGO. Disponible: https://lego.com
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - Distance Sensor*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[3] Pybricks Team. (2023). *Pybricks Documentation - Color Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/colorsensor.html
+[3] LEGO Education. (2023). *LEGO Education SPIKE Essential - Force Sensor*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[4] Pybricks Team. (2023). *Pybricks Documentation - Infrared Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/infraredsensor.html
+[4] LEGO Education. (2023). *LEGO Education SPIKE Essential - Python API*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[5] Pybricks Team. (2023). *Pybricks Documentation - Force Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/forcesensor.html
-
-[6] Pybricks Team. (2023). *Pybricks Documentation - Tilt Sensor*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html
-
-[7] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+[5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny

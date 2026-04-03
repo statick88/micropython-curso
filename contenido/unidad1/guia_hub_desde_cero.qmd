@@ -145,7 +145,7 @@ sensor = UltrasonicSensor(Port.D)  # Sensor en puerto D
 **Para qué sirve:** Alimentar el Hub y todos los componentes conectados.
 
 **Cuánto dura:**
--正常使用: 4-6 horas
+-Normal uso: 4-6 horas
 - En espera: varios días
 - Se carga por USB-C
 

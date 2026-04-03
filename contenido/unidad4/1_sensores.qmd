@@ -44,32 +44,30 @@ El robot tiene algo que funciona similar—envía un sonido (muy agudo, que no p
 
 ```python
 # Primero, traer el sensor
-from pybricks.pupdevices import UltrasonicSensor
-from pybricks.parameters import Port
+from spike import DistanceSensor
 
-# El sensor se conecta al puerto D
-sensor = UltrasonicSensor(Port.D)
+# El sensor se conecta al puerto B
+sensor = DistanceSensor('B')
 
 # Ahora podemos preguntarle: ¿qué tan lejos está?
-distancia = sensor.distance()
+distancia = sensor.get_distance_cm()
 
-print(f"Hay algo a {distancia} milímetros")
+print(f"Hay algo a {distancia} centimetros")
 ```
 
 **Practica esto en Thonny:**
 
 ```python
-from pybricks.pupdevices import UltrasonicSensor
-from pybricks.parameters import Port
-from pybricks.tools import wait
+from spike import DistanceSensor
+from spike.control import wait_for_seconds
 
-sensor = UltrasonicSensor(Port.D)
+sensor = DistanceSensor('B')
 
 # Medir la distancia varias veces
 for i in range(5):
-    distancia = sensor.distance()
-    print(f"Medición {i+1}: {distancia} mm")
-    wait(500)
+    distancia = sensor.get_distance_cm()
+    print(f"Medicion {i+1}: {distancia} cm")
+    wait_for_seconds(1)
 ```
 
 ---
@@ -81,27 +79,28 @@ for i in range(5):
 El robot también puede hacer esto: moverse Y observar al mismo tiempo. No es que sea mágico—simplemente alterna muy rápido entre una cosa y otra, tan rápido que parece que hace todo junto [3].
 
 ```python
-# En el robot, esto se escribe diferente
+# En SPIKE Essential, usamos un bucle simple que alterna tareas
 # No te preocupes por los detalles ahora—solo observa el patrón
 
-# Una "tarea" que hace algo
-async def conducir():
-    while True:
-        # El robot avanza
-        robot.drive(100, 0)  # velocidad 100, sin girar
-        wait(50)
+from spike import MotorPair, DistanceSensor
 
-# Otra "tarea" que observa
-async def observar():
-    while True:
-        # El robot mide la distancia
-        distancia = sensor.distance()
-        if distancia < 150:  # Si hay algo a menos de 15cm
-            print("¡Hay algo cerca!")
-        wait(50)
+robot = MotorPair('A', 'B')
+sensor = DistanceSensor('B')
 
-# Ejecutar ambas al mismo tiempo
-run_task(conducir(), observar())
+# El robot verifica el sensor mientras se mueve
+while True:
+    # El robot avanza
+    robot.start(50, 50)
+    
+    # El robot mide la distancia
+    distancia = sensor.get_distance_cm()
+    
+    # Si hay algo cerca (menos de 15cm)
+    if distancia is not None and distancia < 15:
+        print("Hay algo cerca!")
+        robot.stop()
+    
+    wait_for_seconds(0.1)
 ```
 
 **Nota:** No necesitas entender todo ahora. Solo recuerda que el robot puede hacer varias cosas "a la vez"—avanzar Y observar al mismo tiempo.
@@ -110,24 +109,35 @@ run_task(conducir(), observar())
 
 ## Qué pasa cuando detecta algo
 
-**Situación:** Estás caminando y de pronto ves un obstáculo—¿qué haces? Te detienes, Quizás haces otro camino.
+**Situación:** Estás caminando y de pronto ves un obstáculo—¿qué haces? Te detienes, quizás haces otro camino.
 
 El robot puede hacer lo mismo [2]:
 
 ```python
+from spike import PrimeHub, MotorPair, DistanceSensor
+from spike.control import wait_for_seconds
+
+hub = PrimeHub()
+robot = MotorPair('A', 'B')
+sensor = DistanceSensor('B')
+
 # Si hay algo a menos de 15 centímetros
-if distancia < 150:
+distancia = sensor.get_distance_cm()
+if distancia is not None and distancia < 15:
     robot.stop()          # Detenerse
-    hub.light.on(0)      # Luz roja = cuidado
-    robot.turn(180)      # Girar y buscar otro camino
-    hub.light.on(5)      # Luz verde = seguir
+    hub.light.on(0)        # Luz roja = cuidado
+    wait_for_seconds(1)
+    robot.start(-30, 30)  # Girar
+    wait_for_seconds(1)
+    robot.stop()
+    hub.light.on(5)        # Luz verde = seguir
 ```
 
 **Es como:**
 1. Ver el obstáculo → detectar con el sensor
 2. "¡Alto!" → stop()
 3. Encender luz de alerta → light.on(0) (rojo)
-4. Buscar otro camino → turn(180)
+4. Buscar otro camino → start(-30, 30)
 5. Seguir adelante → volver a conducir
 
 ---
@@ -139,46 +149,43 @@ if distancia < 150:
 Vamos a hacer algo similar [2]:
 
 ```python
-from pybricks.pupdevices import Motor, UltrasonicSensor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait, run_task
+from spike import PrimeHub, MotorPair, DistanceSensor
+from spike.control import wait_for_seconds
 
 # Configurar
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
-sensor = UltrasonicSensor(Port.D)
-robot = DriveBase(motor_izq, motor_der, 56, 112)
+hub = PrimeHub()
+robot = MotorPair('A', 'B')
+sensor = DistanceSensor('B')
 
-# Tarea 1: seguir adelante siempre
-async def conducir():
-    while True:
-        robot.drive(100, 0)  # velocidad 100
-        wait(50)
-
-# Tarea 2: observar y reaccionar
-async def observar():
-    while True:
-        distancia = sensor.distance()
+# El robot hace un ciclo de exploración
+while True:
+    # Avanzar
+    robot.start(50, 50)
+    
+    # Medir distancia
+    distancia = sensor.get_distance_cm()
+    
+    # Si hay algo a menos de 15cm
+    if distancia is not None and distancia < 15:
+        robot.stop()           # Detenerse
+        hub.light.on(0)       # rojo = cuidado
+        wait_for_seconds(0.5)
         
-        if distancia < 150:  # hay algo a menos de 15cm
-            robot.stop()
-            hub.light.on(0)    # rojo = cuidado
-            wait(200)
-            robot.turn(180)    # girar 180°
-            hub.light.on(5)    # verde = seguir
-            wait(500)
+        # Girar para buscar otro camino
+        robot.start(-30, 30)   # giro a la izquierda
+        wait_for_seconds(1)
         
-        wait(50)
-
-# Ejecutar ambas
-run_task(conducir(), observar())
+        robot.stop()
+        hub.light.on(5)        # verde = seguir
+        wait_for_seconds(0.5)
+    
+    wait_for_seconds(0.1)
 ```
 
 **¿Qué hace este código?**
 - El robot avanza todo el tiempo
 - Mientras avanza, el sensor mide la distancia
-- Si detecta algo a menos de 15cm → se detiene, enciende luz roja, gira 180°, enciende luz verde, y sigue
+- Si detecta algo a menos de 15cm → se detiene, enciende luz roja, gira, enciende luz verde, y sigue
 
 ---
 
@@ -187,7 +194,7 @@ run_task(conducir(), observar())
 Antes de pasar al laboratorio, marca lo que entendiste:
 
 - [ ] El robot tiene sensores que detectan objetos
-- [ ] El sensor ultrasónico usa "eco" para medir distancia
+- [ ] El sensor de distancia usa "eco" para medir distancia
 - [ ] El robot puede hacer dos cosas a la vez (moverse Y observar)
 - [ ] Puedo programar reacciones cuando detecta algo
 
@@ -197,12 +204,10 @@ Antes de pasar al laboratorio, marca lo que entendiste:
 
 ## Referencias
 
-[1] LEGO Education. (2023). *LEGO Education SPIKE Prime - Ultrasonic Sensor*. LEGO. Disponible: https://lego.com
+[1] LEGO Education. (2026). *LEGO Education SPIKE Essential - Distance Sensor*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[2] Pybricks Team. (2023). *Pybricks Documentation - Sensors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html
+[2] LEGO Education. (2026). *SPIKE Essential Python Programming Guide*. LEGO Education. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [3] D. George. (2013). *MicroPython Documentation - asyncio*. MicroPython. Disponible: https://docs.micropython.org
 
-[4] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
-
-[5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+[4] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny

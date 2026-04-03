@@ -271,7 +271,7 @@ print("¡Pybricks funciona!")
 | Opción | Costo | Requiere Hardware | Requiere Compilar |
 |--------|:-----:|:-----------------:|:-----------------:|
 | **Pybricks Code (Web)** | Gratis | Solo para probar | ❌ No |
-| **Compilar自己 (DIY)** | Gratis | ESP-32 o Hub LEGO | ✅ Sí |
+| **Compilar tú mismo (DIY)** | Gratis | ESP-32 o Hub LEGO | ✅ Sí |
 | **Firmware Oficial** | Gratis | Hub LEGO | ❌ No |
 | **ESP-32 Simulator** | ~$10 | ESP-32 | ⚠️ Configuración |
 

@@ -32,11 +32,40 @@ Controla un motor individual con diferentes velocidades y ángulos.
 ### Código Base
 
 ```python
-from pybricks.parameters import Port, Stop
-from pybricks.tools import wait
+from spike import Motor
 
 # Inicializar motor en puerto A
-# Pista: usa Motor(Port.A)
+# Pista: usa Motor('A')
+```
+
+### Solución
+
+```python
+from spike import PrimeHub
+from spike import Motor
+from spike.control import wait
+
+hub = PrimeHub()
+
+motor = Motor('A')
+
+# Giro de 90° a velocidad baja (50°/s)
+motor.run_for_degrees(50, 90)
+wait(500)
+
+# Giro de 180° a velocidad media (150°/s)
+motor.run_for_degrees(150, 180)
+wait(500)
+
+# Giro de 360° a velocidad alta (300°/s)
+motor.run_for_degrees(300, 360)
+wait(500)
+
+# Regresar a posición inicial
+motor.run_for_degrees(150, -630)
+wait(500)
+
+motor.stop()
 ```
 
 ### Solución
@@ -87,41 +116,33 @@ Navega el robot trazando un cuadrado perfecto de 20cm de lado.
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port, Stop, Direction
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike import Motor
+from spike.control import DriveBase, wait
 
 hub = PrimeHub()
 
 # Configurar DriveBase
 # Ajusta estos valores según tu robot
-DIENTES_RUEDA = 44
 DIAMETRO_RUEDA = 56  # mm
-ANCHO_EJE = 104  # mm
+ANCHO_EJE = 112  # mm
 
-from pybricks.hubs import PrimeHub
-hub = PrimeHub()
-
-# Para SPIKE Prime
-motor_izq = Motor(Port.B, Direction.COUNTERCLOCKWISE)
-motor_der = Motor(Port.A)
+motor_izq = Motor('B')
+motor_der = Motor('A')
 
 drivebase = DriveBase(motor_izq, motor_der, DIAMETRO_RUEDA, ANCHO_EJE)
 
-# Configuración del giroscopio
-drivebase.use_gyro(True)
-
 # Trazar cuadrado
 for lado in range(4):
-    # Avanzar 20cm (200mm)
-    drivebase.straight(200)
+    # Avanzar 20cm
+    drivebase.move(20, 'cm')
     wait(200)
     
     # Girar 90°
-    drivebase.turn(90)
+    drivebase.rotate(90)
     wait(200)
 
-hub.display.scroll("CUADRO OK", wait=True)
+hub.light_matrix.write("CUADRO OK")
 ```
 
 ---
@@ -135,28 +156,28 @@ Navega el robot trazando una figura en ocho (infinito).
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port, Direction
+from spike import PrimeHub
+from spike import Motor
+from spike.control import DriveBase
 
 hub = PrimeHub()
 
 # Inicializar motores
-motor_izq = Motor(Port.B, Direction.COUNTERCLOCKWISE)
-motor_der = Motor(Port.A)
+motor_izq = Motor('B')
+motor_der = Motor('A')
 
 # Configurar DriveBase
-drivebase = DriveBase(motor_izq, motor_der, 56, 104)
-drivebase.use_gyro(True)
+drivebase = DriveBase(motor_izq, motor_der, 56, 112)
 
 # Trazar figura en ocho
 for repeticion in range(3):
     # Primera curva (izquierda)
-    drivebase.curve(radius=200, angle=360)
+    drivebase.curve(200, 360)
     
-    # Segunda curva (derecha)
-    drivebase.curve(radius=-200, angle=360)
+    # Segunda curva (derecha) - radio negativo invierte la dirección
+    drivebase.curve(-200, 360)
 
-hub.display.scroll("OCHO OK", wait=True)
+hub.light_matrix.write("OCHO OK")
 ```
 
 ---
@@ -177,52 +198,42 @@ Implementa un algoritmo simple de seguimiento de pared para un laberinto básico
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port, Direction, Button
-from pybricks.tools import wait
-from pybricks.pupdevices import Motor, UltrasonicSensor
+from spike import PrimeHub, Motor, DistanceSensor
+from spike.control import DriveBase, wait
 
 hub = PrimeHub()
 
 # Inicializar dispositivos
-motor_izq = Motor(Port.B)
-motor_der = Motor(Port.A)
-sensor = UltrasonicSensor(Port.C)
+motor_izq = Motor('B')
+motor_der = Motor('A')
+sensor = DistanceSensor('D')
 
 # Configurar DriveBase
-drivebase = DriveBase(motor_izq, motor_der, 56, 104)
+drivebase = DriveBase(motor_izq, motor_der, 56, 112)
 
 DISTANCIA_PARED = 200  # mm
 DISTANCIA_COLISION = 100  # mm
 
-def hay_pared_derecha():
-    """Verificar si hay pared a la derecha"""
-    # Girar sensor o usar sensor dedicado
-    return sensor.distance() < DISTANCIA_PARED
-
-def hay_pared_adelante():
-    """Verificar si hay pared adelante"""
-    return sensor.distance() < DISTANCIA_COLISION
+def hay_pared():
+    """Verificar si hay obstáculo adelante"""
+    return sensor.get_distance_cm() < (DISTANCIA_PARED // 10)
 
 # Programa principal
 while True:
-    # Salir con botón CENTER
-    if Button.CENTER in hub.buttons.pressed():
+    # Salir con botón izquierdo
+    if hub.left_button.is_pressed():
         break
     
-    if not hay_pared_derecha():
-        # Giro a la derecha
-        drivebase.turn(90)
-        drivebase.straight(100)
-    elif not hay_pared_adelante():
+    if not hay_pared():
         # Avanzar
-        drivebase.straight(100)
+        drivebase.move(10, 'cm')
     else:
         # Giro a la izquierda
-        drivebase.turn(-90)
+        drivebase.rotate(-90)
+        wait(200)
 
 drivebase.stop()
-hub.display.scroll("FIN", wait=True)
+hub.light_matrix.write("FIN")
 ```
 
 ---
@@ -246,30 +257,28 @@ Competencia: el robot debe recorrer exactamente 1 metro y detenerse lo más cerc
 ### Solución Óptima
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port, Direction
+from spike import PrimeHub
+from spike import Motor
+from spike.control import DriveBase
 
 hub = PrimeHub()
 
 # Inicializar
-motor_izq = Motor(Port.B, Direction.COUNTERCLOCKWISE)
-motor_der = Motor(Port.A)
-drivebase = DriveBase(motor_izq, motor_der, 56, 104)
-
-# Calibración: usa giroscopio para precisión
-drivebase.use_gyro(True)
+motor_izq = Motor('B')
+motor_der = Motor('A')
+drivebase = DriveBase(motor_izq, motor_der, 56, 112)
 
 # Ajustar según calibración previa
 # Pista: cada robot es diferente, calibra con pruebas
 
-DISTANCIA_OBJETIVO = 1000  # 1 metro = 1000mm
+DISTANCIA_OBJETIVO = 100  # 1 metro = 100 cm
 
 # Ejecutar
-hub.display.show_icon(HubIcon.TARGET)
-drivebase.straight(DISTANCIA_OBJETIVO)
+hub.light_matrix.show_image(Image.CONFUSED)
+drivebase.move(DISTANCIA_OBJETIVO, 'cm')
 
-# Mostrar distancia real (necesitarías encoder para medir)
-hub.display.scroll("PARADA", wait=True)
+# Mostrar mensaje
+hub.light_matrix.write("PARADA")
 ```
 
 ---
@@ -292,6 +301,6 @@ hub.display.scroll("PARADA", wait=True)
 
 ## Referencias
 
-[1] Pybricks Team. *Pybricks MicroPython API - DriveBase*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase
+[1] LEGO Education. *LEGO Education SPIKE Essential - DriveBase API*. 2026. Disponible en: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[2] Pybricks Team. *Pybricks MicroPython API - Motor*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupdevices.html#motor
+[2] LEGO Education. *LEGO Education SPIKE Essential - Motor API*. 2026. Disponible en: https://spike.legoeducation.com/essential/help/lls-help-python

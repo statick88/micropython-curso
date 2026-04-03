@@ -2,105 +2,105 @@
 title: "🎮 Quiz Unidad 3: Movimiento"
 description: "¡Domina la cinemática del robot! 🤖"
 ---
-
+ 
 # 🎮 Quiz Unidad 3: Movimiento {#quiz-unidad3}
-
+ 
 ::: center
 ![Certificación de Tracción](images/servo-motor-cartoon.png){width="20%"}
-
+:::
+ 
 ### 🏅 Insignias en Juego
 | 🔄 Primer Giro | 📐 Geometra | 🧭 Navegante |
 |:---:|:---:|:---:|
 | +25 XP | +25 XP | +50 XP |
-
+ 
 :::
-
+ 
 ## 📊 Tu Progreso
-
+ 
 ```
 [███████████████████░] 95% - Nivel 2 🔍 → Nivel 3 💻
 XP necesario: 250 | XP ganado: 225
 ```
-
+ 
 ---
-
+ 
 ## 📝 Preguntas
-
+ 
 ::: {.quizdown}
-
+ 
 ### 🔄 Pregunta 1: Estabilización por Hardware (25 XP)
-
-¿Qué tecnología interna del Hub permite que el `DriveBase` corrija su trayectoria automáticamente?
-
+ 
+¿Qué tecnología interna del Hub permite que el robot corrija su trayectoria automáticamente al usar MotorPair?
+ 
 - [ ] Bluetooth Low Energy 📡
-- [x] 🎯 Giroscopio (IMU) con `use_gyro(True)`
+- [x] 🎯 Sensor de movimiento (IMU) integrado en el PrimeHub
 - [ ] Sensor de color en puerto C 🌈
-- [ ] Sensor de contacto 👆
-
-> 💡 **Pista:** El giroscopio es esencial para compensar el deslizamiento mecánico de las ruedas [1]. ¡Sin él, tu robot será un borracho! 🍺
-
+- [ ] Sensor de fuerza en puerto A 💪
+ 
+> 💡 **Pista:** El sensor de movimiento es esencial para compensar el deslizamiento mecánico de las ruedas [1]. ¡Sin él, tu robot será un borracho! 🍺
+ 
 ---
-
+ 
 ### 📐 Pregunta 2: Arquitectura Cinemática (25 XP)
-
-En la configuración de un `DriveBase`, ¿qué parámetro define la distancia entre los centros de las ruedas?
-
+ 
+En la configuración de un MotorPair, ¿qué parámetro define la distancia entre los centros de las ruedas?
+ 
 - [ ] wheel_diameter ⭕
 - [x] 📏 axle_track (distancia entre ejes)
-- [ ] PID_gain 📊
-- [ ] turn_rate 🔄
-
+- [ ] Velocidad de los motores 🚀
+- [ ] Tiempo de respuesta ⏱️
+ 
 > 💡 **Pista:** `axle_track` es el valor crítico para calcular la rotación exacta del chasis [1]. ¡Es la base de tu robot! 🏗️
-
+ 
+> **Nota**: En SPIKE Essential, se configura al crear el MotorPair: `MotorPair('A', 'B', axle_track=112)`
+ 
 ---
-
+ 
 ### 🌐 Pregunta 3: Entorno de Desarrollo (25 XP)
-
-¿Cuál es la URL oficial del Centro de Comando Pybricks Web para desplegar código?
-
+ 
+¿Cuál es la documentación oficial de referencia para programación de LEGO Education SPIKE Essential?
+ 
 - [ ] pybricks.com 🏠
-- [x] 💻 code.pybricks.com (IDE Web)
 - [ ] app.pybricks.com 📱
+- [x] 💻 education.lego.com/es-es/support/spike-essential/
 - [ ] lego.pybricks.com 🧱
-
-> 💡 **Pista:** `code.pybricks.com` es el IDE estándar de la industria para MicroPython en LEGO [2]. ¡Tu cockpit de programación! 🚀
-
+ 
+> 💡 **Pista:** La documentación oficial de LEGO Education es la referencia estándar para SPIKE Essential [2]. ¡Tu guía de programación oficial! 🚀
+ 
 :::
-
----
-
+ 
 ## 🏆 Resumen de Recompensas
-
+ 
 | Respuesta | XP Ganada | Insignia |
 |-----------|-----------|----------|
 | Pregunta 1 ✅ | +25 | |
 | Pregunta 2 ✅ | +25 | |
 | Pregunta 3 ✅ | +25 | |
 | **Total** | **+75** | 🔄 Primer Giro |
-
+ 
 ### 🎯 ¡Objetivos Desbloqueados!
-
+ 
 - [x] Completar todas las preguntas (+25 bonus si 100%)
 - [ ] Tiempo récord: < 2 minutos (+10 bonus)
-
+ 
 ---
-
+ 
 ## 📈 Después de Completar este Quiz
-
+ 
 ```
 Siguiente paso: 📡 Unidad 4: Sensores
                 └─> 👁️ Lab 4A - Telemetría
-                    └─> 🔋 Lab 4B - Monitoreo Batería
-                        └─> 📝 Quiz Unidad 4
+                └─> 🔋 Lab 4B - Monitoreo Batería
+                └─> 📝 Quiz Unidad 4
 ```
-
+ 
 ---
+ 
+## 📚 Referencias Actualizadas
+ 
+[1] LEGO Education. (2023). *LEGO Education SPIKE Essential - Hub IMU*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - Getting Started Guide*. LEGO. Disponible: https://education.lego.com/es-es/support/spike-essential/
+ 
 *🎮 Quiz Unidad 3 - MicroPython para el Aula - Diego Saavedra 2026* 🏆
-
-
-## Referencias
-
-[1] Pybricks Team. *Pybricks MicroPython API Reference - DriveBase and Motors*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#drivebase
-
-[2] Pybricks Team. *Pybricks Code - Web-based Programming Environment*. 2026. Disponible en: https://code.pybricks.com/

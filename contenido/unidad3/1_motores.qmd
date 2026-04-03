@@ -50,24 +50,20 @@ Antes de pedirle al robot que se mueva, necesitamos "presentarle" los motores [2
 
 ```python
 # Traer las herramientas necesarias
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
+from spike import Motor, MotorPair
 
 # Cada motor se conecta a un "puerto" (como un enchufe)
 # Puerto A = motor izquierdo
 # Puerto B = motor derecho
-motor_izquierdo = Motor(Port.A)
-motor_derecho = Motor(Port.B)
+motor_izquierdo = Motor('A')
+motor_derecho = Motor('B')
 
-# Ahora creamos algo que controle el movimiento
-# Le decimo el tamaño de las ruedas (56mm) y qué tan separadas están (112mm)
-robot = DriveBase(motor_izquierdo, motor_derecho, wheel_diameter=56, axle_track=112)
+# Ahora creamos un par de motores para controlar el movimiento
+robot = MotorPair('A', 'B')
 ```
 
-**¿Por qué necesitamos esas medidas?**
-- Es como cuando en el auto le dices al GPS el tamaño de las llantas—así sabe cuántos metros ha avanzado
-- Sin esas medidas, el robot no sabría cuánto es "un metro"
+**¿Por qué necesitamos MotorPair?**
+- Es como cuando en el auto controlas ambas ruedas juntas—así el robot puede ir recto o girar de forma coordinada
 
 ---
 
@@ -76,14 +72,14 @@ robot = DriveBase(motor_izquierdo, motor_derecho, wheel_diameter=56, axle_track=
 Una vez que está "presentado", podemos darle órdenes [2]:
 
 ```python
-# "¡Robot, avanza 50 centímetros!" (500 milímetros)
-robot.straight(500)
+# "¡Robot, avanza 20 centímetros!"
+robot.move(20, 'cm', 0, 50)
 
 # "¡Gira 90 grados a la derecha!"
-robot.turn(90)
+robot.move_tank(90, 'degrees', 30, -30)
 
 # "¡Gira 90 grados a la izquierda!" (número negativo)
-robot.turn(-90)
+robot.move_tank(-90, 'degrees', 30, -30)
 
 # "¡Detente!"
 robot.stop()
@@ -92,23 +88,19 @@ robot.stop()
 **Practica esto en Thonny:**
 
 ```python
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait
+from spike import MotorPair
+from spike.control import wait_for_seconds
 
 # Configurar (presentar) los motores
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
-robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)
+robot = MotorPair('A', 'B')
 
 # ¡Probar el movimiento!
-robot.straight(200)  # Avanzar 20 cm
-wait(500)            # Pausa
-robot.turn(90)       # Girar 90°
-wait(500)
-robot.straight(200)  # Avanzar otro poco
-wait(500)
+robot.move(20, 'cm', 0, 50)  # Avanzar 20 cm
+wait_for_seconds(1)
+robot.move_tank(90, 'degrees', 30, -30)  # Girar 90°
+wait_for_seconds(1)
+robot.move(20, 'cm', 0, 50)  # Avanzar otro poco
+wait_for_seconds(1)
 robot.stop()         # Detenerse
 ```
 
@@ -120,12 +112,13 @@ robot.stop()         # Detenerse
 
 Ese "sentido" se llama **giroscopio**. Ayuda al robot a no desviarse cuando avanza mucho [2].
 
-```python
-# Activar el "sentido del equilibrio"
-robot.use_gyro(True)
+En SPIKE Essential, usamos los botones del robot para control:
 
-# Ahora el robot caminará recto incluso en distancias largas
-robot.straight(1000)  # 1 metro recto
+```python
+# El robot tiene sensores de movimiento integrados
+# Puedes leer el ángulo de inclinación
+hub = PrimeHub()
+angulo = hub.motion_sensor.get_yaw_angle()
 ```
 
 **¿Cuándo usarlo?**
@@ -144,8 +137,8 @@ Hay una forma mejor. Es como cuando en el recreo haces "una fila de 4" y todos r
 ```python
 # "Haz esto 4 veces"
 for i in range(4):
-    robot.straight(200)  # Avanzar
-    robot.turn(90)       # Girar
+    robot.move(20, 'cm', 0, 50)  # Avanzar
+    robot.move_tank(90, 'degrees', 30, -30)  # Girar
     # y vuelve al inicio del "for"
 ```
 
@@ -156,8 +149,8 @@ El robot entiende "for i in range(4)" como "haz lo que está dentro 4 veces".
 ```python
 # El robot va a dibujar un cuadrado (4 lados iguales)
 for i in range(4):
-    robot.straight(300)  # Un lado de 30 cm
-    robot.turn(90)      # Girar 90°
+    robot.move(30, 'cm', 0, 50)  # Un lado de 30 cm
+    robot.move_tank(90, 'degrees', 30, -30)  # Girar 90°
     
 robot.stop()  # ¡Terminó!
 ```
@@ -170,10 +163,11 @@ A veces el robot se desvía un poco—como cuando manejas en una calle dispareja
 
 ```python
 # Ajustar la velocidad máxima
-robot.settings(straight_speed=150)  # Más lento = más preciso
+# El segundo parámetro es la velocidad (50 = más lento = más preciso)
+robot.move(20, 'cm', 0, 30)
 
-# O ajustar la fuerza de giro
-robot.settings(turn_rate=45)  # Girar más despacio
+# O ajustar la velocidad de giro
+robot.move_tank(90, 'degrees', 20, -20)
 ```
 
 Es como manejar un carro—si vas más lento, es más fácil hacer curvas exactas.
@@ -188,7 +182,7 @@ Antes de pasar al laboratorio, marca lo que entendiste:
 - [ ] Si ambos van igual → avanza recto
 - [ ] Si uno gira más → el robot gira
 - [ ] Puedo hacer que repita algo varias veces
-- [ ] El "giroscopio" ayuda a ir más recto
+- [ ] El sensor de movimiento ayuda a ir más recto
 
 ---
 
@@ -196,12 +190,10 @@ Antes de pasar al laboratorio, marca lo que entendiste:
 
 ## Referencias
 
-[1] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
+[1] LEGO Education. (2026). *LEGO Education SPIKE Essential - Technical Specifications*. LEGO. Disponible: https://lego.com
 
-[2] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+[2] LEGO Education. (2026). *SPIKE Essential Python Programming Guide*. LEGO Education. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [3] D. George. (2013). *MicroPython Documentation - Control Structures*. MicroPython. Disponible: https://docs.micropython.org
 
-[4] Pybricks Team. (2023). *Pybricks Documentation - Motors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html
-
-[5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
+[4] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny

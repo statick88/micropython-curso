@@ -2,107 +2,105 @@
 title: "🎮 Quiz Unidad 2: Pantalla y Luces"
 description: "¡Demuestra tu dominio de la matriz de LEDs! 💡"
 ---
-
+ 
 # 🎮 Quiz Unidad 2: Pantalla y Luces {#quiz-unidad2}
-
+ 
 ::: center
 ![Certificación Visual](images/leds-cartoon.png){width="20%"}
-
+:::
+ 
 ### 🏅 Insignias en Juego
 | 💡 LED On | 🎬 Animador | 🖼️ Pixel Art |
 |:---:|:---:|:---:|
 | +25 XP | +25 XP | +25 XP |
-
+ 
 :::
-
+ 
 ## 📊 Tu Progreso
-
+ 
 ```
 [███████████████████░] 90% - Nivel 1 🌱 → Nivel 2 🔍
 XP necesario: 100 | XP ganado en U1: 75
 ```
-
+ 
 ---
-
+ 
 ## 📝 Preguntas
-
+ 
 ::: {.quizdown}
-
+ 
 ### 💡 Pregunta 1: Navegación en el Plano (25 XP)
-
+ 
 ¿Qué comando envía a la tortuga directo hacia adelante en tus planos de diseño?
-
+ 
 - [ ] robot.right() ➡️
 - [x] 🚀 robot.forward() ➡️➡️➡️
 - [ ] robot.up() ⬆️
 - [ ] robot.run() 🏃
-
+ 
 > 💡 **Pista:** `forward()` es la instrucción core para el desplazamiento lineal en el plano [1]. ¡Mueve tu robot hacia adelante! 🤖
-
+ 
 ---
-
+ 
 ### 🎬 Pregunta 2: Geometría de Giro (25 XP)
-
+ 
 ¿Cuántos grados hay en un círculo completo para un giro total del robot sobre su eje?
-
+ 
 - [ ] 90 (Ángulo recto) ∟
 - [ ] 180 (Media vuelta) ↩️
 - [ ] 270 (Tres cuartos) 🔄
 - [x] 🔵 360 (Giro completo) ⭕
-
+ 
 > 💡 **Pista:** El sistema de navegación utiliza coordenadas polares donde 360° representa una revolución completa [2]. ¡Un giro perfecto! 🎯
-
+ 
 ---
-
+ 
 ### 🖼️ Pregunta 3: Estructuras de Control (25 XP)
-
+ 
 ¿Qué comando de control permite repetir un conjunto de instrucciones de forma iterativa (por número de veces)?
-
+ 
 - [ ] while 🔄♾️
 - [x] 🔁 for (repite N veces)
 - [ ] if (condicional) ❓
 - [ ] def (función) 📦
-
+ 
 > 💡 **Pista:** El bucle `for` es ideal para patrones geométricos con un número definido de lados [3]. ¡Repite y conquista! 💪
-
+ 
 :::
-
----
-
+ 
 ## 🏆 Resumen de Recompensas
-
+ 
 | Respuesta | XP Ganada | Insignia |
 |-----------|-----------|----------|
 | Pregunta 1 ✅ | +25 | |
 | Pregunta 2 ✅ | +25 | |
 | Pregunta 3 ✅ | +25 | |
 | **Total** | **+75** | 💡 LED On |
-
+ 
 ### 🎯 ¡Objetivos Desbloqueados!
-
+ 
 - [x] Completar todas las preguntas (+25 bonus si 100%)
 - [ ] Tiempo récord: < 2 minutos (+10 bonus)
-
+ 
 ---
-
+ 
 ## 📈 Después de Completar este Quiz
-
+ 
 ```
 Siguiente paso: 🤖 Unidad 3: Movimiento
                 └─> 🔄 Lab 3A - Navegación
-                    └─> 🏎️ Lab 3B - Movimiento Avanzado
-                        └─> 📝 Quiz Unidad 3
+                └─> 🏎️ Lab 3B - Movimiento Avanzado
+                └─> 📝 Quiz Unidad 3
 ```
-
+ 
 ---
+ 
+## 📚 Referencias Actualizadas
+ 
+[1] LEGO Education. (2023). *LEGO Education SPIKE Essential - Motor Tutorials*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-*🎮 Quiz Unidad 2 - MicroPython para el Aula - Diego Saavedra 2026* 🏆
-
-
-## Referencias
-
-[1] Pybricks Team. *Pybricks MicroPython API Reference - DriveBase*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html
-
-[2] LEGO Education. *SPIKE Prime - Hub Hardware Reference*. 2026. Disponible en: https://education.lego.com/en-au/support/spike-prime/
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - Getting Started Guide*. LEGO. Disponible: https://education.lego.com/es-es/support/spike-essential/
 
 [3] Python Software Foundation. *Compound Statements - for statement*. 2026. Disponible en: https://docs.python.org/3/reference/compound_stmts.html#for
+ 
+*🎮 Quiz Unidad 2 - MicroPython para el Aula - Diego Saavedra 2026* 🏆

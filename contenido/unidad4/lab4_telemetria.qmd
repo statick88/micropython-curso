@@ -37,17 +37,18 @@ Abre Thonny y escribe:
 
 ```python
 # Traer las herramientas
-from pybricks.pupdevices import Motor, UltrasonicSensor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
+from spike import Motor, DistanceSensor, PrimeHub
+from spike.control import DriveBase, wait
+
+hub = PrimeHub()
 
 # Los motores igual que antes
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
+motor_izq = Motor('A')
+motor_der = Motor('B')
 robot = DriveBase(motor_izq, motor_der, 56, 112)
 
 # El sensor de distancia se conecta al puerto D
-sensor = UltrasonicSensor(Port.D)
+sensor = DistanceSensor('D')
 
 # Ahora podemos preguntarle: ¿qué tan lejos está?
 print("Sensor conectado")
@@ -65,27 +66,27 @@ Ahora vamos a preguntarle al sensor qué tan lejos está algo [2]:
 
 ```python
 # Medir la distancia
-distancia = sensor.distance()
+distancia = sensor.get_distance_cm()
 
-print(f"Hay algo a {distancia} mm")
+print(f"Hay algo a {distancia} cm")
 ```
 
 **Prueba esto:**
 
 ```python
 # Medir la distancia 5 veces
-from pybricks.tools import wait
+from spike.control import wait
 
 for i in range(5):
-    distancia = sensor.distance()
-    print(f"Medición {i+1}: {distancia} mm")
+    distancia = sensor.get_distance_cm()
+    print(f"Medición {i+1}: {distancia} cm")
     wait(500)
 ```
 
 **¿Qué ves?**
 - Si pones tu mano frente al sensor, el número baja
 - Si alejas la mano, el número sube
-- Si no hay nada cerca, puede mostrar un número muy alto
+- Si no hay nada cerca, puede mostrar un número muy alto o "255"
 
 ---
 
@@ -93,99 +94,129 @@ for i in range(5):
 
 **Situación:** Estás viendo un video en tu teléfono mientras descargas algo. Ambas cosas pasan al mismo tiempo—una no espera a que termine la otra.
 
-El robot puede hacer lo mismo: moverse Y observar al mismo tiempo [4].
+SPIKE Essential puede ejecutar tareas en paralelo usando `Thread`. Vamos a ver cómo:
 
 ```python
-# Vamos a escribir dos "tareas" que funcionan juntas
-# Una tarea = algo que el robot hace
+import thread
+from spike import Motor, DistanceSensor, PrimeHub
+from spike.control import DriveBase, wait
 
-from pybricks.tools import wait, run_task
+hub = PrimeHub()
 
-# Tarea 1: El robot avanza
-async def avanza():
-    for i in range(10):  # avanza 10 veces
-        await robot.straight(100)  # 10 cm cada vez
-        await wait(100)
-    print("Terminé de avanzar")
+# Configuración
+motor_izq = Motor('A')
+motor_der = Motor('B')
+sensor = DistanceSensor('D')
+robot = DriveBase(motor_izq, motor_der, 56, 112)
 
-# Tarea 2: El robot observa
-async def observa():
-    while True:  # nunca se detiene
-        distancia = sensor.distance()
-        if distancia < 150:
-            print(f"¡Algo a solo {distancia}mm!")
-        await wait(50)
+# Variable para compartir información entre hilos
+hay_obstaculo = [False]  # Usamos lista para que sea modificable
 
-# Ejecutar ambas tareas JUNTAS
-run_task(avanza(), observa())
+# Tarea 1: Vigilar si hay obstáculos
+def vigilante():
+    while True:
+        distancia = sensor.get_distance_cm()
+        
+        if distancia < 15:  # menos de 15cm
+            hay_obstaculo[0] = True
+            hub.light_matrix.show_image(Image.SAD)
+        else:
+            hay_obstaculo[0] = False
+            hub.light_matrix.show_image(Image.HAPPY)
+        
+        wait(50)
+
+# Tarea 2: Moverse y reaccionar
+def explorador():
+    robot.odometry_settings(reset_at_init=True)
+    
+    for paso in range(20):  # 20 pasos
+        if hay_obstaculo[0]:
+            # Hay algo cerca: detenerse y girar
+            robot.stop()
+            hub.speaker.beep(440, 200)  # sonido de alerta
+            robot.rotate(90)
+            wait(200)
+        else:
+            # No hay nada: avanzar un poquito
+            robot.move(5, 'cm')
+        
+        wait(100)
+    
+    robot.stop()
+
+# Ejecutar ambas tareas en paralelo
+thread.start_new_thread(vigilante, ())
+explorador()
 ```
 
 **¿Qué hace el robot?**
-- Avanza 10 pasos de 10 cm
-- Al mismo tiempo, observa si hay algo a menos de 15 cm
-- Si detecta algo, te avisa
+- Avanza 20 pasos de 5 cm
+- Al mismo tiempo, observa si hay algo cerca
+- Si detecta algo a menos de 15cm:
+   - Se detiene
+   - Hace un sonido
+   - Gira 90°
+   - Sigue por otro lado
+
+Es como un robot de limpieza—evita los obstáculos solo.
 
 ---
 
 ## Paso 4: Robot que evita obstáculos
 
-**Situación:** Ahora vamos a hacer que el robot haga algo más inteligente: si detecta algo, que gire y busque otro camino [2].
+**Situación:** Ahora vamos a hacer que el robot haga algo más inteligente: si detecta algo, que gire y busque otro camino.
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.pupdevices import Motor, UltrasonicSensor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait, run_task
+import thread
+from spike import Motor, DistanceSensor, PrimeHub
+from spike.control import DriveBase, wait
 
 hub = PrimeHub()
 
 # Configuración
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
-sensor = UltrasonicSensor(Port.D)
+motor_izq = Motor('A')
+motor_der = Motor('B')
+sensor = DistanceSensor('D')
 robot = DriveBase(motor_izq, motor_der, 56, 112)
 
-# Una variable para recordar si hay peligro o no
-hay_peligro = False
+# Variable para recordar si hay peligro o no
+hay_peligro = [False]
 
 # Tarea 1: Vigilar si hay obstáculos
-async def vigilante():
-    global hay_peligro
-    
+def vigilante():
     while True:
-        distancia = sensor.distance()
+        distancia = sensor.get_distance_cm()
         
-        if distancia < 150:  # menos de 15cm
-            hay_peligro = True
-            hub.light.on(0)  # luz roja
+        if distancia < 15:  # menos de 15cm
+            hay_peligro[0] = True
+            hub.light_matrix.show_image(Image.SAD)
         else:
-            hay_peligro = False
-            hub.light.off()
+            hay_peligro[0] = False
+            hub.light_matrix.show_image(Image.HAPPY)
         
-        await wait(50)
+        wait(50)
 
 # Tarea 2: Moverse y reaccionar
-async def explorador():
-    global hay_peligro
-    
-    robot.use_gyro(True)
+def movimiento():
+    robot.odometry_settings(reset_at_init=True)
     
     while True:
-        if hay_peligro:
+        if hay_peligro[0]:
             # Hay algo cerca: detenerse y girar
             robot.stop()
-            hub.speaker.beep()  # sonido de alerta
-            await robot.turn(90)  # girar 90°
+            hub.speaker.beep(440, 200)  # sonido de alerta
+            robot.rotate(90)
             wait(200)
         else:
             # No hay nada: avanzar un poquito
-            await robot.straight(50)
+            robot.move(5, 'cm')
         
-        await wait(50)
+        wait(100)
 
 # Ejecutar ambas tareas
-run_task(explorador(), vigilante())
+thread.start_new_thread(vigilante, ())
+movimiento()
 ```
 
 **¿Qué hace este robot?**
@@ -205,9 +236,9 @@ Es como un robot de limpieza—evita los obstáculos solo.
 
 | Problema | Posible causa | Qué hacer |
 |----------|---------------|-----------|
-| El sensor siempre dice 0 | No está bien conectado | Verifica que el cable esté en el puerto D |
-| El robot no responde | Las tareas no están juntas | Usa run_task(tarea1(), tarea2()) |
-| El robot se mueve raro | Falta el wait dentro del loop | Asegúrate de tener await wait(50) |
+| El sensor siempre dice 255 | No está bien conectado | Verifica que el cable esté en el puerto D |
+| El robot no responde | Las tareas no están juntas | Usa thread.start_new_thread() |
+| El robot se mueve raro | Falta el wait dentro del loop | Asegúrate de tener wait(50) en cada loop |
 | Todo junto | Las tareas se bloquean | Cada loop debe tener su wait |
 
 ---
@@ -239,12 +270,12 @@ Marca lo que conseguiste:
 
 ## Referencias
 
-[1] LEGO Education. (2023). *LEGO Education SPIKE Prime - Ultrasonic Sensor*. LEGO. Disponible: https://lego.com
+[1] LEGO Education. (2023). *LEGO Education SPIKE Essential - Ultrasonic Sensor*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[2] Pybricks Team. (2023). *Pybricks Documentation - Sensors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - Python API*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [3] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
 
-[4] D. George. (2013). *MicroPython Documentation - asyncio*. MicroPython. Disponible: https://docs.micropython.org
+[4] LEGO Education. (2023). *LEGO Education SPIKE Essential - Threading*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[5] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+[5] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com

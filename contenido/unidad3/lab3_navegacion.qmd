@@ -37,14 +37,16 @@ Abre Thonny y escribe:
 
 ```python
 # Traer las herramientas
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait
+from spike import Motor, DistanceSensor
+from spike.control import Waitable, DriveBase
+from spike import PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
 
 # Cada motor está conectado a un "puerto" (A o B)
-motor_izquierdo = Motor(Port.A)
-motor_derecho = Motor(Port.B)
+motor_izquierdo = Motor('A')
+motor_derecho = Motor('B')
 
 # Ahora creamos algo que controle el movimiento del robot
 # Las ruedas miden 56mm y están separadas 112mm
@@ -69,7 +71,8 @@ El robot tiene algo que le ayuda a no desviarse—como un sentido del equilibrio
 
 ```python
 # Activar el equilibrio del robot
-robot.use_gyro(True)
+# SPIKE usa odometry_settings en lugar de use_gyro
+robot.odometry_settings(reset_at_init=True)
 
 print("Equilibrio activado")
 ```
@@ -86,11 +89,11 @@ Ahora vamos a probar los movimientos básicos [2]:
 
 ```python
 # Orden 1: "¡Avanza 20 centímetros!" (200 milímetros)
-robot.straight(200)
+robot.move(20, 'cm')  # 20 cm
 wait(500)  # Esperar un poco
 
 # Orden 2: "¡Gira 90 grados a la derecha!"
-robot.turn(90)
+robot.rotate(90)
 wait(500)
 
 # Orden 3: "¡Detente!"
@@ -113,8 +116,8 @@ Hay una forma mejor. Es como cuando dices "repite esto 4 veces" [3].
 ```python
 # Decir "haz esto 4 veces"
 for i in range(4):
-    robot.straight(200)  # Un lado del cuadrado
-    robot.turn(90)       # Girar en la esquina
+    robot.move(20, 'cm')  # Un lado del cuadrado
+    robot.rotate(90)       # Girar en la esquina
     # El robot vuelve al inicio del "for" automáticamente
 
 robot.stop()  # Detenerse al final
@@ -142,23 +145,24 @@ Repetición 4: Avanzar 20cm → Girar 90° (lado 4)
 Aquí está todo junto:
 
 ```python
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait
+from spike import Motor, PrimeHub
+from spike.control import DriveBase
+from spike.control import wait
+
+hub = PrimeHub()
 
 # 1. Presentar los motores
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
+motor_izq = Motor('A')
+motor_der = Motor('B')
 robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)
 
-# 2. Activar el equilibrio (giroscopio)
-robot.use_gyro(True)
+# 2. Activar el equilibrio (odometría)
+robot.odometry_settings(reset_at_init=True)
 
 # 3. Dibujar un cuadrado (4 lados)
 for i in range(4):
-    robot.straight(200)  # Un lado de 20 cm
-    robot.turn(90)       # Girar 90°
+    robot.move(20, 'cm')  # Un lado de 20 cm
+    robot.rotate(90)       # Girar 90°
     wait(200)
 
 # 4. Detenerse
@@ -175,9 +179,9 @@ Copia esto en Thonny y presiona **Run**.
 | Problema | Posible causa | Qué hacer |
 |----------|---------------|-----------|
 | El robot no avanza | Los motores no están en los puertos correctos | Verifica que el motor izq esté en Puerto A y el der en Puerto B |
-| El robot gira más de lo que debería | El giro está muy alto | Intenta con turn(85) en lugar de 90 |
-| El robot se desvía | No activaste el giroscopio | Asegúrate de usar robot.use_gyro(True) |
-| El robot hace un rectángulo | Los lados no son iguales | Verifica que straight(200) sea igual en todos los lados |
+| El robot gira más de lo que debería | El giro está muy alto | Intenta con rotate(85) en lugar de 90 |
+| El robot se desvía | Los valores de odometría no están configurados | Asegúrate de usar robot.odometry_settings(reset_at_init=True) |
+| El robot hace un rectángulo | Los lados no son iguales | Verifica que move(20, 'cm') sea igual en todos los lados |
 
 ---
 
@@ -206,8 +210,8 @@ Intenta cambiar los números y observa qué pasa:
 ```python
 # Un triángulo
 for i in range(3):
-    robot.straight(200)
-    robot.turn(120)  # 360° ÷ 3 = 120°
+    robot.move(20, 'cm')
+    robot.rotate(120)  # 360° ÷ 3 = 120°
 ```
 
 ---
@@ -218,10 +222,10 @@ for i in range(3):
 
 [1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
 
-[2] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - Python API*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [3] D. George. (2013). *MicroPython Documentation - Control Structures*. MicroPython. Disponible: https://docs.micropython.org
 
 [4] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
 
-[5] Pybricks Team. (2023). *Pybricks Documentation - Motors Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/motors.html
+[5] LEGO Education. (2023). *LEGO Education SPIKE Essential - Motor Documentation*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python

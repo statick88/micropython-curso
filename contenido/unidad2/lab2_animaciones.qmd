@@ -22,7 +22,7 @@ Hoy vas a hacer lo mismo con el robot—crear una animación en su pequeña pant
 
 | Material | Para qué |
 |----------|----------|
-| **Hub LEGO Technic** | La pantalla donde mostraremos |
+| **Hub LEGO SPIKE Essential** | La pantalla donde mostraremos |
 | **Cable USB** | Conexión a la computadora |
 | **Thonny** | Para escribir el código [1] |
 
@@ -37,8 +37,8 @@ Hoy vas a hacer lo mismo con el robot—crear una animación en su pequeña pant
 Abre Thonny y escribe:
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -86,19 +86,19 @@ cuadro5 = [
 ]
 
 # Ahora mostrar uno tras otro (la animación)
-hub.display.icon(cuadro1)
+hub.light_matrix.show(cuadro1)
 wait(200)  # esperar 0.2 segundos
 
-hub.display.icon(cuadro2)
+hub.light_matrix.show(cuadro2)
 wait(200)
 
-hub.display.icon(cuadro3)
+hub.light_matrix.show(cuadro3)
 wait(200)
 
-hub.display.icon(cuadro4)
+hub.light_matrix.show(cuadro4)
 wait(200)
 
-hub.display.icon(cuadro5)
+hub.light_matrix.show(cuadro5)
 wait(200)
 
 # ¡Listo! La animación terminó
@@ -124,8 +124,8 @@ Imagina que tienes que escribir "hola" 5 veces. Podrías escribirlo 5 veces, o p
 ```python
 # Esto dice "haz lo que está aquí dentro 3 veces"
 for i in range(3):
-    hub.display.icon(cuadro1)
-    hub.display.icon(cuadro5)
+    hub.light_matrix.show(cuadro1)
+    hub.light_matrix.show(cuadro5)
     wait(200)
 ```
 
@@ -169,9 +169,9 @@ corazon_peque = [
 
 # Hacer que lata 5 veces
 for i in range(5):
-    hub.display.icon(corazon_grande)  # corazón grande
+    hub.light_matrix.show(corazon_grande)  # corazón grande
     wait(150)
-    hub.display.icon(corazon_peque)   # corazón pequeño
+    hub.light_matrix.show(corazon_peque)   # corazón pequeño
     wait(150)
 ```
 
@@ -191,8 +191,8 @@ Ahora vas a hacer algo diferente. Piensa en algo que pueda "animarse":
 **Usa este código como base:**
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -219,9 +219,9 @@ cara_triste = [
 
 # Animación: repetir la secuencia 3 veces
 for i in range(3):
-    hub.display.icon(cara_feliz)
+    hub.light_matrix.show(cara_feliz)
     wait(500)
-    hub.display.icon(cara_triste)
+    hub.light_matrix.show(cara_triste)
     wait(500)
 ```
 
@@ -259,7 +259,7 @@ Marca lo que conseguiste:
 
 ## 💡 Para seguir explorando
 
-¿Qué más podrías animarse?
+¿Qué más podría animarse?
 
 - Un enemigo de video juego que se mueve
 - Una cara que pestañea
@@ -276,10 +276,8 @@ El límite es tu imaginación—igual que dibujar en papel, pero ahora el robot 
 
 [1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
 
-[2] Pybricks Team. (2023). *Pybricks Documentation - Display Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/display.html
+[2] LEGO Education. (2026). *SPIKE Essential Python Programming Guide*. LEGO Education. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [3] D. George. (2013). *MicroPython Documentation - Control Structures*. MicroPython. Disponible: https://docs.micropython.org
 
-[4] D. George. (2013). *MicroPython Documentation - Lists*. MicroPython. Disponible: https://docs.micropython.org/en/latest/library/array.html
-
-[5] LEGO Education. (2023). *LEGO Education SPIKE Prime - Technical Specifications*. LEGO. Disponible: https://lego.com
+[4] LEGO Education. (2026). *LEGO Education SPIKE Essential - Technical Specifications*. LEGO. Disponible: https://lego.com

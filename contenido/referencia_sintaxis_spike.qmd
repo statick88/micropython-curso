@@ -1,0 +1,317 @@
+# Referencia Rápida: LEGO Education SPIKE Essential Python
+
+Esta guía muestra la sintaxis oficial de Python para SPIKE Essential basada en la documentación oficial.
+
+---
+
+## Importaciones
+
+### ❌ Antiguo (Pybricks)
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Port, Button, Stop
+from pybricks.pupdevices import Motor, ColorSensor
+from pybricks.tools import wait
+```
+
+### ✅ Nuevo (SPIKE Essential Oficial)
+```python
+from spike import PrimeHub
+from spike import Motor, ColorSensor, DistanceSensor, ForceSensor
+from spike.control import wait_for_seconds, wait_until, Timer
+```
+
+---
+
+## Inicialización del Hub
+
+### ❌ Antiguo (Pybricks)
+```python
+hub = PrimeHub()
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+hub = PrimeHub()
+```
+
+---
+
+## Pantalla LED (Light Matrix)
+
+### ❌ Antiguo (Pybricks)
+```python
+hub.display.text("HOLA")           # Mostrar texto
+hub.display.show_icon("HAPPY")      # Mostrar icono
+hub.display.show(matriz)            # Mostrar matriz 5x5
+hub.display.off()                   # Apagar
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+hub.light_matrix.write("HOLA")       # Mostrar texto
+hub.light_matrix.show_image("HAPPY") # Mostrar imagen predefinida
+hub.light_matrix.show(matriz)        # Mostrar matriz 5x5
+hub.light_matrix.off()               # Apagar
+hub.light_matrix.set_pixel(x, y, brillo)  # LED individual
+hub.light_matrix.show_number(42)     # Mostrar número
+hub.light_matrix.scroll("TEXTO")     # Desplazar texto
+```
+
+### Imágenes Predefinidas Disponibles:
+- `YES`, `NO`, ` HAPPY`, `SAD`, `CONFUSED`, `ANGRY`
+- `SMILE`, `MEH`, `SQUARES`, `DIAMOND`, `DIAMOND_SMALL`
+- `SQUARE_SMALL`, `TRIANGLE`, `TRIANGLE_SMALL`
+- `CHESSBOARD`, `X`, `HEART`, `DUCK`, `GHOST`
+- `TARGET`, `UP`, `DOWN`, `LEFT`, `RIGHT`
+
+---
+
+## Luz del Centro del Hub
+
+### ❌ Antiguo (Pybricks)
+```python
+hub.light.on(5)      # Color (0-10)
+hub.light.off()
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+hub.light.on(5)      # Verde
+hub.light.on(9)      # Naranja
+hub.light.on(0)      # Rojo
+hub.light.off()
+```
+
+---
+
+## Botones del Hub
+
+### ❌ Antiguo (Pybricks)
+```python
+from pybricks.parameters import Button
+botones = hub.buttons.pressed()
+if Button.LEFT in botones:
+    # hacer algo
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+if hub.left_button.is_pressed():
+    # hacer algo
+if hub.right_button.is_pressed():
+    # hacer algo
+if hub.center_button.is_pressed():
+    # hacer algo
+```
+
+### Con callbacks (eventos):
+```python
+def cuando_izquierdo():
+    hub.speaker.beep()
+
+hub.left_button.when_pressed(cuando_izquierdo)
+```
+
+---
+
+## Motor
+
+### ❌ Antiguo (Pybricks)
+```python
+from pybricks.parameters import Port, Stop, Direction
+motor = Motor(Port.A, Direction.CLOCKWISE)
+motor.run(500)
+motor.run_for_degrees(360, 500)
+motor.stop(Stop.HOLD)
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+motor = Motor('A')  # Puertos: 'A', 'B', 'C', 'D', 'E', 'F'
+motor.start(50)     # Velocidad -100 a 100
+motor.stop()        # Parar
+
+# Movimientos específicos:
+motor.run_for_seconds(2, 50)      # Tiempo en segundos, velocidad
+motor.run_for_degrees(360, 30)    # Grados, velocidad
+motor.run_for_rotations(2, 50)   # Rotaciones, velocidad
+
+# Positionar:
+motor.run_to_position(0, 50)     # Posición en grados, velocidad
+
+# Until stalled (calibración):
+motor.run_until_stalled(50, then='coast')
+motor.reset_angle(0)
+
+# Estado:
+angulo = motor.angle()
+velocidad = motor.speed()
+```
+
+---
+
+## Sensor de Color
+
+### ❌ Antiguo (Pybricks)
+```python
+sensor = ColorSensor(Port.C)
+color = sensor.color()
+reflejo = sensor.reflection()
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+sensor = ColorSensor('C')
+color = sensor.get_color()          # 'black', 'blue', 'green', 'yellow', 'red', 'white', 'brown', None
+reflejo = sensor.get_reflected_light()    # Porcentaje 0-100
+ambiente = sensor.get_ambient_light()     # Porcentaje 0-100
+
+# Esperar eventos:
+sensor.wait_for_new_color()
+```
+
+---
+
+## Sensor de Distancia
+
+### ❌ Antiguo (Pybricks)
+```python
+sensor = DistanceSensor(Port.B)
+distancia = sensor.distance()
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+sensor = DistanceSensor('B')
+distancia = sensor.get_distance_cm()       # Centímetros
+distancia = sensor.get_distance_inches()    # Pulgadas
+
+# Detectar presencia:
+if sensor.get_distance_cm() is not None:
+    # hay objeto detectado
+```
+
+---
+
+## Sensor de Fuerza
+
+### ❌ Antiguo (Pybricks)
+```python
+sensor = ForceSensor(Port.D)
+if sensor.pressed():
+    # hacer algo
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+sensor = ForceSensor('D')
+if sensor.is_pressed():
+    # hacer algo
+    
+fuerza = sensor.get_force_percentage()   # Porcentaje 0-100
+
+# Esperar eventos:
+sensor.wait_until_pressed()
+sensor.wait_until_released()
+```
+
+---
+
+## Control de Tiempo
+
+### ❌ Antiguo (Pybricks)
+```python
+from pybricks.tools import wait
+wait(1000)  # Milisegundos
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+from spike.control import wait_for_seconds
+wait_for_seconds(2)  # Segundos
+
+# O también con Timer:
+from spike.control import Timer
+timer = Timer()
+timer.reset()
+while timer.now() < 5:
+    # hacer algo
+```
+
+---
+
+## Speaker (Altavoz)
+
+### ❌ Antiguo (Pybricks)
+```python
+hub.speaker.beep(frequency=440, duration=500)
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+hub.speaker.beep()                          # Beep simple
+hub.speaker.start_beep(440)                 # Beep continuo (frecuencia Hz)
+hub.speaker.stop()                          # Detener beep
+hub.speaker.play_sound("Dog Bark 1")        # Sonido predefinido
+```
+
+---
+
+## Batería
+
+### ❌ Antiguo (Pybricks)
+```python
+voltaje = hub.battery.voltage()
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+voltaje = hub.battery.voltage()  # Milivoltios (mV)
+```
+
+---
+
+## Movimiento del Robot (DriveBase)
+
+### ❌ Antiguo (Pybricks)
+```python
+from pybricks.pupdevices import MotorPair
+pareja = MotorPair(Port.A, Port.B)
+pareja.straight(200)
+pareja.turn(90)
+```
+
+### ✅ Nuevo (SPIKE Essential)
+```python
+from spike import MotorPair
+pareja = MotorPair('A', 'B')  # Izquierda, Derecha
+
+# Movimientos:
+pareja.move(20, 'cm', 0, 50)           # Distancia, unidad, dirección(0=recto), velocidad
+pareja.move_tank(90, 'degrees', 30, -30) # Ángulo, unidad, vel_izq, vel_der
+pareja.start(50, 50)                    # Iniciar movimiento
+
+pareja.stop()
+```
+
+---
+
+## Imágenes Predefinidas (show_image)
+
+```
+YES, NO, HAPPY, CONFUSED, SAD, ANGRY
+SMILE, MEH, DUCK, GHOST, TARGET
+ARROW_UP, ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT
+TRIANGLE, TRIANGLE_SMALL
+SQUARE, SQUARE_SMALL, DIAMOND, DIAMOND_SMALL
+X, CHECK, HEART
+CHESSBOARD
+```
+
+---
+
+## Referencia oficial
+
+Toda esta información proviene de la documentación oficial de LEGO Education SPIKE Essential:
+https://spike.legoeducation.com/essential/help/lls-help-python

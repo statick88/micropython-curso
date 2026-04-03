@@ -36,8 +36,8 @@ Cuadro 1 (Pequeño):    Cuadro 2 (Mediano):     Cuadro 3 (Grande):
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -71,10 +71,10 @@ cuadros = [corazon_pequeno, corazon_mediano, corazon_grande, corazon_mediano]
 # Repetir animación
 for ciclo in range(10):
     for cuadro in cuadros:
-        hub.display.show(cuadro)
+        hub.light_matrix.show(cuadro)
         wait(200)
 
-hub.display.off()
+hub.light_matrix.off()
 ```
 
 ---
@@ -87,24 +87,21 @@ Implementa un texto que se desplaza de derecha a izquierda por la pantalla (efec
 
 ### Pista
 
-Usa `hub.display.scroll()` que implementa automáticamente este efecto.
+Usa `hub.light_matrix.scroll()` que implementa automáticamente este efecto.
 
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Color
+from spike import PrimeHub
 
 hub = PrimeHub()
 
 # Método simple usando la función integrada
-hub.display.scroll("HOLA MUNDO", color=Color.RED, wait=True)
+hub.light_matrix.scroll("HOLA MUNDO", wait=True)
 
-# Método avanzado: scroll manual
-texto = " PYBRICKS "
-ancho_texto = len(texto) * 4  # Cada caracter ~4 píxeles de ancho
-
-hub.display.scroll(texto, color=Color.BLUE)
+# Método avanzado: texto más largo
+texto = " SPIKE ESSENTIAL "
+hub.light_matrix.scroll(texto)
 ```
 
 ---
@@ -118,8 +115,8 @@ Crea un reloj simple que muestre los minutos y segundos usando la matriz 5x5.
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
@@ -166,10 +163,10 @@ def numero_a_matriz(n):
 # Simular reloj por 60 segundos
 for segundo in range(60):
     matriz = numero_a_matriz(segundo)
-    hub.display.show(matriz)
+    hub.light_matrix.show(matriz)
     wait(1000)
 
-hub.display.off()
+hub.light_matrix.off()
 ```
 
 ---
@@ -183,8 +180,8 @@ Crea un efecto de onda que se mueve horizontalmente a través de la matriz.
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 import math
 
 hub = PrimeHub()
@@ -202,10 +199,10 @@ for ciclo in range(20):
         if 0 <= altura < 5:
             matriz[altura][col] = 100
     
-    hub.display.show(matriz)
+    hub.light_matrix.show(matriz)
     wait(150)
 
-hub.display.off()
+hub.light_matrix.off()
 ```
 
 ---
@@ -226,9 +223,8 @@ Crea un juego donde el usuario debe "atrapar" un punto que se mueve aleatoriamen
 ### Solución
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 import random
 
 hub = PrimeHub()
@@ -237,7 +233,7 @@ puntos = 0
 posicion_x = 2
 posicion_y = 2
 
-hub.display.scroll("ATRAPA!", wait=True)
+hub.light_matrix.scroll("ATRAPA!")
 
 for ronda in range(10):
     # Posición aleatoria
@@ -247,32 +243,34 @@ for ronda in range(10):
     # Mostrar punto
     matriz = [[0 for _ in range(5)] for _ in range(5)]
     matriz[posicion_y][posicion_x] = 100
-    hub.display.show(matriz)
+    hub.light_matrix.show(matriz)
     
     # Esperar input del usuario
     tiempo_espera = 0
     acierto = False
     
     while tiempo_espera < 2000:
-        botones = hub.buttons.pressed()
-        
-        if Button.CENTER in botones:
+        if hub.center_button.is_pressed():
             # Verificar si está en el centro
             if posicion_x == 2 and posicion_y == 2:
                 puntos += 10
                 acierto = True
-                hub.speaker.beep(frequency=880, duration=100)
+                hub.speaker.start_beep(880)
+                wait(100)
+                hub.speaker.stop()
             else:
                 puntos -= 5
-                hub.speaker.beep(frequency=220, duration=100)
+                hub.speaker.start_beep(220)
+                wait(100)
+                hub.speaker.stop()
             break
         
         wait(50)
         tiempo_espera += 50
 
 # Mostrar resultado final
-hub.display.scroll(f"PTOS: {puntos}", wait=True)
-hub.display.off()
+hub.light_matrix.scroll(f"PTOS:{puntos}")
+hub.light_matrix.off()
 ```
 
 ---
@@ -295,6 +293,6 @@ hub.display.off()
 
 ## Referencias
 
-[1] Pybricks Team. *Pybricks MicroPython API - LightMatrix*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html#lightmatrix
+[1] LEGO Education. *SPIKE Essential Python Programming Guide*. 2026. Disponible en: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [2] Python Software Foundation. *random — Generate pseudo-random numbers*. 2026. Disponible en: https://docs.python.org/3/library/random.html

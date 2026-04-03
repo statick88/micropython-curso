@@ -1,91 +1,71 @@
-# Telemetría: Monitoreo de Batería y Estado del Robot {#telemetria-bateria}
+# Telemetría: Monitoreo del Robot y Estado del Sistema {#telemetria-bateria}
 
 ::: center
 ![Telemetría](images/telemetria.png){width="35%"}
 
-**⏱️ Tiempo estimado:** 45 minutos | **📊 Nivel:** Intermedio-Avanzado
+**⏱️ Tiempo estimado:** 60 minutos | **📊 Nivel:** Intermedio-Avanzado
 :::
 
 ---
 
 ## Antes de empezar
 
-Los robots no pueden hablar, pero pueden decirte mucho si sabes escuchar. En esta unidad vas a aprender cómo obtener información del robot en tiempo real [1][2].
+Los robots no pueden hablar, pero pueden decirte mucho si sabes escuchar. En esta unidad vas a aprender cómo obtener información del robot en tiempo real.
 
-Vas a aprender:
+**Vas a aprender:**
 
-1. **Monitoreo de batería** — Cuánto le queda, cuándo cargar
-2. **Lectura de botones** — Detectar múltiples botones
-3. **Estado del robot** — Posición, velocidad, orientación
-4. **Logging de datos** — Guardar información para analizar
-
----
-
-## 1. Monitoreo de Batería
-
-**Situación:** Cuando la batería de tu teléfono está baja, ves una alerta. El robot también puede decirte cuándo la batería está baja [1].
-
-### Código ejemplo:
-
-```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
-
-hub = PrimeHub()
-
-while True:
-    # Obtener voltaje de batería (en milivoltios)
-    voltaje = hub.battery.voltage()
-    
-    # Obtener corriente de batería (en miliamperios)
-    corriente = hub.battery.current()
-    
-    # Mostrar en consola
-    print(f"Batería: {voltaje}mV | Corriente: {corriente}mA")
-    
-    # Alerta si voltaje bajo
-    if voltaje < 6000:  # Menos de 6V
-        print("⚠️ Batería baja - cargar pronto!")
-    
-    wait(1000)
-```
-
-### Valores de referencia:
-
-| Voltaje | Estado | Acción |
-|---------|--------|--------|
-| >7500 mV | Batería llena | Todo bien |
-| 6500-7500 mV | Batería media | Funciona normal |
-| 6000-6500 mV | Batería baja | Considerar cargar |
-| <6000 mV | Batería muy baja | Cargar inmediatamente |
+1. **Botones delHub** — Detectar interacción del usuario
+2. **Light Matrix** — Mostrar información visual
+3. **Speaker** — Reproducir sonidos y alertas
+4. **Estado del Robot** — Posición, velocidad
+5. **Logging de datos** — Guardar información para analizar
 
 ---
 
-## 2. Detección de Botones
+## 1. Botones del PrimeHub
 
-**Situación:** El Hub tiene un botón central. Puedes detectarlo para que el usuario interactúe con el robot [1].
+El Hub de SPIKE Essential tiene dos botones que puedes usar para interactuar con tu programa.
 
-### Código ejemplo:
+### Métodos disponibles
+
+| Método | Retorna | Descripción |
+|--------|---------|-------------|
+| `is_pressed()` | `bool` | True si el botón está actualmente presionado |
+| `was_pressed()` | `bool` | True si el botón fue presionado desde la última llamada |
+| `wait_until_pressed()` | `None` | Pausa el programa hasta que se presione el botón |
+| `wait_until_released()` | `None` | Pausa el programa hasta que se suelte el botón |
+
+### Tabla de botones
+
+| Botón | Código | Descripción |
+|-------|--------|-------------|
+| Botón izquierdo | `hub.left_button` | Botón con icono de flecha izquierda |
+| Botón derecho | `hub.right_button` | Botón con icono de flecha derecha |
+
+### Código ejemplo completo
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Button
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
-print("Presiona el botón central...")
+# Ejemplo 1: Verificar una vez
+print("Presiona un botón...")
+if hub.left_button.is_pressed():
+    print("¡Botón izquierdo presionado!")
+elif hub.right_button.is_pressed():
+    print("¡Botón derecho presionado!")
 
-# Método 1: Verificar una vez
-if hub.buttons.pressed():
-    print("¡Botón presionado!")
-
-# Método 2: Loop continuo
+# Ejemplo 2: Loop continuo detectando botones
+print("Esperando botones...")
 while True:
-    botones = hub.buttons.pressed()
+    if hub.left_button.is_pressed():
+        print("IZQUIERDO")
+        break
     
-    if Button.CENTER in botones:
-        print("¡Botón central presionado!")
+    if hub.right_button.is_pressed():
+        print("DERECHO")
         break
     
     wait(100)
@@ -93,228 +73,641 @@ while True:
 print("Programa terminado")
 ```
 
-### Botones disponibles en PrimeHub:
+### Ejemplo: wait_until_pressed()
 
 ```python
-Button.CENTER    # Botón principal del Hub
-```
-
----
-
-## 3. Estado del Robot (Odometría)
-
-**Situación:** Un taxi tiene un taxímetro que cuenta los kilómetros recorriddos. El robot puede hacer algo similar—saber cuántos milímetros ha avanzado y hacia dónde está orientado [2].
-
-### Código ejemplo:
-
-```python
-from pybricks.pupdevices import Motor
-from pybricks.parameters import Port
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait
-
-# Configurar robot
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
-robot = DriveBase(motor_izq, motor_der, wheel_diameter=56, axle_track=112)
-
-# Activar girómetro para mejor precisión
-robot.use_gyro(True)
-
-# Hacer algunos movimientos
-robot.straight(200)
-robot.turn(90)
-robot.straight(200)
-
-# Obtener estado actual del robot
-# (distancia_recorrida, velocidad, angulo, velocidad_giro)
-estado = robot.state()
-
-distancia = estado[0]  # mm recorridos
-velocidad = estado[1]  # mm/s
-angulo = estado[2]  # grados de orientación
-turn_rate = estado[3]  # deg/s
-
-print(f"Distancia: {distancia}mm")
-print(f"Velocidad: {velocidad}mm/s")
-print(f"Ángulo: {angulo}°")
-print(f"Turn rate: {turn_rate}°/s")
-```
-
-### Estado completo del robot:
-
-```python
-# robot.state() retorna:
-# [distancia_mm, velocidad_mm/s, angulo_grados, turn_rate_grados/s]
-
-estado = robot.state()
-distancia_recorrida = estado[0]  # Cuánto ha avanzado total
-velocidad_actual = estado[1]    # Velocidad instantán
-angulo_actual = estado[2]        # Orientación actual del robot
-velocidad_giro = estado[3]      # Qué tan rápido está girando
-```
-
-### Resetear odometría:
-
-```python
-# Resetear todo el contador de posición
-robot.reset()
-
-# También puedes resetear solo el ángulo
-# ( pero manteniendo la posición )
-robot.reset(angle=True)
-```
-
----
-
-## 4. Logging de Datos
-
-**Situación:** En una carrera, los competidores tienen "cajas negras" que graban todo. Puedes hacer lo mismo con el robot—guardar datos para analizarlos después [1].
-
-### Código ejemplo simple:
-
-```python
-from pybricks.hubs import PrimeHub
-from pybricks.pupdevices import UltrasonicSensor
-from pybricks.parameters import Port
-from pybricks.tools import wait
-import ure  # módulo de MicroPython para expresiones regulares
-
-hub = PrimeHub()
-sensor = UltrasonicSensor(Port.D)
-
-# Lista para almacenar datos
-datos = []
-
-# Recolectar datos durante 30 segundos
-tiempo_inicio = 0  # Placeholder, se会用time.ticks_ms()
-
-for i in range(100):  # 100 muestras
-    distancia = sensor.distance()
-    voltaje = hub.battery.voltage()
-    
-    # Guardar como texto (para ver después)
-    dato = f"{i},{distancia},{voltaje}"
-    datos.append(dato)
-    
-    print(f"Muestra {i}: dist={distancia}mm, bat={voltaje}mV")
-    wait(500)
-
-# Al final, mostrar todos los datos
-print("\n=== DATOS RECOLECTADOS ===")
-for d in datos:
-    print(d)
-```
-
-### Proyecto: Monitor de Temperatura (si hay sensor)
-
-```python
-from pybricks.hubs import PrimeHub
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
-print("Iniciando monitor de sistema...")
+print("Esperando que presiones el botón izquierdo...")
+hub.left_button.wait_until_pressed()
+
+# Cuando llega aquí, el botón ya fue presionado
+hub.light_matrix.show_image('HEART')
+hub.speaker.beep(60, 0.5)
+print("¡Detectado!")
+```
+
+### Ejemplo: was_pressed() para detectar pulsos
+
+```python
+from spike import PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+
+conteo = 0
 
 while True:
-    # Monitorear múltiples parámetros
-    voltaje = hub.battery.voltage()
-    botones = hub.buttons.pressed()
+    # was_pressed() se resetea después de cada llamada
+    # Ideal para contar pulsos individuales
+    if hub.left_button.was_pressed():
+        conteo += 1
+        print(f"Pulsos: {conteo}")
+        hub.light_matrix.write(str(conteo))
     
-    # Verificar estado general
-    if voltaje < 6000:
-        print("⚠️ BATERÍA BAJA")
-        hub.light.on(0)  # Luz roja
-    else:
-        hub.light.on(5)  # Luz verde
+    if hub.right_button.was_pressed():
+        # Reiniciar contador
+        conteo = 0
+        print("Contador reiniciado")
+        hub.light_matrix.off()
     
-    # Si hay botones presionados, mostrar
-    if botones:
-        print(f"Botones: {botones}")
+    wait(100)
+```
+
+---
+
+## 📝 Ejercicio para el Aula: Control de Menú
+
+**Nivel:** Básico | **Tiempo:** 15 minutos
+
+### Descripción
+
+El estudiante debe crear un menú interactivo donde el robot muestra opciones y el usuario selecciona con los botones.
+
+### Tabla de comportamiento
+
+| Botón Presionado | Acción | Icono Mostrado |
+|-----------------|---------|----------------|
+| Izquierdo | Opción A | ARROW_W |
+| Derecho | Opción B | ARROW_E |
+
+### Solución
+
+```python
+from spike import PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+
+print("=== MENÚ DEL ROBOT ===")
+print("Presiona IZQUIERDO para opción A")
+print("Presiona DERECHO para opción B")
+
+while True:
+    if hub.left_button.wait_until_pressed():
+        hub.light_matrix.show_image('ARROW_W')
+        hub.speaker.beep(60, 0.3)
+        print("Opción A seleccionada")
+        wait(500)
     
+    if hub.right_button.wait_until_pressed():
+        hub.light_matrix.show_image('ARROW_E')
+        hub.speaker.beep(80, 0.3)
+        print("Opción B seleccionada")
+        wait(500)
+```
+
+---
+
+## 2. Light Matrix (Pantalla LED 5x5)
+
+La pantalla LED delHub puede mostrar imágenes predefinidas, texto, y pixeles individuales.
+
+### Métodos disponibles
+
+| Método | Parámetros | Retorna | Descripción |
+|--------|------------|---------|-------------|
+| `show_image(image, brightness)` | `image` (str), `brightness` (int 0-100) | `None` | Muestra una imagen predefinida |
+| `write(text)` | `text` (str) | `None` | Muestra texto desplazándose |
+| `set_pixel(x, y, brightness)` | `x` (0-4), `y` (0-4), `brightness` (int) | `None` | Enciende un pixel individual |
+| `off()` | None | `None` | Apaga todos los LEDs |
+
+### Imágenes predefinidas disponibles
+
+| Imagen | Código | Descripción |
+|--------|--------|-------------|
+| ❤️ HEART | Corazón | Amor, éxito |
+| 😊 HAPPY | Cara feliz | Todo bien |
+| 😢 SAD | Cara triste | Problema, alerta |
+| 😀 SMILE | Sonrisa | Satisfacción |
+| 😕 CONFUSED | Confundido | Indecisión |
+| 😠 ANGRY | Enojado | Error, peligro |
+| ✓ YES | Check | Confirmación |
+| ✗ NO | Cruz | Negación |
+| ⏰ CLOCK1-CLOCK12 | Reloj | Tiempo, espera |
+| ⬆️ ARROW_N | Flecha arriba | Dirección norte |
+| ⬇️ ARROW_S | Flecha abajo | Dirección sur |
+| ⬅️ ARROW_W | Flecha izquierda | Dirección oeste |
+| ➡️ ARROW_E | Flecha derecha | Dirección este |
+| 🎯 TARGET | Blanco | Objetivo |
+| 🦆 DUCK | Pato | Animal |
+| 👻 GHOST | Fantasma | Juego |
+| 💎 DIAMOND | Diamante | Premio |
+| ⬜ SQUARE | Cuadrado | Forma básica |
+
+### Brillo de LEDs
+
+| Valor | Intensidad | Uso recomendado |
+|-------|-----------|-----------------|
+| 0 | Apagado | Apagar LEDs |
+| 1-25 | Bajo | Modo ahorro |
+| 25-50 | Medio | Uso normal |
+| 50-75 | Alto | Buena visibilidad |
+| 75-100 | Máximo | Máxima luminosidad |
+
+### Código ejemplo completo
+
+```python
+from spike import PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+
+# Mostrar imagen predefinida
+hub.light_matrix.show_image('HEART')
+wait(1000)
+
+# Mostrar otra imagen
+hub.light_matrix.show_image('SAD')
+wait(1000)
+
+# Escribir texto
+hub.light_matrix.write('HOLA MUNDO')
+wait(2000)
+
+# Encender un pixel específico (x=2, y=2 = centro)
+hub.light_matrix.set_pixel(2, 2, 100)
+wait(1000)
+
+# Apagar pantalla
+hub.light_matrix.off()
+```
+
+### Dibujar una cara sonriente manualmente
+
+```python
+from spike import PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+
+# Cara sonriente usando pixels
+# Estructura 5x5:
+# . . @ . .
+# . @ @ @ .
+# . @ . @ .
+# . @ @ @ .
+# . . @ . .
+
+# Fila 0
+hub.light_matrix.set_pixel(2, 0, 100)  # Centro arriba
+wait(100)
+
+# Fila 1
+hub.light_matrix.set_pixel(1, 1, 100)
+hub.light_matrix.set_pixel(3, 1, 100)
+wait(100)
+
+# Fila 2 - ojos
+hub.light_matrix.set_pixel(1, 2, 100)
+hub.light_matrix.set_pixel(3, 2, 100)
+wait(100)
+
+# Fila 3 - boca
+hub.light_matrix.set_pixel(1, 3, 100)
+hub.light_matrix.set_pixel(3, 3, 100)
+wait(100)
+
+# Fila 4
+hub.light_matrix.set_pixel(2, 4, 100)  # Centro abajo
+wait(2000)
+
+hub.light_matrix.off()
+```
+
+---
+
+## 📝 Ejercicio para el Aula: Reloj Digital
+
+**Nivel:** Intermedio | **Tiempo:** 20 minutos
+
+### Descripción
+
+El robot muestra un reloj que avanza segundo a segundo, mostrando diferentes iconos de reloj.
+
+### Tabla de iconos por segundo
+
+| Segundo | Icono de reloj |
+|---------|---------------|
+| 1-2 | CLOCK1 |
+| 3-4 | CLOCK2 |
+| 5-6 | CLOCK3 |
+| 7-8 | CLOCK4 |
+| 9-10 | CLOCK5 |
+| 11-12 | CLOCK6 |
+
+### Solución
+
+```python
+from spike import PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+
+# Lista de iconos de reloj
+relojes = [
+    'CLOCK1', 'CLOCK2', 'CLOCK3', 'CLOCK4', 'CLOCK5', 'CLOCK6',
+    'CLOCK7', 'CLOCK8', 'CLOCK9', 'CLOCK10', 'CLOCK11', 'CLOCK12'
+]
+
+segundo = 0
+
+while True:
+    # Mostrar icono según el segundo (mod 12)
+    indice = segundo % 12
+    hub.light_matrix.show_image(relojes[indice])
+    
+    print(f"Segundo: {segundo}")
+    
+    # Avanzar segundo
+    segundo += 1
     wait(1000)
 ```
 
 ---
 
-## 5. Proyecto: Robot con Telemetry Integrada
+## 3. Speaker (Altavoz)
 
-**Situación:** Vamos a combine todo lo que aprendido—un robot que se mueve, monitorea su batería, y muestra su estado en pantalla.
+ElHub tiene un altavoz integrado que puede reproducir sonidos.
+
+### Métodos disponibles
+
+| Método | Parámetros | Retorna | Descripción |
+|--------|------------|---------|-------------|
+| `beep(note, seconds)` | `note` (int 44-123), `seconds` (float) | `None` | Reproduce un pitido |
+| `start_beep()` | None | `None` | Inicia pitido continuo |
+| `stop()` | None | `None` | Detiene cualquier sonido |
+| `set_volume(volume)` | `volume` (int 0-100) | `None` | Establece el volumen |
+| `get_volume()` | None | `int` | Retorna el volumen actual |
+
+### Tabla de notas musicales (notas MIDI)
+
+| Nota | Frecuencia | Nota Musical |
+|------|------------|--------------|
+| 44 | 110 Hz | A2 (La bajo) |
+| 48 | 131 Hz | C3 (Do medio) |
+| 52 | 165 Hz | E3 (Mi) |
+| 55 | 196 Hz | G3 (Sol) |
+| 60 | 262 Hz | C4 (Do alto) |
+| 64 | 330 Hz | E4 (Mi alto) |
+| 67 | 392 Hz | G4 (Sol alto) |
+| 72 | 523 Hz | C5 (Do más alto) |
+| 76 | 622 Hz | D5 |
+| 79 | 698 Hz | F5 |
+| 81 | 880 Hz | A5 |
+| 84 | 988 Hz | B5 |
+| 88 | 1047 Hz | C6 (do más agudo) |
+
+### Duración de sonidos
+
+| Duración | Valor | Uso |
+|----------|-------|-----|
+| Muy corto | 0.05-0.1s | Click, confirmación |
+| Corto | 0.1-0.3s | Beep normal |
+| Medio | 0.3-0.5s | Alerta |
+| Largo | 0.5-1.0s | Señal de alarma |
+| Continuo | usar start_beep() | Sonido sostenido |
+
+### Código ejemplo completo
 
 ```python
-"""
-ROBOT TELEMETRÍA
-El robot se mueve y muestra información en tiempo real
-"""
-
-from pybricks.hubs import PrimeHub
-from pybricks.pupdevices import Motor, UltrasonicSensor
-from pybricks.parameters import Port, Button
-from pybricks.robotics import DriveBase
-from pybricks.tools import wait, run_task
+from spike import PrimeHub
+from spike.control import wait
 
 hub = PrimeHub()
 
-# Configurar componentes
-motor_izq = Motor(Port.A)
-motor_der = Motor(Port.B)
-sensor = UltrasonicSensor(Port.D)
-robot = DriveBase(motor_izq, motor_der, 56, 112)
+# Establecer volumen
+hub.speaker.set_volume(80)
+print(f"Volumen: {hub.speaker.get_volume()}%")
 
-robot.use_gyro(True)
+# Reproducir nota simple
+hub.speaker.beep(60, 0.2)  # Do medio, 0.2 segundos
+wait(300)
 
-# Variable para comunicar entre tareas
-hay_obstaculo = False
+# Reproducir secuencia musical
+notas = [60, 64, 67, 72]  # C, E, G, C (acorde)
+for nota in notas:
+    hub.speaker.beep(nota, 0.2)
+    wait(100)
 
-# Tarea 1: Monitorear sistema
-async def monitor():
-    global hay_obstaculo
+# Beep largo de alarma
+hub.speaker.beep(80, 1.0)  # Nota aguda, 1 segundo
+wait(500)
+
+# Pitido continuo
+hub.speaker.start_beep()
+wait(2000)  # 2 segundos de pitido
+hub.speaker.stop()
+
+# Silencio
+wait(1000)
+hub.speaker.set_volume(0)  # Silenciar
+```
+
+### Melodía: Canción de victoria
+
+```python
+from spike import PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+
+# Notes for "Victory" sound
+notas_victoria = [
+    (72, 0.15),  # C5
+    (76, 0.15),  # D5
+    (79, 0.15),  # F5
+    (84, 0.4),   # C6 (más largo)
+]
+
+print("tocando victoria...")
+
+for nota, duracion in notas_victoria:
+    hub.speaker.beep(nota, duracion)
+    wait(duracion * 1000 + 50)  # Duración + pequeña pausa
+
+print("¡Victoria!")
+```
+
+---
+
+## 📝 Ejercicio para el Aula: Piano de Botones
+
+**Nivel:** Intermedio | **Tiempo:** 25 minutos
+
+### Descripción
+
+El robot funciona como un piano. Cada botón reproduce una nota diferente.
+
+### Tabla de notas por botón
+
+| Botón | Nota | Frecuencia | Icono |
+|-------|------|------------|-------|
+| Izquierdo | Do (C4) | 60 | NOTE |
+| Derecho | Mi (E4) | 64 | MUSIC |
+
+### Solución
+
+```python
+from spike import PrimeHub
+from spike.control import wait
+
+hub = PrimeHub()
+
+# Configurar volumen
+hub.speaker.set_volume(70)
+
+# Notas para cada botón
+NOTA_IZQUIERDO = 60  # Do4
+NOTA_DERECHO = 64    # Mi4
+
+while True:
+    if hub.left_button.is_pressed():
+        hub.light_matrix.show_image('NOTE')
+        hub.speaker.beep(NOTA_IZQUIERDO, 0.3)
+        print("Do")
+        wait(200)  # Evitar rebote
+        
+    if hub.right_button.is_pressed():
+        hub.light_matrix.show_image('MUSIC')
+        hub.speaker.beep(NOTA_DERECHO, 0.3)
+        print("Mi")
+        wait(200)
     
-    while True:
-        # Leer batería
-        voltaje = hub.battery.voltage()
-        
-        # Leer sensor de distancia
-        distancia = sensor.distance()
-        
-        # Actualizar variable compartida
-        if distancia < 150:
-            hay_obstaculo = True
-        else:
-            hay_obstaculo = False
-        
-        # Mostrar en consola
-        print(f"Bat:{voltaje}mV Dist:{distancia}mm Obst:{hay_obstaculo}")
-        
-        await wait(200)
+    wait(50)
+```
 
-# Tarea 2: Movimiento del robot
-async def movimiento():
-    global hay_obstaculo
+---
+
+## 4. Estado del Robot (Odometría)
+
+El robot puede rastrear su posición usando los encoders de los motores.
+
+### Métodos del Motor
+
+| Método | Retorna | Descripción |
+|--------|---------|-------------|
+| `get_position()` | `int` (0-359) | Posición actual en grados (0-359) |
+| `get_degrees_counted()` | `int` | Grados acumulados desde el inicio |
+| `get_speed()` | `int` o `None` | Velocidad actual (%) |
+| `get_default_speed()` | `int` | Velocidad por defecto |
+| `get_default_speed()` | `int` | Velocidad por defecto |
+| `set_degrees_counted(degrees)` | `None` | Establecer contador a un valor |
+| `reset_angle()` | `None` | Resetear contador a 0 |
+
+### Tabla de conversión
+
+| Movimiento | Grados del motor | Distancia aproximada |
+|------------|------------------|---------------------|
+| 1 cm | 40° | 1 centímetro |
+| 1 pulgada | 96° | 2.54 centímetros |
+| 1 rotación completa | 360° | ~17.6 cm (rueda 56mm) |
+
+### Código ejemplo completo
+
+```python
+from spike import PrimeHub, Motor
+from spike.control import DriveBase, wait
+
+hub = PrimeHub()
+
+# Configurar robot
+motor_izq = Motor('A')
+motor_der = Motor('B')
+robot = MotorPair('A', 'B')
+
+# Activar odometría
+robot.set_motor_rotation(17.6, 'cm')  # 17.6 cm por rotación
+
+# Hacer algunos movimientos
+robot.move(20, 'cm')
+wait(500)
+robot.rotate(90)
+wait(500)
+robot.move(20, 'cm')
+
+# Obtener estado de los motores
+pos_izq = motor_izq.get_degrees_counted()
+pos_der = motor_der.get_degrees_counted()
+vel_izq = motor_izq.get_speed()
+vel_der = motor_der.get_speed()
+
+# Calcular distancia recorrida (promedio)
+cm_promedio = ((abs(pos_izq) + abs(pos_der)) / 2) / 360 * 17.6
+
+print(f"Motor Izquierdo: {pos_izq}°")
+print(f"Motor Derecho: {pos_der}°")
+print(f"Velocidad Izquierdo: {vel_izq}%")
+print(f"Velocidad Derecho: {vel_der}%")
+print(f"Distancia aproximada: {cm_promedio:.1f} cm")
+```
+
+### Resetear odometría
+
+```python
+# Resetear contador de grados a 0
+motor_izq.set_degrees_counted(0)
+motor_der.set_degrees_counted(0)
+
+# O usar reset_angle
+motor_izq.reset_angle()
+motor_der.reset_angle()
+```
+
+---
+
+## 5. Logging de Datos
+
+Puedes guardar datos para analizarlos después.
+
+### Código ejemplo simple
+
+```python
+from spike import PrimeHub, DistanceSensor
+from spike.control import wait
+
+hub = PrimeHub()
+sensor = DistanceSensor('D')
+
+# Lista para almacenar datos
+datos = []
+
+# Recolectar 20 muestras
+for i in range(20):
+    distancia = sensor.get_distance_cm()
     
-    robot.use_gyro(True)
+    # Guardar como texto
+    dato = f"{i},{distancia}"
+    datos.append(dato)
     
-    for i in range(4):  # 4 lados de un cuadrado
-        # Avanzar
-        if hay_obstaculo:
-            robot.stop()
-            hub.speaker.beep()
-            await robot.turn(90)
-        else:
-            await robot.straight(200)
+    print(f"Muestra {i}: {distancia} cm")
+    wait(500)
+
+# Mostrar todos los datos
+print("\n=== DATOS RECOLECTADOS ===")
+for d in datos:
+    print(d)
+```
+
+### Proyecto: Monitor de Sistema
+
+```python
+from spike import PrimeHub, DistanceSensor
+from spike.control import wait
+
+hub = PrimeHub()
+sensor = DistanceSensor('D')
+
+print("Iniciando monitor...")
+
+while True:
+    # Leer sensor de distancia
+    distancia = sensor.get_distance_cm()
+    
+    # Verificar botones
+    if hub.left_button.is_pressed():
+        print("IZQUIERDO")
+        hub.light_matrix.show_image('ARROW_W')
+    elif hub.right_button.is_pressed():
+        print("DERECHO")
+        hub.light_matrix.show_image('ARROW_E')
+    
+    # Mostrar estado según distancia
+    if distancia < 15:
+        print(f"⚠️ OBSTÁCULO: {distancia}cm")
+        hub.light_matrix.show_image('SAD')
+        hub.speaker.beep(60, 0.1)
+    else:
+        hub.light_matrix.show_image('HAPPY')
+    
+    wait(500)
+```
+
+---
+
+## 📝 Ejercicio para el Aula: Robot Explorador con Telemetría
+
+**Nivel:** Avanzado | **Tiempo:** 35 minutos
+
+### Descripción
+
+El robot explora un área, detecta obstáculos, y guarda un registro (log) de todas las detecciones.
+
+### Tabla de comportamiento
+
+| Evento | Acción | Log |
+|-------|--------|-----|
+| Obstáculo detectado | Mostrar SAD + beep | "OBSTACULO: X cm" |
+| Botón izquierdo presionado | Detener programa | "FIN: X detecciones" |
+| Sin obstáculo | Avanzar + mostrar HAPPY | "OK: X cm" |
+
+### Solución
+
+```python
+from spike import PrimeHub, DistanceSensor
+from spike import MotorPair
+from spike.control import wait
+
+hub = PrimeHub()
+sensor = DistanceSensor('D')
+robot = MotorPair('A', 'B')
+
+# Variables para logging
+detecciones = []
+muestras = []
+
+print("Iniciando explorador...")
+
+# Configurar volumen
+hub.speaker.set_volume(50)
+
+# Loop principal
+for paso in range(20):  # 20 pasos
+    # Leer distancia
+    distancia = sensor.get_distance_cm()
+    
+    if distancia < 15:
+        # Obstáculo detectado
+        deteccion = f"OBSTACULO: {distancia} cm"
+        detecciones.append(deteccion)
+        
+        # Mostrar alerta
+        hub.light_matrix.show_image('SAD')
+        hub.speaker.beep(60, 0.2)
         
         # Girar
-        await robot.turn(90)
+        robot.move_tank(90, 'degrees', left_speed=50, right_speed=-50)
         
-        # Obtener estado
-        estado = robot.state()
-        print(f"Lado {i+1}: {estado[0]}mm, {estado[2]}°")
+        print(deteccion)
+    else:
+        # Todo bien - avanzar
+        muestra = f"OK: {distancia} cm"
+        muestras.append(muestra)
+        
+        hub.light_matrix.show_image('HAPPY')
+        robot.start(30)
+        
+        print(muestra)
     
-    robot.stop()
-    print("¡Movimiento completado!")
+    wait(500)
+    
+    # Verificar si botón menghentikan
+    if hub.left_button.is_pressed():
+        print("\n=== PROGRAMA DETENIDO ===")
+        hub.light_matrix.write("STOP")
+        break
 
-# Ejecutar ambas tareas
-run_task(monitor(), movimiento())
+# Mostrar resumen al final
+robot.stop()
+print("\n=== RESUMEN ===")
+print(f"Pasos dados: {len(muestras)}")
+print(f"Obstáculos evitados: {len(detecciones)}")
+print(f"Total muestras: {len(muestras) + len(detecciones)}")
+
+hub.light_matrix.show_image('YES')
 ```
 
 ---
@@ -323,25 +716,27 @@ run_task(monitor(), movimiento())
 
 Antes de terminar, marca lo que entendiste:
 
-- [ ] Monitorear voltaje y corriente de batería
-- [ ] Detectar cuándo la batería está baja
-- [ ] Leer botones del Hub
-- [ ] Obtener estado del robot (distancia, ángulo, velocidad)
+- [ ] Detectar botones delHub (is_pressed, was_pressed, wait_until_pressed)
+- [ ] Mostrar imágenes predefinidas en Light Matrix
+- [ ] Escribir texto y dibujar pixels
+- [ ] Reproducir sonidos con el speaker (beep, volumen)
+- [ ] Usar notas musicales MIDI
+- [ ] Obtener posición y velocidad de los motores
 - [ ] Resetear odometría
 - [ ] Hacer logging de datos
 
 ---
 
-*En la siguiente unidad: Usando Thonny como debugger profesional.*
+*En la siguiente unidad: Proyecto integrador.*
 
 ## Referencias
 
-[1] Pybricks Team. (2023). *Pybricks Documentation - PrimeHub*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html
+[1] LEGO Education. *LEGO Education SPIKE Essential - PrimeHub API*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[2] Pybricks Team. (2023). *Pybricks Documentation - Robotics Module*. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html
+[2] LEGO Education. *LEGO Education SPIKE Essential - Motor API*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[3] LEGO Education. (2023). *LEGO Education SPIKE Prime - Battery Specifications*. LEGO. Disponible: https://lego.com
+[3] LEGO Education. *LEGO Education SPIKE Essential - Light Matrix*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
-[4] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
+[4] LEGO Education. *LEGO Education SPIKE Essential - Speaker*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [5] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny

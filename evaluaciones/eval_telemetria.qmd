@@ -26,10 +26,11 @@ format:
 
 Crear un sistema completo de telemetría que monitoree:
 
-1. Estado de batería
-2. Distancia de sensores
+1. Estado de batería del hub
+2. Distancia del sensor
 3. Posición de motores
-4. Exportar datos a formato analizable
+4. Estado de botones y luz
+5. Exportar datos a formato analizable
 
 ### Requisitos del Sistema
 
@@ -37,28 +38,27 @@ Crear un sistema completo de telemetría que monitoree:
 ┌─────────────────────────────────────────┐
 │         SISTEMA DE TELEMETRÍA          │
 ├─────────────────────────────────────────┤
-│  [Batería]  →  Voltage, Corriente      │
-│  [Sensor IR] →  Distancia (mm)         │
-│  [Motores]  →  Posición (grados)       │
-│  [Display]  →  Estado actual           │
-│  [Export]   →  JSON/CSV                │
+│  [Hub]    →  Voltaje, Corriente, Botones │
+│  [Sensor] →  Distancia (cm)              │
+│  [Motores]→  Posición (grados)           │
+│  [Display]→  Estado actual               │
+│  [Export]   →  JSON                      │
 └─────────────────────────────────────────┘
 ```
 
 ### Código Base
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port, Stop
-from pybricks.pupdevices import Motor, InfraredSensor
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike import Motor, DistanceSensor
+from spike.control import wait_for_seconds
 import json
 
 hub = PrimeHub()
 
 # Inicializar dispositivos
-motor = Motor(Port.A)
-sensor = InfraredSensor(Port.B)
+motor = Motor('A')
+sensor = DistanceSensor('B')
 
 # Lista para almacenar datos
 telemetria = []
@@ -75,7 +75,7 @@ telemetria = []
 
 | Requisito | Puntos | Verificado |
 |-----------|--------|------------|
-| Mide voltaje de batería | 15 | ☐ |
+| Mide voltaje de batería del hub | 15 | ☐ |
 | Mide distancia del sensor | 15 | ☐ |
 | Registra posición del motor | 15 | ☐ |
 | Almacena datos en lista | 15 | ☐ |
@@ -93,7 +93,7 @@ telemetria = []
 | Aspecto | Puntos | Verificado |
 |---------|--------|------------|
 | Exporta a JSON válido | 10 | ☐ |
-| Datos con timestamp | 5 | ☐ |
+| Datos con timestamp relativo | 5 | ☐ |
 | Formato listo para análisis | 5 | ☐ |
 
 ---
@@ -101,90 +101,109 @@ telemetria = []
 ## Solución Esperada
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Port, Stop, Direction
-from pybricks.pupdevices import Motor, InfraredSensor
-from pybricks.tools import wait
+from spike import PrimeHub
+from spike import Motor, DistanceSensor
+from spike.control import wait_for_seconds
 import json
+import time  # Para timestamps más precisos (opcional)
 
 hub = PrimeHub()
 
 # Inicializar dispositivos
-motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
-sensor = InfraredSensor(Port.B)
+motor = Motor('A')
+sensor = DistanceSensor('B')
 
 # Configuración de muestreo
-INTERVALO_MS = 200  # Muestrear cada 200ms
-DURACION_MS = 5000  # Durar 5 segundos
+INTERVALO_S = 0.2  # Muestrear cada 200ms
+DURACION_S = 5     # Durar 5 segundos
 
 # Lista para almacenar datos
 telemetria = []
-tiempo_inicio = 0
+contador_muestras = 0
 
 print("=== INICIO TELEMETRÍA ===")
 
-# Calibración inicial
-motor.run_until_stalled(-50, then=Stop.COAST)
-motor.reset_angle(0)
-hub.display.show_icon(HubIcon.TARGET)
+# Calibración inicial opcional
+# motor.run_for_degrees(30)  # Pequeño movimiento para asegurar funcionamiento
+# motor.reset_angle(0)       # Reset posición a cero
+hub.light_matrix.show_image("TARGET")
 
 # Fase 1: Movimiento de prueba
 print("Fase 1: Movimiento de calibración")
-motor.run_angle(100, 180)
+motor.run_for_degrees(180, 30)  # 30% potencia, 180 grados
 
 # Fase 2: Captura de datos
 print("Fase 2: Captura activa")
-hub.display.show_icon(HubIcon.UP)
+hub.light_matrix.show_image("UP")
 
-for i in range(int(DURACION_MS / INTERVALO_MS)):
+tiempo_inicio = time.time()
+
+for i in range(int(DURACION_S / INTERVALO_S)):
     # Recopilar datos
     muestra = {
-        "timestamp": i * INTERVALO_MS,
-        "bateria": {
-            "voltaje": hub.battery.voltage(),  # mV
-            "corriente": hub.battery.current()  # mA
+        "timestamp_relativo_ms": i * int(INTERVALO_S * 1000),
+        "hub": {
+            "voltaje_mv": hub.voltage(),           # mV (milivoltios)
+            "corriente_ma": hub.current(),         # mA (miliamperios)
+            "boton_izquierdo": hub.left_button.is_pressed(),
+            "boton_derecho": hub.right_button.is_pressed(),
+            "boton_central": getattr(hub, 'center_button', None) and hub.center_button.is_pressed() if hasattr(hub, 'center_button') else False
         },
         "sensor": {
-            "distancia_mm": sensor.distance()
+            "distancia_cm": sensor.get_distance_cm()
         },
         "motor": {
-            "angulo": motor.angle(),
-            "velocidad": motor.speed()
-        },
-        "hub": {
-            "boton_left": Button.LEFT in hub.buttons.pressed(),
-            "boton_right": Button.RIGHT in hub.buttons.pressed(),
-            "boton_center": Button.CENTER in hub.buttons.pressed()
+            "posicion_grados": motor.get_position_degrees(),
+            "velocidad_pc": motor.get_speed()      # % potencia
         }
     }
     
     telemetria.append(muestra)
     
-    # Mostrar progreso
-    progreso = int((i / (DURACION_MS / INTERVALO_MS)) * 100)
-    print(f"Muestra {i+1}: {muestra}")
+    # Mostrar progreso cada 5 muestras
+    if i % 5 == 0:
+        progreso = int((i / (DURACION_S / INTERVALO_S)) * 100)
+        print(f"Progreso: {progreso}% - Muestra {i+1}")
     
-    wait(INTERVALO_MS)
+    wait_for_seconds(INTERVALO_S)
 
 # Fase 3: Análisis de datos
 print("\n=== ANÁLISIS DE DATOS ===")
 
-# Calcular estadísticas
-voltajes = [m["bateria"]["voltaje"] for m in telemetria]
-distancias = [m["sensor"]["distancia_mm"] for m in telemetria]
+# Calcular estadísticas básicas
+voltajes = [m["hub"]["voltaje_mv"] for m in telemetria]
+distancias = [m["sensor"]["distancia_cm"] for m in telemetria if m["sensor"]["distancia_cm"] is not None]
+posiciones = [m["motor"]["posicion_grados"] for m in telemetria]
 
 estadisticas = {
     "total_muestras": len(telemetria),
-    "duracion_ms": DURACION_MS,
-    "bateria": {
-        "voltaje_min": min(voltajes),
-        "voltaje_max": max(voltajes),
-        "voltaje_promedio": sum(voltajes) / len(voltajes)
+    "duracion_s": DURACION_S,
+    "intervalo_muestreo_s": INTERVALO_S,
+    "hub": {
+        "voltaje": {
+            "min_mv": min(voltajes) if voltajes else 0,
+            "max_mv": max(voltajes) if voltajes else 0,
+            "promedio_mv": sum(voltajes) / len(voltajes) if voltajes else 0
+        },
+        "corriente": {
+            "min_ma": min([m["hub"]["corriente_ma"] for m in telemetria]) if telemetria else 0,
+            "max_ma": max([m["hub"]["corriente_ma"] for m in telemetria]) if telemetria else 0,
+            "promedio_ma": sum([m["hub"]["corriente_ma"] for m in telemetria]) / len(telemetria) if telemetria else 0
+        }
     },
     "sensor": {
-        "distancia_min": min(distancias),
-        "distancia_max": max(distancias),
-        "distancia_promedio": sum(distancias) / len(distancias)
+        "distancia_cm": {
+            "min": min(distancias) if distancias else 0,
+            "max": max(distancias) if distancias else 0,
+            "promedio": sum(distancias) / len(distancias) if distancias else 0
+        }
+    },
+    "motor": {
+        "posicion_grados": {
+            "min": min(posiciones) if posiciones else 0,
+            "max": max(posiciones) if posiciones else 0,
+            "promedio": sum(posiciones) / len(posiciones) if posiciones else 0
+        }
     }
 }
 
@@ -194,49 +213,61 @@ print(f"Estadísticas: {json.dumps(estadisticas, indent=2)}")
 output = {
     "metadata": {
         "curso": "MicroPython para el Aula",
-        "autor": "Diego Saavedra",
+        "tema": "Telemetría con SPIKE Essential",
+        "version_api": "SPIKE Essential Python Official",
         "fecha": "2026"
     },
     "estadisticas": estadisticas,
     "muestras": telemetria
 }
 
-print("\n=== DATOS JSON ===")
+print("\n=== DATOS JSON COMPLETOS ===")
 print(json.dumps(output, indent=2))
 
-# Guardar en archivo
-with open("telemetria.json", "w") as f:
-    json.dump(output, f, indent=2)
+# En un entorno real, guardaríamos en archivo:
+# with open("telemetria.json", "w") as f:
+#     json.dump(output, f, indent=2)
+# print("\nDatos guardados en telemetria.json")
 
-print("\nDatos guardados en telemetria.json")
+# Mostrar resultado en el hub
+hub.light_matrix.show_image("HAPPY")
+hub.speaker.beep(600, 0.5)  # tono de éxito
+wait_for_seconds(2)
+hub.light_matrix.off()
+hub.speaker.off()
 
-# Mostrar resultado
-hub.display.scroll("DATOS OK", wait=True)
-hub.display.off()
+print("\nTelemetría completada exitosamente")
 ```
 
 ---
 
-## Preguntas de Seguimiento (Opcional - 10 puntos extra)
+## 📊 Rúbrica de Calificación
 
-### P1: ¿Cómo agregarías un filtro de ruido a las mediciones?
-
-> Usar un promedio móvil de las últimas N muestras para suavizar lecturas ruidosas.
-
-### P2: ¿Qué mejoras harías para un sistema de telemetría en tiempo real?
-
-> - Usar asyncio para captura no bloqueante
-> - Transmitir datos por Bluetooth
-> - Visualizar en tiempo real con gráficos
-> - Implementar triggers para alertas automáticas
+| Sección | Puntos | Criteria |
+|---------|--------|----------|
+| **Requisitos Funcionales** | 60 | |
+| - Mide voltaje de batería | 15 | Uso correcto de `hub.voltage()` |
+| - Mide distancia del sensor | 15 | Uso correcto de `sensor.get_distance_cm()` |
+| - Registra posición del motor | 15 | Uso correcto de `motor.get_position_degrees()` y `motor.get_speed()` |
+| - Almacena datos en lista | 15 | Estructura de lista adecuada para telemetría |
+| **Código y Calidad** | 20 | |
+| - Código funcional sin errores | 10 | Sintaxis correcta, sin errores de importación o método |
+| - Uso correcto de librerías | 5 | Importaciones exclusivamente de `spike` |
+| - Comments/documentación | 5 | Comentarios claros que explican cada sección |
+| **Exportación y Análisis** | 20 | |
+| - Exporta a JSON válido | 10 | Estructura JSON válida con metadata y datos |
+| - Datos con timestamp relativo | 5 | Incluye timestamp relativo al inicio |
+| - Formato listo para análisis | 5 | Estructura que facilita análisis posterior |
+| **Total** | **100** | |
 
 ---
 
+## 📚 Referencias Actualizadas
+
+[1] LEGO Education. (2023). *LEGO Education SPIKE Essential - Hub*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
+
+[2] LEGO Education. (2023). *LEGO Education SPIKE Essential - Distance Sensor*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
+
+[3] LEGO Education. (2023). *LEGO Education SPIKE Essential - Motor*. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
+
 *Evaluación Telemetría - MicroPython para el Aula - Diego Saavedra 2026*
-
-
-## Referencias
-
-[1] MicroPython Project. *MicroPython Documentation - Time and Timers*. 2026. Disponible en: https://docs.micropython.org/en/latest/library/time.html
-
-[2] Pybricks Team. *Pybricks MicroPython - Battery Monitoring*. 2026. Disponible en: https://docs.pybricks.com/en/latest/pupmodules.html

@@ -95,7 +95,7 @@ resultado = saludar("Ana")  # Entramos a la función
 
 ## 3. El Inspector de Variables
 
-**Situación:** Cuando一辆 car tiene problemas, el mecánico revisa el tablero. El Inspector de Variables de Thonny es como ese tablero—te muestra todo lo que está pasando [1].
+**Situación:** Cuando un carro tiene problemas, el mecánico revisa el tablero. El Inspector de Variables de Thonny es como ese tablero—te muestra todo lo que está pasando [1].
 
 ### Cómo abrirlo:
 
@@ -153,7 +153,7 @@ resultado = saludar("Ana")  # Entramos a la función
 ### Usos prácticos:
 
 - Detener el código justo antes de un error
-- Ver el valor de una变量 en un momento específico
+- Ver el valor de una variable en un momento específico
 - Ejecutar el código hasta un punto y luego continuar normalmente
 
 ---

@@ -51,18 +51,19 @@ Y es completamente gratis.
 
 ### Paso 2: Instalar el software en el robot
 
-El robot (LEGO Technic Large Hub) necesita un programa especial para entender Python. Se llama **Pybricks** [2].
+El robot (LEGO Technic Large Hub o SPIKE Essential Hub) necesita un programa especial para entender Python. Se llama **MicroPython para SPIKE** [2].
 
 1. Conecta tu robot a la computadora usando el cable USB-C
-2. Presiona el botón de encendidodel robot (el botón central)
+2. Presiona el botón de encender del robot (el botón central)
 3. En Thonny, ve a: **Tools → Options → Interpreter**
 4. Selecciona **"MicroPython (generic)"** y luego el puerto donde está conectado tu robot
 
-Ahora, instala Pybricks en el robot. Abre una terminal en Thonny y escribe:
+Ahora verifica que el firmware esté instalado. Abre una terminal en Thonny y escribe:
 
 ```python
-from pybricks import version
-print(version)
+from spike import PrimeHub
+hub = PrimeHub()
+print("¡Conexión exitosa!")
 ```
 
 Si responde con información, ¡ya está instalado!
@@ -70,7 +71,8 @@ Si responde con información, ¡ya está instalado!
 ::: {.callout-tip}
 ## 💡 Nota
 
-Si no tienes el firmware instalado, visita https://docs.pybricks.com para las instrucciones completas de instalación [2].
+Si no tienes el firmware instalado, consulta la guía oficial en:
+https://spike.legoeducation.com/essential/help/lls-help-python [2]
 :::
 
 ---
@@ -100,19 +102,18 @@ Pero queremos que el robot lo haga, no la computadora. El código es similar, pe
 Copia esto en Thonny:
 
 ```python
-from pybricks.hubs import PrimeHub
-from pybricks.parameters import Color
-from pybricks.tools import wait
+from spike import PrimeHub
 
 # Preparar el robot
 hub = PrimeHub()
 
 # Hacer que el robot diga "Hola"
-hub.display.text("HOLA")
-hub.light.on(Color.GREEN)
+hub.light_matrix.write("HOLA")
+hub.light.on(5)  # Verde
 hub.speaker.beep()
-wait(2000)
 ```
+
+Presiona **Run** y observa el robot.
 
 ---
 
@@ -125,7 +126,7 @@ Para que el robot ejecute nuestro programa:
 3. Elige el puerto donde está tu robot (parecerá algo como "COM3" en Windows o "/dev/tty.usb" en Mac)
 4. Presiona el botón de Play
 
-¡El robot mostrará "HOLA", will encenderse la luz verde y hará un sonido!
+¡El robot mostrará "HOLA", se encenderá la luz verde y hará un sonido!
 
 ---
 
@@ -134,7 +135,7 @@ Para que el robot ejecute nuestro programa:
 **Ahora intenta esto:**
 
 1. Cambia el mensaje de "HOLA" a tu nombre (máximo 5 letras)
-2. Cambia el color de la luz (prueba BLUE, RED, YELLOW)
+2. Cambia el color de la luz (prueba diferentes números: 0=rojo, 5=verde, 9=naranja)
 3. Intenta que el robot haga dos cosas seguidas
 
 **Cuando logres que el robot responda a tus instrucciones, habrás completado esta unidad.**
@@ -147,12 +148,8 @@ Para que el robot ejecute nuestro programa:
 
 [1] A. Annamaa. (2018). *Thonny: Python IDE for beginners*. GitHub. Disponible: https://github.com/thonny
 
-[2] Pybricks Team. (2023). *Pybricks Documentation*. Pybricks. Disponible: https://docs.pybricks.com
+[2] LEGO Education. (2026). *SPIKE Essential Python Programming Guide*. LEGO Education. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python
 
 [3] D. George. (2013). *MicroPython Documentation*. MicroPython. Disponible: https://docs.micropython.org
 
-[4] LEGO. (2023). *LEGO Education SPIKE Prime Hub*. LEGO. Disponible: https://lego.com
-
-[5] Pybricks. (2023). *Pybricks Official Website*. Pybricks. Disponible: https://pybricks.com
-
-[6] MicroPython. (2023). *MicroPython Official Website*. MicroPython. Disponible: https://micropython.org
+[4] LEGO. (2023). *LEGO Education SPIKE Essential Hub*. LEGO. Disponible: https://lego.com
