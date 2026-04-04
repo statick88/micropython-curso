@@ -1,0 +1,160 @@
+# Variables y Tipos de Datos {#variables-tipos}
+
+## La "memoria" del robot: Variables
+
+Imagina que tu robot LEGO Spike Prime necesita recordar varias cosas mientras trabaja:
+- Cuántos pasos ha dado
+- Si detectó un obstáculo adelante
+- Cuál es su velocidad actual
+- El nombre que le diste a tu creación
+
+En programación, usamos **variables** para guardar esta información que puede cambiar durante la ejecución del programa.
+
+### Analogía del mundo real: La estación de carga del robot
+
+Piensa en una estación de carga para robots con varios compartimentos etiquetados:
+- Un compartimento para "pasos_recorridos"
+- Otro para "obstaculo_detectado" 
+- Otro para "velocidad_actual"
+- Otro para "nombre_robot"
+
+Cada compartimento puede contener un valor que cambia con el tiempo, pero siempre sabemos dónde buscar cada tipo de información.
+
+## Tipos de datos básicos en Python
+
+En Python, diferentes tipos de información se almacenan de manera diferente. Veamos los más importantes para robótica:
+
+### 1. Números enteros (`int`) - Para contar pasos, vueltas, etc.
+
+**Analogía robótica**: Contar cuántas veces el robot ha girado una rueda completa.
+
+```python
+# Número de pasos que ha dado el robot
+pasos_recorridos = 0
+
+# Cuando da un paso adelante:
+pasos_recorridos = pasos_recorridos + 1
+# Ahora pasos_recorridos vale 1
+
+# Después de 5 pasos:
+pasos_recorridos = 5
+```
+
+**Ejercicio mental**: Si tu robot da 3 pasos adelante y luego 2 pasos atrás, ¿cuál sería el valor de `pasos_recorridos`?
+
+### 2. Números con decimales (`float`) - Para mediciones precisas
+
+**Analogía robótica**: Medir distancia exacta en centímetros o grados de giro.
+
+```python
+# Distancia medida por el sensor ultrasónico
+distancia_obstaculo = 12.5  # centímetros
+
+# Ángulo de giro necesario
+angulo_giro = 45.0  # grados
+```
+
+### 3. Cadenas de texto (`str`) - Para nombres y mensajes
+
+**Analogía robótica**: Mostrar mensajes en la pantalla del hub o almacenar comandos de voz.
+
+```python
+# Nombre de tu robot
+nombre_robot = "RoboExplorador"
+
+# Mensaje para mostrar en pantalla
+mensaje_estado = "Listo para misión"
+```
+
+### 4. Booleanos (`bool`) - Para estados de sí/no
+
+**Analogía robótica**: Estados simples como detectar/obstáculo, estar encendido/apagado, etc.
+
+```python
+# ¿Hay un obstáculo adelante?
+obstaculo_detectado = True   # Sí hay obstáculo
+obstaculo_detectado = False  # No hay obstáculo
+
+# ¿Está el robot encendido?
+robot_encendido = True
+```
+
+## Reglas importantes para nombrar variables
+
+En robótica (y en programación en general), nombrar bien tus variables es crucial para que otros (y tú futuro) puedan entender tu código.
+
+### ✅ Haz esto:
+- Usa nombres descriptivos: `velocidad_maxima` en lugar de `vm`
+- Usa snake_case: `distancia_segura` (no distanciaSegura o distancia_segura)
+- Nombres en español o inglés, pero sé consistente
+- Evita nombres muy cortos que no se entiendan: `x`, `data`, `temp`
+
+### ❌ Evita esto:
+- Números al inicio: `2do_intento` (inválido)
+- Espacios: `velocidad maxima` (inválido)
+- Caracteres especiales excepto guión bajo: `velocidad-maxima` (inválido)
+- Palabras reservadas de Python: `for`, `if`, `while`, etc.
+
+## Ejercicio de conexión con robótica
+
+**Situación**: Tu robot debe navegar un pasillo y detenerse cuando detecta una pared cercana.
+
+**Variables que necesitarías**:
+1. `distancia_pared` (float) - distancia medida por el sensor
+2. `distancia_segura` (float) - distancia mínima antes de detenerse  
+3. `detenerse` (bool) - indica si el robot debe parar
+4. `velocidad_actual` (float) - velocidad a la que se mueve
+
+**Pregunta socrática**: ¿Cómo usarías estas variables juntas para decidir cuándo detener el robot?
+
+## Mini-desafío: El guardián de la puerta
+
+Imagina un robot guardián que debe:
+1. Permitir el paso solo si la persona lleva credencial (variable booleana)
+2. Anunciar denegación de acceso si no tiene credencial
+3. Llevar un conteo de cuántas personas han pasado hoy
+
+**Variables necesarias**:
+- `tiene_credencial` (bool)
+- `personas_hoy` (int) 
+- `mensaje` (str)
+
+**Desafío**: Escribe el código que:
+- Inicializa las variables
+- Simula que llega una persona con credencial
+- Actualiza el conteo
+- Muestra un mensaje apropiado
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+# Inicialización
+tiene_credencial = False
+personas_hoy = 0
+mensaje = ""
+
+# Llega una persona con credencial
+tiene_credencial = True
+
+if tiene_credencial:
+    personas_hoy = personas_hoy + 1
+    mensaje = "Acceso permitido. Bienvenido."
+else:
+    mensaje = "Acceso denegado. Credencial requerida."
+
+print(f"Personas hoy: {personas_hoy}")
+print(mensaje)
+```
+</details>
+
+## Verificación de comprensión
+
+1. ¿Qué tipo de dato sería más apropiado para guardar la temperatura ambiente medida por un sensor?
+2. Si tienes una variable `giro_completado = True`, ¿qué significa esto para tu robot?
+3. ¿Por qué es mejor usar `tiempo_espera` en lugar de `t` como nombre de variable?
+4. ¿Cuál sería el error en este código: `123numero = 45`?
+
+## Próximos pasos
+
+Ahora que entendemos cómo guardar información, veamos cómo hacer que nuestro robot tome decisiones basándose en esa información usando condicionales.

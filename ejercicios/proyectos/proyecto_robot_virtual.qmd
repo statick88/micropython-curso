@@ -1,0 +1,474 @@
+---
+title: "Proyecto: Robot Virtual Explorador"
+description: "Crea un robot virtual que tome decisiones usando los fundamentos de Python"
+---
+
+# 🤖 Proyecto: Robot Virtual Explorador
+
+## 🎯 Descripción del Proyecto
+
+En este proyecto, crearás un **robot virtual** que:
+- Puede explorar un entorno simulado
+- Detecta obstáculos
+- Toma decisiones autónomas
+- Lleva registro de su misión
+- Maneja errores gracefully
+
+Este proyecto integra **todos los conceptos** que aprendiste en los ejercicios anteriores.
+
+---
+
+## 📋 Requisitos del Proyecto
+
+### Lo que necesitas saber antes de empezar:
+
+| Concepto | Dónde Practicaste |
+|----------|-------------------|
+| Variables | Ejercicio 1 |
+| Tipos de datos | Ejercicio 2 |
+| Condicionales | Ejercicio 3 |
+| Bucles | Ejercicio 4 |
+| Funciones | Ejercicio 5 |
+| Manejo de errores | Ejercicio 6 |
+| Listas y diccionarios | Ejercicio 7 |
+
+---
+
+## 🏗️ Estructura del Robot
+
+### Clase Robot
+
+Crearemos una clase que represente nuestro robot:
+
+```python
+class RobotExplorador:
+    """Robot virtual para explorar"""
+    
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.bateria = 100
+        self.posicion = [0, 0]  # x, y
+        self.pasos = 0
+        self.obstaculos_encontrados = 0
+        self.historial = []
+    
+    def __str__(self):
+        return f"🤖 {self.nombre} - Batería: {self.bateria}% - Posición: {self.posicion}"
+```
+
+### Métodos del Robot
+
+```python
+def mover(self, direccion, pasos):
+    """Mueve el robot en una dirección"""
+    # Validar batería
+    if self.bateria < 10:
+        print("⚠️ Batería insuficiente para moverse")
+        return False
+    
+    # Mover según dirección
+    if direccion == "norte":
+        self.posicion[1] += pasos
+    elif direccion == "sur":
+        self.posicion[1] -= pasos
+    elif direccion == "este":
+        self.posicion[0] += pasos
+    elif direccion == "oeste":
+        self.posicion[0] -= pasos
+    
+    # Actualizar estado
+    self.pasos += pasos
+    self.bateria -= pasos * 0.5  # Cada paso usa batería
+    
+    return True
+
+def detectar_obstaculo(self):
+    """Simula detectar un obstáculo"""
+    import random
+    return random.choice([True, False])
+
+def explorar(self, direccion):
+    """Explora en una dirección"""
+    print(f"\n🔍 {self.nombre} explorando hacia {direccion}...")
+    
+    # Intentar mover
+    exito = self.mover(direccion, 3)
+    
+    if not exito:
+        return False
+    
+    # Detectar obstáculo
+    hay_obstaculo = self.detectar_obstaculo()
+    
+    if hay_obstaculo:
+        print("  ⚠️ Obstáculo detectado!")
+        self.obstaculos_encontrados += 1
+    else:
+        print("  ✅ Sector despejado")
+    
+    # Registrar en historial
+    self.historial.append({
+        "direccion": direccion,
+        "obstaculo": hay_obstaculo,
+        "bateria": self.bateria
+    })
+    
+    return True
+
+def estado(self):
+    """Muestra el estado actual"""
+    print(f"\n=== ESTADO DE {self.nombre} ===")
+    print(f"📍 Posición: {self.posicion}")
+    print(f"🔋 Batería: {self.bateria}%")
+    print(f"👣 Pasos dados: {self.pasos}")
+    print(f"🚧 Obstáculos encontrados: {self.obstaculos_encontrados}")
+```
+
+---
+
+## 🎮 Programa Principal
+
+Ahora, vamos a crear el programa principal:
+
+```python
+def main():
+    """Programa principal"""
+    print("=" * 50)
+    print("🚀 INICIANDO MISIÓN DE EXPLORACIÓN")
+    print("=" * 50)
+    
+    # Crear robot
+    nombre = input("🤖 Ingresa el nombre de tu robot: ")
+    robot = RobotExplorador(nombre)
+    
+    print(f"\n✅ Robot {robot.nombre} creado exitosamente!")
+    print(robot)
+    
+    # Exploración automática
+    direcciones = ["norte", "este", "sur", "oeste"]
+    
+    print("\n🌍 Comenzando exploración...\n")
+    
+    for i in range(8):
+        direccion = direcciones[i % 4]
+        
+        try:
+            resultado = robot.explorar(direccion)
+            
+            if not resultado:
+                print("❌ Exploración interrumpida")
+                break
+                
+        except Exception as e:
+            print(f"⚠️ Error durante exploración: {e}")
+            continue
+    
+    # Mostrar estado final
+    robot.estado()
+    
+    # Mostrar historial
+    print("\n📜 HISTORIAL DE EXPLORACIÓN")
+    for i, entrada in enumerate(robot.historial, 1):
+        obstaculo = "🚧" if entrada["obstaculo"] else "✅"
+        print(f"{i}. {entrada['direccion']} - {obstaculo} - Batería: {entrada['bateria']}%")
+    
+    print("\n" + "=" * 50)
+    print("🎉 MISIÓN COMPLETADA")
+    print("=" * 50)
+
+# Ejecutar programa
+if __name__ == "__main__":
+    main()
+```
+
+---
+
+## 🎯 Mejoras Posibles
+
+### Nivel 1: Añadir más funcionalidad
+
+- [ ] Método para cargar batería
+- [ ] Método para mostrar mapa del recorrido
+- [ ] Validar que no salga del área de exploración
+
+### Nivel 2: Sistema de mapeo
+
+- [ ] Crear un "mapa" del entorno
+- [ ] Marcar obstáculos encontrados
+- [ ] Calcular ruta más corta
+
+### Nivel 3: Modo automático
+
+- [ ] Exploración automática con decisión de dirección
+- [ ] Priorizar sectores no explorados
+- [ ] Retornar a posición inicial cuando batería baja
+
+---
+
+## 📝 Código Completo
+
+<details>
+<parameter name="Copia este código completo para ejecutar el proyecto</summary>
+
+```python
+"""
+🤖 ROBOT VIRTUAL EXPLORADOR
+Proyecto Final - Fundamentos de Python para Robótica
+
+Este proyecto integra todos los conceptos aprendidos:
+- Variables y tipos de datos
+- Condicionales (if/elif/else)
+- Bucles (for/while)
+- Funciones
+- Manejo de errores
+- Listas y diccionarios
+- Clases (introducción)
+"""
+
+import random
+import time
+
+
+class RobotExplorador:
+    """Robot virtual para explorar entornos"""
+    
+    def __init__(self, nombre):
+        """Inicializa el robot con valores por defecto"""
+        self.nombre = nombre
+        self.bateria = 100
+        self.posicion = [0, 0]  # x, y
+        self.pasos = 0
+        self.obstaculos_encontrados = 0
+        self.historial = []
+        self.mapa = {}
+    
+    def __str__(self):
+        """Representación en string del robot"""
+        return (f"🤖 {self.nombre}\n"
+                f"   📍 Posición: {tuple(self.posicion)}\n"
+                f"   🔋 Batería: {self.bateria}%\n"
+                f"   👣 Pasos: {self.pasos}")
+    
+    def cargar_bateria(self):
+        """Carga la batería al 100%"""
+        self.bateria = 100
+        print(f"🔋 {self.nombre}: Batería cargada al 100%")
+    
+    def mover(self, direccion, pasos):
+        """
+        Mueve el robot en una dirección
+        
+        Args:
+            direccion: norte, sur, este, oeste
+            pasos: cantidad de pasos a mover
+            
+        Returns:
+            bool: True si el movimiento fue exitoso
+        """
+        # Validar batería
+        if self.bateria < 10:
+            print("⚠️ Batería insuficiente para moverse")
+            return False
+        
+        # Validar dirección
+        direcciones_validas = ["norte", "sur", "este", "oeste"]
+        if direccion not in direcciones_validas:
+            print(f"❌ Dirección '{direccion}' no válida")
+            return False
+        
+        # Mover según dirección
+        x, y = self.posicion
+        
+        if direccion == "norte":
+            y += pasos
+        elif direccion == "sur":
+            y -= pasos
+        elif direccion == "este":
+            x += pasos
+        elif direccion == "oeste":
+            x -= pasos
+        
+        # Actualizar posición
+        self.posicion = [x, y]
+        
+        # Actualizar estado
+        self.pasos += pasos
+        consumo = pasos * 0.5
+        self.bateria -= consumo
+        
+        return True
+    
+    def detectar_obstaculo(self):
+        """Simula detectar un obstáculo (50% probabilidad)"""
+        return random.choice([True, False])
+    
+    def explorar(self, direccion):
+        """
+        Explora en una dirección
+        
+        Args:
+            direccion: dirección a explorar
+            
+        Returns:
+            bool: True si la exploración fue exitosa
+        """
+        print(f"\n🔍 {self.nombre} explorando hacia {direccion}...")
+        time.sleep(0.5)  # Pequeña pausa para mejor visualización
+        
+        # Intentar mover
+        exito = self.mover(direccion, 2)
+        
+        if not exito:
+            return False
+        
+        # Detectar obstáculo
+        hay_obstaculo = self.detectar_obstaculo()
+        
+        if hay_obstaculo:
+            print("  ⚠️ Obstáculo detectado!")
+            self.obstaculos_encontrados += 1
+        else:
+            print("  ✅ Sector despejado")
+        
+        # Registrar en historial
+        self.historial.append({
+            "direccion": direccion,
+            "posicion": tuple(self.posicion),
+            "obstaculo": hay_obstaculo,
+            "bateria": self.bateria
+        })
+        
+        # Registrar en mapa
+        clave_mapa = tuple(self.posicion)
+        self.mapa[clave_mapa] = "explorado"
+        
+        return True
+    
+    def mostrar_estado(self):
+        """Muestra el estado actual del robot"""
+        print(f"\n{'='*40}")
+        print(f"🤖 ESTADO DE {self.nombre}")
+        print(f"{'='*40}")
+        print(f"📍 Posición: {tuple(self.posicion)}")
+        print(f"🔋 Batería: {self.bateria:.1f}%")
+        print(f"👣 Pasos dados: {self.pasos}")
+        print(f"🚧 Obstáculos encontrados: {self.obstaculos_encontrados}")
+        print(f"🗺️ Sectores explorados: {len(self.mapa)}")
+    
+    def mostrar_historial(self):
+        """Muestra el historial de exploraciones"""
+        print(f"\n📜 HISTORIAL DE EXPLORACIÓN")
+        print("-" * 40)
+        
+        if not self.historial:
+            print("  (Sin exploraciones)")
+            return
+        
+        for i, entrada in enumerate(self.historial, 1):
+            obstaculo = "🚧" if entrada["obstaculo"] else "✅"
+            pos = entrada["posicion"]
+            print(f"{i}. {entrada['direccion']:6} → {pos} {obstaculo} "
+                  f"[Bat: {entrada['bateria']:.0f}%]")
+        
+        print("-" * 40)
+        print(f"Total: {len(self.historial)} exploraciones")
+
+
+def main():
+    """Programa principal"""
+    print("=" * 50)
+    print("🚀 ROBOT VIRTUAL EXPLORADOR")
+    print("=" * 50)
+    
+    # Crear robot
+    print("\n🤖 Creando tu robot...")
+    nombre = input("   Ingresa el nombre: ").strip() or "Explorer"
+    robot = RobotExplorador(nombre)
+    
+    print(f"\n✅ Robot '{robot.nombre}' creado exitosamente!")
+    robot.mostrar_estado()
+    
+    # Exploración
+    direcciones = ["norte", "este", "sur", "oeste"]
+    
+    print("\n🌍 Comenzando exploración automática...")
+    print("(8 exploraciones en diferentes direcciones)\n")
+    
+    try:
+        for i in range(8):
+            direccion = direcciones[i % 4]
+            
+            try:
+                resultado = robot.explorar(direccion)
+                
+                if not resultado:
+                    print("❌ Exploración interrumpida por batería baja")
+                    break
+                    
+            except Exception as e:
+                print(f"⚠️ Error durante exploración: {e}")
+                continue
+            
+            # Pausa entre exploraciones
+            time.sleep(0.3)
+            
+    except KeyboardInterrupt:
+        print("\n\n⚠️ Exploración cancelada por el usuario")
+    
+    # Mostrar resultados finales
+    robot.mostrar_estado()
+    robot.mostrar_historial()
+    
+    print("\n" + "=" * 50)
+    print("🎉 MISIÓN COMPLETADA")
+    print("=" * 50)
+    print(f"\n📊 Resumen:")
+    print(f"   - Sectores explorados: {len(robot.mapa)}")
+    print(f"   - Obstáculos encontrados: {robot.obstaculos_encontrados}")
+    print(f"   - Batería restante: {robot.bateria:.1f}%")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+</details>
+
+---
+
+## 🎓 Criterios de Evaluación
+
+| Criterio | Puntuación |
+|----------|:----------:|
+| El código corre sin errores | 25% |
+| Usa variables y tipos de datos | 15% |
+| Usa condicionales para decisiones | 15% |
+| Usa bucles para repeticiones | 15% |
+| Usa funciones para organizar código | 15% |
+| Maneja errores apropiadamente | 10% |
+| Usa listas/diccionarios para datos | 5% |
+
+---
+
+## 🚀 Próximo Paso
+
+¡Felicidades por completar el proyecto!
+
+Ahora tienes dos opciones:
+
+1. **Continuar al hardware real**: Ve a la Unidad 1 para programar tu robot LEGO con lo que has aprendido
+
+2. **Profundizar más**: Añade más características al robot virtual
+
+---
+
+## 💡 Ideas para Extensiones
+
+- 🎮 Añadir un modo de juego donde el usuario controla el robot
+- 🗺️ Crear visualización del mapa en ASCII
+- 🔊 Añadir sonidos
+- 🤖 Crear múltiples robots que exploren juntos
+
+---
+
+*Proyecto desarrollado siguiendo la metodología de Diego Saavedra para ABACOM Capacitación y Servicios*

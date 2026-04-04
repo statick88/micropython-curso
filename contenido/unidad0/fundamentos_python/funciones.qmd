@@ -1,0 +1,300 @@
+# Funciones: Las "Recetas" del Robot {#funciones}
+
+## ¿Por qué usar funciones?
+
+Imagina que tu robot necesita saludar de una manera especial cada vez que inicia:
+- Mostrar una carita feliz en la pantalla
+- Reproducir un sonido de alegría
+- Mover los motores en un patrón de celebración
+
+Si escribes este código cada vez que quieres el saludo, cuando lo cambies despuéstendrás que cambiarlo en muchos lugares. Esto es tedioso y propenso a errores.
+
+Las **funciones** resuelven este problema: escribes el código una vez y lo reutilizas cuando lo necesites.
+
+### Analogía de la vida real: La receta de cocina
+
+Una función es como una receta escrita en una tarjeta:
+1. **Nombre de la receta**: Lo que la identifica (ej: "saludo_feliz")
+2. **Ingredientes**: Los datos de entrada que necesita (parametros)
+3. **Pasos**: El código que se ejecuta
+4. **Resultado**: Lo que produce (valor de retorno)
+
+Una vez que tienes la tarjeta, puedes usar la receta cuántas veces quieras sin volver a escribir los pasos.
+
+## Definiendo funciones básicas
+
+```python
+# Esta es la "receta" - definición de la función
+def saludar_robot():
+    print("¡Hola! Soy tu robot amigo.")
+    print("Estoy listo para recibir órdenes.")
+    print("Beep boop! 🤖")
+
+# Ahora usamos la "receta" - llamar a la función
+saludar_robot()
+```
+
+### Anatomía de una función:
+
+```python
+def nombre_de_funcion(parametro1, parametro2):
+    """
+    Descripción de qué hace esta función.
+    Esto aparece cuando alguien usa help(nombre_de_funcion)
+    """
+    # Código que se ejecuta
+    resultado = parametro1 + parametro2
+    return resultado  # Valor que devuelve
+```
+
+## Funciones con parámetros
+
+Los parametros permiten que nuestras funciones sean flexibles:
+
+```python
+# Función que muestra un mensaje personalizado
+def mostrar_mensaje(mensaje, veces):
+    """
+    Muestra un mensaje en pantalla la cantidad de veces especificada.
+    
+    Args:
+        mensaje: El texto a mostrar
+        veces: Cuántas veces mostrarlo
+    """
+    for i in range(veces):
+        print(mensaje)
+
+# Usando la función con diferentes valores
+mostrar_mensaje("¡Hola!", 3)
+mostrar_mensaje("Adiós", 1)
+mostrar_mensaje("Beep", 5)
+```
+
+### Funciones para control de motores (simulado)
+
+Aunque no tenemos el hardware, podemos crear funciones que representen operaciones del robot:
+
+```python
+# Simulación de mover un motor
+def mover_motor(velocidad, duracion):
+    """
+    Simula el movimiento de un motor.
+    
+    Args:
+        velocidad: Velocidad en rpm (-100 a 100)
+        duracion: Tiempo de movimiento en segundos
+    """
+    if velocidad > 100 or velocidad < -100:
+        print("Error: velocidad debe estar entre -100 y 100")
+        return False
+    
+    print(f"🏃 Motor moviéndose a {velocidad} rpm por {duracion} segundos")
+    return True  # Operación exitosa
+
+# Función para detener motor
+def detener_motor():
+    """Detiene todos los motores."""
+    print("🛑 Motores detenidos")
+    return True
+
+# Usando las funciones
+resultado = mover_motor(50, 2)
+if resultado:
+    print("Movimiento completado")
+    
+detener_motor()
+```
+
+## Valores de retorno
+
+Las funciones pueden devolver valores que podemos usar después:
+
+```python
+# Función que calcula la distancia segura basada en la velocidad
+def distancia_segura(velocidad):
+    """
+    Calcula la distancia mínima segura para detenerse.
+    
+    Args:
+        velocidad: Velocidad actual del robot en rpm
+        
+    Returns:
+        Distancia mínima en centímetros
+    """
+    # Fórmula simplificada de física: distancia = velocidad * tiempo_reaccion
+    tiempo_reaccion = 0.5  # segundos
+    distancia = abs(velocidad) * tiempo_reaccion
+    return distancia
+
+# Usando el valor devuelto
+velocidad_actual = 75
+distancia_necesaria = distancia_segura(velocidad_actual)
+
+print(f"A {velocidad_actual} rpm, necesitas al menos {distancia_necesaria} cm para detenerte")
+
+# Comparar con la distancia real al obstáculo
+distancia_obstaculo = 20.0
+
+if distancia_obstaculo < distancia_necesaria:
+    print("⚠️ ¡PELIGRO! El robot no se puede detener a tiempo")
+else:
+    print("✅ Distancia segura - puedes avanzar")
+```
+
+## Ámbito de variables: Alcance local y global
+
+En Python, las variables dentro de una función son diferentes de las externas:
+
+```python
+# Variable global - accesible en todo el programa
+bateria_global = 100
+
+def mostrar_bateria():
+    # Variable local - solo existe dentro de la función
+    bateria_local = 80
+    print(f"Batería dentro de función: {bateria_local}")
+
+# Llamar la función
+mostrar_battery()
+
+# La variable global sigue siendo 100
+print(f"Batería global: {bateria_global}")
+
+# Esto causaría error porque bateria_local no existe fuera:
+# print(bateria_local)  # NameError: name 'bateria_local' is not defined
+```
+
+### Ejemplo práctico con ámbito:
+
+```python
+# Variable global
+contador_giros = 0
+
+def girar_derecha(angulo):
+    """Gira el robot hacia la derecha."""
+    global contador_giros  # Necesitamos esto para modificar la variable global
+    contador_giros = contador_giros + 1
+    print(f"Girando {angulo} grados a la derecha")
+    print(f"Giros totales: {contador_giros}")
+
+def girar_izquierda(angulo):
+    """Gira el robot hacia la izquierda."""
+    global contador_giros
+    contador_giros = contador_giros + 1
+    print(f"Girando {angulo} grados a la izquierda")
+    print(f"Giros totales: {contador_giros}")
+
+# Usar las funciones
+girar_derecha(90)
+girar_izquierda(45)
+girar_derecha(90)
+
+print(f"\nTotal de giros realizados: {contador_giros}")
+```
+
+## Funciones con valores por defecto
+
+Podemos hacer que algunos parametros sean opcionales:
+
+```python
+def configurar_motor(velocidad_maxima=50, aceleracion=10, deceleracion=20):
+    """
+    Configura los parámetros de un motor.
+    
+    Args:
+        velocidad_maxima: RPM máxima (default: 50)
+        aceleracion: Gradiente de aceleración (default: 10)
+        deceleracion: Gradiente de frenado (default: 20)
+    """
+    print(f"Configurando motor:")
+    print(f"  Velocidad máxima: {velocidad_maxima} rpm")
+    print(f"  Aceleración: {aceleracion}")
+    print(f"  Desaceleración: {deceleracion}")
+
+# Diferentes formas de llamar:
+configurar_motor()  # Usa todos los defaults
+configurar_motor(80)  # Solo cambia velocidad máxima
+configurar_motor(80, 20, 30)  # Cambia todos los valores
+```
+
+## Mini-desafío: Sistema de navegación básico
+
+Crea un sistema de navegación simple con funciones:
+
+1. `calcular_rumbo(punto_actual, punto_destino)` - Calcula el ángulo de giro necesario
+2. `verificar_bateria(distancia)` - Verifica si hay suficiente batería para la distancia
+3. `navegar(punto_actual, punto_destino)` - Función principal que usa las anteriores
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+def calcular_rumbo(punto_actual, punto_destino):
+    """Calcula el ángulo de giro necesario."""
+    # Simulación simplificada
+    dx = punto_destino[0] - punto_actual[0]
+    dy = punto_destino[1] - punto_actual[1]
+    # Usamos arco tangente para calcular ángulo
+    import math
+    angulo = math.atan2(dy, dx) * 180 / math.pi
+    return angulo
+
+def verificar_bateria(distancia, bateria_actual):
+    """Verifica si hay suficiente batería."""
+    consumo = distancia * 0.5  # 0.5% de batería por cm
+    return bateria_actual >= consumo
+
+def navegar(punto_actual, punto_destino, bateria_actual):
+    """Función principal de navegación."""
+    print(f"Navegando de {punto_actual} a {punto_destino}")
+    
+    # Calcular rumbo
+    angulo = calcular_rumbo(punto_actual, punto_destino)
+    print(f"Ángulo de giro necesario: {angulo:.1f}°")
+    
+    # Calcular distancia euclidiana
+    import math
+    distancia = math.sqrt((punto_destino[0] - punto_actual[0])**2 + 
+                         (punto_destino[1] - punto_actual[1])**2)
+    
+    # Verificar batería
+    if verificar_bateria(distancia, bateria_actual):
+        print(f"✅ Batería suficiente para {distancia:.1f} cm")
+        return True
+    else:
+        print(f"⚠️ Batería insuficiente para {distancia:.1f} cm")
+        return False
+
+# Prueba del sistema
+punto_inicial = (0, 0)
+punto_destino = (10, 10)
+bateria = 80
+
+resultado = navegar(punto_inicial, punto_destino, bateria)
+```
+</details>
+
+## Buenas prácticas con funciones
+
+### ✅ Haz esto:
+- Nombres descriptivos: `detectar_obstaculo()` no `d()` o `hacer_algo()`
+- Comenta qué hace cada función y sus parametros
+- Una función = una responsabilidad
+- Usa valores por defecto para parámetros opcionales
+
+### ❌ Evita esto:
+- Funciones que hacen demasiadas cosas
+- Nombres confusos o en otro idioma inconsistente
+- Código duplicado que podría ser una función
+- Efectos secundarios inesperados (modificar globales sin aviso)
+
+## Verificación de comprensión
+
+1. ¿Por qué es mejor tener muchas funciones pequeñas que una función gigante?
+2. ¿Qué diferencia hay entre parámetros y valores de retorno?
+3. Si tienes una función `mover_motor(velocidad)`, ¿qué significa cuando no tiene `return`?
+4. ¿Por qué usar `global` dentro de una función generalmente se considera mala práctica?
+
+## Próximos pasos
+
+Ahora que dominamos funciones, veamos cómo manejar situaciones especiales cuando las cosas no salen como esperamos: el manejo de errores.

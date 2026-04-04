@@ -1,0 +1,271 @@
+---
+title: "🔌 Opciones de Hardware Alternativo"
+description: "Plataformas económicas para robótica educativa cuando no tienes acceso a LEGO"
+---
+
+# 🔌 Opciones de Hardware Alternativo
+
+## ¿Por qué este anexo?
+
+No siempre es posible tener kits de LEGO en el aula. Este anexo presenta alternativas más accesibles que permiten enseñar los **mismos conceptos de robótica** usando hardware económico.
+
+---
+
+## 🎯 Comparativa de Opciones
+
+| Plataforma | Costo | difficulty | Python Nativo | Compatible Pybricks | Ideal para |
+|-------------|:-----:|:----------:|:-------------:|:-------------------:|------------|
+| **BBC micro:bit V2** | $20-25 | 🌱 Easy | ✅ | ❌ | Principiantes |
+| **Arduino + Python** | $15-30 | 🌱🌿 Medium | ✅ | ❌ | Electronics |
+| **ESP32** | $8-15 | 🌱🌿 Medium | ✅ | ❌ | IoT |
+| **Raspberry Pi Pico** | $4-8 | 🌱🌿 Medium | ✅ | ❌ | Beginners |
+| ** LEGO Spike (importado)** | $80-150 | 🌱🌿 Medium | ✅ | ✅ | Este curso |
+
+---
+
+## 🥇 BBC micro:bit V2 - Recomendado para Empezar
+
+El micro:bit es una placa pequeña diseñada específicamente para educación. Incluye sensores integrados.
+
+### Especificaciones
+
+| Componente | Incluido |
+|------------|:--------:|
+| Procesador | Nordic nRF52833 |
+| Pantalla LED | 5x5 matriz (25 LEDs) |
+| Botones | 2 (A y B) |
+| Sensor de temperatura | ✅ |
+| Acelerómetro | ✅ |
+| Magnetómetro | ✅ |
+| Micrófono | ✅ |
+| Altavoz | ✅ |
+| Bluetooth | ✅ |
+
+### Ventajas para el Aula
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    🎓 MICRO:BIT V2                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ✅ Muy pequeño - fácil de manejar                           │
+│   ✅ No requiere herramientas extra                            │
+│   ✅ Funciona con cables USB comunes                          │
+│   ✅ Excelente documentación en español                        │
+│   ✅ Comunidad educativa muy activa                            │
+│   ✅ Simulador online gratuito                                  │
+│   ✅ Programable con MakeCode (bloques) o Python             │
+│                                                                 │
+│   💰 Costo: $20-25 por unidad                                 │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Código de Ejemplo (MicroPython)
+
+```python
+from microbit import *
+
+# Hola mundo con LEDs
+display.scroll("HOLA!")
+
+# Mostrar un corazón
+display.show(Image.HEART)
+
+# Waiting para botón
+while True:
+    if button_a.is_pressed():
+        display.show("A")
+    elif button_b.is_pressed():
+        display.show("B")
+    sleep(100)
+```
+
+### Recursos
+
+| Recurso | URL |
+|---------|-----|
+| Simulador | https://makecode.microbit.org/ |
+| Documentación | https://microbit.org/es/get-started/ |
+| Python Docs | https://microbit-micropython.readthedocs.io/ |
+
+---
+
+## 🥈 ESP32 - Potencia y Conectividad
+
+El ESP32 es más potente que el micro:bit y tiene WiFi integrado.
+
+### Especificaciones
+
+| Componente | Detalle |
+|------------|---------|
+| Procesador | Dual-core 240MHz |
+| WiFi | ✅ 802.11 b/g/n |
+| Bluetooth | ✅ BLE |
+| GPIO pins | 34 |
+| ADC | 12 canales |
+| Precio | $8-15 |
+
+### Proyectos con ESP32
+
+```python
+# Example simple - LED parpadeante
+from machine import Pin
+import time
+
+led = Pin(2, Pin.OUT)  # LED integrado en большинство ESP32
+
+while True:
+    led.value(1)
+    time.sleep(1)
+    led.value(0)
+    time.sleep(1)
+```
+
+### ¿Por qué el ESP32 es interessante para robótica?
+
+- **WiFi integrado**: Puedes controlar robots desde el navegador
+- **Mucho más pines**: Para conectar muchos sensores y motores
+- **Costo muy bajo**: $8-15 por placa
+- **Open source**: Schematics disponibles
+
+---
+
+## 🥉 Raspberry Pi Pico - Lo Mejor de Ambos Mundos
+
+El Pico combina facilidad de uso con potencia.
+
+### Especificaciones
+
+| Componente | Detalle |
+|------------|---------|
+| Procesador | RP2040 dual-core 133MHz |
+| RAM | 264KB |
+| GPIO | 40 pins |
+| ADC | 3 canales |
+| Precio | $4-8 |
+
+### ¿Por qué elegir Pico?
+
+- **Costo extremadamente bajo**: $4-8
+- **Documentación excelente**: En español disponible
+- **Compatible con MicroPython**: Exactamente igual que LEGO Spike
+- **Mucho poder**: Para proyectos complejos
+
+### Código Compatible
+
+```python
+# Este código es CASI IDENTICO al que usamos con LEGO
+from machine import Pin, PWM
+import time
+
+# Configurar motor (similar a LEGO)
+motor = PWM(Pin(15))
+motor.freq(1000)
+
+# Mover motor
+motor.duty_u16(30000)  # 50% velocidad
+time.sleep(2)
+motor.duty_u16(0)      # Apagar
+```
+
+---
+
+## 📊 Tabla de Decision
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    ¿CUL PLACA ELEGIR?                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ¿Tienes presupuesto para LEGO?                                 │
+│       │                                                          │
+│       ├── SÍ → LEGO Spike + Pybricks (este curso)              │
+│       │                                                          │
+│       └── NO →                                                  │
+│                │                                                 │
+│                ▼                                                 │
+│        ¿Tu audiencia son niños pequeños?                         │
+│                │                                                 │
+│                ├── SÍ → micro:bit (MakeCode o Python)          │
+│                │                                                 │
+│                └── NO →                                          │
+│                         │                                        │
+│                         ▼                                        │
+│                 ¿Necesitas WiFi/IoT?                           │
+│                         │                                        │
+│                         ├── SÍ → ESP32                          │
+│                         │                                        │
+│                         └── NO → Raspberry Pico                 │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🔄 Transición Entre Plataformas
+
+Los conceptos que aprendes son **transferibles**:
+
+| Concepto | LEGO Spike | micro:bit | ESP32 | Pico |
+|----------|:----------:|:---------:|:-----:|:----:|
+| Variables | ✅ | ✅ | ✅ | ✅ |
+| Funciones | ✅ | ✅ | ✅ | ✅ |
+| If/Else | ✅ | ✅ | ✅ | ✅ |
+| Loops | ✅ | ✅ | ✅ | ✅ |
+| Sensores | ✅ | Limitado | ✅ | ✅ |
+| Motores | ✅ | Limitado | ✅ | ✅ |
+
+**La lógica de programación es la misma** - solo cambia la API específica.
+
+---
+
+## 💡 Proyecto: Robot Básico con Arduino
+
+Si tienes un Arduino básico, puedes hacer robótica simple:
+
+```python
+# Requiere instalar pyfirmata o similar
+# Arduino debe tener Firmata cargado
+
+# Código Python (desde la computadora)
+import pyfirmata
+import time
+
+board = pyfirmata.Arduino('/dev/ttyUSB0')
+led = board.get_pin('d:13:o')
+
+# Parpadear LED
+for i in range(10):
+    led.write(1)
+    time.sleep(1)
+    led.write(0)
+    time.sleep(1)
+```
+
+---
+
+## 🎓 Recomendación Final
+
+Para este curso, **el camino óptimo** es:
+
+1. **Con hardware LEGO**: Usar Spike con Pybricks directamente
+2. **Sin LEGO pero con presupuesto**: micro:bit para aprender lógica, luego migrar a cualquier plataforma
+3. **Sin presupuesto**: Usar simuladores online (Pybricks Web, MakeCode)
+
+**Recuerda**: Lo importante no es el hardware - es aprender a pensar como un programador.
+
+---
+
+## 📚 Referencias
+
+| Plataforma | URL |
+|------------|-----|
+| micro:bit | https://microbit.org/ |
+| ESP32 | https://www.espressif.com/ |
+| Raspberry Pi Pico | https://www.raspberrypi.com/ |
+| Arduino | https://www.arduino.cc/ |
+
+---
+
+*Hardware Alternativo - MicroPython para el Aula - Diego Saavedra 2026* 🔌

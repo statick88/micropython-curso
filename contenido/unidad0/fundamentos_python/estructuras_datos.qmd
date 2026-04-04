@@ -1,0 +1,360 @@
+# Estructuras de Datos: Listas y Diccionarios {#estructuras-datos}
+
+## Por qué necesitamos estructuras de datos
+
+En robótica, frecuentemente necesitamos manejar colecciones de información:
+- Lista de sensores conectados al hub
+- Historial de mediciones de distancia
+- Coordenadas de múltiples puntos de navegación
+- Configuraciones de diferentes modos de operación
+
+Las **listas** y los **diccionarios** son las estructuras fundamentales en Python para estos casos.
+
+### Analogía del mundo real: La bandeja de componentes
+
+Imagina que tienes una bandeja de componentes electrónicos:
+- **Lista**: Los compartimentos están numerados (0, 1, 2, 3...). Para acceder a un componente, necesitas saber su posición.
+- **Diccionario**: Cada compartimento tiene una etiqueta (resistencia_10k, capacitor_100uF, LED_rojo). Para acceder, usas la etiqueta directamente.
+
+## Listas: Datos ordenados por posición
+
+Una lista es una colección ordenada de elementos a la que accedes por su índice.
+
+### Creando listas
+
+```python
+# Lista vacía
+sensores = []
+
+# Lista con elementos iniciales
+motores = ["motor_a", "motor_b", "motor_izquierdo", "motor_derecho"]
+
+# Lista de números (lecturas de sensor)
+lecturas_distancia = [25.5, 30.0, 28.2, 32.1, 29.8]
+
+# Lista mixta
+configuracion = ["robot_explorador", 3, True, 75.5]  # nombre, num_motores, activo, bateria
+```
+
+### Accediendo a elementos
+
+```python
+# Los índices starts en 0
+print(motores[0])   # "motor_a" (primer elemento)
+print(motores[1])   # "motor_b" (segundo)
+print(motores[-1])  # "motor_derecho" (último)
+print(motores[-2])  # "motor_izquierdo" (penúltimo)
+
+# Slice: obtener rango de elementos
+print(lecturas_distancia[1:4])  # [30.0, 28.2, 32.1] (posición 1 a 3)
+print(lecturas_distancia[:3])   # [25.5, 30.0, 28.2] (desde el inicio)
+print(lecturas_distancia[3:])   # [32.1, 29.8] (hasta el final)
+```
+
+### Modificando listas
+
+```python
+# Agregar elementos
+sensores = []
+sensores.append("color")      # Ahora: ["color"]
+sensores.append("distancia")  # Ahora: ["color", "distancia"]
+sensores.append("fuerza")      # Ahora: ["color", "distancia", "fuerza"]
+
+# Insertar en posición específica
+sensores.insert(1, "temperatura")  # ["color", "temperatura", "distancia", "fuerza"]
+
+# Eliminar elementos
+sensores.remove("distancia")  # Elimina por valor
+del sensores[0]               # Elimina por índice
+
+# Actualizar elemento
+sensores[0] = "sensor_color"  # Cambia el primer elemento
+```
+
+### Recorrer listas
+
+```python
+# Con for - método básico
+motores = ["motor_izquierdo", "motor_derecho", "motor_base"]
+for motor in motores:
+    print(f"Inicializando {motor}...")
+
+# Con enumerate - cuando necesitas el índice
+for indice, motor in enumerate(motores):
+    print(f"Motor #{indice}: {motor}")
+
+# Con comprensión de listas - forma Pythónica
+velocidades = [10, 20, 30, 40, 50]
+dobles = [v * 2 for v in velocidades]  # [20, 40, 60, 80, 100]
+
+# Filtrar con comprensión
+lecturas = [25.5, 30.0, 28.2, 32.1, 29.8]
+lecturas_bajas = [x for x in lecturas if x < 30]  # [25.5, 28.2, 29.8]
+```
+
+## Diccionarios: Datos con claves significativas
+
+Un diccionario es una colección de pares clave-valor. Es como un diccionario real: buscas una palabra (clave) y obtienes su definición (valor).
+
+### Creando diccionarios
+
+```python
+# Diccionario vacío
+configuracion_robot = {}
+
+# Diccionario con datos iniciales
+configuracion_robot = {
+    "nombre": "Explorador 3000",
+    "num_motores": 3,
+    "velocidad_maxima": 75,
+    "bateria": 100,
+    "modo": "exploracion"
+}
+
+# Diccionarios anidados (estructura más compleja)
+robot = {
+    "identidad": {
+        "nombre": "RoboAlpha",
+        "serial": "RA-2024-001",
+        "fabricante": "Instituto de Robótica"
+    },
+    "hardware": {
+        "motores": 4,
+        "sensores": ["color", "distancia", "fuerza", "giroscopio"],
+        "bateria_mah": 2100
+    },
+    "software": {
+        "version": "1.2.3",
+        "ultima_actualizacion": "2024-03-15"
+    }
+}
+```
+
+### Accediendo a valores
+
+```python
+# Por clave
+print(configuracion_robot["nombre"])  # "Explorador 3000"
+print(configuracion_robot["velocidad_maxima"])  # 75
+
+# Con get (más seguro - evita error si no existe)
+print(configuracion_robot.get("modo", "desconocido"))  # "exploracion"
+print(configuracion_robot.get("color_led", "ninguno"))  # "ninguno" (default)
+
+# Acceder a diccionarios anidados
+print(robot["identidad"]["serial"])  # "RA-2024-001"
+print(robot["hardware"]["sensores"][0])  # "color" (primer sensor)
+```
+
+### Modificando diccionarios
+
+```python
+# Agregar nuevo par clave-valor
+configuracion_robot["color_led"] = "rgb"
+
+# Actualizar valor existente
+configuracion_robot["bateria"] = 85
+
+# Actualizar múltiples valores con update
+configuracion_robot.update({
+    "bateria": 80,
+    "modo": "patrulla",
+    "alarma": True
+})
+
+# Eliminar par clave-valor
+del configuracion_robot["modo"]
+# O con pop (devuelve el valor eliminado)
+bateria_anterior = configuracion_robot.pop("bateria")
+```
+
+### Recorrer diccionarios
+
+```python
+# Recorrer solo claves
+for clave in configuracion_robot:
+    print(f"Clave: {clave}")
+
+# Recorrer solo valores
+for valor in configuracion_robot.values():
+    print(f"Valor: {valor}")
+
+# Recorrer ambos (clave, valor)
+for clave, valor in configuracion_robot.items():
+    print(f"{clave}: {valor}")
+```
+
+## Ejemplo integrado: Sistema de telemetría
+
+Veamos cómo usar listas y diccionarios juntos en un sistema de robótica:
+
+```python
+# Definición de un robot
+robot = {
+    "nombre": "Explorador",
+    "sensores": {
+        "color": {"valor": "rojo", "unidad": "color"},
+        "distancia": {"valor": 25.5, "unidad": "cm"},
+        "fuerza": {"valor": 0, "unidad": "N"}
+    },
+    "motores": {
+        "izquierdo": {"velocidad": 0, "posicion": 0},
+        "derecho": {"velocidad": 0, "posicion": 0}
+    }
+}
+
+def actualizar_sensor(nombre_sensor, nuevo_valor):
+    """Actualiza el valor de un sensor."""
+    if nombre_sensor in robot["sensores"]:
+        robot["sensores"][nombre_sensor]["valor"] = nuevo_valor
+        print(f"✅ Sensor '{nombre_sensor}' actualizado a {nuevo_valor}")
+    else:
+        print(f"⚠️ Sensor '{nombre_sensor}' no encontrado")
+
+def obtener_telemetria():
+    """Recolecta todos los datos de telemetría."""
+    print("\n=== TELEMETRÍA DEL ROBOT ===")
+    print(f"Robot: {robot['nombre']}")
+    print("\n📡 Sensores:")
+    for nombre, datos in robot["sensores"].items():
+        print(f"  {nombre}: {datos['valor']} {datos['unidad']}")
+    print("\n🔧 Motores:")
+    for nombre, datos in robot["motores"].items():
+        print(f"  {nombre}: vel={datos['velocidad']}, pos={datos['posicion']}")
+
+# Simulación de operación
+actualizar_sensor("distancia", 15.3)
+actualizar_sensor("fuerza", 5.2)
+obtener_telemetria()
+```
+
+## Operaciones útiles
+
+### Listas
+```python
+# Ordenar
+numeros = [3, 1, 4, 1, 5, 9, 2, 6]
+numeros.sort()              # Modifica la lista en su lugar
+print(sorted(numeros))     # Devuelve nueva lista ordenada
+
+# Longitud
+print(len(numeros))         # 8
+
+# Verificar existencia
+print(5 in numeros)        # True
+print(7 in numeros)        # False
+```
+
+### Diccionarios
+```python
+# Verificar existencia de clave
+print("nombre" in robot)  # True
+print("ip" in robot)       # False
+
+# Obtener todas las claves
+print(list(robot.keys()))
+
+# Obtener todos los valores
+print(list(robot.values()))
+
+# Unir diccionarios
+defaults = {"bateria": 100, "modo": "normal"}
+config = {"modo": "seguro", "alarma": True}
+defaults.update(config)  # defaults ahora tiene ambas claves
+```
+
+## Mini-desafío: Registro de misiones
+
+Crea un sistema que:
+1. Guarde múltiples misiones completadas (lista de diccionarios)
+2. Cada misión tiene: nombre, duración, distancia recorrida, sensores usados
+3. Calcule estadísticas: misión más larga, distancia total, sensor más usado
+4. Muestre un resumen de todas las misiones
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+# Registro de misiones
+misiones = [
+    {
+        "nombre": "Exploración Alpha",
+        "duracion_min": 15,
+        "distancia_cm": 500,
+        "sensores_usados": ["color", "distancia"]
+    },
+    {
+        "nombre": "Búsqueda Beta",
+        "duracion_min": 25,
+        "distancia_cm": 850,
+        "sensores_usados": ["distancia", "fuerza", "giroscopio"]
+    },
+    {
+        "nombre": "Patrulla Gamma",
+        "duracion_min": 10,
+        "distancia_cm": 300,
+        "sensores_usados": ["color"]
+    }
+]
+
+def analizar_misiones(registro):
+    """Analiza el registro de misiones."""
+    if not registro:
+        print("No hay misiones registradas")
+        return
+    
+    # Misión más larga
+    mas_larga = max(registro, key=lambda m: m["duracion_min"])
+    print(f"⏱️ Misión más larga: {mas_larga['nombre']} ({mas_larga['duracion_min']} min)")
+    
+    # Distancia total
+    distancia_total = sum(m["distancia_cm"] for m in registro)
+    print(f"📏 Distancia total: {distancia_total} cm")
+    
+    # Sensor más usado
+    from collections import Counter
+    todos_sensores = []
+    for m in registro:
+        todos_sensores.extend(m["sensores_usados"])
+    
+    sensor_mas_usado = Counter(todos_sensores).most_common(1)[0]
+    print(f"🔧 Sensor más usado: {sensor_mas_usado[0]} ({sensor_mas_usado[1]} veces)")
+    
+    # Resumen
+    print("\n=== RESUMEN DE MISIONES ===")
+    print(f"Total de misiones: {len(registro)}")
+    print(f"Duración promedio: {sum(m['duracion_min'] for m in registro) / len(registro):.1f} min")
+    
+    print("\n--- Lista completa ---")
+    for i, m in enumerate(registro, 1):
+        print(f"{i}. {m['nombre']}: {m['duracion_min']}min, {m['distancia_cm']}cm")
+
+analizar_misiones(misiones)
+```
+</details>
+
+## Buenas prácticas con estructuras de datos
+
+### ✅ Haz esto:
+- Usa nombres descriptivos para claves
+- Mantén consistencia en los tipos de datos en listas
+- Prefiere diccionarios cuando necesitas acceder por nombre
+- Usa comprensión de listas para transformación simple
+- Considera diccionarios anidados para datos estructurados
+
+### ❌ Evita esto:
+- Mezclar tipos de datos arbitrariamente en listas
+- Usar números como claves en diccionarios (para eso están las listas)
+- Acceder a índices que no existen sin verificar
+- Crear estructuras innecesariamente profundas
+
+## Verificación de comprensión
+
+1. ¿Cuándo es mejor usar una lista vs un diccionario?
+2. ¿Qué problema hay?: `datos = {["sensor"]: "color"]}`
+3. ¿Cómo obtenerías el valor "distancia" del diccionario anidado `robot["sensores"]["distancia"]["valor"]`?
+4. ¿Qué devuelve `["a", "b", "c"][-1]`?
+
+## Próximo paso
+
+Ahora que dominamos estructuras de datos básicas, estamos listos para dar el salto a programar el robot LEGO real. Pero primero, vamos a resumir todo lo aprendido y preparemos nuestra introducción al hardware.

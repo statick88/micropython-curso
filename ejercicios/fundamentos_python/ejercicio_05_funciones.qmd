@@ -1,0 +1,178 @@
+---
+title: "Ejercicio 5: Las Recetas del Robot"
+description: "Aprende a crear funciones reutilizables"
+---
+
+# 📝 Ejercicio 5: Las Recetas del Robot
+
+## 🎯 Objetivo
+
+Aprender a crear **funciones** - bloques de código reutilizables que podemos usar una y otra vez.
+
+---
+
+## 📖 Contexto
+
+Imagina que tienes una receta de cocina escrita en una tarjeta:
+- La escribes una vez
+- La guardas
+- Cuando la necesitas, la sacas y sigues los pasos
+
+Las **funciones** son exactamente eso en programación: código que escribes una vez y puedes usar muchas veces.
+
+---
+
+## 🔴 Nivel 1: Crear una Función Simple
+
+### La estructura básica
+
+```python
+# Para crear una función, usamos 'def'
+def saludar():
+    print("¡Hola! Soy tu robot amigo.")
+
+# Para usar la función, la "llamamos"
+saludar()
+saludar()
+saludar()
+```
+
+**Observa:** La función se crea con `def`, pero no se ejecuta hasta que la "llamamos" con `saludar()`.
+
+---
+
+## 🟡 Nivel 2: Funciones con Parámetros
+
+Los parámetros son como "ingredientes" que le pasamos a la función:
+
+```python
+def saludar_persona(nombre):
+    print(f"¡Hola {nombre}! Bienvenido al robot.")
+
+# Llamar con diferentes valores
+saludar_persona("Ana")
+saludar_persona("Carlos")
+saludar_persona("María")
+```
+
+---
+
+## 🟢 Nivel 3: Funciones que Retornan Valor
+
+A veces queremos que la función nos devuelva un resultado:
+
+```python
+def calcular_distancia(velocidad, tiempo):
+    """Calcula la distancia recorrida"""
+    distancia = velocidad * tiempo
+    return distancia  # Devuelve el resultado
+
+# Usar el valor retornado
+distancia1 = calcular_distancia(50, 3)  # 50 cm/s * 3 segundos
+distancia2 = calcular_distancia(30, 5)
+
+print(f"Recorrido 1: {distancia1} cm")
+print(f"Recorrido 2: {distancia2} cm")
+print(f"Total: {distancia1 + distancia2} cm")
+```
+
+---
+
+## 🔵 Nivel 4: Múltiples Parámetros
+
+```python
+def mover_robot(direccion, distancia):
+    """Mueve el robot en una dirección"""
+    if direccion == "adelante":
+        print(f"🚶 Avanzando {distancia} cm")
+    elif direccion == "atrás":
+        print(f"🔙 Retrocediendo {distancia} cm")
+    elif direccion == "izquierda":
+        print(f"⬅️ Girando izquierda {distancia}°")
+    elif direccion == "derecha":
+        print(f"➡️ Girando derecha {distancia}°")
+    else:
+        print("❓ Dirección no reconocida")
+
+# Usar la función
+mover_robot("adelante", 50)
+mover_robot("izquierda", 90)
+mover_robot("derecha", 45)
+mover_robot("atrás", 30)
+```
+
+---
+
+## 🎮 Desafío Extra: Biblioteca de Funciones
+
+Crea un conjunto de funciones para tu robot:
+
+1. `encender_robot()` - Muestra "Robot iniciado"
+2. `mostrar_bateria(nivel)` - Muestra el nivel de batería
+3. `avanzar(distancia)` - Simula avanzar una distancia
+4. `girar(ángulo)` - Simula girar un ángulo
+5. `apagar_robot()` - Muestra "Robot apagado"
+
+Luego, crea un "programa principal" que use todas las funciones en orden.
+
+---
+
+## 📝 Solución del Desafío Extra
+
+<details>
+<parameter name="¿Necesitas ayuda? Mira la solución aquí</summary>
+
+```python
+# Biblioteca de funciones del robot
+
+def_encender_robot():
+    print("🤖 Robot iniciado")
+    print("   Cargando sistemas...")
+    print("   ✓ Listo para operar")
+
+def_mostrar_bateria(nivel):
+    print(f"🔋 Batería: {nivel}%")
+    if nivel < 20:
+        print("   ⚠️ Batería baja!")
+
+def_avanzar(distancia):
+    print(f"🚶 Avanzando {distancia} cm...")
+
+def_girar(ángulo):
+    print(f"🔄 Girando {ángulo}°...")
+
+def_apagar_robot():
+    print("💤 Robot apagado")
+
+# Programa principal
+print("=== PROGRAMA DE DEMOSTRACIÓN ===\n")
+
+encender_robot()
+mostrar_batería(100)
+avanzar(50)
+girar(90)
+avanzar(30)
+mostrar_batería(85)
+apagar_robot()
+
+print("\n¡Demostración completada!")
+```
+
+</details>
+
+---
+
+## ✅ Verificación
+
+Antes de continuar, asegurúrate de que puedes:
+
+- [ ] Crear una función básica con `def`
+- [ ] Llamar una función varias veces
+- [ ] Usar parámetros para hacer funciones flexibles
+- [ ] Usar `return` para devolver valores
+
+---
+
+## 🔗 Siguiente Ejercicio
+
+[Ejercicio 6: Cuando las Cosas Fallan →](ejercicio_06_errores.qmd)

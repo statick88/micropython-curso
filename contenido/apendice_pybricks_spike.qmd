@@ -1,0 +1,199 @@
+---
+title: "🤖 Pybricks vs LEGO Spike: Guía de Orientación"
+description: "Comprende las diferencias y similitudes entre Pybricks y el entorno oficial LEGO para elegir el mejor camino para tu aula"
+---
+
+# 🤖 Pybricks vs LEGO Spike: Guía de Orientación
+
+## ¿Por qué este anexo?
+
+Este anexo existe porque hay **dos caminos** para programar tu robot LEGO:
+
+1. **LEGO Spike App** (oficial): Entorno visual de bloques
+2. **Pybricks** (alternativo): Código Python real
+
+**Buena noticia**: ¡Puedes usar **ambos**! No son excluyentes.
+
+---
+
+## 🎯 Quick: ¿Cuál debería usar?
+
+| Situación | Recomendación |
+|----------|---------------|
+| Estudiante muy pequeño (6-8 años) | LEGO Spike App |
+| Principiante sin experiencia previa | LEGO Spike App → Pybricks |
+| Ya sabe algo de programación | Pybricks directamente |
+| Quiere aprender Python "de verdad" | Pybricks (este curso) |
+| Aula con presupuesto limitado | Pybricks (más opciones) |
+| Competiciones FIRST LEGO League | Pybricks (más control) |
+
+---
+
+## 🆚 Comparativa Detallada
+
+### Entorno de Programación
+
+| Aspecto | LEGO Spike App | Pybricks |
+|--------|---------------|----------|
+| **Tipo de código** | Bloques visuales | Python texto |
+| **Curva de aprendizaje** | Más fácil al inicio | Más empinada pero más poderosa |
+| **Velocidad inicial** | Rápido para cosas simples | Más lento al inicio |
+| **Capacidad a largo plazo** | Limitada | Ilimitada |
+| **Depuración** | Difícil | Con Thonny, muy buena |
+
+### Hardware Compatible
+
+| Hub | LEGO Spike App | Pybricks |
+|-----|:--------------:|:--------:|
+| **SPIKE Essential (45678)** | ✅ Solo este | ✅ |
+| **SPIKE Prime (45678)** | ✅ | ✅ |
+| **Technic Large Hub (45601)** | ❌ | ✅ |
+| **BOOST Move Hub (45601)** | ❌ | ✅ |
+| **City Hub (45601)** | ❌ | ✅ |
+| **MINDSTORMS EV3** | ❌ | ✅ |
+
+### API y Funcionalidades
+
+| Característica | LEGO Spike App | Pybricks |
+|----------------|:--------------:|:--------:|
+| Motores básicos | ✅ | ✅ |
+| Sensores estándar | ✅ | ✅ |
+| Programación paralela | ⚠️ Limitada | ✅ |
+| Hilos (threads) | ❌ | ✅ |
+| Control preciso de velocidad | ⚠️ Básico | ✅ |
+| Custom firmware | ❌ | ✅ |
+| Código abierto | ❌ | ✅ |
+
+---
+
+## 🔄 El Flujo de Transición: Spike → Pybricks
+
+Muchos docentes prefieren **empezar con Spike** (más visual) y luego **migrar a Pybricks** (más poderoso):
+
+```
+    ┌──────────────────┐
+    │   LEGO SPIKE    │ ← Empezar aquí (más accesible)
+    │   APP (bloques)  │
+    └────────┬─────────┘
+             │
+             ▼ Transición natural
+    ┌────────▼─────────┐
+    │     PYBRICKS     │ ← Código Python real
+    │  (MicroPython)    │
+    └──────────────────┘
+```
+
+### ¿Qué conceptos se transfieren?
+
+| Concepto en Spike | Equivalente en Pybricks |
+|-------------------|-------------------------|
+| Bloque "Encender motor" | `motor.start()` |
+| Bloque "Esperar" | `wait()` o `sleep()` |
+| Bloque "Repetir" | `for` o `while` |
+| Bloque "Si...entonces" | `if/else` |
+| Variables | Variables (exactamente igual) |
+
+### Diferencias Clave
+
+| Spike (bloques) | Pybricks (código) |
+|----------------|------------------|
+| Arrastras bloques | Escribes texto |
+| Los errores son visuales | Los errores son mensajes de texto |
+| Difícil copiar código | Easy copiar y pegar |
+| Limitado a lo que existen bloques | Puedes crear cualquier cosa |
+
+---
+
+## 📊 Ventajas de Pybricks sobre LEGO Spike
+
+### 1. Código es Transferible
+
+```python
+# Este código sirve para CUALQUIERA que aprenda Pybricks
+# No importa si tienes Spike Essential, Prime, o Technic Hub
+def mover_cuadrado(lado_cm):
+    for i in range(4):
+        robot.straight(lado_cm)
+        robot.turn(90)
+```
+
+### 2. Comunidad Activa
+
+- **Foros de Pybricks**: Respuestas rápidas
+- **GitHub**: Código fuente disponible
+- **Ejemplos**: Miles de proyectos compartidos
+- **Documentación**: Completa y actualizada
+
+### 3. Preparación para el Futuro
+
+| Habilidad | Spike (bloques) | Pybricks (Python) |
+|-----------|:---------------:|:------------------:|
+| Pensamiento lógico | ✅ | ✅ |
+| Comprensión de código | ⚠️ Limitada | ✅ |
+| Sintaxis de programación real | ❌ | ✅ |
+| Preparación para career tech | ❌ | ✅ |
+| Portabilidad entre plataformas | ❌ | ✅ |
+
+---
+
+## 🚀 Cómo Empezar con Pybricks (Este Curso)
+
+Este curso está diseñado para ensenar **directamente con Pybricks**, sin pasar por Spike.
+
+### Si ya conoces Spike
+
+1. **No necesitas desaprender nada** - Los conceptos son los mismos
+2. **Solo aprenderás la "traducción"** de bloques a código
+3. **Ganarás superpoderes**: más control, más flexibilidad
+
+### Si nunca has usado nada
+
+1. **Perfecto**: Empiezas con la herramienta más poderosa desde el inicio
+2. **No tienes que "migrar"** después
+3. **Aprendes Python de verdad**
+
+---
+
+## 📝 Tabla de Decisión Final
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    ¿QUIÉN ERES?                                  │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌───────────────┐     ┌───────────────┐     ┌───────────────┐  │
+│  │   Soy niño    │ →   │ Soy docente   │ →   │ Soy estudiante│  │
+│  │  (6-10 años)  │     │  (adulto)    │     │  (mayor de 14)│  │
+│  └───────┬───────┘     └───────┬───────┘     └───────┬───────┘  │
+│          │                    │                    │            │
+│          ▼                    ▼                    ▼            │
+│   ┌─────────────┐       ┌─────────────┐       ┌─────────────┐   │
+│   │ LEGO SPIKE  │       │ Este curso  │       │ Este curso  │   │
+│   │ App (bloques│       │ (Pybricks)  │       │ (Pybricks)  │   │
+│   └─────────────┘       └─────────────┘       └─────────────┘   │
+│                                                                  │
+│   Opcional:         Recomendado:        Recomendado:            │
+│   Después migra      Comenzar           Comenzar               │
+│   a Pybricks         directamente        directamente            │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🎓 Recomendación del Instructor
+
+**Diego dice**: *"Empieza con Pybricks desde el día uno. Sí, es más difícil al principio. Pero en 2 semanas tus estudiantes estarán escribiendo código real que pueden compartir, modificar y entender. Los bloques de LEGO están bien para los más pequeños, pero para el resto... el código es el futuro."*
+
+---
+
+## 📚 Recursos Adicionales
+
+- [Pybricks Documentación Oficial](https://docs.pybricks.com/)
+- [Pybricks Code (IDE online)](https://code.pybricks.com/)
+- [Comunidad Pybricks](https://pybricks.com/)
+- [Código Fuente GitHub](https://github.com/pybricks)
+
+---
+
+*Este anexo te ayuda a entender el panorama completo. Si tienes dudas, consulta con tu instructor.*

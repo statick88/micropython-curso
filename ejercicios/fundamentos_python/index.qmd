@@ -1,0 +1,83 @@
+---
+title: "Ejercicios: Fundamentos de Python para Robótica"
+description: "Práctica guiada para aprender los conceptos básicos de Python"
+---
+
+# 🏋️ Ejercicios: Fundamentos de Python para Robótica
+
+## 🎯 Objetivo
+
+Estos ejercicios están diseñados para que practiques los conceptos de Python que aprendiste en el módulo teórico. Cada ejercicio incluye:
+
+- **Nivel 1 (Rojo)**: Básico - para empezar
+- **Nivel 2 (Amarillo)**: Intermedio - para practicar
+- **Nivel 3 (Verde)**: Completo - para consolidar
+- **Nivel 4 (Azul)**: Avanzado - para profundizar
+- **Desafío Extra**: Para los más atrevidos
+
+---
+
+## 📋 Ejercicios en Orden
+
+| # | Ejercicio | Concepto Principal | Dificultad |
+|---|-----------|-------------------|:----------:|
+| 1 | [Las Cajas del Robot](ejercicio_01_variables.qmd) | Variables | 🔴 |
+| 2 | [Qué Tipo de Caja Usas](ejercicio_02_tipos_datos.qmd) | Tipos de datos | 🔴 |
+| 3 | [El Robot Toma Decisiones](ejercicio_03_condicionales.qmd) | Condicionales | 🟡 |
+| 4 | [Repetir Sin Cansarse](ejercicio_04_bucles.qmd) | Bucles | 🟡 |
+| 5 | [Las Recetas del Robot](ejercicio_05_funciones.qmd) | Funciones | 🟢 |
+| 6 | [Cuando las Cosas Fallan](ejercicio_06_errores.qmd) | Manejo de errores | 🔵 |
+| 7 | [Organizando Datos](ejercicio_07_estructuras.qmd) | Listas y diccionarios | 🟢 |
+
+---
+
+## 🎮 Cómo Usar Estos Ejercicios
+
+### Estructura recomendada:
+
+1. **Lee el ejercicio** completo antes de empezar
+2. **Copia el código** en tu editor de Python (Thonny, terminal, etc.)
+3. **Ejecuta** y observa el resultado
+4. **Experimenta** cambiando valores para ver qué pasa
+5. **Intenta el Desafío Extra** antes de ver la solución
+
+### Recomendaciones:
+
+- No te frustres si no entiendes todo a la primera
+- Experimenta con el código - es la mejor forma de aprender
+- Si te atoras, mira la pista (questions socráticas)
+- Si aún no entiendes, mira la solución pero luego intenta explicarla
+
+---
+
+## 💡 Tips para el Éxito
+
+| Tip | Por qué |
+|-----|---------|
+| 🔄 Prueba-camino | Ejecuta el código después de cada cambio |
+| 📝 Escribe notas | Anota qué hace cada línea que no entiendes |
+| ❓ Haz preguntas | Pregunta "qué pasaría si..." |
+| 🔨 Experimenta | Cambia valores y observa qué pasa |
+| 📚 Consulta referencias | Usa la documentación de Python |
+
+---
+
+## 🚀 Después de Completar los Ejercicios
+
+Habrás desarrollado las habilidades necesarias para:
+
+- ✅ Escribir programas en Python
+- ✅ Entender la lógica de programación
+- ✅ Prepararte para programar el robot LEGO real
+
+---
+
+## 📚 Recursos Adicionales
+
+- [Documentación Python](https://docs.python.org/es/3/)
+- [Thonny IDE](https://thonny.org/)
+- [Tutorial Python interactivo](https://learnpython.org/)
+
+---
+
+*Ejercicios desarrollados siguiendo la metodología de Diego Saavedra*

@@ -1,0 +1,346 @@
+---
+title: "🧠 Quiz Completo: Fundamentos de Python"
+description: "Evaluación final del módulo de fundamentos de Python"
+---
+
+# 🧠 Quiz Completo: Fundamentos de Python {#quiz-fundamentos-completo}
+
+### 🏅 Insignias en Juego
+
+| 🐍 Python Master | 💡 Variables Master | 🔄 Loops Master | 📦 Data Master | ⚠️ Error Master |
+|:---:|:---:|:---:|:---:|:---:|
+| +50 XP | +25 XP | +25 XP | +25 XP | +25 XP |
+
+---
+
+## 📊 Tu Progreso
+
+```
+[████████████████████░] 80% - Nivel 3 🌿
+XP necesario: 350 | XP actual: 280
+```
+
+---
+
+## 📝 Preguntas de Evaluación
+
+::: {.quizdown}
+
+### 🔢 Pregunta 1: Variables y Tipos (25 XP)
+
+¿Cuál es el resultado de ejecutar este código?
+
+```python
+x = 5
+y = "5"
+print(x + int(y))
+```
+
+- [x] 10 ✅
+- [ ] 55
+- [ ] Error
+- [ ] "55"
+
+---
+
+### 🔀 Pregunta 2: Condicionales (25 XP)
+
+¿Qué se muestra cuando `bateria = 15`?
+
+```python
+if bateria < 20:
+    print("Baja")
+elif bateria < 30:
+    print("Media")
+else:
+    print("Alta")
+```
+
+- [x] "Baja" ✅
+- [ ] "Media"
+- [ ] "Alta"
+- [ ] No muestra nada
+
+---
+
+### 🔁 Pregunta 3: Bucles (25 XP)
+
+¿Cuántas veces se ejecuta el print?
+
+```python
+for i in range(3):
+    print("Hola")
+```
+
+- [ ] 2 veces
+- [x] 3 veces ✅
+- [ ] 4 veces
+- [ ] Ninguna
+
+---
+
+### 📝 Pregunta 4: Funciones (25 XP)
+
+¿Qué hace la palabra clave `return` en una función?
+
+- [ ] Define el nombre de la función
+- [x] Envía un valor de vuelta quien llamó la función ✅
+- [ ] Termina el programa
+- [ ] Declara una variable
+
+---
+
+### ⚠️ Pregunta 5: Errores (25 XP)
+
+¿Qué tipo de error es "division by zero"?
+
+- [ ] TypeError
+- [x] ZeroDivisionError ✅
+- [ ] ValueError
+- [ ] NameError
+
+---
+
+### 📦 Pregunta 6: Estructuras de Datos (25 XP)
+
+Cómo accedes al valor "manzana" en este diccionario?
+
+```python
+frutas = {"rojo": "manzana", "amarillo": "plátano"}
+```
+
+- [ ] `frutas[0]`
+- [x] `frutas["rojo"]` ✅
+- [ ] `frutas[manzana]`
+- [ ] `frutas.rojo`
+
+---
+
+### 🔄 Pregunta 7: Listas (25 XP)
+
+Cuál es el resultado de `lista = [1, 2, 3]; lista.append(4)`?
+
+- [x] `[1, 2, 3, 4]` ✅
+- [ ] `[4, 1, 2, 3]`
+- [ ] `[1, 2, 3]`
+- [ ] Error
+
+---
+
+### 🤔 Pregunta 8: Lógica (25 XP)
+
+Cuál es el resultado de `True and False`?
+
+- [x] False ✅
+- [ ] True
+- [ ] None
+- [ ] Error
+
+---
+
+### 🔢 Pregunta 9: Operadores (25 XP)
+
+Qué significa el operador `%` en Python?
+
+- [ ] División normal
+- [ ] División entera
+- [x] Módulo (resto de la división) ✅
+- [ ] Porcentaje
+
+---
+
+### 📝 Pregunta 10: Funciones (25 XP)
+
+Qué imprime este código?
+
+```python
+def saludar(nombre="Robot"):
+    print(f"Hola, {nombre}!")
+
+saludar()
+```
+
+- [x] "Hola, Robot!" ✅
+- [ ] "Hola, !"
+- [ ] Error
+- [ ] "Hola,"
+
+---
+
+### 🔀 Pregunta 11: Condicionales (25 XP)
+
+Qué se muestra si `edad = 20`?
+
+```python
+if edad >= 18:
+    print("Adulto")
+else:
+    print("Menor")
+```
+
+- [x] "Adulto" ✅
+- [ ] "Menor"
+- [ ] Ambos
+- [ ] Ninguno
+
+---
+
+### ⚠️ Pregunta 12: Manejo de Errores (25 XP)
+
+Qué palabra clave se usa para ejecutar código sin importar si hubo error?
+
+- [ ] if
+- [ ] except
+- [x] finally ✅
+- [ ] try
+
+---
+
+### 🔁 Pregunta 13: While Loop (25 XP)
+
+Cuantas iteraciones hace este bucle?
+
+```python
+i = 0
+while i < 3:
+    i += 1
+```
+
+- [ ] 2
+- [x] 3 ✅
+- [ ] 4
+- [ ] Infinito
+
+---
+
+### 📦 Pregunta 14: Diccionarios (25 XP)
+
+Cómo agregas un nuevo par clave-valor al diccionario?
+
+```python
+robot = {"nombre": "R2"}
+```
+
+- [ ] `robot.append("nombre", "R2")`
+- [x] `robot["tipo"] = "explorador"` ✅
+- [ ] `robot + {"tipo": "explorador"}`
+- [ ] robot.tipo = "explorador"
+
+---
+
+### 🔢 Pregunta 15: Conversión de Tipos (25 XP)
+
+Cómo conviertes el string "3.14" a número decimal?
+
+- [ ] `int("3.14")`
+- [x] `float("3.14")` ✅
+- [ ] `str("3.14")`
+- [ ] `bool("3.14")`
+
+---
+
+### 🎯 Pregunta 16: Rango (25 XP)
+
+Qué valores genera `range(1, 6, 2)`?
+
+- [ ] 1, 2, 3, 4, 5
+- [x] 1, 3, 5 ✅
+- [ ] 1, 2, 3
+- [ ] 2, 4, 6
+
+---
+
+### 📝 Pregunta 17: Comentarios (25 XP)
+
+Cuál es la forma correcta de escribir un comentario en Python?
+
+- [ ] // Esto es un comentario
+- [x] # Esto es un comentario ✅
+- [ ] <!-- Esto es un comentario -->
+- [ ] /* Esto es un comentario */
+
+---
+
+### 🔄 Pregunta 18: In y Not In (25 XP)
+
+Qué imprime?
+
+```python
+colores = ["rojo", "azul", "verde"]
+print("amarillo" not in colores)
+```
+
+- [ ] True
+- [x] False ✅
+- [ ] Error
+- [ ] "amarillo"
+
+---
+
+### ⚠️ Pregunta 19: Try-Except (25 XP)
+
+Si el código en try lanza un ValueError, qué bloque se ejecuta?
+
+- [ ] El código después de try
+- [ ] El bloque finally
+- [x] El bloque except que atrape ValueError ✅
+- [ ] Ninguno
+
+---
+
+### 🎯 Pregunta 20: enumerate (25 XP)
+
+Qué imprime este código?
+
+```python
+frutas = ["manzana", "uva"]
+for i, f in enumerate(frutas):
+    print(i, f)
+```
+
+- [ ] 
+manzana
+uva
+- [x] 
+0 manzana
+1 uva ✅
+- [ ] 
+1 manzana
+2 uva
+- [ ] Error
+
+:::
+
+## 🏆 Resumen de Puntuación
+
+| Pregunta | XP | Estado |
+|---------|:---:|:---:|
+| 1-5 | 125 | ✅ Completadas |
+| 6-10 | 125 | ✅ Completadas |
+| 11-15 | 125 | ✅ Completadas |
+| 16-20 | 125 | ✅ Completadas |
+| **Total** | **500** | 🎉 |
+
+---
+
+## 📈 Sistema de Logros
+
+| Puntuación | Nivel | Insignia |
+|:---:|:---:|:---:|
+| 0-100 | 🌱 Iniciado | 🐍 Python Novato |
+| 101-200 | 🌿 Practicante | 💡 Variable Explorer |
+| 201-300 | 🌳 Competente | 🔄 Loop Master |
+| 301-400 | 🌲 Avanzado | 📦 Data Handler |
+| 401-500 | 🎓 Python Expert | 👑 Code Master |
+
+---
+
+## 📚 Referencias
+
+- [Python Tutorial](https://docs.python.org/es/3/tutorial/)
+- [Documentación Pybricks](https://docs.pybricks.com/)
+- [Thonny IDE](https://thonny.org/)
+
+---
+
+*Quiz Completo - Fundamentos de Python para Robótica - Diego Saavedra 2026* 🏆

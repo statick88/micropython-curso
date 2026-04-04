@@ -187,6 +187,20 @@ Para que tu robot haga lo que tú quieres, seguirás estos pasos:
 
 ---
 
+::: {.callout-tip}
+## 🚀 ¿Nunca has programado antes?
+
+Si es la primera vez que vas a programar, te recomendamos **empezar aquí**:
+
+👉 **[🐍 Módulo de Fundamentos de Python](contenido/unidad0/fundamentos_python/index.qmd)**
+
+Antes de trabajar con el hardware, aprende los conceptos básicos de Python con ejemplos relacionados con robótica. Este módulo te dará la base necesaria para aprovechar al máximo el curso.
+
+*Tiempo estimado: 10-14 horas (1-2 semanas)*
+:::
+
+---
+
 ## 🤖 ¿Qué robot usaremos?
 
 Usaremos el **LEGO Technic Large Hub** (el cerebro del robot):
@@ -209,7 +223,7 @@ El LEGO Technic Large Hub usa el mismo lenguaje que Python, pero una versión es
 
 ---
 
-## 📖 Referencias para conocer más
+## 📚 Referencias para conocer más
 
 | Tema | Enlace | Emoji |
 |------|--------|:-----:|
@@ -217,6 +231,26 @@ El LEGO Technic Large Hub usa el mismo lenguaje que Python, pero una versión es
 | **Pybricks** | https://docs.pybricks.com | 🤖 |
 | **MicroPython** | https://micropython.org | 📱 |
 | **Python oficial** | https://docs.python.org/es/3/ | 📘 |
+
+---
+
+## 📎 Anexos y Recursos Complementarios
+
+### Fundamentos de Programación
+
+| Anexo | Descripción |
+|-------|-------------|
+| [🐍 Fundamentos de Python](contenido/unidad0/fundamentos_python/index.qmd) | Conceptos básicos de Python para robótica (antes de hardware) |
+
+### Alternativas y Recursos
+
+| Anexo | Descripción |
+|-------|-------------|
+| [🤖 Pybricks vs LEGO Spike](contenido/apendice_pybricks_spike.qmd) | Guía para elegir entre Pybricks y el entorno oficial LEGO |
+| [🖥️ Simuladores](contenido/apendice_simuladores.qmd) | Practicar sin hardware físico |
+| [🔌 Hardware Alternativo](contenido/apendice_hardware_alternativo.qmd) | Opciones económicas: micro:bit, ESP32, Raspberry Pi Pico |
+| [🔧 Pybricks Compilación](contenido/apendice_pybricks_compilacion.qmd) | Cómo compilar firmware personalizado |
+| [🐛 Thonny Debugger](contenido/apendice_thonny_debugger.qmd) | Guía profesional de depuración |
 
 ---
 

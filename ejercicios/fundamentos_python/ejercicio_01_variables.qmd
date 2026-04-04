@@ -1,0 +1,180 @@
+---
+title: "Ejercicio 1: Las Cajas del Robot"
+description: "Aprende a usar variables guardando información del robot"
+---
+
+# 🧱 Ejercicio 1: Las Cajas del Robot
+
+## 🎯 Objetivo
+
+Aprender a usar **variables** para guardar información que cambia durante la ejecución del programa.
+
+---
+
+## 📖 Contexto
+
+Imagina que tu robot necesita "recordar" varias cosas mientras trabaja:
+- Cuántos pasos ha dado
+- Si detectó un obstáculo
+- Su velocidad actual
+
+En programación, usamos **variables** - son como cajas etiquetadas donde guardamos información.
+
+---
+
+## 🔴 Nivel 1: Básico
+
+### Tu primera variable
+
+Escribe un programa que guarde la cantidad de "batería" de tu robot:
+
+```python
+# Esta es tu primera variable - una caja llamada "bateria"
+bateria = 100
+
+# Muestra el valor en pantalla
+print("La batería del robot está al", bateria, "%")
+```
+
+**Ejecuta y observa:** ¿Qué muestra el programa?
+
+---
+
+## 🟡 Nivel 2: Intermedio
+
+### Ahora, cambia el valor
+
+El robot usa batería mientras trabaja. Crea un programa que reduzca la batería:
+
+```python
+bateria = 100
+print("Batería inicial:", bateria, "%")
+
+# El robot hace una tarea y usa batería
+bateria = bateria - 20
+print("Después de tarea 1:", bateria, "%")
+
+# Otra tarea
+bateria = bateria - 20
+print("Después de tarea 2:", bateria, "%")
+
+# Una más
+bateria = bateria - 20
+print("Después de tarea 3:", bateria, "%")
+```
+
+**Pregunta socrática:** ¿Por qué necesitamos escribir `bateria = bateria - 20` en lugar de solo `bateria - 20`?
+
+---
+
+## 🟢 Nivel 3: Completo
+
+### Multiple variables
+
+Crea un programa con varias variables para un robot:
+
+```python
+# Variables del robot
+nombre = "ExplorerBot"
+bateria = 100
+velocidad = 0
+encendido = True
+
+# Mostrar información
+print("=== DATOS DEL ROBOT ===")
+print("Nombre:", nombre)
+print("Batería:", bateria, "%")
+print("Velocidad:", velocidad, "rpm")
+print("Encendido:", activado)
+
+# El robot se enciende y acelera
+print("\n--- EL ROBOT INICIA ---")
+encendido = True
+velocidad = 50
+
+print("Nombre:", nombre)
+print("Batería:", bateria, "%")
+print("Velocidad:", velocidad, "rpm")
+print("Encendido:", activado)
+```
+
+**Desafío:** Añade 2 variables más y muéstralas también.
+
+---
+
+## 🎮 Desafío Extra
+
+Crea un "registro" del robot que muestre:
+
+1. Nombre del robot
+2. Nivel de batería (empezando en 100)
+3. Cantidad de obstáculos evitados (empezando en 0)
+4. Distancia total recorrida (empezando en 0)
+
+Luego, simula que el robot:
+- Evita 3 obstáculos
+- Recorre 50 centímetros
+
+Muestra el registro final.
+
+---
+
+## 📝 Solución del Desafío Extra
+
+<details>
+<summary>¿Necesitas ayuda? Mira la solución aquí</summary>
+
+```python
+# Registro inicial del robot
+nombre = "RoboExplorador"
+bateria = 100
+obstaculos_evitados = 0
+distancia_recorrida = 0
+
+# Mostrar inicio
+print("=== REGISTRO INICIAL ===")
+print("Robot:", nombre)
+print("Batería:", bateria, "%")
+print("Obstáculos evitados:", obstaculos_evitados)
+print("Distancia:", distancia_recorrida, "cm")
+
+# El robot trabaja
+print("\n--- EL ROBOT TRABAJA ---")
+
+# Evita obstáculos
+obstaculos_evitados = obstaculos_evitados + 1
+obstaculos_evitados = obstaculos_evitados + 1
+obstaculos_evitados = obstaculos_evitados + 1
+
+# Recorre distancia
+distancia_recorrida = distancia_recorrida + 50
+
+# Uso de batería
+bateria = bateria - 15
+
+# Mostrar final
+print("\n=== REGISTRO FINAL ===")
+print("Robot:", nombre)
+print("Batería:", bateria, "%")
+print("Obstáculos evitados:", obstaculos_evitados)
+print("Distancia:", distancia_recorrida, "cm")
+```
+
+</details>
+
+---
+
+## ✅ Verificación
+
+Antes de continuar, asegúrate de que puedes:
+
+- [ ] Crear una variable con un valor inicial
+- [ ] Cambiar el valor de una variable
+- [ ] Usar múltiples variables en un programa
+- [ ] Mostrar los valores de las variables con print()
+
+---
+
+## 🔗 Siguiente Ejercicio
+
+[Eercicio 2: Tipos de Datos →](ejercicio_02_tipos_datos.qmd)

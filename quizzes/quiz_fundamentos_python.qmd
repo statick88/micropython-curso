@@ -1,0 +1,166 @@
+---
+title: "🐍 Quiz: Fundamentos de Python para Robótica"
+description: "¡Desbloquea tu insignia de Programador Principiante!"
+---
+
+# 🐍 Quiz: Fundamentos de Python para Robótica {#quiz-fundamentos}
+
+### 🏅 Insignias en Juego
+| 🐍 Python Basics | 💡 Variables | 🔄 Control Flow | 📦 Estructuras |
+|:---:|:---:|:---:|:---:|
+| +25 XP | +25 XP | +25 XP | +25 XP |
+
+---
+
+## 📊 Tu Progreso
+
+```
+[████████████████░░░░░░] 60% - Nivel 2 🌱
+XP necesario: 200 | XP actual: 120
+```
+
+---
+
+## 📝 Preguntas
+
+::: {.quizdown}
+
+### 🐍 Pregunta 1: Variables (25 XP)
+
+En robótica, ¿para qué sirve principalmente una variable?
+
+- [ ] Para hacer el código más complicado 😵‍💫
+- [x] Para guardar información que puede cambiar durante la ejecución 🤖
+- [ ] Para usar más memoria del computador 💾
+- [ ] Para que el robot funcione más rápido ⚡
+
+> 💡 **Pista:** Las variables son como las "cajas de herramientas" del robot - guardan valores que pueden cambiar mientras el programa se ejecuta [1].
+
+---
+
+### 🔢 Pregunta 2: Tipos de Datos (25 XP)
+
+Si tu robot necesita medir la temperatura ambiente y mostrarla, ¿qué tipo de dato usarías?
+
+- [ ] `int` - solo números enteros 🌕
+- [ ] `bool` - solo verdadero o falso ✔❌
+- [x] `float` - números con decimales 🌡️
+- [ ] `str` - texto nomas 📝
+
+> 💡 **Pista:** La temperatura como 22.5°C necesita decimales, no un número entero [2].
+
+---
+
+### 🔀 Pregunta 3: Condicionales (25 XP)
+
+¿Qué estructura usarías para que el robot "decida" si avanzar o detenerse según la distancia a un obstáculo?
+
+- [ ] `for` - para repetir acciones 🔁
+- [ ] `while` - mientras algo sea verdad 🔄
+- [x] `if/else` - para tomar decisiones decisiones 🤔
+- [ ] `def` - para crear funciones 📝
+
+> 💡 **Pista:** Los condicionales `if/else` permiten que el programa tome diferentes caminos según una condición - como decidir si avanzar o detenerse [3].
+
+---
+
+### 🔁 Pregunta 4: Bucles (25 XP)
+
+Tu robot necesita avanzar exactamente 4 veces para formar un cuadrado. ¿Qué estructura es la más apropiada?
+
+- [x] `for i in range(4):` - repetir un número fijo de veces 🔁
+- [ ] `while distancia < meta:` - repetir hasta que se cumpla una condición ⏱️
+- [ ] `if`: solo hace una cosa ❌
+- [ ] `def`: define algo pero no repite ⚙️
+
+> 💡 **Pista:** Cuando sabes cuántas veces necesitas repetir, `for` es la mejor opción - como dar 4 pasos para un cuadrado [4].
+
+---
+
+### 📝 Pregunta 5: Funciones (25 XP)
+
+¿Por qué es mejor usar funciones en nuestro código de robótica?
+
+- [ ] Porque ocupa más memoria 💾
+- [ ] Porque el código queda más largo 📜
+- [x] Para no escribir el mismo código muchas veces - ¡se reutiliza! ♻️
+- [ ] Porque Python lo requiere obligatoriamente 📋
+
+> 💡 **Pista:** Las funciones son como "recetas" - las escribes una vez y las usas cuando las necesites [5].
+
+---
+
+### ⚠️ Pregunta 6: Manejo de Errores (25 XP)
+
+Si el sensor de distancia del robot deja de responder, ¿qué estructura nos ayuda a manejar ese error elegantemente?
+
+- [ ] `for` - para bucles 🔁
+- [ ] `print` - solo para mostrar mensajes 📺
+- [x] `try/except` - para capturar y manejar errores 💥
+- [ ] `def` - para definir funciones ⚙️
+
+> 💡 **Pista:** El bloque `try/except` permite que nuestro programa no falle catastróficamente cuando algo sale mal - como cuando un sensor no responde [6].
+
+---
+
+### 📦 Pregunta 7: Listas vs Diccionarios (25 XP)
+
+Para guardar el historial de 5 lecturas del sensor de distancia, ¿qué estructura es mejor?
+
+- [x] **Lista** - colección ordenada de elementos del mismo tipo 📋
+- [ ] **Diccionario** - pares clave-valor 🔑
+- [ ] **Variable** - solo un valor 💰
+- [ ] **Función** - ejecuta código ⚙️
+
+> 💡 **Pista:** Las listas son perfectas para colecciones ordenadas del mismo tipo de datos - como lecturas sucesivas de un sensor [7].
+
+:::
+
+## 🏆 Resumen de Recompensas
+
+| Respuesta | XP Ganada | Insignia |
+|-----------|-----------|----------|
+| Pregunta 1 ✅ | +25 | |
+| Pregunta 2 ✅ | +25 | |
+| Pregunta 3 ✅ | +25 | |
+| Pregunta 4 ✅ | +25 | |
+| Pregunta 5 ✅ | +25 | |
+| Pregunta 6 ✅ | +25 | |
+| Pregunta 7 ✅ | +25 | |
+| **Total** | **+175** | 🐍 Python Basics + 💡 Variables + 🔄 Control Flow + 📦 Estructuras |
+
+### 🎯 ¡Objetivos Desbloqueados!
+
+- [x] Completar todas las preguntas (+25 bonus si 100%)
+- [ ] Tiempo récord: < 3 minutos (+10 bonus)
+- [ ] Todos los conceptos cubiertos (+50 bonus)
+
+---
+
+## 📈 Después de Completar este Quiz
+
+```
+Siguiente paso: 🚀 Unidad 1 - Conectar el Hub LEGO
+                └─> 💻 Lab 1A - Tu Primer Programa
+                    └─> 🖥️ Lab 1B - Hola Mundo en Pantalla
+```
+
+---
+
+## 📚 Referencias
+
+[1] Python Software Foundation. (2024). *Variables - Python Tutorial*. Disponible: https://docs.python.org/es/3/tutorial/
+
+[2] Python Software Foundation. (2024). *Numeric Types - Python Documentation*. Disponible: https://docs.python.org/es/3/library/stdtypes.html
+
+[3] Python Software Foundation. (2024). *if Statements - Python Tutorial*. Disponible: https://docs.python.org/es/3/tutorial/controlflow.html
+
+[4] Python Software Foundation. (2024). *for Statements - Python Tutorial*. Disponible: https://docs.python.org/es/3/tutorial/controlflow.html#for-statements
+
+[5] Python Software Foundation. (2024). *Defining Functions - Python Tutorial*. Disponible: https://docs.python.org/es/3/tutorial/controlflow.html#defining-functions
+
+[6] Python Software Foundation. (2024). *Errors and Exceptions - Python Tutorial*. Disponible: https://docs.python.org/es/3/tutorial/errors.html
+
+[7] Python Software Foundation. (2024). *Lists - Python Tutorial*. Disponible: https://docs.python.org/es/3/tutorial/datastructures.html#more-on-lists
+
+*🐍 Quiz Fundamentos de Python - MicroPython para Robótica Educativa - Diego Saavedra 2026* 🏆

@@ -1,0 +1,228 @@
+---
+title: "Ejercicio 6: Cuando las Cosas Fallan"
+description: "Aprende a manejar errores elegantemente"
+---
+
+# ⚠️ Ejercicio 6: Cuando las Cosas Fallan
+
+## 🎯 Objetivo
+
+Aprender a usar **manejo de errores** para que nuestros programas no fallen catastróficamente cuando algo sale mal.
+
+---
+
+## 📖 Contexto
+
+En el mundo real (y en robótica), las cosas siempre pueden salir mal:
+- Un sensor deja de responder
+- Un motor se atasca
+- La batería está demasiado baja
+- Un valor está fuera de rango
+
+El **manejo de errores** nos permite estar preparados para estas situaciones.
+
+---
+
+## 🔴 Nivel 1: El Error Común
+
+Primero, veamos qué pasa cuando ocurre un error:
+
+```python
+# Este código tiene un error
+numero = 10
+resultado = numero / 0  # No se puede dividir por cero!
+
+print(resultado)
+```
+
+**Observa:** El programa se detiene y muestra un error.
+
+---
+
+## 🟡 Nivel 2: Try/Except Básico
+
+Ahora, manejemos el error:
+
+```python
+try:
+    numero = 10
+    resultado = numero / 0
+    print("El resultado es:", resultado)
+except:
+    print("⚠️ Hubo un error! Pero el programa continuó.")
+```
+
+**Diferencia:** Sin `try/except`, el programa se detiene. Con él, podemos manejar el error y continuar.
+
+---
+
+## 🟢 Nivel 3: Tipos de Errores Específicos
+
+Podemos manejar diferentes tipos de error:
+
+```python
+# Diferentes tipos de errores
+print("=== MANEJO DE ERRORES ===\n")
+
+# Error de tipo
+try:
+    numero = int("hola")  # No se puede convertir "hola" a número
+except ValueError:
+    print("⚠️ Error: No se puede convertir a número")
+
+# Error de índice
+lista = [1, 2, 3]
+try:
+    valor = lista[10]  # No existe el índice 10
+except IndexError:
+    print("⚠️ Error: Índice fuera de rango")
+
+# Error de división
+try:
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("⚠️ Error: No se puede dividir por cero")
+
+print("\n✅ Todos los errores fueron manejados")
+```
+
+---
+
+## 🔵 Nivel 4: Manejo de Errores en Robótica
+
+Aplicando esto a un caso realista:
+
+```python
+def leer_sensor_distancia():
+    """Simula leer un sensor de distancia"""
+    import random
+    
+    # Simular diferentes escenarios
+    escenario = random.choice(["normal", "error", "valor_negativo"])
+    
+    if escenario == "normal":
+        return random.uniform(5, 100)
+    elif escenario == "error":
+        raise ConnectionError("Sensor no responde")
+    else:
+        raise ValueError("Valor negativo imposible")
+
+def obtener_distancia_segura():
+    """Lee el sensor con manejo de errores"""
+    try:
+        distancia = leer_sensor_distancia()
+        
+        if distancia < 0:
+            raise ValueError("Distancia negativa imposible")
+        
+        return distancia
+        
+    except ConnectionError:
+        print("⚠️ Error de conexión con el sensor")
+        return None
+        
+    except ValueError as e:
+        print(f"⚠️ Valor inválido: {e}")
+        return None
+
+# Probar el sistema
+print("=== SISTEMA DE LECTURA DE SENSORES ===\n")
+
+for i in range(5):
+    distancia = obtener_distancia_segura()
+    if distancia:
+        print(f"Lectura {i+1}: {distancia:.1f} cm")
+    else:
+        print(f"Lectura {i+1}: Error en la lectura")
+```
+
+---
+
+## 🎮 Desafío Extra: El Controller Resistente
+
+Crea un sistema de control que:
+
+1. Intente realizar 5 operaciones
+2. Cada operación puede tener diferente tipo de error:
+   - Motor atascado
+   - Sensor fuera de rango
+   - Batería agotada
+3. Si hay error, muestre un mensaje apropiado pero continúe
+4. Al final, muestre un resumen de operaciones exitosas vs fallidas
+
+---
+
+## 📝 Solución del Desafío Extra
+
+<details>
+<parameter name="¿Necesitas ayuda? Mira la solución aquí</summary>
+
+```python
+class MotorAtascadoError(Exception):
+    pass
+
+class SensorRangoError(Exception):
+    pass
+
+class BateriaAgotadaError(Exception):
+    pass
+
+def operar_motor(operacion):
+    """Simula diferentes operaciones"""
+    import random
+    
+    resultado = random.choice(["éxito", "error_motor", "error_sensor", "error_bateria"])
+    
+    if resultado == "éxito":
+        return f"✓ Operación {operacion}: exitosa"
+    elif resultado == "error_motor":
+        raise MotorAtascadoError(f"✗ Motor atascado en {operacion}")
+    elif resultado == "error_sensor":
+        raise SensorRangoError(f"✗ Sensor fuera de rango en {operacion}")
+    else:
+        raise BateriaAgotadaError(f"✗ Batería baja - no se puede operar")
+
+# Programa principal
+print("=== SISTEMA DE CONTROL RESISTENTE ===\n")
+
+operaciones_exitosas = 0
+operaciones_fallidas = 0
+
+for i in range(1, 6):
+    try:
+        mensaje = operar_motor(f"tarea_{i}")
+        print(f"  {mensaje}")
+        operaciones_exitosas += 1
+    except MotorAtascadoError as e:
+        print(f"  ⚠️ {e}")
+        operaciones_fallidas += 1
+    except SensorRangoError as e:
+        print(f"  ⚠️ {e}")
+        operaciones_fallidas += 1
+    except BateriaAgotadaError as e:
+        print(f"  🔋 {e}")
+        operaciones_fallidas += 1
+
+print(f"\n=== RESUMEN ===")
+print(f"Operaciones exitosas: {operaciones_exitosas}")
+print(f"Operaciones fallidas: {operaciones_fallidas}")
+```
+
+</details>
+
+---
+
+## ✅ Verificación
+
+Antes de continuar, asegurúrate de que puedes:
+
+- [ ] Usar `try/except` para capturar errores
+- [ ] Manejar diferentes tipos de errores específicamente
+- [ ] Crear mensajes apropiados cuando ocurren errores
+- [ ] Continuar el programa después de un error
+
+---
+
+## 🔗 Siguiente Ejercicio
+
+[Ejercicio 7: Organizando Datos →](ejercicio_07_estructuras.qmd)

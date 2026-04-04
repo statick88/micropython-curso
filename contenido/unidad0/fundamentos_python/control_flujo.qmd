@@ -1,0 +1,232 @@
+# Estructuras de Control: Tomando Decisiones y Repetir Acciones {#control-flujo}
+
+## Decisiones en la vida del robot: Condicionales
+
+Los robots necesitan tomar decisiones constantemente:
+- ¿Girar a la izquierda o a la derecha?
+- ¿Detenerse porque hay un obstáculo?
+- ¿Avanzar más rápido porque el camino está libre?
+- ¿Emitir una señal de peligro porque detectó algo inusual?
+
+En programación, usamos **estructuras de control** para tomar estas decisiones. La más básica es el **condicional** (if/else).
+
+### Analogía del mundo real: El semáforo del robot
+
+Piensa en un robot que cruza una intersección:
+- Si la luz está en verde → avanza
+- Si la luz está en amarillo → se prepara para detenerse
+- Si la luz está en roja → se detiene completamente
+
+Este es exactamente el patrón que seguimos con los condicionales.
+
+## La estructura if/else básica
+
+```python
+# Variable que representa el color del semáforo
+color_semaforo = "verde"
+
+# Toma de decisión basada en el color
+if color_semaforo == "verde":
+    print("El robot avanza")
+elif color_semaforo == "amarillo":
+    print("El robot se prepara para detenerse")
+else:  # rojo u otro color
+    print("El robot se detiene")
+```
+
+### Palabras clave importantes:
+- `if`: "si" - condición que debe cumplirse
+- `elif`: "sino si" - condición adicional si la primera no se cumple
+- `else`: "sino" - lo que happens si ninguna condición anterior se cumple
+
+## Operadores de comparación para sensores
+
+Para trabajar con sensores, necesitamos comparar valores. Estos son los operadores más usados:
+
+| Operador | Significado | Ejemplo robótico |
+|----------|-------------|------------------|
+| `==` | igual a | `distancia == 10.0` (obstáculo a exactamente 10 cm) |
+| `!=` | diferente de | `color != "rojo"` (no detectamos color rojo) |
+| `<` | menor que | `temperatura < 30.0` (temperatura segura) |
+| `>` | mayor que | `nivel_bateria > 20.0` (batería suficiente) |
+| `<=` | menor o igual que | `giros <= 5` (no más de 5 giros) |
+| `>=` | mayor o igual que | `velocidad >= 50` (velocidad mínima para subir rampa) |
+
+### Ejercicio mental: El robot explorador
+
+Tu robot tiene un sensor de distancia que mide en centímetros. Necesita:
+- Avanzar si el camino está libre (más de 30 cm)
+- Girar si hay un obstáculo cercano (entre 10 y 30 cm)
+- Detenerse y retroceder si está muy cerca (menos de 10 cm)
+
+**Pregunta socrática**: ¿Cómo escribirías la estructura condicional para este comportamiento?
+
+## Operadores lógicos: Combinando condiciones
+
+A veces necesitamos evaluar múltiples condiciones al mismo tiempo. Para esto usamos operadores lógicos:
+
+| Operador | Significado | Ejemplo |
+|----------|-------------|---------|
+| `and` | Y (ambas deben ser verdaderas) | `temperatura > 18 and temperatura < 25` |
+| `or` | O (al menos una debe ser verdadera) | `bateria_baja or emergencia_detectada` |
+| `not` | NO (invierte el valor) | `not obstaculo_detectado` |
+
+### Ejemplo real: Condiciones múltiples para movimiento seguro
+
+```python
+# Condiciones para que el robot avance con seguridad
+camino_libre = distancia_frontal > 25.0  # Más de 25 cm libre adelante
+lado_izquierdo_libre = distancia_izquierda > 15.0  # Más de 15 cm a la izquierda
+lado_derecho_libre = distancia_derecha > 15.0  # Más de 15 cm a la derecha
+bateria_suficiente = nivel_bateria > 15.0  # Más del 15% de batería
+
+if camino_libre and bateria_suficiente:
+    print("El robot avanza con seguridad")
+elif not camino_libre and (lado_izquierdo_libre or lado_derecho_libre):
+    print("El robot busca un camino alternativo")
+else:
+    print("El robot se detiene - condiciones no seguras")
+```
+
+## Bucles: Repetir acciones sin cansarse
+
+Los robots a menudo necesitan repetir acciones:
+- Avanzar hasta encontrar un objetivo
+- Girar buscando una señal
+- Monitorear sensores continuamente
+- Ejecutar una secuencia de movimientos múltiples veces
+
+Para esto usamos **bucles**. Los dos tipos principales son `for` y `while`.
+
+### Bucle for: Cuando sabemos cuántas veces repetir
+
+**Analogía robótica**: Un robot que necesita inspeccionar exactamente 4 esquinas de una habitación.
+
+```python
+# Inspeccionar las 4 esquinas de una habitación
+for esquina in range(4):  # 0, 1, 2, 3
+    print(f"Inspeccionando esquina #{esquina + 1}")
+    # Aquí iría el código para moverse a la esquina y escanear
+```
+
+`range(4)` genera la secuencia 0, 1, 2, 3 (4 números en total).
+
+### Bucle while: Mientras se cumpla una condición
+
+**Analogía robótica**: Un robot que avanza mientras no detecte un obstáculo.
+
+```python
+# Avanzar mientras no haya obstáculo cercano
+distancia_obstaculo = 50.0  # Empezamos con camino libre
+
+while distancia_obstaculo > 10.0:  # Mientras haya más de 10 cm libre
+    print("El robot avanza...")
+    # Aquí iría el código para mover el robot hacia adelante
+    # En un caso real, aquí actualizaríamos distancia_obstaculo con el sensor
+    
+    # Simulamos que el obstáculo se acerca
+    distancia_obstaculo = distancia_obstaculo - 5.0
+    
+print("¡Obstáculo detectado! El robot se detiene.")
+```
+
+### Ejercicio mental: El patrullero infinito
+
+Imagina un robot de seguridad que debe patrullar continuamente un área, pero solo mientras tenga suficiente batería.
+
+**Pregunta socrática**: ¿Qué tipo de bucle sería más apropiado para esta situación y por qué?
+
+## Anidamiento de estructuras de control
+
+En robótica real, frecuentemente necesitamos combinar condicionales y bucles:
+
+```python
+# Robot que patrulla 3 veces, pero se detiene temprano si encuentra peligro
+patrulla_completada = 0
+peligro_detectado = False
+
+while patrulla_completada < 3 and not peligro_detectado:
+    print(f"Iniciando patrulla #{patrulla_completada + 1}")
+    
+    # Durante la patrulla, revisamos constantemente sensores
+    for minuto in range(5):  # Cada patrulla dura 5 minutos
+        # Simulamos lectura de sensor
+        nivel_toxicidad = leer_sensor_toxicidad()  # Función imaginaria
+        
+        if nivel_toxicidad > 50.0:  # Nivel peligroso
+            peligro_detectado = True
+            print("¡TOXICIDAD DETECTADA! Abortando patrulla.")
+            break  # Sale del bucle for inmediatamente
+    
+    if not peligro_detectado:
+        patrulla_completada = patrulla_completada + 1
+        print(f"Patrulla #{patrulla_completada} completada con seguridad")
+
+if peligro_detectado:
+    print("Misión abortada por razones de seguridad")
+else:
+    print("Misión completada: 3 patrullas realizadas con éxito")
+```
+
+## Buenas prácticas para estructuras de control en robótica
+
+### ✅ Haz esto:
+- Mantén las condiciones simples y claras
+- Usa variables con nombres descriptivos en las condiciones
+- Comenta el propósito de cada decisión importante
+- Evita bucles infinitos sin forma de salida (siempre ten una condición de escape)
+- Usa `break` y `continue` con cuidado y siempre comenta por qué los usas
+
+### ❌ Evita esto:
+- Condiciones extremadamente complejas en una sola línea
+- Usar números mágicos: `if distancia < 15:` (mejor: `if distancia < distancia_minima:`)
+- Bucles que dependen únicamente de contadores cuando deberían depender de sensores
+- Condiciones que nunca pueden ser falsas (bucles infinitos accidentales)
+
+## Mini-desafío: El clasificador de colores
+
+Tu robot tiene un sensor de color y debe clasificar objetos en tres contenedores:
+- Verde: ir al contenedor de reciclaje
+- Rojo: ir al contenedor de peligro
+- Azul: ir al contenedor de donaciones
+- Cualquier otro color: detenerse para inspección manual
+
+**Variables necesarias**:
+- `color_detectado` (str) - valor leído del sensor de color
+
+**Desafío**: Escribe el código que:
+1. Toma una decisión basada en el color detectado
+2. Indica a qué contenedor debe ir el objeto
+3. Maneja el caso de color desconocido
+
+<details>
+<summary>Posible solución</summary>
+
+```python
+# Simulamos la lectura del sensor
+color_detectado = "verde"  # Cambia este valor para probar otros casos
+
+if color_detectado == "verde":
+    destino = "contenedor de reciclaje"
+elif color_detectado == "rojo":
+    destino = "contenedor de peligro"
+elif color_detectado == "azul":
+    destino = "contenedor de donaciones"
+else:
+    destino = "inspección manual requerida"
+    print(f"Color desconocido detectado: {color_detectado}")
+
+print(f"El objeto debe ir al: {destino}")
+```
+</details>
+
+## Verificación de comprensión
+
+1. ¿Qué estructura usarías para hacer que un robot avanza exactamente 5 metros, moviéndose 10 cm a la vez?
+2. ¿Cuál sería la diferencia entre usar `while True:` y `while bateria > 0:` para un bucle de operación continua?
+3. ¿Por qué es peligroso usar `if sensor_valor = 5:` en lugar de `if sensor_valor == 5:`?
+4. En la estructura `if-elif-else`, ¿qué pasa si se cumplen múltiples condiciones?
+
+## Próximos pasos
+
+Ahora que sabemos cómo tomar decisiones y repetir acciones, veamos cómo organizar nuestro código en bloques reutilizables usando funciones.

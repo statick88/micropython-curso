@@ -1,0 +1,70 @@
+# ¿Por qué aprender Python primero? {#python-primero}
+
+## El mito de "aprender mientras se hace"
+
+Muchos cursos de robótica educativa cometen un error común: intentar enseñar programación y robótica simultáneamente. Esto genera frustración porque:
+
+1. **Carga cognitiva excesiva**: El cerebro debe aprender dos cosas complejas al mismo tiempo
+2. **Depuración difícil**: Cuando algo no funciona, ¿es el código o la conexión del hardware?
+3. **Falta de fundamentos**: Sin entender lo básico, se copian soluciones sin comprenderlas
+
+## Nuestra aproximación: Fundamentos primero
+
+En este módulo, aprenderás los conceptos esenciales de Python **antes** de tocar el hardware LEGO Spike Prime. Esto te dará:
+
+✅ **Confianza**: Sabrás que cuando el robot no funcione, el problema está en la conexión o en el uso de la API, no en tu lógica de programación  
+✅ **Velocidad de aprendizaje**: Podrás enfocarte en aprender la API específica de LEGO sin preocuparte por lo básico  
+✅ **Transferibilidad**: Los conceptos que aprendas aquí te servirán en cualquier otro lenguaje de programación o plataforma  
+✅ **Mejor depuración**: Podrás aislar problemas lógicos de problemas de hardware  
+
+## Cómo trabajaremos
+
+Siguiendo la metodología probada de Diego Saavedra:
+
+### 1. **Analogías Primero**
+Cada concepto se explicará con ejemplos de la vida cotidiana relacionados con robótica:
+- Las variables como "cajas de herramientas" del robot
+- Los condicionales como "toma de decisiones" autónoma
+- Los bucles como "rutinas de mantenimiento" repetitivas
+
+### 2. **Método Socrático**
+En lugar de dar respuestas directas, plantearemos preguntas que te lleven al descubrimiento:
+- "¿Cómo haría el robot para decidir si girar o seguir derecho?"
+- "¿Qué necesitaría recordar el robot para seguir una línea?"
+
+### 3. **Código como Comunicación**
+Enfoque en escribir código que sea legible y cuyos nombres revelen su intención:
+- `velocidad_maxima` en lugar de `vm`
+- `distancia_obstaculo` en lugar de `d`
+- Comentarios que expliquen el **por qué**, no el **qué**
+
+### 4. **Aprendizaje Basado en Desafíos**
+El 70% del tiempo lo pasarás resolviendo desafíos prácticos:
+- Primero intentas la solución
+- Luego entendemos por qué funciona (o no)
+- Finalmente vemos cómo aplicarlo al robot
+
+### 5. **Enfoque Práctico sin Hardware**
+Aunque no usaremos el hardware LEGO en este módulo, todos los ejercicios tendrán conexión clara con la robótica:
+- Simularemos sensores con entradas de usuario
+- Representaremos movimientos con coordenadas en pantalla
+- Crearemos "robots virtuales" que tomen decisiones
+
+## Lo que NO aprenderás aquí (y por qué está bien)
+
+- ❌ Cómo encender un motor del LEGO Spike Prime
+- ❌ Cómo leer un sensor de color
+- ❌ Cómo compilar y subir firmware al hub
+
+**Pero sí aprenderás:**
+
+- ✅ Cómo pensar lógicamente para resolver problemas de robótica  
+- ✅ Cómo estructurar código para que sea mantenible y legible  
+- ✅ Cómo depurar errores de programación  
+- ✅ Cómo aplicar conceptos de programación a desafíos de robótica  
+
+Cuando llegues a trabajar con el hardware real, estos fundamentos serán tu base sólida, no un obstáculo.
+
+---
+
+> **Recuerda**: Un gran programador de robots no es alguien que conoce todas las funciones de una API, sino alguien que puede descomponer problemas complejos en pasos simples y lógicos. Ese es exactamente el objetivo de este módulo.

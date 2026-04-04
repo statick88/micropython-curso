@@ -1,0 +1,180 @@
+# De los Fundamentos a la Robótica Real: El Puente {#resumen-trasicion}
+
+## Lo que ahora sabes
+
+¡Felicidades! Has completado el módulo de fundamentos de Python para robótica educativa. Antes de conectar tu primer motor, resumamos lo que ahora dominas:
+
+### 📦 Variables y Tipos de Datos
+- ✅ Guardar información que cambia durante la ejecución
+- ✅ Elegir el tipo correcto: `int`, `float`, `str`, `bool`
+- ✅ Nombres descriptivos que hacen tu código legible
+
+### 🔀 Estructuras de Control
+- ✅ Tomar decisiones con `if`, `elif`, `else`
+- ✅ Comparar valores de sensores con operadores
+- ✅ Repetir acciones con `for` y `while`
+- ✅ Combinar condiciones con `and`, `or`, `not`
+
+### 📝 Funciones
+- ✅ Crear "recetas" reutilizables
+- ✅ Usar parámetros para funciones flexibles
+- ✅ Devolver valores calculados
+- ✅ Organizar código en bloques lógicos
+
+### ⚠️ Manejo de Errores
+- ✅ Anticipar problemas con `try`/`except`
+- ✅ Diferenciar tipos de errores
+- ✅ Crear respuestas apropiadas a fallos
+
+### 📚 Estructuras de Datos
+- ✅ Usar listas para colecciones ordenadas
+- ✅ Usar diccionarios para datos con etiquetas
+- ✅ Recorrer y modificar estructuras
+
+## De la teoría a la práctica: ¿Qué cambia ahora?
+
+Cuando trabajamos con LEGO Spike Prime, los conceptos son los mismos, pero hay diferencias prácticas:
+
+| Concepto Python | Aplicación en LEGO Spike |
+|-----------------|--------------------------|
+| `print("Hola")` | `hub.display.text("Hola")` - mostrar en pantalla 5x5 |
+| Variable numérica | `velocidad = 50` - igual, se guarda igual |
+| `if velocidad > 30:` | `if distancia < 10:` - condicional con sensor |
+| `for i in range(4):` | `for lado in range(4):` - repetir 4 veces |
+| Función personalizada | `def mover_recto(cm):` - crear funciones para el robot |
+
+### Lo que permanece igual:
+- La **lógica**: cómo pensar el problema
+- Las **estructuras de control**: misma sintaxis
+- Las **funciones**: misma forma de definirlas
+- Los **errores**: mismo manejo
+
+### Lo que cambia:
+- La **API**: funciones específicas de LEGO para acceder al hardware
+- Los **tipos de datos del hardware**: objetos específicos como Motor, Sensor
+- Las **operaciones de entrada/salida**: van al hub, no a la consola
+
+## Tu primer programa real en el Hub
+
+Ahora que entiendes los fundamentos, veamos cómo se traduce:
+
+### Antes (solo Python):
+```python
+def mover_distancia(distancia_cm):
+    """Mueve el robot una distancia especificada."""
+    velocidad = 50
+    tiempo = distancia_cm / velocidad
+    
+    if tiempo > 0:
+        print(f"Moviendo {distancia_cm} cm a {velocidad} cm/s")
+        print(f"Tiempo: {tiempo:.2f} segundos")
+        return True
+    else:
+        print("La distancia debe ser positiva")
+        return False
+
+# Usar la función
+resultado = mover_distancia(100)
+```
+
+### Después (con LEGO Spike):
+```python
+from spike import MotorPair, ColorSensor, DistanceSensor
+from spike import Hub
+
+# Inicializar el hub
+hub = Hub()
+motores = MotorPair('B', 'C')
+sensor_color = ColorSensor('D')
+sensor_distancia = DistanceSensor('E')
+
+def mover_distancia(distancia_cm):
+    """Mueve el robot una distancia especificada usando los motores."""
+    velocidad = 50  # cm/s
+    
+    if distancia_cm > 0:
+        # En Spike, movemos por centímetros
+        motores.move(distancia_cm, 'cm', velocity=velocidad)
+        
+        # Mostrar en pantalla del hub
+        hub.display.text(f"{distancia_cm}cm")
+        return True
+    else:
+        hub.display.text("ERROR")
+        return False
+
+# Usar la función con hardware real
+resultado = mover_distancia(100)
+```
+
+## La conexión conceptual
+
+Observa cómo cada concepto que aprendiste aparece en el código real:
+
+```
+Python Fundamentos          →    LEGO Spike
+─────────────────────────────────────────────────────────────
+Variable                    →    objeto.motor.position()
+Condicional if/else         →    if sensor.distance() < 10:
+Bucle for                   →    for i in range(4):
+Función con parámetro       →    def mover(cm, velocidad):
+Manejo de errores           →    try: motor.start() except: ...
+Lista de valores            →    [sensor_a, sensor_b, sensor_c]
+Diccionario de config      →    {"velocidad": 50, "modo": "normal"}
+```
+
+## Próximo paso: Conectar el hardware
+
+Estás listo para la **Unidad 1** donde:
+1. Conectarás tu LEGO Spike Essential Hub
+2. Instalarás Thonny o usarás Pybricks Code
+3. Escribirás tu primer programa real que controle el hardware
+4. Verás cómo tus fundamentos de Python cobran vida en un robot físico
+
+### Recuerda siempre:
+- **Los fundamentos importan más que la API**: puedes olvidar una función específica, pero si entiendes la lógica, puedes buscarla
+- **El error es parte del aprendizaje**: cuando algo no funcione, celébralo, es una oportunidad de aprender
+- **El código legible gana**: tu yo del futuro te agradecerá por escribir código que se entiende
+
+---
+
+## Resumen visual: Del bloque mental al bloque físico
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  PENSAMIENTO LÓGICO (lo que ya dominas)                │
+│  ├─ Análisis del problema                             │
+│  ├─ Descomposición en pasos                           │
+│  ├─ Identificación de decisiones y repeticiones       │
+│  └─ Diseño de solución                                │
+└───────────────────────┬─────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  FUNDAMENTOS DE PYTHON (lo que dominas)                │
+│  ├─ Variables y tipos de datos                        │
+│  ├─ Estructuras de control (if, for, while)          │
+│  ├─ Funciones y modularización                        │
+│  ├─ Manejo de errores                                │
+│  └─ Estructuras de datos (listas, diccionarios)      │
+└───────────────────────┬─────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  LEGO SPIKE PRIME API (aprenderás ahora)             │
+│  ├─ hub.display.* para mostrar en pantalla          │
+│  ├─ Motor y MotorPair para movimiento                │
+│  ├─ Sensores (Color, Distance, Force, Motion)        │
+│  └─ Time y Thread para temporización                 │
+└───────────────────────┬─────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────────┐
+│  TU ROBOT FUNCIONANDO (el resultado final)           │
+│  └─ ¡Un robot que percibe, piensa y actúa!          │
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+> **La robótica educativa no se trata de memorizar una API - se trata de pensar lógicamente y aplicar esos fundamentos a problemas reales. Tú ahora tienes las herramientas. Es hora de construir.**

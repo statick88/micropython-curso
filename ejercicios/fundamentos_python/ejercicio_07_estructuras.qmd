@@ -1,0 +1,244 @@
+---
+title: "Ejercicio 7: Organizando Datos"
+description: "Aprende a usar listas y diccionarios para organizar información"
+---
+
+# 📦 Ejercicio 7: Organizando Datos
+
+## 🎯 Objetivo
+
+Aprender a usar **listas** y **diccionarios** para organizar grandes cantidades de información.
+
+---
+
+## 📖 Contexto
+
+Imagina que necesitas guardar:
+- Las lecturas de 10 sensores
+- Los nombres de todos los robots en tu clase
+- La información de un robot (nombre, batería, sensores, etc.)
+
+Las **listas** y **diccionarios** son las herramientas perfectas para esto.
+
+---
+
+## 🔴 Nivel 1: Listas - Datos en Orden
+
+Una lista es como una fila de cajas numeradas:
+
+```python
+# Crear una lista
+lecturas_sensor = [25, 30, 28, 32, 29, 27, 31, 26, 33, 28]
+
+# Acceder a elementos (recuerda: empieza en 0)
+print("Primera lectura:", lecturas_sensor[0])
+print("Segunda lectura:", lecturas_sensor[1])
+print("Última lectura:", lecturas_sensor[-1])
+
+# Tamaño de la lista
+print("Total de lecturas:", len(lecturas_sensor))
+```
+
+---
+
+## 🟡 Nivel 2: Modificar Listas
+
+```python
+# Lista de robots
+robots = ["Robo1", "Robo2", "Robo3"]
+
+print("Lista original:", robots)
+
+# Agregar al final
+robots.append("Robo4")
+print("Después de append:", robots)
+
+# Eliminar un elemento
+robots.remove("Robo2")
+print("Después de remove:", robots)
+
+# Ordenar
+numeros = [3, 1, 4, 1, 5, 9, 2, 6]
+numeros.sort()
+print("Ordenados:", numeros)
+```
+
+---
+
+## 🟢 Nivel 3: Diccionarios - Datos con Etiquetas
+
+Un diccionario es como un archivador con carpetas etiquetadas:
+
+```python
+# Crear un diccionario
+robot = {
+    "nombre": "ExplorerBot",
+    "batería": 100,
+    "velocidad": 0,
+    "sensores": ["color", "distancia", "fuerza"]
+}
+
+# Acceder a valores por su clave
+print("Nombre:", robot["nombre"])
+print("Batería:", robot["batería"])
+print("Sensores:", robot["sensores"])
+
+# Modificar valores
+robot["batería"] = 85
+robot["velocidad"] = 50
+print("Robot modificado:", robot)
+```
+
+---
+
+## 🔵 Nivel 4: Estructuras Combinadas
+
+Podemos mezclar listas y diccionarios:
+
+```python
+# Lista de robots, cada uno con su diccionario
+equipo_robots = [
+    {
+        "nombre": "Alpha",
+        "batería": 100,
+        "puntos": 0
+    },
+    {
+        "nombre": "Beta", 
+        "batería": 75,
+        "puntos": 50
+    },
+    {
+        "nombre": "Gamma",
+        "batería": 50,
+        "puntos": 100
+    }
+]
+
+# Acceder a información anidada
+print("Robot 1:", equipo_robots[0]["nombre"])
+print("Puntos de Beta:", equipo_robots[1]["puntos"])
+
+# Recorrer todos los robots
+print("\n=== EQUIPO COMPLETO ===")
+for robot in equipo_robots:
+    print(f"- {robot['nombre']}: {robot['batería']}% batería, {robot['puntos']} puntos")
+```
+
+---
+
+## 🎮 Desafío Extra: El Registro de Misión
+
+Crea un sistema de registro de misiones con:
+
+1. Una **lista** de misiones, donde cada misión es un **diccionario** con:
+   - `nombre` (string)
+   - `duracion` (int, minutos)
+   - `distancia` (int, cm)
+   - `exitosa` (bool)
+
+2. Al menos 3 misiones en la lista
+
+3. Una función que muestre el resumen de todas las misiones
+
+4. Calcule:
+   - Total de distancia recorrida
+   - Misión más larga
+   - Porcentaje de misiones exitosas
+
+---
+
+## 📝 Solución del Desafío Extra
+
+<details>
+<parameter name="¿Necesitas ayuda? Mira la solución aquí</summary>
+
+```python
+# Registro de misiones
+misiones = [
+    {
+        "nombre": "Exploración Alpha",
+        "duracion": 15,
+        "distancia": 500,
+        "exitosa": True
+    },
+    {
+        "nombre": "Buscar Objetos",
+        "duracion": 25,
+        "distancia": 850,
+        "exitosa": True
+    },
+    {
+        "nombre": "Misión Especial",
+        "duracion": 10,
+        "distancia": 100,
+        "exitosa": False
+    }
+]
+
+def mostrar_resumen(lista_misiones):
+    print("=== REGISTRO DE MISIONES ===\n")
+    
+    total_distancia = 0
+    max_duracion = 0
+    misiones_exitosas = 0
+    
+    for misión in lista_misiones:
+        # Mostrar info
+        estado = "✅" if misión["exitosa"] else "❌"
+        print(f"📋 {misión['nombre']}")
+        print(f"   Duración: {misión['duracion']} min")
+        print(f"   Distancia: {misión['distancia']} cm")
+        print(f"   Estado: {estado}\n")
+        
+        # Calcular estadísticas
+        total_distancia += misión["duracion"]
+        if misión["duracion"] > max_duracion:
+            max_duracion = misión["duracion"]
+        if misión["exitosa"]:
+            misiones_exitosas += 1
+    
+    # Resumen final
+    print("=== RESUMEN ===")
+    print(f"Misiones totales: {len(lista_misiones)}")
+    print(f"Distancia total: {total_distancia} cm")
+    print(f"Misión más larga: {max_duracion} min")
+    print(f"Misiones exitosas: {misiones_exitosas}/{len(lista_misiones)} ({100*misiones_exitosas//len(lista_misiones)}%)")
+
+# Ejecutar
+mostrar_resumen(misiones)
+```
+
+</details>
+
+---
+
+## ✅ Verificación
+
+Antes de continuar, asegurúrate de que puedes:
+
+- [ ] Crear y modificar listas
+- [ ] Acceder a elementos por índice
+- [ ] Crear y modificar diccionarios
+- [ ] Acceder a valores por clave
+- [ ] Combinar listas y diccionarios
+
+---
+
+## 🎉 Ejercicios Completados
+
+¡Felicidades! Has completado todos los ejercicios de fundamentos de Python.
+
+Ahora tienes las herramientas básicas para:
+- ✅ Usar variables y tipos de datos
+- ✅ Tomar decisiones con condicionales
+- ✅ Repetir acciones con bucles
+- ✅ Crear funciones reutilizables
+- ✅ Manejar errores
+- ✅ Organizar datos en estructuras
+
+---
+
+## 🔗 Siguiente Paso
+
+[Proyecto Práctico: Robot Virtual →](../proyectos/proyecto_robot_virtual.qmd)

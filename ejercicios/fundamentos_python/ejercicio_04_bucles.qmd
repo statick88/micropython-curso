@@ -1,0 +1,199 @@
+---
+title: "Ejercicio 4: Repetir Sin Cansarse"
+description: "Aprende a usar bucles para repetir acciones"
+---
+
+# 🔄 Ejercicio 4: Repetir Sin Cansarse
+
+## 🎯 Objetivo
+
+Aprender a usar **bucles** (`for`, `while`) para repetir acciones sin escribir el mismo código muchas veces.
+
+---
+
+## 📖 Contexto
+
+Los robots constantemente necesitan repetir acciones:
+- Avanzar 4 veces para formar un cuadrado
+- Revisar sensores constantemente
+- Dar 10 pasos hacia adelante
+- Parpadear un LED varias veces
+
+Los **bucles** nos permiten escribir la acción una vez y repetirla tantas veces como necesitemos.
+
+---
+
+## 🔴 Nivel 1: El Bucle For (repetir N veces)
+
+### La estructura básica
+
+```python
+# Repetir 5 veces
+for numero in range(5):
+    print("El robot dice: Beep!")
+
+print("Fin del bucle")
+```
+
+**Pregunta:** ¿Por qué dice "Beep!" 5 veces si solo escribimos el print una vez?
+
+---
+
+## 🟡 Nivel 2: Usando el Contador
+
+```python
+# range(5) genera: 0, 1, 2, 3, 4
+# (+1 para mostrar 1-5)
+
+for paso in range(5):
+    print(f"Dando paso número {paso + 1}")
+
+print("El robot llegó a su destino!")
+```
+
+---
+
+## 🟢 Nivel 3: El Bucle While (mientras...)
+
+El bucle `while` se repite **mientras** una condición sea verdadera:
+
+```python
+bateria = 100
+
+print("Robot comenzando misión...\n")
+
+while bateria > 0:
+    print(f"Batería: {bateria}% - El robot trabaja")
+    bateria = bateria - 10  # Reduce la batería
+
+print("\n🔋 Batería agotada. Fin de misión.")
+```
+
+---
+
+## 🔵 Nivel 4: Bucles con Condicionales
+
+Combinando bucles y condicionales:
+
+```python
+print("=== ROBOT EXPLORADOR ===\n")
+
+for zona in range(1, 6):  # Zonas 1 a 5
+    print(f"🔍 Explorando zona {zona}...")
+    
+    # Simular detección aleatoria
+    obstaculo_encontrado = zona == 3  # Solo en zona 3
+    
+    if obstaculo_encontrado:
+        print("  ⚠️ Obstáculo detectado!")
+    else:
+        print("  ✅ Zona despejada")
+        
+print("\n🎯 Exploración completada!")
+```
+
+---
+
+## 🎮 Desafío Extra: El Robot Cuadrado
+
+Programa un robot que:
+1. Avance 4 veces (los 4 lados de un cuadrado)
+2. En cada "lado", muestre un mensaje
+3. Después de los 4 lados, muestre "Cuadrado completado!"
+
+El resultado debe ser:
+```
+Lado 1: Avanzando...
+Lado 2: Avanzando...
+Lado 3: Avanzando...
+Lado 4: Avanzando...
+¡Cuadrado completado!
+```
+
+---
+
+## 📝 Solución del Desafío Extra
+
+<details>
+<summary>¿Necesitas ayuda? Mira la solución aquí</summary>
+
+```python
+print("=== ROBOT CONSTRUCTOR ===\n")
+
+# Un cuadrado tiene 4 lados
+for lado in range(4):
+    print(f"Lado {lado + 1}: Avanzando...")
+    
+print("¡Cuadrado completado!")
+```
+
+**¿Puedes mejorarlo?** Añade que también gire 90 grados después de cada lado:
+
+```python
+print("=== ROBOT CONSTRUCTOR v2 ===\n")
+
+for lado in range(4):
+    print(f"Lado {lado + 1}: Avanzando...")
+    print(f"        Girando 90°...")
+
+print("¡Cuadrado completado!")
+```
+
+</details>
+
+---
+
+## 🎮 Desafío Extra 2: El Contador de Obstáculos
+
+Crea un programa que:
+1. Simule 10 detecciones de sensor
+2. Cuente cuántas veces hubo un "obstáculo" (usa un patrón como: detectar en posiciones 2, 5, 7)
+3. Muestre el resultado final
+
+---
+
+## 📝 Solución del Desafío Extra 2
+
+<details>
+<summary>¿Necesitas ayuda? Mira la solución aquí</summary>
+
+```python
+print("=== CONTADOR DE OBSTÁCULOS ===\n")
+
+obstaculos = 0
+
+# Simular 10 detecciones
+for deteccion in range(1, 11):
+    # Patrón: obstáculos en posiciones 2, 5, 7
+    hay_obstaculo = deteccion in [2, 5, 7]
+    
+    if hay_obstaculo:
+        print(f"Deteción #{deteccion}: ⚠️ OBSTÁCULO")
+        obstaculos = obstaculos + 1
+    else:
+        print(f"Deteción #{deteccion}: ✅ Limpio")
+
+print(f"\n=== RESUMEN ===")
+print(f"Total de detecciones: 10")
+print(f"Obstáculos encontrados: {obstaculos}")
+print(f"Detecciones limpias: {10 - obstaculos}")
+```
+
+</details>
+
+---
+
+## ✅ Verificación
+
+Antes de continuar, asegurúrate de que puedes:
+
+- [ ] Usar `for` para repetir un número fijo de veces
+- [ ] Usar `range()` para controlar cuántas veces repetir
+- [ ] Usar `while` para repetir mientras una condición sea verdadera
+- [ ] Combinar bucles con condicionales
+
+---
+
+## 🔗 Siguiente Ejercicio
+
+[Ejercicio 5: Las Recetas del Robot →](ejercicio_05_funciones.qmd)

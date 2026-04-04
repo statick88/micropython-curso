@@ -1,0 +1,166 @@
+---
+title: "Ejercicio 3: El Robot Toma Decisiones"
+description: "Aprende a usar condicionales para que el robot tome decisiones"
+---
+
+# 🤔 Ejercicio 3: El Robot Toma Decisiones
+
+## 🎯 Objetivo
+
+Aprender a usar **condicionales** (`if`, `elif`, `else`) para que el programa tome diferentes decisiones según la situación.
+
+---
+
+## 📖 Contexto
+
+Los robots necesitan tomar decisiones constantemente:
+- Si hay un obstáculo → detenerse
+- Si la batería está baja → volver a cargar
+- Si está escuro → encender luces
+- Si todo está bien → continuar
+
+Los **condicionales** son como las preguntas que hace el robot al mundo.
+
+---
+
+## 🔴 Nivel 1: El Si Simple
+
+### La estructura básica
+
+```python
+# Si la condición se cumple, hace algo
+bateria = 30
+
+if bateria < 20:
+    print("⚠️ Batería baja! Necesita cargar!")
+
+print("El programa continúa...")
+```
+
+**Importante:** Fíjate en la **indentación** (espacios al inicio). El código dentro del `if` debe estar indentado.
+
+---
+
+## 🟡 Nivel 2: Si/No (if/else)
+
+A veces hay dos opciones:
+
+```python
+bateria = 15
+
+if bateria < 20:
+    print("🔋 Necesita cargar!")
+else:
+    print("✅ Batería suficiente")
+
+print("Fin del programa")
+```
+
+**Prueba cambiando el valor de bateria:** ¿Qué pasa cuando es mayor a 20?
+
+---
+
+## 🟢 Nivel 3: Múltiples Condiciones (if/elif/else)
+
+Para más de dos opciones:
+
+```python
+distancia = 15  # centímetros al obstáculo
+
+if distancia < 10:
+    print("🛑 PELIGRO! Detenerse inmediatamente!")
+elif distancia < 25:
+    print("⚠️ Precaución. Reducir velocidad.")
+else:
+    print("✅ Camino libre. Continuar normalmente.")
+```
+
+---
+
+## 🔵 Nivel 4: Condiciones Combinadas
+
+Podemos combinar varias condiciones:
+
+```python
+bateria = 25
+distancia = 30
+
+# Usando and (todas las condiciones deben cumplirse)
+if bateria > 20 and distancia > 20:
+    print("✅ El robot puede operar normalmente")
+
+# Usando or (al menos una debe cumplirse)
+if bateria < 20 or distancia < 10:
+    print("⚠️ Alerta! Hay problema en el sistema")
+```
+
+---
+
+## 🎮 Desafío Extra: El Controller del Robot
+
+Crea un sistema de control que:
+
+1. Mida la **distancia al obstáculo** (usa diferentes valores para probar)
+2. Mida el **nivel de batería**
+3. Decida qué acción tomar:
+
+| Condición | Acción |
+|----------|--------|
+| Batería < 15% | "⚠️ Batería crítica - retornando a base" |
+| Distancia < 10 cm | "🛑 Obstáculo muy cerca - frenando" |
+| Distancia < 25 cm | "⚠️ Obstáculo cercano - reduciendo velocidad" |
+| Batería OK + Distancia OK | "✅ Operando normalmente" |
+
+---
+
+## 📝 Solución del Desafío Extra
+
+<details>
+<summary>¿Necesitas ayuda? Mira la solución aquí</summary>
+
+```python
+# Sistema de control del robot
+print("=== SISTEMA DE CONTROL ===\n")
+
+# Prueba con diferentes valores
+bateria = 30
+distancia = 15
+
+print(f"Batería: {bateria}%")
+print(f"Distancia: {distancia} cm\n")
+
+# Análisis de batería
+if bateria < 15:
+    print("⚠️ Batería crítica - retornando a base")
+    
+# Análisis de distancia
+if distancia < 10:
+    print("🛑 Obstáculo muy cerca - frenando")
+elif distancia < 25:
+    print("⚠️ Obstáculo cercano - reduciendo velocidad")
+    
+# Si todo está bien
+if bateria >= 15 and distancia >= 25:
+    print("✅ Operando normalmente")
+```
+
+**Prueba cambiando los valores de batería y distancia para ver las diferentes respuestas.**
+
+</details>
+
+---
+
+## ✅ Verificación
+
+Antes de continuar, asegurúrate de que puedes:
+
+- [ ] Usar `if` para ejecutar código cuando se cumple una condición
+- [ ] Usar `else` para ejecutar código cuando NO se cumple
+- [ ] Usar `elif` para múltiples condiciones
+- [ ] Combinar condiciones con `and` y `or`
+
+---
+
+## 🔗 Siguiente Ejercicio
+
+[Ejercicio 4: Repetir Sin Cansarse →](ejercicio_04_bucles.qmd)

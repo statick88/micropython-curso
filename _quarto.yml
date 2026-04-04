@@ -48,6 +48,25 @@ book:
     - part: "🌟 FUNDAMENTOS"
       chapters:
         - contenido/unidad0/competencias_docente.qmd
+        - contenido/unidad0/fundamentos_python/index.qmd
+        - contenido/unidad0/fundamentos_python/introduccion.qmd
+        - contenido/unidad0/fundamentos_python/variables_tipos.qmd
+        - contenido/unidad0/fundamentos_python/control_flujo.qmd
+        - contenido/unidad0/fundamentos_python/funciones.qmd
+        - contenido/unidad0/fundamentos_python/manejo_errores.qmd
+        - contenido/unidad0/fundamentos_python/estructuras_datos.qmd
+        - contenido/unidad0/fundamentos_python/resumen_trasicion_hardware.qmd
+        - ejercicios/fundamentos_python/index.qmd
+        - ejercicios/fundamentos_python/ejercicio_01_variables.qmd
+        - ejercicios/fundamentos_python/ejercicio_02_tipos_datos.qmd
+        - ejercicios/fundamentos_python/ejercicio_03_condicionales.qmd
+        - ejercicios/fundamentos_python/ejercicio_04_bucles.qmd
+        - ejercicios/fundamentos_python/ejercicio_05_funciones.qmd
+        - ejercicios/fundamentos_python/ejercicio_06_errores.qmd
+        - ejercicios/fundamentos_python/ejercicio_07_estructuras.qmd
+        - ejercicios/proyectos/proyecto_robot_virtual.qmd
+        - quizzes/quiz_fundamentos_python.qmd
+        - quizzes/quiz_fundamentos_completo.qmd
     - part: "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR"
       chapters:
         - contenido/unidad1/guia_hub_desde_cero.qmd
@@ -86,6 +105,9 @@ book:
         - contenido/apendice_thonny_debugger.qmd
         - contenido/apendice_simuladores.qmd
         - contenido/apendice_pybricks_compilacion.qmd
+        - contenido/apendice_pybricks_spike.qmd
+        - contenido/apendice_hardware_alternativo.qmd
+        - contenido/referencia_sintaxis_spike.qmd
     - part: "🎯 EVALUACIONES"
       chapters:
         - evaluaciones/eval_motores_avanzados.qmd

@@ -1,0 +1,167 @@
+---
+title: "Ejercicio 2: Qué Tipo de Caja Usas"
+description: "Aprende los diferentes tipos de datos en Python"
+---
+
+# 🔢 Ejercicio 2: Qué Tipo de Caja Usas
+
+## 🎯 Objetivo
+
+Aprender los diferentes **tipos de datos** y saber cuándo usar cada uno.
+
+---
+
+## 📖 Contexto
+
+En el mundo real, diferentes cosas van en diferentes tipos de contenedores:
+- Agua → botella (líquido)
+- Libros → estantería (múltiples objetos)
+- Llave → gancho (acceso directo por nombre)
+
+En programación pasa lo mismo. Python tiene diferentes "tipos de cajas" para diferentes tipos de información.
+
+---
+
+## 🔴 Nivel 1: Los 4 Tipos Básicos
+
+### Ejecuta este código y observa:
+
+```python
+# Tipo 1: Números enteros (int) - para contar
+cantidad_motores = 3
+print("Entero:", cantidad_motores, "- type:", type(cantidad_motores))
+
+# Tipo 2: Números decimales (float) - para mediciones
+distancia = 25.5
+print("Float:", distancia, "- type:", type(distancia))
+
+# Tipo 3: Texto (str) - para palabras
+nombre_robot = "ExplorerBot"
+print("String:", nombre_robot, "- type:", type(nombre_robot))
+
+# Tipo 4: Verdadero/Falso (bool) - para estados
+tiene_bateria = True
+print("Bool:", tiene_bateria, "- type:", type(tiene_bateria))
+```
+
+**Pregunta:** ¿Qué tipo de dato usarías para guardar...?
+- La temperatura del cuarto: _________
+- Cuántas veces giró el motor: _________
+- El nombre del sensor de color: _________
+- Si el robot está funcionando: _________
+
+---
+
+## 🟡 Nivel 2: Convirtiendo Entre Tipos
+
+A veces necesitamos cambiar el tipo de dato. Python puede hacer esto:
+
+```python
+# De string a número
+edad = "25"
+edad_numero = int(edad)  # Convierte a entero
+print("Edad como string:", edad, type(edad))
+print("Edad como número:", edad_numero, type(edad_numero))
+
+# De número a string
+numero = 42
+numero_texto = str(numero)
+print("Número:", numero, type(numero))
+print("Como texto:", numero_texto, type(numero_texto))
+
+# De float a int (se corta el decimal)
+altura = 15.7
+altura_entera = int(altura)
+print("Altura:", altura, "->", altura_entera)
+```
+
+---
+
+## 🟢 Nivel 3: Aplicación en Robótica
+
+Crea un programa que guarde datos de un sensor:
+
+```python
+# Simulando lectura de sensores
+sensor_distancia = 25.5  # float - centímetros
+sensor_color = "rojo"     # str - color detectado
+sensor_fuerza = 0         # int - presión aplicada
+sensor_funcionando = True # bool - está activo?
+
+# Mostrar lectura
+print("=== LECTURA DE SENSORES ===")
+print("Distancia:", sensor_distancia, "cm")
+print("Color:", sensor_color)
+print("Fuerza:", sensor_fuerza, "N")
+print("Funcionando:", sensor_funcionando)
+
+# El sensor detecta algo
+sensor_distancia = 10.2  # Algo se acercó
+sensor_fuerza = 5        # Se tocó el sensor
+sensor_color = "azul"    # Detectó color azul
+
+print("\n=== NUEVA LECTURA ===")
+print("Distancia:", sensor_distancia, "cm")
+print("Color:", sensor_color)
+print("Fuerza:", sensor_fuerza, "N")
+```
+
+---
+
+## 🎮 Desafío Extra: El Panel de Control
+
+Crea un "panel de control" con estas características:
+
+1. **Nombre del robot**: "R2-D2" (string)
+2. **Batería**: 75.5% (float)
+3. **Temperatura**: 22 grados (int)
+4. **Modo activo**: True (bool)
+5. **Mensaje de estado**: "Sistema operativo" (string)
+
+Luego, muestra todos los datos en formato de "panel".
+
+---
+
+## 📝 Solución del Desafío Extra
+
+<details>
+<summary>¿Necesitas ayuda? Mira la solución aquí</summary>
+
+```python
+# Panel de control del robot
+nombre_robot = "R2-D2"
+bateria = 75.5
+temperatura = 22
+modo_activo = True
+mensaje = "Sistema operativo"
+
+# Mostrar panel
+print("╔════════════════════════════════╗")
+print("║     PANEL DE CONTROL           ║")
+print("╠════════════════════════════════╣")
+print(f"║ Robot:     {nombre_robot:<20} ║")
+print(f"║ Batería:  {bateria:<20} ║")
+print(f"║ Temperat:  {temperatura:<20} ║")
+print(f"║ Modo:      {modo_activo:<20} ║")
+print(f"║ Estado:    {mensaje:<20} ║")
+print("╚════════════════════════════════╝")
+```
+
+</details>
+
+---
+
+## ✅ Verificación
+
+Antes de continuar, asegurúrate de que puedes:
+
+- [ ] Identificar los 4 tipos básicos (int, float, str, bool)
+- [ ] Elegir el tipo correcto para cada situación
+- [ ] Convertir entre tipos cuando es necesario
+- [ ] Usar type() para verificar el tipo de una variable
+
+---
+
+## 🔗 Siguiente Ejercicio
+
+[Ejercicio 3: Decisiones del Robot →](ejercicio_03_condicionales.qmd)

@@ -1,5 +1,20 @@
 # Fundamentos: Antes de Comenzar {#competencias-docente}
 
+## Nuevo: Módulo de Fundamentos de Python
+
+Si nunca has programado antes o quieres reforzar tus conocimientos de Python antes de trabajar con el hardware, te recomendamos comenzar con nuestro **Módulo de Fundamentos de Python para Robótica Educativa**.
+
+Este módulo cubre:
+- Variables y tipos de datos
+- Estructuras de control (condicionales y bucles)
+- Funciones
+- Manejo de errores
+- Estructuras de datos (listas y diccionarios)
+
+👉 [Acceder al módulo de fundamentos](fundamentos_python/index.qmd)
+
+---
+
 ## Algo interesante antes de empezar
 
 Antes de escribir nuestro primer programa, vamos a entender algo que usaremos siempre: cómo guardar información que puede cambiar.
@@ -190,7 +205,7 @@ for lado in range(4):
     robot.turn(90)       # Girar
 ```
 
-El robot will hacer: adelante → gira → adelante → gira → adelante → gira → adelante → gira
+El robot hará: adelante → gira → adelante → gira → adelante → gira → adelante → gira
 
 ---
 
@@ -199,7 +214,7 @@ El robot will hacer: adelante → gira → adelante → gira → adelante → gi
 | Concepto | Analogía | Para qué sirve |
 |---------|----------|----------------|
 | "Caja" | Contenedor para guardar algo que cambia | Guardar valores que necesitamos recordar [1][2] |
-| "Receta" | Instrucciones que podemos reuse | No escribir lo mismo varias veces [4] |
+| "Receta" | Instrucciones que podemos reutilizar | No escribir lo mismo varias veces [4] |
 | "Bucle" | Hacer algo varias veces | Repetir acciones sin copiar y pegar [6][7] |
 
 Estos tres conceptos los usaremos constantemente en todo el curso. Ahora que los entiendes (a través de ejemplos de la vida real), podemos aplicarlos al robot.
