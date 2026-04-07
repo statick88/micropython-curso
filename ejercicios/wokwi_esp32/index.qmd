@@ -2,6 +2,16 @@
 
 Esta sección contiene ejemplos prácticos para aprender MicroPython utilizando el simulador online **Wokwi** con un **ESP32 DevKit V1**.
 
+## 📥 Descargar Ejemplos
+
+[📦 Descargar todos los ejemplos ESP32 (ZIP)](../../_downloads/wokwi_esp32.zip)
+
+Contiene 23 proyectos completos con:
+- `main.py` - Código MicroPython
+- `diagram.json` - Configuración del circuito
+
+---
+
 ## 🌐 ¿Qué es Wokwi?
 
 Wokwi es un simulador online de electrónica que permite:
@@ -25,11 +35,12 @@ Wokwi es un simulador online de electrónica que permite:
 
 ## 🚀 Cómo Usar los Ejemplos
 
-### Opción 1: Wokwi Online (Recomendado)
-1. Ve a [wokwi.com/projects/new/micropython-esp32](https://wokwi.com/projects/new/micropython-esp32)
-2. Copia el contenido de `main.py` del ejemplo
-3. Copia el contenido de `diagram.json` del ejemplo
-4. Presiona "Start Simulation" para ejecutar
+### Opción 1: Descargar y Usar Offline
+1. Haz clic en **"Descargar todos los ejemplos ESP32 (ZIP)"** arriba
+2. Descomprime el archivo
+3. Ve a [wokwi.com/projects/new/micropython-esp32](https://wokwi.com/projects/new/micropython-esp32)
+4. Copia el contenido de `main.py` y `diagram.json` del ejemplo que quieras
+5. Presiona "Start Simulation" para ejecutar
 
 ### Opción 2: VS Code con Extensión Wokwi
 1. Instala la extensión "Wokwi" en VS Code

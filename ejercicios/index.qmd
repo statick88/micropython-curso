@@ -1,0 +1,49 @@
+# Ejercicios de MicroPython 🧩
+
+Bienvenido a la sección de ejercicios prácticos. Aquí encontrarás diferentes tipos de actividades para practicar MicroPython:
+
+## 🎮 Simulaciones con Wokwi
+
+Practica programación de microcontroladores usando el simulador online **Wokwi**. No necesitas hardware físico.
+
+### [Raspberry Pi Pico](./wokwi_ejemplos) 
+*(17 ejemplos - Para niños desde 10 años)*
+
+Ejemplos interactivos para aprender MicroPython simulando un Raspberry Pi Pico. Incluye LED, sensores, displays y más.
+
+### [ESP32](./wokwi_esp32)
+*(23 ejemplos - Para niños desde 10 años)*
+
+Ejemplos para el microcontrolador ESP32 con WiFi. Proyectos más avanzados con conectividad.
+
+---
+
+## 📝 Ejercicios de Fundamentos
+
+Practica los conceptos básicos de Python aplicados a hardware:
+
+### [Fundamentos Python](./fundamentos_python)
+*(7 ejercicios)*
+
+Ejercicios progresivos desde variables hasta estructuras de datos.
+
+---
+
+## 🤖 Proyectos Integradores
+
+### [Proyecto Robot Virtual](./proyectos/robot_virtual)
+*(Nivel: Intermedio)*
+
+Proyecto final que integra todos los conceptos aprendidos.
+
+---
+
+## 🚀 Cómo Usar Esta Sección
+
+1. **Sin hardware:** Usa los ejemplos de Wokwi directamente en el navegador
+2. **Con hardware real:** Sigue los ejercicios de fundamentos con tu robot LEGO
+3. **Combina ambos:** Aprende conceptos básicos y práctica con simulaciones
+
+---
+
+*¿Necesitas ayuda? Consulta la [guía de simuladores](../contenido/apendice_simuladores.qmd) para configurar tu entorno.*

@@ -6,6 +6,7 @@ project:
   output-dir: docs
   resources: 
     - "images/*.png"
+    - "_downloads/*.zip"
 
 book:
   title: "MicroPython para el Aula"
@@ -65,6 +66,9 @@ book:
         - ejercicios/fundamentos_python/ejercicio_06_errores.qmd
         - ejercicios/fundamentos_python/ejercicio_07_estructuras.qmd
         - ejercicios/proyectos/proyecto_robot_virtual.qmd
+        - ejercicios/index.qmd
+        - ejercicios/wokwi_ejemplos/index.qmd
+        - ejercicios/wokwi_esp32/index.qmd
         - quizzes/quiz_fundamentos_python.qmd
         - quizzes/quiz_fundamentos_completo.qmd
     - part: "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR"
