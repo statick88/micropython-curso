@@ -24,6 +24,9 @@ description: "Alternativas gratuitas para probar código sin hardware físico"
 | **Thonny + REPL** | Local | Gratis | ❌ | MicroPython puro |
 | **ESP-32 Simulator** | Hardware | ~$15 | ❌ | Prototipado real |
 | **ViperIDE** | Online | Gratis | ✅ | Clases remotas |
+| **Wokwi** | Online | Gratis* | ✅ | Práctica MicroPython general |
+
+*Wokwi tiene planes gratuitos y pagos
 
 ---
 
@@ -132,6 +135,89 @@ Simulador de hardware real con ESP-32 (como el que clonamos).
 | Cable USB | $2 | Cualquier tienda |
 | Sensores (opcional) | $5-20 | AliExpress |
 | **Total mínimo** | **~$10** | |
+
+---
+
+## 🥇 Opción 4: Wokwi - Simulador Online Profesional
+
+Simulador de electrónica profesional que soporta múltiples microcontroladores y componentes.
+
+### Características
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    🌐 WOKWI                                      │
+│                    wokwi.com                                    │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ✅ Simulación de ESP32, Raspberry Pi Pico, Arduino            │
+│   ✅ Gran biblioteca de componentes (LEDs, sensores, displays)  │
+│   ✅ Programación en MicroPython                                │
+│   ✅ Modo WiFi simulado para proyectos IoT                      │
+│   ✅ Integración con VS Code                                    │
+│   ✅ Comunidad activa con proyectos compartidos                │
+│                                                                 │
+│   ⚠️ Requiere cuenta para guardar proyectos                     │
+│   ⚠️ Sin soporte nativo para LEGO SPIKE                         │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Cómo usarlo
+
+1. Abrir: https://wokwi.com/projects/new/micropython-pi-pico
+2. Seleccionar plantilla MicroPython para Raspberry Pi Pico
+3. Escribir código en `main.py`
+4. Configurar componentes en `diagram.json`
+5. Presionar "Start Simulation" para ejecutar
+
+### Ejemplos Disponibles
+
+En el directorio `ejercicios/wokwi_ejemplos/` encontrarás ejemplos prácticos:
+
+| Ejemplo | Descripción | Componentes |
+|---------|-------------|-------------|
+| [Parpadeo LED](./ejercicios/wokwi_ejemplos/parpadeo_led) | LED que parpadea cada segundo | LED, Resistencia |
+| [LED RGB](./ejercicios/wokwi_ejemplos/led_rgb) | Secuencia de colores | LED RGB |
+| [Display 7 Segmentos](./ejercicios/wokwi_ejemplos/display_7_segmentos) | Contador 0-9 | Display 7 segmentos |
+| [Sensor Distancia](./ejercicios/wokwi_ejemplos/sensor_distancia) | Medición ultrasónica | HC-SR04 |
+| [Sensor Temperatura](./ejercicios/wokwi_ejemplos/sensor_temperatura) | DHT22 | DHT22 |
+| [Display OLED](./ejercicios/wokwi_ejemplos/oled_display) | Gráficos I2C | SSD1306 |
+
+### Código de Ejemplo: Parpadeo LED
+
+```python
+# main.py - Parpadeo de LED en Wokwi
+from machine import Pin
+import time
+
+# Configurar pin GPIO 15 como salida
+led = Pin(15, Pin.OUT)
+
+# Bucle infinito
+while True:
+    led.value(1)      # Encender LED
+    print("LED ON")
+    time.sleep(1)    # Esperar 1 segundo
+    
+    led.value(0)      # Apagar LED
+    print("LED OFF")
+    time.sleep(1)
+```
+
+```json
+// diagram.json - Conexiones
+{
+  "parts": [
+    { "id": "pico", "type": "wokwi-pi-pico" },
+    { "id": "led1", "type": "wokwi-led", "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    ["pico:GPIO15", "led1:A", "red", []],
+    ["led1:C", "pico:GND", "black", []]
+  ]
+}
+```
 
 ---
 

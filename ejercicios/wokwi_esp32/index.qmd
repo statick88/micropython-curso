@@ -1,0 +1,106 @@
+# Ejemplos de Simulación ESP32 con Wokwi
+
+Esta sección contiene ejemplos prácticos para aprender MicroPython utilizando el simulador online **Wokwi** con un **ESP32 DevKit V1**.
+
+## 🌐 ¿Qué es Wokwi?
+
+Wokwi es un simulador online de electrónica que permite:
+- Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32)
+- Crear proyectos con componentes reales (LEDs, sensores, displays)
+- Programar en MicroPython y ejecutar en el simulador
+- Compartir proyectos mediante enlaces
+
+## 📋 Lista de Ejemplos ESP32
+
+| Ejemplo | Descripción | Dificultad | Componentes | Pines GPIO |
+|---------|-------------|-------------|-------------|------------|
+| [Parpadeo LED](./parpadeo_led) | LED que parpadea | ⭐ Básico | LED, Resistencia | GPIO 2 |
+| [LED RGB](./led_rgb) | Control de LED RGB | ⭐ Básico | LED RGB | 25, 26, 27 |
+| [Botón + LED](./boton_led) | LED controlado por botón | ⭐ Básico | LED, Botón | 2, 4 |
+| [Potenciómetro + LED](./potenciometro_led) | Brillo variable | ⭐⭐ Intermedio | LED, Potenciómetro | 2, 34 |
+| [Sensor Distancia](./sensor_distancia) | HC-SR04 ultrasónico | ⭐⭐ Intermedio | HC-SR04 | 5, 18 |
+| [Sensor Temperatura](./sensor_temperatura) | DHT22 | ⭐⭐ Intermedio | DHT22 | GPIO 4 |
+| [Servomotor](./servo_motor) | Control de servo SG90 | ⭐⭐⭐ Avanzado | Servomotor SG90 | GPIO 13 |
+| [Display OLED](./display_oled) | Display I2C SSD1306 | ⭐⭐⭐ Avanzado | OLED 128x64 | 21, 22 (I2C) |
+
+## 🚀 Cómo Usar los Ejemplos
+
+### Opción 1: Wokwi Online (Recomendado)
+1. Ve a [wokwi.com/projects/new/micropython-esp32](https://wokwi.com/projects/new/micropython-esp32)
+2. Copia el contenido de `main.py` del ejemplo
+3. Copia el contenido de `diagram.json` del ejemplo
+4. Presiona "Start Simulation" para ejecutar
+
+### Opción 2: VS Code con Extensión Wokwi
+1. Instala la extensión "Wokwi" en VS Code
+2. Crea un nuevo proyecto MicroPython para ESP32
+3. Copia los archivos del ejemplo
+4. Ejecuta con F5
+
+### Opción 3: ESP32 Real
+1. Flash MicroPython en tu ESP32
+2. Copia `main.py` al dispositivo
+3. Conecta los componentes según `diagram.json`
+4. Observa el resultado
+
+## 🔧 Pines del ESP32 Utilizados
+
+| GPIO | Función | Notas |
+|------|---------|-------|
+| GPIO 2 | LED integrado | También para LED externo |
+| GPIO 4 | Entrada digital | DHT22, botón |
+| GPIO 5 | Trigger HC-SR04 | Sensor distancia |
+| GPIO 13 | PWM | Servomotor |
+| GPIO 18 | Echo HC-SR04 | Sensor distancia |
+| GPIO 21 | I2C SDA | Display OLED |
+| GPIO 22 | I2C SCL | Display OLED |
+| GPIO 25 | Salida digital | LED RGB (R) |
+| GPIO 26 | Salida digital | LED RGB (G) |
+| GPIO 27 | Salida digital | LED RGB (B) |
+| GPIO 34 | ADC | Solo entrada, potenciómetro |
+
+## 📚 Conceptos Cubiertos
+
+### Salidas Digitales
+- **Parpadeo LED**: `machine.Pin`, `Pin.OUT`, `time.sleep()`
+- **LED RGB**: Control de múltiples pines, lógica invertida
+
+### Entradas Digitales
+- **Botón**: `Pin.IN`, `Pin.PULL_DOWN`, `Pin.PULL_UP`
+
+### Entradas Analógicas
+- **ADC**: `machine.ADC`, lectura de potenciómetro
+- **PWM**: `machine.PWM`, control de brillo
+
+### Sensores
+- **HC-SR04**: `time_pulse_us()`, cálculo de distancia
+- **DHT22**: Protocolo one-wire
+
+### Comunicación I2C
+- **Display OLED**: `machine.I2C`, librería ssd1306
+
+### Actuadores
+- **Servomotor**: `machine.PWM`, conversión ángulo-duty
+
+## 📖 Referencias
+
+- [Documentación oficial de Wokwi](https://docs.wokwi.com/)
+- [Guía de MicroPython en Wokwi](https://docs.wokwi.com/guides/micropython)
+- [Referencia ESP32 en Wokwi](https://docs.wokwi.com/guides/esp32)
+- [Librería ssd1306 para MicroPython](https://github.com/micropython/micropython-lib)
+
+## 🎯 Diferencias entre Raspberry Pi Pico y ESP32
+
+| Característica | Raspberry Pi Pico | ESP32 DevKit V1 |
+|----------------|-------------------|-----------------|
+| Nucleo | RP2040 (2 núcleos) | ESP32 (Xtensa) |
+| Frecuencia | 133 MHz | 240 MHz |
+| WiFi | ❌ | ✅ |
+| Bluetooth | ❌ | ✅ |
+| Pines ADC | 3 (12-bit) | 18 (12-bit) |
+| Pines PWM | Multiples | Multiples |
+| I2C | Cualquier par | Typically GPIO 21/22 |
+
+---
+
+*Nota: Los ejemplos están diseñados específicamente para ESP32 DevKit V1. Para usar otros modelos de ESP32, ajusta los números de pines según corresponda.*

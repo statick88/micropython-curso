@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "wokwi-pi-pico",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": " ultrasonic1",
+      "type": "wokwi-hc-sr04",
+      "left": 100,
+      "top": 100
+    }
+  ],
+  "connections": [
+    ["pico:GPIO2", "ultrasonic1:trig", "yellow", []],
+    ["pico:GPIO3", "ultrasonic1:echo", "green", []],
+    ["ultrasonic1:VCC", "pico:VBUS", "red", []],
+    ["ultrasonic1:GND", "pico:GND", "black", []]
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "wokwi-pi-pico",
+      "left": 450,
+      "top": 150
+    },
+    {
+      "id": "rgbled",
+      "type": "wokwi-rgb-led",
+      "left": 150,
+      "top": 100,
+      "attrs": {
+        "common": "common cathode"
+      }
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-resistor",
+      "left": 150,
+      "top": 220,
+      "attrs": { "resistance": "220" }
+    },
+    {
+      "id": "r2",
+      "type": "wokwi-resistor",
+      "left": 220,
+      "top": 220,
+      "attrs": { "resistance": "220" }
+    },
+    {
+      "id": "r3",
+      "type": "wokwi-resistor",
+      "left": 290,
+      "top": 220,
+      "attrs": { "resistance": "220" }
+    }
+  ],
+  "connections": [
+    ["pico:GPIO15", "rgbled:R", "red", []],
+    ["pico:GPIO14", "rgbled:G", "green", []],
+    ["pico:GPIO13", "rgbled:B", "blue", []],
+    ["rgbled:C", "pico:GND", "black", []]
+  ]
+}

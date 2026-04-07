@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "wokwi-pi-pico",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "encoder1",
+      "type": "wokwi-ky-040",
+      "left": 150,
+      "top": 100
+    }
+  ],
+  "connections": [
+    ["pico:GPIO15", "encoder1:CLK", "green", []],
+    ["pico:GPIO14", "encoder1:DT", "yellow", []],
+    ["pico:GPIO13", "encoder1:SW", "blue", []],
+    ["encoder1:VCC", "pico:VCC", "red", []],
+    ["encoder1:GND", "pico:GND", "black", []]
+  ]
+}

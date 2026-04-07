@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp32",
+      "type": "board-esp32-devkit-c-v4",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "servo1",
+      "type": "wokwi-servo",
+      "left": 150,
+      "top": 100
+    }
+  ],
+  "connections": [
+    ["esp32:GPIO13", "servo1:signal", "yellow", []],
+    ["servo1:VCC", "esp32:VCC", "red", []],
+    ["servo1:GND", "esp32:GND", "black", []]
+  ]
+}

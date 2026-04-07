@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp32",
+      "type": "board-esp32-devkit-c-v4",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "lcd1",
+      "type": "wokwi-lcd1602",
+      "left": 100,
+      "top": 80
+    }
+  ],
+  "connections": [
+    ["esp32:GPIO21", "lcd1:SDA", "yellow", []],
+    ["esp32:GPIO22", "lcd1:SCL", "yellow", []],
+    ["lcd1:VCC", "esp32:VCC", "red", []],
+    ["lcd1:GND", "esp32:GND", "black", []]
+  ]
+}
