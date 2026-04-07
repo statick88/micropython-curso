@@ -1,0 +1,264 @@
+---
+title: "🎮 Anexo Wokwi: Simulador de MicroPython"
+description: "Guía completa y ejemplos validados para practicar MicroPython con Wokwi"
+---
+
+# 🎮 Anexo Wokwi: Simulador de MicroPython
+
+:::{.callout-note}
+**¡Importante!** Todos los ejemplos de esta sección han sido validados y funcionan correctamente en el simulador Wokwi.
+:::
+
+---
+
+## 🌐 ¿Qué es Wokwi?
+
+Wokwi es un simulador online de electrónica que permite:
+
+- ✅ Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32)
+- ✅ Crear proyectos con componentes reales (LEDs, sensores, displays)
+- ✅ Programar en MicroPython y ejecutar en el simulador
+- ✅ Compartir proyectos mediante enlaces únicos
+
+---
+
+## 🚀 Inicio Rápido
+
+### Paso 1: Acceder a Wokwi
+
+| Microcontrolador | URL |
+|-----------------|-----|
+| Raspberry Pi Pico | [wokwi.com/projects/new/micropython-pi-pico](https://wokwi.com/projects/new/micropython-pi-pico) |
+| ESP32 | [wokwi.com/projects/new/micropython-esp32](https://wokwi.com/projects/new/micropython-esp32) |
+
+### Paso 2: Configurar el Proyecto
+
+1. Copia el código de `main.py` del ejemplo
+2. Copia la configuración de `diagram.json`
+3. Presiona **"Start Simulation"** ▶️
+
+### Paso 3: Ver la Salida
+
+- Click en **"Serial"** para ver los mensajes de consola
+- Los LEDs y componentes se animan automáticamente
+
+---
+
+## 📥 Descargar Ejemplos
+
+| Plataforma | Descarga | Ejemplos |
+|------------|----------|----------|
+| **Raspberry Pi Pico** | [📦 wokwi_ejemplos.zip](../../_downloads/wokwi_ejemplos.zip) | 17 proyectos |
+| **ESP32** | [📦 wokwi_esp32.zip](../../_downloads/wokwi_esp32.zip) | 23 proyectos |
+| **Arduino** | [📦 wokwi_arduino.zip](../../_downloads/wokwi_arduino.zip) | 6 proyectos |
+
+---
+
+## 📋 Índice de Ejemplos Validados
+
+### 🔴 Raspberry Pi Pico (17 Ejemplos)
+
+| # | Ejemplo | Descripción | Dificultad | Componentes |
+|---|---------|-------------|------------|-------------|
+| 1 | [Parpadeo LED](./wokwi_ejemplos/parpadeo_led) | LED que parpadea cada segundo | ⭐ Básico | LED, Resistencia 220Ω |
+| 2 | [LED RGB](./wokwi_ejemplos/led_rgb) | Secuencia de 7 colores | ⭐ Básico | LED RGB, 3 resistencias |
+| 3 | [Contador Botones](./wokwi_ejemplos/contador_botones) | Contador con 2 botones | ⭐ Básico | 2 botones, LED |
+| 4 | [Display 7 Segmentos](./wokwi_ejemplos/display_7_segmentos) | Contador numérico 0-9 | ⭐⭐ Intermedio | Display 7 segmentos |
+| 5 | [Sensor Distancia](./wokwi_ejemplos/sensor_distancia) | Medición ultrasónica HC-SR04 | ⭐⭐ Intermedio | Sensor ultrasónico |
+| 6 | [Sensor Temperatura](./wokwi_ejemplos/sensor_temperatura) | DHT22 temperatura/humedad | ⭐⭐⭐ Avanzado | DHT22 |
+| 7 | [Display OLED](./wokwi_ejemplos/oled_display) | Display gráfico I2C SSD1306 | ⭐⭐⭐ Avanzado | OLED 128x64, I2C |
+| 8 | [LCD Display](./wokwi_ejemplos/lcd_display) | Display LCD 16x2 | ⭐⭐ Intermedio | LCD 16x2, I2C |
+| 9 | [Buzzer Melodía](./wokwi_ejemplos/buzzer_melodia) | Reproduce melodías | ⭐⭐ Intermedio | Buzzer piezoeléctrico |
+| 10 | [Sensor PIR](./wokwi_ejemplos/sensor_pir) | Detector de movimiento | ⭐⭐ Intermedio | Sensor PIR HC-SR501 |
+| 11 | [Sensor Luz](./wokwi_ejemplos/sensor_luz) | Fotoresistor LDR | ⭐ Básico | LDR, resistencia |
+| 12 | [Sensor Hall](./wokwi_ejemplos/sensor_hall) | Sensor de campo magnético | ⭐⭐ Intermedio | Sensor Hall |
+| 13 | [Joystick Analógico](./wokwi_ejemplos/joystick_analogico) | Control XY analógico | ⭐⭐ Intermedio | Joystick, 2 LEDs |
+| 14 | [Encoder Rotativo](./wokwi_ejemplos/encoder_rotativo) | Encoder rotativo KY-040 | ⭐⭐ Intermedio | Encoder, LED |
+| 15 | [Teclado Matriz](./wokwi_ejemplos/teclado_matriz) | Teclado 4x4 | ⭐⭐⭐ Avanzado | Matriz 4x4 |
+| 16 | [Micrófono](./wokwi_ejemplos/microfono) | Sensor de sonido | ⭐⭐ Intermedio | Micrófono KY-038 |
+| 17 | [Rele Control](./wokwi_ejemplos/rele_control) | Control de relevador | ⭐⭐ Intermedio | Relevador 5V, LED |
+
+### 🟠 ESP32 (23 Ejemplos)
+
+| # | Ejemplo | Descripción | Dificultad | Componentes | Notas |
+|---|---------|-------------|------------|-------------|-------|
+| 1 | [Parpadeo LED](./wokwi_esp32/parpadeo_led) | LED que parpadea | ⭐ Básico | LED, Resistencia | GPIO 2 |
+| 2 | [LED RGB](./wokwi_esp32/led_rgb) | Secuencia de colores | ⭐ Básico | LED RGB | GPIO 25-27 |
+| 3 | [Boton LED](./wokwi_esp32/boton_led) | LED controlado por botón | ⭐ Básico | LED, Botón | GPIO 2, 4 |
+| 4 | [Contador Botones](./wokwi_esp32/contador_botones) | Contador con botones | ⭐ Básico | 2 botones, LED | GPIO 4, 5 |
+| 5 | [Potenciometro LED](./wokwi_esp32/potenciometro_led) | Brillo variable | ⭐⭐ Intermedio | LED, Potenciómetro | GPIO 34 (ADC) |
+| 6 | [Sensor Distancia](./wokwi_esp32/sensor_distancia) | HC-SR04 ultrasónico | ⭐⭐ Intermedio | HC-SR04 | GPIO 5, 18 |
+| 7 | [Sensor Temperatura](./wokwi_esp32/sensor_temperatura) | DHT22 | ⭐⭐ Intermedio | DHT22 | GPIO 4 |
+| 8 | [Display OLED](./wokwi_esp32/display_oled) | Display I2C SSD1306 | ⭐⭐⭐ Avanzado | OLED 128x64 | I2C GPIO 21-22 |
+| 9 | [LCD Display](./wokwi_esp32/lcd_display) | LCD 16x2 I2C | ⭐⭐ Intermedio | LCD 16x2 | I2C |
+| 10 | [Buzzer Melodia](./wokwi_esp32/buzzer_melodia) | Melodías con buzzer | ⭐⭐ Intermedio | Buzzer | GPIO 25 |
+| 11 | [Sensor PIR](./wokwi_esp32/sensor_pir) | Detector movimiento | ⭐⭐ Intermedio | PIR HC-SR501 | GPIO 4 |
+| 12 | [Sensor Luz](./wokwi_esp32/sensor_luz) | Fotoresistor LDR | ⭐ Básico | LDR | GPIO 34 |
+| 13 | [Sensor Gas](./wokwi_esp32/sensor_gas) | MQ-135 gas | ⭐⭐ Intermedio | MQ-135 | GPIO 34 |
+| 14 | [Servomotor](./wokwi_esp32/servo_motor) | Control SG90 | ⭐⭐⭐ Avanzado | Servo SG90 | GPIO 13 |
+| 15 | [Motor DC](./wokwi_esp32/motor_dc) | Control motor DC | ⭐⭐⭐ Avanzado | Motor DC, L293D | GPIO 18, 19 |
+| 16 | [Rele Control](./wokwi_esp32/rele_control) | Relevador | ⭐⭐ Intermedio | Relevador | GPIO 26 |
+| 17 | [Encoder Rotativo](./wokwi_esp32/encoder_rotativo) | Encoder KY-040 | ⭐⭐ Intermedio | Encoder | GPIO 4, 5 |
+| 18 | [Joystick Analogico](./wokwi_esp32/joystick_analogico) | Joystick XY | ⭐⭐ Intermedio | Joystick | GPIO 34, 35 |
+| 19 | [Bluetooth LED](./wokwi_esp32/bluetooth_led) | Control WiFi/BT | ⭐⭐⭐ Avanzado | LED | WiFi+BT |
+| 20 | [Temp Humedad I2C](./wokwi_esp32/temp_humedad_i2c) | AHT10 I2C | ⭐⭐ Intermedio | AHT10 | I2C |
+| 21-23 | *Reservados* | - | - | - | Expansión |
+
+### 🟢 Arduino (6 Ejemplos)
+
+| # | Ejemplo | Descripción | Dificultad | Componentes | Notas |
+|---|---------|-------------|------------|-------------|-------|
+| 1 | [Parpadeo LED](./wokwi_arduino/parpadeo_led) | LED que parpadea | ⭐ Básico | LED, Resistencia | Pin 13 |
+| 2 | [LED RGB](./wokwi_arduino/led_rgb) | Secuencia de colores | ⭐ Básico | LED RGB | Pines 9-11 |
+| 3 | [Sensor Distancia](./wokwi_arduino/sensor_distancia) | HC-SR04 ultrasónico | ⭐⭐ Intermedio | HC-SR04 | Pines 9, 10 |
+| 4 | [Sensor Temperatura](./wokwi_arduino/sensor_temperatura) | DHT22 | ⭐⭐ Intermedio | DHT22 | Pin 2 |
+| 5 | [Display OLED](./wokwi_arduino/oled_display) | Display I2C SSD1306 | ⭐⭐⭐ Avanzado | OLED 128x64 | I2C A4/A5 |
+| 6 | [LCD Display](./wokwi_arduino/lcd_display) | LCD 16x2 I2C | ⭐⭐ Intermedio | LCD 1602 | I2C A4/A5 |
+
+---
+
+## 🔧 Referencia de Pines
+
+### Raspberry Pi Pico
+
+| GPIO | Función | Notas |
+|------|---------|-------|
+| GP0-GP1 | I2C0 SDA/SCL | Por defecto |
+| GP4-GP5 | I2C0 alternativo | |
+| GP10-GP17 | Salidas digitales | Display 7 seg |
+| GP15 | Salida digital | LED común |
+
+### ESP32 DevKit V1
+
+| GPIO | Función | Notas |
+|------|---------|-------|
+| GPIO 2 | LED integrado | También para LED |
+| GPIO 4 | Entrada digital | DHT22, botones |
+| GPIO 5 | Salida digital | Trigger HC-SR04 |
+| GPIO 13 | PWM | Servomotor |
+| GPIO 18 | Entrada | Echo HC-SR04 |
+| GPIO 21 | I2C SDA | Display OLED |
+| GPIO 22 | I2C SCL | Display OLED |
+| GPIO 25 | Salida digital | LED RGB (R) |
+| GPIO 26 | Salida digital | LED RGB (G) |
+| GPIO 27 | Salida digital | LED RGB (B) |
+| GPIO 34 | ADC | Solo entrada |
+
+### Arduino UNO
+
+| Pin | Función | Notas |
+|-----|---------|-------|
+| D0-D13 | Entrada/Salida digital | LED integrado en D13 |
+| A0-A5 | Entrada analógica | También digitales |
+| SDA (A4) | I2C SDA | LCD, OLED |
+| SCL (A5) | I2C SCL | LCD, OLED |
+| 5V | Salida 5V | Alimentar componentes |
+| 3.3V | Salida 3.3V | Sensores |
+| GND | Tierra | Común |
+
+---
+
+## 💡 Conceptos por Ejemplo
+
+### ⭐ Básicos (1-2)
+
+- **Parpadeo LED**: `machine.Pin`, `Pin.OUT`, `time.sleep()`
+- **Boton LED**: `Pin.IN`, `Pin.PULL_DOWN`
+- **LED RGB**: Múltiples pines, lógica invertida
+- **Contador**: Flancos de subida, antirrebote
+- **Sensor Luz**: `machine.ADC`, lectura analógica
+
+### ⭐⭐ Intermedios (3-5)
+
+- **7 Segmentos**: Multiplexado, mapeo de números
+- **Sensor Distancia**: `time_pulse_us()`, cálculo física
+- **Sensor DHT22**: Protocolo one-wire
+- **Display OLED**: `machine.I2C`, librería ssd1306
+- **LCD I2C**: Comunicación I2C
+- **Buzzer**: Generación de tonos
+
+### ⭐⭐⭐ Avanzados (6+)
+
+- **Servomotor**: PWM, conversión ángulo-duty
+- **Motor DC**: Control de dirección, puente H
+- **Teclado Matriz**: Escaneo de filas/columnas
+- **Bluetooth/WiFi**: Conexión de red
+
+---
+
+## 🛠️ Solución de Problemas
+
+### El simulador no inicia
+
+```
+✅ Verifica que el código no tenga errores de sintaxis
+✅ Confirma que diagram.json está en formato JSON válido
+✅ Prueba con un navegador diferente (Chrome recomendado)
+```
+
+### No veo los mensajes por consola
+
+```
+✅ Click en "Serial" en el panel de Wokwi
+✅ Verifica la velocidad en baudios (115200)
+✅ Revisa que print() está en el código
+```
+
+### El LED no enciende
+
+```
+✅ Verifica la conexión en diagram.json
+✅ Confirma que usas el pin correcto (GPIO 15 para ejemplos)
+✅ Para LED de ánodo común: nivel bajo = LED encendido
+```
+
+### Error en I2C
+
+```
+✅ Verifica las conexiones SDA y SCL
+✅ Confirma la dirección I2C del dispositivo
+✅ La dirección común para OLED es 0x3C
+```
+
+### El sensor no detecta
+
+```
+✅ Verifica el tipo de sensor en diagram.json
+✅ Confirma los pines de conexión
+✅ Algunos sensores requieren configuración específica
+```
+
+---
+
+## 📚 Recursos Adicionales
+
+| Recurso | URL |
+|---------|-----|
+| Documentación Wokwi | [docs.wokwi.com](https://docs.wokwi.com/) |
+| Guía MicroPython | [docs.wokwi.com/guides/micropython](https://docs.wokwi.com/guides/micropython) |
+| Referencia ESP32 | [docs.wokwi.com/guides/esp32](https://docs.wokwi.com/guides/esp32) |
+| Referencia diagram.json | [docs.wokwi.com/diagram-format](https://docs.wokwi.com/diagram-format) |
+| Librería ssd1306 | [micropython-lib](https://github.com/micropython/micropython-lib) |
+
+---
+
+## 🎯 Ejercicios de Práctica
+
+### Nivel 1: Modificar Tiempos
+
+1. Cambia el parpadeo LED de 1 segundo a 0.5 segundos
+2. Modifica la secuencia de colores del LED RGB
+
+### Nivel 2: Combinar Componentes
+
+1. Añade un segundo LED al contador de botones
+2. Muestra la distancia en el display OLED
+
+### Nivel 3: Crear tu Proyecto
+
+1. Diseña un sistema de alarma con sensor PIR
+2. Crea un termostato con DHT22 y rele
+
+---
+
+*Anexo Wokwi - MicroPython para el Aula - Diego Saavedra 2026* 🎮

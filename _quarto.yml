@@ -111,6 +111,7 @@ book:
         - contenido/apendice_pybricks_compilacion.qmd
         - contenido/apendice_pybricks_spike.qmd
         - contenido/apendice_hardware_alternativo.qmd
+        - contenido/anexo_wokwi.qmd
         - contenido/referencia_sintaxis_spike.qmd
     - part: "🎯 EVALUACIONES"
       chapters:
