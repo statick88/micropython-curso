@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "arduino",
+      "type": "wokwi-arduino-uno",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "led1",
+      "type": "wokwi-led",
+      "left": 150,
+      "top": 80,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-resistor",
+      "left": 150,
+      "top": 180,
+      "attrs": {
+        "resistance": "220"
+      }
+    }
+  ],
+  "connections": [
+    ["arduino:D13", "led1:A", "red", []],
+    ["led1:C", "r1:2", "black", []],
+    ["r1:1", "arduino:GND", "black", []]
+  ]
+}

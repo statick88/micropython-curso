@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "arduino",
+      "type": "wokwi-arduino-uno",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "hcsr04",
+      "type": "wokwi-hc-sr04",
+      "left": 100,
+      "top": 100
+    }
+  ],
+  "connections": [
+    ["arduino:D9", "hcsr04:TRIG", "green", []],
+    ["arduino:D10", "hcsr04:ECHO", "yellow", []],
+    ["hcsr04:VCC", "arduino:5V", "red", []],
+    ["hcsr04:GND", "arduino:GND", "black", []]
+  ]
+}

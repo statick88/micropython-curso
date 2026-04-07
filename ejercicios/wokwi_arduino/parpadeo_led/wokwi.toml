@@ -1,0 +1,6 @@
+board = "arduino-uno"
+program = "main.cpp"
+serial = { baud = 9600 }
+
+[deployment]
+target = "wokwi"

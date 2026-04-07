@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "arduino",
+      "type": "wokwi-arduino-uno",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "dht22",
+      "type": "wokwi-dht22",
+      "left": 100,
+      "top": 100
+    }
+  ],
+  "connections": [
+    ["arduino:D2", "dht22:DATA", "green", []],
+    ["dht22:VCC", "arduino:5V", "red", []],
+    ["dht22:GND", "arduino:GND", "black", []]
+  ]
+}

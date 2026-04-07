@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es" dir="ltr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Guía completa y ejemplos validados para practicar MicroPython con Wokwi">
+
+<title>🎮 Anexo Wokwi: Simulador de MicroPython – MicroPython para el Aula</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../contenido/referencia_sintaxis_spike.html" rel="next">
+<link href="../contenido/apendice_hardware_alternativo.html" rel="prev">
+<link href="../favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-68056a18e515a5789c5e26a7aeb7ac61.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-82009d67b0d13024d67fdd645cb619bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
+<script>quizdown.init();</script>
+
+
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/anexo_wokwi.html"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/robot-espi32-cartoon.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/robot-espi32-cartoon.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">MicroPython para el Aula</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../micropython_aula.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../micropython_aula.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 MicroPython para el Aula</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sobre el Proyecto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../license.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Licencia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/sistema_logros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Logros 🏆</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">🌟 FUNDAMENTOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos: Antes de Comenzar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/fundamentos_python/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo de Fundamentos de Python para Robótica Educativa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/fundamentos_python/introduccion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">¿Por qué aprender Python primero?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/fundamentos_python/variables_tipos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables y Tipos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/fundamentos_python/control_flujo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estructuras de Control: Tomando Decisiones y Repetir Acciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/fundamentos_python/funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Funciones: Las “Recetas” del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/fundamentos_python/manejo_errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Manejo de Errores: Cuando las Cosas No Salen como Esperamos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/fundamentos_python/estructuras_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estructuras de Datos: Listas y Diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad0/fundamentos_python/resumen_trasicion_hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">De los Fundamentos a la Robótica Real: El Puente</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/fundamentos_python/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios: Fundamentos de Python para Robótica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/fundamentos_python/ejercicio_01_variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 1: Las Cajas del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/fundamentos_python/ejercicio_02_tipos_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 2: Qué Tipo de Caja Usas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/fundamentos_python/ejercicio_03_condicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 3: El Robot Toma Decisiones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/fundamentos_python/ejercicio_04_bucles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 4: Repetir Sin Cansarse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/fundamentos_python/ejercicio_05_funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 5: Las Recetas del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/fundamentos_python/ejercicio_06_errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 6: Cuando las Cosas Fallan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/fundamentos_python/ejercicio_07_estructuras.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 7: Organizando Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/proyectos/proyecto_robot_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto: Robot Virtual Explorador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios de MicroPython 🧩</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/wokwi_ejemplos/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ejercicios/wokwi_esp32/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejemplos de Simulación ESP32 con Wokwi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_fundamentos_python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🐍 Quiz: Fundamentos de Python para Robótica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_fundamentos_completo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🧠 Quiz Completo: Fundamentos de Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">🔌 UNIDAD 1: CONECTAR Y PROGRAMAR</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad1/guia_hub_desde_cero.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Guía Completa: El Hub LEGO — Desde Cero</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 1: Tu Primer Programa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad1/lab1b_ejercicios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1B: Ejercicios de Refuerzo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 1: Conectar y Programar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">💡 UNIDAD 2: PANTALLA Y LUCES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad2/1_display_luces.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 2: ¿Qué puede mostrar el robot?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad2/lab2_animaciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2: Haciendo que las imágenes se muevan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad2/lab2b_animaciones_avanzadas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 2B: Diseño de Animaciones Avanzadas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 2: Pantalla y Luces</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">🤖 UNIDAD 3: MOVIMIENTO</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad3/1_motores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 3: ¿Cómo hace el robot para moverse?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad3/2_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Control Avanzado de Motores: PID, Calibración y Más</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad3/lab3_navegacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3: El robot que dibuja un cuadrado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad3/lab3b_movimiento_avanzado.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 3B: Ejercicios de Movimiento Avanzado</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 3: Movimiento</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">📡 UNIDAD 4: SENSORES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad4/1_sensores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 4: ¿Cómo sabe el robot que hay algo adelante?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sensores Adicionales: Color, Fuerza y Distancia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Telemetría: Monitoreo del Robot y Estado del Sistema</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad4/lab4_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 4: Un robot que explora solo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 4: Sensores</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">🏆 UNIDAD 5: PROYECTO FINAL</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 5: Ahora vas a crear tu propio robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/unidad5/2_practica_testing_simulador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🧪 Práctica: Testing del Simulador ESP-LEGO-SPIKE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quizzes/quiz_unidad5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Quiz Unidad 5: Proyecto Final</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">📚 APÉNDICES</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Alternativas y Recursos Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_thonny_debugger.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Dominando Thonny - Debugger y Herramientas Profesionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_simuladores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_pybricks_compilacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_pybricks_spike.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🤖 Pybricks vs LEGO Spike: Guía de Orientación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/apendice_hardware_alternativo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔌 Opciones de Hardware Alternativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/anexo_wokwi.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/referencia_sintaxis_spike.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Referencia Rápida: LEGO Education SPIKE Essential Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">🎯 EVALUACIONES</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../evaluaciones/eval_motores_avanzados.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Motores Avanzados y PID</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../evaluaciones/eval_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Sensores Adicionales</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../evaluaciones/eval_telemetria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluación: Telemetría y Monitoreo de Batería</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">📐 DIAGRAMAS TÉCNICOS</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/diagramas/diagrama_hoja_ruta.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🗺️ Hoja de Ruta Visual del Curso</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/diagramas/diagrama_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Diagrama: LEGO Technic Large Hub (45601)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/diagramas/diagrama_porque_hub.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🤖 ¿Por qué usar un Hub?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/diagramas/auditoria_diagramas.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">📋 Auditoría de Diagramas del Curso</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#anexo-wokwi-simulador-de-micropython" id="toc-anexo-wokwi-simulador-de-micropython" class="nav-link active" data-scroll-target="#anexo-wokwi-simulador-de-micropython">🎮 Anexo Wokwi: Simulador de MicroPython</a>
+  <ul class="collapse">
+  <li><a href="#qué-es-wokwi" id="toc-qué-es-wokwi" class="nav-link" data-scroll-target="#qué-es-wokwi">🌐 ¿Qué es Wokwi?</a></li>
+  <li><a href="#inicio-rápido" id="toc-inicio-rápido" class="nav-link" data-scroll-target="#inicio-rápido">🚀 Inicio Rápido</a>
+  <ul class="collapse">
+  <li><a href="#paso-1-acceder-a-wokwi" id="toc-paso-1-acceder-a-wokwi" class="nav-link" data-scroll-target="#paso-1-acceder-a-wokwi">Paso 1: Acceder a Wokwi</a></li>
+  <li><a href="#paso-2-configurar-el-proyecto" id="toc-paso-2-configurar-el-proyecto" class="nav-link" data-scroll-target="#paso-2-configurar-el-proyecto">Paso 2: Configurar el Proyecto</a></li>
+  <li><a href="#paso-3-ver-la-salida" id="toc-paso-3-ver-la-salida" class="nav-link" data-scroll-target="#paso-3-ver-la-salida">Paso 3: Ver la Salida</a></li>
+  </ul></li>
+  <li><a href="#descargar-ejemplos" id="toc-descargar-ejemplos" class="nav-link" data-scroll-target="#descargar-ejemplos">📥 Descargar Ejemplos</a></li>
+  <li><a href="#índice-de-ejemplos-validados" id="toc-índice-de-ejemplos-validados" class="nav-link" data-scroll-target="#índice-de-ejemplos-validados">📋 Índice de Ejemplos Validados</a>
+  <ul class="collapse">
+  <li><a href="#raspberry-pi-pico-17-ejemplos" id="toc-raspberry-pi-pico-17-ejemplos" class="nav-link" data-scroll-target="#raspberry-pi-pico-17-ejemplos">🔴 Raspberry Pi Pico (17 Ejemplos)</a></li>
+  <li><a href="#esp32-23-ejemplos" id="toc-esp32-23-ejemplos" class="nav-link" data-scroll-target="#esp32-23-ejemplos">🟠 ESP32 (23 Ejemplos)</a></li>
+  <li><a href="#arduino-6-ejemplos" id="toc-arduino-6-ejemplos" class="nav-link" data-scroll-target="#arduino-6-ejemplos">🟢 Arduino (6 Ejemplos)</a></li>
+  </ul></li>
+  <li><a href="#referencia-de-pines" id="toc-referencia-de-pines" class="nav-link" data-scroll-target="#referencia-de-pines">🔧 Referencia de Pines</a>
+  <ul class="collapse">
+  <li><a href="#raspberry-pi-pico" id="toc-raspberry-pi-pico" class="nav-link" data-scroll-target="#raspberry-pi-pico">Raspberry Pi Pico</a></li>
+  <li><a href="#esp32-devkit-v1" id="toc-esp32-devkit-v1" class="nav-link" data-scroll-target="#esp32-devkit-v1">ESP32 DevKit V1</a></li>
+  <li><a href="#arduino-uno" id="toc-arduino-uno" class="nav-link" data-scroll-target="#arduino-uno">Arduino UNO</a></li>
+  </ul></li>
+  <li><a href="#conceptos-por-ejemplo" id="toc-conceptos-por-ejemplo" class="nav-link" data-scroll-target="#conceptos-por-ejemplo">💡 Conceptos por Ejemplo</a>
+  <ul class="collapse">
+  <li><a href="#básicos-1-2" id="toc-básicos-1-2" class="nav-link" data-scroll-target="#básicos-1-2">⭐ Básicos (1-2)</a></li>
+  <li><a href="#intermedios-3-5" id="toc-intermedios-3-5" class="nav-link" data-scroll-target="#intermedios-3-5">⭐⭐ Intermedios (3-5)</a></li>
+  <li><a href="#avanzados-6" id="toc-avanzados-6" class="nav-link" data-scroll-target="#avanzados-6">⭐⭐⭐ Avanzados (6+)</a></li>
+  </ul></li>
+  <li><a href="#solución-de-problemas" id="toc-solución-de-problemas" class="nav-link" data-scroll-target="#solución-de-problemas">🛠️ Solución de Problemas</a>
+  <ul class="collapse">
+  <li><a href="#el-simulador-no-inicia" id="toc-el-simulador-no-inicia" class="nav-link" data-scroll-target="#el-simulador-no-inicia">El simulador no inicia</a></li>
+  <li><a href="#no-veo-los-mensajes-por-consola" id="toc-no-veo-los-mensajes-por-consola" class="nav-link" data-scroll-target="#no-veo-los-mensajes-por-consola">No veo los mensajes por consola</a></li>
+  <li><a href="#el-led-no-enciende" id="toc-el-led-no-enciende" class="nav-link" data-scroll-target="#el-led-no-enciende">El LED no enciende</a></li>
+  <li><a href="#error-en-i2c" id="toc-error-en-i2c" class="nav-link" data-scroll-target="#error-en-i2c">Error en I2C</a></li>
+  <li><a href="#el-sensor-no-detecta" id="toc-el-sensor-no-detecta" class="nav-link" data-scroll-target="#el-sensor-no-detecta">El sensor no detecta</a></li>
+  </ul></li>
+  <li><a href="#recursos-adicionales" id="toc-recursos-adicionales" class="nav-link" data-scroll-target="#recursos-adicionales">📚 Recursos Adicionales</a></li>
+  <li><a href="#ejercicios-de-práctica" id="toc-ejercicios-de-práctica" class="nav-link" data-scroll-target="#ejercicios-de-práctica">🎯 Ejercicios de Práctica</a>
+  <ul class="collapse">
+  <li><a href="#nivel-1-modificar-tiempos" id="toc-nivel-1-modificar-tiempos" class="nav-link" data-scroll-target="#nivel-1-modificar-tiempos">Nivel 1: Modificar Tiempos</a></li>
+  <li><a href="#nivel-2-combinar-componentes" id="toc-nivel-2-combinar-componentes" class="nav-link" data-scroll-target="#nivel-2-combinar-componentes">Nivel 2: Combinar Componentes</a></li>
+  <li><a href="#nivel-3-crear-tu-proyecto" id="toc-nivel-3-crear-tu-proyecto" class="nav-link" data-scroll-target="#nivel-3-crear-tu-proyecto">Nivel 3: Crear tu Proyecto</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/anexo_wokwi.html"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="anexo-wokwi-simulador-de-micropython" class="level1">
+<h1>🎮 Anexo Wokwi: Simulador de MicroPython</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>¡Importante!</strong> Todos los ejemplos de esta sección han sido validados y funcionan correctamente en el simulador Wokwi.</p>
+</div>
+</div>
+<hr>
+<section id="qué-es-wokwi" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-wokwi">🌐 ¿Qué es Wokwi?</h2>
+<p>Wokwi es un simulador online de electrónica que permite:</p>
+<ul>
+<li>✅ Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32)</li>
+<li>✅ Crear proyectos con componentes reales (LEDs, sensores, displays)</li>
+<li>✅ Programar en MicroPython y ejecutar en el simulador</li>
+<li>✅ Compartir proyectos mediante enlaces únicos</li>
+</ul>
+<hr>
+</section>
+<section id="inicio-rápido" class="level2">
+<h2 class="anchored" data-anchor-id="inicio-rápido">🚀 Inicio Rápido</h2>
+<section id="paso-1-acceder-a-wokwi" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1-acceder-a-wokwi">Paso 1: Acceder a Wokwi</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Microcontrolador</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Raspberry Pi Pico</td>
+<td><a href="https://wokwi.com/projects/new/micropython-pi-pico">wokwi.com/projects/new/micropython-pi-pico</a></td>
+</tr>
+<tr class="even">
+<td>ESP32</td>
+<td><a href="https://wokwi.com/projects/new/micropython-esp32">wokwi.com/projects/new/micropython-esp32</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="paso-2-configurar-el-proyecto" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2-configurar-el-proyecto">Paso 2: Configurar el Proyecto</h3>
+<ol type="1">
+<li>Copia el código de <code>main.py</code> del ejemplo</li>
+<li>Copia la configuración de <code>diagram.json</code></li>
+<li>Presiona <strong>“Start Simulation”</strong> ▶️</li>
+</ol>
+</section>
+<section id="paso-3-ver-la-salida" class="level3">
+<h3 class="anchored" data-anchor-id="paso-3-ver-la-salida">Paso 3: Ver la Salida</h3>
+<ul>
+<li>Click en <strong>“Serial”</strong> para ver los mensajes de consola</li>
+<li>Los LEDs y componentes se animan automáticamente</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="descargar-ejemplos" class="level2">
+<h2 class="anchored" data-anchor-id="descargar-ejemplos">📥 Descargar Ejemplos</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Plataforma</th>
+<th>Descarga</th>
+<th>Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Raspberry Pi Pico</strong></td>
+<td><a href="../../_downloads/wokwi_ejemplos.zip">📦 wokwi_ejemplos.zip</a></td>
+<td>17 proyectos</td>
+</tr>
+<tr class="even">
+<td><strong>ESP32</strong></td>
+<td><a href="../../_downloads/wokwi_esp32.zip">📦 wokwi_esp32.zip</a></td>
+<td>23 proyectos</td>
+</tr>
+<tr class="odd">
+<td><strong>Arduino</strong></td>
+<td><a href="../../_downloads/wokwi_arduino.zip">📦 wokwi_arduino.zip</a></td>
+<td>6 proyectos</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="índice-de-ejemplos-validados" class="level2">
+<h2 class="anchored" data-anchor-id="índice-de-ejemplos-validados">📋 Índice de Ejemplos Validados</h2>
+<section id="raspberry-pi-pico-17-ejemplos" class="level3">
+<h3 class="anchored" data-anchor-id="raspberry-pi-pico-17-ejemplos">🔴 Raspberry Pi Pico (17 Ejemplos)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Ejemplo</th>
+<th>Descripción</th>
+<th>Dificultad</th>
+<th>Componentes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><a href="./wokwi_ejemplos/parpadeo_led">Parpadeo LED</a></td>
+<td>LED que parpadea cada segundo</td>
+<td>⭐ Básico</td>
+<td>LED, Resistencia 220Ω</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="./wokwi_ejemplos/led_rgb">LED RGB</a></td>
+<td>Secuencia de 7 colores</td>
+<td>⭐ Básico</td>
+<td>LED RGB, 3 resistencias</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="./wokwi_ejemplos/contador_botones">Contador Botones</a></td>
+<td>Contador con 2 botones</td>
+<td>⭐ Básico</td>
+<td>2 botones, LED</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="./wokwi_ejemplos/display_7_segmentos">Display 7 Segmentos</a></td>
+<td>Contador numérico 0-9</td>
+<td>⭐⭐ Intermedio</td>
+<td>Display 7 segmentos</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><a href="./wokwi_ejemplos/sensor_distancia">Sensor Distancia</a></td>
+<td>Medición ultrasónica HC-SR04</td>
+<td>⭐⭐ Intermedio</td>
+<td>Sensor ultrasónico</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><a href="./wokwi_ejemplos/sensor_temperatura">Sensor Temperatura</a></td>
+<td>DHT22 temperatura/humedad</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>DHT22</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><a href="./wokwi_ejemplos/oled_display">Display OLED</a></td>
+<td>Display gráfico I2C SSD1306</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>OLED 128x64, I2C</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><a href="./wokwi_ejemplos/lcd_display">LCD Display</a></td>
+<td>Display LCD 16x2</td>
+<td>⭐⭐ Intermedio</td>
+<td>LCD 16x2, I2C</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><a href="./wokwi_ejemplos/buzzer_melodia">Buzzer Melodía</a></td>
+<td>Reproduce melodías</td>
+<td>⭐⭐ Intermedio</td>
+<td>Buzzer piezoeléctrico</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><a href="./wokwi_ejemplos/sensor_pir">Sensor PIR</a></td>
+<td>Detector de movimiento</td>
+<td>⭐⭐ Intermedio</td>
+<td>Sensor PIR HC-SR501</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><a href="./wokwi_ejemplos/sensor_luz">Sensor Luz</a></td>
+<td>Fotoresistor LDR</td>
+<td>⭐ Básico</td>
+<td>LDR, resistencia</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><a href="./wokwi_ejemplos/sensor_hall">Sensor Hall</a></td>
+<td>Sensor de campo magnético</td>
+<td>⭐⭐ Intermedio</td>
+<td>Sensor Hall</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><a href="./wokwi_ejemplos/joystick_analogico">Joystick Analógico</a></td>
+<td>Control XY analógico</td>
+<td>⭐⭐ Intermedio</td>
+<td>Joystick, 2 LEDs</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><a href="./wokwi_ejemplos/encoder_rotativo">Encoder Rotativo</a></td>
+<td>Encoder rotativo KY-040</td>
+<td>⭐⭐ Intermedio</td>
+<td>Encoder, LED</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><a href="./wokwi_ejemplos/teclado_matriz">Teclado Matriz</a></td>
+<td>Teclado 4x4</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>Matriz 4x4</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><a href="./wokwi_ejemplos/microfono">Micrófono</a></td>
+<td>Sensor de sonido</td>
+<td>⭐⭐ Intermedio</td>
+<td>Micrófono KY-038</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><a href="./wokwi_ejemplos/rele_control">Rele Control</a></td>
+<td>Control de relevador</td>
+<td>⭐⭐ Intermedio</td>
+<td>Relevador 5V, LED</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="esp32-23-ejemplos" class="level3">
+<h3 class="anchored" data-anchor-id="esp32-23-ejemplos">🟠 ESP32 (23 Ejemplos)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Ejemplo</th>
+<th>Descripción</th>
+<th>Dificultad</th>
+<th>Componentes</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><a href="./wokwi_esp32/parpadeo_led">Parpadeo LED</a></td>
+<td>LED que parpadea</td>
+<td>⭐ Básico</td>
+<td>LED, Resistencia</td>
+<td>GPIO 2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="./wokwi_esp32/led_rgb">LED RGB</a></td>
+<td>Secuencia de colores</td>
+<td>⭐ Básico</td>
+<td>LED RGB</td>
+<td>GPIO 25-27</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="./wokwi_esp32/boton_led">Boton LED</a></td>
+<td>LED controlado por botón</td>
+<td>⭐ Básico</td>
+<td>LED, Botón</td>
+<td>GPIO 2, 4</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="./wokwi_esp32/contador_botones">Contador Botones</a></td>
+<td>Contador con botones</td>
+<td>⭐ Básico</td>
+<td>2 botones, LED</td>
+<td>GPIO 4, 5</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><a href="./wokwi_esp32/potenciometro_led">Potenciometro LED</a></td>
+<td>Brillo variable</td>
+<td>⭐⭐ Intermedio</td>
+<td>LED, Potenciómetro</td>
+<td>GPIO 34 (ADC)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><a href="./wokwi_esp32/sensor_distancia">Sensor Distancia</a></td>
+<td>HC-SR04 ultrasónico</td>
+<td>⭐⭐ Intermedio</td>
+<td>HC-SR04</td>
+<td>GPIO 5, 18</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><a href="./wokwi_esp32/sensor_temperatura">Sensor Temperatura</a></td>
+<td>DHT22</td>
+<td>⭐⭐ Intermedio</td>
+<td>DHT22</td>
+<td>GPIO 4</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><a href="./wokwi_esp32/display_oled">Display OLED</a></td>
+<td>Display I2C SSD1306</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>OLED 128x64</td>
+<td>I2C GPIO 21-22</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><a href="./wokwi_esp32/lcd_display">LCD Display</a></td>
+<td>LCD 16x2 I2C</td>
+<td>⭐⭐ Intermedio</td>
+<td>LCD 16x2</td>
+<td>I2C</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><a href="./wokwi_esp32/buzzer_melodia">Buzzer Melodia</a></td>
+<td>Melodías con buzzer</td>
+<td>⭐⭐ Intermedio</td>
+<td>Buzzer</td>
+<td>GPIO 25</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><a href="./wokwi_esp32/sensor_pir">Sensor PIR</a></td>
+<td>Detector movimiento</td>
+<td>⭐⭐ Intermedio</td>
+<td>PIR HC-SR501</td>
+<td>GPIO 4</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><a href="./wokwi_esp32/sensor_luz">Sensor Luz</a></td>
+<td>Fotoresistor LDR</td>
+<td>⭐ Básico</td>
+<td>LDR</td>
+<td>GPIO 34</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><a href="./wokwi_esp32/sensor_gas">Sensor Gas</a></td>
+<td>MQ-135 gas</td>
+<td>⭐⭐ Intermedio</td>
+<td>MQ-135</td>
+<td>GPIO 34</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><a href="./wokwi_esp32/servo_motor">Servomotor</a></td>
+<td>Control SG90</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>Servo SG90</td>
+<td>GPIO 13</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><a href="./wokwi_esp32/motor_dc">Motor DC</a></td>
+<td>Control motor DC</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>Motor DC, L293D</td>
+<td>GPIO 18, 19</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><a href="./wokwi_esp32/rele_control">Rele Control</a></td>
+<td>Relevador</td>
+<td>⭐⭐ Intermedio</td>
+<td>Relevador</td>
+<td>GPIO 26</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><a href="./wokwi_esp32/encoder_rotativo">Encoder Rotativo</a></td>
+<td>Encoder KY-040</td>
+<td>⭐⭐ Intermedio</td>
+<td>Encoder</td>
+<td>GPIO 4, 5</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td><a href="./wokwi_esp32/joystick_analogico">Joystick Analogico</a></td>
+<td>Joystick XY</td>
+<td>⭐⭐ Intermedio</td>
+<td>Joystick</td>
+<td>GPIO 34, 35</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td><a href="./wokwi_esp32/bluetooth_led">Bluetooth LED</a></td>
+<td>Control WiFi/BT</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>LED</td>
+<td>WiFi+BT</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td><a href="./wokwi_esp32/temp_humedad_i2c">Temp Humedad I2C</a></td>
+<td>AHT10 I2C</td>
+<td>⭐⭐ Intermedio</td>
+<td>AHT10</td>
+<td>I2C</td>
+</tr>
+<tr class="odd">
+<td>21-23</td>
+<td><em>Reservados</em></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>Expansión</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="arduino-6-ejemplos" class="level3">
+<h3 class="anchored" data-anchor-id="arduino-6-ejemplos">🟢 Arduino (6 Ejemplos)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Ejemplo</th>
+<th>Descripción</th>
+<th>Dificultad</th>
+<th>Componentes</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><a href="./wokwi_arduino/parpadeo_led">Parpadeo LED</a></td>
+<td>LED que parpadea</td>
+<td>⭐ Básico</td>
+<td>LED, Resistencia</td>
+<td>Pin 13</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="./wokwi_arduino/led_rgb">LED RGB</a></td>
+<td>Secuencia de colores</td>
+<td>⭐ Básico</td>
+<td>LED RGB</td>
+<td>Pines 9-11</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="./wokwi_arduino/sensor_distancia">Sensor Distancia</a></td>
+<td>HC-SR04 ultrasónico</td>
+<td>⭐⭐ Intermedio</td>
+<td>HC-SR04</td>
+<td>Pines 9, 10</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="./wokwi_arduino/sensor_temperatura">Sensor Temperatura</a></td>
+<td>DHT22</td>
+<td>⭐⭐ Intermedio</td>
+<td>DHT22</td>
+<td>Pin 2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><a href="./wokwi_arduino/oled_display">Display OLED</a></td>
+<td>Display I2C SSD1306</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>OLED 128x64</td>
+<td>I2C A4/A5</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><a href="./wokwi_arduino/lcd_display">LCD Display</a></td>
+<td>LCD 16x2 I2C</td>
+<td>⭐⭐ Intermedio</td>
+<td>LCD 1602</td>
+<td>I2C A4/A5</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="referencia-de-pines" class="level2">
+<h2 class="anchored" data-anchor-id="referencia-de-pines">🔧 Referencia de Pines</h2>
+<section id="raspberry-pi-pico" class="level3">
+<h3 class="anchored" data-anchor-id="raspberry-pi-pico">Raspberry Pi Pico</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>GPIO</th>
+<th>Función</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GP0-GP1</td>
+<td>I2C0 SDA/SCL</td>
+<td>Por defecto</td>
+</tr>
+<tr class="even">
+<td>GP4-GP5</td>
+<td>I2C0 alternativo</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>GP10-GP17</td>
+<td>Salidas digitales</td>
+<td>Display 7 seg</td>
+</tr>
+<tr class="even">
+<td>GP15</td>
+<td>Salida digital</td>
+<td>LED común</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="esp32-devkit-v1" class="level3">
+<h3 class="anchored" data-anchor-id="esp32-devkit-v1">ESP32 DevKit V1</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>GPIO</th>
+<th>Función</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GPIO 2</td>
+<td>LED integrado</td>
+<td>También para LED</td>
+</tr>
+<tr class="even">
+<td>GPIO 4</td>
+<td>Entrada digital</td>
+<td>DHT22, botones</td>
+</tr>
+<tr class="odd">
+<td>GPIO 5</td>
+<td>Salida digital</td>
+<td>Trigger HC-SR04</td>
+</tr>
+<tr class="even">
+<td>GPIO 13</td>
+<td>PWM</td>
+<td>Servomotor</td>
+</tr>
+<tr class="odd">
+<td>GPIO 18</td>
+<td>Entrada</td>
+<td>Echo HC-SR04</td>
+</tr>
+<tr class="even">
+<td>GPIO 21</td>
+<td>I2C SDA</td>
+<td>Display OLED</td>
+</tr>
+<tr class="odd">
+<td>GPIO 22</td>
+<td>I2C SCL</td>
+<td>Display OLED</td>
+</tr>
+<tr class="even">
+<td>GPIO 25</td>
+<td>Salida digital</td>
+<td>LED RGB (R)</td>
+</tr>
+<tr class="odd">
+<td>GPIO 26</td>
+<td>Salida digital</td>
+<td>LED RGB (G)</td>
+</tr>
+<tr class="even">
+<td>GPIO 27</td>
+<td>Salida digital</td>
+<td>LED RGB (B)</td>
+</tr>
+<tr class="odd">
+<td>GPIO 34</td>
+<td>ADC</td>
+<td>Solo entrada</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="arduino-uno" class="level3">
+<h3 class="anchored" data-anchor-id="arduino-uno">Arduino UNO</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Pin</th>
+<th>Función</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>D0-D13</td>
+<td>Entrada/Salida digital</td>
+<td>LED integrado en D13</td>
+</tr>
+<tr class="even">
+<td>A0-A5</td>
+<td>Entrada analógica</td>
+<td>También digitales</td>
+</tr>
+<tr class="odd">
+<td>SDA (A4)</td>
+<td>I2C SDA</td>
+<td>LCD, OLED</td>
+</tr>
+<tr class="even">
+<td>SCL (A5)</td>
+<td>I2C SCL</td>
+<td>LCD, OLED</td>
+</tr>
+<tr class="odd">
+<td>5V</td>
+<td>Salida 5V</td>
+<td>Alimentar componentes</td>
+</tr>
+<tr class="even">
+<td>3.3V</td>
+<td>Salida 3.3V</td>
+<td>Sensores</td>
+</tr>
+<tr class="odd">
+<td>GND</td>
+<td>Tierra</td>
+<td>Común</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="conceptos-por-ejemplo" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-por-ejemplo">💡 Conceptos por Ejemplo</h2>
+<section id="básicos-1-2" class="level3">
+<h3 class="anchored" data-anchor-id="básicos-1-2">⭐ Básicos (1-2)</h3>
+<ul>
+<li><strong>Parpadeo LED</strong>: <code>machine.Pin</code>, <code>Pin.OUT</code>, <code>time.sleep()</code></li>
+<li><strong>Boton LED</strong>: <code>Pin.IN</code>, <code>Pin.PULL_DOWN</code></li>
+<li><strong>LED RGB</strong>: Múltiples pines, lógica invertida</li>
+<li><strong>Contador</strong>: Flancos de subida, antirrebote</li>
+<li><strong>Sensor Luz</strong>: <code>machine.ADC</code>, lectura analógica</li>
+</ul>
+</section>
+<section id="intermedios-3-5" class="level3">
+<h3 class="anchored" data-anchor-id="intermedios-3-5">⭐⭐ Intermedios (3-5)</h3>
+<ul>
+<li><strong>7 Segmentos</strong>: Multiplexado, mapeo de números</li>
+<li><strong>Sensor Distancia</strong>: <code>time_pulse_us()</code>, cálculo física</li>
+<li><strong>Sensor DHT22</strong>: Protocolo one-wire</li>
+<li><strong>Display OLED</strong>: <code>machine.I2C</code>, librería ssd1306</li>
+<li><strong>LCD I2C</strong>: Comunicación I2C</li>
+<li><strong>Buzzer</strong>: Generación de tonos</li>
+</ul>
+</section>
+<section id="avanzados-6" class="level3">
+<h3 class="anchored" data-anchor-id="avanzados-6">⭐⭐⭐ Avanzados (6+)</h3>
+<ul>
+<li><strong>Servomotor</strong>: PWM, conversión ángulo-duty</li>
+<li><strong>Motor DC</strong>: Control de dirección, puente H</li>
+<li><strong>Teclado Matriz</strong>: Escaneo de filas/columnas</li>
+<li><strong>Bluetooth/WiFi</strong>: Conexión de red</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="solución-de-problemas" class="level2">
+<h2 class="anchored" data-anchor-id="solución-de-problemas">🛠️ Solución de Problemas</h2>
+<section id="el-simulador-no-inicia" class="level3">
+<h3 class="anchored" data-anchor-id="el-simulador-no-inicia">El simulador no inicia</h3>
+<pre><code>✅ Verifica que el código no tenga errores de sintaxis
+✅ Confirma que diagram.json está en formato JSON válido
+✅ Prueba con un navegador diferente (Chrome recomendado)</code></pre>
+</section>
+<section id="no-veo-los-mensajes-por-consola" class="level3">
+<h3 class="anchored" data-anchor-id="no-veo-los-mensajes-por-consola">No veo los mensajes por consola</h3>
+<pre><code>✅ Click en "Serial" en el panel de Wokwi
+✅ Verifica la velocidad en baudios (115200)
+✅ Revisa que print() está en el código</code></pre>
+</section>
+<section id="el-led-no-enciende" class="level3">
+<h3 class="anchored" data-anchor-id="el-led-no-enciende">El LED no enciende</h3>
+<pre><code>✅ Verifica la conexión en diagram.json
+✅ Confirma que usas el pin correcto (GPIO 15 para ejemplos)
+✅ Para LED de ánodo común: nivel bajo = LED encendido</code></pre>
+</section>
+<section id="error-en-i2c" class="level3">
+<h3 class="anchored" data-anchor-id="error-en-i2c">Error en I2C</h3>
+<pre><code>✅ Verifica las conexiones SDA y SCL
+✅ Confirma la dirección I2C del dispositivo
+✅ La dirección común para OLED es 0x3C</code></pre>
+</section>
+<section id="el-sensor-no-detecta" class="level3">
+<h3 class="anchored" data-anchor-id="el-sensor-no-detecta">El sensor no detecta</h3>
+<pre><code>✅ Verifica el tipo de sensor en diagram.json
+✅ Confirma los pines de conexión
+✅ Algunos sensores requieren configuración específica</code></pre>
+<hr>
+</section>
+</section>
+<section id="recursos-adicionales" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-adicionales">📚 Recursos Adicionales</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Documentación Wokwi</td>
+<td><a href="https://docs.wokwi.com/">docs.wokwi.com</a></td>
+</tr>
+<tr class="even">
+<td>Guía MicroPython</td>
+<td><a href="https://docs.wokwi.com/guides/micropython">docs.wokwi.com/guides/micropython</a></td>
+</tr>
+<tr class="odd">
+<td>Referencia ESP32</td>
+<td><a href="https://docs.wokwi.com/guides/esp32">docs.wokwi.com/guides/esp32</a></td>
+</tr>
+<tr class="even">
+<td>Referencia diagram.json</td>
+<td><a href="https://docs.wokwi.com/diagram-format">docs.wokwi.com/diagram-format</a></td>
+</tr>
+<tr class="odd">
+<td>Librería ssd1306</td>
+<td><a href="https://github.com/micropython/micropython-lib">micropython-lib</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ejercicios-de-práctica" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios-de-práctica">🎯 Ejercicios de Práctica</h2>
+<section id="nivel-1-modificar-tiempos" class="level3">
+<h3 class="anchored" data-anchor-id="nivel-1-modificar-tiempos">Nivel 1: Modificar Tiempos</h3>
+<ol type="1">
+<li>Cambia el parpadeo LED de 1 segundo a 0.5 segundos</li>
+<li>Modifica la secuencia de colores del LED RGB</li>
+</ol>
+</section>
+<section id="nivel-2-combinar-componentes" class="level3">
+<h3 class="anchored" data-anchor-id="nivel-2-combinar-componentes">Nivel 2: Combinar Componentes</h3>
+<ol type="1">
+<li>Añade un segundo LED al contador de botones</li>
+<li>Muestra la distancia en el display OLED</li>
+</ol>
+</section>
+<section id="nivel-3-crear-tu-proyecto" class="level3">
+<h3 class="anchored" data-anchor-id="nivel-3-crear-tu-proyecto">Nivel 3: Crear tu Proyecto</h3>
+<ol type="1">
+<li>Diseña un sistema de alarma con sensor PIR</li>
+<li>Crea un termostato con DHT22 y rele</li>
+</ol>
+<hr>
+<p><em>Anexo Wokwi - MicroPython para el Aula - Diego Saavedra 2026</em> 🎮</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../contenido/apendice_hardware_alternativo.html" class="pagination-link" aria-label="🔌 Opciones de Hardware Alternativo">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">🔌 Opciones de Hardware Alternativo</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../contenido/referencia_sintaxis_spike.html" class="pagination-link" aria-label="Referencia Rápida: LEGO Education SPIKE Essential Python">
+        <span class="nav-page-text"><span class="chapter-title">Referencia Rápida: LEGO Education SPIKE Essential Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Diego Saavedra</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Educación y Tecnología - Abacom</p>
+</div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

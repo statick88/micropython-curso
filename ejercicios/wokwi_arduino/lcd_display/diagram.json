@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "arduino",
+      "type": "wokwi-arduino-uno",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "lcd",
+      "type": "wokwi-lcd1602",
+      "left": 80,
+      "top": 80
+    }
+  ],
+  "connections": [
+    ["arduino:A4", "lcd:SDA", "green", []],
+    ["arduino:A5", "lcd:SCL", "yellow", []],
+    ["lcd:VCC", "arduino:5V", "red", []],
+    ["lcd:GND", "arduino:GND", "black", []]
+  ]
+}

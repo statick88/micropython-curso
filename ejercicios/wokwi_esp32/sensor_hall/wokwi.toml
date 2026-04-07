@@ -1,0 +1,7 @@
+board = "esp32"
+program = "main.py"
+serial = { baud = 115200 }
+
+[deployment]
+target = "wokwi"
+

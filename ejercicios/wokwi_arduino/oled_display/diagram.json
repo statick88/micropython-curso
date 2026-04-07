@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "arduino",
+      "type": "wokwi-arduino-uno",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "oled",
+      "type": "wokwi-ssd1306",
+      "left": 100,
+      "top": 80,
+      "attrs": {
+        "height": "64",
+        "address": "0x3C"
+      }
+    }
+  ],
+  "connections": [
+    ["arduino:A4", "oled:SDA", "green", []],
+    ["arduino:A5", "oled:SCL", "yellow", []],
+    ["oled:VCC", "arduino:5V", "red", []],
+    ["oled:GND", "arduino:GND", "black", []]
+  ]
+}

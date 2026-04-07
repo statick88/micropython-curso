@@ -44,6 +44,70 @@ Wokwi es un simulador online de electrónica que permite:
 
 ---
 
+## 💻 Opción 2: VS Code con Extensión Wokwi
+
+### Instalación
+
+1. Abre **Visual Studio Code**
+2. Ve a **Extensiones** (Ctrl+Shift+X / Cmd+Shift+X)
+3. Busca **"Wokwi"** e instala la extensión
+4. Reinicia VS Code si es necesario
+
+### Cómo Usar los Ejemplos en VS Code
+
+#### Opción A: Desde el ZIP descargado
+
+1. Descarga el ZIP de ejemplos
+2. Descomprime la carpeta del ejemplo que quieras
+3. Abre la carpeta en VS Code (`File > Open Folder`)
+4. Presiona **F5** o click en **"Start Simulation"**
+
+#### Opción B: Directo desde GitHub
+
+1. Copia la URL del ejemplo en GitHub
+2. En VS Code, presiona **F1** y escribe `Wokwi: Open Project from GitHub`
+3. Pega la URL del repositorio
+
+### Atajos de Teclado
+
+| Atajo | Acción |
+|-------|--------|
+| `F5` | Iniciar/Detener simulación |
+| `Ctrl+S` | Recargar simulación |
+| `F1` | Abrir paleta de comandos Wokwi |
+
+### Estructura de Archivos
+
+Cada ejemplo incluye:
+
+```
+nombre_ejemplo/
+├── main.py          # Código MicroPython/Arduino
+├── diagram.json     # Configuración del circuito
+└── wokwi.toml      # Configuración de Wokwi (opcional)
+```
+
+### Configuración wokwi.toml
+
+Los ejemplos ya incluyen el archivo `wokwi.toml` con la configuración:
+
+```toml
+# Raspberry Pi Pico
+board = "pi-pico"
+program = "main.py"
+serial = { baud = 115200 }
+
+# ESP32
+board = "esp32"
+program = "main.py"
+
+# Arduino
+board = "arduino-uno"
+program = "main.cpp"
+```
+
+---
+
 ## 📥 Descargar Ejemplos
 
 | Plataforma | Descarga | Ejemplos |
