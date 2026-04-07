@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de MicroPython para docentes de Pedagogía en Informática.">
 
-<title>Telemetría: Monitoreo de Batería y Estado del Robot – MicroPython para el Aula</title>
+<title>Telemetría: Monitoreo del Robot y Estado del Sistema – MicroPython para el Aula</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/2_telemetria_bateria.html"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/2_telemetria_bateria.html"><span class="chapter-title">Telemetría: Monitoreo del Robot y Estado del Sistema</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -228,6 +228,116 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos: Antes de Comenzar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo de Fundamentos de Python para Robótica Educativa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/introduccion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">¿Por qué aprender Python primero?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/variables_tipos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables y Tipos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/control_flujo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estructuras de Control: Tomando Decisiones y Repetir Acciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Funciones: Las “Recetas” del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/manejo_errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Manejo de Errores: Cuando las Cosas No Salen como Esperamos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/estructuras_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estructuras de Datos: Listas y Diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/resumen_trasicion_hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">De los Fundamentos a la Robótica Real: El Puente</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios: Fundamentos de Python para Robótica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_01_variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 1: Las Cajas del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_02_tipos_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 2: Qué Tipo de Caja Usas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_03_condicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 3: El Robot Toma Decisiones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_04_bucles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 4: Repetir Sin Cansarse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_05_funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 5: Las Recetas del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_06_errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 6: Cuando las Cosas Fallan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_07_estructuras.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 7: Organizando Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/proyectos/proyecto_robot_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto: Robot Virtual Explorador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios de MicroPython 🧩</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/wokwi_ejemplos/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejemplos de Simulación con Wokwi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/wokwi_esp32/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejemplos de Simulación ESP32 con Wokwi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_fundamentos_python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🐍 Quiz: Fundamentos de Python para Robótica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_fundamentos_completo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🧠 Quiz Completo: Fundamentos de Python</span></a>
   </div>
 </li>
       </ul>
@@ -351,12 +461,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></a>
+  <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sensores Adicionales: Color, Fuerza y Distancia</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></a>
+  <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Telemetría: Monitoreo del Robot y Estado del Sistema</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -383,6 +493,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 5: Ahora vas a crear tu propio robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad5/2_practica_testing_simulador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🧪 Práctica: Testing del Simulador ESP-LEGO-SPIKE</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -419,6 +534,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contenido/apendice_pybricks_compilacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_pybricks_spike.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🤖 Pybricks vs LEGO Spike: Guía de Orientación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_hardware_alternativo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔌 Opciones de Hardware Alternativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/referencia_sintaxis_spike.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Referencia Rápida: LEGO Education SPIKE Essential Python</span></a>
   </div>
 </li>
       </ul>
@@ -491,28 +621,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link active" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
-  <li><a href="#monitoreo-de-batería" id="toc-monitoreo-de-batería" class="nav-link" data-scroll-target="#monitoreo-de-batería">1. Monitoreo de Batería</a>
+  <li><a href="#botones-del-primehub" id="toc-botones-del-primehub" class="nav-link" data-scroll-target="#botones-del-primehub">1. Botones del PrimeHub</a>
   <ul class="collapse">
-  <li><a href="#código-ejemplo" id="toc-código-ejemplo" class="nav-link" data-scroll-target="#código-ejemplo">Código ejemplo:</a></li>
-  <li><a href="#valores-de-referencia" id="toc-valores-de-referencia" class="nav-link" data-scroll-target="#valores-de-referencia">Valores de referencia:</a></li>
+  <li><a href="#métodos-disponibles" id="toc-métodos-disponibles" class="nav-link" data-scroll-target="#métodos-disponibles">Métodos disponibles</a></li>
+  <li><a href="#tabla-de-botones" id="toc-tabla-de-botones" class="nav-link" data-scroll-target="#tabla-de-botones">Tabla de botones</a></li>
+  <li><a href="#código-ejemplo-completo" id="toc-código-ejemplo-completo" class="nav-link" data-scroll-target="#código-ejemplo-completo">Código ejemplo completo</a></li>
+  <li><a href="#ejemplo-wait_until_pressed" id="toc-ejemplo-wait_until_pressed" class="nav-link" data-scroll-target="#ejemplo-wait_until_pressed">Ejemplo: wait_until_pressed()</a></li>
+  <li><a href="#ejemplo-was_pressed-para-detectar-pulsos" id="toc-ejemplo-was_pressed-para-detectar-pulsos" class="nav-link" data-scroll-target="#ejemplo-was_pressed-para-detectar-pulsos">Ejemplo: was_pressed() para detectar pulsos</a></li>
   </ul></li>
-  <li><a href="#detección-de-botones" id="toc-detección-de-botones" class="nav-link" data-scroll-target="#detección-de-botones">2. Detección de Botones</a>
+  <li><a href="#ejercicio-para-el-aula-control-de-menú" id="toc-ejercicio-para-el-aula-control-de-menú" class="nav-link" data-scroll-target="#ejercicio-para-el-aula-control-de-menú">📝 Ejercicio para el Aula: Control de Menú</a>
   <ul class="collapse">
-  <li><a href="#código-ejemplo-1" id="toc-código-ejemplo-1" class="nav-link" data-scroll-target="#código-ejemplo-1">Código ejemplo:</a></li>
-  <li><a href="#botones-disponibles-en-primehub" id="toc-botones-disponibles-en-primehub" class="nav-link" data-scroll-target="#botones-disponibles-en-primehub">Botones disponibles en PrimeHub:</a></li>
+  <li><a href="#descripción" id="toc-descripción" class="nav-link" data-scroll-target="#descripción">Descripción</a></li>
+  <li><a href="#tabla-de-comportamiento" id="toc-tabla-de-comportamiento" class="nav-link" data-scroll-target="#tabla-de-comportamiento">Tabla de comportamiento</a></li>
+  <li><a href="#solución" id="toc-solución" class="nav-link" data-scroll-target="#solución">Solución</a></li>
   </ul></li>
-  <li><a href="#estado-del-robot-odometría" id="toc-estado-del-robot-odometría" class="nav-link" data-scroll-target="#estado-del-robot-odometría">3. Estado del Robot (Odometría)</a>
+  <li><a href="#light-matrix-pantalla-led-5x5" id="toc-light-matrix-pantalla-led-5x5" class="nav-link" data-scroll-target="#light-matrix-pantalla-led-5x5">2. Light Matrix (Pantalla LED 5x5)</a>
   <ul class="collapse">
-  <li><a href="#código-ejemplo-2" id="toc-código-ejemplo-2" class="nav-link" data-scroll-target="#código-ejemplo-2">Código ejemplo:</a></li>
-  <li><a href="#estado-completo-del-robot" id="toc-estado-completo-del-robot" class="nav-link" data-scroll-target="#estado-completo-del-robot">Estado completo del robot:</a></li>
-  <li><a href="#resetear-odometría" id="toc-resetear-odometría" class="nav-link" data-scroll-target="#resetear-odometría">Resetear odometría:</a></li>
+  <li><a href="#métodos-disponibles-1" id="toc-métodos-disponibles-1" class="nav-link" data-scroll-target="#métodos-disponibles-1">Métodos disponibles</a></li>
+  <li><a href="#imágenes-predefinidas-disponibles" id="toc-imágenes-predefinidas-disponibles" class="nav-link" data-scroll-target="#imágenes-predefinidas-disponibles">Imágenes predefinidas disponibles</a></li>
+  <li><a href="#brillo-de-leds" id="toc-brillo-de-leds" class="nav-link" data-scroll-target="#brillo-de-leds">Brillo de LEDs</a></li>
+  <li><a href="#código-ejemplo-completo-1" id="toc-código-ejemplo-completo-1" class="nav-link" data-scroll-target="#código-ejemplo-completo-1">Código ejemplo completo</a></li>
+  <li><a href="#dibujar-una-cara-sonriente-manualmente" id="toc-dibujar-una-cara-sonriente-manualmente" class="nav-link" data-scroll-target="#dibujar-una-cara-sonriente-manualmente">Dibujar una cara sonriente manualmente</a></li>
   </ul></li>
-  <li><a href="#logging-de-datos" id="toc-logging-de-datos" class="nav-link" data-scroll-target="#logging-de-datos">4. Logging de Datos</a>
+  <li><a href="#ejercicio-para-el-aula-reloj-digital" id="toc-ejercicio-para-el-aula-reloj-digital" class="nav-link" data-scroll-target="#ejercicio-para-el-aula-reloj-digital">📝 Ejercicio para el Aula: Reloj Digital</a>
   <ul class="collapse">
-  <li><a href="#código-ejemplo-simple" id="toc-código-ejemplo-simple" class="nav-link" data-scroll-target="#código-ejemplo-simple">Código ejemplo simple:</a></li>
-  <li><a href="#proyecto-monitor-de-temperatura-si-hay-sensor" id="toc-proyecto-monitor-de-temperatura-si-hay-sensor" class="nav-link" data-scroll-target="#proyecto-monitor-de-temperatura-si-hay-sensor">Proyecto: Monitor de Temperatura (si hay sensor)</a></li>
+  <li><a href="#descripción-1" id="toc-descripción-1" class="nav-link" data-scroll-target="#descripción-1">Descripción</a></li>
+  <li><a href="#tabla-de-iconos-por-segundo" id="toc-tabla-de-iconos-por-segundo" class="nav-link" data-scroll-target="#tabla-de-iconos-por-segundo">Tabla de iconos por segundo</a></li>
+  <li><a href="#solución-1" id="toc-solución-1" class="nav-link" data-scroll-target="#solución-1">Solución</a></li>
   </ul></li>
-  <li><a href="#proyecto-robot-con-telemetry-integrada" id="toc-proyecto-robot-con-telemetry-integrada" class="nav-link" data-scroll-target="#proyecto-robot-con-telemetry-integrada">5. Proyecto: Robot con Telemetry Integrada</a></li>
+  <li><a href="#speaker-altavoz" id="toc-speaker-altavoz" class="nav-link" data-scroll-target="#speaker-altavoz">3. Speaker (Altavoz)</a>
+  <ul class="collapse">
+  <li><a href="#métodos-disponibles-2" id="toc-métodos-disponibles-2" class="nav-link" data-scroll-target="#métodos-disponibles-2">Métodos disponibles</a></li>
+  <li><a href="#tabla-de-notas-musicales-notas-midi" id="toc-tabla-de-notas-musicales-notas-midi" class="nav-link" data-scroll-target="#tabla-de-notas-musicales-notas-midi">Tabla de notas musicales (notas MIDI)</a></li>
+  <li><a href="#duración-de-sonidos" id="toc-duración-de-sonidos" class="nav-link" data-scroll-target="#duración-de-sonidos">Duración de sonidos</a></li>
+  <li><a href="#código-ejemplo-completo-2" id="toc-código-ejemplo-completo-2" class="nav-link" data-scroll-target="#código-ejemplo-completo-2">Código ejemplo completo</a></li>
+  <li><a href="#melodía-canción-de-victoria" id="toc-melodía-canción-de-victoria" class="nav-link" data-scroll-target="#melodía-canción-de-victoria">Melodía: Canción de victoria</a></li>
+  </ul></li>
+  <li><a href="#ejercicio-para-el-aula-piano-de-botones" id="toc-ejercicio-para-el-aula-piano-de-botones" class="nav-link" data-scroll-target="#ejercicio-para-el-aula-piano-de-botones">📝 Ejercicio para el Aula: Piano de Botones</a>
+  <ul class="collapse">
+  <li><a href="#descripción-2" id="toc-descripción-2" class="nav-link" data-scroll-target="#descripción-2">Descripción</a></li>
+  <li><a href="#tabla-de-notas-por-botón" id="toc-tabla-de-notas-por-botón" class="nav-link" data-scroll-target="#tabla-de-notas-por-botón">Tabla de notas por botón</a></li>
+  <li><a href="#solución-2" id="toc-solución-2" class="nav-link" data-scroll-target="#solución-2">Solución</a></li>
+  </ul></li>
+  <li><a href="#estado-del-robot-odometría" id="toc-estado-del-robot-odometría" class="nav-link" data-scroll-target="#estado-del-robot-odometría">4. Estado del Robot (Odometría)</a>
+  <ul class="collapse">
+  <li><a href="#métodos-del-motor" id="toc-métodos-del-motor" class="nav-link" data-scroll-target="#métodos-del-motor">Métodos del Motor</a></li>
+  <li><a href="#tabla-de-conversión" id="toc-tabla-de-conversión" class="nav-link" data-scroll-target="#tabla-de-conversión">Tabla de conversión</a></li>
+  <li><a href="#código-ejemplo-completo-3" id="toc-código-ejemplo-completo-3" class="nav-link" data-scroll-target="#código-ejemplo-completo-3">Código ejemplo completo</a></li>
+  <li><a href="#resetear-odometría" id="toc-resetear-odometría" class="nav-link" data-scroll-target="#resetear-odometría">Resetear odometría</a></li>
+  </ul></li>
+  <li><a href="#logging-de-datos" id="toc-logging-de-datos" class="nav-link" data-scroll-target="#logging-de-datos">5. Logging de Datos</a>
+  <ul class="collapse">
+  <li><a href="#código-ejemplo-simple" id="toc-código-ejemplo-simple" class="nav-link" data-scroll-target="#código-ejemplo-simple">Código ejemplo simple</a></li>
+  <li><a href="#proyecto-monitor-de-sistema" id="toc-proyecto-monitor-de-sistema" class="nav-link" data-scroll-target="#proyecto-monitor-de-sistema">Proyecto: Monitor de Sistema</a></li>
+  </ul></li>
+  <li><a href="#ejercicio-para-el-aula-robot-explorador-con-telemetría" id="toc-ejercicio-para-el-aula-robot-explorador-con-telemetría" class="nav-link" data-scroll-target="#ejercicio-para-el-aula-robot-explorador-con-telemetría">📝 Ejercicio para el Aula: Robot Explorador con Telemetría</a>
+  <ul class="collapse">
+  <li><a href="#descripción-3" id="toc-descripción-3" class="nav-link" data-scroll-target="#descripción-3">Descripción</a></li>
+  <li><a href="#tabla-de-comportamiento-1" id="toc-tabla-de-comportamiento-1" class="nav-link" data-scroll-target="#tabla-de-comportamiento-1">Tabla de comportamiento</a></li>
+  <li><a href="#solución-3" id="toc-solución-3" class="nav-link" data-scroll-target="#solución-3">Solución</a></li>
+  </ul></li>
   <li><a href="#lo-que-aprendiste" id="toc-lo-que-aprendiste" class="nav-link" data-scroll-target="#lo-que-aprendiste">📋 Lo que aprendiste</a></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
@@ -521,9 +689,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/2_telemetria_bateria.html"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/2_telemetria_bateria.html"><span class="chapter-title">Telemetría: Monitoreo del Robot y Estado del Sistema</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="telemetria-bateria" class="quarto-section-identifier"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></span></h1>
+<h1 class="title"><span id="telemetria-bateria" class="quarto-section-identifier"><span class="chapter-title">Telemetría: Monitoreo del Robot y Estado del Sistema</span></span></h1>
 </div>
 
 
@@ -547,340 +715,1171 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Telemetría</figcaption>
 </figure>
 </div>
-<p><strong>⏱️ Tiempo estimado:</strong> 45 minutos | <strong>📊 Nivel:</strong> Intermedio-Avanzado</p>
+<p><strong>⏱️ Tiempo estimado:</strong> 60 minutos | <strong>📊 Nivel:</strong> Intermedio-Avanzado</p>
 </div>
 <hr>
 <section id="antes-de-empezar" class="level2">
 <h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
-<p>Los robots no pueden hablar, pero pueden decirte mucho si sabes escuchar. En esta unidad vas a aprender cómo obtener información del robot en tiempo real [1][2].</p>
-<p>Vas a aprender:</p>
+<p>Los robots no pueden hablar, pero pueden decirte mucho si sabes escuchar. En esta unidad vas a aprender cómo obtener información del robot en tiempo real.</p>
+<p><strong>Vas a aprender:</strong></p>
 <ol type="1">
-<li><strong>Monitoreo de batería</strong> — Cuánto le queda, cuándo cargar</li>
-<li><strong>Lectura de botones</strong> — Detectar múltiples botones</li>
-<li><strong>Estado del robot</strong> — Posición, velocidad, orientación</li>
+<li><strong>Botones delHub</strong> — Detectar interacción del usuario</li>
+<li><strong>Light Matrix</strong> — Mostrar información visual</li>
+<li><strong>Speaker</strong> — Reproducir sonidos y alertas</li>
+<li><strong>Estado del Robot</strong> — Posición, velocidad</li>
 <li><strong>Logging de datos</strong> — Guardar información para analizar</li>
 </ol>
 <hr>
 </section>
-<section id="monitoreo-de-batería" class="level2">
-<h2 class="anchored" data-anchor-id="monitoreo-de-batería">1. Monitoreo de Batería</h2>
-<p><strong>Situación:</strong> Cuando la batería de tu teléfono está baja, ves una alerta. El robot también puede decirte cuándo la batería está baja [1].</p>
-<section id="código-ejemplo" class="level3">
-<h3 class="anchored" data-anchor-id="código-ejemplo">Código ejemplo:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener voltaje de batería (en milivoltios)</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    voltaje <span class="op">=</span> hub.battery.voltage()</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener corriente de batería (en miliamperios)</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    corriente <span class="op">=</span> hub.battery.current()</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mostrar en consola</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Batería: </span><span class="sc">{</span>voltaje<span class="sc">}</span><span class="ss">mV | Corriente: </span><span class="sc">{</span>corriente<span class="sc">}</span><span class="ss">mA"</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Alerta si voltaje bajo</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> voltaje <span class="op">&lt;</span> <span class="dv">6000</span>:  <span class="co"># Menos de 6V</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"⚠️ Batería baja - cargar pronto!"</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">1000</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="valores-de-referencia" class="level3">
-<h3 class="anchored" data-anchor-id="valores-de-referencia">Valores de referencia:</h3>
+<section id="botones-del-primehub" class="level2">
+<h2 class="anchored" data-anchor-id="botones-del-primehub">1. Botones del PrimeHub</h2>
+<p>El Hub de SPIKE Essential tiene dos botones que puedes usar para interactuar con tu programa.</p>
+<section id="métodos-disponibles" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-disponibles">Métodos disponibles</h3>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 30%">
+<col style="width: 43%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Voltaje</th>
-<th>Estado</th>
-<th>Acción</th>
+<th>Método</th>
+<th>Retorna</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>&gt;7500 mV</td>
-<td>Batería llena</td>
-<td>Todo bien</td>
+<td><code>is_pressed()</code></td>
+<td><code>bool</code></td>
+<td>True si el botón está actualmente presionado</td>
 </tr>
 <tr class="even">
-<td>6500-7500 mV</td>
-<td>Batería media</td>
-<td>Funciona normal</td>
+<td><code>was_pressed()</code></td>
+<td><code>bool</code></td>
+<td>True si el botón fue presionado desde la última llamada</td>
 </tr>
 <tr class="odd">
-<td>6000-6500 mV</td>
-<td>Batería baja</td>
-<td>Considerar cargar</td>
+<td><code>wait_until_pressed()</code></td>
+<td><code>None</code></td>
+<td>Pausa el programa hasta que se presione el botón</td>
 </tr>
 <tr class="even">
-<td>&lt;6000 mV</td>
-<td>Batería muy baja</td>
-<td>Cargar inmediatamente</td>
+<td><code>wait_until_released()</code></td>
+<td><code>None</code></td>
+<td>Pausa el programa hasta que se suelte el botón</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="tabla-de-botones" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-botones">Tabla de botones</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 28%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Botón</th>
+<th>Código</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Botón izquierdo</td>
+<td><code>hub.left_button</code></td>
+<td>Botón con icono de flecha izquierda</td>
+</tr>
+<tr class="even">
+<td>Botón derecho</td>
+<td><code>hub.right_button</code></td>
+<td>Botón con icono de flecha derecha</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="código-ejemplo-completo" class="level3">
+<h3 class="anchored" data-anchor-id="código-ejemplo-completo">Código ejemplo completo</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo 1: Verificar una vez</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Presiona un botón..."</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> hub.left_button.is_pressed():</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"¡Botón izquierdo presionado!"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> hub.right_button.is_pressed():</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"¡Botón derecho presionado!"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo 2: Loop continuo detectando botones</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Esperando botones..."</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.left_button.is_pressed():</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"IZQUIERDO"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.right_button.is_pressed():</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"DERECHO"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Programa terminado"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ejemplo-wait_until_pressed" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-wait_until_pressed">Ejemplo: wait_until_pressed()</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Esperando que presiones el botón izquierdo..."</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>hub.left_button.wait_until_pressed()</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuando llega aquí, el botón ya fue presionado</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.show_image(<span class="st">'HEART'</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>hub.speaker.beep(<span class="dv">60</span>, <span class="fl">0.5</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Detectado!"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ejemplo-was_pressed-para-detectar-pulsos" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-was_pressed-para-detectar-pulsos">Ejemplo: was_pressed() para detectar pulsos</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>conteo <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># was_pressed() se resetea después de cada llamada</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ideal para contar pulsos individuales</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.left_button.was_pressed():</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        conteo <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Pulsos: </span><span class="sc">{</span>conteo<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.write(<span class="bu">str</span>(conteo))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.right_button.was_pressed():</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Reiniciar contador</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        conteo <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Contador reiniciado"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.off()</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
-<section id="detección-de-botones" class="level2">
-<h2 class="anchored" data-anchor-id="detección-de-botones">2. Detección de Botones</h2>
-<p><strong>Situación:</strong> El Hub tiene un botón central. Puedes detectarlo para que el usuario interactúe con el robot [1].</p>
-<section id="código-ejemplo-1" class="level3">
-<h3 class="anchored" data-anchor-id="código-ejemplo-1">Código ejemplo:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Button</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Presiona el botón central..."</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Método 1: Verificar una vez</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> hub.buttons.pressed():</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"¡Botón presionado!"</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Método 2: Loop continuo</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    botones <span class="op">=</span> hub.buttons.pressed()</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> Button.CENTER <span class="kw">in</span> botones:</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"¡Botón central presionado!"</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Programa terminado"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="ejercicio-para-el-aula-control-de-menú" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-el-aula-control-de-menú">📝 Ejercicio para el Aula: Control de Menú</h2>
+<p><strong>Nivel:</strong> Básico | <strong>Tiempo:</strong> 15 minutos</p>
+<section id="descripción" class="level3">
+<h3 class="anchored" data-anchor-id="descripción">Descripción</h3>
+<p>El estudiante debe crear un menú interactivo donde el robot muestra opciones y el usuario selecciona con los botones.</p>
 </section>
-<section id="botones-disponibles-en-primehub" class="level3">
-<h3 class="anchored" data-anchor-id="botones-disponibles-en-primehub">Botones disponibles en PrimeHub:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Button.CENTER    <span class="co"># Botón principal del Hub</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="tabla-de-comportamiento" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-comportamiento">Tabla de comportamiento</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Botón Presionado</th>
+<th>Acción</th>
+<th>Icono Mostrado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Izquierdo</td>
+<td>Opción A</td>
+<td>ARROW_W</td>
+</tr>
+<tr class="even">
+<td>Derecho</td>
+<td>Opción B</td>
+<td>ARROW_E</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="solución" class="level3">
+<h3 class="anchored" data-anchor-id="solución">Solución</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== MENÚ DEL ROBOT ==="</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Presiona IZQUIERDO para opción A"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Presiona DERECHO para opción B"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.left_button.wait_until_pressed():</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'ARROW_W'</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        hub.speaker.beep(<span class="dv">60</span>, <span class="fl">0.3</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Opción A seleccionada"</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">500</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.right_button.wait_until_pressed():</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'ARROW_E'</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        hub.speaker.beep(<span class="dv">80</span>, <span class="fl">0.3</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Opción B seleccionada"</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">500</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="light-matrix-pantalla-led-5x5" class="level2">
+<h2 class="anchored" data-anchor-id="light-matrix-pantalla-led-5x5">2. Light Matrix (Pantalla LED 5x5)</h2>
+<p>La pantalla LED delHub puede mostrar imágenes predefinidas, texto, y pixeles individuales.</p>
+<section id="métodos-disponibles-1" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-disponibles-1">Métodos disponibles</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 28%">
+<col style="width: 21%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Parámetros</th>
+<th>Retorna</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>show_image(image, brightness)</code></td>
+<td><code>image</code> (str), <code>brightness</code> (int 0-100)</td>
+<td><code>None</code></td>
+<td>Muestra una imagen predefinida</td>
+</tr>
+<tr class="even">
+<td><code>write(text)</code></td>
+<td><code>text</code> (str)</td>
+<td><code>None</code></td>
+<td>Muestra texto desplazándose</td>
+</tr>
+<tr class="odd">
+<td><code>set_pixel(x, y, brightness)</code></td>
+<td><code>x</code> (0-4), <code>y</code> (0-4), <code>brightness</code> (int)</td>
+<td><code>None</code></td>
+<td>Enciende un pixel individual</td>
+</tr>
+<tr class="even">
+<td><code>off()</code></td>
+<td>None</td>
+<td><code>None</code></td>
+<td>Apaga todos los LEDs</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="imágenes-predefinidas-disponibles" class="level3">
+<h3 class="anchored" data-anchor-id="imágenes-predefinidas-disponibles">Imágenes predefinidas disponibles</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Imagen</th>
+<th>Código</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>❤️ HEART</td>
+<td>Corazón</td>
+<td>Amor, éxito</td>
+</tr>
+<tr class="even">
+<td>😊 HAPPY</td>
+<td>Cara feliz</td>
+<td>Todo bien</td>
+</tr>
+<tr class="odd">
+<td>😢 SAD</td>
+<td>Cara triste</td>
+<td>Problema, alerta</td>
+</tr>
+<tr class="even">
+<td>😀 SMILE</td>
+<td>Sonrisa</td>
+<td>Satisfacción</td>
+</tr>
+<tr class="odd">
+<td>😕 CONFUSED</td>
+<td>Confundido</td>
+<td>Indecisión</td>
+</tr>
+<tr class="even">
+<td>😠 ANGRY</td>
+<td>Enojado</td>
+<td>Error, peligro</td>
+</tr>
+<tr class="odd">
+<td>✓ YES</td>
+<td>Check</td>
+<td>Confirmación</td>
+</tr>
+<tr class="even">
+<td>✗ NO</td>
+<td>Cruz</td>
+<td>Negación</td>
+</tr>
+<tr class="odd">
+<td>⏰ CLOCK1-CLOCK12</td>
+<td>Reloj</td>
+<td>Tiempo, espera</td>
+</tr>
+<tr class="even">
+<td>⬆️ ARROW_N</td>
+<td>Flecha arriba</td>
+<td>Dirección norte</td>
+</tr>
+<tr class="odd">
+<td>⬇️ ARROW_S</td>
+<td>Flecha abajo</td>
+<td>Dirección sur</td>
+</tr>
+<tr class="even">
+<td>⬅️ ARROW_W</td>
+<td>Flecha izquierda</td>
+<td>Dirección oeste</td>
+</tr>
+<tr class="odd">
+<td>➡️ ARROW_E</td>
+<td>Flecha derecha</td>
+<td>Dirección este</td>
+</tr>
+<tr class="even">
+<td>🎯 TARGET</td>
+<td>Blanco</td>
+<td>Objetivo</td>
+</tr>
+<tr class="odd">
+<td>🦆 DUCK</td>
+<td>Pato</td>
+<td>Animal</td>
+</tr>
+<tr class="even">
+<td>👻 GHOST</td>
+<td>Fantasma</td>
+<td>Juego</td>
+</tr>
+<tr class="odd">
+<td>💎 DIAMOND</td>
+<td>Diamante</td>
+<td>Premio</td>
+</tr>
+<tr class="even">
+<td>⬜ SQUARE</td>
+<td>Cuadrado</td>
+<td>Forma básica</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="brillo-de-leds" class="level3">
+<h3 class="anchored" data-anchor-id="brillo-de-leds">Brillo de LEDs</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Valor</th>
+<th>Intensidad</th>
+<th>Uso recomendado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Apagado</td>
+<td>Apagar LEDs</td>
+</tr>
+<tr class="even">
+<td>1-25</td>
+<td>Bajo</td>
+<td>Modo ahorro</td>
+</tr>
+<tr class="odd">
+<td>25-50</td>
+<td>Medio</td>
+<td>Uso normal</td>
+</tr>
+<tr class="even">
+<td>50-75</td>
+<td>Alto</td>
+<td>Buena visibilidad</td>
+</tr>
+<tr class="odd">
+<td>75-100</td>
+<td>Máximo</td>
+<td>Máxima luminosidad</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="código-ejemplo-completo-1" class="level3">
+<h3 class="anchored" data-anchor-id="código-ejemplo-completo-1">Código ejemplo completo</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar imagen predefinida</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.show_image(<span class="st">'HEART'</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar otra imagen</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.show_image(<span class="st">'SAD'</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribir texto</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.write(<span class="st">'HOLA MUNDO'</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">2000</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Encender un pixel específico (x=2, y=2 = centro)</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Apagar pantalla</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.off()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="dibujar-una-cara-sonriente-manualmente" class="level3">
+<h3 class="anchored" data-anchor-id="dibujar-una-cara-sonriente-manualmente">Dibujar una cara sonriente manualmente</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Cara sonriente usando pixels</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Estructura 5x5:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># . . @ . .</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># . @ @ @ .</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># . @ . @ .</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># . @ @ @ .</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># . . @ . .</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Fila 0</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">100</span>)  <span class="co"># Centro arriba</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">100</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Fila 1</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">100</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Fila 2 - ojos</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">100</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Fila 3 - boca</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">100</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">100</span>)</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">100</span>)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Fila 4</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.set_pixel(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">100</span>)  <span class="co"># Centro abajo</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">2000</span>)</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.off()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="ejercicio-para-el-aula-reloj-digital" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-el-aula-reloj-digital">📝 Ejercicio para el Aula: Reloj Digital</h2>
+<p><strong>Nivel:</strong> Intermedio | <strong>Tiempo:</strong> 20 minutos</p>
+<section id="descripción-1" class="level3">
+<h3 class="anchored" data-anchor-id="descripción-1">Descripción</h3>
+<p>El robot muestra un reloj que avanza segundo a segundo, mostrando diferentes iconos de reloj.</p>
+</section>
+<section id="tabla-de-iconos-por-segundo" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-iconos-por-segundo">Tabla de iconos por segundo</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Segundo</th>
+<th>Icono de reloj</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1-2</td>
+<td>CLOCK1</td>
+</tr>
+<tr class="even">
+<td>3-4</td>
+<td>CLOCK2</td>
+</tr>
+<tr class="odd">
+<td>5-6</td>
+<td>CLOCK3</td>
+</tr>
+<tr class="even">
+<td>7-8</td>
+<td>CLOCK4</td>
+</tr>
+<tr class="odd">
+<td>9-10</td>
+<td>CLOCK5</td>
+</tr>
+<tr class="even">
+<td>11-12</td>
+<td>CLOCK6</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="solución-1" class="level3">
+<h3 class="anchored" data-anchor-id="solución-1">Solución</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de iconos de reloj</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>relojes <span class="op">=</span> [</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CLOCK1'</span>, <span class="st">'CLOCK2'</span>, <span class="st">'CLOCK3'</span>, <span class="st">'CLOCK4'</span>, <span class="st">'CLOCK5'</span>, <span class="st">'CLOCK6'</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CLOCK7'</span>, <span class="st">'CLOCK8'</span>, <span class="st">'CLOCK9'</span>, <span class="st">'CLOCK10'</span>, <span class="st">'CLOCK11'</span>, <span class="st">'CLOCK12'</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>segundo <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mostrar icono según el segundo (mod 12)</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    indice <span class="op">=</span> segundo <span class="op">%</span> <span class="dv">12</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    hub.light_matrix.show_image(relojes[indice])</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Segundo: </span><span class="sc">{</span>segundo<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Avanzar segundo</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    segundo <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">1000</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="speaker-altavoz" class="level2">
+<h2 class="anchored" data-anchor-id="speaker-altavoz">3. Speaker (Altavoz)</h2>
+<p>ElHub tiene un altavoz integrado que puede reproducir sonidos.</p>
+<section id="métodos-disponibles-2" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-disponibles-2">Métodos disponibles</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 28%">
+<col style="width: 21%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Parámetros</th>
+<th>Retorna</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>beep(note, seconds)</code></td>
+<td><code>note</code> (int 44-123), <code>seconds</code> (float)</td>
+<td><code>None</code></td>
+<td>Reproduce un pitido</td>
+</tr>
+<tr class="even">
+<td><code>start_beep()</code></td>
+<td>None</td>
+<td><code>None</code></td>
+<td>Inicia pitido continuo</td>
+</tr>
+<tr class="odd">
+<td><code>stop()</code></td>
+<td>None</td>
+<td><code>None</code></td>
+<td>Detiene cualquier sonido</td>
+</tr>
+<tr class="even">
+<td><code>set_volume(volume)</code></td>
+<td><code>volume</code> (int 0-100)</td>
+<td><code>None</code></td>
+<td>Establece el volumen</td>
+</tr>
+<tr class="odd">
+<td><code>get_volume()</code></td>
+<td>None</td>
+<td><code>int</code></td>
+<td>Retorna el volumen actual</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabla-de-notas-musicales-notas-midi" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-notas-musicales-notas-midi">Tabla de notas musicales (notas MIDI)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Nota</th>
+<th>Frecuencia</th>
+<th>Nota Musical</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>44</td>
+<td>110 Hz</td>
+<td>A2 (La bajo)</td>
+</tr>
+<tr class="even">
+<td>48</td>
+<td>131 Hz</td>
+<td>C3 (Do medio)</td>
+</tr>
+<tr class="odd">
+<td>52</td>
+<td>165 Hz</td>
+<td>E3 (Mi)</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>196 Hz</td>
+<td>G3 (Sol)</td>
+</tr>
+<tr class="odd">
+<td>60</td>
+<td>262 Hz</td>
+<td>C4 (Do alto)</td>
+</tr>
+<tr class="even">
+<td>64</td>
+<td>330 Hz</td>
+<td>E4 (Mi alto)</td>
+</tr>
+<tr class="odd">
+<td>67</td>
+<td>392 Hz</td>
+<td>G4 (Sol alto)</td>
+</tr>
+<tr class="even">
+<td>72</td>
+<td>523 Hz</td>
+<td>C5 (Do más alto)</td>
+</tr>
+<tr class="odd">
+<td>76</td>
+<td>622 Hz</td>
+<td>D5</td>
+</tr>
+<tr class="even">
+<td>79</td>
+<td>698 Hz</td>
+<td>F5</td>
+</tr>
+<tr class="odd">
+<td>81</td>
+<td>880 Hz</td>
+<td>A5</td>
+</tr>
+<tr class="even">
+<td>84</td>
+<td>988 Hz</td>
+<td>B5</td>
+</tr>
+<tr class="odd">
+<td>88</td>
+<td>1047 Hz</td>
+<td>C6 (do más agudo)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="duración-de-sonidos" class="level3">
+<h3 class="anchored" data-anchor-id="duración-de-sonidos">Duración de sonidos</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Duración</th>
+<th>Valor</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Muy corto</td>
+<td>0.05-0.1s</td>
+<td>Click, confirmación</td>
+</tr>
+<tr class="even">
+<td>Corto</td>
+<td>0.1-0.3s</td>
+<td>Beep normal</td>
+</tr>
+<tr class="odd">
+<td>Medio</td>
+<td>0.3-0.5s</td>
+<td>Alerta</td>
+</tr>
+<tr class="even">
+<td>Largo</td>
+<td>0.5-1.0s</td>
+<td>Señal de alarma</td>
+</tr>
+<tr class="odd">
+<td>Continuo</td>
+<td>usar start_beep()</td>
+<td>Sonido sostenido</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="código-ejemplo-completo-2" class="level3">
+<h3 class="anchored" data-anchor-id="código-ejemplo-completo-2">Código ejemplo completo</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Establecer volumen</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>hub.speaker.set_volume(<span class="dv">80</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Volumen: </span><span class="sc">{</span>hub<span class="sc">.</span>speaker<span class="sc">.</span>get_volume()<span class="sc">}</span><span class="ss">%"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproducir nota simple</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>hub.speaker.beep(<span class="dv">60</span>, <span class="fl">0.2</span>)  <span class="co"># Do medio, 0.2 segundos</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">300</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproducir secuencia musical</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>notas <span class="op">=</span> [<span class="dv">60</span>, <span class="dv">64</span>, <span class="dv">67</span>, <span class="dv">72</span>]  <span class="co"># C, E, G, C (acorde)</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nota <span class="kw">in</span> notas:</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    hub.speaker.beep(nota, <span class="fl">0.2</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Beep largo de alarma</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>hub.speaker.beep(<span class="dv">80</span>, <span class="fl">1.0</span>)  <span class="co"># Nota aguda, 1 segundo</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">500</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Pitido continuo</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>hub.speaker.start_beep()</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">2000</span>)  <span class="co"># 2 segundos de pitido</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>hub.speaker.stop()</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Silencio</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>hub.speaker.set_volume(<span class="dv">0</span>)  <span class="co"># Silenciar</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="melodía-canción-de-victoria" class="level3">
+<h3 class="anchored" data-anchor-id="melodía-canción-de-victoria">Melodía: Canción de victoria</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Notes for "Victory" sound</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>notas_victoria <span class="op">=</span> [</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">72</span>, <span class="fl">0.15</span>),  <span class="co"># C5</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">76</span>, <span class="fl">0.15</span>),  <span class="co"># D5</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">79</span>, <span class="fl">0.15</span>),  <span class="co"># F5</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">84</span>, <span class="fl">0.4</span>),   <span class="co"># C6 (más largo)</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tocando victoria..."</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nota, duracion <span class="kw">in</span> notas_victoria:</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    hub.speaker.beep(nota, duracion)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    wait(duracion <span class="op">*</span> <span class="dv">1000</span> <span class="op">+</span> <span class="dv">50</span>)  <span class="co"># Duración + pequeña pausa</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Victoria!"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="ejercicio-para-el-aula-piano-de-botones" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-el-aula-piano-de-botones">📝 Ejercicio para el Aula: Piano de Botones</h2>
+<p><strong>Nivel:</strong> Intermedio | <strong>Tiempo:</strong> 25 minutos</p>
+<section id="descripción-2" class="level3">
+<h3 class="anchored" data-anchor-id="descripción-2">Descripción</h3>
+<p>El robot funciona como un piano. Cada botón reproduce una nota diferente.</p>
+</section>
+<section id="tabla-de-notas-por-botón" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-notas-por-botón">Tabla de notas por botón</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Botón</th>
+<th>Nota</th>
+<th>Frecuencia</th>
+<th>Icono</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Izquierdo</td>
+<td>Do (C4)</td>
+<td>60</td>
+<td>NOTE</td>
+</tr>
+<tr class="even">
+<td>Derecho</td>
+<td>Mi (E4)</td>
+<td>64</td>
+<td>MUSIC</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="solución-2" class="level3">
+<h3 class="anchored" data-anchor-id="solución-2">Solución</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurar volumen</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>hub.speaker.set_volume(<span class="dv">70</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Notas para cada botón</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>NOTA_IZQUIERDO <span class="op">=</span> <span class="dv">60</span>  <span class="co"># Do4</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>NOTA_DERECHO <span class="op">=</span> <span class="dv">64</span>    <span class="co"># Mi4</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.left_button.is_pressed():</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'NOTE'</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        hub.speaker.beep(NOTA_IZQUIERDO, <span class="fl">0.3</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Do"</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">200</span>)  <span class="co"># Evitar rebote</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.right_button.is_pressed():</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'MUSIC'</span>)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        hub.speaker.beep(NOTA_DERECHO, <span class="fl">0.3</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Mi"</span>)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">200</span>)</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">50</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
 <section id="estado-del-robot-odometría" class="level2">
-<h2 class="anchored" data-anchor-id="estado-del-robot-odometría">3. Estado del Robot (Odometría)</h2>
-<p><strong>Situación:</strong> Un taxi tiene un taxímetro que cuenta los kilómetros recorriddos. El robot puede hacer algo similar—saber cuántos milímetros ha avanzado y hacia dónde está orientado [2].</p>
-<section id="código-ejemplo-2" class="level3">
-<h3 class="anchored" data-anchor-id="código-ejemplo-2">Código ejemplo:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> Motor</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.robotics <span class="im">import</span> DriveBase</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurar robot</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>motor_izq <span class="op">=</span> Motor(Port.A)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>motor_der <span class="op">=</span> Motor(Port.B)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> DriveBase(motor_izq, motor_der, wheel_diameter<span class="op">=</span><span class="dv">56</span>, axle_track<span class="op">=</span><span class="dv">112</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Activar girómetro para mejor precisión</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>robot.use_gyro(<span class="va">True</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacer algunos movimientos</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>robot.straight(<span class="dv">200</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>robot.turn(<span class="dv">90</span>)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>robot.straight(<span class="dv">200</span>)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtener estado actual del robot</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># (distancia_recorrida, velocidad, angulo, velocidad_giro)</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>estado <span class="op">=</span> robot.state()</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>distancia <span class="op">=</span> estado[<span class="dv">0</span>]  <span class="co"># mm recorridos</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>velocidad <span class="op">=</span> estado[<span class="dv">1</span>]  <span class="co"># mm/s</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>angulo <span class="op">=</span> estado[<span class="dv">2</span>]  <span class="co"># grados de orientación</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>turn_rate <span class="op">=</span> estado[<span class="dv">3</span>]  <span class="co"># deg/s</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Distancia: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss">mm"</span>)</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Velocidad: </span><span class="sc">{</span>velocidad<span class="sc">}</span><span class="ss">mm/s"</span>)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Ángulo: </span><span class="sc">{</span>angulo<span class="sc">}</span><span class="ss">°"</span>)</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Turn rate: </span><span class="sc">{</span>turn_rate<span class="sc">}</span><span class="ss">°/s"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<h2 class="anchored" data-anchor-id="estado-del-robot-odometría">4. Estado del Robot (Odometría)</h2>
+<p>El robot puede rastrear su posición usando los encoders de los motores.</p>
+<section id="métodos-del-motor" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-del-motor">Métodos del Motor</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 30%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Retorna</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>get_position()</code></td>
+<td><code>int</code> (0-359)</td>
+<td>Posición actual en grados (0-359)</td>
+</tr>
+<tr class="even">
+<td><code>get_degrees_counted()</code></td>
+<td><code>int</code></td>
+<td>Grados acumulados desde el inicio</td>
+</tr>
+<tr class="odd">
+<td><code>get_speed()</code></td>
+<td><code>int</code> o <code>None</code></td>
+<td>Velocidad actual (%)</td>
+</tr>
+<tr class="even">
+<td><code>get_default_speed()</code></td>
+<td><code>int</code></td>
+<td>Velocidad por defecto</td>
+</tr>
+<tr class="odd">
+<td><code>get_default_speed()</code></td>
+<td><code>int</code></td>
+<td>Velocidad por defecto</td>
+</tr>
+<tr class="even">
+<td><code>set_degrees_counted(degrees)</code></td>
+<td><code>None</code></td>
+<td>Establecer contador a un valor</td>
+</tr>
+<tr class="odd">
+<td><code>reset_angle()</code></td>
+<td><code>None</code></td>
+<td>Resetear contador a 0</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="estado-completo-del-robot" class="level3">
-<h3 class="anchored" data-anchor-id="estado-completo-del-robot">Estado completo del robot:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># robot.state() retorna:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [distancia_mm, velocidad_mm/s, angulo_grados, turn_rate_grados/s]</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>estado <span class="op">=</span> robot.state()</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>distancia_recorrida <span class="op">=</span> estado[<span class="dv">0</span>]  <span class="co"># Cuánto ha avanzado total</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>velocidad_actual <span class="op">=</span> estado[<span class="dv">1</span>]    <span class="co"># Velocidad instantán</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>angulo_actual <span class="op">=</span> estado[<span class="dv">2</span>]        <span class="co"># Orientación actual del robot</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>velocidad_giro <span class="op">=</span> estado[<span class="dv">3</span>]      <span class="co"># Qué tan rápido está girando</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="tabla-de-conversión" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-conversión">Tabla de conversión</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Movimiento</th>
+<th>Grados del motor</th>
+<th>Distancia aproximada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 cm</td>
+<td>40°</td>
+<td>1 centímetro</td>
+</tr>
+<tr class="even">
+<td>1 pulgada</td>
+<td>96°</td>
+<td>2.54 centímetros</td>
+</tr>
+<tr class="odd">
+<td>1 rotación completa</td>
+<td>360°</td>
+<td>~17.6 cm (rueda 56mm)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="código-ejemplo-completo-3" class="level3">
+<h3 class="anchored" data-anchor-id="código-ejemplo-completo-3">Código ejemplo completo</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub, Motor</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> DriveBase, wait</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurar robot</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>motor_izq <span class="op">=</span> Motor(<span class="st">'A'</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>motor_der <span class="op">=</span> Motor(<span class="st">'B'</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> MotorPair(<span class="st">'A'</span>, <span class="st">'B'</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Activar odometría</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>robot.set_motor_rotation(<span class="fl">17.6</span>, <span class="st">'cm'</span>)  <span class="co"># 17.6 cm por rotación</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacer algunos movimientos</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>robot.move(<span class="dv">20</span>, <span class="st">'cm'</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">500</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>robot.rotate(<span class="dv">90</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">500</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>robot.move(<span class="dv">20</span>, <span class="st">'cm'</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtener estado de los motores</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>pos_izq <span class="op">=</span> motor_izq.get_degrees_counted()</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>pos_der <span class="op">=</span> motor_der.get_degrees_counted()</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>vel_izq <span class="op">=</span> motor_izq.get_speed()</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>vel_der <span class="op">=</span> motor_der.get_speed()</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular distancia recorrida (promedio)</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>cm_promedio <span class="op">=</span> ((<span class="bu">abs</span>(pos_izq) <span class="op">+</span> <span class="bu">abs</span>(pos_der)) <span class="op">/</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">360</span> <span class="op">*</span> <span class="fl">17.6</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Motor Izquierdo: </span><span class="sc">{</span>pos_izq<span class="sc">}</span><span class="ss">°"</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Motor Derecho: </span><span class="sc">{</span>pos_der<span class="sc">}</span><span class="ss">°"</span>)</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Velocidad Izquierdo: </span><span class="sc">{</span>vel_izq<span class="sc">}</span><span class="ss">%"</span>)</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Velocidad Derecho: </span><span class="sc">{</span>vel_der<span class="sc">}</span><span class="ss">%"</span>)</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Distancia aproximada: </span><span class="sc">{</span>cm_promedio<span class="sc">:.1f}</span><span class="ss"> cm"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="resetear-odometría" class="level3">
-<h3 class="anchored" data-anchor-id="resetear-odometría">Resetear odometría:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resetear todo el contador de posición</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>robot.reset()</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># También puedes resetear solo el ángulo</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ( pero manteniendo la posición )</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>robot.reset(angle<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 class="anchored" data-anchor-id="resetear-odometría">Resetear odometría</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resetear contador de grados a 0</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>motor_izq.set_degrees_counted(<span class="dv">0</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>motor_der.set_degrees_counted(<span class="dv">0</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># O usar reset_angle</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>motor_izq.reset_angle()</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>motor_der.reset_angle()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
 <section id="logging-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="logging-de-datos">4. Logging de Datos</h2>
-<p><strong>Situación:</strong> En una carrera, los competidores tienen “cajas negras” que graban todo. Puedes hacer lo mismo con el robot—guardar datos para analizarlos después [1].</p>
+<h2 class="anchored" data-anchor-id="logging-de-datos">5. Logging de Datos</h2>
+<p>Puedes guardar datos para analizarlos después.</p>
 <section id="código-ejemplo-simple" class="level3">
-<h3 class="anchored" data-anchor-id="código-ejemplo-simple">Código ejemplo simple:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> UltrasonicSensor</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ure  <span class="co"># módulo de MicroPython para expresiones regulares</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> UltrasonicSensor(Port.D)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista para almacenar datos</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> []</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Recolectar datos durante 30 segundos</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>tiempo_inicio <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Placeholder, se会用time.ticks_ms()</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):  <span class="co"># 100 muestras</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor.distance()</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    voltaje <span class="op">=</span> hub.battery.voltage()</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Guardar como texto (para ver después)</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    dato <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>voltaje<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    datos.append(dato)</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Muestra </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: dist=</span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss">mm, bat=</span><span class="sc">{</span>voltaje<span class="sc">}</span><span class="ss">mV"</span>)</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Al final, mostrar todos los datos</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== DATOS RECOLECTADOS ==="</span>)</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> d <span class="kw">in</span> datos:</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(d)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 class="anchored" data-anchor-id="código-ejemplo-simple">Código ejemplo simple</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub, DistanceSensor</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> DistanceSensor(<span class="st">'D'</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista para almacenar datos</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> []</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Recolectar 20 muestras</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor.get_distance_cm()</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Guardar como texto</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    dato <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    datos.append(dato)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Muestra </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss"> cm"</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar todos los datos</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== DATOS RECOLECTADOS ==="</span>)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> d <span class="kw">in</span> datos:</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(d)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="proyecto-monitor-de-temperatura-si-hay-sensor" class="level3">
-<h3 class="anchored" data-anchor-id="proyecto-monitor-de-temperatura-si-hay-sensor">Proyecto: Monitor de Temperatura (si hay sensor)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Iniciando monitor de sistema..."</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Monitorear múltiples parámetros</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    voltaje <span class="op">=</span> hub.battery.voltage()</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    botones <span class="op">=</span> hub.buttons.pressed()</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Verificar estado general</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> voltaje <span class="op">&lt;</span> <span class="dv">6000</span>:</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"⚠️ BATERÍA BAJA"</span>)</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>        hub.light.on(<span class="dv">0</span>)  <span class="co"># Luz roja</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        hub.light.on(<span class="dv">5</span>)  <span class="co"># Luz verde</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Si hay botones presionados, mostrar</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> botones:</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Botones: </span><span class="sc">{</span>botones<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">1000</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="proyecto-monitor-de-sistema" class="level3">
+<h3 class="anchored" data-anchor-id="proyecto-monitor-de-sistema">Proyecto: Monitor de Sistema</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub, DistanceSensor</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> DistanceSensor(<span class="st">'D'</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Iniciando monitor..."</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Leer sensor de distancia</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor.get_distance_cm()</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Verificar botones</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.left_button.is_pressed():</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"IZQUIERDO"</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'ARROW_W'</span>)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> hub.right_button.is_pressed():</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"DERECHO"</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'ARROW_E'</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mostrar estado según distancia</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">15</span>:</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"⚠️ OBSTÁCULO: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss">cm"</span>)</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'SAD'</span>)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>        hub.speaker.beep(<span class="dv">60</span>, <span class="fl">0.1</span>)</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'HAPPY'</span>)</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
-<section id="proyecto-robot-con-telemetry-integrada" class="level2">
-<h2 class="anchored" data-anchor-id="proyecto-robot-con-telemetry-integrada">5. Proyecto: Robot con Telemetry Integrada</h2>
-<p><strong>Situación:</strong> Vamos a combine todo lo que aprendido—un robot que se mueve, monitorea su batería, y muestra su estado en pantalla.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">ROBOT TELEMETRÍA</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">El robot se mueve y muestra información en tiempo real</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.hubs <span class="im">import</span> PrimeHub</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> Motor, UltrasonicSensor</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port, Button</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.robotics <span class="im">import</span> DriveBase</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait, run_task</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurar componentes</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>motor_izq <span class="op">=</span> Motor(Port.A)</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>motor_der <span class="op">=</span> Motor(Port.B)</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> UltrasonicSensor(Port.D)</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> DriveBase(motor_izq, motor_der, <span class="dv">56</span>, <span class="dv">112</span>)</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>robot.use_gyro(<span class="va">True</span>)</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable para comunicar entre tareas</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>hay_obstaculo <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Tarea 1: Monitorear sistema</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> monitor():</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> hay_obstaculo</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Leer batería</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>        voltaje <span class="op">=</span> hub.battery.voltage()</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Leer sensor de distancia</span></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>        distancia <span class="op">=</span> sensor.distance()</span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Actualizar variable compartida</span></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">150</span>:</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>            hay_obstaculo <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>            hay_obstaculo <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Mostrar en consola</span></span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Bat:</span><span class="sc">{</span>voltaje<span class="sc">}</span><span class="ss">mV Dist:</span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss">mm Obst:</span><span class="sc">{</span>hay_obstaculo<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">await</span> wait(<span class="dv">200</span>)</span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Tarea 2: Movimiento del robot</span></span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> movimiento():</span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> hay_obstaculo</span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    robot.use_gyro(<span class="va">True</span>)</span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):  <span class="co"># 4 lados de un cuadrado</span></span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Avanzar</span></span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> hay_obstaculo:</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>            robot.stop()</span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>            hub.speaker.beep()</span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>            <span class="cf">await</span> robot.turn(<span class="dv">90</span>)</span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>            <span class="cf">await</span> robot.straight(<span class="dv">200</span>)</span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Girar</span></span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>        <span class="cf">await</span> robot.turn(<span class="dv">90</span>)</span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Obtener estado</span></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>        estado <span class="op">=</span> robot.state()</span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Lado </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>estado[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">mm, </span><span class="sc">{</span>estado[<span class="dv">2</span>]<span class="sc">}</span><span class="ss">°"</span>)</span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>    robot.stop()</span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"¡Movimiento completado!"</span>)</span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutar ambas tareas</span></span>
-<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>run_task(monitor(), movimiento())</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="ejercicio-para-el-aula-robot-explorador-con-telemetría" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-el-aula-robot-explorador-con-telemetría">📝 Ejercicio para el Aula: Robot Explorador con Telemetría</h2>
+<p><strong>Nivel:</strong> Avanzado | <strong>Tiempo:</strong> 35 minutos</p>
+<section id="descripción-3" class="level3">
+<h3 class="anchored" data-anchor-id="descripción-3">Descripción</h3>
+<p>El robot explora un área, detecta obstáculos, y guarda un registro (log) de todas las detecciones.</p>
+</section>
+<section id="tabla-de-comportamiento-1" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-comportamiento-1">Tabla de comportamiento</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Evento</th>
+<th>Acción</th>
+<th>Log</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Obstáculo detectado</td>
+<td>Mostrar SAD + beep</td>
+<td>“OBSTACULO: X cm”</td>
+</tr>
+<tr class="even">
+<td>Botón izquierdo presionado</td>
+<td>Detener programa</td>
+<td>“FIN: X detecciones”</td>
+</tr>
+<tr class="odd">
+<td>Sin obstáculo</td>
+<td>Avanzar + mostrar HAPPY</td>
+<td>“OK: X cm”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="solución-3" class="level3">
+<h3 class="anchored" data-anchor-id="solución-3">Solución</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub, DistanceSensor</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> MotorPair</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> DistanceSensor(<span class="st">'D'</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> MotorPair(<span class="st">'A'</span>, <span class="st">'B'</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables para logging</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>detecciones <span class="op">=</span> []</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>muestras <span class="op">=</span> []</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Iniciando explorador..."</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurar volumen</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>hub.speaker.set_volume(<span class="dv">50</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop principal</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> paso <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):  <span class="co"># 20 pasos</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Leer distancia</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor.get_distance_cm()</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">15</span>:</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Obstáculo detectado</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>        deteccion <span class="op">=</span> <span class="ss">f"OBSTACULO: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss"> cm"</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>        detecciones.append(deteccion)</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Mostrar alerta</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'SAD'</span>)</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>        hub.speaker.beep(<span class="dv">60</span>, <span class="fl">0.2</span>)</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Girar</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>        robot.move_tank(<span class="dv">90</span>, <span class="st">'degrees'</span>, left_speed<span class="op">=</span><span class="dv">50</span>, right_speed<span class="op">=-</span><span class="dv">50</span>)</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(deteccion)</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Todo bien - avanzar</span></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>        muestra <span class="op">=</span> <span class="ss">f"OK: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss"> cm"</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>        muestras.append(muestra)</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'HAPPY'</span>)</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>        robot.start(<span class="dv">30</span>)</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(muestra)</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Verificar si botón menghentikan</span></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> hub.left_button.is_pressed():</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== PROGRAMA DETENIDO ==="</span>)</span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.write(<span class="st">"STOP"</span>)</span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resumen al final</span></span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>robot.stop()</span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== RESUMEN ==="</span>)</span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Pasos dados: </span><span class="sc">{</span><span class="bu">len</span>(muestras)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obstáculos evitados: </span><span class="sc">{</span><span class="bu">len</span>(detecciones)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total muestras: </span><span class="sc">{</span><span class="bu">len</span>(muestras) <span class="op">+</span> <span class="bu">len</span>(detecciones)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.show_image(<span class="st">'YES'</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
+</section>
 </section>
 <section id="lo-que-aprendiste" class="level2">
 <h2 class="anchored" data-anchor-id="lo-que-aprendiste">📋 Lo que aprendiste</h2>
 <p>Antes de terminar, marca lo que entendiste:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Monitorear voltaje y corriente de batería</label></li>
-<li><label><input type="checkbox">Detectar cuándo la batería está baja</label></li>
-<li><label><input type="checkbox">Leer botones del Hub</label></li>
-<li><label><input type="checkbox">Obtener estado del robot (distancia, ángulo, velocidad)</label></li>
+<li><label><input type="checkbox">Detectar botones delHub (is_pressed, was_pressed, wait_until_pressed)</label></li>
+<li><label><input type="checkbox">Mostrar imágenes predefinidas en Light Matrix</label></li>
+<li><label><input type="checkbox">Escribir texto y dibujar pixels</label></li>
+<li><label><input type="checkbox">Reproducir sonidos con el speaker (beep, volumen)</label></li>
+<li><label><input type="checkbox">Usar notas musicales MIDI</label></li>
+<li><label><input type="checkbox">Obtener posición y velocidad de los motores</label></li>
 <li><label><input type="checkbox">Resetear odometría</label></li>
 <li><label><input type="checkbox">Hacer logging de datos</label></li>
 </ul>
 <hr>
-<p><em>En la siguiente unidad: Usando Thonny como debugger profesional.</em></p>
+<p><em>En la siguiente unidad: Proyecto integrador.</em></p>
 </section>
 <section id="referencias" class="level2">
 <h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
-<p>[1] Pybricks Team. (2023). <em>Pybricks Documentation - PrimeHub</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/hubs/primehub.html</p>
-<p>[2] Pybricks Team. (2023). <em>Pybricks Documentation - Robotics Module</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/robotics.html</p>
-<p>[3] LEGO Education. (2023). <em>LEGO Education SPIKE Prime - Battery Specifications</em>. LEGO. Disponible: https://lego.com</p>
-<p>[4] D. George. (2013). <em>MicroPython Documentation</em>. MicroPython. Disponible: https://docs.micropython.org</p>
+<p>[1] LEGO Education. <em>LEGO Education SPIKE Essential - PrimeHub API</em>. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python</p>
+<p>[2] LEGO Education. <em>LEGO Education SPIKE Essential - Motor API</em>. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python</p>
+<p>[3] LEGO Education. <em>LEGO Education SPIKE Essential - Light Matrix</em>. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python</p>
+<p>[4] LEGO Education. <em>LEGO Education SPIKE Essential - Speaker</em>. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python</p>
 <p>[5] A. Annamaa. (2018). <em>Thonny: Python IDE for beginners</em>. GitHub. Disponible: https://github.com/thonny</p>
 
 
@@ -1289,8 +2288,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="pagination-link" aria-label="Sensores Adicionales: Infrared, Color y Fuerza">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></span>
+      <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="pagination-link" aria-label="Sensores Adicionales: Color, Fuerza y Distancia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Sensores Adicionales: Color, Fuerza y Distancia</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -8,7 +8,7 @@
 
 <meta name="description" content="Curso de MicroPython para docentes de Pedagogía en Informática.">
 
-<title>Sensores Adicionales: Infrared, Color y Fuerza – MicroPython para el Aula</title>
+<title>Sensores Adicionales: Color, Fuerza y Distancia – MicroPython para el Aula</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -125,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/2_sensores_adicionales.html"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/2_sensores_adicionales.html"><span class="chapter-title">Sensores Adicionales: Color, Fuerza y Distancia</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -228,6 +228,116 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contenido/unidad0/competencias_docente.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Fundamentos: Antes de Comenzar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Módulo de Fundamentos de Python para Robótica Educativa</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/introduccion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">¿Por qué aprender Python primero?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/variables_tipos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Variables y Tipos de Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/control_flujo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estructuras de Control: Tomando Decisiones y Repetir Acciones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Funciones: Las “Recetas” del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/manejo_errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Manejo de Errores: Cuando las Cosas No Salen como Esperamos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/estructuras_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Estructuras de Datos: Listas y Diccionarios</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad0/fundamentos_python/resumen_trasicion_hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">De los Fundamentos a la Robótica Real: El Puente</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios: Fundamentos de Python para Robótica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_01_variables.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 1: Las Cajas del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_02_tipos_datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 2: Qué Tipo de Caja Usas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_03_condicionales.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 3: El Robot Toma Decisiones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_04_bucles.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 4: Repetir Sin Cansarse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_05_funciones.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 5: Las Recetas del Robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_06_errores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 6: Cuando las Cosas Fallan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/fundamentos_python/ejercicio_07_estructuras.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicio 7: Organizando Datos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/proyectos/proyecto_robot_virtual.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Proyecto: Robot Virtual Explorador</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejercicios de MicroPython 🧩</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/wokwi_ejemplos/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejemplos de Simulación con Wokwi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ejercicios/wokwi_esp32/index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Ejemplos de Simulación ESP32 con Wokwi</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_fundamentos_python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🐍 Quiz: Fundamentos de Python para Robótica</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quizzes/quiz_fundamentos_completo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🧠 Quiz Completo: Fundamentos de Python</span></a>
   </div>
 </li>
       </ul>
@@ -351,12 +461,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></a>
+  <a href="../../contenido/unidad4/2_sensores_adicionales.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Sensores Adicionales: Color, Fuerza y Distancia</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></a>
+  <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Telemetría: Monitoreo del Robot y Estado del Sistema</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -383,6 +493,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contenido/unidad5/1_proyecto_final.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 5: Ahora vas a crear tu propio robot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/unidad5/2_practica_testing_simulador.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🧪 Práctica: Testing del Simulador ESP-LEGO-SPIKE</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -419,6 +534,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../contenido/apendice_pybricks_compilacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_pybricks_spike.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🤖 Pybricks vs LEGO Spike: Guía de Orientación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/apendice_hardware_alternativo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔌 Opciones de Hardware Alternativo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../contenido/referencia_sintaxis_spike.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Referencia Rápida: LEGO Education SPIKE Essential Python</span></a>
   </div>
 </li>
       </ul>
@@ -491,30 +621,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link active" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
-  <li><a href="#sensor-infrarrojo-infraredsensor" id="toc-sensor-infrarrojo-infraredsensor" class="nav-link" data-scroll-target="#sensor-infrarrojo-infraredsensor">1. Sensor Infrarrojo (InfraredSensor)</a>
+  <li><a href="#sensor-de-color-colorsensor" id="toc-sensor-de-color-colorsensor" class="nav-link" data-scroll-target="#sensor-de-color-colorsensor">1. Sensor de Color (ColorSensor)</a>
   <ul class="collapse">
-  <li><a href="#qué-puede-hacer" id="toc-qué-puede-hacer" class="nav-link" data-scroll-target="#qué-puede-hacer">¿Qué puede hacer?</a></li>
-  <li><a href="#código-ejemplo" id="toc-código-ejemplo" class="nav-link" data-scroll-target="#código-ejemplo">Código ejemplo:</a></li>
-  <li><a href="#usos-prácticos" id="toc-usos-prácticos" class="nav-link" data-scroll-target="#usos-prácticos">Usos prácticos:</a></li>
-  </ul></li>
-  <li><a href="#sensor-de-color-colorsensor" id="toc-sensor-de-color-colorsensor" class="nav-link" data-scroll-target="#sensor-de-color-colorsensor">2. Sensor de Color (ColorSensor)</a>
-  <ul class="collapse">
-  <li><a href="#qué-puede-hacer-1" id="toc-qué-puede-hacer-1" class="nav-link" data-scroll-target="#qué-puede-hacer-1">¿Qué puede hacer?</a></li>
-  <li><a href="#código-ejemplo-1" id="toc-código-ejemplo-1" class="nav-link" data-scroll-target="#código-ejemplo-1">Código ejemplo:</a></li>
-  <li><a href="#colores-disponibles" id="toc-colores-disponibles" class="nav-link" data-scroll-target="#colores-disponibles">Colores disponibles:</a></li>
+  <li><a href="#métodos-disponibles" id="toc-métodos-disponibles" class="nav-link" data-scroll-target="#métodos-disponibles">Métodos disponibles</a></li>
+  <li><a href="#colores-que-puede-detectar" id="toc-colores-que-puede-detectar" class="nav-link" data-scroll-target="#colores-que-puede-detectar">Colores que puede detectar</a></li>
+  <li><a href="#código-ejemplo-básico" id="toc-código-ejemplo-básico" class="nav-link" data-scroll-target="#código-ejemplo-básico">Código ejemplo básico</a></li>
+  <li><a href="#tabla-de-reflexión-de-luz" id="toc-tabla-de-reflexión-de-luz" class="nav-link" data-scroll-target="#tabla-de-reflexión-de-luz">Tabla de reflexión de luz</a></li>
+  <li><a href="#ejemplo-obtener-valores-rgb" id="toc-ejemplo-obtener-valores-rgb" class="nav-link" data-scroll-target="#ejemplo-obtener-valores-rgb">Ejemplo: Obtener valores RGB</a></li>
+  <li><a href="#control-de-luces-led-del-sensor" id="toc-control-de-luces-led-del-sensor" class="nav-link" data-scroll-target="#control-de-luces-led-del-sensor">Control de luces LED del sensor</a></li>
   <li><a href="#proyecto-seguidor-de-línea" id="toc-proyecto-seguidor-de-línea" class="nav-link" data-scroll-target="#proyecto-seguidor-de-línea">Proyecto: Seguidor de línea</a></li>
+  </ul></li>
+  <li><a href="#ejercicio-para-el-aula-clasificador-de-colores" id="toc-ejercicio-para-el-aula-clasificador-de-colores" class="nav-link" data-scroll-target="#ejercicio-para-el-aula-clasificador-de-colores">📝 Ejercicio para el Aula: Clasificador de Colores</a>
+  <ul class="collapse">
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
+  <li><a href="#solución" id="toc-solución" class="nav-link" data-scroll-target="#solución">Solución</a></li>
+  <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
+  </ul></li>
+  <li><a href="#sensor-de-distancia-distancesensor" id="toc-sensor-de-distancia-distancesensor" class="nav-link" data-scroll-target="#sensor-de-distancia-distancesensor">2. Sensor de Distancia (DistanceSensor)</a>
+  <ul class="collapse">
+  <li><a href="#métodos-disponibles-1" id="toc-métodos-disponibles-1" class="nav-link" data-scroll-target="#métodos-disponibles-1">Métodos disponibles</a></li>
+  <li><a href="#parámetro-short_range" id="toc-parámetro-short_range" class="nav-link" data-scroll-target="#parámetro-short_range">Parámetro <code>short_range</code></a></li>
+  <li><a href="#tabla-de-distancias" id="toc-tabla-de-distancias" class="nav-link" data-scroll-target="#tabla-de-distancias">Tabla de distancias</a></li>
+  <li><a href="#código-ejemplo" id="toc-código-ejemplo" class="nav-link" data-scroll-target="#código-ejemplo">Código ejemplo</a></li>
+  <li><a href="#usar-short_range-medición-cercana" id="toc-usar-short_range-medición-cercana" class="nav-link" data-scroll-target="#usar-short_range-medición-cercana">Usar short_range (medición cercana)</a></li>
+  <li><a href="#control-de-leds-del-sensor" id="toc-control-de-leds-del-sensor" class="nav-link" data-scroll-target="#control-de-leds-del-sensor">Control de LEDs del sensor</a></li>
+  <li><a href="#proyecto-robot-evita-obstáculos" id="toc-proyecto-robot-evita-obstáculos" class="nav-link" data-scroll-target="#proyecto-robot-evita-obstáculos">Proyecto: Robot evita obstáculos</a></li>
+  </ul></li>
+  <li><a href="#ejercicio-para-el-aula-medidor-de-distancia" id="toc-ejercicio-para-el-aula-medidor-de-distancia" class="nav-link" data-scroll-target="#ejercicio-para-el-aula-medidor-de-distancia">📝 Ejercicio para el Aula: Medidor de Distancia</a>
+  <ul class="collapse">
+  <li><a href="#objetivo-1" id="toc-objetivo-1" class="nav-link" data-scroll-target="#objetivo-1">Objetivo</a></li>
+  <li><a href="#tabla-de-referencia" id="toc-tabla-de-referencia" class="nav-link" data-scroll-target="#tabla-de-referencia">Tabla de referencia</a></li>
+  <li><a href="#solución-1" id="toc-solución-1" class="nav-link" data-scroll-target="#solución-1">Solución</a></li>
   </ul></li>
   <li><a href="#sensor-de-fuerza-forcesensor" id="toc-sensor-de-fuerza-forcesensor" class="nav-link" data-scroll-target="#sensor-de-fuerza-forcesensor">3. Sensor de Fuerza (ForceSensor)</a>
   <ul class="collapse">
-  <li><a href="#qué-puede-hacer-2" id="toc-qué-puede-hacer-2" class="nav-link" data-scroll-target="#qué-puede-hacer-2">¿Qué puede hacer?</a></li>
-  <li><a href="#código-ejemplo-2" id="toc-código-ejemplo-2" class="nav-link" data-scroll-target="#código-ejemplo-2">Código ejemplo:</a></li>
-  <li><a href="#usos-prácticos-1" id="toc-usos-prácticos-1" class="nav-link" data-scroll-target="#usos-prácticos-1">Usos prácticos:</a></li>
+  <li><a href="#métodos-disponibles-2" id="toc-métodos-disponibles-2" class="nav-link" data-scroll-target="#métodos-disponibles-2">Métodos disponibles</a></li>
+  <li><a href="#tabla-de-fuerza" id="toc-tabla-de-fuerza" class="nav-link" data-scroll-target="#tabla-de-fuerza">Tabla de fuerza</a></li>
+  <li><a href="#código-ejemplo-1" id="toc-código-ejemplo-1" class="nav-link" data-scroll-target="#código-ejemplo-1">Código ejemplo</a></li>
+  <li><a href="#ejemplo-esperar-hasta-presionar" id="toc-ejemplo-esperar-hasta-presionar" class="nav-link" data-scroll-target="#ejemplo-esperar-hasta-presionar">Ejemplo: Esperar hasta presionar</a></li>
   </ul></li>
-  <li><a href="#sensor-de-inclinación-tiltsensor" id="toc-sensor-de-inclinación-tiltsensor" class="nav-link" data-scroll-target="#sensor-de-inclinación-tiltsensor">4. Sensor de Inclinación (TiltSensor)</a>
+  <li><a href="#ejercicio-para-el-aula-contador-de-presiones" id="toc-ejercicio-para-el-aula-contador-de-presiones" class="nav-link" data-scroll-target="#ejercicio-para-el-aula-contador-de-presiones">📝 Ejercicio para el Aula: Contador de Presiones</a>
   <ul class="collapse">
-  <li><a href="#qué-puede-hacer-3" id="toc-qué-puede-hacer-3" class="nav-link" data-scroll-target="#qué-puede-hacer-3">¿Qué puede hacer?</a></li>
-  <li><a href="#código-ejemplo-3" id="toc-código-ejemplo-3" class="nav-link" data-scroll-target="#código-ejemplo-3">Código ejemplo:</a></li>
+  <li><a href="#objetivo-2" id="toc-objetivo-2" class="nav-link" data-scroll-target="#objetivo-2">Objetivo</a></li>
+  <li><a href="#solución-2" id="toc-solución-2" class="nav-link" data-scroll-target="#solución-2">Solución</a></li>
   </ul></li>
+  <li><a href="#ejercicios-de-práctica-integrados" id="toc-ejercicios-de-práctica-integrados" class="nav-link" data-scroll-target="#ejercicios-de-práctica-integrados">4. Ejercicios de Práctica Integrados</a>
+  <ul class="collapse">
+  <li><a href="#ejercicio-1-robot-que-evita-colores" id="toc-ejercicio-1-robot-que-evita-colores" class="nav-link" data-scroll-target="#ejercicio-1-robot-que-evita-colores">Ejercicio 1: Robot que evita colores</a></li>
+  <li><a href="#ejercicio-2-contador-de-colores" id="toc-ejercicio-2-contador-de-colores" class="nav-link" data-scroll-target="#ejercicio-2-contador-de-colores">Ejercicio 2: Contador de colores</a></li>
+  <li><a href="#ejercicio-3-robot-detector-de-superficies" id="toc-ejercicio-3-robot-detector-de-superficies" class="nav-link" data-scroll-target="#ejercicio-3-robot-detector-de-superficies">Ejercicio 3: Robot detector de superficies</a></li>
+  </ul></li>
+  <li><a href="#rúbrica-de-evaluación-para-ejercicios" id="toc-rúbrica-de-evaluación-para-ejercicios" class="nav-link" data-scroll-target="#rúbrica-de-evaluación-para-ejercicios">📋 Rúbrica de Evaluación para Ejercicios</a></li>
   <li><a href="#lo-que-aprendiste" id="toc-lo-que-aprendiste" class="nav-link" data-scroll-target="#lo-que-aprendiste">📋 Lo que aprendiste</a></li>
   <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
@@ -523,9 +680,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/2_sensores_adicionales.html"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../contenido/unidad4/1_sensores.html">📡 UNIDAD 4: SENSORES</a></li><li class="breadcrumb-item"><a href="../../contenido/unidad4/2_sensores_adicionales.html"><span class="chapter-title">Sensores Adicionales: Color, Fuerza y Distancia</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sensores-avanzados" class="quarto-section-identifier"><span class="chapter-title">Sensores Adicionales: Infrared, Color y Fuerza</span></span></h1>
+<h1 class="title"><span id="sensores-avanzados" class="quarto-section-identifier"><span class="chapter-title">Sensores Adicionales: Color, Fuerza y Distancia</span></span></h1>
 </div>
 
 
@@ -554,286 +711,946 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <section id="antes-de-empezar" class="level2">
 <h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
-<p>Ya conoces el sensor ultrasónico que mide distancia usando sonido. Pero hay muchos más sensores que puedes usar con tu robot LEGO [1][2].</p>
-<p>En esta unidad vas a aprender sobre tres sensores muy útiles:</p>
+<p>Ya conoces el sensor ultrasónico que mide distancia usando sonido. Pero hay muchos más sensores que puedes usar con tu robot LEGO.</p>
+<p>En esta unidad vas a aprender sobre sensores muy útiles disponibles en SPIKE Essential:</p>
 <ol type="1">
-<li><strong>Sensor Infrarrojo</strong> — Detecta objetos y mide reflexión de luz</li>
-<li><strong>Sensor de Color</strong> — Identifica colores y controla luces RGB</li>
-<li><strong>Sensor de Fuerza</strong> — Mide presión aplicada en Newtons</li>
+<li><strong>Sensor de Color</strong> — Detecta colores y mide reflexión de luz</li>
+<li><strong>Sensor de Fuerza</strong> — Mide presión aplicada</li>
+<li><strong>Sensor de Distancia</strong> — Medición precisa en cm/pulgadas</li>
 </ol>
 <hr>
 </section>
-<section id="sensor-infrarrojo-infraredsensor" class="level2">
-<h2 class="anchored" data-anchor-id="sensor-infrarrojo-infraredsensor">1. Sensor Infrarrojo (InfraredSensor)</h2>
-<p><strong>Situación:</strong> Has visto esos sensores en autos nuevos que te avisan cuando hay otro auto cerca? El sensor infrarrojo hace algo similar—detecta objetos usando luz infrarroja (que no podemos ver) [1].</p>
-<section id="qué-puede-hacer" class="level3">
-<h3 class="anchored" data-anchor-id="qué-puede-hacer">¿Qué puede hacer?</h3>
-<ul>
-<li>Medir distancia a objetos (0-2000mm)</li>
-<li>Medir reflexión de luz (0-100%)</li>
-<li>Contar cuántos objetos detecta</li>
-</ul>
-</section>
-<section id="código-ejemplo" class="level3">
-<h3 class="anchored" data-anchor-id="código-ejemplo">Código ejemplo:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> InfraredSensor</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Conectar el sensor al puerto S1</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>sensor_ir <span class="op">=</span> InfraredSensor(Port.S1)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Distancia al objeto más cercano (en mm)</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor_ir.distance()</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reflexión de luz (0-100%)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Un valor alto significa superficie clara</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Un valor bajo significa superficie oscura</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    reflexion <span class="op">=</span> sensor_ir.reflection()</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuántos objetos detecta el sensor</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    conteo <span class="op">=</span> sensor_ir.count()</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Distancia: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss">mm | Reflexión: </span><span class="sc">{</span>reflexion<span class="sc">}</span><span class="ss">% | Objetos: </span><span class="sc">{</span>conteo<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="usos-prácticos" class="level3">
-<h3 class="anchored" data-anchor-id="usos-prácticos">Usos prácticos:</h3>
+<section id="sensor-de-color-colorsensor" class="level2">
+<h2 class="anchored" data-anchor-id="sensor-de-color-colorsensor">1. Sensor de Color (ColorSensor)</h2>
+<p><strong>Situación:</strong> Cuando vas a un semáforo, sabes si es rojo, amarillo o verde por el color. El robot también puede aprender a identificar colores.</p>
+<section id="métodos-disponibles" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-disponibles">Métodos disponibles</h3>
+<p>El ColorSensor tiene varios métodos para obtener diferentes tipos de información:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 30%">
+<col style="width: 43%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Reflexión</th>
-<th>Qué significa</th>
-<th>Ejemplo de aplicación</th>
+<th>Método</th>
+<th>Retorna</th>
+<th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0-20%</td>
-<td>Superficie oscura</td>
+<td><code>get_color()</code></td>
+<td><code>str</code> o <code>None</code></td>
+<td>Color detectado</td>
+</tr>
+<tr class="even">
+<td><code>get_reflected_light()</code></td>
+<td><code>int</code> (0-100)</td>
+<td>Porcentaje de luz reflejada</td>
+</tr>
+<tr class="odd">
+<td><code>get_ambient_light()</code></td>
+<td><code>int</code> (0-100)</td>
+<td>Intensidad de luz ambiental</td>
+</tr>
+<tr class="even">
+<td><code>get_red()</code></td>
+<td><code>int</code> (0-1024)</td>
+<td>Intensidad del color rojo</td>
+</tr>
+<tr class="odd">
+<td><code>get_green()</code></td>
+<td><code>int</code> (0-1024)</td>
+<td>Intensidad del color verde</td>
+</tr>
+<tr class="even">
+<td><code>get_blue()</code></td>
+<td><code>int</code> (0-1024)</td>
+<td>Intensidad del color azul</td>
+</tr>
+<tr class="odd">
+<td><code>get_rgb_intensity()</code></td>
+<td><code>int</code> (0-1024)</td>
+<td>Intensidad RGB combinada</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="colores-que-puede-detectar" class="level3">
+<h3 class="anchored" data-anchor-id="colores-que-puede-detectar">Colores que puede detectar</h3>
+<p>El método <code>get_color()</code> retorna estos valores:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Valor Retornado</th>
+<th>Color</th>
+<th>Ejemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>'black'</code></td>
+<td>Negro</td>
 <td>Línea negra en el piso</td>
 </tr>
 <tr class="even">
-<td>50-80%</td>
-<td>Superficie clara</td>
-<td>Línea blanca en el piso</td>
+<td><code>'white'</code></td>
+<td>Blanco</td>
+<td>Línea blanca, piso claro</td>
 </tr>
 <tr class="odd">
-<td>&gt;90%</td>
-<td>Ningún objeto</td>
-<td>robot buscando camino</td>
+<td><code>'red'</code></td>
+<td>Rojo</td>
+<td>Color primario</td>
+</tr>
+<tr class="even">
+<td><code>'green'</code></td>
+<td>Verde</td>
+<td>Color primario</td>
+</tr>
+<tr class="odd">
+<td><code>'blue'</code></td>
+<td>Azul</td>
+<td>Color primario</td>
+</tr>
+<tr class="even">
+<td><code>'yellow'</code></td>
+<td>Amarillo</td>
+<td>Color primario</td>
+</tr>
+<tr class="odd">
+<td><code>'cyan'</code></td>
+<td>Cian</td>
+<td>Color secundario</td>
+</tr>
+<tr class="even">
+<td><code>'violet'</code></td>
+<td>Violeta</td>
+<td>Color secundario</td>
+</tr>
+<tr class="odd">
+<td><code>None</code></td>
+<td>Ninguno</td>
+<td>Sin color detectado</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="código-ejemplo-básico" class="level3">
+<h3 class="anchored" data-anchor-id="código-ejemplo-básico">Código ejemplo básico</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ColorSensor</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Conectar el sensor de color al puerto C</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>sensor_color <span class="op">=</span> ColorSensor(<span class="st">'C'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener el color detectado</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> sensor_color.get_color()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener reflexión de luz (0-100%)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    reflexion <span class="op">=</span> sensor_color.get_reflected_light()</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Color: </span><span class="sc">{</span>color<span class="sc">}</span><span class="ss"> | Reflexión: </span><span class="sc">{</span>reflexion<span class="sc">}</span><span class="ss">%"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="tabla-de-reflexión-de-luz" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-reflexión-de-luz">Tabla de reflexión de luz</h3>
+<p>La reflexión de luz es muy útil para seguir líneas o clasificar superficies:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Reflexión (%)</th>
+<th>Tipo de superficie</th>
+<th>Aplicación práctica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0-10</td>
+<td>Muy oscuro</td>
+<td>Línea negra gruesa</td>
+</tr>
+<tr class="even">
+<td>10-20</td>
+<td>Oscuro</td>
+<td>Línea negra delgada</td>
+</tr>
+<tr class="odd">
+<td>20-35</td>
+<td>Medio-oscuro</td>
+<td>Color azul/verde oscuro</td>
+</tr>
+<tr class="even">
+<td>35-50</td>
+<td>Medio</td>
+<td>Colores intermedios</td>
+</tr>
+<tr class="odd">
+<td>50-70</td>
+<td>Claro</td>
+<td>Colores claros (amarillo, rojo claro)</td>
+</tr>
+<tr class="even">
+<td>70-85</td>
+<td>Muy claro</td>
+<td>Blanco, piso claro</td>
+</tr>
+<tr class="odd">
+<td>85-100</td>
+<td>Máximo</td>
+<td>Espejo o superficie reflectiva</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ejemplo-obtener-valores-rgb" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-obtener-valores-rgb">Ejemplo: Obtener valores RGB</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ColorSensor</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> ColorSensor(<span class="st">'C'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener componentes RGB individuales</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    rojo <span class="op">=</span> sensor.get_red()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    verde <span class="op">=</span> sensor.get_green()</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    azul <span class="op">=</span> sensor.get_blue()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    intensidad <span class="op">=</span> sensor.get_rgb_intensity()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"R: </span><span class="sc">{</span>rojo<span class="sc">}</span><span class="ss"> | G: </span><span class="sc">{</span>verde<span class="sc">}</span><span class="ss"> | B: </span><span class="sc">{</span>azul<span class="sc">}</span><span class="ss"> | Total: </span><span class="sc">{</span>intensidad<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">200</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="control-de-luces-led-del-sensor" class="level3">
+<h3 class="anchored" data-anchor-id="control-de-luces-led-del-sensor">Control de luces LED del sensor</h3>
+<p>El sensor de color tiene LEDs integrados que puedes controlar:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ColorSensor</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> ColorSensor(<span class="st">'C'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Encender los 3 LEDs individuales (0-100)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sensor.light_up(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">100</span>)  <span class="co"># Rojo y azul (morado)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Encender todos los LEDs al mismo brillo</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>sensor.light_up_all(<span class="dv">50</span>)  <span class="co"># Brillo 50%</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Apagar LEDs</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>sensor.light_up(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="proyecto-seguidor-de-línea" class="level3">
+<h3 class="anchored" data-anchor-id="proyecto-seguidor-de-línea">Proyecto: Seguidor de línea</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ColorSensor</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> MotorPair</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuración</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>sensor_linea <span class="op">=</span> ColorSensor(<span class="st">'C'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> MotorPair(<span class="st">'A'</span>, <span class="st">'B'</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Iniciando seguidor de línea..."</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># El robot sigue una línea negra</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    reflexion <span class="op">=</span> sensor_linea.get_reflected_light()</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> reflexion <span class="op">&lt;</span> <span class="dv">30</span>:</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Línea negra (oscuro) - girar izquierda</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        robot.start_tank(<span class="dv">30</span>, <span class="dv">50</span>)  <span class="co"># izquierdo más lento</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Piso blanco (claro) - girar derecha</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        robot.start_tank(<span class="dv">50</span>, <span class="dv">30</span>)  <span class="co"># derecho más lento</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">10</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="ejercicio-para-el-aula-clasificador-de-colores" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-el-aula-clasificador-de-colores">📝 Ejercicio para el Aula: Clasificador de Colores</h2>
+<p><strong>Nivel:</strong> Básico | <strong>Tiempo:</strong> 15 minutos</p>
+<section id="objetivo" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo">Objetivo</h3>
+<p>El robot detecta diferentes colores y muestra un icono diferente en la pantalla LED para cada uno.</p>
+</section>
+<section id="solución" class="level3">
+<h3 class="anchored" data-anchor-id="solución">Solución</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ColorSensor, PrimeHub</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> ColorSensor(<span class="st">'C'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mapa de colores a iconos</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>iconos <span class="op">=</span> {</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'red'</span>: <span class="st">'HEART'</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'green'</span>: <span class="st">'YES'</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'blue'</span>: <span class="st">'NOTE'</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'yellow'</span>: <span class="st">'DIAMOND'</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'black'</span>: <span class="st">'SAD'</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'white'</span>: <span class="st">'HAPPY'</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> sensor.get_color()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> color <span class="kw">in</span> iconos:</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(iconos[color])</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Detectado: </span><span class="sc">{</span>color<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'CONFUSED'</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Color no reconocido"</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="evaluación" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación">Evaluación</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 25%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterio</th>
+<th>Puntos</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Detecta al menos 4 colores</td>
+<td>25</td>
+<td>Funciona con rojo, verde, azul, amarillo</td>
+</tr>
+<tr class="even">
+<td>Muestra icono correcto</td>
+<td>25</td>
+<td>Cada color tiene su icono</td>
+</tr>
+<tr class="odd">
+<td>Código organizado</td>
+<td>25</td>
+<td>Usa diccionario para mapear</td>
+</tr>
+<tr class="even">
+<td>Funciona sin errores</td>
+<td>25</td>
+<td>Sinbugs en ejecución</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
 </section>
-<section id="sensor-de-color-colorsensor" class="level2">
-<h2 class="anchored" data-anchor-id="sensor-de-color-colorsensor">2. Sensor de Color (ColorSensor)</h2>
-<p><strong>Situación:</strong> Cuando vas a un semáforo, sabes si es rojo, amarillo o verde por el color. El robot también puede aprender a identificar colores [1][2].</p>
-<section id="qué-puede-hacer-1" class="level3">
-<h3 class="anchored" data-anchor-id="qué-puede-hacer-1">¿Qué puede hacer?</h3>
-<ul>
-<li>Detectar colores (rojo, verde, azul, etc.)</li>
-<li>Medir intensidad de luz ambiental</li>
-<li>Controlar luces LED integradas</li>
-</ul>
+<section id="sensor-de-distancia-distancesensor" class="level2">
+<h2 class="anchored" data-anchor-id="sensor-de-distancia-distancesensor">2. Sensor de Distancia (DistanceSensor)</h2>
+<p><strong>Situación:</strong> El sensor ultrasónico usa ondas de sonido para medir la distancia a objetos. Es como los murciélagos que usan el sonido para “ver” en la oscuridad.</p>
+<section id="métodos-disponibles-1" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-disponibles-1">Métodos disponibles</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 28%">
+<col style="width: 21%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Método</th>
+<th>Parámetros</th>
+<th>Retorna</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>get_distance_cm(short_range)</code></td>
+<td><code>short_range</code> (bool, opcional)</td>
+<td><code>int</code> (0-200)</td>
+<td>Distancia en centímetros</td>
+</tr>
+<tr class="even">
+<td><code>get_distance_inches(short_range)</code></td>
+<td><code>short_range</code> (bool, opcional)</td>
+<td><code>int</code> (0-79)</td>
+<td>Distancia en pulgadas</td>
+</tr>
+<tr class="odd">
+<td><code>get_distance_percentage(short_range)</code></td>
+<td><code>short_range</code> (bool, opcional)</td>
+<td><code>int</code> (0-100)</td>
+<td>Distancia como porcentaje</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="código-ejemplo-1" class="level3">
-<h3 class="anchored" data-anchor-id="código-ejemplo-1">Código ejemplo:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> ColorSensor</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port, Color</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Conectar el sensor de color al puerto S1</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sensor_color <span class="op">=</span> ColorSensor(Port.S1)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Detectar qué color ve el sensor</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Devuelve uno de: Color.RED, Color.GREEN, Color.BLUE, </span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Color.YELLOW, Color.BLACK, Color.WHITE, Color.NONE</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> sensor_color.color()</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener valores RGB (intensidad de cada color)</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    rgb <span class="op">=</span> sensor_color.rgb()</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Encender las luces del sensor</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    sensor_color.lights.on(Color.RED)  <span class="co"># Luz roja encendida</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    sensor_color.lights.off()</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Color detectado: </span><span class="sc">{</span>color<span class="sc">}</span><span class="ss"> | RGB: </span><span class="sc">{</span>rgb<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="parámetro-short_range" class="level3">
+<h3 class="anchored" data-anchor-id="parámetro-short_range">Parámetro <code>short_range</code></h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Modo</th>
+<th>Rango</th>
+<th>Uso recomendado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>False</code> (default)</td>
+<td>0-200 cm</td>
+<td>Mediciones normales</td>
+</tr>
+<tr class="even">
+<td><code>True</code></td>
+<td>0-20 cm</td>
+<td>Objetos muy cercanos</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="colores-disponibles" class="level3">
-<h3 class="anchored" data-anchor-id="colores-disponibles">Colores disponibles:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colores que el sensor puede detectar</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Color.RED      <span class="co"># Rojo</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Color.GREEN    <span class="co"># Verde</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Color.BLUE     <span class="co"># Azul</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Color.YELLOW   <span class="co"># Amarillo</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Color.MAGENTA  <span class="co"># Magenta</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Color.CYAN     <span class="co"># Cian</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>Color.BLACK    <span class="co"># Negro</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Color.WHITE    <span class="co"># Blanco</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Color.NONE     <span class="co"># Ninguno (sin color detectado)</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="tabla-de-distancias" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-distancias">Tabla de distancias</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Distancia (cm)</th>
+<th>Descripción</th>
+<th>Acción del robot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0-5</td>
+<td>Muy cerca</td>
+<td>Detenerse inmediatamente</td>
+</tr>
+<tr class="even">
+<td>5-15</td>
+<td>Cerca</td>
+<td>Reducir velocidad</td>
+</tr>
+<tr class="odd">
+<td>15-50</td>
+<td>Medio</td>
+<td>Moverse con cuidado</td>
+</tr>
+<tr class="even">
+<td>50-100</td>
+<td>Lejos</td>
+<td>Velocidad normal</td>
+</tr>
+<tr class="odd">
+<td>100-200</td>
+<td>Muy lejos</td>
+<td>Velocidad máxima</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="proyecto-seguidor-de-línea" class="level3">
-<h3 class="anchored" data-anchor-id="proyecto-seguidor-de-línea">Proyecto: Seguidor de línea</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> ColorSensor, Motor</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.robotics <span class="im">import</span> DriveBase</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuración</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>sensor_linea <span class="op">=</span> ColorSensor(Port.S1)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>motor_izq <span class="op">=</span> Motor(Port.A)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>motor_der <span class="op">=</span> Motor(Port.B)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> DriveBase(motor_izq, motor_der, <span class="dv">56</span>, <span class="dv">112</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># El robot sigue una línea negra</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    reflexion <span class="op">=</span> sensor_linea.reflection()</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> reflexion <span class="op">&lt;</span> <span class="dv">30</span>:  <span class="co"># Línea negra (oscuro)</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Girar a la izquierda</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        robot.drive(<span class="dv">100</span>, <span class="dv">30</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:  <span class="co"># Piso blanco (claro)</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Girar a la derecha</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        robot.drive(<span class="dv">100</span>, <span class="op">-</span><span class="dv">30</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">10</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="código-ejemplo" class="level3">
+<h3 class="anchored" data-anchor-id="código-ejemplo">Código ejemplo</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> DistanceSensor</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicializar el sensor de distancia en puerto B</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> DistanceSensor(<span class="st">'B'</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener distancia en centímetros</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor.get_distance_cm()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener como porcentaje (100% = muy lejos)</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    porcentaje <span class="op">=</span> sensor.get_distance_percentage()</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener en pulgadas</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    pulgadas <span class="op">=</span> sensor.get_distance_inches()</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Distancia: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss"> cm (</span><span class="sc">{</span>pulgadas<span class="sc">}</span><span class="ss"> in) - </span><span class="sc">{</span>porcentaje<span class="sc">}</span><span class="ss">%"</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">500</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="usar-short_range-medición-cercana" class="level3">
+<h3 class="anchored" data-anchor-id="usar-short_range-medición-cercana">Usar short_range (medición cercana)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> DistanceSensor</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> DistanceSensor(<span class="st">'B'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Modo rango corto (0-20 cm)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    distancia_corta <span class="op">=</span> sensor.get_distance_cm(short_range<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> distancia_corta <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"¡MUY CERCA!"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Distancia: </span><span class="sc">{</span>distancia_corta<span class="sc">}</span><span class="ss"> cm"</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">200</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="control-de-leds-del-sensor" class="level3">
+<h3 class="anchored" data-anchor-id="control-de-leds-del-sensor">Control de LEDs del sensor</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> DistanceSensor</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> DistanceSensor(<span class="st">'B'</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Encender los 4 LEDs individuales</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (right_top, left_top, right_bottom, left_bottom)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>sensor.light_up(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">0</span>)  <span class="co"># Patrón alternativo</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Encender todos</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>sensor.light_up_all(<span class="dv">100</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>wait(<span class="dv">1000</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Apagar</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>sensor.light_up_all(<span class="dv">0</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="proyecto-robot-evita-obstáculos" class="level3">
+<h3 class="anchored" data-anchor-id="proyecto-robot-evita-obstáculos">Proyecto: Robot evita obstáculos</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> DistanceSensor, PrimeHub</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> MotorPair</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> DistanceSensor(<span class="st">'B'</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> MotorPair(<span class="st">'A'</span>, <span class="st">'B'</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Robot evitando obstáculos..."</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor.get_distance_cm()</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">15</span>:</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Obstáculo detectado - girar</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        robot.stop()</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'SAD'</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        hub.speaker.beep(<span class="dv">60</span>, <span class="fl">0.2</span>)  <span class="co"># Beep de alerta</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Girar a la derecha</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>        robot.move_tank(<span class="dv">90</span>, <span class="st">'degrees'</span>, left_speed<span class="op">=</span><span class="dv">50</span>, right_speed<span class="op">=-</span><span class="dv">50</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">500</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># No hay obstáculo - avanzar</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'HAPPY'</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>        robot.start(<span class="dv">30</span>)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="ejercicio-para-el-aula-medidor-de-distancia" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-el-aula-medidor-de-distancia">📝 Ejercicio para el Aula: Medidor de Distancia</h2>
+<p><strong>Nivel:</strong> Intermedio | <strong>Tiempo:</strong> 20 minutos</p>
+<section id="objetivo-1" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-1">Objetivo</h3>
+<p>El robot funciona como un medidor de distancia. Muestra diferentes iconos según qué tan lejos está el objeto.</p>
+</section>
+<section id="tabla-de-referencia" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-referencia">Tabla de referencia</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Distancia</th>
+<th>Icono</th>
+<th>Color LED</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt; 10 cm</td>
+<td>ANGRY</td>
+<td>Rojo</td>
+</tr>
+<tr class="even">
+<td>10-30 cm</td>
+<td>SAD</td>
+<td>Naranja</td>
+</tr>
+<tr class="odd">
+<td>30-60 cm</td>
+<td>CONFUSED</td>
+<td>Amarillo</td>
+</tr>
+<tr class="even">
+<td>60-100 cm</td>
+<td>HAPPY</td>
+<td>Verde</td>
+</tr>
+<tr class="odd">
+<td>&gt; 100 cm</td>
+<td>YES</td>
+<td>Azul</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="solución-1" class="level3">
+<h3 class="anchored" data-anchor-id="solución-1">Solución</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> DistanceSensor, PrimeHub</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> MotorPair</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> DistanceSensor(<span class="st">'B'</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> MotorPair(<span class="st">'A'</span>, <span class="st">'B'</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mostrar_distancia(distancia):</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Muestra icono según la distancia"""</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> distancia <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'ANGRY'</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> distancia <span class="op">&lt;</span> <span class="dv">30</span>:</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'SAD'</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> distancia <span class="op">&lt;</span> <span class="dv">60</span>:</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'CONFUSED'</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> distancia <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'HAPPY'</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'YES'</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Distancia: </span><span class="sc">{</span>distancia<span class="sc">}</span><span class="ss"> cm"</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop principal</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor.get_distance_cm()</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    mostrar_distancia(distancia)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">300</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
 <section id="sensor-de-fuerza-forcesensor" class="level2">
 <h2 class="anchored" data-anchor-id="sensor-de-fuerza-forcesensor">3. Sensor de Fuerza (ForceSensor)</h2>
-<p><strong>Situación:</strong> Cuando aplicas presión en un botón de un cajero automático, sientes que “hace clic”. El sensor de fuerza puede medir exactamente cuánta presión estás aplicando [1].</p>
-<section id="qué-puede-hacer-2" class="level3">
-<h3 class="anchored" data-anchor-id="qué-puede-hacer-2">¿Qué puede hacer?</h3>
-<ul>
-<li>Medir fuerza en Newtons (N)</li>
-<li>Medir distancia de cuánto se ha presionado (mm)</li>
-<li>Detectar cuando se presiona</li>
-</ul>
-</section>
-<section id="código-ejemplo-2" class="level3">
-<h3 class="anchored" data-anchor-id="código-ejemplo-2">Código ejemplo:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> ForceSensor</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.parameters <span class="im">import</span> Port</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Conectar el sensor de fuerza al puerto S1</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sensor_fuerza <span class="op">=</span> ForceSensor(Port.S1)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fuerza actual en Newtons</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    fuerza <span class="op">=</span> sensor_fuerza.force()</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cuánto se ha presionado el sensor (en mm)</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    distancia <span class="op">=</span> sensor_fuerza.distance()</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Fuerza: </span><span class="sc">{</span>fuerza<span class="sc">:.1f}</span><span class="ss"> N | Presión: </span><span class="sc">{</span>distancia<span class="sc">:.1f}</span><span class="ss"> mm"</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Reaccionar cuando alguien presiona fuerte</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> fuerza <span class="op">&gt;</span> <span class="dv">5</span>:  <span class="co"># Más de 5 Newtons</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"¡Presión detectada!"</span>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="usos-prácticos-1" class="level3">
-<h3 class="anchored" data-anchor-id="usos-prácticos-1">Usos prácticos:</h3>
+<p><strong>Situación:</strong> Cuando aplicas presión en un botón de un cajero automático, sientes que “hace clic”. El sensor de fuerza puede medir exactamente cuánta presión estás aplicando.</p>
+<p><strong>Nota:</strong> El sensor de fuerza de SPIKE Essential puede no estar disponible en todos los kits. Verifica tu kit antes de usar.</p>
+<section id="métodos-disponibles-2" class="level3">
+<h3 class="anchored" data-anchor-id="métodos-disponibles-2">Métodos disponibles</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Fuerza</th>
+<th>Método</th>
+<th>Retorna</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>is_pressed()</code></td>
+<td><code>bool</code></td>
+<td>True si hay presión aplicada</td>
+</tr>
+<tr class="even">
+<td><code>get_force()</code></td>
+<td><code>int</code></td>
+<td>Fuerza en Newton’s (aproximado)</td>
+</tr>
+<tr class="odd">
+<td><code>wait_until_pressed()</code></td>
+<td><code>None</code></td>
+<td>Espera hasta que se presione</td>
+</tr>
+<tr class="even">
+<td><code>wait_until_released()</code></td>
+<td><code>None</code></td>
+<td>Espera hasta que se suelte</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabla-de-fuerza" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-de-fuerza">Tabla de fuerza</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Estado</th>
+<th>Valor</th>
 <th>Aplicación</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0-1 N</td>
-<td>Sin presión (reposo)</td>
+<td>Sin presión</td>
+<td>0</td>
+<td>Robot en espera</td>
 </tr>
 <tr class="even">
+<td>Toque ligero</td>
 <td>1-3 N</td>
-<td>Toque suave (botón)</td>
+<td>Botón suave</td>
 </tr>
 <tr class="odd">
-<td>3-10 N</td>
 <td>Presión normal</td>
+<td>3-7 N</td>
+<td>Presión típica</td>
 </tr>
 <tr class="even">
+<td>Presión fuerte</td>
+<td>7-10 N</td>
+<td>Botón de emergencia</td>
+</tr>
+<tr class="odd">
+<td>Presión máxima</td>
 <td>&gt;10 N</td>
-<td>Presión fuerte (alerta)</td>
+<td>Máximo soportado</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="código-ejemplo-1" class="level3">
+<h3 class="anchored" data-anchor-id="código-ejemplo-1">Código ejemplo</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ForceSensor</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Conectar el sensor de fuerza al puerto C</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>sensor_fuerza <span class="op">=</span> ForceSensor(<span class="st">'C'</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Verificar si está presionado</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> sensor_fuerza.is_pressed():</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"¡Presión detectada!"</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Sin presión"</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Obtener valor de fuerza (si disponible)</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        fuerza <span class="op">=</span> sensor_fuerza.get_force()</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Fuerza: </span><span class="sc">{</span>fuerza<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span>  <span class="co"># Algunos modelos no soportan get_force()</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ejemplo-esperar-hasta-presionar" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-esperar-hasta-presionar">Ejemplo: Esperar hasta presionar</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ForceSensor, PrimeHub</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> ForceSensor(<span class="st">'C'</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Presiona el sensor de fuerza..."</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Esperar hasta que se presione</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>sensor.wait_until_pressed()</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Cuando llegue aquí, ya se presionó</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>hub.light_matrix.show_image(<span class="st">'HEART'</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>hub.speaker.beep(<span class="dv">60</span>, <span class="fl">0.5</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"¡Detectado!"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="ejercicio-para-el-aula-contador-de-presiones" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-para-el-aula-contador-de-presiones">📝 Ejercicio para el Aula: Contador de Presiones</h2>
+<p><strong>Nivel:</strong> Básico | <strong>Tiempo:</strong> 15 minutos</p>
+<section id="objetivo-2" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-2">Objetivo</h3>
+<p>El robot cuenta cuántas veces se presiona el sensor de fuerza y muestra el contador en la pantalla LED.</p>
+</section>
+<section id="solución-2" class="level3">
+<h3 class="anchored" data-anchor-id="solución-2">Solución</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ForceSensor, PrimeHub</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> ForceSensor(<span class="st">'C'</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>contador <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>presionado_antes <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Iniciando contador de presiones..."</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Verificar estado actual</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    esta_presionado <span class="op">=</span> sensor.is_pressed()</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Detectar flanco (cuando pasa de no presionado a presionado)</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> esta_presionado <span class="kw">and</span> <span class="kw">not</span> presionado_antes:</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>        contador <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'HEART'</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Presión #</span><span class="sc">{</span>contador<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">200</span>)  <span class="co"># Evitar doble conteo</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="kw">not</span> esta_presionado:</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.show_image(<span class="st">'SQUARE'</span>)</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    presionado_antes <span class="op">=</span> esta_presionado</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mostrar número (si es pequeño)</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> contador <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>        hub.light_matrix.write(<span class="bu">str</span>(contador))</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">50</span>)</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Nota: Este código puede variar según la versión de SPIKE</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="ejercicios-de-práctica-integrados" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios-de-práctica-integrados">4. Ejercicios de Práctica Integrados</h2>
+<section id="ejercicio-1-robot-que-evita-colores" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-1-robot-que-evita-colores">Ejercicio 1: Robot que evita colores</h3>
+<p><strong>Objetivo:</strong> El robot avanza pero se detiene cuando detecta color rojo.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ColorSensor</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> MotorPair</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> ColorSensor(<span class="st">'C'</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>robot <span class="op">=</span> MotorPair(<span class="st">'A'</span>, <span class="st">'B'</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> sensor.get_color()</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> color <span class="op">==</span> <span class="st">'red'</span>:</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ¡Color rojo! Detenerse</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        robot.stop()</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"¡PELIGRO!"</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>        wait(<span class="dv">1000</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Seguir adelante</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        robot.start(<span class="dv">30</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ejercicio-2-contador-de-colores" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-2-contador-de-colores">Ejercicio 2: Contador de colores</h3>
+<p><strong>Objetivo:</strong> El robot cuenta cuántos objetos de cada color detecta.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ColorSensor</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> ColorSensor(<span class="st">'C'</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Contadores para cada color</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>contadores <span class="op">=</span> {</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'red'</span>: <span class="dv">0</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'green'</span>: <span class="dv">0</span>,</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'blue'</span>: <span class="dv">0</span>,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'yellow'</span>: <span class="dv">0</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'other'</span>: <span class="dv">0</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>color_anterior <span class="op">=</span> <span class="st">'none'</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> sensor.get_color()</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Solo contar cuando cambia de color</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> color <span class="op">!=</span> color_anterior <span class="kw">and</span> color <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> color <span class="kw">in</span> contadores:</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>            contadores[color] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>            contadores[<span class="st">'other'</span>] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"¡Nuevo </span><span class="sc">{</span>color<span class="sc">}</span><span class="ss">! Total: </span><span class="sc">{</span>contadores<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>        color_anterior <span class="op">=</span> color</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">200</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ejercicio-3-robot-detector-de-superficies" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicio-3-robot-detector-de-superficies">Ejercicio 3: Robot detector de superficies</h3>
+<p><strong>Objetivo:</strong> El robot identifica diferentes superficies según su reflexión.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> ColorSensor</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike.control <span class="im">import</span> wait</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>sensor <span class="op">=</span> ColorSensor(<span class="st">'C'</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clasificar_superficie(reflexion):</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Clasifica la superficie según el valor de reflexión"""</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> reflexion <span class="op">&lt;</span> <span class="dv">20</span>:</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"OSCURO (negro/piso oscuro)"</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> reflexion <span class="op">&lt;</span> <span class="dv">45</span>:</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"MEDIO (azul/verde)"</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> reflexion <span class="op">&lt;</span> <span class="dv">70</span>:</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"CLARO (amarillo/rojo claro)"</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"MUY CLARO (blanco/piso claro)"</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Detectando superficies..."</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    reflexion <span class="op">=</span> sensor.get_reflected_light()</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    tipo <span class="op">=</span> clasificar_superficie(reflexion)</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Reflexión: </span><span class="sc">{</span>reflexion<span class="sc">}</span><span class="ss">% -&gt; </span><span class="sc">{</span>tipo<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">1000</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="rúbrica-de-evaluación-para-ejercicios" class="level2">
+<h2 class="anchored" data-anchor-id="rúbrica-de-evaluación-para-ejercicios">📋 Rúbrica de Evaluación para Ejercicios</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 22%">
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterio</th>
+<th>Excelente (100%)</th>
+<th>Bueno (75%)</th>
+<th>Regular (50%)</th>
+<th>Necesita Mejorar (25%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Funcionamiento</strong></td>
+<td>Código ejecuta sin errores</td>
+<td>Funciona con errores menores</td>
+<td>Funciona parcialmente</td>
+<td>No funciona</td>
+</tr>
+<tr class="even">
+<td><strong>Comprensión de métodos</strong></td>
+<td>Usa correctamente todos los métodos</td>
+<td>Usa métodos principales</td>
+<td>Usa métodos básicos</td>
+<td>Usa métodos incorrectos</td>
+</tr>
+<tr class="odd">
+<td><strong>Organización del código</strong></td>
+<td>Código limpio y documentado</td>
+<td>Código organizado</td>
+<td>Código funcional</td>
+<td>Código desorganizado</td>
+</tr>
+<tr class="even">
+<td><strong>Creatividad</strong></td>
+<td>Agrega funcionalidades extra</td>
+<td>Mejora el ejemplo base</td>
+<td>Sigue el ejemplo</td>
+<td>Copia exactamente</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-</section>
-<section id="sensor-de-inclinación-tiltsensor" class="level2">
-<h2 class="anchored" data-anchor-id="sensor-de-inclinación-tiltsensor">4. Sensor de Inclinación (TiltSensor)</h2>
-<p><strong>Situación:</strong> Cuando inclinas tu teléfono, la pantalla cambia de horizontal a vertical. El sensor de inclinación hace algo similar—detecta cuando el robot se inclina [1].</p>
-<section id="qué-puede-hacer-3" class="level3">
-<h3 class="anchored" data-anchor-id="qué-puede-hacer-3">¿Qué puede hacer?</h3>
-<ul>
-<li>Medir inclinación en eje X (pitch)</li>
-<li>Medir inclinación en eje Y (roll)</li>
-<li>Detectar si el robot se cae</li>
-</ul>
-</section>
-<section id="código-ejemplo-3" class="level3">
-<h3 class="anchored" data-anchor-id="código-ejemplo-3">Código ejemplo:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.pupdevices <span class="im">import</span> TiltSensor</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.iodevices <span class="im">import</span> SensorBase</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybricks.tools <span class="im">import</span> wait</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Conectar el sensor de inclinación</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>sensor_inclinacion <span class="op">=</span> TiltSensor(SensorBase.PORT_A)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Pitch (inclinación adelante/atrás)</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    pitch <span class="op">=</span> sensor_inclinacion.tilt(sensor_inclinacion.AXIS_X)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Roll (inclinación izquierda/derecha)</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    roll <span class="op">=</span> sensor_inclinacion.tilt(sensor_inclinacion.AXIS_Y)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Pitch: </span><span class="sc">{</span>pitch<span class="sc">}</span><span class="ss">° | Roll: </span><span class="sc">{</span>roll<span class="sc">}</span><span class="ss">°"</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Detectar si el robot se cayó</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">abs</span>(pitch) <span class="op">&gt;</span> <span class="dv">45</span> <span class="kw">or</span> <span class="bu">abs</span>(roll) <span class="op">&gt;</span> <span class="dv">45</span>:</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"¡El robot se cayó!"</span>)</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    wait(<span class="dv">100</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-</section>
-</section>
 <section id="lo-que-aprendiste" class="level2">
 <h2 class="anchored" data-anchor-id="lo-que-aprendiste">📋 Lo que aprendiste</h2>
 <p>Antes de terminar, marca lo que entendiste:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">El sensor infrarrojo mide distancia y reflexión</label></li>
-<li><label><input type="checkbox">El sensor de color detecta colores y controla luces</label></li>
-<li><label><input type="checkbox">El sensor de fuerza mide presión en Newtons</label></li>
-<li><label><input type="checkbox">El sensor de inclinación detecta pitch y roll</label></li>
+<li><label><input type="checkbox">El sensor de color detecta colores y reflexión de luz</label></li>
+<li><label><input type="checkbox">Puedo usar el sensor de reflexión para seguir líneas</label></li>
+<li><label><input type="checkbox">El sensor de distancia mide en cm/pulgadas</label></li>
+<li><label><input type="checkbox">El sensor de fuerza detecta presión (si está disponible en tu kit)</label></li>
 <li><label><input type="checkbox">Puedo usar múltiples sensores juntos</label></li>
+<li><label><input type="checkbox">Puedo clasificar superficies según su reflexión</label></li>
 </ul>
 <hr>
-<p><em>En la siguiente unidad: Control avanzado de motores con PID y calibración.</em></p>
+<p><em>En la siguiente unidad: Control avanzado de sensores y proyectos integradores.</em></p>
 </section>
 <section id="referencias" class="level2">
 <h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
-<p>[1] Pybricks Team. (2023). <em>Pybricks Documentation - Sensors Module</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/sensors.html</p>
-<p>[2] LEGO Education. (2023). <em>LEGO Education SPIKE Prime - Sensor Specifications</em>. LEGO. Disponible: https://lego.com</p>
-<p>[3] Pybricks Team. (2023). <em>Pybricks Documentation - Color Sensor</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/colorsensor.html</p>
-<p>[4] Pybricks Team. (2023). <em>Pybricks Documentation - Infrared Sensor</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/infraredsensor.html</p>
-<p>[5] Pybricks Team. (2023). <em>Pybricks Documentation - Force Sensor</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/forcesensor.html</p>
-<p>[6] Pybricks Team. (2023). <em>Pybricks Documentation - Tilt Sensor</em>. Pybricks. Disponible: https://docs.pybricks.com/en/stable/pupdevices/tiltsensor.html</p>
-<p>[7] A. Annamaa. (2018). <em>Thonny: Python IDE for beginners</em>. GitHub. Disponible: https://github.com/thonny</p>
+<p>[1] LEGO Education. (2023). <em>LEGO Education SPIKE Essential - Color Sensor</em>. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python</p>
+<p>[2] LEGO Education. (2023). <em>LEGO Education SPIKE Essential - Distance Sensor</em>. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python</p>
+<p>[3] LEGO Education. (2023). <em>LEGO Education SPIKE Essential - Force Sensor</em>. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python</p>
+<p>[4] LEGO Education. (2023). <em>LEGO Education SPIKE Essential - Python API</em>. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python</p>
+<p>[5] A. Annamaa. (2018). <em>Thonny: Python IDE for beginners</em>. GitHub. Disponible: https://github.com/thonny</p>
 
 
 </section>
@@ -1246,8 +2063,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="pagination-link" aria-label="Telemetría: Monitoreo de Batería y Estado del Robot">
-        <span class="nav-page-text"><span class="chapter-title">Telemetría: Monitoreo de Batería y Estado del Robot</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../contenido/unidad4/2_telemetria_bateria.html" class="pagination-link" aria-label="Telemetría: Monitoreo del Robot y Estado del Sistema">
+        <span class="nav-page-text"><span class="chapter-title">Telemetría: Monitoreo del Robot y Estado del Sistema</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
