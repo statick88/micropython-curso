@@ -5621,6 +5621,116 @@
     ]
   },
   {
+    "objectID": "contenido/anexo_wokwi.html",
+    "href": "contenido/anexo_wokwi.html",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "",
+    "text": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#qué-es-wokwi",
+    "href": "contenido/anexo_wokwi.html#qué-es-wokwi",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "🌐 ¿Qué es Wokwi?",
+    "text": "🌐 ¿Qué es Wokwi?\nWokwi es un simulador online de electrónica que permite:\n\n✅ Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32)\n✅ Crear proyectos con componentes reales (LEDs, sensores, displays)\n✅ Programar en MicroPython y ejecutar en el simulador\n✅ Compartir proyectos mediante enlaces únicos",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#inicio-rápido",
+    "href": "contenido/anexo_wokwi.html#inicio-rápido",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "🚀 Inicio Rápido",
+    "text": "🚀 Inicio Rápido\n\nPaso 1: Acceder a Wokwi\n\n\n\nMicrocontrolador\nURL\n\n\n\n\nRaspberry Pi Pico\nwokwi.com/projects/new/micropython-pi-pico\n\n\nESP32\nwokwi.com/projects/new/micropython-esp32\n\n\n\n\n\nPaso 2: Configurar el Proyecto\n\nCopia el código de main.py del ejemplo\nCopia la configuración de diagram.json\nPresiona “Start Simulation” ▶️\n\n\n\nPaso 3: Ver la Salida\n\nClick en “Serial” para ver los mensajes de consola\nLos LEDs y componentes se animan automáticamente",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#descargar-ejemplos",
+    "href": "contenido/anexo_wokwi.html#descargar-ejemplos",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "📥 Descargar Ejemplos",
+    "text": "📥 Descargar Ejemplos\n\n\n\nPlataforma\nDescarga\nEjemplos\n\n\n\n\nRaspberry Pi Pico\n📦 wokwi_ejemplos.zip\n17 proyectos\n\n\nESP32\n📦 wokwi_esp32.zip\n23 proyectos\n\n\nArduino\n📦 wokwi_arduino.zip\n6 proyectos",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#índice-de-ejemplos-validados",
+    "href": "contenido/anexo_wokwi.html#índice-de-ejemplos-validados",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "📋 Índice de Ejemplos Validados",
+    "text": "📋 Índice de Ejemplos Validados\n\n🔴 Raspberry Pi Pico (17 Ejemplos)\n\n\n\n#\nEjemplo\nDescripción\nDificultad\nComponentes\n\n\n\n\n1\nParpadeo LED\nLED que parpadea cada segundo\n⭐ Básico\nLED, Resistencia 220Ω\n\n\n2\nLED RGB\nSecuencia de 7 colores\n⭐ Básico\nLED RGB, 3 resistencias\n\n\n3\nContador Botones\nContador con 2 botones\n⭐ Básico\n2 botones, LED\n\n\n4\nDisplay 7 Segmentos\nContador numérico 0-9\n⭐⭐ Intermedio\nDisplay 7 segmentos\n\n\n5\nSensor Distancia\nMedición ultrasónica HC-SR04\n⭐⭐ Intermedio\nSensor ultrasónico\n\n\n6\nSensor Temperatura\nDHT22 temperatura/humedad\n⭐⭐⭐ Avanzado\nDHT22\n\n\n7\nDisplay OLED\nDisplay gráfico I2C SSD1306\n⭐⭐⭐ Avanzado\nOLED 128x64, I2C\n\n\n8\nLCD Display\nDisplay LCD 16x2\n⭐⭐ Intermedio\nLCD 16x2, I2C\n\n\n9\nBuzzer Melodía\nReproduce melodías\n⭐⭐ Intermedio\nBuzzer piezoeléctrico\n\n\n10\nSensor PIR\nDetector de movimiento\n⭐⭐ Intermedio\nSensor PIR HC-SR501\n\n\n11\nSensor Luz\nFotoresistor LDR\n⭐ Básico\nLDR, resistencia\n\n\n12\nSensor Hall\nSensor de campo magnético\n⭐⭐ Intermedio\nSensor Hall\n\n\n13\nJoystick Analógico\nControl XY analógico\n⭐⭐ Intermedio\nJoystick, 2 LEDs\n\n\n14\nEncoder Rotativo\nEncoder rotativo KY-040\n⭐⭐ Intermedio\nEncoder, LED\n\n\n15\nTeclado Matriz\nTeclado 4x4\n⭐⭐⭐ Avanzado\nMatriz 4x4\n\n\n16\nMicrófono\nSensor de sonido\n⭐⭐ Intermedio\nMicrófono KY-038\n\n\n17\nRele Control\nControl de relevador\n⭐⭐ Intermedio\nRelevador 5V, LED\n\n\n\n\n\n🟠 ESP32 (23 Ejemplos)\n\n\n\n#\nEjemplo\nDescripción\nDificultad\nComponentes\nNotas\n\n\n\n\n1\nParpadeo LED\nLED que parpadea\n⭐ Básico\nLED, Resistencia\nGPIO 2\n\n\n2\nLED RGB\nSecuencia de colores\n⭐ Básico\nLED RGB\nGPIO 25-27\n\n\n3\nBoton LED\nLED controlado por botón\n⭐ Básico\nLED, Botón\nGPIO 2, 4\n\n\n4\nContador Botones\nContador con botones\n⭐ Básico\n2 botones, LED\nGPIO 4, 5\n\n\n5\nPotenciometro LED\nBrillo variable\n⭐⭐ Intermedio\nLED, Potenciómetro\nGPIO 34 (ADC)\n\n\n6\nSensor Distancia\nHC-SR04 ultrasónico\n⭐⭐ Intermedio\nHC-SR04\nGPIO 5, 18\n\n\n7\nSensor Temperatura\nDHT22\n⭐⭐ Intermedio\nDHT22\nGPIO 4\n\n\n8\nDisplay OLED\nDisplay I2C SSD1306\n⭐⭐⭐ Avanzado\nOLED 128x64\nI2C GPIO 21-22\n\n\n9\nLCD Display\nLCD 16x2 I2C\n⭐⭐ Intermedio\nLCD 16x2\nI2C\n\n\n10\nBuzzer Melodia\nMelodías con buzzer\n⭐⭐ Intermedio\nBuzzer\nGPIO 25\n\n\n11\nSensor PIR\nDetector movimiento\n⭐⭐ Intermedio\nPIR HC-SR501\nGPIO 4\n\n\n12\nSensor Luz\nFotoresistor LDR\n⭐ Básico\nLDR\nGPIO 34\n\n\n13\nSensor Gas\nMQ-135 gas\n⭐⭐ Intermedio\nMQ-135\nGPIO 34\n\n\n14\nServomotor\nControl SG90\n⭐⭐⭐ Avanzado\nServo SG90\nGPIO 13\n\n\n15\nMotor DC\nControl motor DC\n⭐⭐⭐ Avanzado\nMotor DC, L293D\nGPIO 18, 19\n\n\n16\nRele Control\nRelevador\n⭐⭐ Intermedio\nRelevador\nGPIO 26\n\n\n17\nEncoder Rotativo\nEncoder KY-040\n⭐⭐ Intermedio\nEncoder\nGPIO 4, 5\n\n\n18\nJoystick Analogico\nJoystick XY\n⭐⭐ Intermedio\nJoystick\nGPIO 34, 35\n\n\n19\nBluetooth LED\nControl WiFi/BT\n⭐⭐⭐ Avanzado\nLED\nWiFi+BT\n\n\n20\nTemp Humedad I2C\nAHT10 I2C\n⭐⭐ Intermedio\nAHT10\nI2C\n\n\n21-23\nReservados\n-\n-\n-\nExpansión\n\n\n\n\n\n🟢 Arduino (6 Ejemplos)\n\n\n\n#\nEjemplo\nDescripción\nDificultad\nComponentes\nNotas\n\n\n\n\n1\nParpadeo LED\nLED que parpadea\n⭐ Básico\nLED, Resistencia\nPin 13\n\n\n2\nLED RGB\nSecuencia de colores\n⭐ Básico\nLED RGB\nPines 9-11\n\n\n3\nSensor Distancia\nHC-SR04 ultrasónico\n⭐⭐ Intermedio\nHC-SR04\nPines 9, 10\n\n\n4\nSensor Temperatura\nDHT22\n⭐⭐ Intermedio\nDHT22\nPin 2\n\n\n5\nDisplay OLED\nDisplay I2C SSD1306\n⭐⭐⭐ Avanzado\nOLED 128x64\nI2C A4/A5\n\n\n6\nLCD Display\nLCD 16x2 I2C\n⭐⭐ Intermedio\nLCD 1602\nI2C A4/A5",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#referencia-de-pines",
+    "href": "contenido/anexo_wokwi.html#referencia-de-pines",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "🔧 Referencia de Pines",
+    "text": "🔧 Referencia de Pines\n\nRaspberry Pi Pico\n\n\n\nGPIO\nFunción\nNotas\n\n\n\n\nGP0-GP1\nI2C0 SDA/SCL\nPor defecto\n\n\nGP4-GP5\nI2C0 alternativo\n\n\n\nGP10-GP17\nSalidas digitales\nDisplay 7 seg\n\n\nGP15\nSalida digital\nLED común\n\n\n\n\n\nESP32 DevKit V1\n\n\n\nGPIO\nFunción\nNotas\n\n\n\n\nGPIO 2\nLED integrado\nTambién para LED\n\n\nGPIO 4\nEntrada digital\nDHT22, botones\n\n\nGPIO 5\nSalida digital\nTrigger HC-SR04\n\n\nGPIO 13\nPWM\nServomotor\n\n\nGPIO 18\nEntrada\nEcho HC-SR04\n\n\nGPIO 21\nI2C SDA\nDisplay OLED\n\n\nGPIO 22\nI2C SCL\nDisplay OLED\n\n\nGPIO 25\nSalida digital\nLED RGB (R)\n\n\nGPIO 26\nSalida digital\nLED RGB (G)\n\n\nGPIO 27\nSalida digital\nLED RGB (B)\n\n\nGPIO 34\nADC\nSolo entrada\n\n\n\n\n\nArduino UNO\n\n\n\nPin\nFunción\nNotas\n\n\n\n\nD0-D13\nEntrada/Salida digital\nLED integrado en D13\n\n\nA0-A5\nEntrada analógica\nTambién digitales\n\n\nSDA (A4)\nI2C SDA\nLCD, OLED\n\n\nSCL (A5)\nI2C SCL\nLCD, OLED\n\n\n5V\nSalida 5V\nAlimentar componentes\n\n\n3.3V\nSalida 3.3V\nSensores\n\n\nGND\nTierra\nComún",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#conceptos-por-ejemplo",
+    "href": "contenido/anexo_wokwi.html#conceptos-por-ejemplo",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "💡 Conceptos por Ejemplo",
+    "text": "💡 Conceptos por Ejemplo\n\n⭐ Básicos (1-2)\n\nParpadeo LED: machine.Pin, Pin.OUT, time.sleep()\nBoton LED: Pin.IN, Pin.PULL_DOWN\nLED RGB: Múltiples pines, lógica invertida\nContador: Flancos de subida, antirrebote\nSensor Luz: machine.ADC, lectura analógica\n\n\n\n⭐⭐ Intermedios (3-5)\n\n7 Segmentos: Multiplexado, mapeo de números\nSensor Distancia: time_pulse_us(), cálculo física\nSensor DHT22: Protocolo one-wire\nDisplay OLED: machine.I2C, librería ssd1306\nLCD I2C: Comunicación I2C\nBuzzer: Generación de tonos\n\n\n\n⭐⭐⭐ Avanzados (6+)\n\nServomotor: PWM, conversión ángulo-duty\nMotor DC: Control de dirección, puente H\nTeclado Matriz: Escaneo de filas/columnas\nBluetooth/WiFi: Conexión de red",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#solución-de-problemas",
+    "href": "contenido/anexo_wokwi.html#solución-de-problemas",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "🛠️ Solución de Problemas",
+    "text": "🛠️ Solución de Problemas\n\nEl simulador no inicia\n✅ Verifica que el código no tenga errores de sintaxis\n✅ Confirma que diagram.json está en formato JSON válido\n✅ Prueba con un navegador diferente (Chrome recomendado)\n\n\nNo veo los mensajes por consola\n✅ Click en \"Serial\" en el panel de Wokwi\n✅ Verifica la velocidad en baudios (115200)\n✅ Revisa que print() está en el código\n\n\nEl LED no enciende\n✅ Verifica la conexión en diagram.json\n✅ Confirma que usas el pin correcto (GPIO 15 para ejemplos)\n✅ Para LED de ánodo común: nivel bajo = LED encendido\n\n\nError en I2C\n✅ Verifica las conexiones SDA y SCL\n✅ Confirma la dirección I2C del dispositivo\n✅ La dirección común para OLED es 0x3C\n\n\nEl sensor no detecta\n✅ Verifica el tipo de sensor en diagram.json\n✅ Confirma los pines de conexión\n✅ Algunos sensores requieren configuración específica",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#recursos-adicionales",
+    "href": "contenido/anexo_wokwi.html#recursos-adicionales",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "📚 Recursos Adicionales",
+    "text": "📚 Recursos Adicionales\n\n\n\nRecurso\nURL\n\n\n\n\nDocumentación Wokwi\ndocs.wokwi.com\n\n\nGuía MicroPython\ndocs.wokwi.com/guides/micropython\n\n\nReferencia ESP32\ndocs.wokwi.com/guides/esp32\n\n\nReferencia diagram.json\ndocs.wokwi.com/diagram-format\n\n\nLibrería ssd1306\nmicropython-lib",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
+    "objectID": "contenido/anexo_wokwi.html#ejercicios-de-práctica",
+    "href": "contenido/anexo_wokwi.html#ejercicios-de-práctica",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "🎯 Ejercicios de Práctica",
+    "text": "🎯 Ejercicios de Práctica\n\nNivel 1: Modificar Tiempos\n\nCambia el parpadeo LED de 1 segundo a 0.5 segundos\nModifica la secuencia de colores del LED RGB\n\n\n\nNivel 2: Combinar Componentes\n\nAñade un segundo LED al contador de botones\nMuestra la distancia en el display OLED\n\n\n\nNivel 3: Crear tu Proyecto\n\nDiseña un sistema de alarma con sensor PIR\nCrea un termostato con DHT22 y rele\n\n\nAnexo Wokwi - MicroPython para el Aula - Diego Saavedra 2026 🎮",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
     "objectID": "contenido/referencia_sintaxis_spike.html",
     "href": "contenido/referencia_sintaxis_spike.html",
     "title": "Referencia Rápida: LEGO Education SPIKE Essential Python",
@@ -5628,7 +5738,7 @@
     "text": "Importaciones\nEsta guía muestra la sintaxis oficial de Python para SPIKE Essential basada en la documentación oficial.",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5639,7 +5749,7 @@
     "text": "❌ Antiguo (Pybricks)\nfrom pybricks.hubs import PrimeHub\nfrom pybricks.parameters import Port, Button, Stop\nfrom pybricks.pupdevices import Motor, ColorSensor\nfrom pybricks.tools import wait\n\n\n✅ Nuevo (SPIKE Essential Oficial)\nfrom spike import PrimeHub\nfrom spike import Motor, ColorSensor, DistanceSensor, ForceSensor\nfrom spike.control import wait_for_seconds, wait_until, Timer",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5650,7 +5760,7 @@
     "text": "Inicialización del Hub\n\n❌ Antiguo (Pybricks)\nhub = PrimeHub()\n\n\n✅ Nuevo (SPIKE Essential)\nhub = PrimeHub()",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5661,7 +5771,7 @@
     "text": "Pantalla LED (Light Matrix)\n\n❌ Antiguo (Pybricks)\nhub.display.text(\"HOLA\")           # Mostrar texto\nhub.display.show_icon(\"HAPPY\")      # Mostrar icono\nhub.display.show(matriz)            # Mostrar matriz 5x5\nhub.display.off()                   # Apagar\n\n\n✅ Nuevo (SPIKE Essential)\nhub.light_matrix.write(\"HOLA\")       # Mostrar texto\nhub.light_matrix.show_image(\"HAPPY\") # Mostrar imagen predefinida\nhub.light_matrix.show(matriz)        # Mostrar matriz 5x5\nhub.light_matrix.off()               # Apagar\nhub.light_matrix.set_pixel(x, y, brillo)  # LED individual\nhub.light_matrix.show_number(42)     # Mostrar número\nhub.light_matrix.scroll(\"TEXTO\")     # Desplazar texto\n\n\nImágenes Predefinidas Disponibles:\n\nYES, NO, HAPPY, SAD, CONFUSED, ANGRY\nSMILE, MEH, SQUARES, DIAMOND, DIAMOND_SMALL\nSQUARE_SMALL, TRIANGLE, TRIANGLE_SMALL\nCHESSBOARD, X, HEART, DUCK, GHOST\nTARGET, UP, DOWN, LEFT, RIGHT",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5672,7 +5782,7 @@
     "text": "Luz del Centro del Hub\n\n❌ Antiguo (Pybricks)\nhub.light.on(5)      # Color (0-10)\nhub.light.off()\n\n\n✅ Nuevo (SPIKE Essential)\nhub.light.on(5)      # Verde\nhub.light.on(9)      # Naranja\nhub.light.on(0)      # Rojo\nhub.light.off()",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5683,7 +5793,7 @@
     "text": "Botones del Hub\n\n❌ Antiguo (Pybricks)\nfrom pybricks.parameters import Button\nbotones = hub.buttons.pressed()\nif Button.LEFT in botones:\n    # hacer algo\n\n\n✅ Nuevo (SPIKE Essential)\nif hub.left_button.is_pressed():\n    # hacer algo\nif hub.right_button.is_pressed():\n    # hacer algo\nif hub.center_button.is_pressed():\n    # hacer algo\n\n\nCon callbacks (eventos):\ndef cuando_izquierdo():\n    hub.speaker.beep()\n\nhub.left_button.when_pressed(cuando_izquierdo)",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5694,7 +5804,7 @@
     "text": "Motor\n\n❌ Antiguo (Pybricks)\nfrom pybricks.parameters import Port, Stop, Direction\nmotor = Motor(Port.A, Direction.CLOCKWISE)\nmotor.run(500)\nmotor.run_for_degrees(360, 500)\nmotor.stop(Stop.HOLD)\n\n\n✅ Nuevo (SPIKE Essential)\nmotor = Motor('A')  # Puertos: 'A', 'B', 'C', 'D', 'E', 'F'\nmotor.start(50)     # Velocidad -100 a 100\nmotor.stop()        # Parar\n\n# Movimientos específicos:\nmotor.run_for_seconds(2, 50)      # Tiempo en segundos, velocidad\nmotor.run_for_degrees(360, 30)    # Grados, velocidad\nmotor.run_for_rotations(2, 50)   # Rotaciones, velocidad\n\n# Positionar:\nmotor.run_to_position(0, 50)     # Posición en grados, velocidad\n\n# Until stalled (calibración):\nmotor.run_until_stalled(50, then='coast')\nmotor.reset_angle(0)\n\n# Estado:\nangulo = motor.angle()\nvelocidad = motor.speed()",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5705,7 +5815,7 @@
     "text": "Sensor de Color\n\n❌ Antiguo (Pybricks)\nsensor = ColorSensor(Port.C)\ncolor = sensor.color()\nreflejo = sensor.reflection()\n\n\n✅ Nuevo (SPIKE Essential)\nsensor = ColorSensor('C')\ncolor = sensor.get_color()          # 'black', 'blue', 'green', 'yellow', 'red', 'white', 'brown', None\nreflejo = sensor.get_reflected_light()    # Porcentaje 0-100\nambiente = sensor.get_ambient_light()     # Porcentaje 0-100\n\n# Esperar eventos:\nsensor.wait_for_new_color()",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5716,7 +5826,7 @@
     "text": "Sensor de Distancia\n\n❌ Antiguo (Pybricks)\nsensor = DistanceSensor(Port.B)\ndistancia = sensor.distance()\n\n\n✅ Nuevo (SPIKE Essential)\nsensor = DistanceSensor('B')\ndistancia = sensor.get_distance_cm()       # Centímetros\ndistancia = sensor.get_distance_inches()    # Pulgadas\n\n# Detectar presencia:\nif sensor.get_distance_cm() is not None:\n    # hay objeto detectado",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5727,7 +5837,7 @@
     "text": "Sensor de Fuerza\n\n❌ Antiguo (Pybricks)\nsensor = ForceSensor(Port.D)\nif sensor.pressed():\n    # hacer algo\n\n\n✅ Nuevo (SPIKE Essential)\nsensor = ForceSensor('D')\nif sensor.is_pressed():\n    # hacer algo\n    \nfuerza = sensor.get_force_percentage()   # Porcentaje 0-100\n\n# Esperar eventos:\nsensor.wait_until_pressed()\nsensor.wait_until_released()",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5738,7 +5848,7 @@
     "text": "Control de Tiempo\n\n❌ Antiguo (Pybricks)\nfrom pybricks.tools import wait\nwait(1000)  # Milisegundos\n\n\n✅ Nuevo (SPIKE Essential)\nfrom spike.control import wait_for_seconds\nwait_for_seconds(2)  # Segundos\n\n# O también con Timer:\nfrom spike.control import Timer\ntimer = Timer()\ntimer.reset()\nwhile timer.now() &lt; 5:\n    # hacer algo",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5749,7 +5859,7 @@
     "text": "Speaker (Altavoz)\n\n❌ Antiguo (Pybricks)\nhub.speaker.beep(frequency=440, duration=500)\n\n\n✅ Nuevo (SPIKE Essential)\nhub.speaker.beep()                          # Beep simple\nhub.speaker.start_beep(440)                 # Beep continuo (frecuencia Hz)\nhub.speaker.stop()                          # Detener beep\nhub.speaker.play_sound(\"Dog Bark 1\")        # Sonido predefinido",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5760,7 +5870,7 @@
     "text": "Batería\n\n❌ Antiguo (Pybricks)\nvoltaje = hub.battery.voltage()\n\n\n✅ Nuevo (SPIKE Essential)\nvoltaje = hub.battery.voltage()  # Milivoltios (mV)",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5771,7 +5881,7 @@
     "text": "Movimiento del Robot (DriveBase)\n\n❌ Antiguo (Pybricks)\nfrom pybricks.pupdevices import MotorPair\npareja = MotorPair(Port.A, Port.B)\npareja.straight(200)\npareja.turn(90)\n\n\n✅ Nuevo (SPIKE Essential)\nfrom spike import MotorPair\npareja = MotorPair('A', 'B')  # Izquierda, Derecha\n\n# Movimientos:\npareja.move(20, 'cm', 0, 50)           # Distancia, unidad, dirección(0=recto), velocidad\npareja.move_tank(90, 'degrees', 30, -30) # Ángulo, unidad, vel_izq, vel_der\npareja.start(50, 50)                    # Iniciar movimiento\n\npareja.stop()",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5782,7 +5892,7 @@
     "text": "Imágenes Predefinidas (show_image)\nYES, NO, HAPPY, CONFUSED, SAD, ANGRY\nSMILE, MEH, DUCK, GHOST, TARGET\nARROW_UP, ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT\nTRIANGLE, TRIANGLE_SMALL\nSQUARE, SQUARE_SMALL, DIAMOND, DIAMOND_SMALL\nX, CHECK, HEART\nCHESSBOARD",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5793,7 +5903,7 @@
     "text": "Referencia oficial\nToda esta información proviene de la documentación oficial de LEGO Education SPIKE Essential: https://spike.legoeducation.com/essential/help/lls-help-python",
     "crumbs": [
       "📚 APÉNDICES",
-      "<span class='chapter-number'>55</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
+      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Referencia Rápida: LEGO Education SPIKE Essential Python</span>"
     ]
   },
   {
@@ -5804,7 +5914,7 @@
     "text": "Evaluación: Motores Avanzados y PID",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -5815,7 +5925,7 @@
     "text": "📋 Información de la Evaluación\n\n\n\nAspecto\nDetalle\n\n\n\n\nUnidad\n3 - Movimiento (Contenido Avanzado)\n\n\nTipo\nTeórico-Práctica\n\n\nDuración\n45 minutos\n\n\nPuntaje\n100 puntos\n\n\nModalidad\nIndividual",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -5826,7 +5936,7 @@
     "text": "Parte A: Conceptos Teóricos (40 puntos)\n\nPregunta 1 (10 puntos)\nExplica qué es el control PID y sus tres componentes. ¿Por qué es importante en robótica?\n\n\n💡 Pista\n\nPID = Proporcional + Integral + Derivativo\n\nRespuesta esperada:\n\nEl control PID es un algoritmo de retroalimentación que ajusta la salida basándose en tres componentes:\n\nP (Proporcional): Corrección proporcional al error actual\nI (Integral): Corrección basada en el error acumulado\nD (Derivativo): Corrección basada en la tasa de cambio del error\n\nEs importante en robótica para lograr movimientos precisos y compensar factores como fricción, peso desbalanceado y deslizamiento de ruedas [1].\n\n\n\n\nPregunta 2 (10 puntos)\n¿Cuáles son los tres modos de parada disponibles en SPIKE Essential y cuándo usar cada uno?\nRespuesta esperada:\n\n\n\n\n\n\n\n\nModo\nComportamiento\nUso\n\n\n\n\nbrake() (equivalente a Hold)\nMantiene posición activa\nPosicionamiento preciso\n\n\ncoast() (equivalente a Coast)\nSe desliza hasta parar\nMovimientos suaves\n\n\nstop() (equivalente a Brake)\nFrena activamente\nParada rápida\n\n\n\n\nNota: En SPIKE Essential, los modos de parada se implementan como: - motor.brake() → mantiene posición (Hold) - motor.coast() → permite deslizamiento (Coast)\n- motor.stop() → frena activaente (Brake)\n\n\n\n\nPregunta 3 (10 puntos)\n¿Qué es run_until_stalled() y cómo se diferencia de run_for_degrees()?\nRespuesta esperada:\n\n\nrun_for_degrees(): Ejecuta un número específico de grados\nrun_until_stalled(): Ejecuta hasta que el motor se atasca o encuentra resistencia\n\nSe usa para calibración inicial de motores y detectar límites físicos [2].\n\n\n\n\nPregunta 4 (10 puntos)\nExplica la diferencia entre potencia (% potencia) y velocidad en grados por segundo en el control de motores.\nRespuesta esperada:\n\n\nPotencia (% potencia): Porcentaje de potencia aplicada al motor (0-100%, negativo para reversa)\nVelocidad en grados/seg: Velocidad angular en grados por segundo (solo disponible en algunos métodos avanzados)\n\nEn SPIKE Essential, principalmente controlamos potencia (%) y el tiempo/ángulo determina la velocidad efectiva [1].",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -5837,7 +5947,7 @@
     "text": "Parte B: Práctica en Código (40 puntos)\n\nEjercicio 1: Calibración Automática (20 puntos)\nEscribe un programa que:\n\nUse run_until_stalled() para encontrar los límites de un motor\nCalcule el rango total de movimiento\nPosicione el motor en el centro exacto\n\nfrom spike import PrimeHub\nfrom spike import Motor\nfrom spike.control import wait_for_seconds, wait_until\n\n# Tu código aquí\n# ...\nSolución esperada:\nfrom spike import PrimeHub\nfrom spike import Motor\nfrom spike.control import wait_for_seconds, wait_until\n\nhub = PrimeHub()\nmotor = Motor('A')\n\n# Encontrar límite en una dirección\nmotor.start(-30)  # 30% potencia hacia atrás\nwait_until(lambda: motor.get_speed() == 0)  # Hasta que se estanque\nlimite_atras = motor.get_position_degrees()\n\n# Encontrar límite en la otra dirección  \nmotor.start(30)   # 30% potencia hacia adelante\nwait_until(lambda: motor.get_speed() == 0)  # Hasta que se estanque\nlimite_adelante = motor.get_position_degrees()\n\n# Calcular centro\nrango_total = limite_adelante - limite_atras\nposicion_centro = limite_atras + (rango_total / 2)\n\n# Mover al centro\nmotor.run_to_position(posicion_centro)\n\nhub.light_matrix.show_image(\"HAPPY\")\nwait_for_seconds(2)",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -5848,7 +5958,7 @@
     "text": "Parte C: Análisis de Situación (20 puntos)\n\nEscenario\nUn robot con MotorPair tiene los siguientes problemas: 1. Al avanzar en línea recta, se desvía hacia la izquierda 2. Los giros son inconsistentes (a veces 88°, a veces 92°) 3. Al intentar detenerse, se desliza más de lo esperado\n\n\nPreguntas\na) ¿Cuál es la causa más probable de la desviación? (5 puntos)\n\nDiferencia en potencia entre motores izquierdo y derecho, o calibración incorrecta del distancia entre ejes (axe_track) en MotorPair.\n\nb) ¿Cómo solucionarías los giros inconsistentes? (5 puntos)\n\nVerificar que ambas ruedas tengan el mismo diámetro y que el MotorPair esté configurado con el axe_track correcto. También comprobar que no haya deslizamiento de ruedas.\n\nc) ¿Qué modo de parada usarías para reducir el deslizamiento? (5 puntos)\n\nmotor_brake() para ambos motores (equivalente a Hold en Pybricks) o motor_stop() para freno activo (equivalente a Brake).\n\nd) ¿Qué parámetro adicional deberías verificar? (5 puntos)\n\nEl diámetro de las ruedas (wheel_diameter) y distancia entre ejes (axe_track) en la configuración del MotorPair.",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -5859,7 +5969,7 @@
     "text": "📊 Rúbrica de Calificación\n\n\n\n\n\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nParte A: Teórico\n40\n\n\n\n- Pregunta 1\n10\nExplicación completa de PID\n\n\n- Pregunta 2\n10\nModos de parada correctos (adaptado a SPIKE)\n\n\n- Pregunta 3\n10\nDiferencia clara run_until_stalled vs run_for_degrees\n\n\n- Pregunta 4\n10\nPotencia vs Velocidad explicada correctamente\n\n\nParte B: Práctica\n40\n\n\n\n- Ejercicio 1\n20\nCódigo funcional de calibración usando SPIKE API\n\n\n- Ejercicio 2\n20\nImplementación PID correcta (conceptual)\n\n\nParte C: Análisis\n20\n\n\n\n- a)\n5\nIdentificación correcta de causa de desviación\n\n\n- b)\n5\nSolución apropiada para giros inconsistentes\n\n\n- c)\n5\nModo de parada correcto para reducir deslizamiento\n\n\n- d)\n5\nParámetros de calibración a verificar\n\n\nTotal\n100",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -5870,7 +5980,7 @@
     "text": "📚 Referencias Actualizadas\n[1] LEGO Education. (2023). LEGO Education SPIKE Essential - Motor Module. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python\n[2] LEGO Education. (2023). LEGO Education SPIKE Essential - Motor Control Techniques. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python\nEvaluación Motores Avanzados - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>56</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
+      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Motores Avanzados y PID</span>"
     ]
   },
   {
@@ -5881,7 +5991,7 @@
     "text": "Evaluación: Sensores Adicionales",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -5892,7 +6002,7 @@
     "text": "📋 Información de la Evaluación\n\n\n\nAspecto\nDetalle\n\n\n\n\nUnidad\n4 - Sensores (Contenido Avanzado)\n\n\nTipo\nTeórico-Práctica\n\n\nDuración\n30 minutos\n\n\nPuntaje\n100 puntos\n\n\nModalidad\nIndividual",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -5903,7 +6013,7 @@
     "text": "Parte A: Reconocimiento de Sensores (30 puntos)\n\nPregunta 1 (10 puntos)\nIdentifica el sensor adecuado para cada situación:\n\n\n\nSituación\nSensor\n\n\n\n\nDetectar proximidad de objetos a distancia\n\n\n\nLeer colores específicos en una línea\n\n\n\nDetectar presión mecánica\n\n\n\n\nRespuesta:\n\n\n\nSituación\nSensor\n\n\n\n\nDetectar proximidad de objetos a distancia\nDistanceSensor\n\n\nLeer colores específicos en una línea\nColorSensor\n\n\nDetectar presión mecánica\nForceSensor\n\n\n\n\nNota: En SPIKE Essential, el sensor de inclinación (TiltSensor) y el sensor infrarrojo (InfraredSensor) no están disponibles en el set básico. Nos enfocamos en los sensores incluidos en el kit esencial.\n\n\n\n\nPregunta 2 (10 puntos)\n¿Cuál es el rango de operación del DistanceSensor y su precisión?\nRespuesta esperada:\n\n\nRango: 0 a 500cm (aproximadamente 0 a 200 pulgadas)\n\nPrecisión: ±1cm a distancias cercanas, disminuye ligeramente con distancia\nModos disponibles: get_distance_cm(), get_distance_inches(), get_distance_percentage()\n\n\n\n\n\nPregunta 3 (10 puntos)\nExplica la diferencia entre ColorSensor.get_color() y ColorSensor.get_reflected_light().\nRespuesta esperada:\n\n\nget_color(): Retorna el nombre del color detectado (ej: ‘red’, ‘green’, ‘blue’, ‘yellow’, etc.) o None si no se detecta un color claro\nget_reflected_light(): Retorna el porcentaje de luz reflejada (0-100%)\n\nEl método get_reflected_light() es más útil para seguimiento de líneas porque proporciona un valor continuo que es más fácil de umbralizar que las categorías discretas de color.",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -5914,7 +6024,7 @@
     "text": "Parte B: Práctica en Código (50 puntos)\n\nEjercicio 1: Seguimiento de Línea con Color (25 puntos)\nImplementa un programa que siga una línea negra usando ColorSensor:\nfrom spike import PrimeHub\nfrom spike import Motor, MotorPair\nfrom spike import ColorSensor\nfrom spike.control import wait_for_seconds, wait_until\n\n# Tu código aquí\n# ...\nSolución esperada:\nfrom spike import PrimeHub\nfrom spike import Motor, MotorPair\nfrom spike import ColorSensor\nfrom spike.control import wait_for_seconds, wait_until\n\nhub = PrimeHub()\n\n# Inicializar dispositivos\nmotor_izq = Motor('A')\nmotor_der = Motor('B')\nmotor_pair = MotorPair('A', 'B')\nsensor = ColorSensor('C')\n\n# Constantes\nVELOCIDAD = 30  # % potencia\nUMBRAL_LINEA = 30  # % reflectividad (ajustar según superficie)\n\n# Bucle principal de seguimiento de línea\nfor _ in range(100):  # Ejecutar por tiempo suficiente o hasta interrupción\n    # Salir con botón central (opcional)\n    # if hub.left_button.is_pressed() and hub.right_button.is_pressed():\n    #     break\n    \n    # Leer reflectividad\n    reflejo = sensor.get_reflected_light()\n    \n    if reflejo &lt; UMBRAL_LINEA:\n        # Línea negra detectada - corregir hacia la derecha\n        motor_pair.start_tank_at_power(VELOCIDAD - 20, VELOCIDAD + 20)\n    else:\n        # Fondo claro - corregir hacia la izquierda\n        motor_pair.start_tank_at_power(VELOCIDAD + 20, VELOCIDAD - 20)\n    \n    wait(50)  # Pequeña pausa para estabilidad\n\n# Parar al terminar\nmotor_pair.stop()\n\n\n\nEjercicio 2: Detección de Obstáculos con Distance (25 puntos)\nCrea un sistema que alerte cuando un objeto esté a menos de 20cm:\nfrom spike import PrimeHub\nfrom spike import DistanceSensor\nfrom spike.control import wait_for_seconds\n\n# Tu código aquí\n# ...\nSolución esperada:\nfrom spike import PrimeHub\nfrom spike import DistanceSensor\nfrom spike.control import wait_for_seconds\n\nhub = PrimeHub()\nsensor = DistanceSensor('C')\n\nUMBRAL_PROXIMIDAD = 20  # cm\n\nwhile True:\n    # Salir con botones (opcional)\n    # if hub.left_button.is_pressed() or hub.right_button.is_pressed():\n    #     break\n    \n    distancia = sensor.get_distance_cm()\n    \n    if distancia &lt; UMBRAL_PROXIMIDAD:\n        # Alerta: objeto cercano\n        hub.light_matrix.show_image(\"CONFUSED\")\n        hub.speaker.beep(800, 0.2)  # frecuencia, duración en segundos\n    else:\n        # Seguro\n        hub.light_matrix.show_image(\"HAPPY\")\n        hub.speaker.off()\n    \n    wait_for_seconds(0.1)  # 100ms\n\n# Al finalizar\nhub.light_matrix.off()\nhub.speaker.off()",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -5925,7 +6035,7 @@
     "text": "Parte C: Análisis de Datos (20 puntos)\n\nEscenario\nDado el siguiente código de telemetría, analiza los resultados:\nfrom spike import PrimeHub\nfrom spike import ColorSensor, DistanceSensor\nfrom spike.control import wait_for_seconds\nimport json\n\nhub = PrimeHub()\ncolor = ColorSensor('C')\ndistance = DistanceSensor('D')\n\ndatos = []\n\nfor i in range(30):\n    muestra = {\n        \"distancia_cm\": distance.get_distance_cm(),\n        \"reflejo\": color.get_reflected_light(),\n        \"color\": color.get_color()\n    }\n    datos.append(muestra)\n    wait_for_seconds(0.2)  # 200ms entre muestras\n\n# Mostrar datos como JSON\nprint(json.dumps(datos))\n\n\nPreguntas\na) ¿Cuántos segundos dura la captura de datos? (5 puntos)\n\n30 muestras × 0.2 segundos = 6 segundos\n\nb) ¿Qué tipo de gráfico usarías para visualizar las distancias y el reflejo de luz? (5 puntos)\n\nGráfico de línea múltiple (line chart con múltiples series) para mostrar ambas variables (distancia y reflejo) en función del tiempo.\n\nc) ¿Cómo guardarías los datos en un archivo para analizarlos después en una computadora? (5 puntos)\n\nExportar los datos vía USB o Bluetooth como archivo JSON o CSV. En Thonny, se podría usar:\nwith open('datos_sensores.json', 'w') as f:\n    f.write(json.dumps(datos))\n\nd) ¿Qué mejorarías para una telemetría más precisa y continua? (5 puntos)\n\n\nReducir el intervalo de muestreo (ej: 100ms en lugar de 200ms)\nUsar promedio móvil para suavizar lecturas ruidosas\nAgregar timestamps con tiempo real relativo al inicio\nImplementar detección de cambios significativos para reducir almacenamiento\nUsar formato CSV más eficiente para análisis posterior",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -5936,7 +6046,7 @@
     "text": "📊 Rúbrica de Calificación\n\n\n\n\n\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nParte A: Teórico\n30\n\n\n\n- Pregunta 1\n10\nSensores identificados correctamente (adaptado a SPIKE Essential)\n\n\n- Pregunta 2\n10\nRango y precisión correctos del DistanceSensor\n\n\n- Pregunta 3\n10\nDiferencia clara entre get_color() y get_reflected_light()\n\n\nParte B: Práctica\n50\n\n\n\n- Ejercicio 1\n25\nSeguimiento de línea funcional usando SPIKE Essential API\n\n\n- Ejercicio 2\n25\nDetección de obstáculos con alerta usando DistanceSensor\n\n\nParte C: Análisis\n20\n\n\n\n- a)\n5\nCálculo de tiempo correcto\n\n\n- b)\n5\nTipo de gráfico apropiado para múltiples variables\n\n\n- c)\n5\nMétodo de exportación de datos correcto\n\n\n- d)\n5\nMejoras relevantes para telemetría\n\n\nTotal\n100",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -5947,7 +6057,7 @@
     "text": "📚 Referencias Actualizadas\n[1] LEGO Education. (2023). LEGO Education SPIKE Essential - Color Sensor. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python\n[2] LEGO Education. (2023). LEGO Education SPIKE Essential - Distance Sensor. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python\n[3] LEGO Education. (2023). LEGO Education SPIKE Essential - Force Sensor. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python\nEvaluación Sensores Adicionales - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>57</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
+      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Sensores Adicionales</span>"
     ]
   },
   {
@@ -5958,7 +6068,7 @@
     "text": "Evaluación: Telemetría y Monitoreo de Batería",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -5969,7 +6079,7 @@
     "text": "📋 Información de la Evaluación\n\n\n\nAspecto\nDetalle\n\n\n\n\nUnidad\n4 - Sensores (Módulo Avanzado)\n\n\nTipo\nPráctica\n\n\nDuración\n30 minutos\n\n\nPuntaje\n100 puntos\n\n\nModalidad\nIndividual",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -5980,7 +6090,7 @@
     "text": "Ejercicio Principal: Sistema de Telemetría Completo (100 puntos)\n\nObjetivo\nCrear un sistema completo de telemetría que monitoree:\n\nEstado de batería del hub\nDistancia del sensor\nPosición de motores\nEstado de botones y luz\nExportar datos a formato analizable\n\n\n\nRequisitos del Sistema\n┌─────────────────────────────────────────┐\n│         SISTEMA DE TELEMETRÍA          │\n├─────────────────────────────────────────┤\n│  [Hub]    →  Voltaje, Corriente, Botones │\n│  [Sensor] →  Distancia (cm)              │\n│  [Motores]→  Posición (grados)           │\n│  [Display]→  Estado actual               │\n│  [Export]   →  JSON                      │\n└─────────────────────────────────────────┘\n\n\nCódigo Base\nfrom spike import PrimeHub\nfrom spike import Motor, DistanceSensor\nfrom spike.control import wait_for_seconds\nimport json\n\nhub = PrimeHub()\n\n# Inicializar dispositivos\nmotor = Motor('A')\nsensor = DistanceSensor('B')\n\n# Lista para almacenar datos\ntelemetria = []\n\n# Tu código aquí\n# ...",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -5991,7 +6101,7 @@
     "text": "Rúbrica de Evaluación\n\nRequisitos Funcionales (60 puntos)\n\n\n\nRequisito\nPuntos\nVerificado\n\n\n\n\nMide voltaje de batería del hub\n15\n☐\n\n\nMide distancia del sensor\n15\n☐\n\n\nRegistra posición del motor\n15\n☐\n\n\nAlmacena datos en lista\n15\n☐\n\n\n\n\n\nCódigo y Calidad (20 puntos)\n\n\n\nAspecto\nPuntos\nVerificado\n\n\n\n\nCódigo funcional sin errores\n10\n☐\n\n\nUso correcto de librerías\n5\n☐\n\n\nComments/documentación\n5\n☐\n\n\n\n\n\nExportación y Análisis (20 puntos)\n\n\n\nAspecto\nPuntos\nVerificado\n\n\n\n\nExporta a JSON válido\n10\n☐\n\n\nDatos con timestamp relativo\n5\n☐\n\n\nFormato listo para análisis\n5\n☐",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -6002,7 +6112,7 @@
     "text": "Solución Esperada\nfrom spike import PrimeHub\nfrom spike import Motor, DistanceSensor\nfrom spike.control import wait_for_seconds\nimport json\nimport time  # Para timestamps más precisos (opcional)\n\nhub = PrimeHub()\n\n# Inicializar dispositivos\nmotor = Motor('A')\nsensor = DistanceSensor('B')\n\n# Configuración de muestreo\nINTERVALO_S = 0.2  # Muestrear cada 200ms\nDURACION_S = 5     # Durar 5 segundos\n\n# Lista para almacenar datos\ntelemetria = []\ncontador_muestras = 0\n\nprint(\"=== INICIO TELEMETRÍA ===\")\n\n# Calibración inicial opcional\n# motor.run_for_degrees(30)  # Pequeño movimiento para asegurar funcionamiento\n# motor.reset_angle(0)       # Reset posición a cero\nhub.light_matrix.show_image(\"TARGET\")\n\n# Fase 1: Movimiento de prueba\nprint(\"Fase 1: Movimiento de calibración\")\nmotor.run_for_degrees(180, 30)  # 30% potencia, 180 grados\n\n# Fase 2: Captura de datos\nprint(\"Fase 2: Captura activa\")\nhub.light_matrix.show_image(\"UP\")\n\ntiempo_inicio = time.time()\n\nfor i in range(int(DURACION_S / INTERVALO_S)):\n    # Recopilar datos\n    muestra = {\n        \"timestamp_relativo_ms\": i * int(INTERVALO_S * 1000),\n        \"hub\": {\n            \"voltaje_mv\": hub.voltage(),           # mV (milivoltios)\n            \"corriente_ma\": hub.current(),         # mA (miliamperios)\n            \"boton_izquierdo\": hub.left_button.is_pressed(),\n            \"boton_derecho\": hub.right_button.is_pressed(),\n            \"boton_central\": getattr(hub, 'center_button', None) and hub.center_button.is_pressed() if hasattr(hub, 'center_button') else False\n        },\n        \"sensor\": {\n            \"distancia_cm\": sensor.get_distance_cm()\n        },\n        \"motor\": {\n            \"posicion_grados\": motor.get_position_degrees(),\n            \"velocidad_pc\": motor.get_speed()      # % potencia\n        }\n    }\n    \n    telemetria.append(muestra)\n    \n    # Mostrar progreso cada 5 muestras\n    if i % 5 == 0:\n        progreso = int((i / (DURACION_S / INTERVALO_S)) * 100)\n        print(f\"Progreso: {progreso}% - Muestra {i+1}\")\n    \n    wait_for_seconds(INTERVALO_S)\n\n# Fase 3: Análisis de datos\nprint(\"\\n=== ANÁLISIS DE DATOS ===\")\n\n# Calcular estadísticas básicas\nvoltajes = [m[\"hub\"][\"voltaje_mv\"] for m in telemetria]\ndistancias = [m[\"sensor\"][\"distancia_cm\"] for m in telemetria if m[\"sensor\"][\"distancia_cm\"] is not None]\nposiciones = [m[\"motor\"][\"posicion_grados\"] for m in telemetria]\n\nestadisticas = {\n    \"total_muestras\": len(telemetria),\n    \"duracion_s\": DURACION_S,\n    \"intervalo_muestreo_s\": INTERVALO_S,\n    \"hub\": {\n        \"voltaje\": {\n            \"min_mv\": min(voltajes) if voltajes else 0,\n            \"max_mv\": max(voltajes) if voltajes else 0,\n            \"promedio_mv\": sum(voltajes) / len(voltajes) if voltajes else 0\n        },\n        \"corriente\": {\n            \"min_ma\": min([m[\"hub\"][\"corriente_ma\"] for m in telemetria]) if telemetria else 0,\n            \"max_ma\": max([m[\"hub\"][\"corriente_ma\"] for m in telemetria]) if telemetria else 0,\n            \"promedio_ma\": sum([m[\"hub\"][\"corriente_ma\"] for m in telemetria]) / len(telemetria) if telemetria else 0\n        }\n    },\n    \"sensor\": {\n        \"distancia_cm\": {\n            \"min\": min(distancias) if distancias else 0,\n            \"max\": max(distancias) if distancias else 0,\n            \"promedio\": sum(distancias) / len(distancias) if distancias else 0\n        }\n    },\n    \"motor\": {\n        \"posicion_grados\": {\n            \"min\": min(posiciones) if posiciones else 0,\n            \"max\": max(posiciones) if posiciones else 0,\n            \"promedio\": sum(posiciones) / len(posiciones) if posiciones else 0\n        }\n    }\n}\n\nprint(f\"Estadísticas: {json.dumps(estadisticas, indent=2)}\")\n\n# Exportar datos completos\noutput = {\n    \"metadata\": {\n        \"curso\": \"MicroPython para el Aula\",\n        \"tema\": \"Telemetría con SPIKE Essential\",\n        \"version_api\": \"SPIKE Essential Python Official\",\n        \"fecha\": \"2026\"\n    },\n    \"estadisticas\": estadisticas,\n    \"muestras\": telemetria\n}\n\nprint(\"\\n=== DATOS JSON COMPLETOS ===\")\nprint(json.dumps(output, indent=2))\n\n# En un entorno real, guardaríamos en archivo:\n# with open(\"telemetria.json\", \"w\") as f:\n#     json.dump(output, f, indent=2)\n# print(\"\\nDatos guardados en telemetria.json\")\n\n# Mostrar resultado en el hub\nhub.light_matrix.show_image(\"HAPPY\")\nhub.speaker.beep(600, 0.5)  # tono de éxito\nwait_for_seconds(2)\nhub.light_matrix.off()\nhub.speaker.off()\n\nprint(\"\\nTelemetría completada exitosamente\")",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -6013,7 +6123,7 @@
     "text": "📊 Rúbrica de Calificación\n\n\n\n\n\n\n\n\nSección\nPuntos\nCriteria\n\n\n\n\nRequisitos Funcionales\n60\n\n\n\n- Mide voltaje de batería\n15\nUso correcto de hub.voltage()\n\n\n- Mide distancia del sensor\n15\nUso correcto de sensor.get_distance_cm()\n\n\n- Registra posición del motor\n15\nUso correcto de motor.get_position_degrees() y motor.get_speed()\n\n\n- Almacena datos en lista\n15\nEstructura de lista adecuada para telemetría\n\n\nCódigo y Calidad\n20\n\n\n\n- Código funcional sin errores\n10\nSintaxis correcta, sin errores de importación o método\n\n\n- Uso correcto de librerías\n5\nImportaciones exclusivamente de spike\n\n\n- Comments/documentación\n5\nComentarios claros que explican cada sección\n\n\nExportación y Análisis\n20\n\n\n\n- Exporta a JSON válido\n10\nEstructura JSON válida con metadata y datos\n\n\n- Datos con timestamp relativo\n5\nIncluye timestamp relativo al inicio\n\n\n- Formato listo para análisis\n5\nEstructura que facilita análisis posterior\n\n\nTotal\n100",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -6024,7 +6134,7 @@
     "text": "📚 Referencias Actualizadas\n[1] LEGO Education. (2023). LEGO Education SPIKE Essential - Hub. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python\n[2] LEGO Education. (2023). LEGO Education SPIKE Essential - Distance Sensor. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python\n[3] LEGO Education. (2023). LEGO Education SPIKE Essential - Motor. LEGO. Disponible: https://spike.legoeducation.com/essential/help/lls-help-python\nEvaluación Telemetría - MicroPython para el Aula - Diego Saavedra 2026",
     "crumbs": [
       "🎯 EVALUACIONES",
-      "<span class='chapter-number'>58</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
+      "<span class='chapter-number'>59</span>  <span class='chapter-title'>Evaluación: Telemetría y Monitoreo de Batería</span>"
     ]
   },
   {
@@ -6035,7 +6145,7 @@
     "text": "📊 Tabla de Progresión",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>59</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
+      "<span class='chapter-number'>60</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
     ]
   },
   {
@@ -6046,7 +6156,7 @@
     "text": "Fase\nEmoción\nXP Acumulado\nHabilidad Dominada\n\n\n\n\n🔌\n¡Emoción!\n175\nConexión y primer código\n\n\n💡\n¡Creatividad!\n350\nDisplay y animaciones\n\n\n🤖\n¡Poder!\n550\nMotores y navegación\n\n\n📡\n¡Inteligencia!\n725\nSensores y telemetría\n\n\n🏆\n¡Maestría!\n1075\nProyecto completo",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>59</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
+      "<span class='chapter-number'>60</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
     ]
   },
   {
@@ -6057,7 +6167,7 @@
     "text": "🎮 Niveles de Experiencia\nXP         Nivel              Título              Icono\n─────────────────────────────────────────────────────────\n0          Nivel 1            Aprendiz            🌱\n100        Nivel 2            Explorador          🔍\n250        Nivel 3            Programador         💻\n500        Nivel 4            Ingeniero           ⚙️\n750        Nivel 5            Arquitecto          🏗️\n1000       Nivel 6            Maestro             🎓\n1500       Nivel 7            Leyenda             👑\n─────────────────────────────────────────────────────────",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>59</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
+      "<span class='chapter-number'>60</span>  <span class='chapter-title'>🗺️ Hoja de Ruta Visual del Curso</span>"
     ]
   },
   {
@@ -6068,7 +6178,7 @@
     "text": "📋 Especificaciones Técnicas",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>60</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
     ]
   },
   {
@@ -6079,7 +6189,7 @@
     "text": "Componente\nEspecificación\nDescripción\n\n\n\n\nCPU\nARM Cortex-M4\n180 MHz, 32-bit\n\n\nRAM\n640 KB\nMemoria de trabajo\n\n\nFlash\n2 MB\nAlmacenamiento de código\n\n\nLEDs\n5x5 = 25\nMatriz controlable\n\n\nPuertos\n4 (A, B, C, D)\nConexión smart\n\n\nBatería\nLi-Po 2200 mAh\nRecargable por USB\n\n\nBluetooth\nBLE 5.0\nConexión inalámbrica\n\n\nBotones\n5\nCentral + 4 direccionales",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>60</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
     ]
   },
   {
@@ -6090,7 +6200,7 @@
     "text": "🔌 Esquema de Conexiones\n                    ┌─────────────────────────────────┐\n                    │                                 │\n                    │      LEGO TECHNIC LARGE HUB     │\n                    │              🧠                 │\n                    │                                 │\n                    └─────────────────────────────────┘\n                                   │\n           ┌───────────────────────┼───────────────────────┐\n           │                       │                       │\n           ▼                       ▼                       ▼\n    ┌──────────────┐        ┌──────────────┐        ┌──────────────┐\n    │   PUERTO A   │        │   PUERTO B   │        │   PUERTOS    │\n    │              │        │              │        │   C + D      │\n    │  ⚙️ Motor    │        │  ⚙️ Motor    │        │              │\n    │   Izquierdo  │        │   Derecho    │        │  👁️ Sensores │\n    │              │        │              │        │              │\n    └──────────────┘        └──────────────┘        └──────────────┘\n           │                       │                       │\n           ▼                       ▼                       ▼\n    ┌──────────────┐        ┌──────────────┐        ┌──────────────┐\n    │  🔵🔵🔵🔵    │        │  🔵🔵🔵🔵    │        │  🟢🟢🟢🟢    │\n    │   Rueda      │        │   Rueda      │        │  Ultrasonico │\n    │   Izquierda  │        │   Derecha    │        │  Color, IR   │\n    └──────────────┘        └──────────────┘        └──────────────┘",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>60</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
     ]
   },
   {
@@ -6101,7 +6211,7 @@
     "text": "🎮 Controles del Hub\n\n\n\nBotón\nAcción\nLED Feedback\n\n\n\n\n◯ Central (1 seg)\nEncender\n🟢 Verde\n\n\n◯ Central (5 seg)\nApagar\n🔴 Rojo parpadeante\n\n\n◯ Central + LEFT\nModo bootloader\n🟡 Amarillo\n\n\n⬆️ ARRIBA\nAcción programa\nVariable\n\n\n⬇️ ABAJO\nAcción programa\nVariable\n\n\n⬅️ IZQUIERDA\nAcción programa\nVariable\n\n\n➡️ DERECHA\nAcción programa\nVariable",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>60</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
+      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🔧 Diagrama: LEGO Technic Large Hub (45601)</span>"
     ]
   },
   {
@@ -6112,7 +6222,7 @@
     "text": "🎯 Situación: Construir un Robot Recolector de Juguetes\nImagina que quieres que un robot recoja juguetes del piso. ¿Qué necesitas?",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -6123,7 +6233,7 @@
     "text": "🧩 Los 4 Componentes Esenciales\n╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗\n║                              🏗️ ARQUITECTURA DE UN ROBOT 🏗️                                            ║\n╠══════════════════════════════════════════════════════════════════════════════════════════════════════════╣\n║                                                                                                          ║\n║                                            ┌─────────────┐                                               ║\n║                                            │             │                                               ║\n║                                            │   🧠 HUB    │                                               ║\n║                                            │  (CEREBRO)  │                                               ║\n║                                            │             │                                               ║\n║                                            └──────┬──────┘                                               ║\n║                                                   │                                                      ║\n║                    ┌──────────────────────────────┼──────────────────────────────┐                       ║\n║                    │                              │                              │                       ║\n║                    ▼                              ▼                              ▼                       ║\n║             ┌─────────────┐                ┌─────────────┐                ┌─────────────┐                ║\n║             │             │                │             │                │             │                ║\n║             │  ⚙️ MÚSCULOS │                │  👁️ OJOS    │                │  💬 VOZ     │                ║\n║             │   Motores   │                │  Sensores   │                │  Speaker    │                ║\n║             │             │                │             │                │             │                ║\n║             └─────────────┘                └─────────────┘                └─────────────┘                ║\n║                    │                              │                              │                       ║\n║                    ▼                              ▼                              ▼                       ║\n║             ┌─────────────┐                ┌─────────────┐                ┌─────────────┐                ║\n║             │ • Moverse   │                │ • Ver       │                │ • Hablar    │                ║\n║             │ • Girar     │                │ • Medir     │                │ • Alertas   │                ║\n║             │ • Levantar  │                │ • Detectar  │                │ • Música    │                ║\n║             └─────────────┘                └─────────────┘                └─────────────┘                ║\n║                                                                                                          ║\n║                                    ┌─────────────────────────────┐                                      ║\n║                                    │                             │                                      ║\n║                                    │      🔋 ENERGÍA             │                                      ║\n║                                    │      Batería Li-Po          │                                      ║\n║                                    │      2200 mAh               │                                      ║\n║                                    │                             │                                      ║\n║                                    └─────────────────────────────┘                                      ║\n║                                                                                                          ║\n╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -6134,7 +6244,7 @@
     "text": "🔄 Analogía Humana\n╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗\n║                                    👤 ROBOT = HUMANO 🤖                                                 ║\n╠══════════════════════════════════════════════════════════════════════════════════════════════════════════╣\n║                                                                                                          ║\n║        HUMANO                              ROBOT                                                         ║\n║        ═══════                             ═════                                                         ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  🧠     │  Cerebro                │  🧠     │  Hub                                              ║\n║        │ CEREBRO │  ─────────────────────▶ │  HUB    │  Procesa instrucciones                            ║\n║        └─────────┘  Piensa y decide        └─────────┘                                                   ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  💪     │  Brazos/Piernas         │  ⚙️     │  Motores                                          ║\n║        │ MÚSCULOS│  ─────────────────────▶ │ MOTORES │  Mueven el robot                                  ║\n║        └─────────┘  Se mueven              └─────────┘                                                   ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  👀     │  Ojos, Oídos            │  👁️     │  Sensores                                         ║\n║        │ SENTIDOS│  ─────────────────────▶ │SENSORES │  Detectan el mundo                                ║\n║        └─────────┘  Perciben               └─────────┘                                                   ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  💬     │  Boca                   │  🔊     │  Speaker                                          ║\n║        │  VOZ    │  ─────────────────────▶ │SPEAKER  │  Comunica                                         ║\n║        └─────────┘  Habla                  └─────────┘                                                   ║\n║                                                                                                          ║\n║        ┌─────────┐                         ┌─────────┐                                                   ║\n║        │  ❤️     │  Corazón                │  🔋     │  Batería                                          ║\n║        │CORAZÓN  │  ─────────────────────▶ │BATERÍA  │  Energía                                          ║\n║        └─────────┘  Da vida                └─────────┘                                                   ║\n║                                                                                                          ║\n╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -6145,7 +6255,7 @@
     "text": "📊 Comparación: ¿Por qué NO usar solo un Arduino?\n\n\n\nCaracterística\nArduino Uno\nLEGO Hub\nVentaja\n\n\n\n\nProgramación\nC++ complejo\nPython simple\n🏆 Hub\n\n\nConexiones\nCables sueltos\nClick-and-play\n🏆 Hub\n\n\nPantalla\nNo incluida\n5x5 LED incluida\n🏆 Hub\n\n\nBotones\nNo incluidos\n5 botones incluidos\n🏆 Hub\n\n\nBluetooth\nNo incluido\nBLE 5.0 incluido\n🏆 Hub\n\n\nEscalabilidad\nLimitada\nModulares\n🏆 Hub\n\n\nPrecio total\n~$20 + componentes\nTodo incluido\n🏆 Hub\n\n\nEducación\nAvanzado\nDiseñado para educación\n🏆 Hub",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -6156,7 +6266,7 @@
     "text": "🎓 ¿Por qué es ideal para EDUCACIÓN?\n┌─────────────────────────────────────────────────────────────────────────────────┐\n│                                                                                 │\n│  1️⃣  TODO EN UNO 🎁                                                             │\n│     └─▶ No necesitas cables, breadboards, ni soldadura                         │\n│                                                                                 │\n│  2️⃣  SEGURIDAD 🛡️                                                               │\n│     └─▶ No hay electricidad peligrosa, solo USB                                │\n│                                                                                 │\n│  3️⃣  DURABILIDAD 💪                                                             │\n│     └─▶ Plástico LEGO resiste caídas y golpes                                  │\n│                                                                                 │\n│  4️⃣  FAMILIARIDAD 🧱                                                            │\n│     └─▶ Los estudiantes ya conocen LEGO                                        │\n│                                                                                 │\n│  5️⃣  PYTHON REAL 🐍                                                             │\n│     └─▶ MicroPython = Python de verdad, transferible a otras plataformas       │\n│                                                                                 │\n│  6️⃣  SIN FRICCIONES ✨                                                          │\n│     └─▶ De \"no sé programar\" a \"¡mira, mi robot se mueve!\" en 5 minutos       │\n│                                                                                 │\n└─────────────────────────────────────────────────────────────────────────────────┘",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -6167,7 +6277,7 @@
     "text": "🚀 Flujo de Aprendizaje\n                    SIN HUB                          CON HUB\n                    \n    ┌────────────────────────────┐      ┌────────────────────────────┐\n    │  1. Comprar componentes    │      │  1. Sacar del kit          │\n    │  2. Soldar cables          │      │  2. Conectar motor         │\n    │  3. Configurar entorno     │      │  3. Escribir código        │\n    │  4. Debuggear hardware     │      │  4. ¡Funciona!             │\n    │  5. ...2 horas después...  │      │     (5 minutos)            │\n    │  6. \"¿Funciona?\"           │      │                            │\n    └────────────────────────────┘      └────────────────────────────┘\n    \n              ⏱️ Horas                        ⏱️ Minutos\n              😰 Frustración                  😊 Diversión\n              📉 Baja motivación              📈 Alta motivación",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -6178,7 +6288,7 @@
     "text": "💡 Conclusión\n\nEl Hub LEGO Technic Large Hub elimina las barreras técnicas para que los docentes y estudiantes se concentren en APRENDER PROGRAMACIÓN, no en ensamblar hardware.\nEs el puente perfecto entre “nunca programé” y “programo robots” 🌉",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -6189,7 +6299,7 @@
     "text": "Referencias\n[1] LEGO Education. SPIKE Prime - Product Overview. 2026. Disponible en: https://education.lego.com/\n[2] Pybricks Team. Getting Started with Pybricks. 2026. Disponible en: https://docs.pybricks.com/",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
+      "<span class='chapter-number'>62</span>  <span class='chapter-title'>🤖 ¿Por qué usar un Hub?</span>"
     ]
   },
   {
@@ -6200,7 +6310,7 @@
     "text": "📊 Resumen Ejecutivo",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -6211,7 +6321,7 @@
     "text": "Métrica\nValor\n\n\n\n\nTotal de archivos .qmd\n34\n\n\nArchivos con diagramas\n14\n\n\nTotal de diagramas encontrados\n58\n\n\nDiagramas mejorados\n3\n\n\nDiagramas pendientes\n11",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -6222,7 +6332,7 @@
     "text": "🔍 Estado de Cada Diagrama\n\n✅ Diagramas Mejorados (NUEVO)\n\n\n\n\n\n\n\n\n\n\n#\nUbicación\nTipo\nEstado\nEmojis\n\n\n\n\n1\ndiagramas/diagrama_hoja_ruta.qmd\nHoja de ruta\n✅ Mejorado\n🎮✅\n\n\n2\ndiagramas/diagrama_hub.qmd\nEspecificaciones Hub\n✅ Mejorado\n🔧✅\n\n\n3\ndiagramas/diagrama_porque_hub.qmd\nAnalogías\n✅ Mejorado\n🤖✅\n\n\n\n\n\n⚠️ Diagramas Pendientes de Mejora\n\n\n\n\n\n\n\n\n\n#\nUbicación\nTipo\nMejoras Necesarias\n\n\n\n\n1\nunidad1/guia_hub_desde_cero.qmd:33\nVista del Hub\n+ Emojis, + colores\n\n\n2\nunidad1/guia_hub_desde_cero.qmd:159\nConexiones\n+ Diagrama de flujo\n\n\n3\nunidad1/guia_hub_desde_cero.qmd:250\nMatriz LED\n+ Ejemplos visuales\n\n\n4\nunidad1/lab1_hola_mundo.qmd:40\nEntorno Thonny\n+ Iconos\n\n\n5\nunidad1/lab1_hola_mundo.qmd:101\nFlujo trabajo\n+ Emojis\n\n\n6\nunidad2/1_display_luces.qmd\nMatriz LEDs\n+ Ejemplos\n\n\n7\nunidad3/1_motores.qmd:26\nConexión motores\n+ Esquema\n\n\n8\nunidad4/1_sensores.qmd:26\nSensores\n+ Tipos\n\n\n9\nunidad5/1_proyecto_final.qmd:44\nArquitectura\n+ Desglose\n\n\n10\napendice_recursos.qmd:22\nRecursos\n+ Visual\n\n\n11\napendice_thonny_debugger.qmd:39\nThonny UI\n+ Etiquetas",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -6233,7 +6343,7 @@
     "text": "📐 Estándares para Diagramas Mejorados\n\n✅ Buenas Prácticas Implementadas\n\n\n\nPráctica\nEjemplo\n\n\n\n\nEmojis descriptivos\n🧠 Cerebro, ⚙️ Motores, 👁️ Sensores\n\n\nBordes Unicode elegantes\n╔═══╗, ┌───┐, ║\n\n\nSecciones claras\nTítulos con emoji + texto\n\n\nAnalogías visuales\nComparación Humano ↔︎ Robot\n\n\nTablas de especificaciones\nFormato claro con datos\n\n\nFlujos de trabajo\n→ direcciones claras\n\n\nColores en texto\n🟢🟢🟢 indicadores\n\n\n\n\n\n❌ Problemas Detectados en Diagramas Originales\n\n\n\nProblema\nFrecuencia\nSolución\n\n\n\n\nSin emojis\n8\nAgregar emojis descriptivos\n\n\nBordes simples\n5\nUsar bordes Unicode dobles\n\n\nSin colores\n7\nAgregar indicadores de color\n\n\nFalta contexto\n6\nAgregar títulos explicativos\n\n\nTexto denso\n4\nUsar tablas en lugar de listas\n\n\nSin analogías\n9\nAgregar comparaciones",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -6244,7 +6354,7 @@
     "text": "🎨 Guía de Mejora Visual\n\nAntes ❌\n┌─────────────────┐\n│ LEGO HUB        │\n│                 │\n│ [LED] [BOTÓN]   │\n│                 │\n│ [A] [B] [C] [D]│\n└─────────────────┘\n\n\nDespués ✅\n╔═══════════════════════════════════════════════════════════════════════════════════╗\n║                              🧠 LEGO TECHNIC LARGE HUB (45601)                   ║\n║                                   \"El Cerebro de tu Robot\"                        ║\n╠═══════════════════════════════════════════════════════════════════════════════════╣\n║                                                                                   ║\n║    ┌─────────────────────────────────────────────────────────────────────────┐   ║\n║    │                            📺 PANTALLA LED 5x5                          │   ║\n║    │                                                                         │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜    25 LEDs controlables                   │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜    por código Python                      │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜                                           │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜    Rango: 0 (off) - 100 (max)             │   ║\n║    │                   ⬜ ⬜ ⬜ ⬜ ⬜                                           │   ║\n║    │                                                                         │   ║\n║    └─────────────────────────────────────────────────────────────────────────┘   ║\n║                                                                                   ║\n║    ┌─────────────────────────────────────────────────────────────────────────┐   ║\n║    │                       🔌 PUERTOS SMART CONNECT                          │   ║\n║    │                                                                         │   ║\n║    │    ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐            │   ║\n║    │    │    A    │    │    B    │    │    C    │    │    D    │            │   ║\n║    │    │  ⚙️🔵   │    │  ⚙️🔵   │    │  🟢👁️   │    │  🟢👁️   │            │   ║\n║    │    │ MOTOR   │    │ MOTOR   │    │ SENSOR  │    │ SENSOR  │            │   ║\n║    │    └─────────┘    └─────────┘    └─────────┘    └─────────┘            │   ║\n║    │                                                                         │   ║\n║    │    📋 Los puertos detectan AUTOMÁTICAMENTE el dispositivo conectado    │   ║\n║    └─────────────────────────────────────────────────────────────────────────┘   ║\n║                                                                                   ║\n╚═══════════════════════════════════════════════════════════════════════════════════╝",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -6255,7 +6365,7 @@
     "text": "📝 Checklist de Mejora\nPara cada diagrama pendiente:\n\nAgregar título con emoji\nUsar bordes Unicode elegantes (╔═══╗)\nIncorporar emojis descriptivos\nAgregar colores indicadores (🟢🟡🔴)\nIncluir tabla de especificaciones si aplica\nAñadir analogía o comparación\nIncluir nota explicativa al pie",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -6266,7 +6376,7 @@
     "text": "🚀 Plan de Mejora\n\nFase 1: Críticos (Unidades principales)\n\nguia_hub_desde_cero.qmd - Diagrama principal del Hub\nlab1_hola_mundo.qmd - Flujo de trabajo\n1_motores.qmd - Conexión motores\n1_sensores.qmd - Tipos de sensores\n\n\n\nFase 2: Secundarios (Labs y apéndices)\n\n1_display_luces.qmd - Matriz LED\nlab2_animaciones.qmd - Animaciones\n1_proyecto_final.qmd - Arquitectura\napendice_thonny_debugger.qmd - Thonny\n\n\n\nFase 3: Extras\n\napendice_recursos.qmd - Recursos\nSistema de logros integrado",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   },
   {
@@ -6277,7 +6387,7 @@
     "text": "📊 Métricas de Calidad\n\n\n\nMétrica\nAntes\nDespués\nMejora\n\n\n\n\nEmojis por diagrama\n0.5\n8\n+1500%\n\n\nBordes elegantes\n20%\n100%\n+400%\n\n\nEspecificaciones\n10%\n90%\n+800%\n\n\nAnalogías\n5%\n85%\n+1600%\n\n\nCalidad general\n3/10\n9/10\n+200%\n\n\n\n\nAuditoría realizada por Facilitador - Diego Saavedra 2026 🔍",
     "crumbs": [
       "📐 DIAGRAMAS TÉCNICOS",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
+      "<span class='chapter-number'>63</span>  <span class='chapter-title'>📋 Auditoría de Diagramas del Curso</span>"
     ]
   }
 ]

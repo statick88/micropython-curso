@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Desbloquea insignias y sube de nivel mientras aprendes MicroPython">
+<meta name="description" content="Guía completa y ejemplos validados para practicar MicroPython con Wokwi">
 
-<title>Sistema de Logros 🏆 – MicroPython para el Aula</title>
+<title>🎮 Anexo Wokwi: Simulador de MicroPython – MicroPython para el Aula</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,41 +24,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -69,8 +34,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../contenido/unidad0/competencias_docente.html" rel="next">
-<link href="../license.html" rel="prev">
+<link href="../contenido/referencia_sintaxis_spike.html" rel="next">
+<link href="../contenido/apendice_hardware_alternativo.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -125,7 +90,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/sistema_logros.html"><span class="chapter-title">Sistema de Logros 🏆</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/anexo_wokwi.html"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -213,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/sistema_logros.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Sistema de Logros 🏆</span></a>
+  <a href="../contenido/sistema_logros.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Sistema de Logros 🏆</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -509,13 +474,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">📚 APÉNDICES</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/apendice_recursos.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Apéndice: Alternativas y Recursos Adicionales</span></a>
@@ -548,7 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/anexo_wokwi.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></a>
+  <a href="../contenido/anexo_wokwi.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -625,33 +590,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#sistema-logros" id="toc-sistema-logros" class="nav-link active" data-scroll-target="#sistema-logros">🎮 Sistema de Logros y Badges</a>
+  <li><a href="#anexo-wokwi-simulador-de-micropython" id="toc-anexo-wokwi-simulador-de-micropython" class="nav-link active" data-scroll-target="#anexo-wokwi-simulador-de-micropython">🎮 Anexo Wokwi: Simulador de MicroPython</a>
   <ul class="collapse">
-  <li><a href="#cómo-funciona-la-gamificación" id="toc-cómo-funciona-la-gamificación" class="nav-link" data-scroll-target="#cómo-funciona-la-gamificación">🎯 ¿Cómo Funciona la Gamificación?</a></li>
-  <li><a href="#tabla-de-niveles" id="toc-tabla-de-niveles" class="nav-link" data-scroll-target="#tabla-de-niveles">📊 Tabla de Niveles</a></li>
-  <li><a href="#insignias-disponibles" id="toc-insignias-disponibles" class="nav-link" data-scroll-target="#insignias-disponibles">🏅 Insignias Disponibles</a>
+  <li><a href="#qué-es-wokwi" id="toc-qué-es-wokwi" class="nav-link" data-scroll-target="#qué-es-wokwi">🌐 ¿Qué es Wokwi?</a></li>
+  <li><a href="#inicio-rápido" id="toc-inicio-rápido" class="nav-link" data-scroll-target="#inicio-rápido">🚀 Inicio Rápido</a>
   <ul class="collapse">
-  <li><a href="#unidad-1-conectar-y-programar" id="toc-unidad-1-conectar-y-programar" class="nav-link" data-scroll-target="#unidad-1-conectar-y-programar">Unidad 1: Conectar y Programar</a></li>
-  <li><a href="#unidad-2-pantalla-y-luces" id="toc-unidad-2-pantalla-y-luces" class="nav-link" data-scroll-target="#unidad-2-pantalla-y-luces">Unidad 2: Pantalla y Luces</a></li>
-  <li><a href="#unidad-3-movimiento" id="toc-unidad-3-movimiento" class="nav-link" data-scroll-target="#unidad-3-movimiento">Unidad 3: Movimiento</a></li>
-  <li><a href="#unidad-4-sensores" id="toc-unidad-4-sensores" class="nav-link" data-scroll-target="#unidad-4-sensores">Unidad 4: Sensores</a></li>
-  <li><a href="#unidad-5-proyecto-final" id="toc-unidad-5-proyecto-final" class="nav-link" data-scroll-target="#unidad-5-proyecto-final">Unidad 5: Proyecto Final</a></li>
+  <li><a href="#paso-1-acceder-a-wokwi" id="toc-paso-1-acceder-a-wokwi" class="nav-link" data-scroll-target="#paso-1-acceder-a-wokwi">Paso 1: Acceder a Wokwi</a></li>
+  <li><a href="#paso-2-configurar-el-proyecto" id="toc-paso-2-configurar-el-proyecto" class="nav-link" data-scroll-target="#paso-2-configurar-el-proyecto">Paso 2: Configurar el Proyecto</a></li>
+  <li><a href="#paso-3-ver-la-salida" id="toc-paso-3-ver-la-salida" class="nav-link" data-scroll-target="#paso-3-ver-la-salida">Paso 3: Ver la Salida</a></li>
   </ul></li>
-  <li><a href="#insignias-especiales" id="toc-insignias-especiales" class="nav-link" data-scroll-target="#insignias-especiales">🎖️ Insignias Especiales</a>
+  <li><a href="#descargar-ejemplos" id="toc-descargar-ejemplos" class="nav-link" data-scroll-target="#descargar-ejemplos">📥 Descargar Ejemplos</a></li>
+  <li><a href="#índice-de-ejemplos-validados" id="toc-índice-de-ejemplos-validados" class="nav-link" data-scroll-target="#índice-de-ejemplos-validados">📋 Índice de Ejemplos Validados</a>
   <ul class="collapse">
-  <li><a href="#logros-extraordinarios" id="toc-logros-extraordinarios" class="nav-link" data-scroll-target="#logros-extraordinarios">Logros Extraordinarios</a></li>
-  <li><a href="#logros-comunidad" id="toc-logros-comunidad" class="nav-link" data-scroll-target="#logros-comunidad">Logros Comunidad</a></li>
+  <li><a href="#raspberry-pi-pico-17-ejemplos" id="toc-raspberry-pi-pico-17-ejemplos" class="nav-link" data-scroll-target="#raspberry-pi-pico-17-ejemplos">🔴 Raspberry Pi Pico (17 Ejemplos)</a></li>
+  <li><a href="#esp32-23-ejemplos" id="toc-esp32-23-ejemplos" class="nav-link" data-scroll-target="#esp32-23-ejemplos">🟠 ESP32 (23 Ejemplos)</a></li>
+  <li><a href="#arduino-6-ejemplos" id="toc-arduino-6-ejemplos" class="nav-link" data-scroll-target="#arduino-6-ejemplos">🟢 Arduino (6 Ejemplos)</a></li>
   </ul></li>
-  <li><a href="#hoja-de-ruta-visual" id="toc-hoja-de-ruta-visual" class="nav-link" data-scroll-target="#hoja-de-ruta-visual">📈 Hoja de Ruta Visual</a></li>
-  <li><a href="#cómo-registrar-tu-progreso" id="toc-cómo-registrar-tu-progreso" class="nav-link" data-scroll-target="#cómo-registrar-tu-progreso">🎯 Cómo Registrar tu Progreso</a>
+  <li><a href="#referencia-de-pines" id="toc-referencia-de-pines" class="nav-link" data-scroll-target="#referencia-de-pines">🔧 Referencia de Pines</a>
   <ul class="collapse">
-  <li><a href="#método-1-hoja-de-cálculo" id="toc-método-1-hoja-de-cálculo" class="nav-link" data-scroll-target="#método-1-hoja-de-cálculo">Método 1: Hoja de Cálculo</a></li>
-  <li><a href="#método-2-en-el-código" id="toc-método-2-en-el-código" class="nav-link" data-scroll-target="#método-2-en-el-código">Método 2: En el Código</a></li>
+  <li><a href="#raspberry-pi-pico" id="toc-raspberry-pi-pico" class="nav-link" data-scroll-target="#raspberry-pi-pico">Raspberry Pi Pico</a></li>
+  <li><a href="#esp32-devkit-v1" id="toc-esp32-devkit-v1" class="nav-link" data-scroll-target="#esp32-devkit-v1">ESP32 DevKit V1</a></li>
+  <li><a href="#arduino-uno" id="toc-arduino-uno" class="nav-link" data-scroll-target="#arduino-uno">Arduino UNO</a></li>
   </ul></li>
-  <li><a href="#leaderboard-sugerido" id="toc-leaderboard-sugerido" class="nav-link" data-scroll-target="#leaderboard-sugerido">🏆 Leaderboard Sugerido</a></li>
-  <li><a href="#reglas-del-juego" id="toc-reglas-del-juego" class="nav-link" data-scroll-target="#reglas-del-juego">🎮 Reglas del Juego</a></li>
-  <li><a href="#cálculo-de-nota-final" id="toc-cálculo-de-nota-final" class="nav-link" data-scroll-target="#cálculo-de-nota-final">📊 Cálculo de Nota Final</a></li>
-  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
+  <li><a href="#conceptos-por-ejemplo" id="toc-conceptos-por-ejemplo" class="nav-link" data-scroll-target="#conceptos-por-ejemplo">💡 Conceptos por Ejemplo</a>
+  <ul class="collapse">
+  <li><a href="#básicos-1-2" id="toc-básicos-1-2" class="nav-link" data-scroll-target="#básicos-1-2">⭐ Básicos (1-2)</a></li>
+  <li><a href="#intermedios-3-5" id="toc-intermedios-3-5" class="nav-link" data-scroll-target="#intermedios-3-5">⭐⭐ Intermedios (3-5)</a></li>
+  <li><a href="#avanzados-6" id="toc-avanzados-6" class="nav-link" data-scroll-target="#avanzados-6">⭐⭐⭐ Avanzados (6+)</a></li>
+  </ul></li>
+  <li><a href="#solución-de-problemas" id="toc-solución-de-problemas" class="nav-link" data-scroll-target="#solución-de-problemas">🛠️ Solución de Problemas</a>
+  <ul class="collapse">
+  <li><a href="#el-simulador-no-inicia" id="toc-el-simulador-no-inicia" class="nav-link" data-scroll-target="#el-simulador-no-inicia">El simulador no inicia</a></li>
+  <li><a href="#no-veo-los-mensajes-por-consola" id="toc-no-veo-los-mensajes-por-consola" class="nav-link" data-scroll-target="#no-veo-los-mensajes-por-consola">No veo los mensajes por consola</a></li>
+  <li><a href="#el-led-no-enciende" id="toc-el-led-no-enciende" class="nav-link" data-scroll-target="#el-led-no-enciende">El LED no enciende</a></li>
+  <li><a href="#error-en-i2c" id="toc-error-en-i2c" class="nav-link" data-scroll-target="#error-en-i2c">Error en I2C</a></li>
+  <li><a href="#el-sensor-no-detecta" id="toc-el-sensor-no-detecta" class="nav-link" data-scroll-target="#el-sensor-no-detecta">El sensor no detecta</a></li>
+  </ul></li>
+  <li><a href="#recursos-adicionales" id="toc-recursos-adicionales" class="nav-link" data-scroll-target="#recursos-adicionales">📚 Recursos Adicionales</a></li>
+  <li><a href="#ejercicios-de-práctica" id="toc-ejercicios-de-práctica" class="nav-link" data-scroll-target="#ejercicios-de-práctica">🎯 Ejercicios de Práctica</a>
+  <ul class="collapse">
+  <li><a href="#nivel-1-modificar-tiempos" id="toc-nivel-1-modificar-tiempos" class="nav-link" data-scroll-target="#nivel-1-modificar-tiempos">Nivel 1: Modificar Tiempos</a></li>
+  <li><a href="#nivel-2-combinar-componentes" id="toc-nivel-2-combinar-componentes" class="nav-link" data-scroll-target="#nivel-2-combinar-componentes">Nivel 2: Combinar Componentes</a></li>
+  <li><a href="#nivel-3-crear-tu-proyecto" id="toc-nivel-3-crear-tu-proyecto" class="nav-link" data-scroll-target="#nivel-3-crear-tu-proyecto">Nivel 3: Crear tu Proyecto</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -659,9 +640,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/anexo_wokwi.html"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Sistema de Logros 🏆</span></h1>
+<h1 class="title"><span class="chapter-title">🎮 Anexo Wokwi: Simulador de MicroPython</span></h1>
 </div>
 
 
@@ -678,518 +659,777 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="sistema-logros" class="level1">
-<h1>🎮 Sistema de Logros y Badges</h1>
-<section id="cómo-funciona-la-gamificación" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-funciona-la-gamificación">🎯 ¿Cómo Funciona la Gamificación?</h2>
-<p>Cada unidad completada te da <strong>XP (Puntos de Experiencia)</strong>. Al acumular suficientes XP, <strong>subes de nivel</strong> y desbloqueas <strong>insignias especiales</strong>.</p>
+<section id="anexo-wokwi-simulador-de-micropython" class="level1">
+<h1>🎮 Anexo Wokwi: Simulador de MicroPython</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>¡Importante!</strong> Todos los ejemplos de esta sección han sido validados y funcionan correctamente en el simulador Wokwi.</p>
+</div>
+</div>
+<hr>
+<section id="qué-es-wokwi" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-wokwi">🌐 ¿Qué es Wokwi?</h2>
+<p>Wokwi es un simulador online de electrónica que permite:</p>
+<ul>
+<li>✅ Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32)</li>
+<li>✅ Crear proyectos con componentes reales (LEDs, sensores, displays)</li>
+<li>✅ Programar en MicroPython y ejecutar en el simulador</li>
+<li>✅ Compartir proyectos mediante enlaces únicos</li>
+</ul>
 <hr>
 </section>
-<section id="tabla-de-niveles" class="level2">
-<h2 class="anchored" data-anchor-id="tabla-de-niveles">📊 Tabla de Niveles</h2>
+<section id="inicio-rápido" class="level2">
+<h2 class="anchored" data-anchor-id="inicio-rápido">🚀 Inicio Rápido</h2>
+<section id="paso-1-acceder-a-wokwi" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1-acceder-a-wokwi">Paso 1: Acceder a Wokwi</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Nivel</th>
-<th>XP Requerido</th>
-<th>Título</th>
-<th>Emoji</th>
+<th>Microcontrolador</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Raspberry Pi Pico</td>
+<td><a href="https://wokwi.com/projects/new/micropython-pi-pico">wokwi.com/projects/new/micropython-pi-pico</a></td>
+</tr>
+<tr class="even">
+<td>ESP32</td>
+<td><a href="https://wokwi.com/projects/new/micropython-esp32">wokwi.com/projects/new/micropython-esp32</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="paso-2-configurar-el-proyecto" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2-configurar-el-proyecto">Paso 2: Configurar el Proyecto</h3>
+<ol type="1">
+<li>Copia el código de <code>main.py</code> del ejemplo</li>
+<li>Copia la configuración de <code>diagram.json</code></li>
+<li>Presiona <strong>“Start Simulation”</strong> ▶️</li>
+</ol>
+</section>
+<section id="paso-3-ver-la-salida" class="level3">
+<h3 class="anchored" data-anchor-id="paso-3-ver-la-salida">Paso 3: Ver la Salida</h3>
+<ul>
+<li>Click en <strong>“Serial”</strong> para ver los mensajes de consola</li>
+<li>Los LEDs y componentes se animan automáticamente</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="descargar-ejemplos" class="level2">
+<h2 class="anchored" data-anchor-id="descargar-ejemplos">📥 Descargar Ejemplos</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Plataforma</th>
+<th>Descarga</th>
+<th>Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Raspberry Pi Pico</strong></td>
+<td><a href="../../_downloads/wokwi_ejemplos.zip">📦 wokwi_ejemplos.zip</a></td>
+<td>17 proyectos</td>
+</tr>
+<tr class="even">
+<td><strong>ESP32</strong></td>
+<td><a href="../../_downloads/wokwi_esp32.zip">📦 wokwi_esp32.zip</a></td>
+<td>23 proyectos</td>
+</tr>
+<tr class="odd">
+<td><strong>Arduino</strong></td>
+<td><a href="../../_downloads/wokwi_arduino.zip">📦 wokwi_arduino.zip</a></td>
+<td>6 proyectos</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="índice-de-ejemplos-validados" class="level2">
+<h2 class="anchored" data-anchor-id="índice-de-ejemplos-validados">📋 Índice de Ejemplos Validados</h2>
+<section id="raspberry-pi-pico-17-ejemplos" class="level3">
+<h3 class="anchored" data-anchor-id="raspberry-pi-pico-17-ejemplos">🔴 Raspberry Pi Pico (17 Ejemplos)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Ejemplo</th>
+<th>Descripción</th>
+<th>Dificultad</th>
+<th>Componentes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>0</td>
-<td>Aprendiz</td>
-<td>🌱</td>
+<td><a href="./wokwi_ejemplos/parpadeo_led">Parpadeo LED</a></td>
+<td>LED que parpadea cada segundo</td>
+<td>⭐ Básico</td>
+<td>LED, Resistencia 220Ω</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>100</td>
-<td>Explorador</td>
-<td>🔍</td>
+<td><a href="./wokwi_ejemplos/led_rgb">LED RGB</a></td>
+<td>Secuencia de 7 colores</td>
+<td>⭐ Básico</td>
+<td>LED RGB, 3 resistencias</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>250</td>
-<td>Programador</td>
-<td>💻</td>
+<td><a href="./wokwi_ejemplos/contador_botones">Contador Botones</a></td>
+<td>Contador con 2 botones</td>
+<td>⭐ Básico</td>
+<td>2 botones, LED</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>500</td>
-<td>Ingeniero</td>
-<td>⚙️</td>
+<td><a href="./wokwi_ejemplos/display_7_segmentos">Display 7 Segmentos</a></td>
+<td>Contador numérico 0-9</td>
+<td>⭐⭐ Intermedio</td>
+<td>Display 7 segmentos</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>750</td>
-<td>Arquitecto</td>
-<td>🏗️</td>
+<td><a href="./wokwi_ejemplos/sensor_distancia">Sensor Distancia</a></td>
+<td>Medición ultrasónica HC-SR04</td>
+<td>⭐⭐ Intermedio</td>
+<td>Sensor ultrasónico</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>1000</td>
-<td>Maestro</td>
-<td>🎓</td>
+<td><a href="./wokwi_ejemplos/sensor_temperatura">Sensor Temperatura</a></td>
+<td>DHT22 temperatura/humedad</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>DHT22</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>1500</td>
-<td>Leyenda</td>
-<td>👑</td>
+<td><a href="./wokwi_ejemplos/oled_display">Display OLED</a></td>
+<td>Display gráfico I2C SSD1306</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>OLED 128x64, I2C</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><a href="./wokwi_ejemplos/lcd_display">LCD Display</a></td>
+<td>Display LCD 16x2</td>
+<td>⭐⭐ Intermedio</td>
+<td>LCD 16x2, I2C</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><a href="./wokwi_ejemplos/buzzer_melodia">Buzzer Melodía</a></td>
+<td>Reproduce melodías</td>
+<td>⭐⭐ Intermedio</td>
+<td>Buzzer piezoeléctrico</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><a href="./wokwi_ejemplos/sensor_pir">Sensor PIR</a></td>
+<td>Detector de movimiento</td>
+<td>⭐⭐ Intermedio</td>
+<td>Sensor PIR HC-SR501</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><a href="./wokwi_ejemplos/sensor_luz">Sensor Luz</a></td>
+<td>Fotoresistor LDR</td>
+<td>⭐ Básico</td>
+<td>LDR, resistencia</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><a href="./wokwi_ejemplos/sensor_hall">Sensor Hall</a></td>
+<td>Sensor de campo magnético</td>
+<td>⭐⭐ Intermedio</td>
+<td>Sensor Hall</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><a href="./wokwi_ejemplos/joystick_analogico">Joystick Analógico</a></td>
+<td>Control XY analógico</td>
+<td>⭐⭐ Intermedio</td>
+<td>Joystick, 2 LEDs</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><a href="./wokwi_ejemplos/encoder_rotativo">Encoder Rotativo</a></td>
+<td>Encoder rotativo KY-040</td>
+<td>⭐⭐ Intermedio</td>
+<td>Encoder, LED</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><a href="./wokwi_ejemplos/teclado_matriz">Teclado Matriz</a></td>
+<td>Teclado 4x4</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>Matriz 4x4</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><a href="./wokwi_ejemplos/microfono">Micrófono</a></td>
+<td>Sensor de sonido</td>
+<td>⭐⭐ Intermedio</td>
+<td>Micrófono KY-038</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><a href="./wokwi_ejemplos/rele_control">Rele Control</a></td>
+<td>Control de relevador</td>
+<td>⭐⭐ Intermedio</td>
+<td>Relevador 5V, LED</td>
 </tr>
 </tbody>
 </table>
-<hr>
 </section>
-<section id="insignias-disponibles" class="level2">
-<h2 class="anchored" data-anchor-id="insignias-disponibles">🏅 Insignias Disponibles</h2>
-<section id="unidad-1-conectar-y-programar" class="level3">
-<h3 class="anchored" data-anchor-id="unidad-1-conectar-y-programar">Unidad 1: Conectar y Programar</h3>
+<section id="esp32-23-ejemplos" class="level3">
+<h3 class="anchored" data-anchor-id="esp32-23-ejemplos">🟠 ESP32 (23 Ejemplos)</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Insignia</th>
+<th>#</th>
+<th>Ejemplo</th>
 <th>Descripción</th>
-<th>XP</th>
+<th>Dificultad</th>
+<th>Componentes</th>
+<th>Notas</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>🔌 <strong>Conectado</strong></td>
-<td>Configurar entorno Pybricks</td>
-<td>+25</td>
-</tr>
-<tr class="even">
-<td>🐍 <strong>Primer Código</strong></td>
-<td>Ejecutar “Hola Mundo”</td>
-<td>+25</td>
-</tr>
-<tr class="odd">
-<td>🎨 <strong>LED Maestro</strong></td>
-<td>Completar Lab 1A</td>
-<td>+25</td>
-</tr>
-<tr class="even">
-<td>🧩 <strong>Ejercicios</strong></td>
-<td>Completar todos los ejercicios Lab 1B</td>
-<td>+50</td>
-</tr>
-<tr class="odd">
-<td>📝 <strong>Quiz Dominado</strong></td>
-<td>Score 100% en Quiz Unidad 1</td>
-<td>+25</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Bonus Unidad 1:</strong> 🌟 <strong>Hacker Ético</strong> - Completar todo = +50 XP extra</p>
-</section>
-<section id="unidad-2-pantalla-y-luces" class="level3">
-<h3 class="anchored" data-anchor-id="unidad-2-pantalla-y-luces">Unidad 2: Pantalla y Luces</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Insignia</th>
-<th>Descripción</th>
-<th>XP</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>💡 <strong>LED On</strong></td>
-<td>Controlar primer LED</td>
-<td>+25</td>
-</tr>
-<tr class="even">
-<td>🎬 <strong>Animador</strong></td>
-<td>Crear primera animación</td>
-<td>+25</td>
-</tr>
-<tr class="odd">
-<td>🖼️ <strong>Pixel Art</strong></td>
-<td>Diseñar patrón personalizado</td>
-<td>+25</td>
-</tr>
-<tr class="even">
-<td>🌊 <strong>Animación fluida</strong></td>
-<td>Completar Lab 2B</td>
-<td>+50</td>
-</tr>
-<tr class="odd">
-<td>📝 <strong>Quiz Dominado</strong></td>
-<td>Score 100% en Quiz Unidad 2</td>
-<td>+25</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Bonus Unidad 2:</strong> 🌟 <strong>Showman</strong> - Completar todo = +50 XP extra</p>
-</section>
-<section id="unidad-3-movimiento" class="level3">
-<h3 class="anchored" data-anchor-id="unidad-3-movimiento">Unidad 3: Movimiento</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Insignia</th>
-<th>Descripción</th>
-<th>XP</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>🔄 <strong>Primer Giro</strong></td>
-<td>Mover motor por primera vez</td>
-<td>+25</td>
-</tr>
-<tr class="even">
-<td>📐 <strong>Geometra</strong></td>
-<td>Trazar cuadrado perfecto</td>
-<td>+25</td>
-</tr>
-<tr class="odd">
-<td>🧭 <strong>Navegante</strong></td>
-<td>Completar Lab 3A</td>
-<td>+50</td>
-</tr>
-<tr class="even">
-<td>🏎️ <strong>PID Master</strong></td>
-<td>Implementar control PID</td>
-<td>+50</td>
-</tr>
-<tr class="odd">
-<td>📝 <strong>Quiz Dominado</strong></td>
-<td>Score 100% en Quiz Unidad 3</td>
-<td>+25</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Bonus Unidad 3:</strong> 🌟 <strong>Robot Runner</strong> - Completar todo = +50 XP extra</p>
-</section>
-<section id="unidad-4-sensores" class="level3">
-<h3 class="anchored" data-anchor-id="unidad-4-sensores">Unidad 4: Sensores</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Insignia</th>
-<th>Descripción</th>
-<th>XP</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>👁️ <strong>Ojo Robótico</strong></td>
-<td>Leer primer sensor</td>
-<td>+25</td>
-</tr>
-<tr class="even">
-<td>🔦 <strong>Detector</strong></td>
-<td>Detectar objeto cercano</td>
-<td>+25</td>
-</tr>
-<tr class="odd">
-<td>📊 <strong>Telemetría</strong></td>
-<td>Registrar datos de sensores</td>
-<td>+50</td>
-</tr>
-<tr class="even">
-<td>🔋 <strong>Power Manager</strong></td>
-<td>Monitorear batería</td>
-<td>+25</td>
-</tr>
-<tr class="odd">
-<td>📝 <strong>Quiz Dominado</strong></td>
-<td>Score 100% en Quiz Unidad 4</td>
-<td>+25</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Bonus Unidad 4:</strong> 🌟 <strong>Data Master</strong> - Completar todo = +50 XP extra</p>
-</section>
-<section id="unidad-5-proyecto-final" class="level3">
-<h3 class="anchored" data-anchor-id="unidad-5-proyecto-final">Unidad 5: Proyecto Final</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Insignia</th>
-<th>Descripción</th>
-<th>XP</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>📋 <strong>Planificador</strong></td>
-<td>Crear diagrama de arquitectura</td>
-<td>+50</td>
-</tr>
-<tr class="even">
-<td>🔧 <strong>Constructor</strong></td>
-<td>Programar robot funcional</td>
-<td>+100</td>
-</tr>
-<tr class="odd">
-<td>🎥 <strong>Presentador</strong></td>
-<td>Grabar video demo</td>
-<td>+50</td>
-</tr>
-<tr class="even">
-<td>🎤 <strong>Comunicador</strong></td>
-<td>Explicación oral completada</td>
-<td>+50</td>
-</tr>
-<tr class="odd">
-<td>🏆 <strong>Graduado</strong></td>
-<td>Proyecto final aprobado</td>
-<td>+100</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Bonus Unidad 5:</strong> 🌟 <strong>ROBOT MASTER</strong> - Completar todo = +100 XP extra</p>
-<hr>
-</section>
-</section>
-<section id="insignias-especiales" class="level2">
-<h2 class="anchored" data-anchor-id="insignias-especiales">🎖️ Insignias Especiales</h2>
-<section id="logros-extraordinarios" class="level3">
-<h3 class="anchored" data-anchor-id="logros-extraordinarios">Logros Extraordinarios</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 40%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Insignia</th>
-<th>Criterio</th>
-<th>XP</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>🚀 <strong>Velocista</strong></td>
-<td>Completar unidad en menos de 1 semana</td>
-<td>+75</td>
-</tr>
-<tr class="even">
-<td>💪 <strong>Perseverante</strong></td>
-<td>Completar ejercicio después de 3 intentos</td>
-<td>+25</td>
-</tr>
-<tr class="odd">
-<td>👥 <strong>Mentor</strong></td>
-<td>Ayudar a un compañero</td>
-<td>+50</td>
-</tr>
-<tr class="even">
-<td>🐛 <strong>Bug Hunter</strong></td>
-<td>Encontrar error en documentación</td>
-<td>+100</td>
-</tr>
-<tr class="odd">
-<td>🎨 <strong>Creativo</strong></td>
-<td>Diseñar animación original no vista en clase</td>
-<td>+50</td>
-</tr>
-<tr class="even">
-<td>📚 <strong>Bibliotecario</strong></td>
-<td>Citar correctamente 10 fuentes IEEE</td>
-<td>+25</td>
-</tr>
-<tr class="odd">
-<td>🔐 <strong>Seguridad</strong></td>
-<td>Completar validación anti-AI correctamente</td>
-<td>+50</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="logros-comunidad" class="level3">
-<h3 class="anchored" data-anchor-id="logros-comunidad">Logros Comunidad</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Insignia</th>
-<th>Criterio</th>
-<th>XP</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>💬 <strong>Colaborador</strong></td>
-<td>Participar en 5 discusiones</td>
-<td>+50</td>
-</tr>
-<tr class="even">
-<td>🌟 <strong>Estrella</strong></td>
-<td>Recibir 3 votos positivos</td>
-<td>+75</td>
-</tr>
-<tr class="odd">
-<td>📢 <strong>Embajador</strong></td>
-<td>Compartir proyecto en redes sociales</td>
-<td>+100</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-</section>
-<section id="hoja-de-ruta-visual" class="level2">
-<h2 class="anchored" data-anchor-id="hoja-de-ruta-visual">📈 Hoja de Ruta Visual</h2>
-<pre><code>NIVEL 1 🌱                    NIVEL 7 👑
-    │                              │
-    ▼                              ▼
-┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
-│ 🔌      │→ │ 💡      │→ │ 🤖      │→ │ 📡      │→ 🏆
-│ Unidad 1│  │ Unidad 2│  │ Unidad 3│  │ Unidad 4│  │ Final
-│ 175 XP  │  │ 175 XP  │  │ 200 XP  │  │ 175 XP  │  │ 350 XP
-└─────────┘  └─────────┘  └─────────┘  └─────────┘  └───────┘</code></pre>
-<hr>
-</section>
-<section id="cómo-registrar-tu-progreso" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-registrar-tu-progreso">🎯 Cómo Registrar tu Progreso</h2>
-<section id="método-1-hoja-de-cálculo" class="level3">
-<h3 class="anchored" data-anchor-id="método-1-hoja-de-cálculo">Método 1: Hoja de Cálculo</h3>
-<p>Crea una hoja de cálculo con:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Fecha</th>
-<th>Actividad</th>
-<th>XP</th>
-<th>Insignia</th>
-<th>Nivel</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>01/04</td>
-<td>Primer Código</td>
-<td>25</td>
-<td>🐍</td>
 <td>1</td>
+<td><a href="./wokwi_esp32/parpadeo_led">Parpadeo LED</a></td>
+<td>LED que parpadea</td>
+<td>⭐ Básico</td>
+<td>LED, Resistencia</td>
+<td>GPIO 2</td>
 </tr>
 <tr class="even">
-<td>01/04</td>
-<td>LED Maestro</td>
-<td>25</td>
-<td>🎨</td>
-<td>1</td>
+<td>2</td>
+<td><a href="./wokwi_esp32/led_rgb">LED RGB</a></td>
+<td>Secuencia de colores</td>
+<td>⭐ Básico</td>
+<td>LED RGB</td>
+<td>GPIO 25-27</td>
 </tr>
 <tr class="odd">
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
+<td>3</td>
+<td><a href="./wokwi_esp32/boton_led">Boton LED</a></td>
+<td>LED controlado por botón</td>
+<td>⭐ Básico</td>
+<td>LED, Botón</td>
+<td>GPIO 2, 4</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="./wokwi_esp32/contador_botones">Contador Botones</a></td>
+<td>Contador con botones</td>
+<td>⭐ Básico</td>
+<td>2 botones, LED</td>
+<td>GPIO 4, 5</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><a href="./wokwi_esp32/potenciometro_led">Potenciometro LED</a></td>
+<td>Brillo variable</td>
+<td>⭐⭐ Intermedio</td>
+<td>LED, Potenciómetro</td>
+<td>GPIO 34 (ADC)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><a href="./wokwi_esp32/sensor_distancia">Sensor Distancia</a></td>
+<td>HC-SR04 ultrasónico</td>
+<td>⭐⭐ Intermedio</td>
+<td>HC-SR04</td>
+<td>GPIO 5, 18</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><a href="./wokwi_esp32/sensor_temperatura">Sensor Temperatura</a></td>
+<td>DHT22</td>
+<td>⭐⭐ Intermedio</td>
+<td>DHT22</td>
+<td>GPIO 4</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><a href="./wokwi_esp32/display_oled">Display OLED</a></td>
+<td>Display I2C SSD1306</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>OLED 128x64</td>
+<td>I2C GPIO 21-22</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><a href="./wokwi_esp32/lcd_display">LCD Display</a></td>
+<td>LCD 16x2 I2C</td>
+<td>⭐⭐ Intermedio</td>
+<td>LCD 16x2</td>
+<td>I2C</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><a href="./wokwi_esp32/buzzer_melodia">Buzzer Melodia</a></td>
+<td>Melodías con buzzer</td>
+<td>⭐⭐ Intermedio</td>
+<td>Buzzer</td>
+<td>GPIO 25</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><a href="./wokwi_esp32/sensor_pir">Sensor PIR</a></td>
+<td>Detector movimiento</td>
+<td>⭐⭐ Intermedio</td>
+<td>PIR HC-SR501</td>
+<td>GPIO 4</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><a href="./wokwi_esp32/sensor_luz">Sensor Luz</a></td>
+<td>Fotoresistor LDR</td>
+<td>⭐ Básico</td>
+<td>LDR</td>
+<td>GPIO 34</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><a href="./wokwi_esp32/sensor_gas">Sensor Gas</a></td>
+<td>MQ-135 gas</td>
+<td>⭐⭐ Intermedio</td>
+<td>MQ-135</td>
+<td>GPIO 34</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><a href="./wokwi_esp32/servo_motor">Servomotor</a></td>
+<td>Control SG90</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>Servo SG90</td>
+<td>GPIO 13</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><a href="./wokwi_esp32/motor_dc">Motor DC</a></td>
+<td>Control motor DC</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>Motor DC, L293D</td>
+<td>GPIO 18, 19</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><a href="./wokwi_esp32/rele_control">Rele Control</a></td>
+<td>Relevador</td>
+<td>⭐⭐ Intermedio</td>
+<td>Relevador</td>
+<td>GPIO 26</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><a href="./wokwi_esp32/encoder_rotativo">Encoder Rotativo</a></td>
+<td>Encoder KY-040</td>
+<td>⭐⭐ Intermedio</td>
+<td>Encoder</td>
+<td>GPIO 4, 5</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td><a href="./wokwi_esp32/joystick_analogico">Joystick Analogico</a></td>
+<td>Joystick XY</td>
+<td>⭐⭐ Intermedio</td>
+<td>Joystick</td>
+<td>GPIO 34, 35</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td><a href="./wokwi_esp32/bluetooth_led">Bluetooth LED</a></td>
+<td>Control WiFi/BT</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>LED</td>
+<td>WiFi+BT</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td><a href="./wokwi_esp32/temp_humedad_i2c">Temp Humedad I2C</a></td>
+<td>AHT10 I2C</td>
+<td>⭐⭐ Intermedio</td>
+<td>AHT10</td>
+<td>I2C</td>
+</tr>
+<tr class="odd">
+<td>21-23</td>
+<td><em>Reservados</em></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>Expansión</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="método-2-en-el-código" class="level3">
-<h3 class="anchored" data-anchor-id="método-2-en-el-código">Método 2: En el Código</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sistema simple de tracking en MicroPython</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> spike <span class="im">import</span> PrimeHub</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>hub <span class="op">=</span> PrimeHub()</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tu progreso actual</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>XP_ACTUAL <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>NIVEL <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>INSIGNIAS <span class="op">=</span> []</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ganar_xp(puntos, insignia):</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> XP_ACTUAL, NIVEL</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    XP_ACTUAL <span class="op">+=</span> puntos</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    INSIGNIAS.append(insignia)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Verificar si sube de nivel</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    niveles <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">250</span>, <span class="dv">500</span>, <span class="dv">750</span>, <span class="dv">1000</span>, <span class="dv">1500</span>]</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, xp_nivel <span class="kw">in</span> <span class="bu">enumerate</span>(niveles):</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> XP_ACTUAL <span class="op">&gt;=</span> xp_nivel:</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            NIVEL <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mostrar progreso</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"¡</span><span class="sc">{</span>insignia<span class="sc">}</span><span class="ss"> +</span><span class="sc">{</span>puntos<span class="sc">}</span><span class="ss"> XP!"</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Nivel </span><span class="sc">{</span>NIVEL<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>XP_ACTUAL<span class="sc">}</span><span class="ss"> XP total"</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de uso</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>ganar_xp(<span class="dv">25</span>, <span class="st">"🐍 Primer Código"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="arduino-6-ejemplos" class="level3">
+<h3 class="anchored" data-anchor-id="arduino-6-ejemplos">🟢 Arduino (6 Ejemplos)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Ejemplo</th>
+<th>Descripción</th>
+<th>Dificultad</th>
+<th>Componentes</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><a href="./wokwi_arduino/parpadeo_led">Parpadeo LED</a></td>
+<td>LED que parpadea</td>
+<td>⭐ Básico</td>
+<td>LED, Resistencia</td>
+<td>Pin 13</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><a href="./wokwi_arduino/led_rgb">LED RGB</a></td>
+<td>Secuencia de colores</td>
+<td>⭐ Básico</td>
+<td>LED RGB</td>
+<td>Pines 9-11</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="./wokwi_arduino/sensor_distancia">Sensor Distancia</a></td>
+<td>HC-SR04 ultrasónico</td>
+<td>⭐⭐ Intermedio</td>
+<td>HC-SR04</td>
+<td>Pines 9, 10</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="./wokwi_arduino/sensor_temperatura">Sensor Temperatura</a></td>
+<td>DHT22</td>
+<td>⭐⭐ Intermedio</td>
+<td>DHT22</td>
+<td>Pin 2</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><a href="./wokwi_arduino/oled_display">Display OLED</a></td>
+<td>Display I2C SSD1306</td>
+<td>⭐⭐⭐ Avanzado</td>
+<td>OLED 128x64</td>
+<td>I2C A4/A5</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><a href="./wokwi_arduino/lcd_display">LCD Display</a></td>
+<td>LCD 16x2 I2C</td>
+<td>⭐⭐ Intermedio</td>
+<td>LCD 1602</td>
+<td>I2C A4/A5</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
 </section>
-<section id="leaderboard-sugerido" class="level2">
-<h2 class="anchored" data-anchor-id="leaderboard-sugerido">🏆 Leaderboard Sugerido</h2>
-<p>Para aula, puedes crear un leaderboard visible:</p>
-<pre><code>╔══════════════════════════════════════════╗
-║     🏆 LEADERBOARD MICROPYTHON 🏆       ║
-╠══════════════════════════════════════════╣
-║ 1. 👑 María G.    - 1250 XP (Nvl 7)   ║
-║ 2. 🎓 Carlos R.   - 1100 XP (Nvl 6)   ║
-║ 3. 🏗️ Ana P.      -  950 XP (Nvl 5)   ║
-║ 4. ⚙️ Luis M.     -  800 XP (Nvl 5)   ║
-║ 5. 💻 Pedro S.    -  650 XP (Nvl 4)   ║
-╚══════════════════════════════════════════╝</code></pre>
+<section id="referencia-de-pines" class="level2">
+<h2 class="anchored" data-anchor-id="referencia-de-pines">🔧 Referencia de Pines</h2>
+<section id="raspberry-pi-pico" class="level3">
+<h3 class="anchored" data-anchor-id="raspberry-pi-pico">Raspberry Pi Pico</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>GPIO</th>
+<th>Función</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GP0-GP1</td>
+<td>I2C0 SDA/SCL</td>
+<td>Por defecto</td>
+</tr>
+<tr class="even">
+<td>GP4-GP5</td>
+<td>I2C0 alternativo</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>GP10-GP17</td>
+<td>Salidas digitales</td>
+<td>Display 7 seg</td>
+</tr>
+<tr class="even">
+<td>GP15</td>
+<td>Salida digital</td>
+<td>LED común</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="esp32-devkit-v1" class="level3">
+<h3 class="anchored" data-anchor-id="esp32-devkit-v1">ESP32 DevKit V1</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>GPIO</th>
+<th>Función</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GPIO 2</td>
+<td>LED integrado</td>
+<td>También para LED</td>
+</tr>
+<tr class="even">
+<td>GPIO 4</td>
+<td>Entrada digital</td>
+<td>DHT22, botones</td>
+</tr>
+<tr class="odd">
+<td>GPIO 5</td>
+<td>Salida digital</td>
+<td>Trigger HC-SR04</td>
+</tr>
+<tr class="even">
+<td>GPIO 13</td>
+<td>PWM</td>
+<td>Servomotor</td>
+</tr>
+<tr class="odd">
+<td>GPIO 18</td>
+<td>Entrada</td>
+<td>Echo HC-SR04</td>
+</tr>
+<tr class="even">
+<td>GPIO 21</td>
+<td>I2C SDA</td>
+<td>Display OLED</td>
+</tr>
+<tr class="odd">
+<td>GPIO 22</td>
+<td>I2C SCL</td>
+<td>Display OLED</td>
+</tr>
+<tr class="even">
+<td>GPIO 25</td>
+<td>Salida digital</td>
+<td>LED RGB (R)</td>
+</tr>
+<tr class="odd">
+<td>GPIO 26</td>
+<td>Salida digital</td>
+<td>LED RGB (G)</td>
+</tr>
+<tr class="even">
+<td>GPIO 27</td>
+<td>Salida digital</td>
+<td>LED RGB (B)</td>
+</tr>
+<tr class="odd">
+<td>GPIO 34</td>
+<td>ADC</td>
+<td>Solo entrada</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="arduino-uno" class="level3">
+<h3 class="anchored" data-anchor-id="arduino-uno">Arduino UNO</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Pin</th>
+<th>Función</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>D0-D13</td>
+<td>Entrada/Salida digital</td>
+<td>LED integrado en D13</td>
+</tr>
+<tr class="even">
+<td>A0-A5</td>
+<td>Entrada analógica</td>
+<td>También digitales</td>
+</tr>
+<tr class="odd">
+<td>SDA (A4)</td>
+<td>I2C SDA</td>
+<td>LCD, OLED</td>
+</tr>
+<tr class="even">
+<td>SCL (A5)</td>
+<td>I2C SCL</td>
+<td>LCD, OLED</td>
+</tr>
+<tr class="odd">
+<td>5V</td>
+<td>Salida 5V</td>
+<td>Alimentar componentes</td>
+</tr>
+<tr class="even">
+<td>3.3V</td>
+<td>Salida 3.3V</td>
+<td>Sensores</td>
+</tr>
+<tr class="odd">
+<td>GND</td>
+<td>Tierra</td>
+<td>Común</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="reglas-del-juego" class="level2">
-<h2 class="anchored" data-anchor-id="reglas-del-juego">🎮 Reglas del Juego</h2>
+</section>
+<section id="conceptos-por-ejemplo" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-por-ejemplo">💡 Conceptos por Ejemplo</h2>
+<section id="básicos-1-2" class="level3">
+<h3 class="anchored" data-anchor-id="básicos-1-2">⭐ Básicos (1-2)</h3>
+<ul>
+<li><strong>Parpadeo LED</strong>: <code>machine.Pin</code>, <code>Pin.OUT</code>, <code>time.sleep()</code></li>
+<li><strong>Boton LED</strong>: <code>Pin.IN</code>, <code>Pin.PULL_DOWN</code></li>
+<li><strong>LED RGB</strong>: Múltiples pines, lógica invertida</li>
+<li><strong>Contador</strong>: Flancos de subida, antirrebote</li>
+<li><strong>Sensor Luz</strong>: <code>machine.ADC</code>, lectura analógica</li>
+</ul>
+</section>
+<section id="intermedios-3-5" class="level3">
+<h3 class="anchored" data-anchor-id="intermedios-3-5">⭐⭐ Intermedios (3-5)</h3>
+<ul>
+<li><strong>7 Segmentos</strong>: Multiplexado, mapeo de números</li>
+<li><strong>Sensor Distancia</strong>: <code>time_pulse_us()</code>, cálculo física</li>
+<li><strong>Sensor DHT22</strong>: Protocolo one-wire</li>
+<li><strong>Display OLED</strong>: <code>machine.I2C</code>, librería ssd1306</li>
+<li><strong>LCD I2C</strong>: Comunicación I2C</li>
+<li><strong>Buzzer</strong>: Generación de tonos</li>
+</ul>
+</section>
+<section id="avanzados-6" class="level3">
+<h3 class="anchored" data-anchor-id="avanzados-6">⭐⭐⭐ Avanzados (6+)</h3>
+<ul>
+<li><strong>Servomotor</strong>: PWM, conversión ángulo-duty</li>
+<li><strong>Motor DC</strong>: Control de dirección, puente H</li>
+<li><strong>Teclado Matriz</strong>: Escaneo de filas/columnas</li>
+<li><strong>Bluetooth/WiFi</strong>: Conexión de red</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="solución-de-problemas" class="level2">
+<h2 class="anchored" data-anchor-id="solución-de-problemas">🛠️ Solución de Problemas</h2>
+<section id="el-simulador-no-inicia" class="level3">
+<h3 class="anchored" data-anchor-id="el-simulador-no-inicia">El simulador no inicia</h3>
+<pre><code>✅ Verifica que el código no tenga errores de sintaxis
+✅ Confirma que diagram.json está en formato JSON válido
+✅ Prueba con un navegador diferente (Chrome recomendado)</code></pre>
+</section>
+<section id="no-veo-los-mensajes-por-consola" class="level3">
+<h3 class="anchored" data-anchor-id="no-veo-los-mensajes-por-consola">No veo los mensajes por consola</h3>
+<pre><code>✅ Click en "Serial" en el panel de Wokwi
+✅ Verifica la velocidad en baudios (115200)
+✅ Revisa que print() está en el código</code></pre>
+</section>
+<section id="el-led-no-enciende" class="level3">
+<h3 class="anchored" data-anchor-id="el-led-no-enciende">El LED no enciende</h3>
+<pre><code>✅ Verifica la conexión en diagram.json
+✅ Confirma que usas el pin correcto (GPIO 15 para ejemplos)
+✅ Para LED de ánodo común: nivel bajo = LED encendido</code></pre>
+</section>
+<section id="error-en-i2c" class="level3">
+<h3 class="anchored" data-anchor-id="error-en-i2c">Error en I2C</h3>
+<pre><code>✅ Verifica las conexiones SDA y SCL
+✅ Confirma la dirección I2C del dispositivo
+✅ La dirección común para OLED es 0x3C</code></pre>
+</section>
+<section id="el-sensor-no-detecta" class="level3">
+<h3 class="anchored" data-anchor-id="el-sensor-no-detecta">El sensor no detecta</h3>
+<pre><code>✅ Verifica el tipo de sensor en diagram.json
+✅ Confirma los pines de conexión
+✅ Algunos sensores requieren configuración específica</code></pre>
+<hr>
+</section>
+</section>
+<section id="recursos-adicionales" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-adicionales">📚 Recursos Adicionales</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Documentación Wokwi</td>
+<td><a href="https://docs.wokwi.com/">docs.wokwi.com</a></td>
+</tr>
+<tr class="even">
+<td>Guía MicroPython</td>
+<td><a href="https://docs.wokwi.com/guides/micropython">docs.wokwi.com/guides/micropython</a></td>
+</tr>
+<tr class="odd">
+<td>Referencia ESP32</td>
+<td><a href="https://docs.wokwi.com/guides/esp32">docs.wokwi.com/guides/esp32</a></td>
+</tr>
+<tr class="even">
+<td>Referencia diagram.json</td>
+<td><a href="https://docs.wokwi.com/diagram-format">docs.wokwi.com/diagram-format</a></td>
+</tr>
+<tr class="odd">
+<td>Librería ssd1306</td>
+<td><a href="https://github.com/micropython/micropython-lib">micropython-lib</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="ejercicios-de-práctica" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicios-de-práctica">🎯 Ejercicios de Práctica</h2>
+<section id="nivel-1-modificar-tiempos" class="level3">
+<h3 class="anchored" data-anchor-id="nivel-1-modificar-tiempos">Nivel 1: Modificar Tiempos</h3>
 <ol type="1">
-<li><strong>XP es acumulativo</strong> - No se pierde al fallar un quiz</li>
-<li><strong>Reintentos permitidos</strong> - Puedes volver a intentar quizzes</li>
-<li><strong>Bonus por excelencia</strong> - Score 100% da insignia extra</li>
-<li><strong>Creatividad premiada</strong> - Proyectos originales ganan XP bonus</li>
-<li><strong>Colaboración valiosa</strong> - Ayudar a otros suma puntos</li>
+<li>Cambia el parpadeo LED de 1 segundo a 0.5 segundos</li>
+<li>Modifica la secuencia de colores del LED RGB</li>
+</ol>
+</section>
+<section id="nivel-2-combinar-componentes" class="level3">
+<h3 class="anchored" data-anchor-id="nivel-2-combinar-componentes">Nivel 2: Combinar Componentes</h3>
+<ol type="1">
+<li>Añade un segundo LED al contador de botones</li>
+<li>Muestra la distancia en el display OLED</li>
+</ol>
+</section>
+<section id="nivel-3-crear-tu-proyecto" class="level3">
+<h3 class="anchored" data-anchor-id="nivel-3-crear-tu-proyecto">Nivel 3: Crear tu Proyecto</h3>
+<ol type="1">
+<li>Diseña un sistema de alarma con sensor PIR</li>
+<li>Crea un termostato con DHT22 y rele</li>
 </ol>
 <hr>
-</section>
-<section id="cálculo-de-nota-final" class="level2">
-<h2 class="anchored" data-anchor-id="cálculo-de-nota-final">📊 Cálculo de Nota Final</h2>
-<p>La gamificación complementa la calificación tradicional:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Componente</th>
-<th>Peso</th>
-<th>Gamificación</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Quizzes</td>
-<td>30%</td>
-<td>📝 Quiz Dominado × 5</td>
-</tr>
-<tr class="even">
-<td>Labs</td>
-<td>30%</td>
-<td>🧪 Completar todos los labs</td>
-</tr>
-<tr class="odd">
-<td>Proyecto Final</td>
-<td>30%</td>
-<td>🏆 Proyecto aprobado</td>
-</tr>
-<tr class="even">
-<td>Participación</td>
-<td>10%</td>
-<td>💬 Bonus por insignias</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Fórmula:</strong></p>
-<pre><code>Nota Final = (Quizzes × 0.3) + (Labs × 0.3) + (Proyecto × 0.3) + (Participación × 0.1)</code></pre>
-<hr>
-<p><em>¡Recuerda: El objetivo es APRENDER, no solo acumular puntos! Los puntos son una herramienta, no el fin.</em> 🎓</p>
-<hr>
-<p><em>Sistema de Logros - MicroPython para el Aula - Diego Saavedra 2026</em> 🎮</p>
-</section>
-<section id="referencias" class="level2">
-<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
-<p>[1] Kapp, K. M. <em>The Gamification of Learning and Instruction</em>. Pfeiffer, 2012.</p>
-<p>[2] Deterding, S. et al.&nbsp;“From Game Design Elements to Gamefulness: Defining ‘Gamification’”. <em>Proceedings of MindTrek 2011</em>.</p>
+<p><em>Anexo Wokwi - MicroPython para el Aula - Diego Saavedra 2026</em> 🎮</p>
 
 
+</section>
 </section>
 </section>
 
@@ -1596,13 +1836,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../license.html" class="pagination-link" aria-label="Licencia">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Licencia</span></span>
+      <a href="../contenido/apendice_hardware_alternativo.html" class="pagination-link" aria-label="🔌 Opciones de Hardware Alternativo">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">🔌 Opciones de Hardware Alternativo</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../contenido/unidad0/competencias_docente.html" class="pagination-link" aria-label="Fundamentos: Antes de Comenzar">
-        <span class="nav-page-text"><span class="chapter-title">Fundamentos: Antes de Comenzar</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../contenido/referencia_sintaxis_spike.html" class="pagination-link" aria-label="Referencia Rápida: LEGO Education SPIKE Essential Python">
+        <span class="nav-page-text"><span class="chapter-title">Referencia Rápida: LEGO Education SPIKE Essential Python</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
