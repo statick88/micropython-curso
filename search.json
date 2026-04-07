@@ -2411,78 +2411,89 @@
   {
     "objectID": "ejercicios/wokwi_ejemplos/index.html",
     "href": "ejercicios/wokwi_ejemplos/index.html",
-    "title": "Ejemplos de Simulación con Wokwi",
+    "title": "Ejemplos de Simulación con Wokwi - Raspberry Pi Pico",
     "section": "",
-    "text": "🌐 ¿Qué es Wokwi?\nEsta sección contiene ejemplos prácticos para aprender MicroPython utilizando el simulador online Wokwi. Los ejemplos están diseñados para ejecutarse en un Raspberry Pi Pico con MicroPython, pero también son compatibles con ESP32.\nWokwi es un simulador online de electrónica que permite: - Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32) - Crear proyectos con componentes reales (LEDs, sensores, displays) - Programar en MicroPython y ejecutar en el simulador - Compartir proyectos mediante enlaces",
+    "text": "📥 Descargar Ejemplos\nEsta sección contiene ejemplos prácticos para aprender MicroPython utilizando el simulador online Wokwi. Los ejemplos están diseñados para ejecutarse en un Raspberry Pi Pico con MicroPython.\n📦 Descargar todos los ejemplos (ZIP)\nContiene 17 proyectos completos con: - main.py - Código MicroPython - diagram.json - Configuración del circuito",
     "crumbs": [
       "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span>"
+    ]
+  },
+  {
+    "objectID": "ejercicios/wokwi_ejemplos/index.html#qué-es-wokwi",
+    "href": "ejercicios/wokwi_ejemplos/index.html#qué-es-wokwi",
+    "title": "Ejemplos de Simulación con Wokwi - Raspberry Pi Pico",
+    "section": "🌐 ¿Qué es Wokwi?",
+    "text": "🌐 ¿Qué es Wokwi?\nWokwi es un simulador online de electrónica que permite: - Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32) - Crear proyectos con componentes reales (LEDs, sensores, displays) - Programar en MicroPython y ejecutar en el simulador - Compartir proyectos mediante enlaces",
+    "crumbs": [
+      "🌟 FUNDAMENTOS",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span>"
     ]
   },
   {
     "objectID": "ejercicios/wokwi_ejemplos/index.html#lista-de-ejemplos-disponibles",
     "href": "ejercicios/wokwi_ejemplos/index.html#lista-de-ejemplos-disponibles",
-    "title": "Ejemplos de Simulación con Wokwi",
+    "title": "Ejemplos de Simulación con Wokwi - Raspberry Pi Pico",
     "section": "📋 Lista de Ejemplos Disponibles",
     "text": "📋 Lista de Ejemplos Disponibles\n\n\n\nEjemplo\nDescripción\nDificultad\nComponentes\n\n\n\n\nParpadeo LED\nEjemplo introductorio: LED que parpadea\n⭐ Básico\nLED, Resistencia\n\n\nLED RGB\nControl de LED RGB con secuencia de colores\n⭐ Básico\nLED RGB, 3 Resistencias\n\n\nDisplay 7 Segmentos\nContador numérico 0-9\n⭐⭐ Intermedio\nDisplay 7 segmentos\n\n\nSensor de Distancia\nMedición ultrasónica HC-SR04\n⭐⭐ Intermedio\nSensor ultrasónico\n\n\nSensor de Temperatura\nDHT22 para temperatura y humedad\n⭐⭐⭐ Avanzado\nSensor DHT22\n\n\nDisplay OLED\nDisplay gráfico I2C SSD1306\n⭐⭐⭐ Avanzado\nOLED 128x64, I2C",
     "crumbs": [
       "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span>"
     ]
   },
   {
     "objectID": "ejercicios/wokwi_ejemplos/index.html#cómo-usar-los-ejemplos",
     "href": "ejercicios/wokwi_ejemplos/index.html#cómo-usar-los-ejemplos",
-    "title": "Ejemplos de Simulación con Wokwi",
+    "title": "Ejemplos de Simulación con Wokwi - Raspberry Pi Pico",
     "section": "🚀 Cómo Usar los Ejemplos",
-    "text": "🚀 Cómo Usar los Ejemplos\n\nOpción 1: Wokwi Online (Recomendado)\n\nVe a wokwi.com/projects/new/micropython-pi-pico\nCopia el contenido de main.py del ejemplo\nCopia el contenido de diagram.json del ejemplo\nPresiona “Start Simulation” para ejecutar\n\n\n\nOpción 2: VS Code con Extensión Wokwi\n\nInstala la extensión “Wokwi” en VS Code\nCrea un nuevo proyecto MicroPython\nCopia los archivos del ejemplo\nEjecuta con F5\n\n\n\nOpción 3: Raspberry Pi Pico Real\n1.-flash MicroPython en tu Raspberry Pi Pico 2. Copia main.py al dispositivo 3. Conecta los componentes según diagram.json 4. Observa el resultado",
+    "text": "🚀 Cómo Usar los Ejemplos\n\nOpción 1: Descargar y Usar Offline\n\nHaz clic en “Descargar todos los ejemplos (ZIP)” arriba\nDescomprime el archivo\nVe a wokwi.com/projects/new/micropython-pi-pico\nCopia el contenido de main.py y diagram.json del ejemplo que quieras\nPresiona “Start Simulation” para ejecutar\n\n\n\nOpción 2: VS Code con Extensión Wokwi\n\nInstala la extensión “Wokwi” en VS Code\nCrea un nuevo proyecto MicroPython\nCopia los archivos del ejemplo\nEjecuta con F5\n\n\n\nOpción 3: Raspberry Pi Pico Real\n\nFlash MicroPython en tu Raspberry Pi Pico\nCopia main.py al dispositivo\nConecta los componentes según diagram.json\nObserva el resultado",
     "crumbs": [
       "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span>"
     ]
   },
   {
     "objectID": "ejercicios/wokwi_ejemplos/index.html#conceptos-cubiertos",
     "href": "ejercicios/wokwi_ejemplos/index.html#conceptos-cubiertos",
-    "title": "Ejemplos de Simulación con Wokwi",
+    "title": "Ejemplos de Simulación con Wokwi - Raspberry Pi Pico",
     "section": "📚 Conceptos Cubiertos",
     "text": "📚 Conceptos Cubiertos\n\nSalidas Digitales\n\nParpadeo LED: machine.Pin, Pin.OUT, time.sleep()\nLED RGB: Control de múltiples pines, lógica invertida\n\n\n\nEntradas Digitales/Analógicas\n\nSensor HC-SR04: time_pulse_us(), cálculo de distancia\nDHT22: Protocolo de comunicación one-wire\n\n\n\nComunicación I2C\n\nDisplay OLED: machine.I2C, librería ssd1306\n\n\n\nDisplays\n\n7 Segmentos: Multiplexado de pines, mapeo de números\nOLED: Gráficos, texto, animaciones",
     "crumbs": [
       "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span>"
     ]
   },
   {
     "objectID": "ejercicios/wokwi_ejemplos/index.html#requisitos-previos",
     "href": "ejercicios/wokwi_ejemplos/index.html#requisitos-previos",
-    "title": "Ejemplos de Simulación con Wokwi",
+    "title": "Ejemplos de Simulación con Wokwi - Raspberry Pi Pico",
     "section": "🔧 Requisitos Previos",
     "text": "🔧 Requisitos Previos\nAntes de comenzar con los ejemplos, asegúrate de: - Conocer conceptos básicos de Python (variables, bucles, funciones) - Entender qué es un microcontrolador - Saber cómo funciona un circuito eléctrico básico",
     "crumbs": [
       "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span>"
     ]
   },
   {
     "objectID": "ejercicios/wokwi_ejemplos/index.html#referencias",
     "href": "ejercicios/wokwi_ejemplos/index.html#referencias",
-    "title": "Ejemplos de Simulación con Wokwi",
+    "title": "Ejemplos de Simulación con Wokwi - Raspberry Pi Pico",
     "section": "📖 Referencias",
     "text": "📖 Referencias\n\nDocumentación oficial de Wokwi\nGuía de MicroPython en Wokwi\nReferencia de diagram.json\nLibrería ssd1306 para MicroPython",
     "crumbs": [
       "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span>"
     ]
   },
   {
     "objectID": "ejercicios/wokwi_ejemplos/index.html#próximos-pasos",
     "href": "ejercicios/wokwi_ejemplos/index.html#próximos-pasos",
-    "title": "Ejemplos de Simulación con Wokwi",
+    "title": "Ejemplos de Simulación con Wokwi - Raspberry Pi Pico",
     "section": "🎯 Próximos Pasos",
-    "text": "🎯 Próximos Pasos\nDespués de completar los ejemplos básicos: 1. Experimenta modificando los valores (tiempos, pines) 2. Combina múltiples ejemplos en un solo proyecto 3. Crea tus propios proyectos usando la documentación 4. ¡Comparte tus proyectos en la comunidad Wokwi!\n\nNota: Los ejemplos están diseñados para Raspberry Pi Pico con MicroPython. Para usar ESP32, ajusta los números de pines según corresponda.",
+    "text": "🎯 Próximos Pasos\nDespués de completar los ejemplos básicos: 1. Experimenta modificando los valores (tiempos, pines) 2. Combina múltiples ejemplos en un solo proyecto 3. Crea tus propios proyectos usando la documentación 4. ¡Comparte tus proyectos en la comunidad Wokwi!\n\nNota: Los ejemplos están diseñados para Raspberry Pi Pico con MicroPython.",
     "crumbs": [
       "🌟 FUNDAMENTOS",
-      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi</span>"
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Ejemplos de Simulación con Wokwi - Raspberry Pi Pico</span>"
     ]
   },
   {
@@ -2490,7 +2501,18 @@
     "href": "ejercicios/wokwi_esp32/index.html",
     "title": "Ejemplos de Simulación ESP32 con Wokwi",
     "section": "",
-    "text": "🌐 ¿Qué es Wokwi?\nEsta sección contiene ejemplos prácticos para aprender MicroPython utilizando el simulador online Wokwi con un ESP32 DevKit V1.\nWokwi es un simulador online de electrónica que permite: - Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32) - Crear proyectos con componentes reales (LEDs, sensores, displays) - Programar en MicroPython y ejecutar en el simulador - Compartir proyectos mediante enlaces",
+    "text": "📥 Descargar Ejemplos\nEsta sección contiene ejemplos prácticos para aprender MicroPython utilizando el simulador online Wokwi con un ESP32 DevKit V1.\n📦 Descargar todos los ejemplos ESP32 (ZIP)\nContiene 23 proyectos completos con: - main.py - Código MicroPython - diagram.json - Configuración del circuito",
+    "crumbs": [
+      "🌟 FUNDAMENTOS",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Ejemplos de Simulación ESP32 con Wokwi</span>"
+    ]
+  },
+  {
+    "objectID": "ejercicios/wokwi_esp32/index.html#qué-es-wokwi",
+    "href": "ejercicios/wokwi_esp32/index.html#qué-es-wokwi",
+    "title": "Ejemplos de Simulación ESP32 con Wokwi",
+    "section": "🌐 ¿Qué es Wokwi?",
+    "text": "🌐 ¿Qué es Wokwi?\nWokwi es un simulador online de electrónica que permite: - Simular microcontroladores (ESP32, Raspberry Pi Pico, Arduino, STM32) - Crear proyectos con componentes reales (LEDs, sensores, displays) - Programar en MicroPython y ejecutar en el simulador - Compartir proyectos mediante enlaces",
     "crumbs": [
       "🌟 FUNDAMENTOS",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Ejemplos de Simulación ESP32 con Wokwi</span>"
@@ -2512,7 +2534,7 @@
     "href": "ejercicios/wokwi_esp32/index.html#cómo-usar-los-ejemplos",
     "title": "Ejemplos de Simulación ESP32 con Wokwi",
     "section": "🚀 Cómo Usar los Ejemplos",
-    "text": "🚀 Cómo Usar los Ejemplos\n\nOpción 1: Wokwi Online (Recomendado)\n\nVe a wokwi.com/projects/new/micropython-esp32\nCopia el contenido de main.py del ejemplo\nCopia el contenido de diagram.json del ejemplo\nPresiona “Start Simulation” para ejecutar\n\n\n\nOpción 2: VS Code con Extensión Wokwi\n\nInstala la extensión “Wokwi” en VS Code\nCrea un nuevo proyecto MicroPython para ESP32\nCopia los archivos del ejemplo\nEjecuta con F5\n\n\n\nOpción 3: ESP32 Real\n\nFlash MicroPython en tu ESP32\nCopia main.py al dispositivo\nConecta los componentes según diagram.json\nObserva el resultado",
+    "text": "🚀 Cómo Usar los Ejemplos\n\nOpción 1: Descargar y Usar Offline\n\nHaz clic en “Descargar todos los ejemplos ESP32 (ZIP)” arriba\nDescomprime el archivo\nVe a wokwi.com/projects/new/micropython-esp32\nCopia el contenido de main.py y diagram.json del ejemplo que quieras\nPresiona “Start Simulation” para ejecutar\n\n\n\nOpción 2: VS Code con Extensión Wokwi\n\nInstala la extensión “Wokwi” en VS Code\nCrea un nuevo proyecto MicroPython para ESP32\nCopia los archivos del ejemplo\nEjecuta con F5\n\n\n\nOpción 3: ESP32 Real\n\nFlash MicroPython en tu ESP32\nCopia main.py al dispositivo\nConecta los componentes según diagram.json\nObserva el resultado",
     "crumbs": [
       "🌟 FUNDAMENTOS",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Ejemplos de Simulación ESP32 con Wokwi</span>"
