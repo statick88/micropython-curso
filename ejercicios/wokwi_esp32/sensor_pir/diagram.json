@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp32",
+      "type": "board-esp32-devkit-c-v4",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "led1",
+      "type": "wokwi-led",
+      "left": 150,
+      "top": 80,
+      "attrs": { "color": "red" }
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-resistor",
+      "left": 150,
+      "top": 180,
+      "attrs": { "resistance": "220" }
+    },
+    {
+      "id": "pir1",
+      "type": "wokwi-pir-motion-sensor",
+      "left": 300,
+      "top": 100
+    }
+  ],
+  "connections": [
+    ["esp32:GPIO2", "led1:A", "red", []],
+    ["led1:C", "r1:2", "black", []],
+    ["r1:1", "esp32:GND", "black", []],
+    ["esp32:GPIO18", "pir1:OUT", "green", []],
+    ["pir1:VCC", "esp32:VCC", "red", []],
+    ["pir1:GND", "esp32:GND", "black", []]
+  ]
+}

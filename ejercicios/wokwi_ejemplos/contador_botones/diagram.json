@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "wokwi-pi-pico",
+      "left": 400,
+      "top": 150
+    },
+    {
+      "id": "button1",
+      "type": "wokwi-pushbutton",
+      "left": 100,
+      "top": 80
+    },
+    {
+      "id": "button2",
+      "type": "wokwi-pushbutton",
+      "left": 200,
+      "top": 80
+    },
+    {
+      "id": "led1",
+      "type": "wokwi-led",
+      "left": 300,
+      "top": 80,
+      "attrs": {
+        "color": "green"
+      }
+    }
+  ],
+  "connections": [
+    ["pico:GPIO14", "button1:2", "green", []],
+    ["button1:1", "pico:VCC", "red", []],
+    ["pico:GPIO13", "button2:2", "blue", []],
+    ["button2:1", "pico:VCC", "red", []],
+    ["pico:GPIO15", "led1:A", "green", []],
+    ["led1:C", "pico:GND", "black", []]
+  ]
+}

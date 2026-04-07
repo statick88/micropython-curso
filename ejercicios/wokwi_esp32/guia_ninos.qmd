@@ -1,0 +1,145 @@
+# 🎮 Guía para Niños: Wokwi con ESP32
+
+## 🤔 Qué es el ESP32?
+
+El **ESP32** es como un cerebro más potente que el Raspberry Pi Pico! 🧠
+
+Tiene cosas geniales que el Pico no tiene:
+- 📶 **WiFi** - puede conectarse a internet!
+- 🔵 **Bluetooth** - puede hablar con otros dispositivos
+- ⚡ **Más rápido** - hasta 240 MHz (el Pico solo tiene 133 MHz)
+
+---
+
+## 🎯 Tu Primer Programa ESP32: LED Parpadeante
+
+### Paso 1: Abre Wokwi
+Escribe en tu navegador:
+
+```
+wokwi.com
+```
+
+### Paso 2: Crea un Proyecto ESP32
+1. Haz clic en **"Nuevo Proyecto"**
+2. Busca **"MicroPython"**
+3. Elige **"ESP32"** (no Raspberry Pi Pico!)
+4. Haz clic en **"Crear"**
+
+```
+┌────────────────────────────────────────┐
+│  Elige tu plantilla:                   │
+│                                        │
+│  📺 Arduino                             │
+│  🟦 Raspberry Pi Pico                   │
+│  🔵 ESP32 + MicroPython               ← ← ELIGE ESTE!
+│  🔵 Arduino + MicroPython              │
+└────────────────────────────────────────┘
+```
+
+### Paso 3: Copia el Código
+Ve a la carpeta `ejercicios/wokwi_esp32/parpadeo_led/` y copia **main.py**:
+
+```python
+from machine import Pin
+import time
+
+led = Pin(2, Pin.OUT)
+
+contador = 0
+while True:
+    led.value(1)
+    print(f"[{contador}] LED PRENDIDO!")
+    time.sleep(1)
+    
+    led.value(0)
+    print(f"[{contador}] LED APAGADO")
+    time.sleep(1)
+    
+    contador += 1
+```
+
+### Paso 4: Copia las Conexiones
+Copia **diagram.json** de la misma carpeta:
+
+```json
+{
+  "parts": [
+    {"id": "esp32", "type": "board-esp32-devkit-c-v4"},
+    {"id": "led1", "type": "wokwi-led", "attrs": {"color": "red"}}
+  ],
+  "connections": [
+    ["esp32:GPIO2", "led1:A", "red"],
+    ["led1:C", "r1:2", "black"],
+    ["r1:1", "esp32:GND", "black"]
+  ]
+}
+```
+
+### Paso 5: Ejecuta!
+1. Haz clic en **▶️ Start Simulation**
+2. Mira el LED en la pantalla!
+
+---
+
+## 🎮 Diferencia: Pico vs ESP32
+
+| Característica | Raspberry Pi Pico | ESP32 |
+|----------------|-------------------|-------|
+| WiFi | ❌ No | ✅ Sí |
+| Bluetooth | ❌ No | ✅ Sí |
+| Velocidad | 133 MHz | 240 MHz |
+| Precio | Más barato | Un poco más caro |
+| LED integrado | Sí (GPIO 25) | Sí (GPIO 2) |
+
+---
+
+## 🎯 Ejemplos que Puedes Probar
+
+Todos están en `ejercicios/wokwi_esp32/`:
+
+| Ejemplo | Qué hace | Pines |
+|---------|----------|-------|
+| Parpadeo LED | LED prende y apaga | GPIO 2 |
+| LED RGB | Colores | 25, 26, 27 |
+| Botón + LED | Presiona para prender | 2, 4 |
+| Potenciómetro + LED | Gira para cambiar brillo | 2, 34 |
+| Sensor distancia | Mide objetos | 5, 18 |
+| Sensor temperatura | Mide temperatura | GPIO 4 |
+| Servomotor | Mueve un motor | GPIO 13 |
+| Display OLED | Pantalla pequeña | 21, 22 |
+
+---
+
+## 🎮 Retos para Hacer
+
+### Reto 1: 🎵 Cambia la velocidad
+Cambia `time.sleep(1)` a `time.sleep(0.5)` para que parpadee más rápido!
+
+### Reto 2: 🔢 Cambia el pin
+Cambia `GPIO2` a `GPIO25` (el LED integrado del ESP32)
+
+### Reto 3: 🔢 Cuenta del 1 al 10
+Agrega un contador que aumente cada vez que parpadea!
+
+---
+
+## 🐛 Si No Funciona...
+
+- ✅ Verifica que elegiste **ESP32** y no Raspberry Pi Pico
+- ✅ Revisa que el código esté completo
+- ✅ Mira que el `diagram.json` tenga las conexiones correctas
+
+---
+
+## 🎉 Resumen
+
+1. ✅ Ve a **wokwi.com**
+2. ✅ Crea proyecto **ESP32 + MicroPython**
+3. ✅ Copia **main.py** y **diagram.json**
+4. ✅ Haz clic en **Start Simulation**
+5. ✅ Disfruta tu LED parpadeando!
+
+---
+
+*Creado para jóvenes programadores* 🚀💪

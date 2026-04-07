@@ -1,0 +1,182 @@
+{
+  "index.qmd": {
+    "index.html": "46cb7e59"
+  },
+  "about.qmd": {
+    "about.html": "dee94641"
+  },
+  "license.qmd": {
+    "license.html": "7ad3ee37"
+  },
+  "contenido/sistema_logros.qmd": {
+    "sistema_logros.html": "6a8678b8"
+  },
+  "contenido/unidad0/competencias_docente.qmd": {
+    "competencias_docente.html": "84e06eba"
+  },
+  "contenido/unidad1/guia_hub_desde_cero.qmd": {
+    "guia_hub_desde_cero.html": "3deb865e"
+  },
+  "contenido/unidad1/1_instalacion_pybricks.qmd": {
+    "1_instalacion_pybricks.html": "2c8010a4"
+  },
+  "contenido/unidad1/lab1_hola_mundo.qmd": {
+    "lab1_hola_mundo.html": "0203e284"
+  },
+  "contenido/unidad1/lab1b_ejercicios.qmd": {
+    "lab1b_ejercicios.html": "03ce76b7"
+  },
+  "quizzes/quiz_unidad1.qmd": {
+    "quiz_unidad1.html": "afa07623"
+  },
+  "contenido/unidad2/1_display_luces.qmd": {
+    "1_display_luces.html": "3315255e"
+  },
+  "contenido/unidad2/lab2_animaciones.qmd": {
+    "lab2_animaciones.html": "efd258fa"
+  },
+  "contenido/unidad2/lab2b_animaciones_avanzadas.qmd": {
+    "lab2b_animaciones_avanzadas.html": "4361f9ea"
+  },
+  "quizzes/quiz_unidad2.qmd": {
+    "quiz_unidad2.html": "a1651093"
+  },
+  "contenido/unidad3/1_motores.qmd": {
+    "1_motores.html": "1431f638"
+  },
+  "contenido/unidad3/2_motores_avanzados.qmd": {
+    "2_motores_avanzados.html": "d53dac39"
+  },
+  "contenido/unidad3/lab3_navegacion.qmd": {
+    "lab3_navegacion.html": "70a0ee3b"
+  },
+  "contenido/unidad3/lab3b_movimiento_avanzado.qmd": {
+    "lab3b_movimiento_avanzado.html": "d592ffd5"
+  },
+  "quizzes/quiz_unidad3.qmd": {
+    "quiz_unidad3.html": "e01062fd"
+  },
+  "contenido/unidad4/1_sensores.qmd": {
+    "1_sensores.html": "3cc0e169"
+  },
+  "contenido/unidad4/2_sensores_adicionales.qmd": {
+    "2_sensores_adicionales.html": "8b5c4e87"
+  },
+  "contenido/unidad4/2_telemetria_bateria.qmd": {
+    "2_telemetria_bateria.html": "ed0e2861"
+  },
+  "contenido/unidad4/lab4_telemetria.qmd": {
+    "lab4_telemetria.html": "86fbbf2b"
+  },
+  "quizzes/quiz_unidad4.qmd": {
+    "quiz_unidad4.html": "bf2fee7a"
+  },
+  "contenido/unidad5/1_proyecto_final.qmd": {
+    "1_proyecto_final.html": "1175478a"
+  },
+  "quizzes/quiz_unidad5.qmd": {
+    "quiz_unidad5.html": "243f6faf"
+  },
+  "contenido/apendice_recursos.qmd": {
+    "apendice_recursos.html": "7f16b2cb"
+  },
+  "contenido/apendice_thonny_debugger.qmd": {
+    "apendice_thonny_debugger.html": "d79e4906"
+  },
+  "contenido/apendice_simuladores.qmd": {
+    "apendice_simuladores.html": "13c02ce2"
+  },
+  "evaluaciones/eval_motores_avanzados.qmd": {
+    "eval_motores_avanzados.html": "d5147a9c"
+  },
+  "evaluaciones/eval_sensores_adicionales.qmd": {
+    "eval_sensores_adicionales.html": "9528385e"
+  },
+  "evaluaciones/eval_telemetria.qmd": {
+    "eval_telemetria.html": "9303eb7e"
+  },
+  "contenido/diagramas/diagrama_hoja_ruta.qmd": {
+    "diagrama_hoja_ruta.html": "c9b02c54"
+  },
+  "contenido/diagramas/diagrama_hub.qmd": {
+    "diagrama_hub.html": "81057c3f"
+  },
+  "contenido/diagramas/diagrama_porque_hub.qmd": {
+    "diagrama_porque_hub.html": "0da0c343"
+  },
+  "contenido/diagramas/auditoria_diagramas.qmd": {
+    "auditoria_diagramas.html": "3cec15c0"
+  },
+  "contenido/apendice_pybricks_compilacion.qmd": {
+    "apendice_pybricks_compilacion.html": "20b902e0"
+  },
+  "contenido/unidad0/fundamentos_python/index.qmd": {
+    "index.html": "f847d3d5"
+  },
+  "contenido/unidad0/fundamentos_python/introduccion.qmd": {
+    "introduccion.html": "e28200d1"
+  },
+  "contenido/unidad0/fundamentos_python/variables_tipos.qmd": {
+    "variables_tipos.html": "574eea79"
+  },
+  "contenido/unidad0/fundamentos_python/control_flujo.qmd": {
+    "control_flujo.html": "d60d6e8a"
+  },
+  "contenido/unidad0/fundamentos_python/funciones.qmd": {
+    "funciones.html": "582a824f"
+  },
+  "contenido/unidad0/fundamentos_python/manejo_errores.qmd": {
+    "manejo_errores.html": "ccc5ad2d"
+  },
+  "contenido/unidad0/fundamentos_python/estructuras_datos.qmd": {
+    "estructuras_datos.html": "65c765b8"
+  },
+  "contenido/unidad0/fundamentos_python/resumen_trasicion_hardware.qmd": {
+    "resumen_trasicion_hardware.html": "3fb831f8"
+  },
+  "ejercicios/fundamentos_python/index.qmd": {
+    "index.html": "b25b80b8"
+  },
+  "ejercicios/fundamentos_python/ejercicio_01_variables.qmd": {
+    "ejercicio_01_variables.html": "91027a7c"
+  },
+  "ejercicios/fundamentos_python/ejercicio_02_tipos_datos.qmd": {
+    "ejercicio_02_tipos_datos.html": "b8ae5701"
+  },
+  "ejercicios/fundamentos_python/ejercicio_03_condicionales.qmd": {
+    "ejercicio_03_condicionales.html": "bd6eb454"
+  },
+  "ejercicios/fundamentos_python/ejercicio_04_bucles.qmd": {
+    "ejercicio_04_bucles.html": "fdcf8a80"
+  },
+  "ejercicios/fundamentos_python/ejercicio_05_funciones.qmd": {
+    "ejercicio_05_funciones.html": "e84aa10d"
+  },
+  "ejercicios/fundamentos_python/ejercicio_06_errores.qmd": {
+    "ejercicio_06_errores.html": "b8097f0e"
+  },
+  "ejercicios/fundamentos_python/ejercicio_07_estructuras.qmd": {
+    "ejercicio_07_estructuras.html": "344b872b"
+  },
+  "ejercicios/proyectos/proyecto_robot_virtual.qmd": {
+    "proyecto_robot_virtual.html": "873267ee"
+  },
+  "quizzes/quiz_fundamentos_python.qmd": {
+    "quiz_fundamentos_python.html": "ce37b060"
+  },
+  "quizzes/quiz_fundamentos_completo.qmd": {
+    "quiz_fundamentos_completo.html": "c1c2acc7"
+  },
+  "contenido/unidad5/2_practica_testing_simulador.qmd": {
+    "2_practica_testing_simulador.html": "29b2b7e9"
+  },
+  "contenido/apendice_pybricks_spike.qmd": {
+    "apendice_pybricks_spike.html": "3ac9f643"
+  },
+  "contenido/apendice_hardware_alternativo.qmd": {
+    "apendice_hardware_alternativo.html": "89298889"
+  },
+  "contenido/referencia_sintaxis_spike.qmd": {
+    "referencia_sintaxis_spike.html": "21fa576c"
+  }
+}

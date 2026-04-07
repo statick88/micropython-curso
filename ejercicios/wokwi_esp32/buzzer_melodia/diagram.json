@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp32",
+      "type": "board-esp32-devkit-c-v4",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "buzzer1",
+      "type": "wokwi-buzzer",
+      "left": 150,
+      "top": 100
+    }
+  ],
+  "connections": [
+    ["esp32:GPIO12", "buzzer1:IO", "yellow", []],
+    ["buzzer1:GND", "esp32:GND", "black", []]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Diego Saavedra",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "pico",
+      "type": "wokwi-pi-pico",
+      "left": 350,
+      "top": 150
+    },
+    {
+      "id": "led1",
+      "type": "wokwi-led",
+      "left": 150,
+      "top": 80,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-resistor",
+      "left": 150,
+      "top": 180,
+      "attrs": {
+        "resistance": "220"
+      }
+    },
+    {
+      "id": "relay1",
+      "type": "wokwi-relay-module",
+      "left": 300,
+      "top": 100
+    }
+  ],
+  "connections": [
+    ["pico:GPIO15", "led1:A", "green", []],
+    ["led1:C", "r1:2", "black", []],
+    ["r1:1", "pico:GND", "black", []],
+    ["pico:GPIO14", "relay1:IN", "yellow", []],
+    ["relay1:VCC", "pico:VCC", "red", []],
+    ["relay1:GND", "pico:GND", "black", []]
+  ]
+}
