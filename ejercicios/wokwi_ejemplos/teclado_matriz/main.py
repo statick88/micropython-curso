@@ -1,11 +1,23 @@
 """
-Teclado Matricial 4x4 - Raspberry Pi Pico
-===========================================
-Hardware: Raspberry Pi Pico
-Componentes: 1 Teclado matricial 4x4
-Conexionado: Filas GPIO 8-11, Columnas GPIO 12-15
+Teclado Matricial 4x4 - Tu Panel de Control Numérico
+=====================================================
+
+¿QUÉS ES ESTO?
+Un teclado matricial 4x4 es como un mini-panorama de números y símbolos que
+nos permite ingresar datos a nuestro microcontrolador. En lugar de usar 16
+cables separados (uno por tecla), usa una técnica inteligente de matriz que
+solo necesita 8 cables (4 filas + 4 columnas).
+
+Hardware: Raspberry Pi Pico con MicroPython
+Plataforma: Wokwi
+Componentes: Teclado matricial 4x4
+
+📌 CONEXIONES FÍSICAS (8 cables):
+─────────────────────────────────────────────────────────
+   Filas (salida):  GPIO 8, 9, 10, 11
+   Columnas (entrada): GPIO 12, 13, 14, 15
+
 Lenguaje: MicroPython
-Lógica: Lee teclas presionadas del teclado
 """
 
 from machine import Pin

@@ -1,102 +1,132 @@
 """
-Sensor de Temperatura y Humedad DHT22 - Ejemplo de Entrada Digital
-================================================================
+Sensor DHT22 - Midiendo Temperatura y Humedad del Aire
+===================================================
+
+¿QUÉS ES ESTO?
+El DHT22 es un sensor que mide tanto temperatura como humedad en un solo componente.
+Es como tener un meteorólogo miniaturizado en tu proyecto, capaz de decirte cuánto
+hace de frío o calor y qué tan húmedo está el aire.
+
 Hardware: Raspberry Pi Pico con MicroPython
-Componentes: 1 sensor DHT22 (temperatura y humedad)
-Conexionado: GPIO 15 -> Data
+Plataforma: Wokwi
+Componentes: Sensor DHT22 (temperatura + humedad)
+
+📌 CONEXIONES FÍSICAS (3 cables):
+─────────────────────────────────────────────────────────
+   GPIO 15 (Pico) ──────► DATA (cable verde/amarillo)
+   VBUS (Pico 5V) ──────► VCC (cable rojo)
+   GND (Pico) ──────────► GND (cable negro)
+
 Lenguaje: MicroPython
-Lógica: Lee temperatura y humedad cada 2 segundos
 """
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLICACIÓN DEL CÓDIGO
+# ═══════════════════════════════════════════════════════════════════════════
 
 import machine
 import time
 import dht
 
-# Configuración del sensor DHT22
-# Usamos el pin GPIO 15 para la comunicación
+# ─────────────────────────────────────────────────────────────────────────
+# CONFIGURACIÓN DEL SENSOR
+# ─────────────────────────────────────────────────────────────────────────
+# Creamos un objeto DHT22 en el pin GPIO 15
+# La librería 'dht' maneja automáticamente la comunicación
 sensor = dht.DHT22(machine.Pin(15))
 
 
 def leer_sensor():
     """
-    Lee los valores del sensor DHT22
+    Lee la temperatura y humedad del sensor DHT22
 
     Returns:
         tuple: (temperatura, humedad) o None si hay error
     """
     try:
+        # medire() activa el sensor y lee los datos
         sensor.measure()
-        temperatura = sensor.temperature()
-        humedad = sensor.humidity()
+
+        # Obtener los valores leídos
+        temperatura = sensor.temperature()  # Grados Celsius
+        humedad = sensor.humidity()  # Porcentaje (0-100)
+
         return temperatura, humedad
+
     except OSError as e:
-        print(f"Error de lectura: {e}")
+        # Si hay un error de comunicación, lo reportamos
+        print(f"⚠️ Error de comunicación: {e}")
         return None
 
 
 def obtener_clasificacion_temp(temp):
     """
-    Obtiene una clasificación textual de la temperatura
+    Traduce una temperatura a una descripción entendible
 
     Args:
         temp: Temperatura en grados Celsius
 
     Returns:
-        str: Clasificación de la temperatura
+        str: Descripción de la temperatura con emoji
     """
     if temp < 10:
-        return "🧊 FRÍO"
+        return "🧊 FRÍO - Abrígate!"
     elif temp < 20:
-        return "🌤️ FRESCO"
+        return "🌤️ FRESCO - Agradable"
     elif temp < 25:
-        return "🌡️ CÓMODO"
+        return "🌡️ CÓMODO - Temperatura ideal"
     elif temp < 30:
-        return "🔥 CALIENTE"
+        return "🔥 CALIENTE - Cuidado con el calor"
     else:
-        return "♨️ MUY CALIENTE"
+        return "♨️ MUY CALIENTE - Peligroso!"
 
 
 def obtener_clasificacion_hum(hum):
     """
-    Obtiene una clasificación textual de la humedad
+    Traduce la humedad a una descripción entendible
 
     Args:
         hum: Humedad relativa en porcentaje
 
     Returns:
-        str: Clasificación de la humedad
+        str: Descripción de la humedad con emoji
     """
     if hum < 30:
-        return "🏜️ SECO"
+        return "🏜️ SECO - Puede ser incómodo"
     elif hum < 50:
-        return "💧 NORMAL"
+        return "💧 NORMAL - Comfortable"
     elif hum < 70:
-        return "💦 HÚMEDO"
+        return "💦 HÚMEDO - Un poco pegajoso"
     else:
-        return "🌊 MUY HÚMEDO"
+        return "🌊 MUY HÚMEDO - Como selva tropical"
 
 
-# Mensaje inicial
-print("Iniciando sensor DHT22...")
-print("Lectura de temperatura y humedad cada 2 segundos")
+# ═══════════════════════════════════════════════════════════════════════════
+# BUCLE PRINCIPAL
+# ═══════════════════════════════════════════════════════════════════════════
 
-# Bucle principal de lectura
+print("🌡️ INICIANDO: Sensor DHT22 (Temperatura + Humedad)")
+print("   Lectura cada 2 segundos")
+print("-" * 50)
+
 while True:
+    # Leer el sensor
     resultado = leer_sensor()
 
     if resultado is not None:
         temperatura, humedad = resultado
 
-        # Obtener clasificaciones
-        cla_temp = obtener_clasificacion_temp(temperatura)
-        cla_hum = obtener_clasificacion_hum(humedad)
+        # Obtener clasificaciones amigables
+        clasificacion_temp = obtener_clasificacion_temp(temperatura)
+        clasificacion_hum = obtener_clasificacion_hum(humedad)
 
-        # Mostrar resultados formateados
-        print(f"🌡️  Temperatura: {temperatura}°C - {cla_temp}")
-        print(f"💧  Humedad: {humedad}% - {cla_hum}")
+        # Mostrar resultados de forma bonita
+        print(f"🌡️ Temperatura: {temperatura:.1f}°C → {clasificacion_temp}")
+        print(f"💧 Humedad: {humedad:.1f}% → {clasificacion_hum}")
         print("-" * 50)
     else:
-        print("⚠️  Error al leer el sensor, reintentando...")
+        print("⚠️ Error en lectura, reintentando en 2 segundos...")
 
-    # Esperar 2 segundos entre lecturas
+    # Esperar 2 segundos antes de la siguiente lectura
+    # (el DHT22 necesita al menos 2 segundos entre lecturas)
     time.sleep(2)

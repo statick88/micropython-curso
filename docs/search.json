@@ -5654,6 +5654,17 @@
     ]
   },
   {
+    "objectID": "contenido/anexo_wokwi.html#opción-2-vs-code-con-extensión-wokwi",
+    "href": "contenido/anexo_wokwi.html#opción-2-vs-code-con-extensión-wokwi",
+    "title": "🎮 Anexo Wokwi: Simulador de MicroPython",
+    "section": "💻 Opción 2: VS Code con Extensión Wokwi",
+    "text": "💻 Opción 2: VS Code con Extensión Wokwi\n\nInstalación\n\nAbre Visual Studio Code\nVe a Extensiones (Ctrl+Shift+X / Cmd+Shift+X)\nBusca “Wokwi” e instala la extensión\nReinicia VS Code si es necesario\n\n\n\nCómo Usar los Ejemplos en VS Code\n\nOpción A: Desde el ZIP descargado\n\nDescarga el ZIP de ejemplos\nDescomprime la carpeta del ejemplo que quieras\nAbre la carpeta en VS Code (File &gt; Open Folder)\nPresiona F5 o click en “Start Simulation”\n\n\n\nOpción B: Directo desde GitHub\n\nCopia la URL del ejemplo en GitHub\nEn VS Code, presiona F1 y escribe Wokwi: Open Project from GitHub\nPega la URL del repositorio\n\n\n\n\nAtajos de Teclado\n\n\n\nAtajo\nAcción\n\n\n\n\nF5\nIniciar/Detener simulación\n\n\nCtrl+S\nRecargar simulación\n\n\nF1\nAbrir paleta de comandos Wokwi\n\n\n\n\n\nEstructura de Archivos\nCada ejemplo incluye:\nnombre_ejemplo/\n├── main.py          # Código MicroPython/Arduino\n├── diagram.json     # Configuración del circuito\n└── wokwi.toml      # Configuración de Wokwi (opcional)\n\n\nConfiguración wokwi.toml\nLos ejemplos ya incluyen el archivo wokwi.toml con la configuración:\n# Raspberry Pi Pico\nboard = \"pi-pico\"\nprogram = \"main.py\"\nserial = { baud = 115200 }\n\n# ESP32\nboard = \"esp32\"\nprogram = \"main.py\"\n\n# Arduino\nboard = \"arduino-uno\"\nprogram = \"main.cpp\"",
+    "crumbs": [
+      "📚 APÉNDICES",
+      "<span class='chapter-number'>55</span>  <span class='chapter-title'>🎮 Anexo Wokwi: Simulador de MicroPython</span>"
+    ]
+  },
+  {
     "objectID": "contenido/anexo_wokwi.html#descargar-ejemplos",
     "href": "contenido/anexo_wokwi.html#descargar-ejemplos",
     "title": "🎮 Anexo Wokwi: Simulador de MicroPython",

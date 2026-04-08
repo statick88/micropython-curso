@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -599,6 +634,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#paso-2-configurar-el-proyecto" id="toc-paso-2-configurar-el-proyecto" class="nav-link" data-scroll-target="#paso-2-configurar-el-proyecto">Paso 2: Configurar el Proyecto</a></li>
   <li><a href="#paso-3-ver-la-salida" id="toc-paso-3-ver-la-salida" class="nav-link" data-scroll-target="#paso-3-ver-la-salida">Paso 3: Ver la Salida</a></li>
   </ul></li>
+  <li><a href="#opción-2-vs-code-con-extensión-wokwi" id="toc-opción-2-vs-code-con-extensión-wokwi" class="nav-link" data-scroll-target="#opción-2-vs-code-con-extensión-wokwi">💻 Opción 2: VS Code con Extensión Wokwi</a>
+  <ul class="collapse">
+  <li><a href="#instalación" id="toc-instalación" class="nav-link" data-scroll-target="#instalación">Instalación</a></li>
+  <li><a href="#cómo-usar-los-ejemplos-en-vs-code" id="toc-cómo-usar-los-ejemplos-en-vs-code" class="nav-link" data-scroll-target="#cómo-usar-los-ejemplos-en-vs-code">Cómo Usar los Ejemplos en VS Code</a></li>
+  <li><a href="#atajos-de-teclado" id="toc-atajos-de-teclado" class="nav-link" data-scroll-target="#atajos-de-teclado">Atajos de Teclado</a></li>
+  <li><a href="#estructura-de-archivos" id="toc-estructura-de-archivos" class="nav-link" data-scroll-target="#estructura-de-archivos">Estructura de Archivos</a></li>
+  <li><a href="#configuración-wokwi.toml" id="toc-configuración-wokwi.toml" class="nav-link" data-scroll-target="#configuración-wokwi.toml">Configuración wokwi.toml</a></li>
+  </ul></li>
   <li><a href="#descargar-ejemplos" id="toc-descargar-ejemplos" class="nav-link" data-scroll-target="#descargar-ejemplos">📥 Descargar Ejemplos</a></li>
   <li><a href="#índice-de-ejemplos-validados" id="toc-índice-de-ejemplos-validados" class="nav-link" data-scroll-target="#índice-de-ejemplos-validados">📋 Índice de Ejemplos Validados</a>
   <ul class="collapse">
@@ -723,6 +766,88 @@ Nota
 <li>Click en <strong>“Serial”</strong> para ver los mensajes de consola</li>
 <li>Los LEDs y componentes se animan automáticamente</li>
 </ul>
+<hr>
+</section>
+</section>
+<section id="opción-2-vs-code-con-extensión-wokwi" class="level2">
+<h2 class="anchored" data-anchor-id="opción-2-vs-code-con-extensión-wokwi">💻 Opción 2: VS Code con Extensión Wokwi</h2>
+<section id="instalación" class="level3">
+<h3 class="anchored" data-anchor-id="instalación">Instalación</h3>
+<ol type="1">
+<li>Abre <strong>Visual Studio Code</strong></li>
+<li>Ve a <strong>Extensiones</strong> (Ctrl+Shift+X / Cmd+Shift+X)</li>
+<li>Busca <strong>“Wokwi”</strong> e instala la extensión</li>
+<li>Reinicia VS Code si es necesario</li>
+</ol>
+</section>
+<section id="cómo-usar-los-ejemplos-en-vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-usar-los-ejemplos-en-vs-code">Cómo Usar los Ejemplos en VS Code</h3>
+<section id="opción-a-desde-el-zip-descargado" class="level4">
+<h4 class="anchored" data-anchor-id="opción-a-desde-el-zip-descargado">Opción A: Desde el ZIP descargado</h4>
+<ol type="1">
+<li>Descarga el ZIP de ejemplos</li>
+<li>Descomprime la carpeta del ejemplo que quieras</li>
+<li>Abre la carpeta en VS Code (<code>File &gt; Open Folder</code>)</li>
+<li>Presiona <strong>F5</strong> o click en <strong>“Start Simulation”</strong></li>
+</ol>
+</section>
+<section id="opción-b-directo-desde-github" class="level4">
+<h4 class="anchored" data-anchor-id="opción-b-directo-desde-github">Opción B: Directo desde GitHub</h4>
+<ol type="1">
+<li>Copia la URL del ejemplo en GitHub</li>
+<li>En VS Code, presiona <strong>F1</strong> y escribe <code>Wokwi: Open Project from GitHub</code></li>
+<li>Pega la URL del repositorio</li>
+</ol>
+</section>
+</section>
+<section id="atajos-de-teclado" class="level3">
+<h3 class="anchored" data-anchor-id="atajos-de-teclado">Atajos de Teclado</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Atajo</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>F5</code></td>
+<td>Iniciar/Detener simulación</td>
+</tr>
+<tr class="even">
+<td><code>Ctrl+S</code></td>
+<td>Recargar simulación</td>
+</tr>
+<tr class="odd">
+<td><code>F1</code></td>
+<td>Abrir paleta de comandos Wokwi</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="estructura-de-archivos" class="level3">
+<h3 class="anchored" data-anchor-id="estructura-de-archivos">Estructura de Archivos</h3>
+<p>Cada ejemplo incluye:</p>
+<pre><code>nombre_ejemplo/
+├── main.py          # Código MicroPython/Arduino
+├── diagram.json     # Configuración del circuito
+└── wokwi.toml      # Configuración de Wokwi (opcional)</code></pre>
+</section>
+<section id="configuración-wokwi.toml" class="level3">
+<h3 class="anchored" data-anchor-id="configuración-wokwi.toml">Configuración wokwi.toml</h3>
+<p>Los ejemplos ya incluyen el archivo <code>wokwi.toml</code> con la configuración:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Raspberry Pi Pico</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">board</span> <span class="op">=</span> <span class="st">"pi-pico"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">program</span> <span class="op">=</span> <span class="st">"main.py"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">serial</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">baud</span><span class="op"> =</span> <span class="dv">115200</span><span class="op"> }</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ESP32</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dt">board</span> <span class="op">=</span> <span class="st">"esp32"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dt">program</span> <span class="op">=</span> <span class="st">"main.py"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Arduino</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="dt">board</span> <span class="op">=</span> <span class="st">"arduino-uno"</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="dt">program</span> <span class="op">=</span> <span class="st">"main.cpp"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>

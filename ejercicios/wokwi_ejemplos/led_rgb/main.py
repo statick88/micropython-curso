@@ -1,84 +1,132 @@
 """
-Control de LED RGB - Ejemplo de Salidas Múltiples
-===============================================
+LED RGB - Todos los Colores con un Solo LED
+========================================
+
+¿QUÉS ES ESTO?
+El LED RGB es como tener tres luces de colores (rojo, verde y azul) en un
+solo componente. Al brillar con diferentes intensidades, podemos crear
+cualquier color del arcoíris, igual que en tu televisor o smartphone.
+
 Hardware: Raspberry Pi Pico con MicroPython
-Componentes: 1 LED RGB (ánodo común) y 3 resistores de 220Ω
-Conexionado: GPIO 15 -> Rojo, GPIO 14 -> Verde, GPIO 13 -> Azul
+Plataforma: Wokwi
+Componentes:
+   • 1 LED RGB (ánodo común)
+   • 3 resistores de 220Ω (uno por cada color)
+
+📌 CONEXIONES FÍSICAS (4 cables + 3 resistores):
+─────────────────────────────────────────────────────────
+   El LED RGB tiene 4 patitas:
+     1. ÁNODO (la más larga) → se conecta a 3.3V a través de resistores
+     2. R (Rojo) → GPIO 15
+     3. G (Verde) → GPIO 14
+     4. B (Azul) → GPIO 13
+
+   Cada color necesita su propio resistor de 220Ω para no quemarse:
+
+   GPIO 15 ────► R (con resistor 220Ω) ──┐
+   GPIO 14 ────► G (con resistor 220Ω) ──┼──► ÁNODO ──► 3.3V
+   GPIO 13 ────► B (con resistor 220Ω) ──┘
+
+   ¿Por qué ánodo común? Porque cuando queremos que un color brille,
+  ponemos su pin en BAJO (0V), creando diferencia de potencial.
+
 Lenguaje: MicroPython
-Lógica: Secuencia de colores que cambia cada 500ms
 """
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLICACIÓN DEL CÓDIGO
+# ═══════════════════════════════════════════════════════════════════════════
 
 from machine import Pin
 import time
 
-# Configuración de pines como salida
-# LED RGB de ánodo común: nivel bajo = LED encendido
-rojo = Pin(15, Pin.OUT)
-verde = Pin(14, Pin.OUT)
-azul = Pin(13, Pin.OUT)
+# ─────────────────────────────────────────────────────────────────────────
+# CONFIGURACIÓN DE PINES
+# ─────────────────────────────────────────────────────────────────────────
+# Configuramos 3 pines como SALIDA, uno para cada color
+# Como usamos ánodo común: 1 = apagado, 0 = encendido
+rojo = Pin(15, Pin.OUT)  # Pin del color rojo
+verde = Pin(14, Pin.OUT)  # Pin del color verde
+azul = Pin(13, Pin.OUT)  # Pin del color azul
 
 
-# Función para apagar todos los LEDs
 def apagar_todos():
-    """Apaga el LED RGB completamente"""
+    """
+    Apaga todos los colores del LED RGB
+
+    Con ánodo común, necesitamos poner todos los pines en ALTO (1)
+    para que no haya diferencia de voltaje y no pase corriente.
+    """
     rojo.value(1)
     verde.value(1)
     azul.value(1)
 
 
-# Función para establecer color
-def establecer_color(r, v, a):
+def establecer_color(encender_rojo, encender_verde, encender_azul):
     """
-    Establece el color del LED RGB
+    Enciende los colores que quieras del LED RGB
 
     Args:
-        r: Rojo (True = activo)
-        v: Verde (True = activo)
-        a: Azul (True = activo)
+        rojo: True para activar rojo, False para apagar
+        verde: True para activar verde, False para apagar
+        azul: True para activar azul, False para apagar
+
+    Ejemplo: establecer_color(True, False, True) = Magenta
     """
-    rojo.value(not r)  # Invertido porque es ánodo común
-    verde.value(not v)
-    azul.value(not a)
+    # Con ánodo común, invertimos la lógica:
+    # True (encender) → poner en BAJO (0)
+    # False (apagar) → poner en ALTO (1)
+    rojo.value(not encender_rojo)
+    verde.value(not encender_verde)
+    azul.value(not encender_azul)
 
 
-# Mensaje inicial
-print("Iniciando ejemplo de LED RGB...")
-print("Secuencia de colores iniciada")
+# ═══════════════════════════════════════════════════════════════════════════
+# BUCLE PRINCIPAL - SECUENCIA DE COLORES
+# ═══════════════════════════════════════════════════════════════════════════
 
-# Secuencia de colores predefinidos
+# Definimos los colores que mostraremos
+# Formato: (rojo, verde, azul) → True = encender ese color
 colores = [
-    (True, False, False),  # Rojo
-    (False, True, False),  # Verde
-    (False, False, True),  # Azul
-    (True, True, False),  # Amarillo
-    (True, False, True),  # Magenta
-    (False, True, True),  # Cian
-    (True, True, True),  # Blanco
-    (False, False, False),  # Apagado
+    (True, False, False),  # 🔴 ROJO
+    (False, True, False),  # 🟢 VERDE
+    (False, False, True),  # 🔵 AZUL
+    (True, True, False),  # 🟡 AMARILLO
+    (True, False, True),  # 🩽 MAGENTA
+    (False, True, True),  # 🔷 CIAN
+    (True, True, True),  # ⚪ BLANCO
+    (False, False, False),  # ⚫ APAGADO
 ]
 
-# Bucle infinito con secuencia de colores
+# Nombres para mostrar en consola
+nombres_colores = [
+    "ROJO",
+    "VERDE",
+    "AZUL",
+    "AMARILLO",
+    "MAGENTA",
+    "CIAN",
+    "BLANCO",
+    "APAGADO",
+]
+
+print("🌈 INICIANDO: LED RGB")
+print("   Secuencia de colores - cada 500ms")
+print("-" * 40)
+
 indice = 0
 while True:
-    # Obtener el color actual
-    color = colores[indice]
-    establecer_color(*color)
+    # Obtener el color actual de la lista
+    color_actual = colores[indice]
 
-    # Mensaje por consola
-    nombre_color = [
-        "ROJO",
-        "VERDE",
-        "AZUL",
-        "AMARILLO",
-        "MAGENTA",
-        "CIAN",
-        "BLANCO",
-        "APAGADO",
-    ][indice]
-    print(f"Color: {nombre_color}")
+    # Aplicar el color al LED
+    establecer_color(*color_actual)
 
-    # Esperar 500ms antes del siguiente color
+    # Mostrar qué color está activo
+    print(f"🎨 Color: {nombres_colores[indice]}")
+
+    # Esperar 500ms antes de cambiar
     time.sleep(0.5)
 
-    # Avanzar al siguiente color (cíclico)
+    # Avanzar al siguiente color (y volver al inicio si llega al final)
     indice = (indice + 1) % len(colores)

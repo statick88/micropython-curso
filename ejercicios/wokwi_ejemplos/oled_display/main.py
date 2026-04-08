@@ -1,46 +1,80 @@
 """
-Display OLED SSD1306 - Ejemplo de Salida Gráfica I2C
-==================================================
+Display OLED SSD1306 - Tu Pantalla Pequeña pero Potente
+=====================================================
+
+¿QUÉS ES ESTO?
+El display OLED SSD1306 es una pantalla pequeña pero poderosa que nos permite
+mostrar texto, gráficos y animaciones en tiempo real. A diferencia de las
+pantallas tradicionales, cada píxel genera su propia luz, lo que da negros
+profundos y contraste excelente.
+
 Hardware: Raspberry Pi Pico con MicroPython
-Componentes: 1 display OLED SSD1306 (128x64 pixels)
-Conexionado: I2C0 - SDA=GPIO4, SCL=GPIO5
-Lenguaje: MicroPython con librería ssd1306
-Lógica: Muestra texto, figuras y animaciones básicas
+Plataforma: Wokwi
+Componentes: Display OLED SSD1306 (128×64 pixeles)
+
+📌 CONEXIONES FÍSICAS (I2C):
+─────────────────────────────────────────────────────────
+   El OLED tiene 4 pines:
+     GND → GND (Pico)
+     VCC → 3.3V (Pico)
+     SDA → GPIO 4 (Pico) - línea de datos
+     SCL → GPIO 5 (Pico) - línea de reloj
+
+   En Wokwi, el componente ya tiene la configuración lista.
+   Solo definimos: I2C(0) con scl=Pin(5), sda=Pin(4)
+
+Lenguaje: MicroPython (con librería ssd1306)
 """
+
+# ═══════════════════════════════════════════════════════════════════════════
+# EXPLICACIÓN DEL CÓDIGO
+# ═══════════════════════════════════════════════════════════════════════════
 
 from machine import Pin, I2C
 import ssd1306
 import time
 
-# Configuración del bus I2C
-# I2C(0) usa GPIO4 (SDA) y GPIO5 (SCL) por defecto
+# ─────────────────────────────────────────────────────────────────────────
+# CONFIGURACIÓN I2C Y OLED
+# ─────────────────────────────────────────────────────────────────────────
+
+# Crear el bus I2C
+# I2C(0) usa pines por defecto: SDA=GPIO4, SCL=GPIO5
+# freq=400000 = 400kHz (velocidad rápida)
 i2c = I2C(0, scl=Pin(5), sda=Pin(4), freq=400000)
 
-# Buscar la dirección del display OLED
-print("Direcciones I2C encontradas:", hex(i2c.scan()))
+# Escanear el bus para encontrar dispositivos
+print("🔍 Buscando dispositivos I2C...")
+direcciones = i2c.scan()
+print(f"   Dispositivos encontrados: {[hex(d) for d in direcciones]}")
 
-# Inicializar el display OLED (128x64)
-# SSD1306_I2C_ADDRESS = 0x3C (dirección común)
+# Crear el objeto del display OLED
+# 128 = ancho en pixeles, 64 = alto en pixeles
 oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 
-# Colores disponibles
-NEGRO = 0
-BLANCO = 1
+# Definir colores (en OLED solo hay 2)
+NEGRO = 0  # Pixel apagado
+BLANCO = 1  # Pixel encendido
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# FUNCIONES AUXILIARES
+# ═══════════════════════════════════════════════════════════════════════════
 
 
 def limpiar_pantalla():
-    """Limpia el contenido del display"""
+    """Borra todo el contenido de la pantalla"""
     oled.fill(NEGRO)
     oled.show()
 
 
 def mostrar_texto(x, y, texto):
     """
-    Muestra texto en el display
+    Muestra texto en coordenadas específicas
 
     Args:
-        x: Posición horizontal (0-127)
-        y: Posición vertical (0-57)
+        x: Posición horizontal (0 a 127)
+        y: Posición vertical (0 a 57, en saltos de 8)
         texto: String a mostrar
     """
     oled.text(texto, x, y)
@@ -49,12 +83,12 @@ def mostrar_texto(x, y, texto):
 
 def dibujar_rectangulo(x1, y1, x2, y2, color=BLANCO):
     """
-    Dibuja un rectángulo en el display
+    Dibuja un rectángulo entre dos puntos
 
     Args:
         x1, y1: Esquina superior izquierda
         x2, y2: Esquina inferior derecha
-        color: Color de relleno (opcional)
+        color: 0 = vacío, 1 = lleno
     """
     oled.rect(x1, y1, x2 - x1, y2 - y1, color)
     oled.show()
@@ -62,7 +96,7 @@ def dibujar_rectangulo(x1, y1, x2, y2, color=BLANCO):
 
 def dibujar_linea(x1, y1, x2, y2):
     """
-    Dibuja una línea en el display
+    Dibuja una línea entre dos puntos
 
     Args:
         x1, y1: Punto inicial
@@ -72,10 +106,15 @@ def dibujar_linea(x1, y1, x2, y2):
     oled.show()
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# EJEMPLOS DE USO
+# ═══════════════════════════════════════════════════════════════════════════
+
+
 def ejemplo_texto_basico():
-    """Ejemplo 1: Texto básico"""
-    print("Ejemplo 1: Texto básico")
-    oled.fill(NEGRO)
+    """📝 Ejemplo 1: Mostrar texto simple"""
+    print("📝 Ejemplo: Texto básico")
+    oled.fill(NEGRO)  # Limpiar
     oled.text("Hola Mundo!", 20, 20)
     oled.text("MicroPython", 25, 35)
     oled.text("en Wokwi", 30, 50)
@@ -84,17 +123,17 @@ def ejemplo_texto_basico():
 
 
 def ejemplo_formas():
-    """Ejemplo 2: Formas geométricas"""
-    print("Ejemplo 2: Formas geométricas")
+    """⬜ Ejemplo 2: Dibujar formas geométricas"""
+    print("⬜ Ejemplo: Formas geométricas")
     oled.fill(NEGRO)
 
-    # Dibujar un rectángulo
+    # Rectángulo (x, y, ancho, alto, color)
     oled.rect(10, 10, 30, 20, BLANCO)
 
-    # Dibujar un círculo (solo pixel más cercano)
+    # Círculo (centro_x, centro_y, radio, color)
     oled.circle(80, 30, 15, BLANCO)
 
-    # Dibujar líneas
+    # Líneas cruzadas (efecto X)
     oled.line(0, 0, 127, 63, BLANCO)
     oled.line(0, 63, 127, 0, BLANCO)
 
@@ -103,36 +142,36 @@ def ejemplo_formas():
 
 
 def ejemplo_contador():
-    """Ejemplo 3: Contador ascendente"""
-    print("Ejemplo 3: Contador")
+    """🔢 Ejemplo 3: Contador ascendente"""
+    print("🔢 Ejemplo: Contador")
     for i in range(20):
         oled.fill(NEGRO)
         oled.text("Contador:", 30, 20)
-        oled.text(str(i), 50, 40)
+        oled.text(str(i), 50, 40)  # Mostrar número
         oled.show()
         time.sleep(0.2)
 
 
 def ejemplo_barra_progreso(valor, maximo):
     """
-    Dibuja una barra de progreso
+    📊 Ejemplo 4: Barra de progreso
 
     Args:
-        valor: Valor actual
-        maximo: Valor máximo
+        valor: Valor actual (0 a maximo)
+        maximo: Valor máximo (para calcular porcentaje)
     """
     oled.fill(NEGRO)
     oled.text("Progreso:", 30, 10)
 
-    # Calcular ancho de la barra
+    # Calcular ancho de la barra (108 pixeles máximo)
     ancho = int((valor / maximo) * 108)
 
-    # Dibujar fondo de la barra
+    # Marco de la barra
     oled.rect(10, 30, 108, 20, BLANCO)
-    # Dibujar relleno
+    # Relleno de la barra
     oled.fill_rect(12, 32, max(0, ancho - 4), 16, BLANCO)
 
-    # Mostrar porcentaje
+    # Porcentaje como texto
     porcentaje = int((valor / maximo) * 100)
     oled.text(f"{porcentaje}%", 50, 55)
 
@@ -140,36 +179,46 @@ def ejemplo_barra_progreso(valor, maximo):
 
 
 def ejemplo_barra_progreso_completa():
-    """Ejemplo de barra de progreso animada"""
-    print("Ejemplo: Barra de progreso")
+    """Barra de progreso animada"""
+    print("📊 Ejemplo: Barra de progreso")
     for i in range(101):
         ejemplo_barra_progreso(i, 100)
         time.sleep(0.05)
 
 
 def ejemplo_animacion_pixel():
-    """Ejemplo de animación de pixel móvil"""
-    print("Ejemplo: Animación de pixel")
-    x = 0
-    direccion = 1
+    """🔵 Ejemplo de animación: pixel rebotando"""
+    print("🔵 Ejemplo: Animación de pixel")
+    x = 0  # Posición inicial
+    direccion = 1  # 1 = derecha, -1 = izquierda
 
     for _ in range(100):
         oled.fill(NEGRO)
-        oled.pixel(x, 32, BLANCO)
+        oled.pixel(x, 32, BLANCO)  # Un solo pixel
         oled.show()
 
+        # Mover el pixel
         x += direccion
+
+        # Rebotar en los bordes
         if x > 127 or x < 0:
             direccion *= -1
 
         time.sleep(0.03)
 
 
-# Programa principal
-print("Iniciando ejemplos de OLED SSD1306...")
+# ═══════════════════════════════════════════════════════════════════════════
+# PROGRAMA PRINCIPAL
+# ═══════════════════════════════════════════════════════════════════════════
+
+print("🖥️ INICIANDO: Display OLED SSD1306")
+print("   Conexión I2C: GPIO 4 (SDA), GPIO 5 (SCL)")
+print("   Resolución: 128 × 64 pixeles")
+print("=" * 50)
+
 time.sleep(1)
 
-# Ejecutar todos los ejemplos
+# Ejecutar todos los ejemplos en loop
 while True:
     ejemplo_texto_basico()
     ejemplo_formas()
