@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Comprende las diferencias y similitudes entre Pybricks y el entorno oficial LEGO para elegir el mejor camino para tu aula">
+<meta name="description" content="Curso de MicroPython para docentes de Pedagogía en Informática.">
 
-<title>🤖 Pybricks vs LEGO Spike: Guía de Orientación – MicroPython para el Aula</title>
+<title>Anexo: Conversión de Código de Bloques a Python usando IA – MicroPython para el Aula</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,41 +24,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -69,8 +34,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../contenido/apendice_hardware_alternativo.html" rel="next">
-<link href="../contenido/apendice_pybricks_compilacion.html" rel="prev">
+<link href="../evaluaciones/eval_motores_avanzados.html" rel="next">
+<link href="../contenido/referencia_sintaxis_spike.html" rel="prev">
 <link href="../favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -125,7 +90,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/apendice_pybricks_spike.html"><span class="chapter-title">🤖 Pybricks vs LEGO Spike: Guía de Orientación</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/anexo_conversion_bloques_a_python.html"><span class="chapter-title">Anexo: Conversión de Código de Bloques a Python usando IA</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -358,11 +323,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/unidad1/1_instalacion_pybricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unidad 1: Tu Primer Programa</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../contenido/unidad1/lab1_hola_mundo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Laboratorio 1: ¡Hola, Robot!</span></a>
   </div>
 </li>
@@ -528,21 +488,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contenido/apendice_simuladores.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🖥️ Simuladores de MicroPython</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/apendice_pybricks_compilacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contenido/apendice_pybricks_spike.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">🤖 Pybricks vs LEGO Spike: Guía de Orientación</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../contenido/apendice_hardware_alternativo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">🔌 Opciones de Hardware Alternativo</span></a>
   </div>
 </li>
@@ -554,6 +499,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contenido/referencia_sintaxis_spike.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Referencia Rápida: LEGO Education SPIKE Essential Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contenido/anexo_conversion_bloques_a_python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Anexo: Conversión de Código de Bloques a Python usando IA</span></a>
   </div>
 </li>
       </ul>
@@ -625,45 +575,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#pybricks-vs-lego-spike-guía-de-orientación" id="toc-pybricks-vs-lego-spike-guía-de-orientación" class="nav-link active" data-scroll-target="#pybricks-vs-lego-spike-guía-de-orientación">🤖 Pybricks vs LEGO Spike: Guía de Orientación</a>
+  <li><a href="#importancia-de-un-prompt-bien-estructurado" id="toc-importancia-de-un-prompt-bien-estructurado" class="nav-link active" data-scroll-target="#importancia-de-un-prompt-bien-estructurado">Importancia de un Prompt Bien Estructurado</a></li>
+  <li><a href="#paso-a-paso-para-la-conversión" id="toc-paso-a-paso-para-la-conversión" class="nav-link" data-scroll-target="#paso-a-paso-para-la-conversión">Paso a Paso para la Conversión</a>
   <ul class="collapse">
-  <li><a href="#por-qué-este-anexo" id="toc-por-qué-este-anexo" class="nav-link" data-scroll-target="#por-qué-este-anexo">¿Por qué este anexo?</a></li>
-  <li><a href="#quick-cuál-debería-usar" id="toc-quick-cuál-debería-usar" class="nav-link" data-scroll-target="#quick-cuál-debería-usar">🎯 Quick: ¿Cuál debería usar?</a></li>
-  <li><a href="#comparativa-detallada" id="toc-comparativa-detallada" class="nav-link" data-scroll-target="#comparativa-detallada">🆚 Comparativa Detallada</a>
+  <li><a href="#paso-1-preparar-tu-material-visual" id="toc-paso-1-preparar-tu-material-visual" class="nav-link" data-scroll-target="#paso-1-preparar-tu-material-visual">Paso 1: Preparar tu Material Visual</a></li>
+  <li><a href="#paso-2-elegir-tu-enfoque" id="toc-paso-2-elegir-tu-enfoque" class="nav-link" data-scroll-target="#paso-2-elegir-tu-enfoque">Paso 2: Elegir tu Enfoque</a></li>
+  <li><a href="#paso-3-crear-tu-prompt-estructurado" id="toc-paso-3-crear-tu-prompt-estructurado" class="nav-link" data-scroll-target="#paso-3-crear-tu-prompt-estructurado">Paso 3: Crear tu Prompt Estructurado</a></li>
+  <li><a href="#paso-4-procesar-la-respuesta-y-validar" id="toc-paso-4-procesar-la-respuesta-y-validar" class="nav-link" data-scroll-target="#paso-4-procesar-la-respuesta-y-validar">Paso 4: Procesar la Respuesta y Validar</a></li>
+  </ul></li>
+  <li><a href="#ejemplos-de-prompts-efectivos" id="toc-ejemplos-de-prompts-efectivos" class="nav-link" data-scroll-target="#ejemplos-de-prompts-efectivos">Ejemplos de Prompts Efectivos</a>
   <ul class="collapse">
-  <li><a href="#entorno-de-programación" id="toc-entorno-de-programación" class="nav-link" data-scroll-target="#entorno-de-programación">Entorno de Programación</a></li>
-  <li><a href="#hardware-compatible" id="toc-hardware-compatible" class="nav-link" data-scroll-target="#hardware-compatible">Hardware Compatible</a></li>
-  <li><a href="#api-y-funcionalidades" id="toc-api-y-funcionalidades" class="nav-link" data-scroll-target="#api-y-funcionalidades">API y Funcionalidades</a></li>
+  <li><a href="#ejemplo-1-conversión-directa-anatomía-del-prompt-perfecto" id="toc-ejemplo-1-conversión-directa-anatomía-del-prompt-perfecto" class="nav-link" data-scroll-target="#ejemplo-1-conversión-directa-anatomía-del-prompt-perfecto">Ejemplo 1: Conversión Directa (Anatomía del Prompt Perfecto)</a></li>
+  <li><a href="#ejemplo-2-enfoque-spec-first-validación-de-arquitectura" id="toc-ejemplo-2-enfoque-spec-first-validación-de-arquitectura" class="nav-link" data-scroll-target="#ejemplo-2-enfoque-spec-first-validación-de-arquitectura">Ejemplo 2: Enfoque Spec-First (Validación de Arquitectura)</a></li>
+  <li><a href="#ejemplo-3-conversión-desde-pseudocódigo-secuencial" id="toc-ejemplo-3-conversión-desde-pseudocódigo-secuencial" class="nav-link" data-scroll-target="#ejemplo-3-conversión-desde-pseudocódigo-secuencial">Ejemplo 3: Conversión desde Pseudocódigo Secuencial</a></li>
   </ul></li>
-  <li><a href="#el-flujo-de-transición-spike-pybricks" id="toc-el-flujo-de-transición-spike-pybricks" class="nav-link" data-scroll-target="#el-flujo-de-transición-spike-pybricks">🔄 El Flujo de Transición: Spike → Pybricks</a>
+  <li><a href="#buenas-prácticas-basadas-en-el-curso" id="toc-buenas-prácticas-basadas-en-el-curso" class="nav-link" data-scroll-target="#buenas-prácticas-basadas-en-el-curso">Buenas Prácticas Basadas en el Curso</a>
   <ul class="collapse">
-  <li><a href="#qué-conceptos-se-transfieren" id="toc-qué-conceptos-se-transfieren" class="nav-link" data-scroll-target="#qué-conceptos-se-transfieren">¿Qué conceptos se transfieren?</a></li>
-  <li><a href="#diferencias-clave" id="toc-diferencias-clave" class="nav-link" data-scroll-target="#diferencias-clave">Diferencias Clave</a></li>
+  <li><a href="#aprovechar-la-multimodalidad" id="toc-aprovechar-la-multimodalidad" class="nav-link" data-scroll-target="#aprovechar-la-multimodalidad">Aprovechar la Multimodalidad</a></li>
+  <li><a href="#usar-modelos-con-capacidad-de-razonamiento" id="toc-usar-modelos-con-capacidad-de-razonamiento" class="nav-link" data-scroll-target="#usar-modelos-con-capacidad-de-razonamiento">Usar Modelos con Capacidad de Razonamiento</a></li>
+  <li><a href="#el-desarrollador-como-piloto" id="toc-el-desarrollador-como-piloto" class="nav-link" data-scroll-target="#el-desarrollador-como-piloto">El Desarrollador como Piloto</a></li>
+  <li><a href="#integrar-con-spec-driven-development-sdd" id="toc-integrar-con-spec-driven-development-sdd" class="nav-link" data-scroll-target="#integrar-con-spec-driven-development-sdd">Integrar con Spec-Driven Development (SDD)</a></li>
   </ul></li>
-  <li><a href="#ventajas-de-pybricks-sobre-lego-spike" id="toc-ventajas-de-pybricks-sobre-lego-spike" class="nav-link" data-scroll-target="#ventajas-de-pybricks-sobre-lego-spike">📊 Ventajas de Pybricks sobre LEGO Spike</a>
-  <ul class="collapse">
-  <li><a href="#código-es-transferible" id="toc-código-es-transferible" class="nav-link" data-scroll-target="#código-es-transferible">1. Código es Transferible</a></li>
-  <li><a href="#comunidad-activa" id="toc-comunidad-activa" class="nav-link" data-scroll-target="#comunidad-activa">2. Comunidad Activa</a></li>
-  <li><a href="#preparación-para-el-futuro" id="toc-preparación-para-el-futuro" class="nav-link" data-scroll-target="#preparación-para-el-futuro">3. Preparación para el Futuro</a></li>
-  </ul></li>
-  <li><a href="#cómo-empezar-con-pybricks-este-curso" id="toc-cómo-empezar-con-pybricks-este-curso" class="nav-link" data-scroll-target="#cómo-empezar-con-pybricks-este-curso">🚀 Cómo Empezar con Pybricks (Este Curso)</a>
-  <ul class="collapse">
-  <li><a href="#si-ya-conoces-spike" id="toc-si-ya-conoces-spike" class="nav-link" data-scroll-target="#si-ya-conoces-spike">Si ya conoces Spike</a></li>
-  <li><a href="#si-nunca-has-usado-nada" id="toc-si-nunca-has-usado-nada" class="nav-link" data-scroll-target="#si-nunca-has-usado-nada">Si nunca has usado nada</a></li>
-  </ul></li>
-  <li><a href="#tabla-de-decisión-final" id="toc-tabla-de-decisión-final" class="nav-link" data-scroll-target="#tabla-de-decisión-final">📝 Tabla de Decisión Final</a></li>
-  <li><a href="#recomendación-del-instructor" id="toc-recomendación-del-instructor" class="nav-link" data-scroll-target="#recomendación-del-instructor">🎓 Recomendación del Instructor</a></li>
-  <li><a href="#recursos-adicionales" id="toc-recursos-adicionales" class="nav-link" data-scroll-target="#recursos-adicionales">📚 Recursos Adicionales</a></li>
-  </ul></li>
+  <li><a href="#recursos-del-curso-desarrollo-con-ia-de-0-a-producción" id="toc-recursos-del-curso-desarrollo-con-ia-de-0-a-producción" class="nav-link" data-scroll-target="#recursos-del-curso-desarrollo-con-ia-de-0-a-producción">Recursos del Curso “Desarrollo con IA: De 0 a Producción”</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/apendice_pybricks_spike.html"><span class="chapter-title">🤖 Pybricks vs LEGO Spike: Guía de Orientación</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../contenido/apendice_recursos.html">📚 APÉNDICES</a></li><li class="breadcrumb-item"><a href="../contenido/anexo_conversion_bloques_a_python.html"><span class="chapter-title">Anexo: Conversión de Código de Bloques a Python usando IA</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">🤖 Pybricks vs LEGO Spike: Guía de Orientación</span></h1>
+<h1 class="title"><span class="chapter-title">Anexo: Conversión de Código de Bloques a Python usando IA</span></h1>
 </div>
 
 
@@ -680,398 +622,125 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="pybricks-vs-lego-spike-guía-de-orientación" class="level1">
-<h1>🤖 Pybricks vs LEGO Spike: Guía de Orientación</h1>
-<section id="por-qué-este-anexo" class="level2">
-<h2 class="anchored" data-anchor-id="por-qué-este-anexo">¿Por qué este anexo?</h2>
-<p>Este anexo existe porque hay <strong>dos caminos</strong> para programar tu robot LEGO:</p>
+<section id="importancia-de-un-prompt-bien-estructurado" class="level2">
+<h2 class="anchored" data-anchor-id="importancia-de-un-prompt-bien-estructurado">Importancia de un Prompt Bien Estructurado</h2>
+<p>Al convertir código de bloques (como los de Scratch, MakeCode o similares) a código Python usando asistentes de IA como Gemini, ChatGPT u otros, la calidad del prompt determina directamente la precisión y utilidad del código generado.</p>
+<p>Un prompt mal estructurado puede resultar en: - Código que no refleja la lógica original del diagrama - Uso incorrecto de librerías o sintaxis - Falta de manejo de errores - Código que no sigue las mejores prácticas de Python - Necesidad de múltiples iteraciones de corrección</p>
+<p>Un prompt bien estructurado actúa como una especificación clara que guía a la IA para producir exactamente lo que necesitas, reduciendo iteraciones y aumentando la confianza en el resultado generado.</p>
+</section>
+<section id="paso-a-paso-para-la-conversión" class="level2">
+<h2 class="anchored" data-anchor-id="paso-a-paso-para-la-conversión">Paso a Paso para la Conversión</h2>
+<section id="paso-1-preparar-tu-material-visual" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1-preparar-tu-material-visual">Paso 1: Preparar tu Material Visual</h3>
+<p>Antes de interactuar con la IA, asegúrate de tener: - Una imagen clara del diagrama de bloques (captura de pantalla o foto) - Opcional pero recomendado: notas explicativas sobre el propósito del sistema - Conocimiento básico de qué funcionalidad esperas implementar</p>
+</section>
+<section id="paso-2-elegir-tu-enfoque" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2-elegir-tu-enfoque">Paso 2: Elegir tu Enfoque</h3>
+<p>Tienes dos estrategias principales según lo recomendado en el curso “Desarrollo con IA: De 0 a Producción”:</p>
+<section id="enfoque-a-conversión-directa-para-diagramas-simples" class="level4">
+<h4 class="anchored" data-anchor-id="enfoque-a-conversión-directa-para-diagramas-simples">Enfoque A: Conversión Directa (para diagramas simples)</h4>
+<p>Subir la imagen directamente y pedir la traducción a código Python.</p>
+</section>
+<section id="enfoque-b-spec-first-development-recomendado-para-proyectos-complejos" class="level4">
+<h4 class="anchored" data-anchor-id="enfoque-b-spec-first-development-recomendado-para-proyectos-complejos">Enfoque B: Spec-First Development (recomendado para proyectos complejos)</h4>
 <ol type="1">
-<li><strong>LEGO Spike App</strong> (oficial): Entorno visual de bloques</li>
-<li><strong>Pybricks</strong> (alternativo): Código Python real</li>
-</ol>
-<p><strong>Buena noticia</strong>: ¡Puedes usar <strong>ambos</strong>! No son excluyentes.</p>
-<hr>
-</section>
-<section id="quick-cuál-debería-usar" class="level2">
-<h2 class="anchored" data-anchor-id="quick-cuál-debería-usar">🎯 Quick: ¿Cuál debería usar?</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Situación</th>
-<th>Recomendación</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Estudiante muy pequeño (6-8 años)</td>
-<td>LEGO Spike App</td>
-</tr>
-<tr class="even">
-<td>Principiante sin experiencia previa</td>
-<td>LEGO Spike App → Pybricks</td>
-</tr>
-<tr class="odd">
-<td>Ya sabe algo de programación</td>
-<td>Pybricks directamente</td>
-</tr>
-<tr class="even">
-<td>Quiere aprender Python “de verdad”</td>
-<td>Pybricks (este curso)</td>
-</tr>
-<tr class="odd">
-<td>Aula con presupuesto limitado</td>
-<td>Pybricks (más opciones)</td>
-</tr>
-<tr class="even">
-<td>Competiciones FIRST LEGO League</td>
-<td>Pybricks (más control)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="comparativa-detallada" class="level2">
-<h2 class="anchored" data-anchor-id="comparativa-detallada">🆚 Comparativa Detallada</h2>
-<section id="entorno-de-programación" class="level3">
-<h3 class="anchored" data-anchor-id="entorno-de-programación">Entorno de Programación</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 45%">
-<col style="width: 30%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Aspecto</th>
-<th>LEGO Spike App</th>
-<th>Pybricks</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Tipo de código</strong></td>
-<td>Bloques visuales</td>
-<td>Python texto</td>
-</tr>
-<tr class="even">
-<td><strong>Curva de aprendizaje</strong></td>
-<td>Más fácil al inicio</td>
-<td>Más empinada pero más poderosa</td>
-</tr>
-<tr class="odd">
-<td><strong>Velocidad inicial</strong></td>
-<td>Rápido para cosas simples</td>
-<td>Más lento al inicio</td>
-</tr>
-<tr class="even">
-<td><strong>Capacidad a largo plazo</strong></td>
-<td>Limitada</td>
-<td>Ilimitada</td>
-</tr>
-<tr class="odd">
-<td><strong>Depuración</strong></td>
-<td>Difícil</td>
-<td>Con Thonny, muy buena</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="hardware-compatible" class="level3">
-<h3 class="anchored" data-anchor-id="hardware-compatible">Hardware Compatible</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Hub</th>
-<th style="text-align: center;">LEGO Spike App</th>
-<th style="text-align: center;">Pybricks</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>SPIKE Essential (45678)</strong></td>
-<td style="text-align: center;">✅ Solo este</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="even">
-<td><strong>SPIKE Prime (45678)</strong></td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="odd">
-<td><strong>Technic Large Hub (45601)</strong></td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="even">
-<td><strong>BOOST Move Hub (45601)</strong></td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="odd">
-<td><strong>City Hub (45601)</strong></td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="even">
-<td><strong>MINDSTORMS EV3</strong></td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="api-y-funcionalidades" class="level3">
-<h3 class="anchored" data-anchor-id="api-y-funcionalidades">API y Funcionalidades</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Característica</th>
-<th style="text-align: center;">LEGO Spike App</th>
-<th style="text-align: center;">Pybricks</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Motores básicos</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="even">
-<td>Sensores estándar</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="odd">
-<td>Programación paralela</td>
-<td style="text-align: center;">⚠️ Limitada</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="even">
-<td>Hilos (threads)</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="odd">
-<td>Control preciso de velocidad</td>
-<td style="text-align: center;">⚠️ Básico</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="even">
-<td>Custom firmware</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="odd">
-<td>Código abierto</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-</section>
-<section id="el-flujo-de-transición-spike-pybricks" class="level2">
-<h2 class="anchored" data-anchor-id="el-flujo-de-transición-spike-pybricks">🔄 El Flujo de Transición: Spike → Pybricks</h2>
-<p>Muchos docentes prefieren <strong>empezar con Spike</strong> (más visual) y luego <strong>migrar a Pybricks</strong> (más poderoso):</p>
-<pre><code>    ┌──────────────────┐
-    │   LEGO SPIKE    │ ← Empezar aquí (más accesible)
-    │   APP (bloques)  │
-    └────────┬─────────┘
-             │
-             ▼ Transición natural
-    ┌────────▼─────────┐
-    │     PYBRICKS     │ ← Código Python real
-    │  (MicroPython)    │
-    └──────────────────┘</code></pre>
-<section id="qué-conceptos-se-transfieren" class="level3">
-<h3 class="anchored" data-anchor-id="qué-conceptos-se-transfieren">¿Qué conceptos se transfieren?</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Concepto en Spike</th>
-<th>Equivalente en Pybricks</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Bloque “Encender motor”</td>
-<td><code>motor.start()</code></td>
-</tr>
-<tr class="even">
-<td>Bloque “Esperar”</td>
-<td><code>wait()</code> o <code>sleep()</code></td>
-</tr>
-<tr class="odd">
-<td>Bloque “Repetir”</td>
-<td><code>for</code> o <code>while</code></td>
-</tr>
-<tr class="even">
-<td>Bloque “Si…entonces”</td>
-<td><code>if/else</code></td>
-</tr>
-<tr class="odd">
-<td>Variables</td>
-<td>Variables (exactamente igual)</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="diferencias-clave" class="level3">
-<h3 class="anchored" data-anchor-id="diferencias-clave">Diferencias Clave</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Spike (bloques)</th>
-<th>Pybricks (código)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Arrastras bloques</td>
-<td>Escribes texto</td>
-</tr>
-<tr class="even">
-<td>Los errores son visuales</td>
-<td>Los errores son mensajes de texto</td>
-</tr>
-<tr class="odd">
-<td>Difícil copiar código</td>
-<td>Easy copiar y pegar</td>
-</tr>
-<tr class="even">
-<td>Limitado a lo que existen bloques</td>
-<td>Puedes crear cualquier cosa</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-</section>
-<section id="ventajas-de-pybricks-sobre-lego-spike" class="level2">
-<h2 class="anchored" data-anchor-id="ventajas-de-pybricks-sobre-lego-spike">📊 Ventajas de Pybricks sobre LEGO Spike</h2>
-<section id="código-es-transferible" class="level3">
-<h3 class="anchored" data-anchor-id="código-es-transferible">1. Código es Transferible</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Este código sirve para CUALQUIERA que aprenda Pybricks</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># No importa si tienes Spike Essential, Prime, o Technic Hub</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mover_cuadrado(lado_cm):</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        robot.straight(lado_cm)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        robot.turn(<span class="dv">90</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="comunidad-activa" class="level3">
-<h3 class="anchored" data-anchor-id="comunidad-activa">2. Comunidad Activa</h3>
-<ul>
-<li><strong>Foros de Pybricks</strong>: Respuestas rápidas</li>
-<li><strong>GitHub</strong>: Código fuente disponible</li>
-<li><strong>Ejemplos</strong>: Miles de proyectos compartidos</li>
-<li><strong>Documentación</strong>: Completa y actualizada</li>
-</ul>
-</section>
-<section id="preparación-para-el-futuro" class="level3">
-<h3 class="anchored" data-anchor-id="preparación-para-el-futuro">3. Preparación para el Futuro</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Habilidad</th>
-<th style="text-align: center;">Spike (bloques)</th>
-<th style="text-align: center;">Pybricks (Python)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Pensamiento lógico</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="even">
-<td>Comprensión de código</td>
-<td style="text-align: center;">⚠️ Limitada</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="odd">
-<td>Sintaxis de programación real</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="even">
-<td>Preparación para career tech</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr class="odd">
-<td>Portabilidad entre plataformas</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-</section>
-<section id="cómo-empezar-con-pybricks-este-curso" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-empezar-con-pybricks-este-curso">🚀 Cómo Empezar con Pybricks (Este Curso)</h2>
-<p>Este curso está diseñado para ensenar <strong>directamente con Pybricks</strong>, sin pasar por Spike.</p>
-<section id="si-ya-conoces-spike" class="level3">
-<h3 class="anchored" data-anchor-id="si-ya-conoces-spike">Si ya conoces Spike</h3>
-<ol type="1">
-<li><strong>No necesitas desaprender nada</strong> - Los conceptos son los mismos</li>
-<li><strong>Solo aprenderás la “traducción”</strong> de bloques a código</li>
-<li><strong>Ganarás superpoderes</strong>: más control, más flexibilidad</li>
+<li>Primero pedir a la IA que genere un documento de especificaciones técnicas</li>
+<li>Validar que las especificaciones capturen correctamente tu intención</li>
+<li>Luego generar el código Python basado en esas especificaciones validadas</li>
 </ol>
 </section>
-<section id="si-nunca-has-usado-nada" class="level3">
-<h3 class="anchored" data-anchor-id="si-nunca-has-usado-nada">Si nunca has usado nada</h3>
-<ol type="1">
-<li><strong>Perfecto</strong>: Empiezas con la herramienta más poderosa desde el inicio</li>
-<li><strong>No tienes que “migrar”</strong> después</li>
-<li><strong>Aprendes Python de verdad</strong></li>
-</ol>
-<hr>
+</section>
+<section id="paso-3-crear-tu-prompt-estructurado" class="level3">
+<h3 class="anchored" data-anchor-id="paso-3-crear-tu-prompt-estructurado">Paso 3: Crear tu Prompt Estructurado</h3>
+<p>Sigue la estructura del “Prompt Perfecto” enseñada en el curso:</p>
+<pre><code>[Rol] Define quién debe ser la IA
+[Contexto] Explica el propósito y entorno del sistema
+[Tarea] Describe exactamente lo que quieres que haga
+[Restricciones] Establece límites y requisitos técnicos
+[Formato] Especifica cómo debe presentar el resultado</code></pre>
+</section>
+<section id="paso-4-procesar-la-respuesta-y-validar" class="level3">
+<h3 class="anchored" data-anchor-id="paso-4-procesar-la-respuesta-y-validar">Paso 4: Procesar la Respuesta y Validar</h3>
+<p>Después de recibir el código: 1. Revisa que refleje fielmente la lógica del diagrama original 2. Prueba el código con casos de entrada conocidos 3. Verifica que siga las mejores prácticas de Python (PEP8) 4. Itera si es necesario con prompts de refinamiento</p>
 </section>
 </section>
-<section id="tabla-de-decisión-final" class="level2">
-<h2 class="anchored" data-anchor-id="tabla-de-decisión-final">📝 Tabla de Decisión Final</h2>
-<pre><code>┌─────────────────────────────────────────────────────────────────┐
-│                    ¿QUIÉN ERES?                                  │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌───────────────┐     ┌───────────────┐     ┌───────────────┐  │
-│  │   Soy niño    │ →   │ Soy docente   │ →   │ Soy estudiante│  │
-│  │  (6-10 años)  │     │  (adulto)    │     │  (mayor de 14)│  │
-│  └───────┬───────┘     └───────┬───────┘     └───────┬───────┘  │
-│          │                    │                    │            │
-│          ▼                    ▼                    ▼            │
-│   ┌─────────────┐       ┌─────────────┐       ┌─────────────┐   │
-│   │ LEGO SPIKE  │       │ Este curso  │       │ Este curso  │   │
-│   │ App (bloques│       │ (Pybricks)  │       │ (Pybricks)  │   │
-│   └─────────────┘       └─────────────┘       └─────────────┘   │
-│                                                                  │
-│   Opcional:         Recomendado:        Recomendado:            │
-│   Después migra      Comenzar           Comenzar               │
-│   a Pybricks         directamente        directamente            │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘</code></pre>
-<hr>
+<section id="ejemplos-de-prompts-efectivos" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplos-de-prompts-efectivos">Ejemplos de Prompts Efectivos</h2>
+<section id="ejemplo-1-conversión-directa-anatomía-del-prompt-perfecto" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-1-conversión-directa-anatomía-del-prompt-perfecto">Ejemplo 1: Conversión Directa (Anatomía del Prompt Perfecto)</h3>
+<pre><code>[Rol] Actúa como un desarrollador Senior en Python experto en algoritmos y educación tecnológica.
+[Contexto] He diseñado este flujo de trabajo para un sistema de control de luces basado en sensores de luz ambiental, típico en proyectos de robótica educativa con LEGO SPIKE Essential. El sistema debe encender una luz cuando detecta oscuridad y apagarla cuando hay suficiente luz.
+[Tarea] Traduce el diagrama de bloques adjunto a código Python funcional para MicroPython en LEGO SPIKE Essential.
+[Restricciones] 
+- Utiliza las funciones oficiales del hub de SPIKE Essential (from spike import PrimeHub)
+- Incluye manejo básico de errores para lecturas del sensor
+- Añade comentarios explicativos que relacionen cada bloque del diagrama con su correspondiente código
+- Usa nombres de variables descriptivos en español
+- Incluye un pequeño delay para evitar lecturas demasiado frecuentes
+[Formato] Devuélveme solo el bloque de código Python bien comentado, seguido de una breve explicación de cómo cada sección del código corresponde a los bloques del diagrama.</code></pre>
 </section>
-<section id="recomendación-del-instructor" class="level2">
-<h2 class="anchored" data-anchor-id="recomendación-del-instructor">🎓 Recomendación del Instructor</h2>
-<p><strong>Diego dice</strong>: <em>“Empieza con Pybricks desde el día uno. Sí, es más difícil al principio. Pero en 2 semanas tus estudiantes estarán escribiendo código real que pueden compartir, modificar y entender. Los bloques de LEGO están bien para los más pequeños, pero para el resto… el código es el futuro.”</em></p>
-<hr>
+<section id="ejemplo-2-enfoque-spec-first-validación-de-arquitectura" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-2-enfoque-spec-first-validación-de-arquitectura">Ejemplo 2: Enfoque Spec-First (Validación de Arquitectura)</h3>
+<pre><code>[Rol] Actúa como un analista de sistemas especializado en diseño educativo de robótica.
+[Contexto] Tengo un diagrama de bloques que representa el flujo de decisión para un robot seguidor de línea que debe ajustar su dirección basado en lecturas de sensores de reflejo.
+[Tarea] Analiza el diagrama de bloques adjunto y genera un documento de especificaciones técnicas en Markdown que describa:
+- Los componentes de hardware involucrados
+- Las variables de estado necesarias
+- Las condiciones de decisión (umbrales, lógica)
+- El flujo de control principal
+- Las funciones recomendadas para modularizar el código
+[Restricciones]
+- No generes todavía el código Python, solo las especificaciones
+- Enfócate en capturar la lógica de decisión, no en los detalles sintácticos
+- Usa formato Markdown con secciones claras
+[Formato] Documento de especificaciones técnicas que pueda ser revisado y validado antes de proceder a la implementación.</code></pre>
 </section>
-<section id="recursos-adicionales" class="level2">
-<h2 class="anchored" data-anchor-id="recursos-adicionales">📚 Recursos Adicionales</h2>
-<ul>
-<li><a href="https://docs.pybricks.com/">Pybricks Documentación Oficial</a></li>
-<li><a href="https://code.pybricks.com/">Pybricks Code (IDE online)</a></li>
-<li><a href="https://pybricks.com/">Comunidad Pybricks</a></li>
-<li><a href="https://github.com/pybricks">Código Fuente GitHub</a></li>
-</ul>
+<section id="ejemplo-3-conversión-desde-pseudocódigo-secuencial" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-3-conversión-desde-pseudocódigo-secuencial">Ejemplo 3: Conversión desde Pseudocódigo Secuencial</h3>
+<p>Basado en el Prompt 18 del Ebook “200 Prompts” mencionado en el curso:</p>
+<pre><code>Genera el código Python siguiendo estos pasos de lógica extraídos del diagrama de bloques:
+
+1. Inicializar el hub de SPIKE Essential
+2. Configurar los motores en modo de potencia media
+3. Bucle principal:
+   a. Leer el valor del sensor de color en el puerto A
+   b. Si el valor es menor a 30 (superficie oscura):
+      - Girar ligeramente a la derecha
+   c. Sino si el valor es mayor a 70 (superficie clara):
+      - Girar ligeramente a la izquierda
+   d. Sino:
+      - Ir recto
+   e. Esperar 100ms entre lecturas
+4. Incluir manejo de interrupción para detener el programa con el botón central</code></pre>
+</section>
+</section>
+<section id="buenas-prácticas-basadas-en-el-curso" class="level2">
+<h2 class="anchored" data-anchor-id="buenas-prácticas-basadas-en-el-curso">Buenas Prácticas Basadas en el Curso</h2>
+<section id="aprovechar-la-multimodalidad" class="level3">
+<h3 class="anchored" data-anchor-id="aprovechar-la-multimodalidad">Aprovechar la Multimodalidad</h3>
+<p>La IA actual es multimodal y puede “ver” y entender imágenes directamente. Sube tu diagrama como imagen en lugar de intentar describirlo únicamente con texto.</p>
+</section>
+<section id="usar-modelos-con-capacidad-de-razonamiento" class="level3">
+<h3 class="anchored" data-anchor-id="usar-modelos-con-capacidad-de-razonamiento">Usar Modelos con Capacidad de Razonamiento</h3>
+<p>Para diagramas lógicos complejos (con múltiples condiciones, bucles anidados, etc.), usa modelos que tengan capacidad de “Thinking” o razonamiento explícito, ya que pueden auditar su propia cadena de pensamiento.</p>
+</section>
+<section id="el-desarrollador-como-piloto" class="level3">
+<h3 class="anchored" data-anchor-id="el-desarrollador-como-piloto">El Desarrollador como Piloto</h3>
+<p>Recuerda siempre que tú eres el piloto y orquestador del proceso. La IA es una herramienta poderosa, pero tú debes: - Entregar el contexto necesario - Validar que el resultado generado refleje tu intención real - Hacer las correcciones necesarias - Entender el código generado antes de usarlo</p>
+</section>
+<section id="integrar-con-spec-driven-development-sdd" class="level3">
+<h3 class="anchored" data-anchor-id="integrar-con-spec-driven-development-sdd">Integrar con Spec-Driven Development (SDD)</h3>
+<p>El curso enfatiza fuertemente el enfoque Spec-First: definir claramente qué se quiere construir antes de escribir código. Esta metodologíareduce drásticamente los errores de interpretación y asegura que el código generado esté alineado con los objetivos educativos del proyecto.</p>
+</section>
+</section>
+<section id="recursos-del-curso-desarrollo-con-ia-de-0-a-producción" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-del-curso-desarrollo-con-ia-de-0-a-producción">Recursos del Curso “Desarrollo con IA: De 0 a Producción”</h2>
+<p>Este anexo se basa en información obtenida del notebook “Curso Desarrollo con IA - Iron Man”, específicamente de las secciones que cubren: - Ingeniería de Prompts de Alto Valor - Spec-Driven Development (SDD) - Uso de la multimodalidad en modelos de IA actuales - Metodologías para validar la salida de IA antes de la implementación</p>
+<p>El curso proporciona un marco completo para trabajar efectivamente con IA en el desarrollo educativo de robótica, asegurando que la tecnología sirva como un potenciador del aprendizaje y no como un sustituto del pensamiento crítico y la comprensión conceptual.</p>
 <hr>
-<p><em>Este anexo te ayuda a entender el panorama completo. Si tienes dudas, consulta con tu instructor.</em></p>
+<p><em>Este anexo fue creado basado en información extraída del curso “Desarrollo con IA: De 0 a Producción” usando el sistema NotebookLM MCP el 7 de abril de 2026.</em></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1477,13 +1146,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../contenido/apendice_pybricks_compilacion.html" class="pagination-link" aria-label="🔧 Pybricks: Compilación Manual y Sin Licencia">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">🔧 Pybricks: Compilación Manual y Sin Licencia</span></span>
+      <a href="../contenido/referencia_sintaxis_spike.html" class="pagination-link" aria-label="Referencia Rápida: LEGO Education SPIKE Essential Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Referencia Rápida: LEGO Education SPIKE Essential Python</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../contenido/apendice_hardware_alternativo.html" class="pagination-link" aria-label="🔌 Opciones de Hardware Alternativo">
-        <span class="nav-page-text"><span class="chapter-title">🔌 Opciones de Hardware Alternativo</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../evaluaciones/eval_motores_avanzados.html" class="pagination-link" aria-label="Evaluación: Motores Avanzados y PID">
+        <span class="nav-page-text"><span class="chapter-title">Evaluación: Motores Avanzados y PID</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -74,7 +74,6 @@ book:
     - part: "🔌 UNIDAD 1: CONECTAR Y PROGRAMAR"
       chapters:
         - contenido/unidad1/guia_hub_desde_cero.qmd
-        - contenido/unidad1/1_instalacion_pybricks.qmd
         - contenido/unidad1/lab1_hola_mundo.qmd
         - contenido/unidad1/lab1b_ejercicios.qmd
         - quizzes/quiz_unidad1.qmd
@@ -107,12 +106,10 @@ book:
       chapters:
         - contenido/apendice_recursos.qmd
         - contenido/apendice_thonny_debugger.qmd
-        - contenido/apendice_simuladores.qmd
-        - contenido/apendice_pybricks_compilacion.qmd
-        - contenido/apendice_pybricks_spike.qmd
         - contenido/apendice_hardware_alternativo.qmd
         - contenido/anexo_wokwi.qmd
         - contenido/referencia_sintaxis_spike.qmd
+        - contenido/anexo_conversion_bloques_a_python.qmd
     - part: "🎯 EVALUACIONES"
       chapters:
         - evaluaciones/eval_motores_avanzados.qmd

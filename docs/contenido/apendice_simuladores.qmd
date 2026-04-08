@@ -1,0 +1,320 @@
+---
+title: "🖥️ Simuladores de MicroPython"
+description: "Alternativas gratuitas para probar código sin hardware físico"
+---
+
+# 🖥️ Simuladores de MicroPython para el Aula
+
+## 🎯 ¿Por qué usar un simulador?
+
+| Beneficio | Descripción |
+|-----------|-------------|
+| 💰 **Ahorro** | Sin necesidad de comprar hardware para cada estudiante |
+| 🔧 **Debug** | Ejecutar código paso a paso, ver variables |
+| 👥 **Accesibilidad** | Todos pueden practicar desde su computadora |
+| 🛡️ **Seguridad** | No hay riesgo de dañar componentes físicos |
+
+---
+
+## 📊 Comparativa de Simuladores
+
+| Simulador | Tipo | Costo | Pybricks | Ideal para |
+|-----------|------|:-----:|:--------:|------------|
+| **Pybricks Web** | Online | Gratis | ✅ | Principiantes |
+| **Thonny + REPL** | Local | Gratis | ❌ | MicroPython puro |
+| **ESP-32 Simulator** | Hardware | ~$15 | ❌ | Prototipado real |
+| **ViperIDE** | Online | Gratis | ✅ | Clases remotas |
+| **Wokwi** | Online | Gratis* | ✅ | Práctica MicroPython general |
+
+*Wokwi tiene planes gratuitos y pagos
+
+---
+
+## 🥇 Opción 1: Pybricks Code (RECOMENDADO)
+
+El simulador oficial de Pybricks que funciona directamente en el navegador.
+
+### Características
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    🌐 PYBRICKS CODE                            │
+│                    code.pybricks.com                           │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ✅ Funciona en cualquier navegador                           │
+│   ✅ No requiere instalación                                   │
+│   ✅ Incluye simulador visual                                  │
+│   ✅ Código funciona igual que en el robot real                │
+│   ✅ Compatible con Chrome, Firefox, Edge                      │
+│                                                                 │
+│   ⚠️ Requiere conexión a internet                              │
+│   ⚠️ Simulación no es 100% idéntica al hardware               │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Cómo usarlo
+
+1. Abrir: https://code.pybricks.com
+2. Conectar Hub (o usar modo simulación)
+3. Escribir código Python
+4. Click ▶️ para ejecutar
+5. Ver resultados en el simulador visual
+
+---
+
+## 🥈 Opción 2: Thonny con MicroPython
+
+Editor de Python con soporte nativo para MicroPython.
+
+### Características
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    🐍 THONNY IDE                               │
+│                    thonny.org                                   │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ✅ Totalmente gratuito y open source                         │
+│   ✅ IDE amigable para principiantes                           │
+│   ✅ Debug paso a paso                                         │
+│   ✅ Inspector de variables                                    │
+│   ✅ Compatible con ESP-32, RP2040, y más                      │
+│                                                                 │
+│   ⚠️ Sin simulador visual de robots                            │
+│   ⚠️ Requiere conexión a hardware para probar                  │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Instalación
+
+```bash
+# macOS
+brew install --cask thonny
+
+# Windows
+# Descargar desde thonny.org
+
+# Linux
+sudo apt install thonny
+```
+
+---
+
+## 🥉 Opción 3: ESP-32 SPIKE Simulator
+
+Simulador de hardware real con ESP-32 (como el que clonamos).
+
+### Características
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    🔧 ESP-32 SIMULATOR                         │
+│                    github.com/rundhall/ESP-LEGO-SPIKE-Simulator │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ✅ Código funciona en hardware real                          │
+│   ✅ Simula sensores, motores, LEDs                            │
+│   ✅ Debug por consola serial                                  │
+│   ✅ Costo bajo (~$15-20 en componentes)                       │
+│                                                                 │
+│   ⚠️ Requiere comprar ESP-32 y componentes                    │
+│   ⚠️ Configuración más compleja                               │
+│   ⚠️ No tiene GUI visual                                      │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Componentes necesarios
+
+| Componente | Precio aprox. | Link |
+|------------|:-------------:|------|
+| ESP-32 WROOM | $8-12 | AliExpress |
+| Cable USB | $2 | Cualquier tienda |
+| Sensores (opcional) | $5-20 | AliExpress |
+| **Total mínimo** | **~$10** | |
+
+---
+
+## 🥇 Opción 4: Wokwi - Simulador Online Profesional
+
+Simulador de electrónica profesional que soporta múltiples microcontroladores y componentes.
+
+### Características
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    🌐 WOKWI                                      │
+│                    wokwi.com                                    │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ✅ Simulación de ESP32, Raspberry Pi Pico, Arduino            │
+│   ✅ Gran biblioteca de componentes (LEDs, sensores, displays)  │
+│   ✅ Programación en MicroPython                                │
+│   ✅ Modo WiFi simulado para proyectos IoT                      │
+│   ✅ Integración con VS Code                                    │
+│   ✅ Comunidad activa con proyectos compartidos                │
+│                                                                 │
+│   ⚠️ Requiere cuenta para guardar proyectos                     │
+│   ⚠️ Sin soporte nativo para LEGO SPIKE                         │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Cómo usarlo
+
+1. Abrir: https://wokwi.com/projects/new/micropython-pi-pico
+2. Seleccionar plantilla MicroPython para Raspberry Pi Pico
+3. Escribir código en `main.py`
+4. Configurar componentes en `diagram.json`
+5. Presionar "Start Simulation" para ejecutar
+
+### Ejemplos Disponibles
+
+En el directorio `ejercicios/wokwi_ejemplos/` encontrarás ejemplos prácticos:
+
+| Ejemplo | Descripción | Componentes |
+|---------|-------------|-------------|
+| [Parpadeo LED](./ejercicios/wokwi_ejemplos/parpadeo_led) | LED que parpadea cada segundo | LED, Resistencia |
+| [LED RGB](./ejercicios/wokwi_ejemplos/led_rgb) | Secuencia de colores | LED RGB |
+| [Display 7 Segmentos](./ejercicios/wokwi_ejemplos/display_7_segmentos) | Contador 0-9 | Display 7 segmentos |
+| [Sensor Distancia](./ejercicios/wokwi_ejemplos/sensor_distancia) | Medición ultrasónica | HC-SR04 |
+| [Sensor Temperatura](./ejercicios/wokwi_ejemplos/sensor_temperatura) | DHT22 | DHT22 |
+| [Display OLED](./ejercicios/wokwi_ejemplos/oled_display) | Gráficos I2C | SSD1306 |
+
+### Código de Ejemplo: Parpadeo LED
+
+```python
+# main.py - Parpadeo de LED en Wokwi
+from machine import Pin
+import time
+
+# Configurar pin GPIO 15 como salida
+led = Pin(15, Pin.OUT)
+
+# Bucle infinito
+while True:
+    led.value(1)      # Encender LED
+    print("LED ON")
+    time.sleep(1)    # Esperar 1 segundo
+    
+    led.value(0)      # Apagar LED
+    print("LED OFF")
+    time.sleep(1)
+```
+
+```json
+// diagram.json - Conexiones
+{
+  "parts": [
+    { "id": "pico", "type": "wokwi-pi-pico" },
+    { "id": "led1", "type": "wokwi-led", "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    ["pico:GPIO15", "led1:A", "red", []],
+    ["led1:C", "pico:GND", "black", []]
+  ]
+}
+```
+
+---
+
+## 🏆 Recomendación por Escenario
+
+### Para Docentes sin Presupuesto
+
+```
+🥇 Pybricks Code (code.pybricks.com)
+   └─▶ Todo online, sin instalación, simulador incluido
+```
+
+### Para Docentes con Presupuesto Limitado
+
+```
+🥈 Thonny + 1-2 ESP-32 para demostraciones
+   └─▶ Los demás usan Pybricks Web, el docente muestra en hardware real
+```
+
+### Para Docentes con Presupuesto Completo
+
+```
+🥉 Kit completo LEGO SPIKE Prime
+   └─▶ Experiencia 100% real, ideal para talleres presenciales
+```
+
+---
+
+## 📝 Código Compatible con Simuladores
+
+Este código funciona EN TODOS los simuladores y en hardware real:
+
+```python
+# Código universal - funciona en Pybricks Web, Thonny, y hardware real
+from pybricks.hubs import PrimeHub
+from pybricks.parameters import Icon
+from pybricks.tools import wait
+
+# Inicializar Hub
+hub = PrimeHub()
+
+# Mostrar icono
+hub.display.show_icon(Icon.HEART)
+wait(1000)
+
+# Reproducir sonido
+hub.speaker.beep(frequency=440, duration=500)
+
+# Apagar
+hub.display.off()
+
+print("¡Código ejecutado exitosamente!")
+```
+
+---
+
+## 🎓 Ejercicio: Probar en Simulador
+
+### Objetivo
+Ejecutar este código en Pybricks Web y verificar que funciona.
+
+### Código de prueba
+
+```python
+from pybricks.hubs import PrimeHub
+from pybricks.tools import wait
+
+hub = PrimeHub()
+
+# Secuencia de LEDs
+for i in range(5):
+    matriz = [[0 for _ in range(5)] for _ in range(5)]
+    matriz[i][i] = 100  # Diagonal
+    hub.display.show(matriz)
+    wait(200)
+
+hub.display.scroll("OK!", wait=True)
+```
+
+### Pasos
+
+1. Abrir https://code.pybricks.com
+2. Copiar el código de arriba
+3. Click en ▶️ (Run)
+4. Verificar que los LEDs se encienden en diagonal
+
+---
+
+## 🔗 Enlaces Útiles
+
+| Recurso | URL |
+|---------|-----|
+| Pybricks Code | https://code.pybricks.com |
+| Thonny IDE | https://thonny.org |
+| MicroPython Docs | https://docs.micropython.org |
+| ESP-32 Simulator | https://github.com/rundhall/ESP-LEGO-SPIKE-Simulator |
+
+---
+
+*Simuladores - MicroPython para el Aula - Diego Saavedra 2026* 🖥️
